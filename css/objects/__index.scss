@@ -1,0 +1,104 @@
+// Import here all your stuff to add it to the main package
+
+
+@include parallax-slides(
+		'oboslide',
+		(800px,500px,600px,600px,1000px),
+		(
+			'../../obolog/slide-1.jpg',
+			'../../obolog/slide-2.jpg',
+			'../../obolog/slide-3.jpg',
+			'../../obolog/slide-4.jpg',
+			'../../obolog/slide-1.jpg'
+		)
+);
+
+[class^='oboslide'] {
+	.box-slide {
+		@include opacity-background($color-text-background,.75);
+		@include text-shadow(1px 1px 1px $color-text-background);
+		padding:$spacing;
+	}
+	.button-main {
+		@include text-shadow(none);
+	}
+	strong {
+		color: $color-primary;
+		@include text-shadow(1px 1px 1px rgba($color-text,.1));
+	}
+	p, ul {
+		strong {
+			color: $color-secondary;
+			@include text-shadow(1px 1px 1px rgba($color-text,.1));
+		}
+	}
+
+}
+
+.oboslide-1 {
+	& {
+		position:relative;
+
+	}
+	.parallax {
+		position:absolute;
+		left:21%;
+	}
+	.grid {
+		max-width:650px;
+	}
+}
+
+.oboslide-2 {
+	& {
+		position:relative;
+		overflow:hidden;
+	}
+	.parallax {
+		position:absolute;
+		top:0;
+		z-index:100;
+	}
+	.grid {
+		z-index:200;
+		position:relative;
+	}
+}
+
+.oboslide-3 {
+	& {
+		position:relative;
+		overflow:hidden;
+	}
+	.parallax {
+		position:absolute;
+		left:-700px;
+		bottom:0;
+		z-index:100;
+	}
+	.grid {
+		max-width:650px;
+		z-index:200;
+		position:relative;
+	}
+	.table {
+		@include opacity(.9);
+	}
+}
+
+.oboslide-5 {
+	& {
+		position:relative;
+		overflow:hidden;
+
+	}
+	.parallax {
+		position:absolute;
+		left:33%;
+		top:900px;
+	}
+	.grid {
+		max-width:650px;
+		margin-top:$spacing*2;
+	}
+}
