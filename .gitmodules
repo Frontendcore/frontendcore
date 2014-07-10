@@ -1,0 +1,3 @@
+[submodule "css/core"]
+	path = css/core
+	url = https://github.com/tonipinel/frontendcore-scss.git
