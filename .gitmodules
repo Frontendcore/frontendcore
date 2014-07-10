@@ -1,3 +1,6 @@
 [submodule "css/core"]
 	path = css/core
 	url = https://github.com/tonipinel/frontendcore-scss.git
+[submodule "build/static/js"]
+	path = build/static/js
+	url = https://github.com/tonipinel/frontendcore-js.git
