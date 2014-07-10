@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 						'js/base/_init.js'
 					],
 					'build/static/js/devices/desktop.js': [
-						'bower_components/jquery/dist/grjquery.js',
+						'bower_components/jquery/dist/jquery.js',
 						'js/libs/modernizr/modernizr-custom.js',
 						'bower_components/jquery-unveil/jquery.unveil.js'
 					],
