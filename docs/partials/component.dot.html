@@ -1,0 +1,59 @@
+<div data-tc-modules="tabs">
+    <section id="tab-{{= it.id || 'no-id' }}-1" data-tc-name="Demo">
+        <div class=" {{? it.skin == 'dark' }}box-invert{{??}}box-text{{?}}">
+	        {{? it.form != null }}
+	        <form class="forms" method="get">
+		        <fieldset>
+			        <ol>
+				        <li>
+					        {{?}}
+            {{? it.array == null }}
+				{{= it.include( it.path, it.vars ) }}
+            {{??}}
+                {{~it.array :val:i}}
+					        {{? it.form != null }}<div class="box-none pa-s mb-s">{{?}}
+                        {{= it.include( it.path, { value: val, modifier: it.modifier } ) }}
+					        {{? it.form != null }}</div>{{?}}
+                {{~}}
+            {{?}}
+					        {{? it.form != null }}
+				        </li>
+			        </ol>
+			        <button type="submit" class="button">Send</button>
+		        </fieldset>
+	        </form>
+	        {{?}}
+        </div>
+    </section>
+    {{? it.code != false }}
+    <section id="tab-{{= it.id || 'no-id' }}-2" data-tc-name="Code">
+        <div class="box-text">
+            {{? it.array == null }}
+            <pre><code data-tc-modules="code">{{! it.include( it.path, it.vars ) }}</code></pre>
+            {{??}}
+                {{~it.array :val:i}}
+                    <div class="box-none pa-s mb-s">
+                        <pre><code data-tc-modules="code">{{! it.include( it.path, { value: val, modifier: it.modifier } ) }}</code></pre>
+                    </div>
+                {{~}}
+            {{?}}
+
+        </div>
+    </section>
+    {{?}}
+    {{? it.test }}
+    <section id="tab-{{= it.id || 'no-id' }}-3" data-tc-name="Test">
+        <div class="box-text ta-r">
+            <a href="../tests/{{= it.test}}.html" target="_blank"><i class="icon-external-link"></i> Open in new window</a>
+            <iframe src="../tests/{{= it.test}}.html" width="100%" height="400" class="mt-m"></iframe>
+        </div>
+    </section>
+    {{?}}
+    {{? it.scss }}
+    <section id="tab-{{= it.id || 'no-id' }}-3" data-tc-name="Scss">
+        <div class="box-text">
+            <pre><code data-tc-modules="code">{{= it.include( it.scss ) }}</code></pre>
+        </div>
+    </section>
+    {{?}}
+</div>

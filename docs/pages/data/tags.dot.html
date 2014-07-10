@@ -1,0 +1,49 @@
+{
+	"name":"Tags input",
+	"template": "sections/data"
+}
+
+
+<h1>Tags input</h1>
+<p>Input for add tags with autocomplete and great UX experience</p>
+{{= it.include('component',
+    {
+        id:'tags-input',
+        path:'data/tags/tags-input',
+		form: true
+    }
+)}}
+{{= it.include('settings',
+    {
+        "settings":[
+            [
+                "value",
+                "Value of the input. Use it also to prefill the input with tags."
+            ],
+            [
+                "data-tc-values",
+                "List separated by comma of the words and phrases to autocomplete."
+            ],
+            [
+                "data-tc-max",
+                "Max number of tags allowed. ",
+                "'false'"
+            ],
+            [
+                "placeholder",
+                "Text that will be displayed when is empty.",
+                "'Add a tag...'"
+            ],
+            [
+                "data-tc-text-noresult",
+                "Text used when there is no results.",
+                "'No Results Found'"
+            ],
+            [
+                "data-tc-text-max",
+                "Text used when no more tags are allowed",
+                "'No More Selections Are Allowed'"
+            ],
+        ]
+    }
+)}}

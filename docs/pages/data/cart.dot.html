@@ -1,0 +1,52 @@
+{
+	"name":"Cart",
+	"template": "sections/data"
+}
+
+<script>
+	oGlobalSettings.bCart = true;
+</script>
+<h1>Cart</h1>
+<p>Add a Cart to the page and set the products to be shopped</p>
+<div class="cart" data-tc-modules="cart">
+	<a href="#cart-list" id="cart-link">
+		<i class="icon-shopping-cart"></i> <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+	</a>
+	<div id="cart-list" class="hidden">
+		<!-- button to empty the cart -->
+
+
+		<!-- show the cart -->
+		<div class="simpleCart_items">
+
+
+		</div>
+		<div class="actions">
+			<a href="javascript:;" class="button-ko ph-m simpleCart_empty"><i class="icon-trash-o"></i> Empty </a>
+			<!--<a href="javascript:;" class="button ph-m simpleCart_empty"><i class="icon-eye"></i> View </a>-->
+			<a href="javascript:;" class="button-ok simpleCart_checkout">Checkout <i class="icon-arrow-circle-right"></i> </a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+{{= it.include('component',
+	{
+		id:'cart',
+		path:'data/cart/simple-product',
+	}
+)}}
+{{= it.include('settings',
+    {
+        "settings":[
+            [
+                "data-tc-values",
+				"List separated by comma of the words and phrases to autocomplete."
+            ]
+        ]
+    }
+)}}

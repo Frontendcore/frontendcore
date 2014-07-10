@@ -1,0 +1,26 @@
+{
+    "menu":["index","CSS","JS"]
+}
+
+<header class="header">
+    <div class="grid">
+        <a title="Frontend Core" href="/"><h1>FRONTEND CORE</h1></a>
+    </div>
+    <section class="menu">
+        <div class="grid">
+	        {{=it.document.menuActive}}
+            <nav class="navigation">
+                <ul>
+                    {{~it.menu :value:index}}
+                    <li><a title="{{=value}}"  {{? it.menuActive === value}}class="active"{{?}} href="{{=value}}.html">{{=value}}</a></li>
+                    {{~}}
+                </ul>
+                <form name="form" action="#" method="post" class="form-search">
+                    <input id="post_search-2" type="text" name="search" placeholder="Search..." value="">
+                    <button type="submit" class="button"><i class="icon-search"></i></button>
+                </form>
+            </nav>
+        </div>
+    </section>
+</header>
+

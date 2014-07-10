@@ -1,0 +1,300 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>FrontendCore: The all in one frontend framework.</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css"  href="../static/css/main.css" media="all"> <!--[if lte IE 8]> <script src="..//static/js/ie-old.js"></script> <link rel="stylesheet" type="text/css"  href="../static/css/ie-old.css" media="all"> <script type="text/javascript"> var $buoop = {reminder: 0}; $buoop.ol = window.onload; window.onload=function(){ try {if ($buoop.ol) $buoop.ol();}catch (e) {} var e = document.createElement("script"); e.setAttribute("type", "text/javascript"); e.setAttribute("src", "//browser-update.org/update.js"); document.body.appendChild(e); } </script><![endif]--> <!--[if gte IE 9]> <link rel="stylesheet" type="text/css"  href="../static/css/ie-new.css" media="all"> <![endif]--><script type="text/javascript"> var oGlobalSettings = { sPathJs : '../static/js/', sPathJsCore: '..//', sPathJsModules : '../static/js/modules/', sPathJsLibs : '../static/js/libs/', sPathRoot: '../', sPathCss: '../static/css/', bCss : false, bResponsiveImages: true }</script><script src="../static/js/core.js"></script></head><body data-tc-modules="polyfills"><header class="header"><div class="grid"><a title="Frontend Core" href="../index.html" class="logo"><img src="../static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a></div><section class="menu"><div class="grid"><nav class="navigation mobile"><ul><li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li></ul></nav><nav id="side-menu" class="navigation tablet desktop"><ul><li><a title="index" href="../index.html">Home</a></li><li><a title="get-started/first-steps" href="../get-started/first-steps.html">Get Started</a></li><li class="active"><a title="css/index" href="../css/index.html">Static Components</a></li><li><a title="data/index" href="../data/index.html">Dynamic Components</a></li><li><a title="responsive/index" href="../responsive/index.html">Responsive</a></li></ul></nav></div></section></header><div class="grid"> <div class="col-10-12 push-right"><div class="mobile fl-r"><a href="#category-menu" class="button">Go to menu</a></div><h1>Forms</h1><section class="box-lighten"> <h2>Basic Form</h2> <div data-tc-modules="tabs"> <section id="tab-basic-fields-1" data-tc-name="Demo"> <div class=" box-text">  <form class="form">
+    <fieldset>
+        <legend>Legend</legend>
+        <ol>
+            <li>
+                <label>Text Field</label>
+                <input type="text"/>
+            </li>
+            <li>
+                <label>Email Field</label>
+                <input type="email"/>
+            </li>
+            <li>
+                <label>Select Field</label>
+                <select class="width-100">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                </select>
+            </li>
+            <li>
+                <label>Textarea</label>
+                <textarea></textarea>
+            </li>
+        </ol>
+    </fieldset>
+    <button type="submit" class="button">Send</button>
+</form>   </div> </section>  <section id="tab-basic-fields-2" data-tc-name="Code"> <div class="box-text">  <pre><code data-tc-modules="code">&#60;form class=&#34;form&#34;&#62;
+    &#60;fieldset&#62;
+        &#60;legend&#62;Legend&#60;&#47;legend&#62;
+        &#60;ol&#62;
+            &#60;li&#62;
+                &#60;label&#62;Text Field&#60;&#47;label&#62;
+                &#60;input type=&#34;text&#34;&#47;&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;Email Field&#60;&#47;label&#62;
+                &#60;input type=&#34;email&#34;&#47;&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;Select Field&#60;&#47;label&#62;
+                &#60;select class=&#34;width-100&#34;&#62;
+                    &#60;option&#62;option 1&#60;&#47;option&#62;
+                    &#60;option&#62;option 2&#60;&#47;option&#62;
+                &#60;&#47;select&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;Textarea&#60;&#47;label&#62;
+                &#60;textarea&#62;&#60;&#47;textarea&#62;
+            &#60;&#47;li&#62;
+        &#60;&#47;ol&#62;
+    &#60;&#47;fieldset&#62;
+    &#60;button type=&#34;submit&#34; class=&#34;button&#34;&#62;Send&#60;&#47;button&#62;
+&#60;&#47;form&#62;</code></pre>  </div> </section>    <section id="tab-basic-fields-3" data-tc-name="Scss"> <div class="box-text"> <pre><code data-tc-modules="code">[class^='form'] {
+	label {
+		& {
+			text-align: left;
+			@include rem-fallback(font-size, $font-size-S);
+			@include opacity(.8);
+		}
+		&.checkbox {
+			@include opacity(1);
+		}
+	}
+	label[class|='icon'] {
+		min-width: inherit;
+		margin: 0;
+		span {
+			display: none;
+		}
+	}
+	legend {
+		& {
+			padding: 0 0 $spacing*2 0;
+			display: block;
+		}
+		[class|='icon'] {
+			margin-right: $spacing/2;
+		}
+	}
+	em {
+		font-size: .85em;
+		padding: $spacing/4 0;
+		display: inline-block;
+		@include opacity(.5);
+		font-style: normal;
+	}
+	> fieldset {
+		& {
+			border: 0px none;
+			padding: 0;
+			position: relative;
+			@include border-radius;
+			@include opacity-background($color-text, .1);
+			margin-bottom: $spacing;
+			padding: $spacing;
+		}
+		legend {
+			background: $color-text-background;
+			color: $color-text;
+			margin-left: 0;
+			padding: $spacing/4 $spacing/2;
+			@include border-radius;
+			border: 1px solid $color-box-light;
+		}
+	}
+	.label-button {
+		li {
+			display: inline-block;
+			margin-right: $spacing/2;
+		}
+		label {
+			cursor: pointer;
+		}
+		[class|='icon'] {
+			font-size: 2rem;
+			display: block;
+			margin: $spacing/4;
+		}
+	}
+	ul {
+		&.horizontal {
+			& {
+				background: rgba($color-text-background, .6);
+				padding: $spacing $spacing 0 $spacing;
+				@include border-radius;
+			}
+			li, input {
+				display: inline-block;
+			}
+			li {
+				margin-right: $spacing;
+			}
+		}
+	}
+	[class^='options'] {
+		label {
+			@include opacity(1);
+		}
+		li {
+			padding-bottom: $spacing/2;
+		}
+	}
+	.options-inline {
+		li {
+			display: inline-block;
+			margin: 0 $spacing $spacing/2 0;
+			padding: 0;
+		}
+
+	}
+	ol {
+		& {
+			padding: 0;
+			margin: 0;
+		}
+		& > li {
+			list-style: none;
+			display: block;
+			padding: 0 0 $spacing;
+		}
+
+	}
+	li.error {
+		input {
+			border: 1px solid $color-ko;
+			background: adjust-lightness($color-ko, 35%);
+		}
+	}
+	p.error {
+		color: $color-ko;
+	}
+	.pre-input {
+		display: inline-block;
+	}
+}
+
+%field {
+	& {
+		display: block;
+		padding: $spacing/2 $spacing/2;
+		font-size: 1em;
+		border: 1px solid $color-box;
+		border: 1px solid rgba($color-text, .3);
+		background: $color-text-background;
+		@include border-radius($default-border-radius-input);
+		@include box-sizing(border-box);
+		@include box-shadow(inset 0 1px 1px rgba($color-text,.1),0 1px 1px rgba($color-text-background,.5))
+	}
+	&:focus {
+		border-color: $color-warning;
+		background: $color-focus;
+		outline: none;
+	}
+}
+
+input[type='text'], input[type='url'], input[type='password'], input[type='phone'], input[type='email'] {
+	@extend %field;
+	width: 100%;
+}
+
+input[type='range'] {
+	display: block;
+	width: 100%;
+}
+
+input[type='date'], input[type='datetime-local'], input[type='month'], input[type='number'] {
+	@extend %field;
+	width: 100%;
+	max-width: 300px;
+}
+
+input[type='radio'] {
+	display: inline-block;
+}
+
+.input-file {
+	display: block;
+	@extend %field;
+}
+
+textarea {
+	width: 100%;
+	@extend %field;
+}
+
+select {
+	@extend %field;
+}</code></pre> </div> </section> </div></section><section class="box-lighten"> <h2>Radio options</h2> <div data-tc-modules="tabs"> <section id="tab-options-1" data-tc-name="Demo"> <div class=" box-text">  <form class="form">
+    <fieldset>
+        <legend>.options</legend>
+        <ol class="options">
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>.options-inline</legend>
+        <ol class="options-inline">
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+            <li>
+                <label><input type="radio"> Input radio 1</label>
+            </li>
+        </ol>
+    </fieldset>
+    </fieldset>
+    <button type="submit" class="button">Send</button>
+</form>   </div> </section>  <section id="tab-options-2" data-tc-name="Code"> <div class="box-text">  <pre><code data-tc-modules="code">&#60;form class=&#34;form&#34;&#62;
+    &#60;fieldset&#62;
+        &#60;legend&#62;.options&#60;&#47;legend&#62;
+        &#60;ol class=&#34;options&#34;&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+        &#60;&#47;ol&#62;
+    &#60;&#47;fieldset&#62;
+    &#60;fieldset&#62;
+        &#60;legend&#62;.options-inline&#60;&#47;legend&#62;
+        &#60;ol class=&#34;options-inline&#34;&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+            &#60;li&#62;
+                &#60;label&#62;&#60;input type=&#34;radio&#34;&#62; Input radio 1&#60;&#47;label&#62;
+            &#60;&#47;li&#62;
+        &#60;&#47;ol&#62;
+    &#60;&#47;fieldset&#62;
+    &#60;&#47;fieldset&#62;
+    &#60;button type=&#34;submit&#34; class=&#34;button&#34;&#62;Send&#60;&#47;button&#62;
+&#60;&#47;form&#62;</code></pre>  </div> </section>   </div></section><section class="box-lighten"> <h2>Search Form</h2> <div data-tc-modules="tabs"> <section id="tab-form-search-1" data-tc-name="Demo"> <div class=" box-text">  <div class="box">
+    <form name="form" action="#" method="post" class="form-search">
+        <input id="post_search-3" type="text" name="search" placeholder="Search..." value="">
+        <button type="submit" class="button"><i class="icon-search"></i></button>
+    </form>
+</div>   </div> </section>  <section id="tab-form-search-2" data-tc-name="Code"> <div class="box-text">  <pre><code data-tc-modules="code">&#60;div class=&#34;box&#34;&#62;
+    &#60;form name=&#34;form&#34; action=&#34;#&#34; method=&#34;post&#34; class=&#34;form-search&#34;&#62;
+        &#60;input id=&#34;post_search-3&#34; type=&#34;text&#34; name=&#34;search&#34; placeholder=&#34;Search...&#34; value=&#34;&#34;&#62;
+        &#60;button type=&#34;submit&#34; class=&#34;button&#34;&#62;&#60;i class=&#34;icon-search&#34;&#62;&#60;&#47;i&#62;&#60;&#47;button&#62;
+    &#60;&#47;form&#62;
+&#60;&#47;div&#62;</code></pre>  </div> </section>   </div></section></div><div class="col-2-12"><nav id="category-menu" class="subnavigation-vertical"><ul><li ><a title="grids" href="grids.html"><i class="icon-th"></i> grids</a></li><li ><a title="boxes" href="boxes.html"><i class="icon-dropbox"></i> boxes</a></li><li ><a title="typography" href="typography.html"><i class="icon-sort-alpha-asc"></i> typography</a></li><li ><a title="lists" href="lists.html"><i class="icon-list"></i> lists</a></li><li ><a title="navigation" href="navigation.html"><i class="icon-sitemap"></i> navigation</a></li><li ><a title="steps" href="steps.html"><i class="icon-step-forward"></i> steps</a></li><li ><a title="filters" href="filters.html"><i class="icon-filter"></i> filters</a></li><li ><a title="pagination" href="pagination.html"><i class="icon-copy"></i> pagination</a></li><li ><a title="parallax-slides" href="parallax-slides.html"><i class="icon-barcode"></i> parallax</a></li><li ><a title="tabs" href="tabs.html"><i class="icon-folder-o"></i> tabs</a></li><li ><a title="tables" href="tables.html"><i class="icon-table"></i> tables</a></li><li ><a title="buttons" href="buttons.html"><i class="icon-keyboard-o"></i> buttons</a></li><li ><a title="messages" href="messages.html"><i class="icon-inbox"></i> messages</a></li><li class="active"><a title="forms" href="forms.html"><i class="icon-check"></i> forms</a></li><li ><a title="tags" href="tags.html"><i class="icon-tags"></i> tags</a></li><li ><a title="images" href="images.html"><i class="icon-picture-o"></i> images</a></li><li ><a title="ratings" href="ratings.html"><i class="icon-star"></i> ratings</a></li></ul></nav></div></div><!-- ["js/index","JS Architecture"], ["scss/index","SCSS Architecture"],--></body></html>

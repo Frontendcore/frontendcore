@@ -1,0 +1,44 @@
+{
+    "name":"parallax",
+    "relativePath":"../",
+    "template": "sections/css"
+}
+
+<h1>Parallax slides</h1>
+<section class="box-lighten">
+	<h2>Simple parallax</h2>
+	<p>Parallax component is based on a mixin so you must include it to use it</p>
+	<pre><code data-tc-modules="code">
+		@include parallax-slides('classname',
+		(height-1,height-2...),
+		('url-1.jpg','url-2.jpg'..)
+		);
+	</code></pre>
+	{{= it.include('component',
+	{
+	id:'parallax',
+	path:'css/parallax/simple-parallax'
+	}
+	)}}
+</section>
+{{= it.include('settings',
+{
+"settings":[
+	[
+		"classname",
+		"First parameter of the mixin. Name of the class.",
+		"slide"
+	],
+	[
+		"(height-1, height-2,...)",
+		"List separated by comma of the heights defined in css px for each slide. Example for two slides: (300px,300px)",
+		"empty"
+	],
+	[
+		"('url-1.jpg','url-2.jpg'..)",
+		"List separated by comma of the url of the background images for each slide. Example for two slides: ('url-1.jpg','url-2.jpg')",
+		"empty"
+	]
+]
+}
+)}}

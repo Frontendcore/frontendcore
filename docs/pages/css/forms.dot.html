@@ -1,0 +1,19 @@
+{
+    "name":"forms",
+    "relativePath":"../",
+    "template": "sections/css"
+}
+
+<h1>Forms</h1>
+<section class="box-lighten">
+    <h2>Basic Form</h2>
+    {{= it.include('component', { path:'css/forms/basic-fields', scss:'../../css/core/objects/forms/_form.scss', id:'basic-fields' }) }}
+</section>
+<section class="box-lighten">
+    <h2>Radio options</h2>
+    {{= it.include('component', { path:  'css/forms/options', id: 'options' }) }}
+</section>
+<section class="box-lighten">
+    <h2>Search Form</h2>
+    {{= it.include('component', { path:  'css/forms/form-search', id: 'form-search' }) }}
+</section>

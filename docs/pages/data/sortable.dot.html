@@ -1,0 +1,35 @@
+{
+	"name":"Sortable lists",
+	"template": "sections/data"
+}
+
+
+<h1>Sortable</h1>
+<p>Drag & Drop sortable lists with ajax callback to save changes.</p>
+{{= it.include('component',
+    {
+        id:'sortable-list',
+        path:'data/sortable/sortable-list'
+    }
+)}}
+{{= it.include('settings',
+    {
+        "settings":[
+            [
+                "data-tc-url",
+                "Url of the ajax service to save changes.",
+                "'false'"
+            ],
+            [
+                "data-tc-handle",
+                "Define it if you want just one element as handle. ",
+                "'none'"
+            ],
+            [
+                "data-tc-object",
+                "Name of the object array that should be send to the ajax. (Example &object[1]=sortable-1) ",
+                "'sortable'"
+            ],
+        ]
+    }
+)}}

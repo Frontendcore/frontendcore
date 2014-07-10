@@ -1,0 +1,15 @@
+{
+	"name":"Autosize",
+	"template": "sections/data"
+}
+
+
+<h1>Textarea autosize</h1>
+{{= it.include('component',
+	{
+		id:'autosize-textarea',
+		path:'data/autosize/autosize-textarea',
+		form: true,
+		test: 'autosize'
+	}
+)}}

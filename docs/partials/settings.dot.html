@@ -1,0 +1,18 @@
+
+<section class="box-lighten mb-n">
+    <h2 class="mb-m"><i class="icon-cogs"></i> Settings</h2>
+    <article class="box-text">
+        <dl class="list">
+            {{~it.settings :value:index}}
+            <dt><h4 class="mb-n c-main">{{=value[0]}}</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">{{=value[1]}}</p>
+                {{? value[2] }}
+                    <p class="fz-xs c-text-light">DEFAULT: {{=value[2]}}</p>
+                {{?}}
+            </dd>
+            {{~}}
+        </dl>
+    </article>
+
+</section>

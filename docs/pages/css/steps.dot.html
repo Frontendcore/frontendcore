@@ -1,0 +1,16 @@
+{
+    "name":"steps",
+    "relativePath":"../",
+    "template": "sections/css"
+}
+
+<h1>Steps</h1>
+<section id="steps" class="box-lighten">
+	<h2>.steps</h2>
+    {{= it.include('component',
+        {
+            id:'steps',
+            path:'css/steps/steps'
+        }
+    )}}
+</section>

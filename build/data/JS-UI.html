@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>FrontendCore: The all in one frontend framework.</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css"  href="../static/css/obolog.css" media="all"> <!--[if lte IE 8]> <script src="..//static/js/ie-old.js"></script> <link rel="stylesheet" type="text/css"  href="../static/css/ie-old.css" media="all"> <script type="text/javascript"> var $buoop = {reminder: 0}; $buoop.ol = window.onload; window.onload=function(){ try {if ($buoop.ol) $buoop.ol();}catch (e) {} var e = document.createElement("script"); e.setAttribute("type", "text/javascript"); e.setAttribute("src", "//browser-update.org/update.js"); document.body.appendChild(e); } </script><![endif]--> <!--[if gte IE 9]> <link rel="stylesheet" type="text/css"  href="../static/css/ie-new.css" media="all"> <![endif]--><script type="text/javascript"> var oGlobalSettings = { sPathJs : '../static/js/', sPathJsCore: '..//', sPathJsModules : '../static/js/modules/', sPathJsLibs : '../static/js/libs/', sPathRoot: '../', sPathCss: '../static/css/', bCss : false }</script><script src="../static/js/core.js"></script></head><body data-tc-modules="polyfills"><header class="header"><div class="grid"><a title="Frontend Core" href="../index.html" class="logo"><img src="../static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a></div><section class="menu"><div class="grid"><nav class="navigation mobile"><ul><li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li></ul></nav><nav id="side-menu" class="navigation tablet desktop"><ul><li><a title="index" href="../index.html">Home</a></li><li><a title="get-started/first-steps" href="../get-started/first-steps.html">Get Started</a></li><li><a title="css/index" href="../css/index.html">Css Components</a></li><li class="active"><a title="data/index" href="../data/index.html">DATA Components</a></li></ul></nav></div></section></header><div class="grid"> 
+{{? it.document.name }}
+<div class="col-10-12 push-right">
+	<div class="mobile fl-r">
+		<a href="#category-menu" class="button">Go to menu</a>
+	</div>
+	{{= it.document }}
+</div>
+<div class="col-2-12">
+	<nav id="category-menu" class="subnavigation-vertical">
+		<ul>
+			{{~it.menu :value:index}}
+			<li {{? it.document.name === value[0]}}class="active"{{?}}><a title="{{=value[1]}}" href="{{=value[1]}}.html"><i class="{{=value[2]}}"></i> {{=value[0]}}</a></li>
+			{{~}}
+		</ul>
+	</nav>
+</div>
+{{??}}
+<ul class="grid">
+	{{~it.menu :value:index}}
+	<li class="col-1-3 pr-l">
+		<a title="{{=value[1]}}" href="{{=value[1]}}.html" class="box-text w-100 d-b ta-c"><i class="{{=value[2]}} fz-xxl d-b"></i> <span class="fz-h1">{{=value[0]}}</span></a>
+	</li>
+	{{~}}
+</ul>
+{{= it.document }}
+{{?}}</div><!-- ["js/index","JS Architecture"], ["scss/index","SCSS Architecture"],--></body></html>

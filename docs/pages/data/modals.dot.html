@@ -1,0 +1,67 @@
+{
+	"name":"Modal windows",
+	"template": "sections/data"
+}
+
+
+<h1>Modal Windows</h1>
+<p>Open modal windows for inline content, iframes, images and/or galleries.</p>
+<section class="box-lighten">
+    <h2>Iframe</h2>
+      {{= it.include('component',
+          {
+              id:'modal-iframe',
+              path:'data/modals/modal-iframe'
+          }
+      )}}
+</section>
+<section class="box-lighten">
+    <h2 class="mb-m">Images</h2>
+    <h3>Single image</h3>
+    <p>Link to the image or html and add the  data-tc-modules="modal"</p>
+      {{= it.include('component',
+          {
+              id:'modal-image',
+              path:'data/modals/modal-image'
+          }
+      )}}
+    <h3>Multiple images</h3>
+    <p>Just use the class group-X to group you images</p>
+      {{= it.include('component',
+          {
+              id:'modal-gallery',
+              path:'data/modals/modal-gallery'
+          }
+      )}}
+</section>
+<section class="box-lighten">
+    <h2>Inline content</h2>
+    <p>To open a modal window from a inline content in the current page</p>
+      {{= it.include('component',
+          {
+              id:'modal-inline',
+              path:'data/modals/modal-inline'
+          }
+      )}}
+</section>
+
+
+{{= it.include('settings',
+    {
+        "settings":[
+            [
+                "href",
+                "Defines the content to load "            ],
+            [
+                "data-tc-width",
+                "Force the width of the modal window.",
+                "'auto'"
+            ],
+            [
+                "data-tc-height",
+                "Force the height of the modal window.",
+                "'auto'"
+            ]
+        ]
+    }
+)}}

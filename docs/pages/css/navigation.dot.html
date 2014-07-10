@@ -1,0 +1,75 @@
+{
+    "name":"navigation",
+    "relativePath":"../",
+    "template": "sections/css"
+}
+
+<h1>Navigation & Subnavigation</h1>
+<section id="navigation" class="box-lighten">
+	<h2>.navigation</h2>
+    {{= it.include('component',
+        {
+            id:'navigation',
+            path:'css/navigation/navigation'
+        }
+    )}}
+
+	<h2>.navigation small</h2>
+    {{= it.include('component',
+        {
+            id:'navigation-small',
+            path:'css/navigation/navigation-small'
+        }
+    )}}
+
+	<h2>.navigation with .form-search</h2>
+    {{= it.include('component',
+        {
+            id:'navigation-search',
+            path:'css/navigation/navigation-search'
+        }
+    )}}
+
+	<h2>.navigation-vertical</h2>
+       {{= it.include('component',
+           {
+               id:'navigation-vertical',
+               path:'css/navigation/navigation-vertical'
+           }
+       )}}
+</section>
+<section id="subnavigation" class="box-lighten">
+	<h2>.subnavigation</h2>
+    {{= it.include('component',
+          {
+              id:'subnavigation',
+              path:'css/navigation/subnavigation'
+          }
+      )}}
+
+    <h2>.subnavigation small</h2>
+       {{= it.include('component',
+           {
+               id:'subnavigation-small',
+               path:'css/navigation/subnavigation-small'
+           }
+       )}}
+   
+   	<h2>.subnavigation with .form-search</h2>
+       {{= it.include('component',
+           {
+               id:'subnavigation-search',
+               path:'css/navigation/subnavigation-search'
+           }
+       )}}
+   
+   	<h2>.subnavigation-vertical</h2>
+          {{= it.include('component',
+              {
+                  id:'subnavigation-vertical',
+                  path:'css/navigation/subnavigation-vertical'
+              }
+          )}}
+
+
+</section>

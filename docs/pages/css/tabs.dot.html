@@ -1,0 +1,25 @@
+{
+    "name":"tabs",
+    "relativePath":"../",
+    "template": "sections/css"
+}
+
+<h1>Tabs</h1>
+<section id="steps" class="box-lighten">
+	<h2>.tabs</h2>
+    {{= it.include('component',
+        {
+            id:'tabs',
+            path:'css/tabs/tabs'
+        }
+    )}}
+</section>
+<section id="steps" class="box-lighten">
+	<h2>.tabs with dropdown</h2>
+	{{= it.include('component',
+	{
+	id:'tabs-dropdown',
+	path:'css/tabs/tabs-dropdown'
+	}
+	)}}
+</section>
