@@ -1,14 +1,14 @@
 {
-	"menuActive":"get-started/first-steps",
+	"menuActive":"docs/index",
     "template": "layout/basic",
     "relativePath" : "../",
 	"menu":[
-		["First Steps","first-steps","icon-caret-square-o-down"]
+		["Philosophy","philosophy","icon-caret-square-o-down"],
+		["Getting started","getting-started","icon-caret-square-o-down"]
 	]
 }
 
-
-{{? it.document.name != 'Index' }}
+{{? it.document.name }}
 <div class="col-10-12 push-right">
 	<div class="mobile fl-r">
 		<a href="#category-menu" class="button">Go to menu</a>
@@ -25,12 +25,13 @@
 	</nav>
 </div>
 {{??}}
-{{= it.document }}
 <ul class="grid">
+	{{= it.document }}
 	{{~it.menu :value:index}}
 	<li class="col-1-3 pr-l">
-		<a title="{{=value[1]}}" href="{{=value[1]}}.html" class="box-text w-100 d-b ta-c"><i class="{{=value[2]}} fz-xl d-b"></i> <span class="fz-h2">{{=value[0]}}</span></a>
+		<a title="{{=value[1]}}" href="{{=value[1]}}.html" class="box-text w-100 d-b ta-c"><i class="{{=value[2]}} fz-xxl d-b"></i> <span class="fz-h1">{{=value[0]}}</span></a>
 	</li>
 	{{~}}
 </ul>
+
 {{?}}
