@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-15 -*-
 # =================================================================
 #
-# Authors: Tom Kralidis <tomkralidis@gmail.com>
+# Authors: Toni Pinel <tonipinel@gmail.com>
 #
 # Copyright (c) 2010 Tom Kralidis
 #
@@ -29,18 +29,18 @@
 #
 # =================================================================
 
-# CGI wrapper for pycsw
+# CGI wrapper for frontendcore
 
 import os
 import sys
 from StringIO import StringIO
-from pycsw import server
+from frontendcore import server
 
 CONFIG = 'default.cfg'
 GZIP = False
 
-if 'PYCSW_CONFIG' in os.environ:
-    CONFIG = os.environ['PYCSW_CONFIG']
+if 'FRONTENDCORE_CONFIG' in os.environ:
+    CONFIG = os.environ['FRONTENDCORE_CONFIG']
 if os.environ['QUERY_STRING'].lower().find('config') != -1:
     for kvp in os.environ['QUERY_STRING'].split('&'):
         if kvp.lower().find('config') != -1:

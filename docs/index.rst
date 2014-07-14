@@ -4,8 +4,8 @@
 pycsw |release| Documentation
 =============================
 
-:Author: Tom Kralidis
-:Contact: tomkralidis at gmail.com
+:Author: Toni Pinel
+:Contact: tonipinel at gmail.com
 :Release: |release|
 :Date: |today|
 

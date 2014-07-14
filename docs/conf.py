@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pycsw'
-authors = u'Tom Kralidis'
+authors = u'Toni Pinel'
 copyright = u'2010-2014, ' + authors
 
 # The version info for the project you're documenting, acts as replacement for
@@ -173,7 +173,7 @@ html_use_index = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pycswdoc'
+htmlhelp_basename = 'frontendcoredoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -192,7 +192,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'pycsw.tex', u'pycsw Documentation',
+  ('index', 'frontendcore.tex', u'frontendcore Documentation',
    authors, 'manual'),
 ]
 
@@ -222,7 +222,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pycsw', u'pycsw Documentation',
+    ('index', 'frontendcore', u'frontendcore Documentation',
      [authors], 1)
 ]
 
@@ -236,8 +236,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'pycsw', u'pycsw Documentation',
-   authors, 'pycsw', 'One line description of project.',
+  ('index', 'frontendcore', u'frontendcore Documentation',
+   authors, 'frontendcore', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -254,7 +254,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'pycsw'
+epub_title = u'frontendcore'
 epub_author = authors
 epub_publisher = authors
 epub_copyright = copyright

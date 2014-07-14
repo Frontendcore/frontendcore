@@ -1,9 +1,9 @@
 # -*- coding: iso-8859-15 -*-
 # =================================================================
 #
-# Authors: Tom Kralidis <tomkralidis@gmail.com>
+# Authors: Toni Pinel <tonipinel@gmail.com>
 #
-# Copyright (c) 2012 Tom Kralidis
+# Copyright (c) 2014 Toni Pinel
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -30,7 +30,7 @@
 
 import os
 from distutils.core import setup
-import pycsw
+import frontendcore
 
 
 def is_package(path):
@@ -101,9 +101,9 @@ if (os.path.exists('MANIFEST')):
 PACKAGES = find_packages('.').keys()
 
 # get package_data.keys()
-PACKAGE_DATA_XSD = find_packages_xsd('pycsw')
+PACKAGE_DATA_XSD = find_packages_xsd('frontendcore')
 
-# Because package 'pycsw' contains all other packages,
+# Because package 'frontendcore' contains all other packages,
 # process it last, so that it doesn't set it's package_data
 # files to one already set in other packages
 ROOT_PACKAGE = PACKAGE_DATA_XSD.pop(0)
@@ -111,21 +111,21 @@ ROOT_PACKAGE = PACKAGE_DATA_XSD.pop(0)
 # set package_data
 PACKAGE_DATA = get_package_data(PACKAGE_DATA_XSD)
 
-# update package_data for pycsw package
+# update package_data for frontendcore package
 PACKAGE_DATA.update(get_package_data([ROOT_PACKAGE], 'schemas'))
 
 # set the dependencies
 # GeoNode and OpenDataCatalog do not require SQLAlchemy
 INSTALL_REQUIRES = [line.strip() for line in open('requirements.txt')]
 
-KEYWORDS = ('pycsw csw catalogue catalog metadata discovery search'
+KEYWORDS = ('frontendcore csw catalogue catalog metadata discovery search'
             ' ogc iso fgdc dif ebrim inspire')
 
-DESCRIPTION = 'pycsw is an OGC CSW server implementation written in Python'
+DESCRIPTION = 'frontendcore is an OGC CSW server implementation written in Python'
 
 setup(
-    name='pycsw',
-    version=pycsw.__version__,
+    name='frontendcore',
+    version=frontendcore.__version__,
     description=DESCRIPTION,
     long_description=open('README.txt').read(),
     license='MIT',
@@ -135,11 +135,11 @@ setup(
     author_email='tomkralidis@gmail.com',
     maintainer='Tom Kralidis',
     maintainer_email='tomkralidis@gmail.com',
-    url='http://pycsw.org/',
+    url='http://frontendcore.com/',
     install_requires=INSTALL_REQUIRES,
     packages=PACKAGES,
     package_data=PACKAGE_DATA,
-    scripts=[os.path.join('bin', 'pycsw-admin.py')],
+    scripts=[os.path.join('bin', 'frontendcore-admin.py')],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
