@@ -1,5 +1,13 @@
 # Dependencies
 
+0. Install ruby, sass, compass and susy
+	Install compass last version
+
+		gem install compass --pre
+
+		gem install susy
+
+
 1. Install [NodeJS](http://nodejs.org/) on your computer
 2. Run the terminal/Cmd and Install [Yeoman](http://yeoman.io/)
 
