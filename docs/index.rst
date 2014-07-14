@@ -1,7 +1,7 @@
 .. _index:
 
 =============================
-pycsw |release| Documentation
+frontendcore |release| Documentation
 =============================
 
 :Author: Toni Pinel

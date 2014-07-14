@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# pycsw documentation build configuration file, created by
+# frontendcore documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug  2 19:48:50 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
