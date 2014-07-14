@@ -209,7 +209,7 @@ module.exports = function (grunt) {
 				tasks: ['tests']
 			},
 			docs: {
-				files: ['docs/**/*.html'],
+				files: ['docs/**/*.html','docs/**/*.md'],
 				tasks: ['html']
 			},
 			scss: {

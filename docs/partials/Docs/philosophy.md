@@ -7,6 +7,7 @@ The idea behind Frontend Core is pretty simple: create a framework providing the
 * [Atomic Design](http://bradfrostweb.com/blog/post/atomic-web-design/)
 * [Atomic CSS](https://www.lucidchart.com/techblog/2014/01/31/atomic-css-tool-set/)
 * [Zen Coding](https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn)
+* [The Single Responsability](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 
 ## Javascript
 * [Require JS](http://requirejs.org/)

@@ -1,5 +1,7 @@
 // Import here all your stuff to add it to the main package
 
+@import "_markdown.scss";
+
 
 @include parallax-slides(
 		'oboslide',
