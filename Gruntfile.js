@@ -168,13 +168,13 @@ module.exports = function (grunt) {
 		stencil: {
 			main: {
 				options: {
-					partials: 'docs/partials',
-					templates: 'docs/templates'
+					partials: 'site/partials',
+					templates: 'site/templates'
 				},
 				files: [
 					{
 						expand: true,
-						cwd: 'docs/pages/',
+						cwd: 'site/pages/',
 						src: '**/*.*',
 						dest: 'build',
 						ext: '.html',
@@ -209,8 +209,8 @@ module.exports = function (grunt) {
 				files: ['tests/**/*.js'],
 				tasks: ['tests']
 			},
-			docs: {
-				files: ['docs/**/*.html','docs/**/*.md'],
+			site: {
+				files: ['site/**/*.html','site/**/*.md'],
 				tasks: ['html']
 			},
 			scss: {
