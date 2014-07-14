@@ -1,12 +1,12 @@
 .. _get-started:
 
 Philosophy
-============
+==========
 
 The idea behind Frontend Core is pretty simple: create a framework providing the most common components and a standard architecture for today and tomorrow. Frontend Core doesn't reinvent CSS or JS techniques it just adapts some ideas pretty know for all the experts of the each area:
 
 CSS / HTML
-============
+----------
 - [Object oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 - [Atomic Design](http://bradfrostweb.com/blog/post/atomic-web-design/)
 - [Atomic CSS](https://www.lucidchart.com/techblog/2014/01/31/atomic-css-tool-set/)
@@ -14,7 +14,7 @@ CSS / HTML
 - [The Single Responsability](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 
 Javascript
-============
+----------
 
 - [Require JS](http://requirejs.org/)
 - [AMD Modules](http://requirejs.org/docs/whyamd.html)
@@ -73,13 +73,13 @@ Standards Support
 +-------------------+------------+
 | `ISO 19119`_      | 2005       |
 +-------------------+------------+
-| `NASA DIF`_       | 9.7        | 
+| `NASA DIF`_       | 9.7        |
 +-------------------+------------+
-| `FGDC CSDGM`_     | 1998       | 
+| `FGDC CSDGM`_     | 1998       |
 +-------------------+------------+
-| `SRU`_            | 1.1        | 
+| `SRU`_            | 1.1        |
 +-------------------+------------+
-| `OGC OpenSearch`_ | 1.0        | 
+| `OGC OpenSearch`_ | 1.0        |
 +-------------------+------------+
 
 Supported Operations
