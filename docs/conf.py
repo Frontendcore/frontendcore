@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pycsw'
+project = u'frontendcore'
 authors = u'Toni Pinel'
 copyright = u'2010-2014, ' + authors
 
