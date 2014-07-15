@@ -1,11 +1,10 @@
 {
 "menu":
 	[
-	    ["index.html","Home"],
-	    ["css/index.html","Static Components"],
-	    ["data/index.html","Dynamic Components"],
-	    ["responsive/index.html","Responsive"],
-		["http://docs.frontendcore.com","Docs"]
+	    ["index","Home"],
+	    ["css/index","Static Components"],
+	    ["data/index","Dynamic Components"],
+	    ["responsive/index","Responsive"]
     ]
 }
 
@@ -69,8 +68,9 @@
 			<nav id="side-menu" class="navigation tablet desktop">
 				<ul>
 					{{~it.menu :value:index}}
-					<li{{? it.document.menuActive === value[0]}} class="active"{{?}}><a title="{{=value[0]}}" href="{{= it.document.relativePath || '' }}{{=value[0]}}">{{=value[1]}}</a></li>
+					<li{{? it.document.menuActive === value[0]}} class="active"{{?}}><a title="{{=value[0]}}" href="{{= it.document.relativePath || '' }}{{=value[0]}}.html">{{=value[1]}}</a></li>
 					{{~}}
+					<li class="fl-r"> <a title="frontendcore docs" href="http://docs.frontendcore.com" target="_blank"><i class="icon-info-circle"></i> How to Install & Docs</a> </li>
 				</ul>
 			</nav>
 		</div>
