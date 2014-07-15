@@ -1,10 +1,11 @@
 {
-"menu":[
-    ["index","Home"],
-    ["docs/index","Docs"],
-    ["css/index","Static Components"],
-    ["data/index","Dynamic Components"],
-    ["responsive/index","Responsive"]
+"menu":
+	[
+	    ["index.html","Home"],
+	    ["css/index.html","Static Components"],
+	    ["data/index.html","Dynamic Components"],
+	    ["responsive/index.html","Responsive"],
+		["http://docs.frontendcore.com","Docs"]
     ]
 }
 
@@ -68,7 +69,7 @@
 			<nav id="side-menu" class="navigation tablet desktop">
 				<ul>
 					{{~it.menu :value:index}}
-					<li{{? it.document.menuActive === value[0]}} class="active"{{?}}><a title="{{=value[0]}}" href="{{= it.document.relativePath || '' }}{{=value[0]}}.html">{{=value[1]}}</a></li>
+					<li{{? it.document.menuActive === value[0]}} class="active"{{?}}><a title="{{=value[0]}}" href="{{= it.document.relativePath || '' }}{{=value[0]}}">{{=value[1]}}</a></li>
 					{{~}}
 				</ul>
 			</nav>

@@ -1,209 +1,75 @@
 .. _get-started:
 
-Philosophy
-==========
+Get Started
+============
 
-The idea behind Frontend Core is pretty simple: create a framework providing the most common components and a standard architecture for today and tomorrow. Frontend Core doesn't reinvent CSS or JS techniques it just adapts some ideas pretty know for all the experts of the each area:
+Installation
+-------------
 
-CSS / HTML
-----------
-- [Object oriented CSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
-- [Atomic Design](http://bradfrostweb.com/blog/post/atomic-web-design/)
-- [Atomic CSS](https://www.lucidchart.com/techblog/2014/01/31/atomic-css-tool-set/)
-- [Zen Coding](https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn)
-- [The Single Responsability](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+0. Install ruby, sass, compass and susy
+	Install compass last version
 
-Javascript
-----------
+		gem install compass --pre
 
-- [Require JS](http://requirejs.org/)
-- [AMD Modules](http://requirejs.org/docs/whyamd.html)
-- [Data attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes)
-- [Scalable JavaScript Application Architecture](http://www.youtube.com/watch?v=mKouqShWI4o)
-
-But all this staff is just theory and when you try to combine all you will find that there is a huge work in front of you. That's what Frontend Core can do for you, translate this "ideal" way of work to the real world.
+		gem install susy
 
 
-Features
-========
+1. Install [NodeJS](http://nodejs.org/) on your computer
+2. Run the terminal/Cmd and Install [Yeoman](http://yeoman.io/)
 
-- certified OGC `Compliant`_ and OGC Reference Implementation
-- harvesting support for WMS, WFS, WCS, WPS, WAF, CSW, SOS
-- implements `INSPIRE Discovery Services 3.0`_
-- implements `ISO Metadata Application Profile 1.0.0`_
-- implements `FGDC CSDGM Application Profile for CSW 2.0`_
-- implements the Search/Retrieval via URL (`SRU`_) search protocol
-- implements Full Text Search capabilities
-- implements OGC OpenSearch Geo and Time Extensions
-- supports ISO, Dublin Core, DIF, FGDC and Atom metadata models
-- CGI or WSGI deployment
-- simple configuration
-- transactional capabilities (CSW-T)
-- flexible repository configuration
-- `GeoNode`_ connectivity
-- `Open Data Catalog`_ connectivity
-- `CKAN`_ connectivity
-- federated catalogue distributed searching
-- realtime XML Schema validation
-- extensible profile plugin architecture
+		npm install -g yo
 
-Standards Support
------------------
+3. In the terminal, go to the folder you want to install Frontendcore and install the [generator-frontendcore](https://www.npmjs.org/package/generator-frontendcore) (an assistant to install frontendcore in your computer)
 
-+-------------------+------------+
-| Standard          | Version(s) |
-+===================+============+
-| `OGC CSW`_        | 2.0.2      |
-+-------------------+------------+
-| `OGC Filter`_     | 1.1.0      |
-+-------------------+------------+
-| `OGC OWS Common`_ | 1.0.0      |
-+-------------------+------------+
-| `OGC GML`_        | 3.1.1      |
-+-------------------+------------+
-| `OGC SFSQL`_      | 1.2.1      |
-+-------------------+------------+
-| `Dublin Core`_    | 1.1        |
-+-------------------+------------+
-| `SOAP`_           | 1.2        |
-+-------------------+------------+
-| `ISO 19115`_      | 2003       |
-+-------------------+------------+
-| `ISO 19139`_      | 2007       |
-+-------------------+------------+
-| `ISO 19119`_      | 2005       |
-+-------------------+------------+
-| `NASA DIF`_       | 9.7        |
-+-------------------+------------+
-| `FGDC CSDGM`_     | 1998       |
-+-------------------+------------+
-| `SRU`_            | 1.1        |
-+-------------------+------------+
-| `OGC OpenSearch`_ | 1.0        |
-+-------------------+------------+
+		npm install generator-frontendcore
 
-Supported Operations
---------------------
+4. Launch the assistant and follow the steps
 
-.. csv-table::
-  :header: Request,Optionality,Supported,HTTP method binding(s)
+		yo frontendcore
 
-  GetCapabilities,mandatory,yes,GET (KVP) / POST (XML) / SOAP
-  DescribeRecord,mandatory,yes,GET (KVP) / POST (XML) / SOAP
-  GetRecords,mandatory,yes,GET (KVP) / POST (XML) / SOAP
-  GetRecordById,optional,yes,GET (KVP) / POST (XML) / SOAP
-  GetRepositoryItem,optional,yes,GET (KVP)
-  GetDomain,optional,yes,GET (KVP) / POST (XML) / SOAP
-  Harvest,optional,yes,GET (KVP) / POST (XML) / SOAP
-  Transaction,optional,yes,POST (XML) / SOAP
+	Now you will have the following files on your computer:
 
-.. note::
+		/static
+			|- components
+			|- css
+			|- fonts
+			|- js
 
-  Asynchronous processing supported for GetRecords and Harvest requests (via ``csw:ResponseHandler``)
+	<p class="msg-info">Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).</p>
 
-.. note::
+5. Add the CSS components to the head
 
-  Supported Harvest Resource Types are listed in :ref:`transactions`
+	Include the general CSS
 
-Supported Output Formats
-------------------------
+         <link rel="stylesheet" type="text/css"  href="static/css/index.css" media="all">
 
-- XML (default)
-- JSON
+	Add the CSS and JS files to support IE9 & IE 8
 
-Supported Output Schemas
-------------------------
+        <!--[if gte IE 9]>
+        <link rel="stylesheet" type="text/css"  href="static/css/ie-new.css" media="all">
+        <![endif]-->
+        <!--[if lte IE 8]>
+        <script src="static/js/ie-old.js"></script>
+        <link rel="stylesheet" type="text/css"  href="static/css/ie-old.css" media="all">
+        <![endif]-->
 
-- Dublin Core
-- ISO 19139
-- FGDC CSDGM
-- NASA DIF
-- Atom
+6. Add the Javascript to the head and define the paths
+	Include the core.js to the head of your page:
 
-Supported Sorting Functionality
--------------------------------
+        <script src="js/core.js"></script>
 
-- ogc:SortBy
-- ascending or descending
-- aspatial (queryable properties)
-- spatial (geometric area)
+	Define the paths for FrontendCore JS and customize it using the var oGlobalSettings:
 
-Supported Filters
------------------
+          <script type="text/javascript">
+              var oGlobalSettings = {
+                  sPathJs : 'http://' + document.domain + '/frontendcore/build/js/',
+                  sPathCss: './css/',
+                  bCss : false
+              }
+          </script>
 
-Full Text
-^^^^^^^^^
+	Add the JS files to support IE 8
 
-- csw:AnyText
-
-Geometry Operands
-^^^^^^^^^^^^^^^^^
-
-- gml:Point
-- gml:LineString
-- gml:Polygon
-- gml:Envelope
-
-.. note::
-
-  Coordinate transformations are supported
-
-Spatial Operators
-^^^^^^^^^^^^^^^^^
-
-- BBOX
-- Beyond
-- Contains
-- Crosses
-- Disjoint
-- DWithin
-- Equals
-- Intersects
-- Overlaps
-- Touches
-- Within
-
-Logical Operators
-^^^^^^^^^^^^^^^^^
-
-- Between
-- EqualTo
-- LessThanEqualTo
-- GreaterThan
-- Like
-- LessThan
-- GreaterThanEqualTo
-- NotEqualTo
-- NullCheck
-
-Functions
-^^^^^^^^^
-- length
-- lower
-- ltrim
-- rtrim
-- trim
-- upper
-
-.. _`OGC CSW`: http://www.opengeospatial.org/standards/cat
-.. _`ISO Metadata Application Profile 1.0.0`: http://portal.opengeospatial.org/files/?artifact_id=21460
-.. _`OGC Filter`: http://www.opengeospatial.org/standards/filter
-.. _`OGC OWS Common`: http://www.opengeospatial.org/standards/common
-.. _`OGC GML`: http://www.opengeospatial.org/standards/gml
-.. _`OGC SFSQL`: http://www.opengeospatial.org/standards/sfs
-.. _`Dublin Core`: http://www.dublincore.org/
-.. _`OGC CITE CSW`: http://cite.opengeospatial.org/test_engine/csw/2.0.2
-.. _`SOAP`: http://www.w3.org/TR/soap/
-.. _`INSPIRE Discovery Services 3.0`: http://inspire.jrc.ec.europa.eu/documents/Network_Services/TechnicalGuidance_DiscoveryServices_v3.0.pdf
-.. _`ISO 19115`: http://www.iso.org/iso/catalogue_detail.htm?csnumber=26020
-.. _`ISO 19139`: http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557
-.. _`ISO 19119`: http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=39890
-.. _`NASA DIF`: http://gcmd.gsfc.nasa.gov/add/difguide/index.html
-.. _`FGDC CSDGM`: http://www.fgdc.gov/metadata/csdgm
-.. _`FGDC CSDGM Application Profile for CSW 2.0`: http://portal.opengeospatial.org/files/?artifact_id=16936
-.. _`SRU`: http://www.loc.gov/standards/sru/
-.. _`OGC OpenSearch`: http://www.opengeospatial.org/standards/opensearchgeo
-.. _`GeoNode`: http://geonode.org/
-.. _`Open Data Catalog`: https://github.com/azavea/Open-Data-Catalog/
-.. _`CKAN`: http://ckan.org/
-.. _`Compliant`: http://www.opengeospatial.org/resource/products/details/?pid=1104
+            <!--[if lte IE 8]>
+            <script src="{{= it.document.relativePath || '' }}/static/js/ie-old.js"></script>
+            <![endif]-->
