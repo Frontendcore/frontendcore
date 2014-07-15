@@ -48,7 +48,7 @@ Now you will have the following folders on your computer:
 
 .. note::
 
-Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).
+  Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).
 
 5. Add the CSS components to the head
 
