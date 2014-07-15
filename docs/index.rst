@@ -12,4 +12,5 @@ frontendcore |release| Documentation
 .. toctree::
    :maxdepth: 2
 
+   philosophy
    get-started
