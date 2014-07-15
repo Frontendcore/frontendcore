@@ -6,36 +6,41 @@ Get Started
 Installation
 -------------
 
-0. Install ruby, sass, compass and susy
-	
+# First of all, `Install Ruby & Sass <http://sass-lang.com/install>`_
+
+# Install the version 1.0 of Compass:
+
 .. code-block:: bash
 
 	gem install compass --pre
 
+
+# Install Susy
 .. code-block:: bash
 
 	gem install susy
 		
-1. Install [NodeJS](http://nodejs.org/) on your computer
-2. Run the terminal/Cmd and Install [Yeoman](http://yeoman.io/)
+# Install `NodeJS <http://nodejs.org>`_ on your computer
+
+# Run the terminal or cmd and Install `Yeoman <http://yeoman.io>`_
 
 .. code-block:: bash
 	
 	npm install -g yo
 
-3. In the terminal, go to the folder you want to install Frontendcore and install the [generator-frontendcore](https://www.npmjs.org/package/generator-frontendcore) (an assistant to install frontendcore in your computer)
+# In the terminal, go to the folder you want to install Frontendcore and install the `generator-frontendcore <https://www.npmjs.org/package/generator-frontendcore>`_ (an assistant to install frontendcore in your computer)
 
 .. code-block:: bash
 
 	npm install generator-frontendcore
 
-4. Launch the assistant and follow the steps
+# Launch the assistant and follow the steps
 
 .. code-block:: bash
 
 	yo frontendcore
 
-Now you will have the following folders on your computer:
+# Now you will have all the stuff installed. To be sure, check if you have following folders on your computer:
 
 .. code-block:: bash
 
@@ -50,15 +55,17 @@ Now you will have the following folders on your computer:
 
   Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).
 
-5. Add the CSS components to the head
 
-Include the general CSS
+Setting up
+----------
+
+# Include the general CSS
 
 .. code-block:: html
 
 	<link rel="stylesheet" type="text/css"  href="static/css/index.css" media="all">
 
-Add the CSS and JS files to support IE9 & IE 8
+# Add the CSS and JS files to support IE9 & IE 8
 
 .. code-block:: html
 
@@ -70,7 +77,7 @@ Add the CSS and JS files to support IE9 & IE 8
 		<link rel="stylesheet" type="text/css"  href="static/css/ie-old.css" media="all">
 	<![endif]-->
 
-6. Add the Javascript to the head and define the paths
+# Add the Javascript to the head and define the paths
 
 Include the core.js to the head of your page:
 
@@ -78,19 +85,19 @@ Include the core.js to the head of your page:
 
 	<script src="js/core.js"></script>
 
-Define the paths for FrontendCore JS and customize it using the var oGlobalSettings:
+# Define the paths and customizations for JS frontend-core:
 
 .. code-block:: html
 
 	<script type="text/javascript">
 		var oGlobalSettings = {
-			sPathJs : 'http://' + document.domain + '/frontendcore/build/js/',
+			sPathJs : 'http://' + document.domain + '/static/components/frontendcore-js/',
 			sPathCss: './css/',
 			bCss : false
 		}
-         </script>
+	</script>
 
-Add the JS files to support IE 8
+# Add the JS files to support IE 8 (optional)
 
 .. code-block:: html
 
