@@ -30,16 +30,23 @@
         }
     )}}
 
-	<h2>.navigation-vertical</h2>
+	<h2>.navigation vertical</h2>
        {{= it.include('component',
            {
                id:'navigation-vertical',
                path:'css/navigation/navigation-vertical'
            }
        )}}
+	<h2>.navigation and .navigation-sub</h2>
+	{{= it.include('component',
+	{
+	id:'navigation-subnavigation',
+	path:'css/navigation/navigation-subnavigation'
+	}
+	)}}
 </section>
-<section id="subnavigation" class="box-lighten">
-	<h2>.subnavigation</h2>
+<section id="navigation-sub" class="box-lighten">
+	<h2>.navigation-sub</h2>
     {{= it.include('component',
           {
               id:'subnavigation',
@@ -47,7 +54,7 @@
           }
       )}}
 
-    <h2>.subnavigation small</h2>
+    <h2>.navigation-sub small</h2>
        {{= it.include('component',
            {
                id:'subnavigation-small',
@@ -55,7 +62,7 @@
            }
        )}}
    
-   	<h2>.subnavigation with .form-search</h2>
+   	<h2>.navigation-sub with .form-search</h2>
        {{= it.include('component',
            {
                id:'subnavigation-search',
@@ -63,7 +70,7 @@
            }
        )}}
    
-   	<h2>.subnavigation-vertical</h2>
+   	<h2>.navigation-sub vertical</h2>
           {{= it.include('component',
               {
                   id:'subnavigation-vertical',
