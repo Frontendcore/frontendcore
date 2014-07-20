@@ -1,0 +1,10 @@
+@include parallax-slides(
+		'slide',
+		(300px,300px,300px,300px),
+		(
+			'../../static/img/anti-bullying-tom-froese-wallpaper-1280x800.jpg',
+			'../../static/img/brock-davis-wallpaper-1280x800.jpg',
+			'../../static/img/dark-igloo-wallpaper-1-1280x800.jpg',
+			'../../static/img/haik-avanian-wallpaper-1280x800.jpg'
+		)
+);

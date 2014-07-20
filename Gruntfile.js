@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
                     require: 'susy',
-					config: 'css/config.rb'
+					config: 'config.rb'
 				}
 			}
 		},
