@@ -1,50 +1,31 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>FrontendCore: The all in one frontend framework.</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css"  href="../static/css/main.css" media="all"> <!--[if lte IE 8]> <script src="..//static/js/ie-old.js"></script> <link rel="stylesheet" type="text/css"  href="../static/css/ie-old.css" media="all"> <script type="text/javascript"> var $buoop = {reminder: 0}; $buoop.ol = window.onload; window.onload=function(){ try {if ($buoop.ol) $buoop.ol();}catch (e) {} var e = document.createElement("script"); e.setAttribute("type", "text/javascript"); e.setAttribute("src", "//browser-update.org/update.js"); document.body.appendChild(e); } </script><![endif]--> <!--[if gte IE 9]> <link rel="stylesheet" type="text/css"  href="../static/css/ie-new.css" media="all"> <![endif]--><script type="text/javascript"> var oGlobalSettings = { sPathJs : '../static/js/', sPathJsCore: '..//', sPathJsModules : '../static/js/modules/', sPathJsLibs : '../static/js/libs/', sPathRoot: '../', sPathCss: '../static/css/', bCss : false, bResponsiveImages: true }</script><script src="../static/js/core.js"></script></head><body data-tc-modules="polyfills"><header class="header"><div class="grid"><a title="Frontend Core" href="../index.html" class="logo"><img src="../static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a></div><section class="menu"><div class="grid"><nav class="navigation mobile"><ul><li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li></ul></nav><nav id="side-menu" class="navigation tablet desktop"><ul><li><a title="index" href="../index.html">Home</a></li><li><a title="css/index" href="../css/index.html">Static Components</a></li><li><a title="data/index" href="../data/index.html">Dynamic Components</a></li><li><a title="responsive/index" href="../responsive/index.html">Responsive</a></li><li class="fl-r"> <a title="frontendcore docs" href="http://docs.frontendcore.com" target="_blank"><i class="icon-info-circle"></i> How to Install & Docs</a> </li></ul></nav></div></section></header><div class="grid"> <div class="col-10-12 push-right"><h1>Color Variables</h1><section class="box-text"><pre><code data-tc-modules="code">// Color for text & Foreground elements
-//$color-text: #000;
-
-// Color for text background elements
-//$color-text-background: #FFF;
-
-// Color for body
-//$color-body: #E6E9EA;
-
-// Primary color
-//$color-primary: #0193d3;
-
-// Secondary color
-//$color-secondary: #f77990;
-
-// Color for links
-//$color-link: #0086da;
-
-// Color for link hover
-//$color-link-hover: #006bc1;
-
-// Color background for link hover
-//$color-link-background: #cce7fc;
-
-// Color for boxes
-//$color-box: #f4f2f2;
-
-// Color of the header
-//$color-header: #3d474e;
-
-// Color of the rank
-//$color-rank:#FCCB04;
-
-// Color for info elements
-//$color-info: #1E72A6;
-
-// Color for Confirmation elements
-//$color-ok: #6A932C;
-
-// Color for Error elements
-//$color-ko : #EE3728;
-
-// Color for warning elements
-//$color-warning: #DFB84F;
-
-// Color for focused elements
-//$color-focus: #ffffea;
-
-
-</code></pre></section></div><div class="col-2-12"><nav class="navigation-sub vertical mr-l"><ul><li class="active"><a title="colors" href="colors.html"><i class="icon-unlock"></i> Colors</a></li></ul></nav></div></div></body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>FrontendCore: The all in one frontend framework.</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css"  href="../static/css/main.css" media="all"> <!--[if lte IE 8]> <script src="..//static/js/ie-old.js"></script> <link rel="stylesheet" type="text/css"  href="../static/css/ie-old.css" media="all"> <script type="text/javascript"> var $buoop = {reminder: 0}; $buoop.ol = window.onload; window.onload=function(){ try {if ($buoop.ol) $buoop.ol();}catch (e) {} var e = document.createElement("script"); e.setAttribute("type", "text/javascript"); e.setAttribute("src", "//browser-update.org/update.js"); document.body.appendChild(e); } </script><![endif]--> <!--[if gte IE 9]> <link rel="stylesheet" type="text/css"  href="../static/css/ie-new.css" media="all"> <![endif]--><script type="text/javascript"> var oGlobalSettings = { sPathJs : '../static/js/', sPathJsCore: '..//', sPathJsModules : '../static/js/modules/', sPathJsLibs : '../static/js/libs/', sPathRoot: '../', sPathCss: '../static/css/', bCss : false, bResponsiveImages: true }</script><script src="../static/js/core.js"></script></head><body data-tc-modules="polyfills"><header class="header"><div class="grid"><a title="Frontend Core" href="../index.html" class="logo"><img src="../static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a></div><section class="menu"><div class="grid"><nav class="navigation mobile"><ul><li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li></ul></nav><nav id="side-menu" class="navigation tablet desktop"><ul><li><a title="index" href="../index.html">Home</a></li><li><a title="css/index" href="../css/index.html">Static Components</a></li><li><a title="data/index" href="../data/index.html">Dynamic Components</a></li><li><a title="responsive/index" href="../responsive/index.html">Responsive</a></li><li class="fl-r"> <a title="frontendcore docs" href="http://docs.frontendcore.com" target="_blank"><i class="icon-info-circle"></i> How to Install & Docs</a> </li></ul></nav></div></section></header><div class="grid"> <div class="col-10-12 push-right"><h1>Color Variables</h1><section class="box-text"><pre><code data-tc-modules="code">/*
+$colors: (
+	foreground: #000,
+	foreground-light: auto,
+	foreground-dark: auto,
+	background:	#FFF,
+	background-light: auto,
+	background-dark: auto,
+	body: #E6E9EA,
+	primary: #0193d3,
+	primary-light: auto,
+	primary-dark: auto,
+	secondary: #f77990,
+	secondary-light: auto,
+	secondary-dark: auto,
+	link: #0086da,
+	link-hover:	#006bc1,
+	link-hover-background: transparent,
+	contrast: #f4f2f2,
+	contrast-light: auto,
+	contrast-dark: auto,
+	megacontrast: #000,
+	header-background: #3d474e,
+	rank: #FCCB04,
+	info: #1E72A6,
+	success: #6A932C,
+	error: #EE3728,
+	warning: #DFB84F,
+	input-focus: #ffffea
+) !global !default;
+*/</code></pre></section></div><div class="col-2-12"><nav class="navigation-sub vertical mr-l"><ul><li class="active"><a title="colors" href="colors.html"><i class="icon-unlock"></i> Colors</a></li></ul></nav></div></div></body></html>
