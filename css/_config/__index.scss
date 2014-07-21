@@ -1,17 +1,5 @@
-// colors config
-@import 'colors';
+@import "_fonts.css";
 
-// colors config
-@import 'colors-computed';
+@import "_colors.css";
 
-// fonts config
-@import 'fonts';
-
-// measures config
-@import 'measures';
-
-// browsers config
-@import 'browsers';
-
-// User interface
-@import 'ui';
+@import "_objects.css";
