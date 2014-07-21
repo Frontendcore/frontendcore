@@ -18,8 +18,6 @@ TinyCore.AMD.define('autocomplete', ['devicePackage'], function () {
 					self.autobind(this);
 				});
 			});
-
-
 		},
 		autobind: function (oTarget, sData) {
 
@@ -37,12 +35,11 @@ TinyCore.AMD.define('autocomplete', ['devicePackage'], function () {
 
                     aValues = oTarget.getAttribute('data-tc-values').split(',');
 
-                    console.log(aValues);
-
                     for( var nKey = 0; aValues.length > nKey; nKey++){
                         aTemp = {};
                         aTemp.value = aValues[nKey];
                         aTemp.label = aValues[nKey];
+                        oOptions.source.push(aTemp);
                         oOptions.source.push(aTemp);
                     }
 
