@@ -10,6 +10,12 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+        sassdoc: {
+            dist: {
+                src: 'css/core/',
+                dest: 'build/sassdoc/'
+            }
+        },
 		cssmin: {
 			combine: {
 				files: {
@@ -230,13 +236,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-zip');
-
+    grunt.loadNpmTasks('grunt-sassdoc');
 	grunt.registerTask('javascript', ['uglify:core', 'jshint']);
 	grunt.registerTask('tests', ['uglify:tests']);
-	grunt.registerTask('scss', ['compass', 'cssmin']);
+	grunt.registerTask('scss', ['compass', 'cssmin','sassdoc']);
 	grunt.registerTask('html', ['stencil']);
 
-	grunt.registerTask('default', ['stencil', 'compass', 'cssmin', 'uglify', 'jshint']);
+	grunt.registerTask('default', ['stencil', 'compass','sassdoc','cssmin', 'uglify', 'jshint']);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);
