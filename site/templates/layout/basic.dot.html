@@ -70,8 +70,9 @@
 					{{~it.menu :value:index}}
 					<li{{? it.document.menuActive === value[0]}} class="active"{{?}}><a title="{{=value[0]}}" href="{{= it.document.relativePath || '' }}{{=value[0]}}.html">{{=value[1]}}</a></li>
 					{{~}}
-					<li class="fl-r"> <a title="frontendcore docs" href="http://docs.frontendcore.com" target="_blank">How to docs</a> </li>
-					<li class="fl-r"> <a title="frontendcore docs" href="{{= it.document.relativePath || '' }}sassdoc/index.html" target="_blank">SCSS docs</a> </li>
+					<li class="fl-r"> <a title="frontendcore docs" href="http://docs.frontendcore.com" target="_blank">General</a> </li>
+					<li class="fl-r"> <a title="frontendcore docs" href="{{= it.document.relativePath || '' }}sassdoc/index.html" target="_blank">SCSS</a> </li>
+					<li class="fl-r"> <p class="pt-m"><strong>Docs:</strong></p> </li>
 				</ul>
 			</nav>
 		</div>
