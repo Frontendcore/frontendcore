@@ -197,27 +197,15 @@ module.exports = function (grunt) {
 				]
 			}
 		},
-		zip: {
-			'FrontendCore-js': {
-				cwd: 'build/static/js',
-				src: ['build/static/js/*/**','build/static/js/*'],
-				dest: 'build/downloads/FrontendCore-js.zip'
-			},
-			'FrontendCore-scss': {
-				cwd: 'css',
-				src: ['css/*/**','css/*'],
-				dest: 'build/downloads/FrontendCore-scss.zip'
-			},
-			'FrontendCore-css': {
-				cwd: 'build/static/css',
-				src: ['build/static/css/**/*','build/static/css/*'],
-				dest: 'build/downloads/FrontendCore-css.zip'
-			}
-		},
+        changelog: {
+            options: {
+                dest: 'changelog.md'
+            }
+        },
 		watch: {
 			scripts: {
 				files: ['js/core/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
-				tasks: ['javascript']
+				tasks: ['js']
 			},
 			tests: {
 				files: ['tests/**/*.js'],
@@ -243,10 +231,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-sassdoc');
-	grunt.registerTask('javascript', ['uglify:core', 'jshint','jasmine']);
-	grunt.registerTask('tests', ['uglify:tests']);
+    grunt.loadNpmTasks('grunt-conventional-changelog');
+    grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
+	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('scss', ['compass', 'cssmin','sassdoc']);
 	grunt.registerTask('html', ['stencil']);
 
