@@ -7,7 +7,9 @@ describe('tip', function() {
 
 	beforeEach(function(done) {
 		TinyCore.AMD.require([sModuleName], function() {
-			done();
+            if (done !== undefined) {
+                done();
+            }
 		});
 	});
 
@@ -21,7 +23,6 @@ describe('tip', function() {
 			expect(oTestedModule.oDefault.fixed).toBeDefined();
 		});
 	});
-
 
 	describe('onStart', function() {
 

@@ -5,7 +5,9 @@ describe('Autocomplete', function() {
 
 	beforeEach(function(done) {
 		TinyCore.AMD.require(['autocomplete'], function() {
-			done();
+			if (done !== undefined) {
+                done();
+            }
 		});
 	});
 

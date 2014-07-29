@@ -164,9 +164,17 @@ module.exports = function (grunt) {
 		},
 		jasmine: {
 			main:{
-				src: 'build/**/*.js',
+				src: [
+                    'build/static/js/ui/*.js'
+                ],
 				options: {
-					specs: 'js/test/**/*.js',
+					specs: 'tests/*.js',
+                    vendor :  [
+                        'js/base/_oGlobalSettings.js',
+                        'build/static/js/core.js',
+                        'build/static/js/devices/desktop.js',
+                        'build/static/js/ui/*.js'
+                    ],
 					outfile: 'build/js-tests.html'
 				}
 			}
@@ -237,12 +245,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-sassdoc');
-	grunt.registerTask('javascript', ['uglify:core', 'jshint']);
+	grunt.registerTask('javascript', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests']);
 	grunt.registerTask('scss', ['compass', 'cssmin','sassdoc']);
 	grunt.registerTask('html', ['stencil']);
 
-	grunt.registerTask('default', ['stencil', 'compass','sassdoc','cssmin', 'uglify', 'jshint']);
+	grunt.registerTask('default', ['stencil', 'compass','sassdoc','cssmin', 'uglify', 'jshint','jasmine']);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);

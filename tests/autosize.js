@@ -5,7 +5,9 @@ describe('autosize', function() {
 
 	beforeEach(function(done) {
 		TinyCore.AMD.require(['autosize'], function() {
-			done();
+            if (done !== undefined) {
+                done();
+            }
 		});
 	});
 

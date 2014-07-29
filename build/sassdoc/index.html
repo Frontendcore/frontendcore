@@ -93,6 +93,26 @@
         
 
           
+          <li class="sidebar__item  js-sassdoc__item" data-name="background-transparent" data-type="mixin">
+            <a class="sidebar__link" href="#mixin-background-transparent">background-transparent
+            
+            
+            </a>
+          </li>
+
+        
+
+          
+          <li class="sidebar__item  js-sassdoc__item" data-name="background-gradient-ie-old" data-type="mixin">
+            <a class="sidebar__link" href="#mixin-background-gradient-ie-old">background-gradient-ie-old
+            
+            
+            </a>
+          </li>
+
+        
+
+          
           <li class="sidebar__item  js-sassdoc__item" data-name="filter-blur" data-type="mixin">
             <a class="sidebar__link" href="#mixin-filter-blur">filter-blur
             
@@ -125,26 +145,6 @@
           
           <li class="sidebar__item  js-sassdoc__item" data-name="parallax-slides" data-type="mixin">
             <a class="sidebar__link" href="#mixin-parallax-slides">parallax-slides
-            
-            
-            </a>
-          </li>
-
-        
-
-          
-          <li class="sidebar__item  js-sassdoc__item" data-name="background-transparent" data-type="mixin">
-            <a class="sidebar__link" href="#mixin-background-transparent">background-transparent
-            
-            
-            </a>
-          </li>
-
-        
-
-          
-          <li class="sidebar__item  js-sassdoc__item" data-name="background-gradient-ie-old" data-type="mixin">
-            <a class="sidebar__link" href="#mixin-background-gradient-ie-old">background-gradient-ie-old
             
             
             </a>
@@ -199,6 +199,371 @@
           <h1 class="main__heading" id="mixin">Mixins</h1>
 
           
+          
+
+            
+            
+            
+            <section class="main__item  item" id="mixin-background-transparent">
+              <h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-background-transparent">background-transparent</a>
+
+  
+
+  
+
+  
+</h3>
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+<pre class="item__code  language-scss"><code>@mixin background-transparent($bg-color: $color-text-background, $opacity: 0.7) { ... }</code></pre>
+
+
+
+  
+  <h3 class="item__sub-heading">Description</h3>
+  
+  <div class="item__description"><p><strong>Mixin for transparent backgrounds</strong><br>Crossbrowser Mixin for simple transparent backgrounds</p></div>
+
+
+  <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$bg-color</code></th>
+          <td data-label="desc"><p>Background color</p></td>
+          <td data-label="type">
+          
+            Hex-color
+          
+          </td>
+          <td data-label="default">
+          
+            <code>$color-text-background</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$opacity</code></th>
+          <td data-label="desc"><p>Opacity from 0 to 1</p></td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            <code>0.7</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  	
+
+  
+  <h3 class="item__sub-heading">Links</h3>
+
+  <ul class="list-unstyled">
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">
+        
+          https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+        
+      </a>
+    </li>
+  
+  </ul>
+
+
+  
+  <h3 class="item__sub-heading">Author</h3>
+
+  <ul class="list-unstyled">
+    
+      <li><p>Toni Pinel</p></li>
+    
+  </ul>
+
+
+  
+  <h3 class="item__sub-heading">Found at</h3>
+
+  <p><code>core\css\core\helpers\mixins\_backgrounds.scss</code></p>
+
+
+
+
+            </section>
+
+          
+
+            
+            
+            
+            <section class="main__item  item" id="mixin-background-gradient-ie-old">
+              <h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-background-gradient-ie-old">background-gradient-ie-old</a>
+
+  
+
+  
+
+  
+</h3>
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+<pre class="item__code  language-scss"><code>@mixin background-gradient-ie-old($start-color: $color-box-dark, $end-color: $color-box-light, $orientation: vertical) { ... }</code></pre>
+
+
+
+  
+  <h3 class="item__sub-heading">Description</h3>
+  
+  <div class="item__description"><p><strong>Mixins for transparent backgrounds</strong><br>Crossbrowser Mixin for simple transparent backgrounds on old IE browsers (ie9 and older). Just generates code if $legacy-support-for-ie9 is set to true.</p></div>
+
+
+  <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$start-color</code></th>
+          <td data-label="desc"><p>Start color</p></td>
+          <td data-label="type">
+          
+            Hex-color
+          
+          </td>
+          <td data-label="default">
+          
+            <code>$color-box-dark</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$end-color</code></th>
+          <td data-label="desc"><p>End color</p></td>
+          <td data-label="type">
+          
+            Hex-color
+          
+          </td>
+          <td data-label="default">
+          
+            <code>$color-box-light</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$orientation</code></th>
+          <td data-label="desc"><p>vertical or horizontal orientation of the gradient</p></td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            <code>vertical</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  	
+
+  
+  <h3 class="item__sub-heading">Links</h3>
+
+  <ul class="list-unstyled">
+  
+    <li>
+      <a href="http://msdn.microsoft.com/en-us/library/ms532997(v=vs.85).aspx">
+        
+          http://msdn.microsoft.com/en-us/library/ms532997(v=vs.85).aspx
+        
+      </a>
+    </li>
+  
+  </ul>
+
+
+  
+  <h3 class="item__sub-heading">Author</h3>
+
+  <ul class="list-unstyled">
+    
+      <li><p>Toni Pinel</p></li>
+    
+  </ul>
+
+
+  
+  <h3 class="item__sub-heading">Found at</h3>
+
+  <p><code>core\css\core\helpers\mixins\_backgrounds.scss</code></p>
+
+
+
+
+            </section>
+
           
 
             
@@ -840,371 +1205,6 @@
   <h3 class="item__sub-heading">Found at</h3>
 
   <p><code>core\css\core\helpers\mixins\_parallax-slides.scss</code></p>
-
-
-
-
-            </section>
-
-          
-
-            
-            
-            
-            <section class="main__item  item" id="mixin-background-transparent">
-              <h3 class="item__heading">
-  
-
-  <a class="item__name" href="#mixin-background-transparent">background-transparent</a>
-
-  
-
-  
-
-  
-</h3>
-
-
-
-
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-<pre class="item__code  language-scss"><code>@mixin background-transparent($bg-color: $color-text-background, $opacity: 0.7) { ... }</code></pre>
-
-
-
-  
-  <h3 class="item__sub-heading">Description</h3>
-  
-  <div class="item__description"><p><strong>Mixin for transparent backgrounds</strong><br>Crossbrowser Mixin for simple transparent backgrounds</p></div>
-
-
-  <h3 class="item__sub-heading">Parameters</h3>
-
-
-
-  <table class="item__parameters">
-    <thead>
-      <tr>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-        <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$bg-color</code></th>
-          <td data-label="desc"><p>Background color</p></td>
-          <td data-label="type">
-          
-            Hex-color
-          
-          </td>
-          <td data-label="default">
-          
-            <code>$color-text-background</code>
-          
-          </td>
-        </tr>
-      
-        <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$opacity</code></th>
-          <td data-label="desc"><p>Opacity from 0 to 1</p></td>
-          <td data-label="type">
-          
-            Number
-          
-          </td>
-          <td data-label="default">
-          
-            <code>0.7</code>
-          
-          </td>
-        </tr>
-      
-    </tbody>
-  </table>
-
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  	
-
-  
-  <h3 class="item__sub-heading">Links</h3>
-
-  <ul class="list-unstyled">
-  
-    <li>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">
-        
-          https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
-        
-      </a>
-    </li>
-  
-  </ul>
-
-
-  
-  <h3 class="item__sub-heading">Author</h3>
-
-  <ul class="list-unstyled">
-    
-      <li><p>Toni Pinel</p></li>
-    
-  </ul>
-
-
-  
-  <h3 class="item__sub-heading">Found at</h3>
-
-  <p><code>core\css\core\helpers\mixins\_backgrounds.scss</code></p>
-
-
-
-
-            </section>
-
-          
-
-            
-            
-            
-            <section class="main__item  item" id="mixin-background-gradient-ie-old">
-              <h3 class="item__heading">
-  
-
-  <a class="item__name" href="#mixin-background-gradient-ie-old">background-gradient-ie-old</a>
-
-  
-
-  
-
-  
-</h3>
-
-
-
-
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-<pre class="item__code  language-scss"><code>@mixin background-gradient-ie-old($start-color: $color-box-dark, $end-color: $color-box-light, $orientation: vertical) { ... }</code></pre>
-
-
-
-  
-  <h3 class="item__sub-heading">Description</h3>
-  
-  <div class="item__description"><p><strong>Mixins for transparent backgrounds</strong><br>Crossbrowser Mixin for simple transparent backgrounds on old IE browsers (ie9 and older). Just generates code if $legacy-support-for-ie9 is set to true.</p></div>
-
-
-  <h3 class="item__sub-heading">Parameters</h3>
-
-
-
-  <table class="item__parameters">
-    <thead>
-      <tr>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-        <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$start-color</code></th>
-          <td data-label="desc"><p>Start color</p></td>
-          <td data-label="type">
-          
-            Hex-color
-          
-          </td>
-          <td data-label="default">
-          
-            <code>$color-box-dark</code>
-          
-          </td>
-        </tr>
-      
-        <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$end-color</code></th>
-          <td data-label="desc"><p>End color</p></td>
-          <td data-label="type">
-          
-            Hex-color
-          
-          </td>
-          <td data-label="default">
-          
-            <code>$color-box-light</code>
-          
-          </td>
-        </tr>
-      
-        <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$orientation</code></th>
-          <td data-label="desc"><p>vertical or horizontal orientation of the gradient</p></td>
-          <td data-label="type">
-          
-            String
-          
-          </td>
-          <td data-label="default">
-          
-            <code>vertical</code>
-          
-          </td>
-        </tr>
-      
-    </tbody>
-  </table>
-
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  	
-
-  
-  <h3 class="item__sub-heading">Links</h3>
-
-  <ul class="list-unstyled">
-  
-    <li>
-      <a href="http://msdn.microsoft.com/en-us/library/ms532997(v=vs.85).aspx">
-        
-          http://msdn.microsoft.com/en-us/library/ms532997(v=vs.85).aspx
-        
-      </a>
-    </li>
-  
-  </ul>
-
-
-  
-  <h3 class="item__sub-heading">Author</h3>
-
-  <ul class="list-unstyled">
-    
-      <li><p>Toni Pinel</p></li>
-    
-  </ul>
-
-
-  
-  <h3 class="item__sub-heading">Found at</h3>
-
-  <p><code>core\css\core\helpers\mixins\_backgrounds.scss</code></p>
 
 
 
