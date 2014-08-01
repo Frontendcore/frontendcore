@@ -39,13 +39,13 @@
 				padding: 0;
 				position: relative;
 				@include border-radius;
-				@include background-transparent($color-text, .1);
+				@include background-transparent($color-foreground, .1);
 				margin-bottom: $spacing;
 				padding: $spacing;
 			}
 			legend {
-				background: $color-text-background;
-				color: $color-text;
+				background: $color-background;
+				color: $color-foreground;
 				margin-left: 0;
 				padding: $spacing/4 $spacing/2;
 				@include border-radius;
@@ -69,7 +69,7 @@
 		ul {
 			&.horizontal {
 				& {
-					background: rgba($color-text-background, .6);
+					background: rgba($color-background, .6);
 					padding: $spacing $spacing 0 $spacing;
 					@include border-radius;
 				}
@@ -129,11 +129,11 @@
 			padding: $spacing/2 $spacing/2;
 			font-size: 1em;
 			border: 1px solid $color-box;
-			border: 1px solid rgba($color-text, .3);
-			background: $color-text-background;
+			border: 1px solid rgba($color-foreground, .3);
+			background: $color-background;
 			@include border-radius($default-border-radius-input);
 			@include box-sizing(border-box);
-			@include box-shadow(inset 0 1px 1px rgba($color-text,.1),0 1px 1px rgba($color-text-background,.5))
+			@include box-shadow(inset 0 1px 1px rgba($color-foreground,.1),0 1px 1px rgba($color-background,.5))
 		}
 		&:focus {
 			border-color: $color-warning;
