@@ -29,7 +29,9 @@
     <section id="tab-{{= it.id || 'no-id' }}-2" data-tc-name="Code">
         <div class="box-text">
             {{? it.array == null }}
-            <pre><code data-tc-modules="code">{{! it.include( it.path, it.vars ) }}</code></pre>
+            <pre>
+	            <code data-tc-modules="code">{{! it.include( it.path, it.vars ) }}</code>
+            </pre>
             {{??}}
                 {{~it.array :val:i}}
                     <div class="box-none pa-s mb-s">

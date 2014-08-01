@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 						'bower_components/jquery-colorbox/example5/colorbox.css'
 					],
 					'build/static/css/ui/code.css': [
-						'js/libs/highlightjs/styles/github.css'
+						'js/libs/prism/prism.css'
 					],
 					'build/static/css/ui/autocomplete.css': [
 						'bower_components/Autocompleter/jquery.autocompleter.css'
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
 						'js/ui/serialize.js'
 					],
 					'build/static/js/ui/code.js': [
-						'js/libs/highlightjs/highlight.pack.js'
+						'js/libs/prism/prism.js'
 					],
 					'build/static/js/ui/truncate.js': [
 						'bower_components/jquery.truncator.js/jquery.truncator.js'
@@ -175,7 +175,8 @@ module.exports = function (grunt) {
                         'build/static/js/devices/desktop.js',
                         'build/static/js/ui/*.js'
                     ],
-					outfile: 'build/js-tests.html'
+                    outfile: 'build/data/tests.html',
+                    keepRunner: true
 				}
 			}
 		},
