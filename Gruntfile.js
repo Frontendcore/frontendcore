@@ -203,6 +203,11 @@ module.exports = function (grunt) {
                 dest: 'changelog.md'
             }
         },
+        clean: {
+            build: {
+                src: ["changelog.md"]
+            }
+        },
 		watch: {
 			scripts: {
 				files: ['js/core/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
@@ -233,11 +238,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sassdoc');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('scss', ['compass', 'cssmin','sassdoc']);
 	grunt.registerTask('html', ['stencil']);
+	grunt.registerTask('log', ['clean','changelog','stencil']);
 
 	grunt.registerTask('default', ['stencil', 'compass','sassdoc','cssmin', 'uglify', 'jshint','jasmine']);
 
