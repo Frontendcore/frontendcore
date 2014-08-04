@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		compass: {
-			dist: {
+            dist: {
 				options: {
                     require: 'susy',
 					config: 'config.rb'
@@ -13,8 +13,18 @@ module.exports = function (grunt) {
         sassdoc: {
             dist: {
                 src: 'css/core/',
-                dest: 'build/sassdoc/'
+                dest: 'build/sassdoc/',
+                options: {
+                    verbose: false,
+                    display: {
+                        access: ['public'],
+                        alias: false,
+                        watermark: true
+                    },
+                    package: './package.json'
+                }
             }
+
         },
 		cssmin: {
 			combine: {
@@ -23,7 +33,7 @@ module.exports = function (grunt) {
 						'bower_components/jquery-colorbox/example5/colorbox.css'
 					],
 					'build/static/css/ui/code.css': [
-						'js/libs/prism/prism.css'
+                        'js/libs/highlightjs/styles/github.css'
 					],
 					'build/static/css/ui/autocomplete.css': [
 						'bower_components/Autocompleter/jquery.autocompleter.css'
@@ -116,7 +126,7 @@ module.exports = function (grunt) {
 						'js/ui/serialize.js'
 					],
 					'build/static/js/ui/code.js': [
-						'js/libs/prism/prism.js'
+                        'js/libs/highlightjs/highlight.pack.js'
 					],
 					'build/static/js/ui/truncate.js': [
 						'bower_components/jquery.truncator.js/jquery.truncator.js'
@@ -183,6 +193,12 @@ module.exports = function (grunt) {
 		stencil: {
 			main: {
 				options: {
+                    env: {
+                        title: "frontendcore"
+                    },
+                    dot_template_settings: {
+                      strip: false
+                    },
 					partials: 'site/partials',
 					templates: 'site/templates'
 				},

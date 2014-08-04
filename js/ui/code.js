@@ -17,7 +17,7 @@ TinyCore.AMD.define('code', ['devicePackage','codeLibs'], function (utils) {
 			var self = this;
 
 			$( aTargets ).each(function(i, e) {
-				//hljs.highlightBlock(e);
+				hljs.highlightBlock(e);
 			});
 		},
 		onStop: function () {
