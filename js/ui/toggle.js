@@ -8,26 +8,29 @@ TinyCore.AMD.define('toggle', ['devicePackage'], function () {
 		],
 		onStart: function () {
 
-			var aTarget = document.querySelectorAll('[data-tc-modules="toggle"]'),
+			var aTargets = FC.getDataModules('toggle'),
 				self = this;
 
-			FC.trackEvent('JS_Libraries', 'call', 'toggle');
-
-
-			$(aTarget).each(function () {
+			$(aTargets).each(function () {
 
 				var oThis = this;
 
-				if (oThis.getAttribute("data-tc-class") !== null) {
-					self.toggleClass(oThis);
-				} else if (oThis.getAttribute("data-tc-animation") !== null) {
-					self.toggleAnimation(oThis);
-				} else {
-					self.slideToggle(oThis);
+                $(oThis).bind('click', function (event) {
 
-				}
+                    event.preventDefault();
+
+                    if (oThis.getAttribute("data-tc-class") !== null) {
+                        self.toggleClass(oThis);
+                    } else if (oThis.getAttribute("data-tc-animation") !== null) {
+                        self.toggleAnimation(oThis);
+                    } else {
+                        self.slideToggle(oThis);
+                    }
+                });
 
 			});
+
+            FC.trackEvent('JS_Libraries', 'call', 'toggle');
 
 		},
 		getOpositeAnimation: function (sClass) {
@@ -75,17 +78,11 @@ TinyCore.AMD.define('toggle', ['devicePackage'], function () {
 		toggleAnimation: function (oThis) {
 
 			var self = this,
-				sClassOposite;
-
-
-			$(oThis).bind('click', function (event) {
-
-				event.preventDefault();
-
-				var sHref = this.href,
-					sClassName = oThis.getAttribute('data-tc-animation') || '',
-					$Target = null,
-					sTargetClassName;
+				sClassOposite = '',
+                sHref = oThis.href,
+				sClassName = oThis.getAttribute('data-tc-animation') || '',
+				$Target = null,
+				sTargetClassName;
 
 				if (sHref.indexOf('#') !== -1) {
 					$Target = $(document.getElementById(sHref.split('#')[1]));
@@ -99,43 +96,28 @@ TinyCore.AMD.define('toggle', ['devicePackage'], function () {
 
 				$Target.removeClass(sClassOposite).addClass(sClassName);
 
-				$(this).attr('data-tc-animation', sClassOposite);
-			});
+				$(oThis).attr('data-tc-animation', sClassOposite);
 
 		},
 		toggleClass: function (oThis) {
 
-			var self = this;
+			var self = this,
+                sHref = oThis.href,
+                sClassName = oThis.getAttribute('data-tc-class') || '';
 
-
-			$(oThis).bind('click', function (event) {
-
-				event.preventDefault();
-
-				var sHref = this.href,
-					sClassName = oThis.getAttribute('data-tc-class') || '';
-
-				if (sHref.indexOf('#') !== -1) {
-					$(document.getElementById(sHref.split('#')[1])).toggleClass(sClassName, 'bounce-out');
-				}
-			});
+            if (sHref.indexOf('#') !== -1) {
+                $(document.getElementById(sHref.split('#')[1])).toggleClass(sClassName, 'bounce-out');
+            }
 
 		},
 		slideToggle: function (oThis) {
 
-			var self = this;
+			var self = this,
+                sHref = oThis.href;
 
-
-			$(oThis).bind('click', function (event) {
-
-				event.preventDefault();
-
-				var sHref = this.href;
-
-				if (sHref.indexOf('#') !== -1) {
-					$(document.getElementById(sHref.split('#')[1])).slideToggle();
-				}
-			});
+            if (sHref.indexOf('#') !== -1) {
+                $(document.getElementById(sHref.split('#')[1])).slideToggle();
+            }
 
 		}
 	};
