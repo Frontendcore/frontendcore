@@ -82,35 +82,78 @@
 		<a href="#category-menu" class="button">Go to menu</a>
 	</div>
 	<h1>Truncate</h1>
-<div class="box-text">
-	<div class="grid">
-		<div class="col-1-1 pb-l">
-			<div  data-tc-modules="truncate" data-tc-max="50" data-tc-more="...More" data-tc-less="Less">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-			</div>
-			<h5 class="mt-l">Settings</h5>
-			<table class="table">
-				<tr>
-					<td>data-tc-max</td>
-					<td class="ta-l">Max character to crop text. Default: 100</td>
-				</tr>
-				<tr>
-					<td>data-tc-more</td>
-					<td class="ta-l">Text to show to see more. Default: [+]</td>
-				</tr>
-				<tr>
-					<td>data-tc-less</td>
-					<td class="ta-l">Text to show to see more. Default: [-]</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-1-1">
-                    <pre><code  data-tc-modules="code">&lt;div data-tc-modules=&quot;truncate&quot; data-tc-max=&quot;50&quot; data-tc-more=&quot;[M&aacute;s]&quot; data-tc-less=&quot;[Menos]&quot;&gt;
+<p>Truncates html without crop any word</p>
+<div data-tc-modules="tabs">
+    <section id="tab-truncate-1" data-tc-name="Demo">
+        <div class=" box-text">
+	        
+            
+				<div  data-tc-modules="truncate" data-tc-max="50" data-tc-more="...More" data-tc-less="Less">
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-&lt;/div&gt;</code></pre>
-		</div>
-	</div>
 </div>
+            
+					        
+        </div>
+    </section>
+    
+    <section id="tab-truncate-2" data-tc-name="Code">
+        <div class="box-text">
+            
+            <pre>
+	            <code data-tc-modules="code">&#60;div  data-tc-modules=&#34;truncate&#34; data-tc-max=&#34;50&#34; data-tc-more=&#34;...More&#34; data-tc-less=&#34;Less&#34;&#62;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+&#60;&#47;div&#62;</code>
+            </pre>
+            
+
+        </div>
+    </section>
+    
+    
+    <section id="tab-truncate-3" data-tc-name="Test">
+        <div class="box-text ta-r">
+            <a href="../tests/truncate.html" target="_blank"><i class="icon-external-link"></i> Open in new window</a>
+            <iframe src="../tests/truncate.html" width="100%" height="400" class="mt-m"></iframe>
+        </div>
+    </section>
+    
+    
+</div>
+
+<section class="box-lighten mb-n">
+    <h2 class="mb-m"><i class="icon-cogs"></i> Settings</h2>
+    <article class="box-text">
+        <dl class="list">
+            
+            <dt><h4 class="mb-n c-main">data-tc-max</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max character to crop text.</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: 100</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-more</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text to show to show more.</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: [+]</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-less</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text to show to show less.</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: [-]</p>
+                
+            </dd>
+            
+        </dl>
+    </article>
+
+</section>
+
 </div>
 <div class="col-2-12">
 	<nav id="category-menu" class="navigation-sub vertical">
@@ -126,7 +169,7 @@
 			
 			<li ><a title="sidemenu" href="sidemenu.html"><i class="icon-indent"></i> Side menu</a></li>
 			
-			<li ><a title="truncate" href="truncate.html"><i class="icon-file-text-o"></i> Truncate</a></li>
+			<li class="active"><a title="truncate" href="truncate.html"><i class="icon-file-text-o"></i> Truncate</a></li>
 			
 			<li ><a title="toggle" href="toggle.html"><i class="icon-caret-square-o-down"></i> Toggle</a></li>
 			

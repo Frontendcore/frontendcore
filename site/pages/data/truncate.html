@@ -1,35 +1,35 @@
 {
-	"name":"truncate",
+	"name":"Truncate",
 	"template": "sections/data"
 }
 
 <h1>Truncate</h1>
-<div class="box-text">
-	<div class="grid">
-		<div class="col-1-1 pb-l">
-			<div  data-tc-modules="truncate" data-tc-max="50" data-tc-more="...More" data-tc-less="Less">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-			</div>
-			<h5 class="mt-l">Settings</h5>
-			<table class="table">
-				<tr>
-					<td>data-tc-max</td>
-					<td class="ta-l">Max character to crop text. Default: 100</td>
-				</tr>
-				<tr>
-					<td>data-tc-more</td>
-					<td class="ta-l">Text to show to see more. Default: [+]</td>
-				</tr>
-				<tr>
-					<td>data-tc-less</td>
-					<td class="ta-l">Text to show to see more. Default: [-]</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-1-1">
-                    <pre><code  data-tc-modules="code">&lt;div data-tc-modules=&quot;truncate&quot; data-tc-max=&quot;50&quot; data-tc-more=&quot;[M&aacute;s]&quot; data-tc-less=&quot;[Menos]&quot;&gt;
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-&lt;/div&gt;</code></pre>
-		</div>
-	</div>
-</div>
+<p>Truncates html without crop any word</p>
+{{= it.include('component',
+	{
+		id:'truncate',
+		path:'data/truncate/truncate',
+        test: 'truncate'
+	}
+)}}
+{{= it.include('settings',
+    {
+        "settings":[
+            [
+                "data-tc-max",
+				"Max character to crop text.",
+				"100"
+            ],
+			[
+				"data-tc-more",
+				"Text to show to show more.",
+				"[+]"
+			],
+			[
+				"data-tc-less",
+				"Text to show to show less.",
+				"[-]"
+			]
+        ]
+    }
+)}}

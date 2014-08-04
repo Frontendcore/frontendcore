@@ -6,44 +6,39 @@ TinyCore.AMD.define('sidemenu', ['devicePackage'], function (utils) {
 		},
 		onStart: function ( ) {
 
-			var aTarget = document.querySelectorAll('[data-tc-modules="sidemenu"]'),
-				self = this;
+            var aTargets = FC.getDataModules('sidemenu'),
+                self = this;
 
 			FC.loadCSS(this.sPathCss);
 
 			FC.trackEvent('JS_Libraries', 'call', 'sidemenu' );
 
-			require(['sidemenuLibs'], function() {
-				self.autobind(aTarget);
-			});
-
+            require(['sidemenuLibs'], function() {
+                $(aTargets).each(function () {
+                    self.autobind(this);
+                });
+            });
 
 		},
-		autobind: function ( aTargets ) {
+		autobind: function ( oTarget ) {
 
-			var self = this;
+			var self = this,
+                oSettings,
+                oOptions = {},
+                sHref = oTarget.href;
 
-			$( aTargets ).each(function () {
+            if (oTarget.getAttribute("data-tc-position") !== null) {
+                oOptions.side = this.getAttribute("data-tc-position");
+            }
 
-				var oSettings,
-					oOptions = {},
-					oTarget = this,
-					sHref = this.href;
+            if (sHref.indexOf('#') !== -1) {
+                oOptions.source = '#' + sHref.split('#')[1];
+                oOptions.name = sHref.split('#')[1] + '-' + new Date().getTime();
+            }
 
-				if (oTarget.getAttribute("data-tc-position") !== null) {
-					oOptions.side = this.getAttribute("data-tc-position");
-				}
+            oSettings = FC.mixOptions(oOptions, self.oDefault);
 
-				if (sHref.indexOf('#') !== -1) {
-					oOptions.source = '#' + sHref.split('#')[1];
-					oOptions.name = sHref.split('#')[1] + '-' + new Date().getTime();
-				}
-
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
-
-				$(this).sidr(oSettings);
-
-			});
+            $(oTarget).sidr(oSettings);
 		},
 		onStop: function () {
 			this.sPathCss = null;
