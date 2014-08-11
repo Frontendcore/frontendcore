@@ -1,0 +1,10 @@
+.tab-container {
+	& {
+		position: relative;
+	}
+	.js-tests {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

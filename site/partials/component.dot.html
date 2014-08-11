@@ -1,4 +1,7 @@
 <div data-tc-modules="tabs">
+	{{? it.test }}
+	<a href="../tests/{{= it.test}}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
+	{{?}}
     <section id="tab-{{= it.id || 'no-id' }}-1" data-tc-name="Demo">
         <div class=" {{? it.skin == 'dark' }}box-invert{{??}}box-text{{?}}">
 	        {{? it.form != null }}
@@ -40,14 +43,6 @@
                 {{~}}
             {{?}}
 
-        </div>
-    </section>
-    {{?}}
-    {{? it.test }}
-    <section id="tab-{{= it.id || 'no-id' }}-3" data-tc-name="Test">
-        <div class="box-text ta-r">
-            <a href="../tests/{{= it.test}}.html" target="_blank"><i class="icon-external-link"></i> Open in new window</a>
-            <iframe src="../tests/{{= it.test}}.html" width="100%" height="400" class="mt-m"></iframe>
         </div>
     </section>
     {{?}}

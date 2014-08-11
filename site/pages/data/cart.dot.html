@@ -8,8 +8,8 @@
 </script>
 <h1>Cart</h1>
 <p>Add a Cart to the page and set the products to be shopped</p>
-<div class="cart" data-tc-modules="cart">
-	<a href="#cart-list" id="cart-link">
+<div>
+	<a href="#cart-list" id="cart-link" data-tc-modules="cart">
 		<i class="icon-shopping-cart"></i> <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 	</a>
 	<div id="cart-list" class="hidden">
@@ -28,12 +28,6 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
 {{= it.include('component',
 	{
 		id:'cart',
@@ -44,8 +38,8 @@
     {
         "settings":[
             [
-                "data-tc-values",
-				"List separated by comma of the words and phrases to autocomplete."
+                "data-tc-email",
+				"Paypal Email address to checkout"
             ]
         ]
     }

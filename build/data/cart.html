@@ -86,8 +86,8 @@
 </script>
 <h1>Cart</h1>
 <p>Add a Cart to the page and set the products to be shopped</p>
-<div class="cart" data-tc-modules="cart">
-	<a href="#cart-list" id="cart-link">
+<div>
+	<a href="#cart-list" id="cart-link" data-tc-modules="cart">
 		<i class="icon-shopping-cart"></i> <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 	</a>
 	<div id="cart-list" class="hidden">
@@ -106,13 +106,8 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
 <div data-tc-modules="tabs">
+	
     <section id="tab-cart-1" data-tc-name="Demo">
         <div class=" box-text">
 	        
@@ -147,17 +142,17 @@
     </section>
     
     
-    
 </div>
+
 
 <section class="box-lighten mb-n">
     <h2 class="mb-m"><i class="icon-cogs"></i> Settings</h2>
     <article class="box-text">
         <dl class="list">
             
-            <dt><h4 class="mb-n c-main">data-tc-values</h4></dt>
+            <dt><h4 class="mb-n c-main">data-tc-email</h4></dt>
             <dd class="mb-l">
-                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
+                <p class="mb-s">Paypal Email address to checkout</p>
                 
             </dd>
             
