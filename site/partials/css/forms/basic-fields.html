@@ -1,27 +1,166 @@
 <form class="form">
-    <fieldset>
-        <legend>Legend</legend>
-        <ol>
-            <li>
-                <label>Text Field</label>
-                <input type="text"/>
-            </li>
-            <li>
-                <label>Email Field</label>
-                <input type="email"/>
-            </li>
-            <li>
-                <label>Select Field</label>
-                <select class="width-100">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                </select>
-            </li>
-            <li>
-                <label>Textarea</label>
-                <textarea></textarea>
-            </li>
-        </ol>
-    </fieldset>
-    <button type="submit" class="button">Send</button>
+	<fieldset>
+		<legend>Text fields</legend>
+		<ol>
+			<li>
+				<label for="text-field">Text Field 100%</label>
+				<input type="text" id="text-field" placeholder="Text field 100%"/>
+			</li>
+			<li>
+				<label for="text-field2">Text Field <em>label class="w-50"</em></label>
+				<input type="text" id="text-field2" class="w-50" placeholder="Text field 50% - w-50"/>
+			</li>
+
+			<li>
+				<label for="url-field">URL Field</label>
+				<input type="url" id="url-field" />
+			</li>
+			<li>
+				<label for="email-field">Email Field</label>
+				<input type="email" id="email-field" placeholder="email" />
+			</li>
+			<li>
+				<label for="Password-field">Password Field</label>
+				<input type="password" id="Password-field" />
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Numbers fields</legend>
+		<ol>
+			<li>
+				<label for="tel-field">Telephone Field</label>
+				<input type="tel" id="tel-field" />
+			</li>
+			<li>
+				<label for="text-field22">Number Field</label>
+				<span>$</span>
+				<input type="number" id="text-field22" placeholder="0" min="0.15" />
+				<span>/ month</span>
+			</li>
+			<li>
+				<label for="text-field23">Number Field</label>
+				<span>$</span>
+				<input type="number" id="text-field23" placeholder="0" min="0.15" max="100" />
+				<span>/ click</span>
+				<span class="explain">min="0.15" max="100"</span>
+			</li>
+			<li>
+				<label for="date-field">Date Field</label>
+				<input type="date" id="date-field" />
+			</li>
+
+			<li>
+				<label for="datetime-local">datetime-local</label>
+				<input type="datetime-local" id="datetime-local" />
+			</li>
+			<li>
+				<label for="month">month</label>
+				<input type="month" id="month" />
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Select, textarea</legend>
+		<ol>
+			<li>
+				<label for="select-field">Select Field</label>
+				<select id="select-field"class="w-100">
+					<option>option 1</option>
+					<option>option 2</option>
+				</select>
+			</li>
+			<li>
+				<label for="text-area">Textarea</label>
+				<textarea id="text-area"></textarea>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Details</legend>
+		<details open>
+			<summary>Details opened. <em>Click arrow to close it</em></summary>
+			<p>This is details text.</p>
+			<p>This is details text.</p>
+			<p>This is details text.</p>
+		</details>
+		<details>
+			<summary>Details closed. <em>Click arrow to open it</em></summary>
+			<p class="fz-h1">HELLO! YOU HAVE OPENED DETAILS!</p>
+		</details>
+	</fieldset>
+	<fieldset>
+		<legend>Checkbox and Radio buttons</legend>
+		<ol>
+			<li>
+				<details open="">
+					<summary>Details: Checkbox options <em>(optional)</em></summary>
+					<ul>
+						<li>
+							<label for="browser_ff">
+								<input id="browser_ff" name="available_browsers[]" class="checkbox" type="checkbox" value="ff">
+								Firefox
+							</label>
+						</li>
+						<li>
+							<label for="browser_ie">
+								<input id="browser_ie" name="available_browsers[]" class="checkbox" type="checkbox" value="ie">
+								Internet explorer
+							</label>
+						</li>
+						<li>
+							<label for="browser_ch">
+								<input id="browser_ch" name="available_browsers[]" class="checkbox" type="checkbox" value="ch">
+								Chrome
+							</label>
+						</li>
+						<li>
+							<label for="browser_op">
+								<input id="browser_op" name="available_browsers[]" class="checkbox" type="checkbox" value="op">
+								Opera
+							</label>
+						</li>
+						<li>
+							<label for="browser_sa">
+								<input id="browser_sa" name="available_browsers[]" class="checkbox" type="checkbox" value="sa">
+								Safari
+							</label>
+						</li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details open="">
+					<summary>Details: Radio buttons</summary>
+					<ul>
+						<li>
+							<label for="first-option"><input type="radio" id="first-option" name="radio" /> First option</label>
+						</li>
+						<li>
+							<label for="second-option"><input type="radio" id="second-option" name="radio" /> Second option</label>
+						</li>
+						<li>
+							<label for="third-option"><input type="radio" id="third-option" name="radio" /> Third option</label>
+						</li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details open="">
+					<summary>Details: Horizontal</summary>
+					<ul class="horizontal">
+						<li>
+							<label for="first-option1"><input type="radio" id="first-option1" name="radio" /> First option</label>
+						</li>
+						<li>
+							<label for="second-option1"><input type="radio" id="second-option1" name="radio" /> Second option</label>
+						</li>
+						<li>
+							<label for="third-option1"><input type="radio" id="third-option1" name="radio" /> Third option</label>
+						</li>
+					</ul>
+				</details>
+			</li>
+		</ol>
+	</fieldset>
 </form>

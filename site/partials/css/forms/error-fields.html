@@ -1,0 +1,52 @@
+<form class="form mt-xl">
+	<fieldset>
+		<legend>Forms errors - list errors</legend>
+		<em>Use class="error-fields" in each li when exist some labels with errors</em>
+		<div  class="msg-ko">
+			There are mistakes in the form.
+		</div>
+
+		<ol>
+			<li class="error-fields">
+				<label for="text-field-error">Text Field 100%
+					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
+				</label>
+				<input type="text" id="text-field-error" placeholder="Text field 100%" />
+			</li>
+			<li class="error-fields">
+				<label for="text-field-error2">Text Field 100%
+					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
+				</label>
+				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
+			</li>
+			<li>
+				<label for="text-field-error2">Label without errors</label>
+				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
+			</li>
+		</ol>
+	</fieldset>
+
+	<fieldset class="error-fields">
+		<legend>Block div with errors</legend>
+		<em>You can use class error-fields in a general box to fix all inputs like an error</em>
+		<div  class="msg-ko ">
+			There are mistakes in the form.
+		</div>
+
+		<ol>
+			<li>
+				<label for="text-field-error3">Label
+					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
+				</label>
+				<input type="text" id="text-field-error3" placeholder="Text field 100%" />
+			</li>
+			<li>
+				<label for="text-field-error4">Label
+					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
+				</label>
+				<input type="text" id="text-field-error4" placeholder="Text field 100%" />
+			</li>
+		</ol>
+	</fieldset>
+	<button type="submit" class="button-primary">Continue</button>
+</form>

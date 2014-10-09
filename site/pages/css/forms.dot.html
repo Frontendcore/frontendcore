@@ -6,12 +6,20 @@
 
 <h1>Forms</h1>
 <section class="box-lighten">
-    <h2>Basic Form</h2>
+    <h2>Basic Fields</h2>
     {{= it.include('component', { path:'css/forms/basic-fields', scss:'../../css/core/objects/forms/_form.scss', id:'basic-fields' }) }}
 </section>
 <section class="box-lighten">
-    <h2>Radio options</h2>
-    {{= it.include('component', { path:  'css/forms/options', id: 'options' }) }}
+	<h2>Complex Fields</h2>
+	{{= it.include('component', { path:'css/forms/complex-fields', scss:'../../css/core/objects/forms/_form.scss', id:'complex-fields' }) }}
+</section>
+<section class="box-lighten">
+	<h2>Error Fields</h2>
+	{{= it.include('component', { path:'css/forms/error-fields', scss:'../../css/core/objects/forms/_form.scss', id:'error-fields' }) }}
+</section>
+<section class="box-lighten">
+	<h2>Read only Fields</h2>
+	{{= it.include('component', { path:'css/forms/read-only-fields', scss:'../../css/core/objects/forms/_form.scss', id:'read-only-fields' }) }}
 </section>
 <section class="box-lighten">
     <h2>Search Form</h2>
