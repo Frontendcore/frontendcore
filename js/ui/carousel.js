@@ -2,7 +2,11 @@ TinyCore.AMD.define('carousel', ['devicePackage'], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'carousel.css',
 		oDefault: {
+            baseClass: 'carousel',
+            themeClass: 'carousel-theme',
             items:1,
+            nav: true,
+            navText: ['',''],
             loop: true,
             margin: 10,
             merge:true,
@@ -17,10 +21,13 @@ TinyCore.AMD.define('carousel', ['devicePackage'], function () {
             autoplayHoverPause:true,
             responsive:{
                 480:{
-                    items:2
+                    items:1
                 },
                 600:{
-                    items:4
+                    items:1
+                },
+                1300:{
+                    items:2
                 }
             }
 		},
@@ -43,19 +50,22 @@ TinyCore.AMD.define('carousel', ['devicePackage'], function () {
 		},
 		autobind: function (oTarget, sData) {
 
-
-
 			var self = this,
 				oSettings,
-				oOptions = {};
+				oOptions = {},
+                sProperty;
 
-			if (oTarget.getAttribute("data-tc-loop") !== null) {
-				oOptions.loop = oTarget.getAttribute("data-tc-loop");
-			}
+            $('.carousel-video', oTarget).each( function(){
+                $(this).addClass('owl-video');
+            });
 
-			if (oTarget.getAttribute("data-tc-margin") !== null) {
-				oOptions.margin = oTarget.getAttribute("data-tc-margin");
-			}
+            for ( sProperty in self.oDefault ){
+
+                if (oTarget.getAttribute("data-tc-" + sProperty) !== null) {
+                    oOptions[sProperty] = oTarget.getAttribute("data-tc-" + sProperty);
+                }
+
+            }
 
 			oSettings = FC.mixOptions(oOptions, self.oDefault);
 
