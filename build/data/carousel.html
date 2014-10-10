@@ -82,38 +82,86 @@
 		<a href="#category-menu" class="button">Go to menu</a>
 	</div>
 	
-<h1>WYSIWYG</h1>
-<p>Convert textarea fields or other html elements to editor instances.</p>
+<h1>Carousel</h1>
+
+<p>Shows a tip with some info</p>
 <div data-tc-modules="tabs">
 	
-    <section id="tab-wysiwyg-simple-1" data-tc-name="Demo">
+    <section id="tab-div-carousel-1" data-tc-name="Demo">
         <div class=" box-text">
 	        
-	        <form class="forms" method="get">
-		        <fieldset>
-			        <ol>
-				        <li>
-					        
             
-				<textarea name="mytextarea" data-tc-modules="wysiwyg" required></textarea>
-
+				<div class="owl-carousel" data-tc-modules="carousel">
+	<div> Your Content </div>
+	<div> Your Content </div>
+	<div> Your Content </div>
+	<div> Your Content </div>
+	<div> Your Content </div>
+	<div> Your Content </div>
+	<div> Your Content </div>
+</div>
             
 					        
-				        </li>
-			        </ol>
-			        <button type="submit" class="button">Send</button>
-		        </fieldset>
-	        </form>
-	        
         </div>
     </section>
     
-    <section id="tab-wysiwyg-simple-2" data-tc-name="Code">
+    <section id="tab-div-carousel-2" data-tc-name="Code">
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;textarea name=&#34;mytextarea&#34; data-tc-modules=&#34;wysiwyg&#34; required&#62;&#60;&#47;textarea&#62;
-</code>
+	            <code data-tc-modules="code">&#60;div class=&#34;owl-carousel&#34; data-tc-modules=&#34;carousel&#34;&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+	&#60;div&#62; Your Content &#60;&#47;div&#62;
+&#60;&#47;div&#62;</code>
+            </pre>
+            
+
+        </div>
+    </section>
+    
+    
+</div>
+
+<div data-tc-modules="tabs">
+	
+    <section id="tab-video-carousel-1" data-tc-name="Demo">
+        <div class=" box-text">
+	        
+            
+				<div class="owl-carousel" data-tc-modules="carousel">
+	<div class="item-video" data-merge="3"><a class="owl-video" href="http://vimeo.com/23924346"></a></div>
+	<div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>
+	<div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=FBu_jxT1PkA"></a></div>
+	<div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=oy18DJwy5lI"></a></div>
+	<div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=H3jLkJrhHKQ"></a></div>
+	<div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=g3J4VxWIM6s"></a></div>
+	<div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=0fhoIate4qI"></a></div>
+	<div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE"></a></div>
+</div>
+            
+					        
+        </div>
+    </section>
+    
+    <section id="tab-video-carousel-2" data-tc-name="Code">
+        <div class="box-text">
+            
+            <pre>
+	            <code data-tc-modules="code">&#60;div class=&#34;owl-carousel&#34; data-tc-modules=&#34;carousel&#34;&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;3&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;http:&#47;&#47;vimeo.com&#47;23924346&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;1&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;https:&#47;&#47;www.youtube.com&#47;watch?v=JpxsRwnRwCQ&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;2&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;http:&#47;&#47;www.youtube.com&#47;watch?v=FBu_jxT1PkA&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;1&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;http:&#47;&#47;www.youtube.com&#47;watch?v=oy18DJwy5lI&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;2&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;http:&#47;&#47;www.youtube.com&#47;watch?v=H3jLkJrhHKQ&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;3&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;https:&#47;&#47;www.youtube.com&#47;watch?v=g3J4VxWIM6s&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;1&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;http:&#47;&#47;www.youtube.com&#47;watch?v=0fhoIate4qI&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+	&#60;div class=&#34;item-video&#34; data-merge=&#34;2&#34;&#62;&#60;a class=&#34;owl-video&#34; href=&#34;https:&#47;&#47;www.youtube.com&#47;watch?v=EF_kj2ojZaE&#34;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+&#60;&#47;div&#62;</code>
             </pre>
             
 
@@ -129,83 +177,15 @@
     <article class="box-text">
         <dl class="list">
             
-            <dt><h4 class="mb-n c-main">data-tc-plugins</h4></dt>
+            <dt><h4 class="mb-n c-main">data-tc-loop</h4></dt>
             <dd class="mb-l">
-                <p class="mb-s">Plugins to load </p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: ['advlist autolink lists link image charmap print preview anchor pagebreak','searchreplace visualblocks code fullscreen spellchecker searchreplace','insertdatetime media table paste']</p>
+                <p class="mb-s">String with the text title of the tooltip</p>
                 
             </dd>
             
-            <dt><h4 class="mb-n c-main">data-tc-language</h4></dt>
+            <dt><h4 class="mb-n c-main">data-tc-margin</h4></dt>
             <dd class="mb-l">
-                <p class="mb-s">Defines the language of the plugin and the spellchecker.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'en'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-invalid</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Invalid html elements.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'font,h1,h4,h5,h6,span'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-spellchecker</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Spellchecker ajax url.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'http://' + document.domain + '/spellchecker'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-toolbar</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Order of buttons for toolbar 1.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'styleselect |  bold italic underline | alignleft aligncenter alignright alignjustify |  bullist numlist | image media | link | pagebreak | searchreplace | undo redo | spellchecker | code'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-toolbar-2</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Order of buttons for toolbar 2.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'false'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-maxHeight</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Max Height(px) for the autoresize plugin</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: '600'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-extended-valid-elements</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Extended Valid html elements.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: '-strong,-h2,-h3,-span,-i,-em,-p abbr[title|lang],acronym[title|lang],code[class],object[*],embed[*],param[*]'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-encoding</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">controls how entities/characters get processed ('named', 'numeric' or 'raw')</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: 'raw'</p>
-                
-            </dd>
-            
-            <dt><h4 class="mb-n c-main">data-tc-css</h4></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Path for the css inside the Wysiwyg iframe content.</p>
-                
-                    <p class="fz-xs c-text-light">DEFAULT: oGlobalSettings.sPathJs + '/libs/tinyMCE/skins/lightgray/content.min.css'</p>
+                <p class="mb-s">String with the text content of the tooltip</p>
                 
             </dd>
             
@@ -227,7 +207,7 @@
 			
 			<li ><a title="cart" href="cart.html"><i class="icon-shopping-cart"></i> Cart</a></li>
 			
-			<li ><a title="carousel" href="carousel.html"><i class="icon-th-large"></i> Carousel</a></li>
+			<li class="active"><a title="carousel" href="carousel.html"><i class="icon-th-large"></i> Carousel</a></li>
 			
 			<li ><a title="sidemenu" href="sidemenu.html"><i class="icon-indent"></i> Side menu</a></li>
 			
@@ -247,7 +227,7 @@
 			
 			<li ><a title="stats" href="stats.html"><i class="icon-bar-chart-o"></i> Stats</a></li>
 			
-			<li class="active"><a title="wysiwyg" href="wysiwyg.html"><i class="icon-font"></i> Wysiwyg</a></li>
+			<li ><a title="wysiwyg" href="wysiwyg.html"><i class="icon-font"></i> Wysiwyg</a></li>
 			
 		</ul>
 	</nav>

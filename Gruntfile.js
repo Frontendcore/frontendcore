@@ -80,6 +80,7 @@ module.exports = function (grunt) {
 						'js/ui/polyfills.js',
 						'js/ui/toggle.js',
 						'js/ui/tip.js',
+						'js/ui/carousel.js',
 						'js/ui/sidemenu.js',
 						'js/ui/cart.js',
 						'js/ui/parallax.js'
@@ -147,6 +148,9 @@ module.exports = function (grunt) {
 					'build/static/js/ui/cart.js': [
 						'bower_components/simplecart-js/simpleCart.js'
 					],
+                    'build/static/js/ui/carousel.js': [
+                        'js/libs/owl-carousel/owl.carousel.js'
+                    ],
 					'build/static/js/ie-old.js': [
 						'js/libs/ie-polyfills/queryselector.js',
 						'js/libs/ie-polyfills/html5shiv.js',
