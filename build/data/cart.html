@@ -94,19 +94,26 @@
             
 				<div>
 	<a href="#cart-list" id="cart-link" data-tc-modules="cart" data-tc-email="tonpinel@gmail.com">
-		<i class="icon-shopping-cart"></i> <span class="cart-quantity"></span> items - <span class="cart-total"></span>
+		<i class="icon-shopping-cart"></i> <span class="cart-quantity"></span> items - <span class="cart-grand-total"></span>
 	</a>
 	<div id="cart-list" class="hidden">
 		<!-- button to empty the cart -->
 
-
 		<!-- show the cart -->
 		<div class="cart-items">
 
-
 		</div>
-		<div class="shipment ta-r pa-s">
-			+ 10€ shipment cost!
+		<div class="item-row">
+			<div class="item-name">Taxes</div>
+			<div class="item-total cart-tax"></div>
+		</div>
+		<div class="item-row">
+			<div class="item-name">shipment cost</div>
+			<div class="item-total cart-shipping"></div>
+		</div>
+		<div class="item-row">
+			<div class="item-name">TOTAL</div>
+			<div class="item-total cart-grand-total"></div>
 		</div>
 		<div class="actions">
 			<a href="javascript:;" class="button-ko ph-m simpleCart_empty"><i class="icon-trash-o"></i> Empty </a>
@@ -126,19 +133,26 @@
             <pre>
 	            <code data-tc-modules="code">&#60;div&#62;
 	&#60;a href=&#34;#cart-list&#34; id=&#34;cart-link&#34; data-tc-modules=&#34;cart&#34; data-tc-email=&#34;tonpinel@gmail.com&#34;&#62;
-		&#60;i class=&#34;icon-shopping-cart&#34;&#62;&#60;&#47;i&#62; &#60;span class=&#34;cart-quantity&#34;&#62;&#60;&#47;span&#62; items - &#60;span class=&#34;cart-total&#34;&#62;&#60;&#47;span&#62;
+		&#60;i class=&#34;icon-shopping-cart&#34;&#62;&#60;&#47;i&#62; &#60;span class=&#34;cart-quantity&#34;&#62;&#60;&#47;span&#62; items - &#60;span class=&#34;cart-grand-total&#34;&#62;&#60;&#47;span&#62;
 	&#60;&#47;a&#62;
 	&#60;div id=&#34;cart-list&#34; class=&#34;hidden&#34;&#62;
 		&#60;!-- button to empty the cart --&#62;
 
-
 		&#60;!-- show the cart --&#62;
 		&#60;div class=&#34;cart-items&#34;&#62;
 
-
 		&#60;&#47;div&#62;
-		&#60;div class=&#34;shipment ta-r pa-s&#34;&#62;
-			+ 10€ shipment cost!
+		&#60;div class=&#34;item-row&#34;&#62;
+			&#60;div class=&#34;item-name&#34;&#62;Taxes&#60;&#47;div&#62;
+			&#60;div class=&#34;item-total cart-tax&#34;&#62;&#60;&#47;div&#62;
+		&#60;&#47;div&#62;
+		&#60;div class=&#34;item-row&#34;&#62;
+			&#60;div class=&#34;item-name&#34;&#62;shipment cost&#60;&#47;div&#62;
+			&#60;div class=&#34;item-total cart-shipping&#34;&#62;&#60;&#47;div&#62;
+		&#60;&#47;div&#62;
+		&#60;div class=&#34;item-row&#34;&#62;
+			&#60;div class=&#34;item-name&#34;&#62;TOTAL&#60;&#47;div&#62;
+			&#60;div class=&#34;item-total cart-grand-total&#34;&#62;&#60;&#47;div&#62;
 		&#60;&#47;div&#62;
 		&#60;div class=&#34;actions&#34;&#62;
 			&#60;a href=&#34;javascript:;&#34; class=&#34;button-ko ph-m simpleCart_empty&#34;&#62;&#60;i class=&#34;icon-trash-o&#34;&#62;&#60;&#47;i&#62; Empty &#60;&#47;a&#62;
@@ -157,6 +171,8 @@
 </div>
 
 <h1>Items</h1>
+
+
 <div data-tc-modules="tabs">
 	
     <section id="tab-product-1" data-tc-name="Demo">

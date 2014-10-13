@@ -17,15 +17,8 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
             currency: "EUR",
             language: "spanish-es",
             cartStyle: 'div',
-            shippingFreeSince: 10000,
+            shippingFreeSince: 1000,
             shippingCost: 15,
-            shippingCustom: function(){
-                if( simpleCart.total() > this.shippingFreeSince ){
-                    return 0;
-                } else {
-                    return this.shippingCost;
-                }
-            },
             taxRate: 0.21,
             checkout: {
                 type: "PayPal",
@@ -64,15 +57,28 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
 
                 if (this.getAttribute("data-tc-shipping-free-since") !== null) {
                     oOptions.shippingFreeSince = this.getAttribute("data-tc-shipping-free-since");
+                } else {
+                    oOptions.shippingFreeSince = self.oDefault.shippingFreeSince;
                 }
 
                 if (this.getAttribute("data-tc-shipping-cost") !== null) {
                     oOptions.shippingCost = this.getAttribute("data-tc-shipping-cost");
+                } else {
+                    oOptions.shippingCost = self.oDefault.shippingCost;
                 }
 
                 if (this.getAttribute("data-tc-tax-rate") !== null) {
                     oOptions.taxRate = this.getAttribute("data-tc-tax-rate");
                 }
+
+                oOptions.shippingCustom = function(){
+                    if( simpleCart.total() > oOptions.shippingFreeSince ){
+                        oOptions.taxShipping = false;
+                        return 0;
+                    } else {
+                        return oOptions.shippingCost;
+                    }
+                };
 
             });
 
