@@ -3,7 +3,6 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'cart.css',
 		oDefault: {
             cartColumns: [
-                //A custom cart column for putting the quantity and increment and decrement items in one div for easier styling.
                 { view: function(item, column){
                     return	"<span>"+item.get('quantity')+"</span>" +
                         "<div>" +
@@ -11,34 +10,87 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
                         "<a href='javascript:;' class='simpleCart_decrement'><i class='icon-caret-down'></i></a>" +
                         "</div>";
                 }, attr: 'custom' },
-                //Name of the item
                 { attr: "name" , label: false },
-                //Subtotal of that row (quantity of that item * the price)
                 { view: 'currency', attr: "total" , label: false  }
+
             ],
+            currency: "EUR",
+            language: "spanish-es",
             cartStyle: 'div',
+            shippingFreeSince: 10000,
+            shippingCost: 15,
+            shippingCustom: function(){
+                if( simpleCart.total() > this.shippingFreeSince ){
+                    return 0;
+                } else {
+                    return this.shippingCost;
+                }
+            },
+            taxRate: 0.21,
             checkout: {
                 type: "PayPal",
                 email: "you@yours.com"
             }
 		},
+
 		onStart: function () {
 
 			var self = this,
-                aTargets = FC.getDataModules('cart');
+                aTargets = FC.getDataModules('cart'),
+                oSettings = {},
+                oOptions = {},
+                aClasses = ['cart-checkout','cart-empty','cart-items','cart-total','cart-quantity','cart-tax','cart-tax-rate','cart-shipping','cart-grand-total','cart-shelf-item','cart-item-name','cart-item-price','cart-item-add','cart-item-quantity'],
+                aSimpleClasses = ['simpleCart_checkout','simpleCart_empty','simpleCart_items','simpleCart_total','simpleCart_quantity','simpleCart_tax','simpleCart_taxRate','simpleCart_shipping','simpleCart_grandTotal','simpleCart_shelfItem','item_name','item_price','item_add','item_Quantity'];
 
 			FC.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'autocomplete' );
+            for( nKey = 0; nKey < aClasses.length; nKey++ ) {
+                self.prepareBind( aClasses[nKey], aSimpleClasses[nKey] );
+            }
 
             $(aTargets).each(function () {
+
                 self.autobind(this);
+
+                if (this.getAttribute("data-tc-email") !== null) {
+                    oOptions.checkout = {};
+                    oOptions.checkout.type = "PayPal";
+                    oOptions.checkout.email = this.getAttribute("data-tc-email");
+                }
+
+                if (this.getAttribute("data-tc-currency") !== null) {
+                    oOptions.currency = this.getAttribute("data-tc-currency");
+                }
+
+                if (this.getAttribute("data-tc-shipping-free-since") !== null) {
+                    oOptions.shippingFreeSince = this.getAttribute("data-tc-shipping-free-since");
+                }
+
+                if (this.getAttribute("data-tc-shipping-cost") !== null) {
+                    oOptions.shippingCost = this.getAttribute("data-tc-shipping-cost");
+                }
+
+                if (this.getAttribute("data-tc-tax-rate") !== null) {
+                    oOptions.taxRate = this.getAttribute("data-tc-tax-rate");
+                }
+
             });
 
-            simpleCart(self.oDefault);
+            oSettings = FC.mixOptions(oOptions, self.oDefault);
 
-			simpleCart.init();
+            simpleCart(oSettings);
+
+            simpleCart.init();
+
+            FC.trackEvent('JS_Libraries', 'call', 'autocomplete' );
+
+
 		},
+        prepareBind: function( sTargetClass, sNewClass ) {
+            $('.' +  sTargetClass).each( function(){
+                $(this).addClass(sNewClass);
+            });
+        },
         autobind: function(oTarget) {
             var self = this;
 

@@ -86,18 +86,27 @@
 </script>
 <h1>Cart</h1>
 <p>Add a Cart to the page and set the products to be shopped</p>
-<div>
-	<a href="#cart-list" id="cart-link" data-tc-modules="cart">
-		<i class="icon-shopping-cart"></i> <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+<div data-tc-modules="tabs">
+	
+    <section id="tab-cart-1" data-tc-name="Demo">
+        <div class=" box-text">
+	        
+            
+				<div>
+	<a href="#cart-list" id="cart-link" data-tc-modules="cart" data-tc-email="tonpinel@gmail.com">
+		<i class="icon-shopping-cart"></i> <span class="cart-quantity"></span> items - <span class="cart-total"></span>
 	</a>
 	<div id="cart-list" class="hidden">
 		<!-- button to empty the cart -->
 
 
 		<!-- show the cart -->
-		<div class="simpleCart_items">
+		<div class="cart-items">
 
 
+		</div>
+		<div class="shipment ta-r pa-s">
+			+ 10€ shipment cost!
 		</div>
 		<div class="actions">
 			<a href="javascript:;" class="button-ko ph-m simpleCart_empty"><i class="icon-trash-o"></i> Empty </a>
@@ -106,19 +115,6 @@
 		</div>
 	</div>
 </div>
-<div data-tc-modules="tabs">
-	
-    <section id="tab-cart-1" data-tc-name="Demo">
-        <div class=" box-text">
-	        
-            
-				<div class="simpleCart_shelfItem">
-	<h2 class="item_name"> Awesome T-shirt </h2>
-	<p>  <input type="text" value="1" class="item_Quantity"><br>
-		<span class="item_price">$35.99</span><br>
-		<a class="item_add" href="javascript:;"> Add to Cart </a></p>
-</div>
-
             
 					        
         </div>
@@ -128,11 +124,70 @@
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;div class=&#34;simpleCart_shelfItem&#34;&#62;
-	&#60;h2 class=&#34;item_name&#34;&#62; Awesome T-shirt &#60;&#47;h2&#62;
-	&#60;p&#62;  &#60;input type=&#34;text&#34; value=&#34;1&#34; class=&#34;item_Quantity&#34;&#62;&#60;br&#62;
-		&#60;span class=&#34;item_price&#34;&#62;$35.99&#60;&#47;span&#62;&#60;br&#62;
-		&#60;a class=&#34;item_add&#34; href=&#34;javascript:;&#34;&#62; Add to Cart &#60;&#47;a&#62;&#60;&#47;p&#62;
+	            <code data-tc-modules="code">&#60;div&#62;
+	&#60;a href=&#34;#cart-list&#34; id=&#34;cart-link&#34; data-tc-modules=&#34;cart&#34; data-tc-email=&#34;tonpinel@gmail.com&#34;&#62;
+		&#60;i class=&#34;icon-shopping-cart&#34;&#62;&#60;&#47;i&#62; &#60;span class=&#34;cart-quantity&#34;&#62;&#60;&#47;span&#62; items - &#60;span class=&#34;cart-total&#34;&#62;&#60;&#47;span&#62;
+	&#60;&#47;a&#62;
+	&#60;div id=&#34;cart-list&#34; class=&#34;hidden&#34;&#62;
+		&#60;!-- button to empty the cart --&#62;
+
+
+		&#60;!-- show the cart --&#62;
+		&#60;div class=&#34;cart-items&#34;&#62;
+
+
+		&#60;&#47;div&#62;
+		&#60;div class=&#34;shipment ta-r pa-s&#34;&#62;
+			+ 10€ shipment cost!
+		&#60;&#47;div&#62;
+		&#60;div class=&#34;actions&#34;&#62;
+			&#60;a href=&#34;javascript:;&#34; class=&#34;button-ko ph-m simpleCart_empty&#34;&#62;&#60;i class=&#34;icon-trash-o&#34;&#62;&#60;&#47;i&#62; Empty &#60;&#47;a&#62;
+			&#60;!--&#60;a href=&#34;javascript:;&#34; class=&#34;button ph-m simpleCart_empty&#34;&#62;&#60;i class=&#34;icon-eye&#34;&#62;&#60;&#47;i&#62; View &#60;&#47;a&#62;--&#62;
+			&#60;a href=&#34;javascript:;&#34; class=&#34;button-ok simpleCart_checkout&#34;&#62;Checkout &#60;i class=&#34;icon-arrow-circle-right&#34;&#62;&#60;&#47;i&#62; &#60;&#47;a&#62;
+		&#60;&#47;div&#62;
+	&#60;&#47;div&#62;
+&#60;&#47;div&#62;</code>
+            </pre>
+            
+
+        </div>
+    </section>
+    
+    
+</div>
+
+<h1>Items</h1>
+<div data-tc-modules="tabs">
+	
+    <section id="tab-product-1" data-tc-name="Demo">
+        <div class=" box-text">
+	        
+            
+				<div class="cart-shelf-item">
+	<h2 class="cart-item-name"> Awesome T-shirt </h2>
+	<p>
+		<input type="text" value="1" class="cart-item-quantity">
+		<span class="cart-item-price">$35.99</span><br>
+		<a class="cart-item-add" href="javascript:;"> Add to Cart </a>
+	</p>
+</div>
+
+            
+					        
+        </div>
+    </section>
+    
+    <section id="tab-product-2" data-tc-name="Code">
+        <div class="box-text">
+            
+            <pre>
+	            <code data-tc-modules="code">&#60;div class=&#34;cart-shelf-item&#34;&#62;
+	&#60;h2 class=&#34;cart-item-name&#34;&#62; Awesome T-shirt &#60;&#47;h2&#62;
+	&#60;p&#62;
+		&#60;input type=&#34;text&#34; value=&#34;1&#34; class=&#34;cart-item-quantity&#34;&#62;
+		&#60;span class=&#34;cart-item-price&#34;&#62;$35.99&#60;&#47;span&#62;&#60;br&#62;
+		&#60;a class=&#34;cart-item-add&#34; href=&#34;javascript:;&#34;&#62; Add to Cart &#60;&#47;a&#62;
+	&#60;&#47;p&#62;
 &#60;&#47;div&#62;
 </code>
             </pre>
@@ -153,6 +208,38 @@
             <dt><h4 class="mb-n c-main">data-tc-email</h4></dt>
             <dd class="mb-l">
                 <p class="mb-s">Paypal Email address to checkout</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-currency</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Currency used in your cart.</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: EUR</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-shipping-free-since</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Free shipment if the client expend at least this value</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: 10000</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-shipping-cost</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Standard Shiping cost</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: 15</p>
+                
+            </dd>
+            
+            <dt><h4 class="mb-n c-main">data-tc-tax-rate</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Tax rate</p>
+                
+                    <p class="fz-xs c-text-light">DEFAULT: 0.21</p>
                 
             </dd>
             
