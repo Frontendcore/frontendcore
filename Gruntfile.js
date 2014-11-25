@@ -26,6 +26,7 @@ module.exports = function (grunt) {
             }
 
         },
+
 		cssmin: {
 			combine: {
 				files: {
@@ -224,8 +225,11 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            build: {
-                src: ["changelog.md"]
+            sassdoc: {
+                src: ['build/sassdoc']
+            },
+            changelog: {
+                src: ['changelog.md']
             }
         },
 		watch: {
@@ -262,11 +266,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
-	grunt.registerTask('scss', ['compass', 'cssmin','sassdoc']);
+	//grunt.registerTask('scss', ['compass', 'cssmin','clean:sassdoc','sassdoc']);
+	grunt.registerTask('scss', ['compass', 'cssmin']);
 	grunt.registerTask('html', ['stencil']);
-	grunt.registerTask('log', ['clean','changelog','stencil']);
+	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
-	grunt.registerTask('default', ['stencil', 'compass','sassdoc','cssmin', 'uglify', 'jshint','jasmine']);
+	grunt.registerTask('default', ['html', 'scss', 'js']);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);
