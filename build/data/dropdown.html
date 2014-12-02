@@ -82,43 +82,68 @@
 		<a href="#category-menu" class="button">Go to menu</a>
 	</div>
 	
-<h1>Textarea autosize</h1>
+<h1>Dropdown</h1>
+<p>Dropdown menu. The navigation objects are needed.</p>
+
 <div data-tc-modules="tabs">
 	
-	<a href="../tests/autosize.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
+	<a href="../tests/dropdown.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
 	
-    <section id="tab-autosize-textarea-1" data-tc-name="Demo">
-        <div class=" box-text" >
+    <section id="tab-dropdown-1" data-tc-name="Demo">
+        <div class=" box-text" style="min-height:200px">
 	        
-	        <form class="forms" method="get">
-		        <fieldset>
-			        <ol>
-				        <li>
-					        
             
-				<textarea name="textarea" data-tc-modules="autosize">
-	Autosize with a CSS transition.
-	Try typing something...
-</textarea>
+				<nav class="navigation" data-tc-modules="dropdown">
+    <ul>
+        <li class="navigation-dropdown">
+            <a title="Fruits" href="#fruits">Fruits</a>
+            <ul id="fruits">
+                <li><a title="Oranges" href="#tab1">Oranges</a></li>
+                <li><a title="Apples" href="#tab2">Apples</a></li>
+                <li><a title="Bananas" href="#tab3">Bananas</a></li>
+            </ul>
+        </li>
+        <li class="navigation-dropdown">
+            <a title="Vegetables" href="#vegetables">Vegetables</a>
+            <ul id="vegetables">
+                <li><a title="Menu item 1" href="#tab1">Oranges</a></li>
+                <li><a title="Menu item 2" href="#tab2">Apples</a></li>
+                <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
+            </ul>
+        </li>
+        <li><a title="Menu item 3" href="#tab3">Lettuce</a></li>
+    </ul>
+</nav>
             
 					        
-				        </li>
-			        </ol>
-			        <button type="submit" class="button">Send</button>
-		        </fieldset>
-	        </form>
-	        
         </div>
     </section>
     
-    <section id="tab-autosize-textarea-2" data-tc-name="Code">
+    <section id="tab-dropdown-2" data-tc-name="Code">
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;textarea name=&#34;textarea&#34; data-tc-modules=&#34;autosize&#34;&#62;
-	Autosize with a CSS transition.
-	Try typing something...
-&#60;&#47;textarea&#62;</code>
+	            <code data-tc-modules="code">&#60;nav class=&#34;navigation&#34; data-tc-modules=&#34;dropdown&#34;&#62;
+    &#60;ul&#62;
+        &#60;li class=&#34;navigation-dropdown&#34;&#62;
+            &#60;a title=&#34;Fruits&#34; href=&#34;#fruits&#34;&#62;Fruits&#60;&#47;a&#62;
+            &#60;ul id=&#34;fruits&#34;&#62;
+                &#60;li&#62;&#60;a title=&#34;Oranges&#34; href=&#34;#tab1&#34;&#62;Oranges&#60;&#47;a&#62;&#60;&#47;li&#62;
+                &#60;li&#62;&#60;a title=&#34;Apples&#34; href=&#34;#tab2&#34;&#62;Apples&#60;&#47;a&#62;&#60;&#47;li&#62;
+                &#60;li&#62;&#60;a title=&#34;Bananas&#34; href=&#34;#tab3&#34;&#62;Bananas&#60;&#47;a&#62;&#60;&#47;li&#62;
+            &#60;&#47;ul&#62;
+        &#60;&#47;li&#62;
+        &#60;li class=&#34;navigation-dropdown&#34;&#62;
+            &#60;a title=&#34;Vegetables&#34; href=&#34;#vegetables&#34;&#62;Vegetables&#60;&#47;a&#62;
+            &#60;ul id=&#34;vegetables&#34;&#62;
+                &#60;li&#62;&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34;&#62;Oranges&#60;&#47;a&#62;&#60;&#47;li&#62;
+                &#60;li&#62;&#60;a title=&#34;Menu item 2&#34; href=&#34;#tab2&#34;&#62;Apples&#60;&#47;a&#62;&#60;&#47;li&#62;
+                &#60;li&#62;&#60;a title=&#34;Menu item 3&#34; href=&#34;#tab3&#34;&#62;Bananas&#60;&#47;a&#62;&#60;&#47;li&#62;
+            &#60;&#47;ul&#62;
+        &#60;&#47;li&#62;
+        &#60;li&#62;&#60;a title=&#34;Menu item 3&#34; href=&#34;#tab3&#34;&#62;Lettuce&#60;&#47;a&#62;&#60;&#47;li&#62;
+    &#60;&#47;ul&#62;
+&#60;&#47;nav&#62;</code>
             </pre>
             
 
@@ -135,7 +160,7 @@
 			
 			<li ><a title="autocomplete" href="autocomplete.html"><i class="icon-caret-square-o-down"></i> Autocomplete</a></li>
 			
-			<li class="active"><a title="autosize" href="autosize.html"><i class="icon-arrows-v"></i> Autosize</a></li>
+			<li ><a title="autosize" href="autosize.html"><i class="icon-arrows-v"></i> Autosize</a></li>
 			
 			<li ><a title="code" href="code.html"><i class="icon-code"></i> Code beautifier</a></li>
 			
@@ -143,7 +168,7 @@
 			
 			<li ><a title="carousel" href="carousel.html"><i class="icon-th-large"></i> Carousel</a></li>
 			
-			<li ><a title="dropdown" href="dropdown.html"><i class="icon-angle-down"></i> Dropdown</a></li>
+			<li class="active"><a title="dropdown" href="dropdown.html"><i class="icon-angle-down"></i> Dropdown</a></li>
 			
 			<li ><a title="sidemenu" href="sidemenu.html"><i class="icon-indent"></i> Side menu</a></li>
 			

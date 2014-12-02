@@ -1,0 +1,17 @@
+{
+	"name":"Dropdown",
+	"template": "sections/data"
+}
+
+
+<h1>Dropdown</h1>
+<p>Dropdown menu. The navigation objects are needed.</p>
+
+{{= it.include('component',
+	{
+		id:'dropdown',
+		path:'data/dropdown/dropdown',
+        test: 'dropdown',
+        minHeight: '200px'
+	}
+)}}

@@ -84,7 +84,8 @@ module.exports = function (grunt) {
 						'js/ui/carousel.js',
 						'js/ui/sidemenu.js',
 						'js/ui/cart.js',
-						'js/ui/parallax.js'
+						'js/ui/parallax.js',
+						'js/ui/dropdown.js'
 					],
 					'build/static/js/core.js': [
 						'bower_components/tinycorejs/build/TinyCore.js',

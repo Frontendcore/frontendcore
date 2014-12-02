@@ -3,7 +3,7 @@
 	<a href="../tests/{{= it.test}}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
 	{{?}}
     <section id="tab-{{= it.id || 'no-id' }}-1" data-tc-name="Demo">
-        <div class=" {{? it.skin == 'dark' }}box-invert{{??}}box-text{{?}}">
+        <div class=" {{? it.skin == 'dark' }}box-invert{{??}}box-text{{?}}" {{? it.minHeight != null }}style="min-height:{{= it.minHeight }}"{{?}}>
 	        {{? it.form != null }}
 	        <form class="forms" method="get">
 		        <fieldset>
