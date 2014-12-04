@@ -1417,8 +1417,8 @@
         <div class="box-text">
             <pre><code data-tc-modules="code">@import "susy";
 
-$grid-container-width: 1140px;
-$grid-columns: 12;
+$grid-container-width: map-get($defaults, grid-container-width);
+$grid-columns: map-get($defaults, grid-columns);
 
 $susy: (
   flow: ltr,
@@ -1602,7 +1602,7 @@ body > .grid:first-of-type {
 
 </div>
 <div class="col-2-12">
-	<nav id="category-menu" class="navigation-sub vertical">
+	<nav id="category-menu" class="navigation-sub navigation-vertical">
 		<ul>
 			
 			<li class="active"><a title="grids" href="grids.html"><i class="icon-th"></i> grids</a></li>

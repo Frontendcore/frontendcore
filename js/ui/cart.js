@@ -52,23 +52,23 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
                 }
 
                 if (this.getAttribute("data-tc-currency") !== null) {
-                    oOptions.currency = this.getAttribute("data-tc-currency");
+                    oOptions.currency = parseFloat(this.getAttribute("data-tc-currency"));
                 }
 
                 if (this.getAttribute("data-tc-shipping-free-since") !== null) {
-                    oOptions.shippingFreeSince = this.getAttribute("data-tc-shipping-free-since");
+                    oOptions.shippingFreeSince = parseFloat(this.getAttribute("data-tc-shipping-free-since"));
                 } else {
                     oOptions.shippingFreeSince = self.oDefault.shippingFreeSince;
                 }
 
                 if (this.getAttribute("data-tc-shipping-cost") !== null) {
-                    oOptions.shippingCost = this.getAttribute("data-tc-shipping-cost");
+                    oOptions.shippingCost = parseFloat(this.getAttribute("data-tc-shipping-cost"));
                 } else {
                     oOptions.shippingCost = self.oDefault.shippingCost;
                 }
 
                 if (this.getAttribute("data-tc-tax-rate") !== null) {
-                    oOptions.taxRate = this.getAttribute("data-tc-tax-rate");
+                    oOptions.taxRate = parseFloat(this.getAttribute("data-tc-tax-rate"));
                 }
 
                 oOptions.shippingCustom = function(){

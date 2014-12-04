@@ -15,7 +15,7 @@
 	{{= it.document }}
 </div>
 <div class="col-2-12">
-	<nav id="category-menu" class="navigation-sub vertical">
+	<nav id="category-menu" class="navigation-sub navigation-vertical">
 		<ul>
 			{{~it.menu :value:index}}
 			<li {{? it.document.name === value[0]}}class="active"{{?}}><a title="{{=value[1]}}" href="{{=value[1]}}.html"><i class="{{=value[2]}}"></i> {{=value[0]}}</a></li>

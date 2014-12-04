@@ -128,14 +128,14 @@
 </div>
 
 
-	<h2>.navigation small</h2>
+	<h2>.navigation .navigation-slim</h2>
     <div data-tc-modules="tabs">
 	
-    <section id="tab-navigation-small-1" data-tc-name="Demo">
+    <section id="tab-navigation-slim-1" data-tc-name="Demo">
         <div class=" box-text" >
 	        
             
-				<nav class="navigation small">
+				<nav class="navigation navigation-slim">
 	<ul>
 		<li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
 		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
@@ -147,11 +147,11 @@
         </div>
     </section>
     
-    <section id="tab-navigation-small-2" data-tc-name="Code">
+    <section id="tab-navigation-slim-2" data-tc-name="Code">
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;nav class=&#34;navigation small&#34;&#62;
+	            <code data-tc-modules="code">&#60;nav class=&#34;navigation navigation-slim&#34;&#62;
 	&#60;ul&#62;
 		&#60;li class=&#34;active&#34;&#62;&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34;&#62;Menu item 1&#60;&#47;a&#62;&#60;&#47;li&#62;
 		&#60;li&#62;&#60;a title=&#34;Menu item 2&#34; href=&#34;#tab2&#34;&#62;Menu item 2&#60;&#47;a&#62;&#60;&#47;li&#62;
@@ -216,16 +216,25 @@
 </div>
 
 
-	<h2>.navigation vertical</h2>
+	<h2>.navigation navigation-vertical</h2>
        <div data-tc-modules="tabs">
 	
     <section id="tab-navigation-vertical-1" data-tc-name="Demo">
         <div class=" box-text" >
 	        
             
-				<nav class="navigation vertical">
+				<nav class="navigation navigation-vertical">
 	<ul>
-		<li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+		<li>
+			<a title="Menu item 1" href="#tab1" data-tc-modules="toggle">Menu item 1</a>
+			<ul id="tab1">
+				<li class="active">
+					<a title="Menu item 1" href="#tab1">Menu item 1</a>
+				</li>
+				<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+				<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+			</ul>
+		</li>
 		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
 		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
 	</ul>
@@ -239,9 +248,18 @@
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;nav class=&#34;navigation vertical&#34;&#62;
+	            <code data-tc-modules="code">&#60;nav class=&#34;navigation navigation-vertical&#34;&#62;
 	&#60;ul&#62;
-		&#60;li class=&#34;active&#34;&#62;&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34;&#62;Menu item 1&#60;&#47;a&#62;&#60;&#47;li&#62;
+		&#60;li&#62;
+			&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34; data-tc-modules=&#34;toggle&#34;&#62;Menu item 1&#60;&#47;a&#62;
+			&#60;ul id=&#34;tab1&#34;&#62;
+				&#60;li class=&#34;active&#34;&#62;
+					&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34;&#62;Menu item 1&#60;&#47;a&#62;
+				&#60;&#47;li&#62;
+				&#60;li&#62;&#60;a title=&#34;Menu item 2&#34; href=&#34;#tab2&#34;&#62;Menu item 2&#60;&#47;a&#62;&#60;&#47;li&#62;
+				&#60;li&#62;&#60;a title=&#34;Menu item 3&#34; href=&#34;#tab3&#34;&#62;Menu item 3&#60;&#47;a&#62;&#60;&#47;li&#62;
+			&#60;&#47;ul&#62;
+		&#60;&#47;li&#62;
 		&#60;li&#62;&#60;a title=&#34;Menu item 2&#34; href=&#34;#tab2&#34;&#62;Menu item 2&#60;&#47;a&#62;&#60;&#47;li&#62;
 		&#60;li&#62;&#60;a title=&#34;Menu item 3&#34; href=&#34;#tab3&#34;&#62;Menu item 3&#60;&#47;a&#62;&#60;&#47;li&#62;
 	&#60;&#47;ul&#62;
@@ -350,10 +368,10 @@
 </div>
 
 
-    <h2>.navigation-sub small</h2>
+    <h2>.navigation-sub .navigation-slim</h2>
        <div data-tc-modules="tabs">
 	
-    <section id="tab-subnavigation-small-1" data-tc-name="Demo">
+    <section id="tab-subnavigation-slim-1" data-tc-name="Demo">
         <div class=" box-text" >
 	        
             
@@ -369,7 +387,7 @@
         </div>
     </section>
     
-    <section id="tab-subnavigation-small-2" data-tc-name="Code">
+    <section id="tab-subnavigation-slim-2" data-tc-name="Code">
         <div class="box-text">
             
             <pre>
@@ -438,14 +456,14 @@
 </div>
 
    
-   	<h2>.navigation-sub vertical</h2>
+   	<h2>.navigation-sub navigation-vertical</h2>
           <div data-tc-modules="tabs">
 	
     <section id="tab-subnavigation-vertical-1" data-tc-name="Demo">
         <div class=" box-text" >
 	        
             
-				<nav class="navigation-sub vertical">
+				<nav class="navigation-sub navigation-vertical">
 	<ul>
 		<li class="active">
 			<a title="Menu item 1" href="#tab1">Menu item 1</a>
@@ -468,7 +486,7 @@
         <div class="box-text">
             
             <pre>
-	            <code data-tc-modules="code">&#60;nav class=&#34;navigation-sub vertical&#34;&#62;
+	            <code data-tc-modules="code">&#60;nav class=&#34;navigation-sub navigation-vertical&#34;&#62;
 	&#60;ul&#62;
 		&#60;li class=&#34;active&#34;&#62;
 			&#60;a title=&#34;Menu item 1&#34; href=&#34;#tab1&#34;&#62;Menu item 1&#60;&#47;a&#62;
@@ -496,7 +514,7 @@
 </section>
 </div>
 <div class="col-2-12">
-	<nav id="category-menu" class="navigation-sub vertical">
+	<nav id="category-menu" class="navigation-sub navigation-vertical">
 		<ul>
 			
 			<li ><a title="grids" href="grids.html"><i class="icon-th"></i> grids</a></li>
