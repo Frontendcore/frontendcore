@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=".././static/css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src=".././static//js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '.././static/js/modules/',
+            sPathJsLibs : '.././static/js/libs/',
+            sPathRoot: '.././static/',
+            sPathCss: '.././static/css/',
+            bCss : false,
+            bResponsiveImages: true
+        }
+    </script>
+    <script src=".././static/js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+
+<header class="header">
+    <div class="grid">
+        <a title="Frontend Core" href="../index.html" class="logo"><img src=".././static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a>
+    </div>
+    <section class="menu">
+        <div class="grid">
+            <nav class="navigation mobile">
+                <ul>
+                    <li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+<div class="grid">
+    <div class="col-1-5">
+                    <nav class="navigation navigation-vertical">
+                <ul>
+                                            <li>
+                            <a href="#structure" data-tc-modules="toggle">
+                                Structure
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="structure"  class="hidden">
+                                                            <li >
+                                    <a href=".././structure/grids.html">Grids </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#navigation" data-tc-modules="toggle">
+                                Navigation
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="navigation"  class="hidden">
+                                                            <li >
+                                    <a href=".././navigation/navigation.html">Navigation <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/navigation-sub.html">Subnavigation </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/filters.html">Filters </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/pagination.html">Pagination </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tabs.html">Tabs <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tags.html">Tags </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/side-menu.html">Side Menu <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/steps.html">Steps </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#forms" data-tc-modules="toggle">
+                                Forms
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="forms" >
+                                                            <li  class="active">
+                                    <a href=".././forms/form-grids.html">Form Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/text-fields.html">Text Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/number-fields.html">Number Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/option-fields.html">Option Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/error-fields.html">Error Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/read-only-fields.html">Read Only Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/search-form.html">Search Form </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autocomplete.html">Autocomplete <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autosize.html">Autosize <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            </div>
+    <div class="col-4-5">
+            <h1>Form Grids</h1>
+    <p>You can use the same grids to structure form that you use to structure the page. Here you have some examples.</p>
+                                <div data-tc-modules="tabs">
+                <section id="tab-text-fields-1" data-tc-name="Demo">
+            <div class="box-text" >
+                                                <form class="form">
+	<fieldset>
+		<legend>Text fields</legend>
+		<ol class="grid">
+			<li class="col-1-2">
+				<label for="name">Name</label>
+				<input type="text" id="name" placeholder="Name"/>
+			</li>
+			<li class="col-1-2">
+				<label for="surname">Surname</label>
+				<input type="text" id="surname" placeholder="surname"/>
+			</li>
+		</ol>
+		<ol class="grid">
+			<li class="col-1-5">
+				<label for="postalcode">Postal code</label>
+				<input type="text" id="postalcode" placeholder="Postal code"/>
+			</li>
+			<li class="col-3-5">
+				<label for="street">Street</label>
+				<input type="text" id="street" placeholder="street"/>
+			</li>
+			<li class="col-1-5">
+				<label for="number">Number</label>
+				<input type="text" id="number" placeholder="number"/>
+			</li>
+		</ol>
+		<ol>
+			<li>
+				<label for="url-field">Url</label>
+				<input type="url" id="url-field" placeholder="Example: http://www.yoursite.com" />
+			</li>
+			<li>
+				<label for="email-field">Email</label>
+				<input type="email" id="email-field" placeholder="email" />
+			</li>
+		</ol>
+		<ol class="grid">
+			<li class="col-1-2">
+				<label><strong>Select an option:</strong></label>
+				<ul class="list-horizontal">
+					<li>
+						<label for="first-option1"><input type="radio" id="first-option1" name="radio" /> First option</label>
+					</li>
+					<li>
+						<label for="second-option1"><input type="radio" id="second-option1" name="radio" /> Second option</label>
+					</li>
+					<li>
+						<label for="third-option1"><input type="radio" id="third-option1" name="radio" /> Third option</label>
+					</li>
+				</ul>
+			</li>
+			<li class="col-1-2">
+				<label><strong>Choose as many as you want:</strong></label>
+				<ul class="list-horizontal">
+					<li>
+						<label for="browser_ff">
+							<input id="browser_ff" name="available_browsers[]" class="checkbox" type="checkbox" value="ff">
+							Firefox
+						</label>
+					</li>
+					<li>
+						<label for="browser_ie">
+							<input id="browser_ie" name="available_browsers[]" class="checkbox" type="checkbox" value="ie">
+							Internet explorer
+						</label>
+					</li>
+					<li>
+						<label for="browser_ch">
+							<input id="browser_ch" name="available_browsers[]" class="checkbox" type="checkbox" value="ch">
+							Chrome
+						</label>
+					</li>
+					<li>
+						<label for="browser_op">
+							<input id="browser_op" name="available_browsers[]" class="checkbox" type="checkbox" value="op">
+							Opera
+						</label>
+					</li>
+					<li>
+						<label for="browser_sa">
+							<input id="browser_sa" name="available_browsers[]" class="checkbox" type="checkbox" value="sa">
+							Safari
+						</label>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</fieldset>
+</form>                                            </div>
+        </section>
+                <section id="tab-text-fields-2" data-tc-name="Code">
+            <div class="box-text">
+                <pre>
+	                <code data-tc-modules="code">&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Text fields&lt;/legend&gt;
+		&lt;ol class=&quot;grid&quot;&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
+				&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;name&quot; placeholder=&quot;Name&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
+				&lt;label for=&quot;surname&quot;&gt;Surname&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;surname&quot; placeholder=&quot;surname&quot;/&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;grid&quot;&gt;
+			&lt;li class=&quot;col-1-5&quot;&gt;
+				&lt;label for=&quot;postalcode&quot;&gt;Postal code&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;postalcode&quot; placeholder=&quot;Postal code&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-3-5&quot;&gt;
+				&lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;street&quot; placeholder=&quot;street&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-1-5&quot;&gt;
+				&lt;label for=&quot;number&quot;&gt;Number&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;number&quot; placeholder=&quot;number&quot;/&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;url-field&quot;&gt;Url&lt;/label&gt;
+				&lt;input type=&quot;url&quot; id=&quot;url-field&quot; placeholder=&quot;Example: http://www.yoursite.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;email-field&quot;&gt;Email&lt;/label&gt;
+				&lt;input type=&quot;email&quot; id=&quot;email-field&quot; placeholder=&quot;email&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;grid&quot;&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
+				&lt;label&gt;&lt;strong&gt;Select an option:&lt;/strong&gt;&lt;/label&gt;
+				&lt;ul class=&quot;list-horizontal&quot;&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;first-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;first-option1&quot; name=&quot;radio&quot; /&gt; First option&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;second-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;second-option1&quot; name=&quot;radio&quot; /&gt; Second option&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;third-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;third-option1&quot; name=&quot;radio&quot; /&gt; Third option&lt;/label&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
+				&lt;label&gt;&lt;strong&gt;Choose as many as you want:&lt;/strong&gt;&lt;/label&gt;
+				&lt;ul class=&quot;list-horizontal&quot;&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ff&quot;&gt;
+							&lt;input id=&quot;browser_ff&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ff&quot;&gt;
+							Firefox
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ie&quot;&gt;
+							&lt;input id=&quot;browser_ie&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ie&quot;&gt;
+							Internet explorer
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ch&quot;&gt;
+							&lt;input id=&quot;browser_ch&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ch&quot;&gt;
+							Chrome
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_op&quot;&gt;
+							&lt;input id=&quot;browser_op&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;op&quot;&gt;
+							Opera
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_sa&quot;&gt;
+							&lt;input id=&quot;browser_sa&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;sa&quot;&gt;
+							Safari
+						&lt;/label&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </div>
+</div>
+</body>
+</html>

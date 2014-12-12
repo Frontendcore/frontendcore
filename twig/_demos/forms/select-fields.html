@@ -1,0 +1,56 @@
+<form class="form">
+	<fieldset>
+		<legend>Select fields</legend>
+		<ol>
+			<li>
+				<label for="select-field">Select Field</label>
+				<select id="select-field"class="w-100">
+					<option>option 1</option>
+					<option>option 2</option>
+				</select>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Select multiple</legend>
+		<ul id="countries_selector" class="select-multiple">
+			<li>
+				<a title="Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos." href="#" class="icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip" data-ov-content-id="tooltip-by-site"></a>
+				<label for="available_countries">Available countries</label>
+				<select id="available_countries" name="available_countries" multiple="multiple">
+					<optgroup>
+						<option value="DE">Alemania</option>
+						<option value="AU">Australia</option>
+						<option value="AT">Austria</option>
+						<option value="BR">Brasil</option>
+						<option value="CA">Canadá</option>
+						<option value="CN">China</option>
+						<option value="ES">España</option>
+					</optgroup>
+					<optgroup>
+						<option value="US">Estados Unidos</option>
+						<option value="FR">Francia</option>
+						<option value="IN">India</option>
+						<option value="IT">Italia</option>
+						<option value="JP">Japón</option>
+						<option value="NL">Países Bajos</option>
+						<option value="PL">Polonia</option>
+						<option value="GB">Reino Unido</option>
+						<option value="RU">Rusia</option>
+						<option value="SE">Suecia</option>
+						<option value="CH">Suiza</option>
+					</optgroup>
+				</select>
+			</li>
+			<li class="select-multiple-buttons">
+				<button type="button" id="add_countries" class="button"> Add <i class="icon-caret-right"></i></button>
+				<button type="button" id="remove_countries" class="button"><i class="icon-caret-left"></i> Delete</button>
+			</li>
+			<li>
+				<label for="selected_countries">Selected countries</label>
+				<select id="selected_countries" name="selected_countries[]" multiple="multiple">
+				</select>
+			</li>
+		</ul>
+	</fieldset>
+</form>

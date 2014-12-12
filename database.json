@@ -1,0 +1,115 @@
+{
+	"url": {
+		"base" : "./",
+		"static" : "./static/"
+	},
+	"sections": {
+		"structure" : {
+			"name" : "Structure",
+			"icon" : "table",
+			"href" : "#structure",
+			"id": "structure",
+			"children" : {
+				"Grids" : {
+					"name":"Grids",
+					"href": "grids.html"
+				}
+			}
+		},
+		"navigation" : {
+			"name" : "Navigation",
+			"icon" : "sitemap",
+			"href" : "#navigation",
+			"id": "navigation",
+			"children" : {
+				"Navigation" : {
+					"name":"Navigation",
+					"href": "navigation.html",
+					"js" : true
+				},
+				"Subnavigation" : {
+					"name":"Subnavigation",
+					"href": "navigation-sub.html"
+				},
+				"Filters" : {
+					"name":"Filters",
+					"href": "filters.html"
+				},
+				"Pagination" : {
+					"name":"Pagination",
+					"href": "pagination.html"
+				},
+				"Tabs" : {
+					"name":"Tabs",
+					"href": "tabs.html",
+					"js" : true
+				},
+				"Tags" : {
+					"name":"Tags",
+					"href": "tags.html"
+				},
+				"Side menu" : {
+					"name":"Side Menu",
+					"href": "side-menu.html",
+					"js" : true
+				},
+				"Steps" : {
+					"name":"Steps",
+					"href": "steps.html"
+				}
+			}
+		},
+		"forms" : {
+			"name" : "Forms",
+			"icon" : "sitemap",
+			"href" : "#forms",
+			"id": "forms",
+			"children" : {
+				"Form Grids" : {
+					"name":"Form Grids",
+					"href": "form-grids.html"
+				},
+				"Text Fields" : {
+					"name":"Text Fields",
+					"href": "text-fields.html"
+				},
+				"Number Fields" : {
+					"name":"Number Fields",
+					"href": "number-fields.html"
+				},
+				"Option Fields" : {
+					"name":"Option Fields",
+					"href": "option-fields.html"
+				},
+				"Tags Fields" : {
+					"name":"Tags Fields",
+					"href": "tags-fields.html",
+					"js" : true
+				},
+				"Error Fields" : {
+					"name":"Error Fields",
+					"href": "error-fields.html"
+				},
+				"Read Only Fields" : {
+					"name":"Read Only Fields",
+					"href": "read-only-fields.html"
+				},
+				"Search Form" : {
+					"name":"Search Form",
+					"href": "search-form.html"
+				},
+				"Autocomplete" : {
+					"name":"Autocomplete",
+					"href": "autocomplete.html",
+					"js" : true
+
+				},
+				"Autosize" : {
+					"name":"Autosize",
+					"href": "autosize.html",
+					"js" : true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{% set current_children = "Side Menu" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Side Menu</h1>
+    <p>The easiest way for doing your menu responsive.</p>
+    <section class="box-lighten">
+        <h2>Side menu on the left</h2>
+        {{ demos.demo(
+            'side-menu-1',
+            '../_demos/sidemenu/sidemenu-left.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Side menu on the right</h2>
+        {{ demos.demo(
+            'side-menu-2',
+            '../_demos/sidemenu/sidemenu-right.html'
+        )}}
+    </section>
+    {{ demos.settings(
+        {
+            "href" : {
+                "name" :        "href",
+                "description" : "The href of the link will be an anchor to the menu."
+            },
+            "data-tc-position" : {
+                "name" :        "data-tc-position",
+                "description" : "Define the left or right position for the menu.",
+                "default" :     "left"
+            }
+        }
+    )}}
+
+{% endblock %}

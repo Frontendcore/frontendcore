@@ -1,0 +1,24 @@
+{% set current_children = "Autocomplete" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Autocomplete</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/forms/autocomplete-input.html',
+        false,false,true,'300px'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-values",
+            "description" : "List separated by comma of the words and phrases to autocomplete."
+        }
+    }
+    )}}
+{% endblock %}

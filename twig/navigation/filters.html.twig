@@ -1,0 +1,14 @@
+{% set current_children = "Filters" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Filters</h1>
+    {{ demos.demo(
+        'pagination',
+        '../_demos/navigation/filters.html'
+    )}}
+{% endblock %}

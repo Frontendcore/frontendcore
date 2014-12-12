@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ relative_path ~ url.static }}css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src="{{ relative_path ~ url.static }}/js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href="{{ relative_path ~ url.static }}css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href="{{ relative_path ~ url.static }}css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '{{ relative_path ~ url.static }}js/modules/',
+            sPathJsLibs : '{{ relative_path ~ url.static }}js/libs/',
+            sPathRoot: '{{ relative_path ~ url.static }}',
+            sPathCss: '{{ relative_path ~ url.static }}css/',
+            bCss : false,
+            bResponsiveImages: true
+        }
+    </script>
+    <script src="{{ relative_path ~ url.static }}js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+{{ urlbase }}
+<header class="header">
+    <div class="grid">
+        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo"><img src="{{ relative_path ~ url.static }}img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a>
+    </div>
+    <section class="menu">
+        <div class="grid">
+            <nav class="navigation mobile">
+                <ul>
+                    <li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+<div class="grid">
+    <div class="col-1-5">
+        {% block navigation %}
+            <nav class="navigation navigation-vertical">
+                <ul>
+                    {% for section in sections %}
+                        <li>
+                            <a href="{{ section.href }}" data-tc-modules="toggle">
+                                {{ section.name }}
+                                {% if section.children|length > 0 %}
+                                    <i class="icon-angle-down fl-r"></i>
+                                {% endif %}
+                            </a>
+                            {% if section.children|length > 0 %}
+                            <ul id="{{ section.id }}" {% if section.name != current_section %} class="hidden"{% endif %}>
+                            {% for subsection in section.children %}
+                                <li {% if subsection.name == current_children %} class="active"{% endif %}>
+                                    <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}">{{ subsection.name }} {% if subsection.js %}<span class="fl-r cp">JS</span> {% endif %}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endblock %}
+    </div>
+    <div class="col-4-5">
+        {% block main %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>

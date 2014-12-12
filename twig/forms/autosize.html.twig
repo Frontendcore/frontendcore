@@ -1,0 +1,15 @@
+{% set current_children = "Autosize" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Autosize</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/forms/autosize-textarea.html',
+        false,false,true
+    )}}
+{% endblock %}

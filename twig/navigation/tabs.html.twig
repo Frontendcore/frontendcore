@@ -1,0 +1,26 @@
+{% set current_children = "Tabs" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Tabs</h1>
+    <section id="tabs" class="box-lighten">
+        <h2>Static tabs</h2>
+        <p>Use this tabs for static tabs with links to new pages.</p>
+        {{ demos.demo(
+            'tabs',
+            '../_demos/tabs/tabs.html'
+        )}}
+    </section>
+    <section id="tabs-js" class="box-lighten">
+        <h2>Dynamic tabs</h2>
+        <p>Use this tabs to show hidden content in the DOM.</p>
+        {{ demos.demo(
+            'tabs-js',
+            '../_demos/tabs/tabs-js.html'
+        )}}
+    </section>
+{% endblock %}

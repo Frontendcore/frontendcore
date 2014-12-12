@@ -1,0 +1,60 @@
+{% set current_children = "Grids" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1 class="mr-l">Grids</h1>
+    <p class="mb-n">The grids in Frontendcore are totally configurable, you've got several columns options and you can overwrite the map $grid to personalize it:</p>
+    <pre>
+	<code data-tc-modules="code" class="hljs scss">
+    $grid: (
+        container-width: 1140px,
+        // Defines the max width of the container. Could be px or %.
+
+        gutters: .50,
+        // Defines the width of the space between columns. Should be relative.
+
+        flow: ltr,
+        // Defines how to flow left to right (ltr) or Right to left (rtl)
+
+        container-position: center
+        // Defines the position of the container (left,center or right)
+
+    ) !global;
+    </code>
+</pre>
+    <p>By default the Grid is based on <a href="http://thisisdallas.github.io/Simple-Grid/">Simple grid</a>. As His author explain Simple Grid was created for developers who need a barebones grid. Simple Grid works well with 1140px layouts but easily adapts to any size of layout. With fluid columns, Simple Grid is responsive down to mobile.</p>
+    <h2 class="mt-l">1 Column</h2>
+    {{ demos.demo(
+        '1-column',
+        '../_demos/grids/1-column.html'
+    )}}
+    <h2 class="mt-l">2 Columns</h2>
+    {{ demos.demo(
+        '2-column',
+        '../_demos/grids/2-columns.html'
+    )}}
+    <h2 class="mt-l">3 Columns</h2>
+    {{ demos.demo(
+        '3-column',
+        '../_demos/grids/3-columns.html'
+    )}}
+    <h2 class="mt-l">4 Columns</h2>
+    {{ demos.demo(
+        '4-column',
+        '../_demos/grids/4-columns.html'
+    )}}
+    <h2 class="mt-l">5 Columns</h2>
+    {{ demos.demo(
+        '5-column',
+        '../_demos/grids/5-columns.html'
+    )}}
+    <h2 class="mt-l">12 Columns</h2>
+    {{ demos.demo(
+        '12-column',
+        '../_demos/grids/12-columns.html'
+    )}}
+{% endblock %}

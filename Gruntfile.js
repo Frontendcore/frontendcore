@@ -196,30 +196,6 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		stencil: {
-			main: {
-				options: {
-                    env: {
-                        title: "frontendcore"
-                    },
-                    dot_template_settings: {
-                      strip: false
-                    },
-					partials: 'site/partials',
-					templates: 'site/templates'
-				},
-				files: [
-					{
-						expand: true,
-						cwd: 'site/pages/',
-						src: '**/*.*',
-						dest: 'build',
-						ext: '.html',
-						flatten: false
-					}
-				]
-			}
-		},
         changelog: {
             options: {
                 dest: 'changelog.md'
@@ -233,6 +209,20 @@ module.exports = function (grunt) {
                 src: ['changelog.md']
             }
         },
+		twigRender: {
+			dist: {
+				files: [
+					{
+						data: 'database.json',
+						expand: true,
+						cwd: 'twig/',
+						src: ['**/*.html.twig', '!**/_*.html.twig'],
+						dest: 'build/',
+						ext: '.html'
+					}
+				]
+			}
+		},
 		watch: {
 			scripts: {
 				files: ['js/core/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
@@ -242,13 +232,13 @@ module.exports = function (grunt) {
 				files: ['tests/**/*.js'],
 				tasks: ['tests']
 			},
-			site: {
-				files: ['site/**/*.html','site/**/*.md'],
-				tasks: ['html']
-			},
 			scss: {
 				files: ['css/**/*.scss'],
 				tasks: ['scss']
+			},
+			twig: {
+				files: ['twig/**/*.twig','database.json','twig/**/*.html'],
+				tasks: ['twig']
 			}
 		}
 
@@ -258,21 +248,21 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-stencil');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sassdoc');
     grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-twig-render');
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	//grunt.registerTask('scss', ['compass', 'cssmin','clean:sassdoc','sassdoc']);
 	grunt.registerTask('scss', ['compass', 'cssmin']);
-	grunt.registerTask('html', ['stencil']);
+	grunt.registerTask('twig', ['twigRender']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
-	grunt.registerTask('default', ['html', 'scss', 'js']);
+	grunt.registerTask('default', ['twig','scss', 'js']);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);

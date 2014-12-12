@@ -1,0 +1,48 @@
+{% set current_children = "Tags Fields" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Tags Fields</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/forms/tags-input.html'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "value",
+            "description" : "Tags separated by coma. Use it also to prefill the input with tags."
+        },
+        "2" : {
+            "name" :        "data-tc-values",
+            "description" : "List separated by comma of the words and phrases to autocomplete.",
+            "default" :     "left"
+        },
+        "3" : {
+            "name" :        "data-tc-max",
+            "description" : "Max number of tags allowed.",
+            "default" :     "add a tag..."
+        },
+        "4" : {
+            "name" :        "data-tc-text-noresult",
+            "description" : "Text used when there is no results.",
+            "default" :     "No Results found"
+        },
+        "5" : {
+            "name" :        "data-tc-text-max",
+            "description" : "Text used when no more tags are allowed",
+            "default" :     "No More Selections Are Allowed"
+        },
+        "6" : {
+            "name" :        "placeholder",
+            "description" : "Text that will be displayed when is empty.",
+            "default" :     "left"
+        }
+    }
+    )}}
+{% endblock %}

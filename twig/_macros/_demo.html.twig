@@ -1,0 +1,66 @@
+{% macro demo(id, path, scss, test, form, minHeight, skin, code) %}
+    {% set test = test|default(false) %}
+    {% set code = code|default(true) %}
+    {% set minHeight = minHeight|default(false) %}
+    {% set form = form|default(false) %}
+    {% set scss = scss|default(false) %}
+    {% set skin = skin|default(false) %}
+    <div data-tc-modules="tabs">
+        {% if test %}
+        <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
+        {% endif %}
+        <section id="tab-{{ id }}-1" data-tc-name="Demo">
+            <div class="{% if skin == 'dark' %}box-invert{% else %}box-text{% endif %}" {% if minHeight != false %}style="min-height:{{ minHeight }}"{% endif %}>
+                {% if form == true %}
+                <form class="forms" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                {% endif %}
+                                {%  include path %}
+                                {% if form == true %}
+                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                {% endif %}
+            </div>
+        </section>
+        {% if code %}
+        <section id="tab-{{ id }}-2" data-tc-name="Code">
+            <div class="box-text">
+                <pre>
+	                <code data-tc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code>
+                </pre>
+            </div>
+        </section>
+        {% endif %}
+        {% if scss %}
+            <section id="tab-{{ id }}-2" data-tc-name="Scss">
+                <div class="box-text">
+                <pre>
+	                <code data-tc-modules="code">{% filter escape %}{%  include scss %}{% endfilter %}</code>
+                </pre>
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+
+{% macro settings(terms) %}
+        <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+            {% for term in terms %}
+            <dt><h4 class="mb-n c-main">{{term.name}}</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">{{term.description}}</p>
+                {% if term.default %}
+                <p class="fz-xs c-text-light">DEFAULT: {{ term.default }}</p>
+                {% endif %}
+            </dd>
+            {% endfor %}
+        </dl>
+{% endmacro %}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=".././static/css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src=".././static//js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '.././static/js/modules/',
+            sPathJsLibs : '.././static/js/libs/',
+            sPathRoot: '.././static/',
+            sPathCss: '.././static/css/',
+            bCss : false,
+            bResponsiveImages: true
+        }
+    </script>
+    <script src=".././static/js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+
+<header class="header">
+    <div class="grid">
+        <a title="Frontend Core" href="../index.html" class="logo"><img src=".././static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a>
+    </div>
+    <section class="menu">
+        <div class="grid">
+            <nav class="navigation mobile">
+                <ul>
+                    <li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+<div class="grid">
+    <div class="col-1-5">
+                    <nav class="navigation navigation-vertical">
+                <ul>
+                                            <li>
+                            <a href="#structure" data-tc-modules="toggle">
+                                Structure
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="structure"  class="hidden">
+                                                            <li >
+                                    <a href=".././structure/grids.html">Grids </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#navigation" data-tc-modules="toggle">
+                                Navigation
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="navigation" >
+                                                            <li >
+                                    <a href=".././navigation/navigation.html">Navigation <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/navigation-sub.html">Subnavigation </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/filters.html">Filters </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/pagination.html">Pagination </a>
+                                </li>
+                                                            <li  class="active">
+                                    <a href=".././navigation/tabs.html">Tabs <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tags.html">Tags </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/side-menu.html">Side Menu <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/steps.html">Steps </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#forms" data-tc-modules="toggle">
+                                Forms
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="forms"  class="hidden">
+                                                            <li >
+                                    <a href=".././forms/form-grids.html">Form Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/text-fields.html">Text Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/number-fields.html">Number Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/option-fields.html">Option Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/error-fields.html">Error Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/read-only-fields.html">Read Only Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/search-form.html">Search Form </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autocomplete.html">Autocomplete <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autosize.html">Autosize <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            </div>
+    <div class="col-4-5">
+            <h1>Tabs</h1>
+    <section id="tabs" class="box-lighten">
+        <h2>Static tabs</h2>
+        <p>Use this tabs for static tabs with links to new pages.</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-tabs-1" data-tc-name="Demo">
+            <div class="box-text" >
+                                                <nav class="tabs">
+	<ul>
+		<li class="active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-tabs-2" data-tc-name="Code">
+            <div class="box-text">
+                <pre>
+	                <code data-tc-modules="code">&lt;nav class=&quot;tabs&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section id="tabs-js" class="box-lighten">
+        <h2>Dynamic tabs</h2>
+        <p>Use this tabs to show hidden content in the DOM.</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-tabs-js-1" data-tc-name="Demo">
+            <div class="box-text" >
+                                                <div data-tc-modules="tabs">
+	<section id="tab-1" data-tc-name="Tab 1">
+		<div class="box-text">Tab 1 content</div>
+	</section>
+	<section id="tab-2" data-tc-name="Tab 2">
+		<div class="box-text">Tab 2 content</div>
+	</section>
+	<section id="tab-3" data-tc-name="Tab 3">
+		<div class="box-text">Tab 3 content</div>
+	</section>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-js-2" data-tc-name="Code">
+            <div class="box-text">
+                <pre>
+	                <code data-tc-modules="code">&lt;div data-tc-modules=&quot;tabs&quot;&gt;
+	&lt;section id=&quot;tab-1&quot; data-tc-name=&quot;Tab 1&quot;&gt;
+		&lt;div class=&quot;box-text&quot;&gt;Tab 1 content&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;section id=&quot;tab-2&quot; data-tc-name=&quot;Tab 2&quot;&gt;
+		&lt;div class=&quot;box-text&quot;&gt;Tab 2 content&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;section id=&quot;tab-3&quot; data-tc-name=&quot;Tab 3&quot;&gt;
+		&lt;div class=&quot;box-text&quot;&gt;Tab 3 content&lt;/div&gt;
+	&lt;/section&gt;
+&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    </div>
+</div>
+</body>
+</html>
