@@ -16,6 +16,30 @@
 				}
 			}
 		},
+		"typography" : {
+			"name" : "Typography",
+			"icon" : "table",
+			"href" : "#typography",
+			"id": "typography",
+			"children" : {
+				"Titles" : {
+					"name":"Titles",
+					"href": "titles.html"
+				},
+				"Paragraphs" : {
+					"name":"Paragraphs",
+					"href": "paragraphs.html"
+				},
+				"Lists" : {
+					"name":"Lists",
+					"href": "lists.html"
+				},
+				"Labels" : {
+					"name":"Labels",
+					"href": "labels.html"
+				}
+			}
+		},
 		"navigation" : {
 			"name" : "Navigation",
 			"icon" : "sitemap",
@@ -56,6 +80,68 @@
 				"Steps" : {
 					"name":"Steps",
 					"href": "steps.html"
+				}
+			}
+		},
+		"media" : {
+			"name" : "Media",
+			"icon" : "media",
+			"href" : "#media",
+			"id": "media",
+			"children" : {
+				"Circles" : {
+					"name":"Circle Images",
+					"href": "image-circle.html"
+				},
+				"Polaroid" : {
+					"name":"Polaroid Images",
+					"href": "image-polaroid.html"
+				}
+			}
+		},
+		"content" : {
+			"name" : "Content",
+			"icon" : "table",
+			"href" : "#content",
+			"id": "content",
+			"children" : {
+				"Boxes" : {
+					"name":"Boxes",
+					"href": "boxes.html"
+				},
+				"Ratings" : {
+					"name":"Ratings",
+					"href": "ratings.html"
+				},
+				"Carousel" : {
+					"name":"Carousel",
+					"href": "carousel.html",
+					"js": true
+				},
+				"Parallax" : {
+					"name":"Parallax",
+					"href": "parallax.html"
+				},
+				"Truncate" : {
+					"name":"Truncate",
+					"href": "truncate.html",
+					"js": true
+				}
+			}
+		},
+		"buttons" : {
+			"name" : "Buttons",
+			"icon" : "table",
+			"href" : "#buttons",
+			"id": "buttons",
+			"children" : {
+				"Buttons" : {
+					"name":"Buttons",
+					"href": "buttons.html"
+				},
+				"Button Groups" : {
+					"name":"Button Groups",
+					"href": "button-group.html"
 				}
 			}
 		},
@@ -108,6 +194,44 @@
 					"name":"Autosize",
 					"href": "autosize.html",
 					"js" : true
+				}
+			}
+		},
+		"Tables" : {
+			"name" : "Tables",
+			"icon" : "table",
+			"href" : "#tables",
+			"id": "tables",
+			"children" : {
+				"Static Table" : {
+					"name":"Static Table",
+					"href": "static-table.html"
+				},
+				"Dynamic Table" : {
+					"name":"Dynamic Table",
+					"href": "dynamic-table.html",
+					"js": true
+				},
+				"Stats Tables" : {
+					"name":"Stats Tables",
+					"href": "stats-tables.html",
+					"js": true
+				}
+			}
+		},
+		"callouts & prompts" : {
+			"name" : "Callouts & Prompts",
+			"icon" : "table",
+			"href" : "#callouts",
+			"id": "callouts",
+			"children" : {
+				"Messages" : {
+					"name":"Messages",
+					"href": "messages.html"
+				},
+				"Tips" : {
+					"name":"Tips",
+					"href": "tips.html"
 				}
 			}
 		}

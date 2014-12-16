@@ -85,6 +85,7 @@ module.exports = function (grunt) {
 						'js/ui/sidemenu.js',
 						'js/ui/cart.js',
 						'js/ui/parallax.js',
+						'js/ui/table.js',
 						'js/ui/dropdown.js'
 					],
 					'build/static/js/core.js': [
@@ -153,6 +154,9 @@ module.exports = function (grunt) {
                     'build/static/js/ui/carousel.js': [
                         'js/libs/owl-carousel/owl.carousel.js'
                     ],
+					'build/static/js/ui/table.js': [
+						'bower_components/dynatable/jquery.dynatable.js'
+					],
 					'build/static/js/ie-old.js': [
 						'js/libs/ie-polyfills/queryselector.js',
 						'js/libs/ie-polyfills/html5shiv.js',

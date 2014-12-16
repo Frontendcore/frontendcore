@@ -1,0 +1,14 @@
+{% set current_children = "Buttons" %}
+{% set current_section = "Buttons" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Buttons Group</h1>
+    {{ demos.demo(
+        'buttons',
+        '../_demos/buttons/buttons-group.html'
+    )}}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% set current_children = "Parallax" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Parallax</h1>
+    <p class="msg-warning">Parallax component is based on a mixin so you must include it to use it. Check the scss tab to see the code.</p>
+    {{ demos.demo(
+        'parallax',
+        '../_demos/content/parallax.html',
+        '../../css/objects/_slides.scss'
+    )}}
+{% endblock %}

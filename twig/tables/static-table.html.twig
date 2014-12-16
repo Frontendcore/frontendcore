@@ -1,0 +1,14 @@
+{% set current_children = "Static Table" %}
+{% set current_section = "Tables" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Static Table</h1>
+    {{ demos.demo(
+        'static-table',
+        '../_demos/tables/table-simple.html'
+    )}}
+{% endblock %}

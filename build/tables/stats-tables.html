@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=".././static/css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src=".././static//js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '.././static/js/modules/',
+            sPathJsLibs : '.././static/js/libs/',
+            sPathRoot: '.././static/',
+            sPathCss: '.././static/css/',
+            bCss : false,
+            bResponsiveImages: true
+        }
+    </script>
+    <script src=".././static/js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+
+<header class="header">
+    <div class="grid">
+        <a title="Frontend Core" href="../index.html" class="logo"><img src=".././static/img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a>
+    </div>
+    <section class="menu">
+        <div class="grid">
+            <nav class="navigation mobile">
+                <ul>
+                    <li><a data-tc-modules="sidemenu" href="#side-menu" class="button mobile"><i class="icon-align-justify"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+<div class="grid">
+    <div class="col-1-5">
+                    <nav class="navigation navigation-vertical">
+                <ul>
+                                            <li>
+                            <a href="#structure" data-tc-modules="toggle">
+                                Structure
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="structure"  class="hidden">
+                                                            <li >
+                                    <a href=".././structure/grids.html">Grids </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#typography" data-tc-modules="toggle">
+                                Typography
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="typography"  class="hidden">
+                                                            <li >
+                                    <a href=".././typography/titles.html">Titles </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/paragraphs.html">Paragraphs </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/lists.html">Lists </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/labels.html">Labels </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#navigation" data-tc-modules="toggle">
+                                Navigation
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="navigation"  class="hidden">
+                                                            <li >
+                                    <a href=".././navigation/navigation.html">Navigation <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/navigation-sub.html">Subnavigation </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/filters.html">Filters </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/pagination.html">Pagination </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tabs.html">Tabs <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tags.html">Tags </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/side-menu.html">Side Menu <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/steps.html">Steps </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#media" data-tc-modules="toggle">
+                                Media
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="media"  class="hidden">
+                                                            <li >
+                                    <a href=".././media/image-circle.html">Circle Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-polaroid.html">Polaroid Images </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#content" data-tc-modules="toggle">
+                                Content
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="content"  class="hidden">
+                                                            <li >
+                                    <a href=".././content/boxes.html">Boxes </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/ratings.html">Ratings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/carousel.html">Carousel <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/parallax.html">Parallax </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/truncate.html">Truncate <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#buttons" data-tc-modules="toggle">
+                                Buttons
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="buttons"  class="hidden">
+                                                            <li >
+                                    <a href=".././buttons/buttons.html">Buttons </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././buttons/button-group.html">Button Groups </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#forms" data-tc-modules="toggle">
+                                Forms
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="forms"  class="hidden">
+                                                            <li >
+                                    <a href=".././forms/form-grids.html">Form Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/text-fields.html">Text Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/number-fields.html">Number Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/option-fields.html">Option Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/error-fields.html">Error Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/read-only-fields.html">Read Only Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/search-form.html">Search Form </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autocomplete.html">Autocomplete <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autosize.html">Autosize <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#tables" data-tc-modules="toggle">
+                                Tables
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="tables" >
+                                                            <li >
+                                    <a href=".././tables/static-table.html">Static Table </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././tables/dynamic-table.html">Dynamic Table <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li  class="active">
+                                    <a href=".././tables/stats-tables.html">Stats Tables <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#callouts" data-tc-modules="toggle">
+                                Callouts & Prompts
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
+                                    <a href=".././callouts/messages.html">Messages </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/tips.html">Tips </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            </div>
+    <div class="col-4-5">
+            <h1>Stats Tables</h1>
+    <section class="box-lighten">
+        <h2>Line Stats table</h2>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-table-line-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <table class="table" data-tc-modules="stats" data-tc-type="line">
+	<caption>2009 Employee Sales by Department</caption>
+	<thead>
+	<tr>
+		<td></td>
+		<th scope="col">food</th>
+		<th scope="col">auto</th>
+		<th scope="col">household</th>
+		<th scope="col">furniture</th>
+		<th scope="col">kitchen</th>
+		<th scope="col">bath</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">Mary</th>
+		<td>190</td>
+		<td>160</td>
+		<td>40</td>
+		<td>120</td>
+		<td>30</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<th scope="row">Tom</th>
+		<td>3</td>
+		<td>40</td>
+		<td>30</td>
+		<td>45</td>
+		<td>35</td>
+		<td>49</td>
+	</tr>
+	<tr>
+		<th scope="row">Brad</th>
+		<td>10</td>
+		<td>180</td>
+		<td>10</td>
+		<td>85</td>
+		<td>25</td>
+		<td>79</td>
+	</tr>
+	<tr>
+		<th scope="row">Kate</th>
+		<td>40</td>
+		<td>80</td>
+		<td>90</td>
+		<td>25</td>
+		<td>15</td>
+		<td>119</td>
+	</tr>
+	</tbody>
+</table>                                            </div>
+        </section>
+                <section id="tab-table-line-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;table class=&quot;table&quot; data-tc-modules=&quot;stats&quot; data-tc-type=&quot;line&quot;&gt;
+	&lt;caption&gt;2009 Employee Sales by Department&lt;/caption&gt;
+	&lt;thead&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;th scope=&quot;col&quot;&gt;food&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;auto&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;household&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;furniture&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;kitchen&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;bath&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Mary&lt;/th&gt;
+		&lt;td&gt;190&lt;/td&gt;
+		&lt;td&gt;160&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;120&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;70&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Tom&lt;/th&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;45&lt;/td&gt;
+		&lt;td&gt;35&lt;/td&gt;
+		&lt;td&gt;49&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Brad&lt;/th&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;180&lt;/td&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;85&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;79&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Kate&lt;/th&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;80&lt;/td&gt;
+		&lt;td&gt;90&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;15&lt;/td&gt;
+		&lt;td&gt;119&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Pie Stats table</h2>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-table-pie-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <table class="table" data-tc-modules="stats" data-tc-type="pie">
+	<caption>2009 Employee Sales by Department</caption>
+	<thead>
+	<tr>
+		<td></td>
+		<th scope="col">food</th>
+		<th scope="col">auto</th>
+		<th scope="col">household</th>
+		<th scope="col">furniture</th>
+		<th scope="col">kitchen</th>
+		<th scope="col">bath</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">Mary</th>
+		<td>190</td>
+		<td>160</td>
+		<td>40</td>
+		<td>120</td>
+		<td>30</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<th scope="row">Tom</th>
+		<td>3</td>
+		<td>40</td>
+		<td>30</td>
+		<td>45</td>
+		<td>35</td>
+		<td>49</td>
+	</tr>
+	<tr>
+		<th scope="row">Brad</th>
+		<td>10</td>
+		<td>180</td>
+		<td>10</td>
+		<td>85</td>
+		<td>25</td>
+		<td>79</td>
+	</tr>
+	<tr>
+		<th scope="row">Kate</th>
+		<td>40</td>
+		<td>80</td>
+		<td>90</td>
+		<td>25</td>
+		<td>15</td>
+		<td>119</td>
+	</tr>
+	</tbody>
+</table>                                            </div>
+        </section>
+                <section id="tab-table-pie-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;table class=&quot;table&quot; data-tc-modules=&quot;stats&quot; data-tc-type=&quot;pie&quot;&gt;
+	&lt;caption&gt;2009 Employee Sales by Department&lt;/caption&gt;
+	&lt;thead&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;th scope=&quot;col&quot;&gt;food&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;auto&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;household&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;furniture&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;kitchen&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;bath&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Mary&lt;/th&gt;
+		&lt;td&gt;190&lt;/td&gt;
+		&lt;td&gt;160&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;120&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;70&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Tom&lt;/th&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;45&lt;/td&gt;
+		&lt;td&gt;35&lt;/td&gt;
+		&lt;td&gt;49&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Brad&lt;/th&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;180&lt;/td&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;85&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;79&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Kate&lt;/th&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;80&lt;/td&gt;
+		&lt;td&gt;90&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;15&lt;/td&gt;
+		&lt;td&gt;119&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Bar Stats table</h2>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-table-bar-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <table class="table" data-tc-modules="stats" data-tc-type="bar">
+	<caption>2009 Employee Sales by Department</caption>
+	<thead>
+	<tr>
+		<td></td>
+		<th scope="col">food</th>
+		<th scope="col">auto</th>
+		<th scope="col">household</th>
+		<th scope="col">furniture</th>
+		<th scope="col">kitchen</th>
+		<th scope="col">bath</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">Mary</th>
+		<td>190</td>
+		<td>160</td>
+		<td>40</td>
+		<td>120</td>
+		<td>30</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<th scope="row">Tom</th>
+		<td>3</td>
+		<td>40</td>
+		<td>30</td>
+		<td>45</td>
+		<td>35</td>
+		<td>49</td>
+	</tr>
+	<tr>
+		<th scope="row">Brad</th>
+		<td>10</td>
+		<td>180</td>
+		<td>10</td>
+		<td>85</td>
+		<td>25</td>
+		<td>79</td>
+	</tr>
+	<tr>
+		<th scope="row">Kate</th>
+		<td>40</td>
+		<td>80</td>
+		<td>90</td>
+		<td>25</td>
+		<td>15</td>
+		<td>119</td>
+	</tr>
+	</tbody>
+</table>                                            </div>
+        </section>
+                <section id="tab-table-bar-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;table class=&quot;table&quot; data-tc-modules=&quot;stats&quot; data-tc-type=&quot;bar&quot;&gt;
+	&lt;caption&gt;2009 Employee Sales by Department&lt;/caption&gt;
+	&lt;thead&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;th scope=&quot;col&quot;&gt;food&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;auto&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;household&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;furniture&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;kitchen&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;bath&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Mary&lt;/th&gt;
+		&lt;td&gt;190&lt;/td&gt;
+		&lt;td&gt;160&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;120&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;70&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Tom&lt;/th&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;45&lt;/td&gt;
+		&lt;td&gt;35&lt;/td&gt;
+		&lt;td&gt;49&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Brad&lt;/th&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;180&lt;/td&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;85&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;79&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Kate&lt;/th&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;80&lt;/td&gt;
+		&lt;td&gt;90&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;15&lt;/td&gt;
+		&lt;td&gt;119&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Area Stats table</h2>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-table-area-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <table class="table" data-tc-modules="stats" data-tc-type="bar">
+	<caption>2009 Employee Sales by Department</caption>
+	<thead>
+	<tr>
+		<td></td>
+		<th scope="col">food</th>
+		<th scope="col">auto</th>
+		<th scope="col">household</th>
+		<th scope="col">furniture</th>
+		<th scope="col">kitchen</th>
+		<th scope="col">bath</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">Mary</th>
+		<td>190</td>
+		<td>160</td>
+		<td>40</td>
+		<td>120</td>
+		<td>30</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<th scope="row">Tom</th>
+		<td>3</td>
+		<td>40</td>
+		<td>30</td>
+		<td>45</td>
+		<td>35</td>
+		<td>49</td>
+	</tr>
+	<tr>
+		<th scope="row">Brad</th>
+		<td>10</td>
+		<td>180</td>
+		<td>10</td>
+		<td>85</td>
+		<td>25</td>
+		<td>79</td>
+	</tr>
+	<tr>
+		<th scope="row">Kate</th>
+		<td>40</td>
+		<td>80</td>
+		<td>90</td>
+		<td>25</td>
+		<td>15</td>
+		<td>119</td>
+	</tr>
+	</tbody>
+</table>                                            </div>
+        </section>
+                <section id="tab-table-area-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;table class=&quot;table&quot; data-tc-modules=&quot;stats&quot; data-tc-type=&quot;bar&quot;&gt;
+	&lt;caption&gt;2009 Employee Sales by Department&lt;/caption&gt;
+	&lt;thead&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;th scope=&quot;col&quot;&gt;food&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;auto&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;household&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;furniture&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;kitchen&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;bath&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Mary&lt;/th&gt;
+		&lt;td&gt;190&lt;/td&gt;
+		&lt;td&gt;160&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;120&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;70&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Tom&lt;/th&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;30&lt;/td&gt;
+		&lt;td&gt;45&lt;/td&gt;
+		&lt;td&gt;35&lt;/td&gt;
+		&lt;td&gt;49&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Brad&lt;/th&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;180&lt;/td&gt;
+		&lt;td&gt;10&lt;/td&gt;
+		&lt;td&gt;85&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;79&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot;&gt;Kate&lt;/th&gt;
+		&lt;td&gt;40&lt;/td&gt;
+		&lt;td&gt;80&lt;/td&gt;
+		&lt;td&gt;90&lt;/td&gt;
+		&lt;td&gt;25&lt;/td&gt;
+		&lt;td&gt;15&lt;/td&gt;
+		&lt;td&gt;119&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h4 class="mb-n c-main">data-tc-type</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Type of stats (pie, bar,area or line)</p>
+                                <p class="fz-xs c-text-light">DEFAULT: line</p>
+                            </dd>
+                        <dt><h4 class="mb-n c-main">data-tc-width</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Width of the stats and the table in px</p>
+                                <p class="fz-xs c-text-light">DEFAULT: autowidth based on parent element</p>
+                            </dd>
+                        <dt><h4 class="mb-n c-main">data-tc-height</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Height of the stats and the table in px</p>
+                                <p class="fz-xs c-text-light">DEFAULT: 300</p>
+                            </dd>
+                        <dt><h4 class="mb-n c-main">data-tc-table</h4></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the position of the table (up, down, modal or hide)</p>
+                                <p class="fz-xs c-text-light">DEFAULT: modal</p>
+                            </dd>
+                    </dl>
+
+    </div>
+</div>
+</body>
+</html>

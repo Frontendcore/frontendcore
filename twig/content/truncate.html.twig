@@ -1,0 +1,34 @@
+{% set current_children = "Truncate" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Truncate</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/content/truncate.html'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-max",
+            "description" : "Max character to crop text.",
+            "default" : "100"
+        },
+        "2" : {
+            "name" :        "data-tc-more",
+            "description" : "Call to action to show more.",
+            "default" : "[+]"
+        },
+        "3" : {
+            "name" :        "data-tc-less",
+            "description" : "Call to action to show less",
+            "default" : "[-]"
+        }
+    }
+    )}}
+{% endblock %}

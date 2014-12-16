@@ -1,6 +1,11 @@
 @include parallax-slides(
+		// First part of the name for each slide (slide-1, slide-2)
 		'slide',
+
+		// height of each slide separated by comma
 		(300px,300px,300px,300px),
+
+		// Url of each background image separate by comma
 		(
 			'../../static/img/anti-bullying-tom-froese-wallpaper-1280x800.jpg',
 			'../../static/img/brock-davis-wallpaper-1280x800.jpg',

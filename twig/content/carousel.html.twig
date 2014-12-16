@@ -1,0 +1,26 @@
+{% set current_children = "Carousel" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Carousel</h1>
+    <section class="box-ligten">
+        <h2>HTML carousel</h2>
+        <p>Use this carousel to show any kind of html content.</p>
+        {{ demos.demo(
+            'carousel-div',
+            '../_demos/content/carousel-div.html'
+        )}}
+    </section>
+    <section class="box-ligten">
+        <h2>Video carousel</h2>
+        <p>Use this carousel to display online videos.</p>
+        {{ demos.demo(
+            'carousel-video',
+            '../_demos/content/carousel-video.html'
+        )}}
+    </section>
+{% endblock %}

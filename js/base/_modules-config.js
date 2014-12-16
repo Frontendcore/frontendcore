@@ -11,7 +11,7 @@ if (!oGlobalSettings.aPaths) oGlobalSettings.aPaths = {};
 if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = 'desktop';
 
 var oModules = {},
-	aModules = ['devicePackage','sidemenuLibs','codeLibs','sortableLibs','tagsLibs','modalLibs','autocompleteLibs','autosizeLibs','graphLibs','statsLibs','wysiwygLibs','truncateLibs','tipLibs','cartLibs','polyfillsLibs','parallaxLibs','carouselLibs'];
+	aModules = ['devicePackage','sidemenuLibs','codeLibs','sortableLibs','tagsLibs','modalLibs','autocompleteLibs','autosizeLibs','graphLibs','statsLibs','wysiwygLibs','truncateLibs','tipLibs','cartLibs','polyfillsLibs','parallaxLibs','carouselLibs','tableLibs'];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {
 
@@ -50,9 +50,9 @@ TinyCore.AMD.config( {
 			cartLibs: oModules.cartLibs,
 			polyfillsLibs: oModules.polyfillsLibs,
             carouselLibs: oModules.carouselLibs,
-			parallaxLibs: oModules.parallaxLibs
+			parallaxLibs: oModules.parallaxLibs,
+			tableLibs: oModules.tableLibs
 		}
 	}
 });
-
 

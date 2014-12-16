@@ -1,0 +1,27 @@
+{% set current_children = "Tips" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Tips</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/callouts/simple-tip.html'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-title",
+            "description" : "String with the text title of the tooltip"
+        },
+        "2" : {
+            "name" :        "data-tc-content",
+            "description" : "String with the text content of the tooltip"
+        }
+    }
+    )}}
+{% endblock %}

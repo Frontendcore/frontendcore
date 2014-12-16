@@ -1,0 +1,38 @@
+{% set current_children = "Messages" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Messages</h1>
+    <section class="box-lighten">
+        <h2>Message Ok</h2>
+        {{ demos.demo(
+            'msg-ok',
+            '../_demos/callouts/msg-ok.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Message Ko</h2>
+        {{ demos.demo(
+            'msg-ko',
+            '../_demos/callouts/msg-ko.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Message Info</h2>
+        {{ demos.demo(
+            'msg-info',
+            '../_demos/callouts/msg-info.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Message Warning</h2>
+        {{ demos.demo(
+            'msg-warning',
+            '../_demos/callouts/msg-warning.html'
+        )}}
+    </section>
+{% endblock %}

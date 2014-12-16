@@ -1,0 +1,31 @@
+{% set current_children = "Buttons" %}
+{% set current_section = "Buttons" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Buttons</h1>
+    <section class="box-lighten">
+        <h2>Default buttons</h2>
+        {{ demos.demo(
+            'buttons',
+            '../_demos/buttons/buttons.html'
+        )}}
+    </section>
+     <section class="box-lighten">
+        <h2>Slim buttons</h2>
+        {{ demos.demo(
+            'button-slim',
+            '../_demos/buttons/buttons-slim.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Fat buttons</h2>
+        {{ demos.demo(
+            'button-fat',
+            '../_demos/buttons/buttons-fat.html'
+        )}}
+    </section>
+{% endblock %}

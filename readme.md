@@ -7,29 +7,21 @@ setup
     * Javascript
         
 media
-    images
+    thumbs
         
-buttons
-    buttons
-    
-typography
-    typography
-    
-Callouts & Prompts
-    messages
-    tips JS
+Structure
+    Media queries
+
+Forms
+    validation
 
 content
-    boxes
-    lists
     sortable lists JS
-    parallax
-    tables
-    rating
     cart JS
-    carousel JS
-    truncate JS
     toggle JS
-    stats JS
     modal JS
+
+Modifiers
+    
+
 Support
