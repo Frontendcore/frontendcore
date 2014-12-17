@@ -1,0 +1,14 @@
+{% set current_children = "Text align & decoration" %}
+{% set current_section = "Modifiers" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Text align & decoration modifiers</h1>
+    {{ demos.scss(
+        '../_demos/modifiers/text.html',
+        '../../css/core/modifiers/_text.scss'
+    )}}
+{% endblock %}

@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -245,7 +245,7 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers"  class="hidden">
+                                                        <ul id="modifiers" >
                                                             <li >
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
@@ -258,7 +258,7 @@
                                                             <li >
                                     <a href=".././modifiers/margin-padding.html">Margins & Paddings </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././modifiers/measures.html">Measures </a>
                                 </li>
                                                             <li >
@@ -270,75 +270,49 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
-    <section class="box-lighten">
-        <h2>Message Ok</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+            <h1>Margin & Padding modifiers</h1>
+        <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            <p class="box-background"> Description:<br />
+Provides a common system for setting % width between properties HTML elements.<br />
+<br />
+Usage:<br />
+Mark the element with the desired measure class.<br />
+<br />
+Complete acronym reference based on Emmet:<br />
+<br />
+LETTERS BEFORE THE DASH<br />
+w = width<br />
+<br />
+NUMBERS AFTER THE DASH<br />
+Value multiple of 5 to 100.<br />
+</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
+<br />
+$measures: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100;<br />
+<br />
+@each $measure in $measures {<br />
+	.w-#{$measure} {<br />
+		width: 0% + $measure !important;<br />
+	}<br />
+}</pre></code></div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+        <section id="tab-0" data-tc-name="Demo">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                <p class="w-20 box">Lorem ipsum</p>
+<p class="w-50 box">Lorem ipsum</p>
+<p class="w-90 box">Lorem ipsum</p>            </div>
+        </section>
+        <section id="tab-3" data-tc-name="Demo Code">
+            <div class="box-background">
+                    <pre>
+                        <code data-tc-modules="code">&lt;p class=&quot;w-20 box&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;w-50 box&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;w-90 box&quot;&gt;Lorem ipsum&lt;/p&gt;</code>
+                    </pre>
             </div>
         </section>
-                    </div>
+    </div>
 
-    </section>
-    <section class="box-lighten">
-        <h2>Message Ko</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Info</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Warning</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
     </div>
 </div>
 </body>

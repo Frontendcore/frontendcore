@@ -68,7 +68,7 @@ TinyCore.AMD.define('table', ['devicePackage'], function () {
 		autobind: function (oTarget, sData) {
 
 			var self = this,
-				$Target = $('#' + oTarget.id),
+				$Target = $(oTarget),
 				sClass = '';
 
 				if (oTarget.getAttribute("data-tc-pagination") === 'false') {

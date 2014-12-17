@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -245,8 +245,8 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers"  class="hidden">
-                                                            <li >
+                                                        <ul id="modifiers" >
+                                                            <li  class="active">
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
                                                             <li >
@@ -270,75 +270,80 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
-    <section class="box-lighten">
-        <h2>Message Ok</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+            <h1>Color modifiers</h1>
+        <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            <p class="box-background"> Description:<br />
+Provides a common system for setting colors between HTML elements.<br />
+<br />
+Usage:<br />
+Mark the element with the desired color class.<br />
+<br />
+Complete acronym reference based on Emmet:<br />
+<br />
+FIRST 2 LETTERS<br />
+c = color<br />
+bg = background<br />
+<br />
+WORDS AFTER THE DASH<br />
+The words after the dash are based on the name of the sass variables to assign colors:<br />
+primary<br />
+secondary<br />
+box<br />
+ok<br />
+ko<br />
+<br />
+EXAMPLES<br />
+c-secondary<br />
+c-box<br />
+bg-primary<br />
+bg-ok<br />
+</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
+<br />
+$colors-list: &#039;foreground&#039;,&#039;background&#039;,&#039;primary&#039;,&#039;secondary&#039;,&#039;box&#039;,&#039;ko&#039;,&#039;ok&#039;,&#039;info&#039;,&#039;warning&#039; ;<br />
+<br />
+@each $color in $colors-list {<br />
+<br />
+	.c-#{$color}, .c-#{$color}:before, .c-#{$color}:after {<br />
+		color: map-get($colors, $color) !important;<br />
+	}<br />
+<br />
+	.bg-#{$color}, .bg-#{$color}:before, .bg-#{$color}:after {<br />
+		background-color: map-get($colors, $color) !important;<br />
+	}<br />
+}</pre></code></div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+        <section id="tab-0" data-tc-name="Demo">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                <div class="bg-primary">&nbsp;</div>
+<div class="bg-secondary">&nbsp;</div>
+<div class="bg-box">&nbsp;</div>
+<div class="bg-ok">&nbsp;</div>
+<div class="bg-ko">&nbsp;</div>
+<p class="c-primary">Lorem ipsum</p>
+<p class="c-secondary">Lorem ipsum</p>
+<p class="c-box">Lorem ipsum</p>
+<p class="c-ok">Lorem ipsum</p>
+<p class="c-ko">Lorem ipsum</p>            </div>
+        </section>
+        <section id="tab-3" data-tc-name="Demo Code">
+            <div class="box-background">
+                    <pre>
+                        <code data-tc-modules="code">&lt;div class=&quot;bg-primary&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class=&quot;bg-secondary&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class=&quot;bg-box&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class=&quot;bg-ok&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class=&quot;bg-ko&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p class=&quot;c-primary&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;c-secondary&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;c-box&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;c-ok&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;c-ko&quot;&gt;Lorem ipsum&lt;/p&gt;</code>
+                    </pre>
             </div>
         </section>
-                    </div>
+    </div>
 
-    </section>
-    <section class="box-lighten">
-        <h2>Message Ko</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Info</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Warning</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
     </div>
 </div>
 </body>

@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -245,7 +245,7 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers"  class="hidden">
+                                                        <ul id="modifiers" >
                                                             <li >
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
@@ -261,7 +261,7 @@
                                                             <li >
                                     <a href=".././modifiers/measures.html">Measures </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././modifiers/borders.html">Borders </a>
                                 </li>
                                                         </ul>
@@ -270,75 +270,178 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
-    <section class="box-lighten">
-        <h2>Message Ok</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+            <h1>Border modifiers</h1>
+        <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            <p class="box-background"> Description:<br />
+Provides a common system for setting border properties between HTML elements.<br />
+<br />
+Usage:<br />
+Mark the element with the desired border class.<br />
+<br />
+Complete acronym reference based on Emmet:<br />
+<br />
+FIRST 2 LETTERS<br />
+bd = border<br />
+<br />
+THIRD LETTERS<br />
+a = all<br />
+t = top<br />
+r = right<br />
+b = bottom<br />
+l = left<br />
+h = horizontal<br />
+v = vertical<br />
+<br />
+LAST LETTER<br />
+n = none<br />
+s = small (1px)<br />
+m = medium<br />
+l = large<br />
+xl = extra large<br />
+</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
+<br />
+.bda-n {<br />
+	border-width: 0 !important;<br />
+}<br />
+<br />
+.bdt-n, .bdv-n {<br />
+	border-top-width: 0 !important;<br />
+}<br />
+<br />
+.bdb-n, .bdv-n {<br />
+	border-bottom-width: 0 !important;<br />
+}<br />
+<br />
+.bdr-n, .bdh-n {<br />
+	border-right-width: 0 !important;<br />
+}<br />
+<br />
+.bdl-n, .bdh-n {<br />
+	border-left-width: 0 !important;<br />
+}<br />
+<br />
+.bda-s {<br />
+	border-width: 1px !important;<br />
+}<br />
+<br />
+.bdt-s, .bdv-s {<br />
+	border-top-width: 1px !important;<br />
+}<br />
+<br />
+.bdb-s, .bdv-s {<br />
+	border-bottom-width: 1px !important;<br />
+}<br />
+<br />
+.bdr-s, .bdh-s {<br />
+	border-right-width: 1px !important;<br />
+}<br />
+<br />
+.bdl-s, .bdh-s {<br />
+	border-left-width: 1px !important;<br />
+}<br />
+<br />
+.bda-m {<br />
+	border-width: $spacing/4 !important;<br />
+}<br />
+<br />
+.bdt-m, .bdv-m {<br />
+	border-top-width: $spacing/4 !important;<br />
+}<br />
+<br />
+.bdb-m, .bdv-m {<br />
+	border-bottom-width: $spacing/4 !important;<br />
+}<br />
+<br />
+.bdr-m, .bdh-m {<br />
+	border-right-width: $spacing/4 !important;<br />
+}<br />
+<br />
+.bdl-m, .bdh-m {<br />
+	border-left-width: $spacing/4 !important;<br />
+}<br />
+<br />
+.bda-l {<br />
+	border-width: $spacing/2 !important;<br />
+}<br />
+<br />
+.bdt-l, .bdv-l {<br />
+	border-top-width: $spacing/2 !important;<br />
+}<br />
+<br />
+.bdb-l, .bdv-l {<br />
+	border-bottom-width: $spacing/2 !important;<br />
+}<br />
+<br />
+.bdr-l, .bdh-l {<br />
+	border-right-width: $spacing/2 !important;<br />
+}<br />
+<br />
+.bdl-l, .bdh-l {<br />
+	border-left-width: $spacing/2 !important;<br />
+}<br />
+<br />
+.bda-xl {<br />
+	border-width: $spacing !important;<br />
+}<br />
+<br />
+.bdt-xl, .bdv-xl {<br />
+	border-top-width: $spacing !important;<br />
+}<br />
+<br />
+.bdb-xl, .bdv-xl {<br />
+	border-bottom-width: $spacing !important;<br />
+}<br />
+<br />
+.bdr-xl, .bdh-xl {<br />
+	border-right-width: $spacing !important;<br />
+}<br />
+<br />
+.bdl-xl, .bdh-xl {<br />
+	border-left-width: $spacing !important;<br />
+}</pre></code></div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+        <section id="tab-0" data-tc-name="Demo">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                <!-- Image Circle default -->
+<img src="../static/img/chuck.jpg" class="image-circle" width="150" />
+
+<!-- Image Circle width border small -->
+<img src="../static/img/chuck.jpg" class="image-circle bda-s" width="150" />
+
+<!-- Image Circle width border medium -->
+<img src="../static/img/chuck.jpg" class="image-circle bda-m" width="150" />
+
+<!-- Image Circle width border large -->
+<img src="../static/img/chuck.jpg" class="image-circle bda-l" width="150" />
+
+<!-- Image Circle width border extra large -->
+<img src="../static/img/chuck.jpg" class="image-circle bda-xl" width="150" />
             </div>
         </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Ko</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
+        <section id="tab-3" data-tc-name="Demo Code">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                    <pre>
+                        <code data-tc-modules="code">&lt;!-- Image Circle default --&gt;
+&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;image-circle&quot; width=&quot;150&quot; /&gt;
+
+&lt;!-- Image Circle width border small --&gt;
+&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;image-circle bda-s&quot; width=&quot;150&quot; /&gt;
+
+&lt;!-- Image Circle width border medium --&gt;
+&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;image-circle bda-m&quot; width=&quot;150&quot; /&gt;
+
+&lt;!-- Image Circle width border large --&gt;
+&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;image-circle bda-l&quot; width=&quot;150&quot; /&gt;
+
+&lt;!-- Image Circle width border extra large --&gt;
+&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;image-circle bda-xl&quot; width=&quot;150&quot; /&gt;
+</code>
+                    </pre>
             </div>
         </section>
-                    </div>
+    </div>
 
-    </section>
-    <section class="box-lighten">
-        <h2>Message Info</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Warning</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
     </div>
 </div>
 </body>

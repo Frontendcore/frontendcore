@@ -234,6 +234,38 @@
 					"href": "tips.html"
 				}
 			}
+		},
+		"modifiers" : {
+			"name" : "Modifiers",
+			"icon" : "modifiers",
+			"href" : "#modifiers",
+			"id": "modifiers",
+			"children" : {
+				"Colors" : {
+					"name":"Colors",
+					"href": "colors.html"
+				},
+				"Fonts" : {
+					"name":"Font sizes",
+					"href": "fonts.html"
+				},
+				"Text" : {
+					"name":"Text align & decoration",
+					"href": "text.html"
+				},
+				"Margins & Padding" : {
+					"name":"Margins & Paddings",
+					"href": "margin-padding.html"
+				},
+				"Measures" : {
+					"name":"Measures",
+					"href": "measures.html"
+				},
+				"Borders" : {
+					"name":"Borders",
+					"href": "borders.html"
+				}
+			}
 		}
 	}
 }

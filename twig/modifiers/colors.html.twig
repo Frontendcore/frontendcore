@@ -1,0 +1,14 @@
+{% set current_children = "Colors" %}
+{% set current_section = "Modifiers" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Color modifiers</h1>
+    {{ demos.scss(
+    '../_demos/modifiers/colors.html',
+        '../../css/core/modifiers/_colors.scss'
+    )}}
+{% endblock %}

@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -245,14 +245,14 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers"  class="hidden">
+                                                        <ul id="modifiers" >
                                                             <li >
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
                                                             <li >
                                     <a href=".././modifiers/fonts.html">Font sizes </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././modifiers/text.html">Text align & decoration </a>
                                 </li>
                                                             <li >
@@ -270,75 +270,68 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
-    <section class="box-lighten">
-        <h2>Message Ok</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+            <h1>Text align & decoration modifiers</h1>
+        <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            <p class="box-background"> Description:<br />
+Provides a common system for setting text properties between HTML elements.<br />
+<br />
+Usage:<br />
+Mark the element with the desired text class.<br />
+<br />
+Complete acronym reference based on Emmet:<br />
+<br />
+FIRST TWO LETTERS<br />
+ta = text-align<br />
+td = text-decoration<br />
+<br />
+LAST LETTER<br />
+l = left<br />
+c = center<br />
+r = right<br />
+u = underline<br />
+n = none<br />
+</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
+<br />
+.ta-l {<br />
+	text-align: left !important;<br />
+}<br />
+<br />
+.ta-c {<br />
+	text-align: center !important;<br />
+}<br />
+<br />
+.ta-r {<br />
+	text-align: right !important;<br />
+}<br />
+<br />
+.td-u {<br />
+	text-decoration:underline !important;<br />
+}<br />
+<br />
+.td-n {<br />
+	text-decoration:none !important;<br />
+}</pre></code></div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+        <section id="tab-0" data-tc-name="Demo">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                <p class="ta-l">Lorem ipsum</p>
+<p class="ta-c">Lorem ipsum</p>
+<p class="ta-r">Lorem ipsum</p>
+<p class="td-u">Lorem ipsum</p>            </div>
+        </section>
+        <section id="tab-3" data-tc-name="Demo Code">
+            <div class="box-background">
+                    <pre>
+                        <code data-tc-modules="code">&lt;p class=&quot;ta-l&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;ta-c&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;ta-r&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;td-u&quot;&gt;Lorem ipsum&lt;/p&gt;</code>
+                    </pre>
             </div>
         </section>
-                    </div>
+    </div>
 
-    </section>
-    <section class="box-lighten">
-        <h2>Message Ko</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Info</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Warning</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
     </div>
 </div>
 </body>

@@ -48,7 +48,6 @@
     </div>
 {% endmacro %}
 
-
 {% macro settings(terms) %}
         <hr />
         <h2 class="mb-m">Attributes</h2>
@@ -63,4 +62,24 @@
             </dd>
             {% endfor %}
         </dl>
+{% endmacro %}
+
+{% macro scss(demopath, scsspath) %}
+    <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            {% filter nl2br |replace({'/*':'<p class="box-background">', '*/':'</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code">'}) %}{%  include scsspath |e('html') %}{% endfilter %}</pre></code></div>
+        </section>
+        <section id="tab-0" data-tc-name="Demo">
+            <div class="box-background">
+                {%  include demopath %}
+            </div>
+        </section>
+        <section id="tab-3" data-tc-name="Demo Code">
+            <div class="box-background">
+                    <pre>
+                        <code data-tc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code>
+                    </pre>
+            </div>
+        </section>
+    </div>
 {% endmacro %}

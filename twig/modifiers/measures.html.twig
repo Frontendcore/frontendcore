@@ -1,0 +1,14 @@
+{% set current_children = "Measures" %}
+{% set current_section = "Modifiers" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Margin & Padding modifiers</h1>
+    {{ demos.scss(
+        '../_demos/modifiers/measures.html',
+        '../../css/core/modifiers/_measures.scss'
+    )}}
+{% endblock %}

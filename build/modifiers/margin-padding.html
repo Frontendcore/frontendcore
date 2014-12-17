@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -245,7 +245,7 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers"  class="hidden">
+                                                        <ul id="modifiers" >
                                                             <li >
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
@@ -255,7 +255,7 @@
                                                             <li >
                                     <a href=".././modifiers/text.html">Text align & decoration </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././modifiers/margin-padding.html">Margins & Paddings </a>
                                 </li>
                                                             <li >
@@ -270,75 +270,220 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
-    <section class="box-lighten">
-        <h2>Message Ok</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+            <h1>Margin & Padding modifiers</h1>
+        <div data-tc-modules="tabs">
+        <section id="tab-1" data-tc-name="Description">
+            <p class="box-background"> Description:<br />
+Provides a common system for setting paddings and margins between HTML elements.<br />
+We have setted 4 sizes for each property, so when we have to add some spacing between elements we can use them.<br />
+<br />
+<br />
+Usage:<br />
+Mark the element with the desired spacing class.<br />
+<br />
+Spacing classnames are an acronym of three properties: type, position an size.<br />
+<br />
+E.g. .pt-m   it&#039;s the class needed for setting padding top medium ($spacing/2)<br />
+<br />
+Complete acronym reference based on Emmet:<br />
+<br />
+FIRST LETTER<br />
+p = padding<br />
+<br />
+SECOND LETTER<br />
+a = all<br />
+t = top<br />
+r = right<br />
+b = bottom<br />
+l = left<br />
+h = horizontal<br />
+v = vertical<br />
+<br />
+LAST LETTER<br />
+n = none ( 0 )<br />
+s = small ( $spacing/4 )<br />
+m = medium ( $spacing/2 )<br />
+l = large ( $spacing )<br />
+xl = extra large ( $spacing*2 )<br />
+</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
+<br />
+.pt-n, .pv-n, .pa-n {<br />
+	padding-top: 0 !important;<br />
+}<br />
+<br />
+.pt-s, .pv-s, .pa-s {<br />
+	padding-top: $spacing/4 !important;<br />
+}<br />
+<br />
+.pt-m, .pv-m, .pa-m {<br />
+	padding-top: $spacing/2 !important;<br />
+}<br />
+<br />
+.pt-l, .pv-l, .pa-l {<br />
+	padding-top: $spacing !important;<br />
+}<br />
+<br />
+.pt-xl, .pv-xl, .pa-xl {<br />
+	padding-top: $spacing*2 !important;<br />
+}<br />
+<br />
+.pr-n, .ph-n, .pa-n {<br />
+	padding-right: 0 !important;<br />
+}<br />
+<br />
+.pr-s, .phs, .pa-s {<br />
+	padding-right: $spacing/4 !important;<br />
+}<br />
+<br />
+.pr-m, .ph-m, .pa-m {<br />
+	padding-right: $spacing/2 !important;<br />
+}<br />
+<br />
+.pr-l, .ph-l, .pa-l {<br />
+	padding-right: $spacing !important;<br />
+}<br />
+<br />
+.pr-xl, .ph-xl, .pa-xl {<br />
+	padding-right: $spacing*2 !important;<br />
+}<br />
+<br />
+.pb-n, .pv-n, .pa-n {<br />
+	padding-bottom: 0 !important;<br />
+}<br />
+<br />
+.pb-s, .pv-s, .pa-s {<br />
+	padding-bottom: $spacing/4 !important;<br />
+}<br />
+<br />
+.pb-m, .pv-m, .pa-m {<br />
+	padding-bottom: $spacing/2 !important;<br />
+}<br />
+<br />
+.pb-l, .pv-l, .pa-l {<br />
+	padding-bottom: $spacing !important;<br />
+}<br />
+<br />
+.pb-xl, .pv-xl, .pa-xl {<br />
+	padding-bottom: $spacing*2 !important;<br />
+}<br />
+<br />
+.pl-n, .ph-n, .pa-n {<br />
+	padding-left: 0 !important;<br />
+}<br />
+<br />
+.pl-s, .ph-s, .pa-s {<br />
+	padding-left: $spacing/4 !important;<br />
+}<br />
+<br />
+.pl-m, .ph-m, .pa-m {<br />
+	padding-left: $spacing/2 !important;<br />
+}<br />
+<br />
+.pl-l, .ph-l, .pa-l {<br />
+	padding-left: $spacing !important;<br />
+}<br />
+<br />
+.pl-xl, .ph-xl, .pa-xl {<br />
+	padding-left: $spacing*2 !important;<br />
+}<br />
+<br />
+.mt-n, .mv-n, .ma-n {<br />
+	margin-top: 0 !important;<br />
+}<br />
+<br />
+.mt-s, .mv-s, .ma-s {<br />
+	margin-top: $spacing/4 !important;<br />
+}<br />
+<br />
+.mt-m, .mv-m, .ma-m {<br />
+	margin-top: $spacing/2 !important;<br />
+}<br />
+<br />
+.mt-l, .mv-l, .ma-l {<br />
+	margin-top: $spacing !important;<br />
+}<br />
+<br />
+.mt-xl, .mv-xl, .ma-xl {<br />
+	margin-top: $spacing*2 !important;<br />
+}<br />
+<br />
+.mr-n, .mh-n, .ma-n {<br />
+	margin-right: 0 !important;<br />
+}<br />
+<br />
+.mr-s, .mh-s, .ma-s {<br />
+	margin-right: $spacing/4 !important;<br />
+}<br />
+<br />
+.mr-m, .mh-m, .ma-m {<br />
+	margin-right: $spacing/2 !important;<br />
+}<br />
+<br />
+.mr-l, .mh-l, .ma-l {<br />
+	margin-right: $spacing !important;<br />
+}<br />
+<br />
+.mr-xl, .mh-xl, .ma-xl {<br />
+	margin-right: $spacing*2 !important;<br />
+}<br />
+<br />
+.mb-n, .mv-n, .ma-n {<br />
+	margin-bottom: 0 !important;<br />
+}<br />
+<br />
+.mb-s, .mv-s, .ma-s {<br />
+	margin-bottom: $spacing/4 !important;<br />
+}<br />
+<br />
+.mb-m, .mv-m, .ma-m {<br />
+	margin-bottom: $spacing/2 !important;<br />
+}<br />
+<br />
+.mb-l, .mv-l, .ma-l {<br />
+	margin-bottom: $spacing !important;<br />
+}<br />
+<br />
+.mb-xl, .mv-xl, .ma-xl {<br />
+	margin-bottom: $spacing*2 !important;<br />
+}<br />
+<br />
+.ml-n, .mh-n, .ma-n {<br />
+	margin-left: 0 !important;<br />
+}<br />
+<br />
+.ml-s, .mh-s, .ma-s {<br />
+	margin-left: $spacing/4 !important;<br />
+}<br />
+<br />
+.ml-m, .mh-m, .ma-m {<br />
+	margin-left: $spacing/2 !important;<br />
+}<br />
+<br />
+.ml-l, .mh-l, .ma-l {<br />
+	margin-left: $spacing !important;<br />
+}<br />
+<br />
+.ml-xl, .mh-xl, .ma-xl {<br />
+	margin-left: $spacing*2 !important;<br />
+}</pre></code></div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+        <section id="tab-0" data-tc-name="Demo">
             <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
+                <p class="pa-xl box">Lorem ipsum</p>
+<p class="pl-m box">Lorem ipsum</p>
+<p class="pt-s  box">Lorem ipsum</p>            </div>
+        </section>
+        <section id="tab-3" data-tc-name="Demo Code">
+            <div class="box-background">
+                    <pre>
+                        <code data-tc-modules="code">&lt;p class=&quot;pa-xl box&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;pl-m box&quot;&gt;Lorem ipsum&lt;/p&gt;
+&lt;p class=&quot;pt-s  box&quot;&gt;Lorem ipsum&lt;/p&gt;</code>
+                    </pre>
             </div>
         </section>
-                    </div>
+    </div>
 
-    </section>
-    <section class="box-lighten">
-        <h2>Message Ko</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Info</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Message Warning</h2>
-                                    <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
-            <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
-        </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
-            <div class="box-background">
-                <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
-                </pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
     </div>
 </div>
 </body>
