@@ -122,9 +122,19 @@
 					"name":"Parallax",
 					"href": "parallax.html"
 				},
+				"Cart" : {
+					"name":"Cart",
+					"href": "cart.html",
+					"js": true
+				},
 				"Truncate" : {
 					"name":"Truncate",
 					"href": "truncate.html",
+					"js": true
+				},
+				"Sortable" : {
+					"name":"Sortable lists",
+					"href": "sortable.html",
 					"js": true
 				}
 			}
@@ -232,6 +242,11 @@
 				"Tips" : {
 					"name":"Tips",
 					"href": "tips.html"
+				},
+				"Modals" : {
+					"name":"Modal windows",
+					"href": "modals.html",
+					"js" : true
 				}
 			}
 		},

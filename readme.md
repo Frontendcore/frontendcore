@@ -8,6 +8,7 @@ setup
         
 media
     thumbs
+    responsive images
         
 Structure
     Media queries
@@ -16,8 +17,6 @@ Forms
     validation
 
 content
-    sortable lists JS
-    cart JS
     toggle JS
     modal JS
 

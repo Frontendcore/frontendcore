@@ -53,11 +53,11 @@
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
             {% for term in terms %}
-            <dt><h4 class="mb-n c-main">{{term.name}}</h4></dt>
+            <dt><h5 class="mb-n c-primary">{{term.name}}</h5></dt>
             <dd class="mb-l">
                 <p class="mb-s">{{term.description}}</p>
                 {% if term.default %}
-                <p class="fz-xs c-text-light">DEFAULT: {{ term.default }}</p>
+                <p class="fz-xs c-secondary">DEFAULT: {{ term.default }}</p>
                 {% endif %}
             </dd>
             {% endfor %}

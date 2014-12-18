@@ -1,0 +1,35 @@
+{% set current_children = "Sortable lists" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Sortable Lists</h1>
+    <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/content/sortable-list.html'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-url",
+            "description" : "Url of the ajax service to save changes.",
+            "default" : "false"
+        },
+        "2" : {
+            "name" :        "data-tc-handle",
+            "description" : "Define it if you want just one element as handle.",
+            "default" : "none"
+        },
+        "3" : {
+            "name" :        "data-tc-object",
+            "description" : "Name of the object array that should be send to the ajax. (Example &object[1]=sortable-1)",
+            "default" : "sortable"
+        }
+    }
+    )}}
+{% endblock %}

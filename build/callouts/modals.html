@@ -239,10 +239,10 @@
                                                             <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
-                                                            <li  class="active">
+                                                            <li >
                                     <a href=".././callouts/tips.html">Tips </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././callouts/modals.html">Modal windows <span class="fl-r cp">JS</span> </a>
                                 </li>
                                                         </ul>
@@ -277,32 +277,113 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Tips</h1>
-                                <div data-tc-modules="tabs">
-                <section id="tab-text-fields-1" data-tc-name="Demo">
+            <h1>Modal Windows</h1>
+    <p>Open modal windows for inline content, iframes, images and/or galleries.</p>
+    <section class="box-lighten">
+        <h2>Iframe</h2>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-modal-iframe-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <a href="#" data-tc-modules="tip" data-tc-content="this is the content of the tip" data-tc-title="this is the title of the tooltip" class="icon-info-circle"> Tip</a>                                            </div>
+                                                <a href="http://wikipedia.com"  data-tc-modules="modal" data-tc-width="80%" data-tc-height="70%" >Iframe Link</a>                                            </div>
         </section>
-                <section id="tab-text-fields-2" data-tc-name="Code">
+                <section id="tab-modal-iframe-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;a href=&quot;#&quot; data-tc-modules=&quot;tip&quot; data-tc-content=&quot;this is the content of the tip&quot; data-tc-title=&quot;this is the title of the tooltip&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;</code>
+	                <code data-tc-modules="code">&lt;a href=&quot;http://wikipedia.com&quot;  data-tc-modules=&quot;modal&quot; data-tc-width=&quot;80%&quot; data-tc-height=&quot;70%&quot; &gt;Iframe Link&lt;/a&gt;</code>
                 </pre>
             </div>
         </section>
                     </div>
 
+    </section>
+    <section class="box-lighten">
+        <h2>Images</h2>
+        <h3>Single image</h3>
+        <p>Link to the image or html and add the  data-tc-modules="modal"</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-modal-image-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-tc-modules="modal">Image Link</a>                                            </div>
+        </section>
+                <section id="tab-modal-image-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-tc-modules=&quot;modal&quot;&gt;Image Link&lt;/a&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+        <h3>Multiple images</h3>
+        <p>Just use the class group-X to group you images</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-modal-gallery-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-tc-modules="modal" class="group-1">Image Link 1</a></p>
+
+<p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg"  data-tc-modules="modal" class="group-1">Image Link 2</a></p>
+
+<p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg"  data-tc-modules="modal" class="group-1">Image Link 3</a></p>                                            </div>
+        </section>
+                <section id="tab-modal-gallery-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-tc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg&quot;  data-tc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg&quot;  data-tc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 3&lt;/a&gt;&lt;/p&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content</h2>
+        <p>To open a modal window from a inline content in the current page</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-modal-inline-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <a href="#modal" data-tc-modules="modal">Inline Link</a>
+<div class="hidden">
+    <div id="modal">
+        <img src="http://www.thinkstockphotos.es/CMS/StaticContent/WhyThinkstockImages/Best_Images.jpg" />
+    </div>
+</div>                                            </div>
+        </section>
+                <section id="tab-modal-inline-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;a href=&quot;#modal&quot; data-tc-modules=&quot;modal&quot;&gt;Inline Link&lt;/a&gt;
+&lt;div class=&quot;hidden&quot;&gt;
+    &lt;div id=&quot;modal&quot;&gt;
+        &lt;img src=&quot;http://www.thinkstockphotos.es/CMS/StaticContent/WhyThinkstockImages/Best_Images.jpg&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
 
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-tc-title</h5></dt>
+                        <dt><h5 class="mb-n c-primary">href</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">String with the text title of the tooltip</p>
+                <p class="mb-s">Defines the content to load</p>
                             </dd>
-                        <dt><h5 class="mb-n c-primary">data-tc-content</h5></dt>
+                        <dt><h5 class="mb-n c-primary">data-tc-width</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">String with the text content of the tooltip</p>
+                <p class="mb-s">Force the width of the modal window. Could be defined as px or %.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-tc-height</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">NForce the height of the modal window. Could be defined as px or %.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
                             </dd>
                     </dl>
 

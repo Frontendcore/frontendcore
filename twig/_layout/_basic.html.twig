@@ -38,11 +38,10 @@
     <script src="{{ relative_path ~ url.static }}js/core.js"></script>
 </head>
 <body data-tc-modules="polyfills">
-{{ urlbase }}
-<header class="header">
-    <div class="grid">
-        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo"><img src="{{ relative_path ~ url.static }}img/frontendcore.png" class="mh-m mt-s mb-m" alt="FRONTEND CORE" /></a>
-    </div>
+{% block fullmain %}
+<header class="header pb-n">
+    <a href="https://github.com/tonipinel/frontendcore" class="button-ok icon-github fl-r mt-m">Download & Installation</a>
+    <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo"><img src="{{ relative_path ~ url.static }}img/frontendcore.png" class="" alt="FRONTEND CORE" /></a>
     <section class="menu">
         <div class="grid">
             <nav class="navigation mobile">
@@ -82,8 +81,9 @@
         {% endblock %}
     </div>
     <div class="col-4-5">
-        {% block main %}{% endblock %}
+        {% block main %}{% endblock main %}
     </div>
 </div>
+{% endblock fullmain %}
 </body>
 </html>

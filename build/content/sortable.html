@@ -137,7 +137,7 @@
                                 Content
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="content"  class="hidden">
+                                                        <ul id="content" >
                                                             <li >
                                     <a href=".././content/boxes.html">Boxes </a>
                                 </li>
@@ -156,7 +156,7 @@
                                                             <li >
                                     <a href=".././content/truncate.html">Truncate <span class="fl-r cp">JS</span> </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././content/sortable.html">Sortable lists <span class="fl-r cp">JS</span> </a>
                                 </li>
                                                         </ul>
@@ -235,11 +235,11 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
+                                                        <ul id="callouts"  class="hidden">
                                                             <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
-                                                            <li  class="active">
+                                                            <li >
                                     <a href=".././callouts/tips.html">Tips </a>
                                 </li>
                                                             <li >
@@ -277,16 +277,25 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Tips</h1>
+            <h1>Sortable Lists</h1>
+    <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
                                 <div data-tc-modules="tabs">
                 <section id="tab-text-fields-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <a href="#" data-tc-modules="tip" data-tc-content="this is the content of the tip" data-tc-title="this is the title of the tooltip" class="icon-info-circle"> Tip</a>                                            </div>
+                                                <ul class="list" data-tc-modules="sortable" data-tc-defer="distance:50;" data-tc-url="#" data-tc-object="sort">
+	<li id="sortable-1">Item 1</li>
+	<li id="sortable-2">item 2</li>
+	<li id="sortable-3">item 3</li>
+</ul>                                            </div>
         </section>
                 <section id="tab-text-fields-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;a href=&quot;#&quot; data-tc-modules=&quot;tip&quot; data-tc-content=&quot;this is the content of the tip&quot; data-tc-title=&quot;this is the title of the tooltip&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;</code>
+	                <code data-tc-modules="code">&lt;ul class=&quot;list&quot; data-tc-modules=&quot;sortable&quot; data-tc-defer=&quot;distance:50;&quot; data-tc-url=&quot;#&quot; data-tc-object=&quot;sort&quot;&gt;
+	&lt;li id=&quot;sortable-1&quot;&gt;Item 1&lt;/li&gt;
+	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
+	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;</code>
                 </pre>
             </div>
         </section>
@@ -296,13 +305,20 @@
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-tc-title</h5></dt>
+                        <dt><h5 class="mb-n c-primary">data-tc-url</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">String with the text title of the tooltip</p>
+                <p class="mb-s">Url of the ajax service to save changes.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: false</p>
                             </dd>
-                        <dt><h5 class="mb-n c-primary">data-tc-content</h5></dt>
+                        <dt><h5 class="mb-n c-primary">data-tc-handle</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">String with the text content of the tooltip</p>
+                <p class="mb-s">Define it if you want just one element as handle.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: none</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-tc-object</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Name of the object array that should be send to the ajax. (Example &object[1]=sortable-1)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: sortable</p>
                             </dd>
                     </dl>
 

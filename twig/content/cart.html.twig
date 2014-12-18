@@ -1,0 +1,49 @@
+{% set current_children = "Cart" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Cart JS</h1>
+    <p>Add a Cart to the page and set the products to be shopped through paypal. Everything is JS, no login required to add products.</p>
+    <h2>Cart list</h2>
+    {{ demos.demo(
+        'cart-simple',
+        '../_demos/content/cart-simple.html'
+    )}}
+    <h2>Items</h2>
+    {{ demos.demo(
+        'cart-product',
+        '../_demos/content/cart-product.html'
+    )}}
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-email",
+            "description" : "Paypal Email address to checkout"
+        },
+        "2" : {
+            "name" :        "data-tc-currency",
+            "description" : "Currency used in your cart. (EUR or USD)",
+            "default" : "EUR"
+        },
+        "3" : {
+            "name" :        "data-tc-shipping-free-since",
+            "description" : "Free shipment if the client expend at least this value",
+            "default" : "10000"
+        },
+        "4" : {
+            "name" :        "data-tc-shipping-cost",
+            "description" : "Standard Shiping cost based on currency",
+            "default" : "15"
+        },
+        "5" : {
+            "name" :        "data-tc-tax-rate",
+            "description" : "Standard tax rate",
+            "default" : "0.21"
+        }
+    }
+    )}}
+{% endblock %}

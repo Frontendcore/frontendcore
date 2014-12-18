@@ -1,0 +1,73 @@
+{% set current_children = "" %}
+{% set current_section = "" %}
+
+{% extends "_layout/_basic.html.twig" %}
+
+{% block main %}
+   <div class="box-background"> <h1>Philosophy</h1>
+    <p>The idea behind Frontend Core is pretty simple: create a framework providing the most common components and a standard architecture for today and tomorrow. Frontend Core doesn’t reinvent CSS or JS techniques it just adapts some ideas pretty know for all the experts of the each area:</p>
+    <h2>CSS / HTML</h2>
+    <ul class="list">
+        <li><a class="reference external"
+               href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss">Object oriented CSS</a>
+        </li>
+        <li><a class="reference external"
+               href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic Design</a></li>
+        <li><a class="reference external"
+               href="https://www.lucidchart.com/techblog/2014/01/31/atomic-css-tool-set/">Atomic CSS</a></li>
+        <li><a class="reference external"
+               href="https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn">Zen Coding</a></li>
+        <li><a class="reference external"
+               href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">The Single Responsability principle</a>
+        </li>
+    </ul>
+    <h2>Javascript</h2>
+    <ul class="list">
+        <li><a class="reference external" href="http://requirejs.org/">Require JS</a></li>
+        <li><a class="reference external" href="http://requirejs.org/docs/whyamd.html">AMD Modules</a></li>
+        <li><a class="reference external"
+               href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes">Data attributes</a>
+        </li>
+        <li><a class="reference external"
+               href="http://www.youtube.com/watch?v=mKouqShWI4o">Scalable JavaScript Application Architecture</a>
+        </li>
+    </ul>
+    <p>But all this staff is just theory and when you try to combine all you will find that there is a huge work in front of you. That’s what Frontend Core can do for you, translate this “ideal” way of work to the real world.</p>
+</div>
+<div class="box-background">
+    <h1>Get Started</h1>
+    <h2>Installation</h2>
+    <ol class="list">
+        <li>First of all, <a class="reference external" href="http://sass-lang.com/install">Install Ruby &amp; Sass</a></li>
+        <li>Install the version 1.0 of Compass:<br/>
+            <code data-tc-modules="code" class="d-ib mt-s mb-l mt-s mb-l" style="vertical-align: middle;">
+                gem install compass
+            </code>
+        </li>
+        <li>Install Susy:<br/>
+            <code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
+                gem install susy
+            </code>
+        </li>
+        <li>Install <a class="reference external" href="http://nodejs.org">NodeJS</a> on your computer</li>
+        <li>Run the terminal or cmd and Install <a class="reference external" href="http://yeoman.io">Yeoman</a><br/>
+            <code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
+                npm install -g yo
+            </code>
+        </li>
+        <li>In the terminal, go to the folder you want to install Frontendcore and install the <a class="reference external" href="https://www.npmjs.org/package/generator-frontendcore">generator-frontendcore</a> (an assistant to install frontendcore in your computer).
+            <br/><code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
+                npm install generator-frontendcore
+            </code>
+        </li>
+        <li>Now you will have all the stuff installed. To be sure, check if you have following folders on your computer:<br/>
+            <pre><code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">static
+    components
+    css
+    fonts
+    js            </code></pre>
+        </li>
+    </ol>
+    <p class="msg-info">Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).</p>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% set current_children = "Modal windows" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Modal Windows</h1>
+    <p>Open modal windows for inline content, iframes, images and/or galleries.</p>
+    <section class="box-lighten">
+        <h2>Iframe</h2>
+        {{ demos.demo(
+            'modal-iframe',
+            '../_demos/callouts/modal-iframe.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Images</h2>
+        <h3>Single image</h3>
+        <p>Link to the image or html and add the  data-tc-modules="modal"</p>
+        {{ demos.demo(
+            'modal-image',
+            '../_demos/callouts/modal-image.html'
+        )}}
+        <h3>Multiple images</h3>
+        <p>Just use the class group-X to group you images</p>
+        {{ demos.demo(
+            'modal-gallery',
+            '../_demos/callouts/modal-gallery.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content</h2>
+        <p>To open a modal window from a inline content in the current page</p>
+        {{ demos.demo(
+            'modal-inline',
+            '../_demos/callouts/modal-inline.html'
+        )}}
+    </section>
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "href",
+            "description" : "Defines the content to load"
+        },
+        "2" : {
+            "name" :        "data-tc-width",
+            "description" : "Force the width of the modal window. Could be defined as px or %.",
+            "default" : "auto"
+        },
+        "3" : {
+            "name" :        "data-tc-height",
+            "description" : "NForce the height of the modal window. Could be defined as px or %.",
+            "default" : "auto"
+        }
+    }
+    )}}
+{% endblock %}
