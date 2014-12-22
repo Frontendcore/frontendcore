@@ -8,7 +8,7 @@ if (!oGlobalSettings.sPathcss) oGlobalSettings.sPathcss = './css/';
 if (!oGlobalSettings.bTrackModules) oGlobalSettings.bTrackModules = false;
 if (!oGlobalSettings.sHash) oGlobalSettings.sHash = '1';
 if (!oGlobalSettings.aPaths) oGlobalSettings.aPaths = {};
-if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = 'desktop';
+if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = isMobile.any() ? 'desktop' : 'desktop' ;
 
 var oModules = {},
 	aModules = ['devicePackage','sidemenuLibs','codeLibs','sortableLibs','tagsLibs','modalLibs','autocompleteLibs','autosizeLibs','graphLibs','statsLibs','wysiwygLibs','truncateLibs','tipLibs','cartLibs','polyfillsLibs','parallaxLibs','carouselLibs','tableLibs'];

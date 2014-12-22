@@ -116,8 +116,8 @@
                                 Media
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="media"  class="hidden">
-                                                            <li >
+                                                        <ul id="media" >
+                                                            <li  class="active">
                                     <a href=".././media/image-thumb.html">Thumbnail Images </a>
                                 </li>
                                                             <li >
@@ -231,8 +231,8 @@
                                 Callouts & Prompts
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="callouts" >
-                                                            <li  class="active">
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
                                     <a href=".././callouts/messages.html">Messages </a>
                                 </li>
                                                             <li >
@@ -273,18 +273,20 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Messages</h1>
+            <h1>Thumbnail Images</h1>
     <section class="box-lighten">
-        <h2>Message Ok</h2>
+        <h2>Thumbnail on image</h2>
                                     <div data-tc-modules="tabs">
-                <section id="tab-msg-ok-1" data-tc-name="Demo">
+                <section id="tab-thumbnail-image-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <p class="msg-ok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+                                                <img src="../static/img/chuck.jpg" class="thumbnail" width="150" />
+                                            </div>
         </section>
-                <section id="tab-msg-ok-2" data-tc-name="Code">
+                <section id="tab-thumbnail-image-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ok&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
+	                <code data-tc-modules="code">&lt;img src=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot; width=&quot;150&quot; /&gt;
+</code>
                 </pre>
             </div>
         </section>
@@ -292,16 +294,22 @@
 
     </section>
     <section class="box-lighten">
-        <h2>Message Ko</h2>
+        <h2>Thumbnail on link</h2>
                                     <div data-tc-modules="tabs">
-                <section id="tab-msg-ko-1" data-tc-name="Demo">
+                <section id="tab-thumbnail-link-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <p class="msg-ko"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+                                                <a href="../static/img/chuck.jpg" class="thumbnail" data-tc-modules="modal">
+	<img src="../static/img/chuck.jpg" width="150" />
+</a>
+                                            </div>
         </section>
-                <section id="tab-msg-ko-2" data-tc-name="Code">
+                <section id="tab-thumbnail-link-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-ko&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
+	                <code data-tc-modules="code">&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot; data-tc-modules=&quot;modal&quot;&gt;
+	&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+&lt;/a&gt;
+</code>
                 </pre>
             </div>
         </section>
@@ -309,16 +317,78 @@
 
     </section>
     <section class="box-lighten">
-        <h2>Message Info</h2>
+        <h2>Thumbnail group</h2>
                                     <div data-tc-modules="tabs">
-                <section id="tab-msg-info-1" data-tc-name="Demo">
+                <section id="tab-thumbnail-group-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <p class="msg-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+                                                <ul class="thumbnail-group">
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+	</li>
+</ul>                                            </div>
         </section>
-                <section id="tab-msg-info-2" data-tc-name="Code">
+                <section id="tab-thumbnail-group-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-info&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
+	                <code data-tc-modules="code">&lt;ul class=&quot;thumbnail-group&quot;&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code>
                 </pre>
             </div>
         </section>
@@ -326,16 +396,210 @@
 
     </section>
     <section class="box-lighten">
-        <h2>Message Warning</h2>
+        <h2>Thumbnail group with actions</h2>
                                     <div data-tc-modules="tabs">
-                <section id="tab-msg-warning-1" data-tc-name="Demo">
+                <section id="tab-thumbnail-actions-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <p class="msg-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>                                            </div>
+                                                <ul class="thumbnail-group">
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="../static/img/chuck.jpg" class="thumbnail">
+			<img src="../static/img/chuck.jpg" width="150" />
+		</a>
+		<ul class="thumbnail-actions">
+			<li>
+				<a href="#" class="icon-trash-o"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-pencil"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-search-plus"></a>
+			</li>
+		</ul>
+	</li>
+</ul>                                            </div>
         </section>
-                <section id="tab-msg-warning-2" data-tc-name="Code">
+                <section id="tab-thumbnail-actions-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;p class=&quot;msg-warning&quot;&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</code>
+	                <code data-tc-modules="code">&lt;ul class=&quot;thumbnail-group&quot;&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../static/img/chuck.jpg&quot; class=&quot;thumbnail&quot;&gt;
+			&lt;img src=&quot;../static/img/chuck.jpg&quot; width=&quot;150&quot; /&gt;
+		&lt;/a&gt;
+		&lt;ul class=&quot;thumbnail-actions&quot;&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-trash-o&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-pencil&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot; class=&quot;icon-search-plus&quot;&gt;&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code>
                 </pre>
             </div>
         </section>

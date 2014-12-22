@@ -25,10 +25,14 @@ TinyCore.AMD.define('sidemenu', ['devicePackage'], function (utils) {
 			var self = this,
                 oSettings,
                 oOptions = {},
-                sHref = oTarget.href;
+                sHref = oTarget.href,
+				oBindActions = {
+					open : 'swipeRight',
+					close : 'swipeLeft'
+				};
 
             if (oTarget.getAttribute("data-tc-position") !== null) {
-                oOptions.side = this.getAttribute("data-tc-position");
+                oOptions.side = oTarget.getAttribute("data-tc-position");
             }
 
             if (sHref.indexOf('#') !== -1) {
@@ -39,6 +43,19 @@ TinyCore.AMD.define('sidemenu', ['devicePackage'], function (utils) {
             oSettings = FC.mixOptions(oOptions, self.oDefault);
 
             $(oTarget).sidr(oSettings);
+
+			if (oOptions.side !== 'right') {
+				oBindActions.open = 'swipeLeft';
+				oBindActions.close = 'swipeRight';
+			}
+/*
+			$(document).on('swipeRight',function(e){
+				$.sidr('open', oOptions.name);
+			});
+
+			$(document).on('swipeLeft', function(e){
+				$.sidr('close', oOptions.name);
+			});*/
 		},
 		onStop: function () {
 			this.sPathCss = null;

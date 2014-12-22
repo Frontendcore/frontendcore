@@ -89,7 +89,11 @@
 			"href" : "#media",
 			"id": "media",
 			"children" : {
-				"Circles" : {
+				"Thumbnail" : {
+					"name":"Thumbnail Images",
+					"href": "image-thumb.html"
+				},
+			  	"Circles" : {
 					"name":"Circle Images",
 					"href": "image-circle.html"
 				},

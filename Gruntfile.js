@@ -65,7 +65,6 @@ module.exports = function (grunt) {
 			core: {
 				files: {
 					'build/static/js/ui.js': [
-						'js/base/_tools.js',
 						'js/base/_responsive-images.js',
 						'js/ui/code.js',
 						'js/ui/sortable.js',
@@ -97,11 +96,17 @@ module.exports = function (grunt) {
 						'js/base/_modules-config.js',
 						'js/base/_dom-ready.js',
 						'js/base/_query-selector.js',
+						'js/base/_tools.js',
 						'build/static/js/ui.js',
 						'js/base/_init.js'
 					],
 					'build/static/js/devices/desktop.js': [
 						'bower_components/jquery/dist/jquery.js',
+						'js/libs/modernizr/modernizr-custom.js',
+						'bower_components/jquery-unveil/jquery.unveil.js'
+					],
+					'build/static/js/devices/mobile.js': [
+						'bower_components/zepto/zepto.js',
 						'js/libs/modernizr/modernizr-custom.js',
 						'bower_components/jquery-unveil/jquery.unveil.js'
 					],
