@@ -25,7 +25,6 @@ describe('carousel', function() {
 			expect(oTestedModule.oDefault.margin).toBeDefined();
 			expect(oTestedModule.oDefault.merge).toBeDefined();
 			expect(oTestedModule.oDefault.video).toBeDefined();
-			expect(oTestedModule.oDefault.autoHeight).toBeDefined();
 			expect(oTestedModule.oDefault.videoWidth).toBeDefined();
 			expect(oTestedModule.oDefault.videoHeight).toBeDefined();
 			expect(oTestedModule.oDefault.lazyLoad).toBeDefined();
@@ -33,7 +32,6 @@ describe('carousel', function() {
 			expect(oTestedModule.oDefault.autoplay).toBeDefined();
 			expect(oTestedModule.oDefault.autoplayTimeout).toBeDefined();
 			expect(oTestedModule.oDefault.autoplayHoverPause).toBeDefined();
-			expect(oTestedModule.oDefault.responsive).toBeDefined();
 		});
 	});
 

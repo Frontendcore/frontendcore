@@ -23,4 +23,53 @@
             '../_demos/content/carousel-video.html'
         )}}
     </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-items",
+            "description" : "The number of items you want to see on the screen.",
+            "default" : "1"
+    },
+        "2" : {
+            "name" :        "data-tc-nav",
+            "description" : "Show next/prev buttons.",
+            "default" : "true"
+    },
+        "3" : {
+            "name" :        "data-tc-margin",
+            "description" : "margin-right(px) on item",
+            "default" : "10"
+    },
+        "5" : {
+            "name" :        "data-tc-video",
+            "description" : "Enable fetching YouTube/Vimeo videos.",
+            "default" : "true"
+    },
+        "5" : {
+            "name" :        "data-tc-video-width",
+            "description" : "Enable fetching YouTube/Vimeo videos.",
+            "default" : "100%"
+    },
+        "5" : {
+            "name" :        "data-tc-video-height",
+            "description" : "Enable fetching YouTube/Vimeo videos.",
+            "default" : "300"
+    },
+        "6" : {
+            "name" :        "data-tc-center",
+            "description" : "Center item. Works well with even an odd number of items.",
+            "default" : "true"
+    },
+        "7" : {
+            "name" :        "data-tc-autoplay",
+            "description" : "Autoplay",
+            "default" : "true"
+    },
+        "8" : {
+            "name" :        "data-tc-device-items",
+            "description" : "The number of items you want to see on the screen separated by coma. First number is on mobile, second on tablet and third in desktop.",
+            "default" : "1,1,1"
+    }
+    }
+    )}}
 {% endblock %}
