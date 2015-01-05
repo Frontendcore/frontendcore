@@ -15,6 +15,32 @@
             '../_demos/tabs/tabs.html'
         )}}
     </section>
+
+    <h2 class="mt-l">Active Tab color</h2>
+    <p>By default the active tab is using color to match the .box-background but you can adjust it to match most common boxes</p>
+    <section id="tabs-js" class="box-lighten">
+        <h3>Color box tab</h3>
+        {{ demos.demo(
+            'tabs-box',
+            '../_demos/tabs/tabs-box.html'
+        )}}
+        <h3>Color foreground tab</h3>
+        {{ demos.demo(
+            'tabs-foreground',
+            '../_demos/tabs/tabs-foreground.html'
+        )}}
+        <h3>Color primary tab</h3>
+        {{ demos.demo(
+            'tabs-primary',
+            '../_demos/tabs/tabs-primary.html'
+        )}}
+        <h3>Color secondary tab</h3>
+        {{ demos.demo(
+            'tabs-secondary',
+            '../_demos/tabs/tabs-secondary.html'
+        )}}
+    </section>
+
     <section id="tabs-js" class="box-lighten">
         <h2>Dynamic tabs</h2>
         <p>Use this tabs to show hidden content in the DOM.</p>
@@ -23,4 +49,8 @@
             '../_demos/tabs/tabs-js.html'
         )}}
     </section>
+
+
 {% endblock %}
+
+{# 	$colors-list: 'foreground','background','primary','secondary','box','info'; #}

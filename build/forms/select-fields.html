@@ -189,6 +189,9 @@
                                                             <li >
                                     <a href=".././forms/option-fields.html">Option Fields </a>
                                 </li>
+                                                            <li  class="active">
+                                    <a href=".././forms/select-fields.html">Select Fields </a>
+                                </li>
                                                             <li >
                                     <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
                                 </li>
@@ -280,13 +283,17 @@
                                                 <form class="form">
 	<fieldset>
 		<legend>Select fields</legend>
-		<ol>
-			<li>
+		<ol class="grid">
+			<li class="col-1-2">
 				<label for="select-field">Select Field</label>
 				<select id="select-field"class="w-100">
 					<option>option 1</option>
 					<option>option 2</option>
 				</select>
+			</li>
+			<li class="col-1-2">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
 			</li>
 		</ol>
 	</fieldset>
@@ -340,13 +347,17 @@
 	                <code data-tc-modules="code">&lt;form class=&quot;form&quot;&gt;
 	&lt;fieldset&gt;
 		&lt;legend&gt;Select fields&lt;/legend&gt;
-		&lt;ol&gt;
-			&lt;li&gt;
+		&lt;ol class=&quot;grid&quot;&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
 				&lt;label for=&quot;select-field&quot;&gt;Select Field&lt;/label&gt;
 				&lt;select id=&quot;select-field&quot;class=&quot;w-100&quot;&gt;
 					&lt;option&gt;option 1&lt;/option&gt;
 					&lt;option&gt;option 2&lt;/option&gt;
 				&lt;/select&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-1-2&quot;&gt;
+				&lt;label&gt;Text Field&lt;/label&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
 			&lt;/li&gt;
 		&lt;/ol&gt;
 	&lt;/fieldset&gt;

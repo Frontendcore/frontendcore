@@ -181,6 +181,10 @@
 					"name":"Option Fields",
 					"href": "option-fields.html"
 				},
+			  	"Select Fields" : {
+					"name":"Select Fields",
+					"href": "select-fields.html"
+				},
 				"Tags Fields" : {
 					"name":"Tags Fields",
 					"href": "tags-fields.html",
