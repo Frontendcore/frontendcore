@@ -267,8 +267,8 @@ module.exports = function (grunt) {
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	//grunt.registerTask('scss', ['compass', 'cssmin','clean:sassdoc','sassdoc']);
-	grunt.registerTask('scss', ['compass', 'cssmin']);
 	grunt.registerTask('twig', ['twigRender']);
+	grunt.registerTask('scss', ['compass', 'cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
 	grunt.registerTask('default', ['twig','scss', 'js']);

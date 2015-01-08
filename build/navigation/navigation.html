@@ -277,6 +277,7 @@
             </div>
     <div class="col-4-5">
             <h1>Navigation & Subnavigation</h1>
+
     <section id="navigation" class="box-lighten">
         <h2>.navigation</h2>
                                     <div data-tc-modules="tabs">
@@ -516,6 +517,64 @@
                     </div>
 
     </section>
+
+        <section class="box-lighten">
+        <h2>Customize the appearance</h2>
+        <p class="msg-info">You can customize the appearance of this object by setting up in you config the following map. By defaults de values are the indicated here.</p>
+        <pre data-tc-modules="code">
+            <code data-tc-modules="scss-group" data-tc-group="vars">
+                /* @group vars */<br />
+$object-navigation-vars-default : (<br />
+<br />
+	// Background  first level:<br />
+	background-color: $color-primary,<br />
+<br />
+	// Background second level:<br />
+	background-color-dark: $color-primary-dark,<br />
+<br />
+	// Background gradients (from background-color to background-color-light)<br />
+	background-color-light: $color-primary-light,<br />
+<br />
+	// Link color<br />
+	color: contrast-color($color-primary),<br />
+<br />
+	// Border Radius<br />
+	border-radius: $default-border-radius,<br />
+<br />
+	// Font family first level<br />
+	font-family: $font-face-default,<br />
+<br />
+	// Font weight first level<br />
+	font-weight: normal,<br />
+<br />
+	// Font size first level<br />
+	font-size: $font-size-m,<br />
+<br />
+	// Font family inner levels<br />
+	inner-font-family: $font-face-default,<br />
+<br />
+	// Font weight inner levels<br />
+	inner-font-weight: normal,<br />
+<br />
+	// Font size inner levels<br />
+	inner-font-size: $font-size-s,<br />
+<br />
+	// Vertical separator for first level<br />
+	vertical-separator: true,<br />
+<br />
+	// Object style (Default or tabbed)<br />
+	style: default<br />
+<br />
+) !global !default;<br />
+/* @group vars */<br />
+<br />
+<br />
+$object-navigation-vars-custom: () !global !default;<br />
+<br />
+$object-navigation-vars : map-merge($object-navigation-vars-default, $object-navigation-vars-custom) !global;            </code>
+        </pre>
+    </section>
+
     </div>
 </div>
 <footer class="footer box-primary">

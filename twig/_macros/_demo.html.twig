@@ -83,3 +83,15 @@
         </section>
     </div>
 {% endmacro %}
+
+{% macro scss_object(scsspath) %}
+    <section class="box-lighten">
+        <h2>Customize the appearance</h2>
+        <p class="msg-info">You can customize the appearance of this object by setting up in you config the following map. By defaults de values are the indicated here.</p>
+        <pre data-tc-modules="code">
+            <code data-tc-modules="scss-group" data-tc-group="vars">
+                {% filter nl2br %}{%  include scsspath |e('html') %}{% endfilter %}
+            </code>
+        </pre>
+    </section>
+{% endmacro %}

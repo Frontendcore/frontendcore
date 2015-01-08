@@ -7,6 +7,7 @@
 
 {% block main %}
     <h1>Navigation & Subnavigation</h1>
+
     <section id="navigation" class="box-lighten">
         <h2>.navigation</h2>
         {{ demos.demo(
@@ -41,4 +42,8 @@
             '../_demos/navigation/navigation-subnavigation.html'
         )}}
     </section>
+
+    {{ demos.scss_object(
+        '../../css/core/objects/navigation/__vars.scss'
+    )}}
 {% endblock %}

@@ -19,7 +19,6 @@ TinyCore.AMD.define('code', ['devicePackage'], function (utils) {
 		},
 		autobind: function ( aTarget ) {
 
-
             hljs.highlightBlock(aTarget);
 		},
 		onStop: function () {
