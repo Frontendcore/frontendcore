@@ -2,4 +2,7 @@
 
 	@include table-core;
 
+	@if $object-boxes != false {
+		@include papa-boxes;
+	}
 }
