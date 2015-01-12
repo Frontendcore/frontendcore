@@ -1,0 +1,161 @@
+{% set current_children = "Getting started" %}
+{% set current_section = "Setup" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <div class="box-background">
+        <h1>Getting Started</h1>
+        <p class="fz-l">First of all the most important thing is to understand what can frontendcore do for you. We know that there are several choices in the market (Bootstrap, foundation) so what's the reason to be of Frontendcore? </p>
+    </div>
+    <div class="box-background">
+        <h2>What is Frontendcore?</h2>
+        <p>The idea behind Frontend Core is pretty simple: create a framework providing the most common components and a standard architecture for today and tomorrow. Frontend Core doesn’t reinvent CSS or JS techniques it just adapts some ideas pretty know for all the experts of the each area:</p>
+        <div class="grid pt-l">
+            <div class="col-1-3">
+                <h2>CSS / HTML</h2>
+                <ul class="list">
+                    <li><a class="reference external"
+                           href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss">Object oriented CSS</a>
+                    </li>
+                    <li><a class="reference external"
+                           href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic Design</a></li>
+                    <li><a class="reference external"
+                           href="https://www.lucidchart.com/techblog/2014/01/31/atomic-css-tool-set/">Atomic CSS</a></li>
+                    <li><a class="reference external"
+                           href="https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn">Zen Coding</a></li>
+                    <li><a class="reference external"
+                           href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">The Single Responsability principle</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-1-3">
+                <h2>Javascript</h2>
+                <ul class="list">
+                    <li><a class="reference external" href="http://requirejs.org/">Require JS</a></li>
+                    <li><a class="reference external" href="http://requirejs.org/docs/whyamd.html">AMD Modules</a></li>
+                    <li><a class="reference external"
+                           href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes">Data attributes</a>
+                    </li>
+                    <li><a class="reference external"
+                           href="http://www.youtube.com/watch?v=mKouqShWI4o">Scalable JavaScript Application Architecture</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-1-3">
+                <img src="../static/img/HTML5-CSS3-JS.png" class="w-90 mb-l"/>
+            </div>
+        </div>
+        <p>All this staff is just theory and when you try to combine all you will find that there is a to of work in front of you. That’s what Frontend Core can do for you, translate the <strong>“ideal” way of work to the real world.</strong></p>
+        <p>But Frontendcore can do even more for you because provides you a <strong>huge list of objects, components and plugins ready to use</strong> in your projects. All totally configurable and <strong>100% responsive.</strong></p>
+    </div>
+    <div class="box-background">
+        <h2>CSS resources</h2>
+        <div class="grid">
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://sass-lang.com/" target="_blank">
+                        <img src="../static/img/logo-sass.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Sass</strong> is a css preprocessor. CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass lets you use features that don't exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://compass-style.org/" target="_blank">
+                        <img src="../static/img/logo-compass.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Compass</strong> is an open-source CSS authoring framework which uses the Sass stylesheet language to make writing stylesheets powerful and easy. Experience cleaner markup without presentational classes. Compass mixins make CSS3 easy.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://susy.oddbird.net/" target="_blank">
+                        <img src="../static/img/logo-susy.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Sussy</strong> is a grid math system for sass. In a world of agile development and super-tablet-multi-magic-laptop-phones, the best layouts can’t be contained in a single framework or technique. CSS Libraries are a bloated mess of opinions about how to do your job. Why let the table-saw tell you where to put the kitchen?</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://bower.io/" target="_blank">
+                        <img src="../static/img/logo-sassdoc.gif" class="w-100"/>
+                    </a>
+                    <p><strong>SassDoc</strong> is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye. Among other things, SassDoc is: Usable out of the box, Highly customisable, Blazingly fast, Fully themable, Integrated with Grunt/Gulp/Broccoli or directly Node.</p>
+                </div>
+            </div>
+        </div>
+        <h2>Javascript resources</h2>
+        <div class="grid">
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://jquery.com/" target="_blank">
+                        <img src="../static/img/logo-jquery.gif" class="w-100"/>
+                    </a>
+                    <p><strong>jQuery</strong> is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://zeptojs.com/" target="_blank">
+                        <img src="../static/img/logo-zepto.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Zepto</strong> is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API. If you use jQuery, you already know how to use Zepto.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://requirejs.org/" target="_blank">
+                        <img src="../static/img/logo-requirejs.gif" class="w-100"/>
+                    </a>
+                    <p><strong>RequireJS</strong> is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://requirejs.org/" target="_blank">
+                        <img src="../static/img/logo-jasmine.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Jasmine</strong> is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.</p>
+                </div>
+            </div>
+        </div>
+        <h2>Workspace enviroment</h2>
+        <div class="grid">
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://nodejs.org/" target="_blank">
+                        <img src="../static/img/logo-nodejs.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Node.js</strong> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://gruntjs.com/" target="_blank">
+                        <img src="../static/img/logo-grunt.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Grunt</strong> is in one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://yeoman.io/" target="_blank">
+                        <img src="../static/img/logo-yo.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Yeoman</strong> helps you to kickstart new projects, prescribing best practices and tools to help you stay productive. To do so, we provide a generator ecosystem. A generator is basically a plugin that can be run with the `yo` command to scaffold complete projects or useful parts.</p>
+                </div>
+            </div>
+            <div class="col-1-4">
+                <div class="box-none">
+                    <a href="http://bower.io/" target="_blank">
+                        <img src="../static/img/logo-bower.gif" class="w-100"/>
+                    </a>
+                    <p><strong>Bower</strong> works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. Bower keeps track of these packages in a manifest file, bower.json. How you use packages is up to you. Bower provides hooks to facilitate using packages in your tools and workflows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

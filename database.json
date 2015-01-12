@@ -4,7 +4,23 @@
 		"static" : "./static/"
 	},
 	"sections": {
-		"structure" : {
+		"setup" : {
+			"name" : "Setup",
+			"icon" : "table",
+			"href" : "#setup",
+			"id": "setup",
+			"children" : {
+				"GettingStarted" : {
+					"name":"Getting started",
+					"href": "getting-started.html"
+				},
+			  "Installation" : {
+					"name":"Installation",
+					"href": "installation.html"
+				}
+			}
+		},
+	  "structure" : {
 			"name" : "Structure",
 			"icon" : "table",
 			"href" : "#structure",
