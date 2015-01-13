@@ -1,0 +1,53 @@
+{% set current_children = "Notifications" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Notifications</h1>
+    <p>The notifications component has a dependency with the <a href="messages.html">CSS object messages</a></p>
+    <section class="box-lighten">
+        <h2>Show notification on page load</h2>
+        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
+        <input type="hidden"  data-tc-modules="notification" data-tc-event="load" data-tc-type="info" data-tc-text="This message is shown when this page is loaded" />
+        {{ demos.code(
+            'notifications-load',
+            '../_demos/callouts/notification-load.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Show notification on click</h2>
+        {{ demos.demo(
+            'notifications-click',
+            '../_demos/callouts/notification-click.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Show notification in a module</h2>
+        <p>If you need to show a notification in a module the best way is to use the <a href="../architecture-js/mediator.html">module commnication (Mediator)</a>. Here you have an example of how to show a message when a module starts.</p>
+        {{ demos.code(
+            'notifications-module',
+            '../_demos/callouts/notification-module.js'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-event",
+            "description" : "Defines the content to load",
+            "default":      "click"
+        },
+        "2" : {
+            "name" :        "data-tc-type",
+            "description" : "Type of the message (ok, ko, warning or info)",
+            "default" : "ok"
+        },
+        "3" : {
+            "name" :        "data-tc-text",
+            "description" : "Text to show in the message. If it's not defined the message will not be shown."
+        }
+    }
+    )}}
+{% endblock %}

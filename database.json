@@ -274,9 +274,15 @@
           "name": "Messages",
           "href": "messages.html"
         },
+        "Notifications": {
+          "name": "Notifications",
+          "href": "notifications.html",
+          "js": true
+        },
         "Tips": {
           "name": "Tips",
-          "href": "tips.html"
+          "href": "tips.html",
+          "js": true
         },
         "Modals": {
           "name": "Modal windows",

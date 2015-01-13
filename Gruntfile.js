@@ -85,6 +85,7 @@ module.exports = function (grunt) {
 						'js/ui/cart.js',
 						'js/ui/parallax.js',
 						'js/ui/table.js',
+						'js/ui/notification.js',
 						'js/ui/dropdown.js'
 					],
 					'build/static/js/core.js': [
