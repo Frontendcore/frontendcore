@@ -1,0 +1,70 @@
+{% set current_children = "Module Communication (Mediator)" %}
+{% set current_section = "Architecture" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <div class="box-lighten">
+
+    <h1>Module Communication (Mediator)</h1>
+    <p>The Mediator is a extensions of TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
+    <h2>Why do i need a publish/subscribe system?</h2>
+    <p>Sometimes you need modules to communicate between but if you call directly from one to other you are adding critical dependencies, and it's very common that one day someone or even you modify one of this modules creating a bug in the other one. The idea is to use mediator to subscribe and publish events that will trigger other modules, but with a total independence of the modules.</p>
+    <h2>API</h2>
+<pre><code data-tc-modules="code">var Mediator = {
+    subscribe : function ( topics, handler, context ) {},
+    publish : function ( topic, data ) {},
+    unsubscribe : function ( topics ) {},
+    unsubscribeAll : function () {}
+};</code></pre>
+    <h2>Example</h2>
+    <p>The Mediator can be requested explicitly via TinyCore.Toolbox.request :</p>
+<pre><code data-tc-modules="code">var Mediator = TinyCore.Toolbox.request( 'mediator' );
+
+Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
+    <p>Or can be requested by the module, when defined :</p>
+<pre><code data-tc-modules="code">TinyCore.Module.define( 'phone', ['mediator'], function ( mediator )
+{
+    return {
+        onStart : function ()
+        {
+            var self = this;
+
+            mediator.publish( 'phone:boot', { when : +new Date() } );
+
+            mediator.subscribe( 'phone:call', function ( oTopic )
+            {
+                var oCallData = oTopic.data;
+                self.displayMessage( 'Call from '+oCallData.from );
+            } );
+
+            // Subscribe to several topics and...
+            // ...specify the context in which "onBatteryStateChanged" should be executed.
+            mediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
+        },
+        onStop : function ()
+        {
+            mediator.unsubscribe( ['phone:call', 'battery:charged'] );
+            mediator.unsubscribe( 'battery:empty' );
+            // mediator.unsubscribeAll();
+        },
+        onBatteryStateChanged : function ( oTopic )
+        {
+            var sTopicName = oTopic.name,
+                sMsg = sTopicName === 'battery:charged' ?
+                                        'Battery fully charged.' :
+                                        'Battery is empty!';
+
+            this.displayMessage( sMsg );
+        },
+        displayMessage : function ( sMsg )
+        {
+            alert( sMsg );
+        }
+    };
+} );</code></pre>
+    </div>
+
+{% endblock %}

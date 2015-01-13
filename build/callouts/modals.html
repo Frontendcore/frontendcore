@@ -63,6 +63,17 @@
                                                         </ul>
                                                     </li>
                                             <li>
+                            <a href="#architecture" data-tc-modules="toggle">
+                                Architecture
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="architecture"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture/mediator.html">Module communication (Mediator) <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
                             <a href="#structure" data-tc-modules="toggle">
                                 Structure
                                                                     <i class="icon-angle-down fl-r"></i>
@@ -380,7 +391,6 @@
                     </div>
 
     </section>
-
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
@@ -399,6 +409,52 @@
                                 <p class="fz-xs c-secondary">DEFAULT: auto</p>
                             </dd>
                     </dl>
+
+    <hr/>
+    <h2>Manual call</h2>
+    <p>Sometimes you need to call a modal from another module. Take this module as example.</p>
+                <pre><code data-tc-modules="code">
+// 1. Define your module and set &#039;modal&#039; as dependency
+TinyCore.AMD.define(&#039;myModule&#039;, [&#039;modal&#039;], function () {
+	return {
+
+		// 2. Instantiate modal as a object in your module
+		oModal:  TinyCore.Module.instantiate( &#039;modal&#039; ),
+
+		onStart: function () {
+
+			// 3. Save into a local var the scope
+			var self = this;
+
+			$(&#039;a&#039;).on(&#039;click&#039;,function(event) {
+				event.preventDefault();
+
+				// 4.Open in a modal this href
+				self.oModal.open({
+					href: this.href,
+					width: &#039;90%&#039;,
+					height: &#039;80%&#039;,
+					onComplete: function() {
+						// This function will be called when modal is rendered
+					}
+				});
+
+				// 5. Closes the modal window
+				self.oModal.close();
+			});
+		},
+		onStop: function () {
+
+			// 6.Set free some memory when module stops
+			this.oModal = null;
+		},
+		onDestroy: function () {
+
+			// 7. Delete oModal to avoid memory problems
+			delete this.oModal;
+		}
+	};
+});</code></pre>
 
     </div>
 </div>

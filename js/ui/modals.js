@@ -2,8 +2,8 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
 		oDefault: {
-			maxWidth: '95%',
-			maxHeight: '95%',
+			maxWidth: '100%',
+			maxHeight: '100%',
 			onComplete: function() {
 				TinyCore.AMD.domBoot( document.getElementById('cboxLoadedContent') );
 			}

@@ -53,11 +53,11 @@
                                 Setup
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="setup" >
+                                                        <ul id="setup"  class="hidden">
                                                             <li >
                                     <a href=".././setup/getting-started.html">Getting started </a>
                                 </li>
-                                                            <li  class="active">
+                                                            <li >
                                     <a href=".././setup/installation.html">Installation </a>
                                 </li>
                                                         </ul>
@@ -67,7 +67,7 @@
                                 Architecture
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="architecture"  class="hidden">
+                                                        <ul id="architecture" >
                                                             <li >
                                     <a href=".././architecture/mediator.html">Module communication (Mediator) <span class="fl-r cp">JS</span> </a>
                                 </li>
@@ -301,42 +301,67 @@
             </nav>
             </div>
     <div class="col-4-5">
-        <div class="box-background">
-    <h1>Get Started</h1>
-    <h2>Installation</h2>
-    <ol class="list">
-        <li>First of all, <a class="reference external" href="http://sass-lang.com/install">Install Ruby &amp; Sass</a></li>
-        <li>Install the version 1.0 of Compass:<br/>
-            <code data-tc-modules="code" class="d-ib mt-s mb-l mt-s mb-l" style="vertical-align: middle;">
-                gem install compass
-            </code>
-        </li>
-        <li>Install Susy:<br/>
-            <code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
-                gem install susy
-            </code>
-        </li>
-        <li>Install <a class="reference external" href="http://nodejs.org">NodeJS</a> on your computer</li>
-        <li>Run the terminal or cmd and Install <a class="reference external" href="http://yeoman.io">Yeoman</a><br/>
-            <code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
-                npm install -g yo
-            </code>
-        </li>
-        <li>In the terminal, go to the folder you want to install Frontendcore and install the <a class="reference external" href="https://www.npmjs.org/package/generator-frontendcore">generator-frontendcore</a> (an assistant to install frontendcore in your computer).
-            <br/><code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">
-                npm install generator-frontendcore
-            </code>
-        </li>
-        <li>Now you will have all the stuff installed. To be sure, check if you have following folders on your computer:<br/>
-            <pre><code data-tc-modules="code" class="d-ib mt-s mb-l" style="vertical-align: middle;">static
-    components
-    css
-    fonts
-    js            </code></pre>
-        </li>
-    </ol>
-    <p class="msg-info">Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).</p>
-</div>
+            <div class="box-lighten">
+
+    <h1>Module Communication (Mediator)</h1>
+    <p>The Mediator is a extensions of TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
+    <h2>Why do i need a publish/subscribe system?</h2>
+    <p>Sometimes you need modules to communicate between but if you call directly from one to other you are adding critical dependencies, and it's very common that one day someone or even you modify one of this modules creating a bug in the other one. The idea is to use mediator to subscribe and publish events that will trigger other modules, but with a total independence of the modules.</p>
+    <h2>API</h2>
+<pre><code data-tc-modules="code">var Mediator = {
+    subscribe : function ( topics, handler, context ) {},
+    publish : function ( topic, data ) {},
+    unsubscribe : function ( topics ) {},
+    unsubscribeAll : function () {}
+};</code></pre>
+    <h2>Example</h2>
+    <p>The Mediator can be requested explicitly via TinyCore.Toolbox.request :</p>
+<pre><code data-tc-modules="code">var Mediator = TinyCore.Toolbox.request( 'mediator' );
+
+Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
+    <p>Or can be requested by the module, when defined :</p>
+<pre><code data-tc-modules="code">TinyCore.Module.define( 'phone', ['mediator'], function ( mediator )
+{
+    return {
+        onStart : function ()
+        {
+            var self = this;
+
+            mediator.publish( 'phone:boot', { when : +new Date() } );
+
+            mediator.subscribe( 'phone:call', function ( oTopic )
+            {
+                var oCallData = oTopic.data;
+                self.displayMessage( 'Call from '+oCallData.from );
+            } );
+
+            // Subscribe to several topics and...
+            // ...specify the context in which "onBatteryStateChanged" should be executed.
+            mediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
+        },
+        onStop : function ()
+        {
+            mediator.unsubscribe( ['phone:call', 'battery:charged'] );
+            mediator.unsubscribe( 'battery:empty' );
+            // mediator.unsubscribeAll();
+        },
+        onBatteryStateChanged : function ( oTopic )
+        {
+            var sTopicName = oTopic.name,
+                sMsg = sTopicName === 'battery:charged' ?
+                                        'Battery fully charged.' :
+                                        'Battery is empty!';
+
+            this.displayMessage( sMsg );
+        },
+        displayMessage : function ( sMsg )
+        {
+            alert( sMsg );
+        }
+    };
+} );</code></pre>
+    </div>
+
     </div>
 </div>
 <footer class="footer box-primary">

@@ -38,7 +38,6 @@
             '../_demos/callouts/modal-inline.html'
         )}}
     </section>
-
     {{ demos.settings(
     {
         "1" : {
@@ -56,5 +55,12 @@
             "default" : "auto"
         }
     }
+    )}}
+    <hr/>
+    <h2>Manual call</h2>
+    <p>Sometimes you need to call a modal from another module. Take this module as example.</p>
+    {{ demos.code(
+    'modal-manual',
+    '../_demos/callouts/modal-manual.js'
     )}}
 {% endblock %}

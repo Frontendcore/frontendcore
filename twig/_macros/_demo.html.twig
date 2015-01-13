@@ -48,6 +48,14 @@
     </div>
 {% endmacro %}
 
+{% macro code(id, path, test) %}
+    {% set test = test|default(false) %}
+    {% if test %}
+        <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
+    {% endif %}
+    <pre><code data-tc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
+{% endmacro %}
+
 {% macro settings(terms) %}
         <hr />
         <h2 class="mb-m">Attributes</h2>
