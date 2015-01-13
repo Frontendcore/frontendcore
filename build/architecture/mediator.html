@@ -63,13 +63,13 @@
                                                         </ul>
                                                     </li>
                                             <li>
-                            <a href="#architecture" data-tc-modules="toggle">
-                                Architecture
+                            <a href="#architecture-js" data-tc-modules="toggle">
+                                Architecture JS
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="architecture" >
-                                                            <li >
-                                    <a href=".././architecture/mediator.html">Module communication (Mediator) <span class="fl-r cp">JS</span> </a>
+                                                        <ul id="architecture-js" >
+                                                            <li  class="active">
+                                    <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
                                 </li>
                                                         </ul>
                                                     </li>
@@ -319,17 +319,18 @@
 <pre><code data-tc-modules="code">var Mediator = TinyCore.Toolbox.request( 'mediator' );
 
 Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
-    <p>Or can be requested by the module, when defined :</p>
-<pre><code data-tc-modules="code">TinyCore.Module.define( 'phone', ['mediator'], function ( mediator )
+    <p>Here you have an example on module implementation:</p>
+<pre><code data-tc-modules="code">TinyCore.Module.define( 'phone', ['devicePackage'], function ( mediator )
 {
     return {
+        mediator :  TinyCore.Toolbox.request( 'mediator' ),
         onStart : function ()
         {
             var self = this;
 
-            mediator.publish( 'phone:boot', { when : +new Date() } );
+            self.mediator.publish( 'phone:boot', { when : +new Date() } );
 
-            mediator.subscribe( 'phone:call', function ( oTopic )
+            self.mediator.subscribe( 'phone:call', function ( oTopic )
             {
                 var oCallData = oTopic.data;
                 self.displayMessage( 'Call from '+oCallData.from );
@@ -337,13 +338,15 @@ Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
 
             // Subscribe to several topics and...
             // ...specify the context in which "onBatteryStateChanged" should be executed.
-            mediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
+            self.mediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
         },
         onStop : function ()
         {
-            mediator.unsubscribe( ['phone:call', 'battery:charged'] );
-            mediator.unsubscribe( 'battery:empty' );
-            // mediator.unsubscribeAll();
+            var self = this;
+
+            self.mediator.unsubscribe( ['phone:call', 'battery:charged'] );
+            self.mediator.unsubscribe( 'battery:empty' );
+            // self.mediator.unsubscribeAll();
         },
         onBatteryStateChanged : function ( oTopic )
         {

@@ -20,16 +20,15 @@
         }
       }
     },
-    "Architecture": {
-      "name": "Architecture",
+    "Architecture JS": {
+      "name": "Architecture JS",
       "icon": "table",
-      "href": "#architecture",
-      "id": "architecture",
+      "href": "#architecture-js",
+      "id": "architecture-js",
       "children": {
         "Mediator": {
           "name": "Module communication (Mediator)",
-          "href": "mediator.html",
-          "js": true
+          "href": "mediator.html"
         }
       }
     },
