@@ -9,9 +9,9 @@
     <div class="box-lighten">
 
     <h1>Module Communication (Mediator)</h1>
-    <p>The Mediator is a extensions of TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
-    <h2>Why do i need a publish/subscribe system?</h2>
-    <p>Sometimes you need modules to communicate between but if you call directly from one to other you are adding critical dependencies, and it's very common that one day someone or even you modify one of this modules creating a bug in the other one. The idea is to use mediator to subscribe and publish events that will trigger other modules, but with a total independence of the modules.</p>
+    <p>The Mediator is a tool for TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
+    <h2>Why do I need a publish/subscribe system?</h2>
+    <p>Sometimes you need modules to communicate between them, but if you call directly from one to another you are adding critical dependencies.It's very common that one day someone or even you, needs to modify one of this modules, or delete some functions adding a bug to the another one. Use the mediator to subscribe and publish events that will other modules can hear and trigger some events with a total independence of each module.</p>
     <h2>API</h2>
 <pre><code data-tc-modules="code">var Mediator = {
     subscribe : function ( topics, handler, context ) {},
