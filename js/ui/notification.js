@@ -1,4 +1,4 @@
-TinyCore.AMD.define('notification', ['devicePackage'], function (utils) {
+TinyCore.AMD.define('notification', ['devicePackage'], function () {
 	return {
 		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		bMessageCreated : false,
