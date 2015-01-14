@@ -2,6 +2,7 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
 		oDefault: {
+			scrolling: true,
 			maxWidth: '100%',
 			maxHeight: '100%',
 			onComplete: function() {
@@ -18,6 +19,13 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 			FC.trackEvent('JS_Libraries', 'call', 'modal' );
 
 			require(['modalLibs'], function() {
+
+				$(document).bind('cbox_open', function() {
+					$('html').css({ overflow: 'hidden' });
+				}).bind('cbox_closed', function() {
+					$('html').css({ overflow: '' });
+				});
+
 				self.autobind(aTargets);
 			});
 		},
@@ -81,6 +89,7 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 				}
 
 				oSettings = FC.mixOptions(oOptions, self.oDefault);
+
 
 				$(this).colorbox(oSettings);
 
