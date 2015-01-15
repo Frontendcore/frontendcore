@@ -19,9 +19,6 @@ for (var nKey = 0; nKey < aModules.length; nKey++) {
 		case 'devicePackage':
 			oModules[aModules[nKey]] = oGlobalSettings.aPaths[aModules[nKey]] !== undefined ? oGlobalSettings.aPaths[aModules[nKey]] : oGlobalSettings.sPathJsCore + 'devices/' + oGlobalSettings.sDevice;
 		break;
-		case 'wysiwygLibs':
-			oModules[aModules[nKey]] = oGlobalSettings.aPaths[aModules[nKey]] !== undefined ? oGlobalSettings.aPaths[aModules[nKey]] : oGlobalSettings.sPathRoot + 'libs/tinyMCE/tinymce.min';
-		break;
 		default :
 			oModules[aModules[nKey]] = oGlobalSettings.aPaths[aModules[nKey]] !== undefined ? oGlobalSettings.aPaths[aModules[nKey]] : oGlobalSettings.sPathJsCore + 'ui/' + aModules[nKey].replace('Libs', '');
 		break;

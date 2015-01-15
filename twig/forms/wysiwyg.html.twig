@@ -1,0 +1,30 @@
+{% set current_children = "Wysiwyg" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1>Wysiwyg</h1>
+    {{ demos.demo(
+        'wysiwyg-simple',
+        '../_demos/forms/wysiwyg-simple.html',
+        false,false,true
+    )}}
+        {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-help",
+            "description" : "Text that will be shown on focus editor",
+            "default" : "Select some text to get some formatting options."
+        },
+        "2" : {
+            "name" :        "data-tc-format-options",
+            "description" : "List separated by coma and ordered of the format options. The posible values are: <ul class='list'><li>blockquote</li><li>h2</li><li>h3</li><li>p</li><li>pre</li><li>insertorderedlist</li><li>insertunorderedlist</li><li>indent</li><li>outdent</li><li>bold</li><li>italic</li><li>underline</li><li>createlink</li><li>inserthorizontalrule</li></ul>",
+            "default" : "bold,italic,underline,insertunorderedlist,createlink"
+        },
+
+    }
+    )}}
+{% endblock %}

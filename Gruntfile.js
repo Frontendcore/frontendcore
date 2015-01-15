@@ -121,6 +121,10 @@ module.exports = function (grunt) {
 					'build/static/js/ui/tags.js': [
 						'js/libs/jquery-autosuggest/jquery.autoSuggest.js'
 					],
+					'build/static/js/ui/wysiwyg.js': [
+						'bower_components/pen/src/pen.js',
+						'bower_components/pen/src/markdown.js'
+					],
 					'build/static/js/ui/parallax.js': [
 						'js/libs/skrollr/skrollr.js'
 					],

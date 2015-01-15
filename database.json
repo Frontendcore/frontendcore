@@ -239,6 +239,11 @@
           "name": "Autosize",
           "href": "autosize.html",
           "js": true
+        },
+        "Wysiwyg": {
+          "name": "Wysiwyg",
+          "href": "wysiwyg.html",
+          "js": true
         }
       }
     },
