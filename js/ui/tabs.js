@@ -1,5 +1,6 @@
 TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 	return {
+		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		onStart: function () {
 
 			var aTarget = document.querySelectorAll('[data-tc-modules="tabs"]');
@@ -35,6 +36,8 @@ TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 				$('a.update-tabs', oThis).bind('click', function (event) {
 
 					event.preventDefault();
+
+					self.mediator.publish( 'close:wysiwyg');
 
 					var sHref = (event.srcElement || event.target).href;
 
