@@ -5,13 +5,26 @@
 
 {% extends "../_layout/_basic.html.twig" %}
 
+
 {% block main %}
     <h1>Sortable Lists</h1>
-    <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
-    {{ demos.demo(
-        'text-fields',
-        '../_demos/content/sortable-list.html'
-    )}}
+    <section class="box-lighten">
+        <h2>Order to input</h2>
+         <p>Drag & Drop sortable lists to input field</p>
+        {{ demos.demo(
+            'sortable-input',
+            '../_demos/content/sortable-input.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Order to Ajax call</h2>
+         <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
+        {{ demos.demo(
+            'sortable-ajax',
+            '../_demos/content/sortable-ajax.html'
+        )}}
+    </section>
+
 
     {{ demos.settings(
     {

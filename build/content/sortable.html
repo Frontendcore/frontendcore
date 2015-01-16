@@ -308,9 +308,47 @@
             </div>
     <div class="col-4-5">
             <h1>Sortable Lists</h1>
-    <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
-                                <div data-tc-modules="tabs">
-                <section id="tab-text-fields-1" data-tc-name="Demo">
+    <section class="box-lighten">
+        <h2>Order to input</h2>
+         <p>Drag & Drop sortable lists to input field</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-sortable-input-1" data-tc-name="Demo">
+            <div class="box-background" >
+                                                <ul class="list" data-tc-modules="sortable" data-tc-input="sortable-input">
+	<li id="sortable-1">Item 1</li>
+	<li id="sortable-2">item 2</li>
+	<li id="sortable-3">item 3</li>
+</ul>
+<form class="form">
+	<label>Order</label>
+	<input id="sortable-input" type="text" value="">
+</form>
+                                            </div>
+        </section>
+                <section id="tab-sortable-input-2" data-tc-name="Code">
+            <div class="box-background">
+                <pre>
+	                <code data-tc-modules="code">&lt;ul class=&quot;list&quot; data-tc-modules=&quot;sortable&quot; data-tc-input=&quot;sortable-input&quot;&gt;
+	&lt;li id=&quot;sortable-1&quot;&gt;Item 1&lt;/li&gt;
+	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
+	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form class=&quot;form&quot;&gt;
+	&lt;label&gt;Order&lt;/label&gt;
+	&lt;input id=&quot;sortable-input&quot; type=&quot;text&quot; value=&quot;&quot;&gt;
+&lt;/form&gt;
+</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Order to Ajax call</h2>
+         <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
+                                    <div data-tc-modules="tabs">
+                <section id="tab-sortable-ajax-1" data-tc-name="Demo">
             <div class="box-background" >
                                                 <ul class="list" data-tc-modules="sortable" data-tc-defer="distance:50;" data-tc-url="#" data-tc-object="sort">
 	<li id="sortable-1">Item 1</li>
@@ -318,7 +356,7 @@
 	<li id="sortable-3">item 3</li>
 </ul>                                            </div>
         </section>
-                <section id="tab-text-fields-2" data-tc-name="Code">
+                <section id="tab-sortable-ajax-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
 	                <code data-tc-modules="code">&lt;ul class=&quot;list&quot; data-tc-modules=&quot;sortable&quot; data-tc-defer=&quot;distance:50;&quot; data-tc-url=&quot;#&quot; data-tc-object=&quot;sort&quot;&gt;
@@ -330,6 +368,8 @@
             </div>
         </section>
                     </div>
+
+    </section>
 
 
             <hr />
