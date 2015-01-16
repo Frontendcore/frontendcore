@@ -75,7 +75,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			oSettings = FC.mixOptions(oOptions, self.oDefault);
 
-			//editor = new Pen(oSettings);
+			editor = new Pen(oSettings);
 
 			$('#' + sId).parents('form').on('submit', function() {
 				self.updateTextarea(sId, oTarget);
