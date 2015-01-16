@@ -1,5 +1,6 @@
 TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 	return {
+		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		onStart: function () {
 
 			var aTarget = document.querySelectorAll('[data-tc-modules="tabs"]');
@@ -36,6 +37,9 @@ TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 
 					event.preventDefault();
 
+					// Notifies Wysiwyg to close
+					self.mediator.publish( 'close:wysiwyg');
+
 					var sHref = (event.srcElement || event.target).href;
 
 					if (sHref.indexOf('#') !== -1) {
@@ -69,6 +73,7 @@ TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 					if (sHref.indexOf('#') !== -1) {
 						$(document.getElementById(sHref.split('#')[1])).slideToggle();
 					}
+
 				});
 			});
 		},
@@ -131,8 +136,9 @@ TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
 
 		},
 		updateTabs: function ( oTarget, sId ) {
-			$('> nav a.update-tabs, > header.tab a.update-tabs', oTarget).each(function () {
 
+			var self = this;
+			$('> nav a.update-tabs, > header.tab a.update-tabs', oTarget).each(function () {
 
 				var $Content = $('#' + this.href.split('#')[1]),
 					sIdLi = this.href.split('#')[1],

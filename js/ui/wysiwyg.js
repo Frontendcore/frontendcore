@@ -1,6 +1,7 @@
 TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'wysiwyg.css',
+		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		oDefault: {
 			class: 'fc-wysiwyg', // {String} class of the editor,
 			debug: false, // {Boolean} false by default
@@ -22,26 +23,37 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 				});
 			});
 
+			self.mediator.subscribe( 'close:wysiwyg', this.closeFormatOptions );
+
+		},
+		closeFormatOptions : function() {
+			$('.fc-wysiwyg-menu').hide();
 		},
 		updateTextarea : function(sId, oTarget) {
 
 			oTarget.innerHTML = document.getElementById(sId).innerHTML;
 		},
 		autobind: function (oTarget) {
+
+			if (!Date.now) {
+				Date.now = function() { return new Date().getTime(); };
+			}
+
 			var oSettings,
 				oOptions = {},
 				self = this,
 				editor,
-				aTemp = [];
-				sId = oTarget.name + '-editor',
+				sDate = Math.floor(Date.now() / 1000),
+				sId = oTarget.id ? oTarget.id + '-editor' : sDate + '-editor',
 				sValues = oTarget.getAttribute('data-tc-format-options'),
 				oEditArea = document.createElement('div');
 
 			oEditArea.id = sId;
-			oEditArea.className = 'wysiwyg';
+			oEditArea.className = 'fc-wysiwyg';
 			oEditArea.dataset.help = oTarget.dataset.help ? oTarget.dataset.help : 'Select some text to get some formatting options.';
+			oEditArea.innerHTML = oTarget.innerHTML;
 
-			oTarget.className = 'wysiwyg-textarea';
+			oTarget.className = 'fc-wysiwyg-textarea';
 
 			$(oTarget).before(oEditArea);
 
