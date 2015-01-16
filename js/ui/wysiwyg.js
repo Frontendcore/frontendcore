@@ -50,8 +50,8 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			oEditArea.id = sId;
 			oEditArea.className = 'fc-wysiwyg';
+			oEditArea.innerHTML = $(oTarget).text();
 			oEditArea.dataset.help = oTarget.dataset.help ? oTarget.dataset.help : 'Select some text to get some formatting options.';
-			oEditArea.innerHTML = oTarget.innerHTML;
 
 			oTarget.className = 'fc-wysiwyg-textarea';
 
@@ -75,7 +75,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			oSettings = FC.mixOptions(oOptions, self.oDefault);
 
-			editor = new Pen(oSettings);
+			//editor = new Pen(oSettings);
 
 			$('#' + sId).parents('form').on('submit', function() {
 				self.updateTextarea(sId, oTarget);
