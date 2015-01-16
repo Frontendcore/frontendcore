@@ -31,7 +31,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 		},
 		updateTextarea : function(sId, oTarget) {
 
-			oTarget.innerHTML = document.getElementById(sId).innerHTML;
+			oTarget.innerHTML = document.getElementById(sId).innerHTML == '<br>' ? '' : document.getElementById(sId).innerHTML;
 		},
 		autobind: function (oTarget) {
 
