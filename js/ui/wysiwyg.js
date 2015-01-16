@@ -79,8 +79,6 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			$('#' + sId).parents('form').on('submit', function() {
 				self.updateTextarea(sId, oTarget);
-
-				return false;
 			});
 
 			$('#' + sId).on('blur', function() {
