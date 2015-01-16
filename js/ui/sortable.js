@@ -57,11 +57,14 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 					$('li', oTarget).each(function( nIndex ){
 
-						sValue += this.id;
+						if (this.id !== '' ) {
+							sValue += this.id;
+						}
 
-						if ( nIndex !== nTotal - 1) {
+						if ( nIndex !== nTotal - 1 && this.id !== '' ) {
 							sValue += ',';
 						}
+
 					});
 
 					document.getElementById(oSettings.input).value = sValue;
