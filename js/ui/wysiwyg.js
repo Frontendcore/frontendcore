@@ -85,6 +85,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			$('#' + sId).on('blur', function() {
 				self.updateTextarea(sId, oTarget);
+				self.closeFormatOptions();
 			});
 
 
