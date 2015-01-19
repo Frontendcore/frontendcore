@@ -251,8 +251,8 @@ module.exports = function (grunt) {
 		},
 		buildcontrol: {
 			options : {
-				commit: false,
-				push: false,
+				commit: true,
+				push: true,
 				branch: 'master',
 				tag: pkg.version
 			},
@@ -303,8 +303,8 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
+    grunt.registerTask('tagversion', ['version', 'buildcontrol']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
-	//grunt.registerTask('scss', ['compass', 'cssmin','clean:sassdoc','sassdoc']);
 	grunt.registerTask('twig', ['twigRender']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
