@@ -282,7 +282,7 @@ module.exports = function (grunt) {
 			},
 			workspace: {
 				options: {
-					cwd: "./",
+					cwd: "../frontendcore",
 					message: "Release version " + pkg.version
 				},
 				files: [
@@ -310,7 +310,7 @@ module.exports = function (grunt) {
 			},
 			workspace: {
 				options: {
-					cwd: "./",
+					cwd: "",
 					remote: "origin",
 					branch: "master"
 				}
@@ -333,7 +333,7 @@ module.exports = function (grunt) {
 			},
 			workspace: {
 				options: {
-					cwd: "./",
+					cwd: "",
 					tag: pkg.version,
 					message: "Tag version " + pkg.version
 				}
