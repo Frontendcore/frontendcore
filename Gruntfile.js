@@ -282,13 +282,14 @@ module.exports = function (grunt) {
 			},
 			workspace: {
 				options: {
-					cwd: "../frontendcore",
+					cwd: "./",
 					message: "Release version " + pkg.version
 				},
 				files: [
 					{
-						src: ["*.*","**/*.*"],
-						expand: true
+						src: ["bower.json","Gruntfile.js"],
+						expand: true,
+						cwd: "./"
 					}
 				]
 			}
