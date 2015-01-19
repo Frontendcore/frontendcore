@@ -171,6 +171,9 @@ module.exports = function (grunt) {
 						'js/libs/ie-polyfills/queryselector.js',
 						'js/libs/ie-polyfills/html5shiv.js',
 						'js/libs/ie-polyfills/ecmascript5.js'
+					],
+					'build/static/js/_oGlobalSettings.js': [
+						'js/base/_oGlobalSettings.js'
 					]
 				}
 			},
