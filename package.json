@@ -35,6 +35,7 @@
     "grunt-stencil": "^1.1.0",
     "grunt-template-jasmine-requirejs": "^0.2.0",
     "grunt-twig-render": "^1.6.0",
+    "grunt-update-json": "^0.2.1",
     "load-grunt-tasks": "^2.0.0"
   },
   "dependencies": {

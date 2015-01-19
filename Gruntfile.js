@@ -243,6 +243,25 @@ module.exports = function (grunt) {
 				]
 			}
 		},
+		update_json: {
+			options: {
+				src: 'package.json',
+				indent: '\t'
+			},
+			bower_main: {
+				dest: './bower.json',     // where to write to
+				// the fields to update, as a String Grouping
+				fields: 'name version description repository'
+			},
+			bower_scss: {
+				dest: 'css/core/bower.json',     // where to write to
+				fields: 'version description repository'
+			},
+			bower_js: {
+				dest: 'build/static/js/bower.json',     // where to write to
+				fields: 'version description repository'
+			}
+		},
 		buildcontrol: {
 			options : {
 				commit: false,
