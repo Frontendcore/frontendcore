@@ -254,7 +254,7 @@ module.exports = function (grunt) {
 				options: {
 					dir: 'css/core/',
 					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'https://github.com/tonipinel/frontendcore-scss.git',
+					remote: 'origin'
 
 				}
 			},
@@ -262,14 +262,14 @@ module.exports = function (grunt) {
 				options: {
 					dir: 'build/static/js/',
 					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'https://github.com/tonipinel/frontendcore-js.git',
+					remote: 'origin'
 				}
 			},
 			workspace : {
 				options: {
 					dir: './',
 					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'https://github.com/tonipinel/frontendcore-workspace.git',
+					remote: 'origin'
 				}
 			}
 		},
