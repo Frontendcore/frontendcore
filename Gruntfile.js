@@ -244,49 +244,32 @@ module.exports = function (grunt) {
 			}
 		},
 		buildcontrol: {
+			options : {
+				commit: false,
+				push: false,
+				branch: 'master',
+				tag: pkg.version
+			},
 			frontendcore_scss : {
 				options: {
 					dir: 'css/core/',
-					commit: true,
-					push: true,
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-				},
-				scss: {
-					options: {
-						remote: 'https://github.com/tonipinel/frontendcore-scss.git',
-						branch: 'master',
-						tag: pkg.version
-					}
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+					remote: 'https://github.com/tonipinel/frontendcore-scss.git',
+
 				}
 			},
 			frontendcore_js : {
 				options: {
 					dir: 'build/static/js/',
-					commit: true,
-					push: true,
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-				},
-				js: {
-					options: {
-						remote: 'https://github.com/tonipinel/frontendcore-js.git',
-						branch: 'master',
-						tag: pkg.version
-					}
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+					remote: 'https://github.com/tonipinel/frontendcore-js.git',
 				}
 			},
 			workspace : {
 				options: {
 					dir: './',
-					commit: true,
-					push: true,
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-				},
-				js: {
-					options: {
-						remote: 'https://github.com/tonipinel/frontendcore-workspace.git',
-						branch: 'master',
-						tag: pkg.version
-					}
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+					remote: 'https://github.com/tonipinel/frontendcore-workspace.git',
 				}
 			}
 		},
