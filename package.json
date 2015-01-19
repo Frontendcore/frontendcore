@@ -32,6 +32,7 @@
     "grunt-contrib-watch": "^0.3.1",
     "grunt-conventional-changelog": "^1.1.0",
     "grunt-lib-phantomjs": "^0.6.0",
+    "grunt-push-release": "^0.1.1",
     "grunt-sassdoc": "^1.2.1",
     "grunt-stencil": "^1.1.0",
     "grunt-sync-version": "^0.2.1",

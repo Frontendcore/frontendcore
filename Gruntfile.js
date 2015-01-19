@@ -249,34 +249,24 @@ module.exports = function (grunt) {
 			},
 			files: ['bower.json','build/static/js/bower.json', 'css/core/bower.json']
 		},
-		buildcontrol: {
-			options : {
+		push: {
+			options: {
+				files: ['package.json','bower.json','build/static/js/bower.json', 'css/core/bower.json'],
+				updateConfigs: ['pkg','bower'],
+				releaseBranch: false,
+				add: true,
+				addFiles: ['.'], // '.' for all files except ingored files in .gitignore
 				commit: true,
+				commitMessage: 'Release v%VERSION%',
+				commitFiles: ['-a'], // '-a' for all files
+				createTag: true,
+				tagName: 'v%VERSION%',
+				tagMessage: 'Version %VERSION%',
 				push: true,
-				branch: 'master',
-				tag: pkg.version
-			},
-			frontendcore_scss : {
-				options: {
-					dir: 'css/core/',
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'origin'
-
-				}
-			},
-			frontendcore_js : {
-				options: {
-					dir: 'build/static/js/',
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'origin'
-				}
-			},
-			workspace : {
-				options: {
-					dir: './',
-					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
-					remote: 'origin'
-				}
+				pushTo: 'origin',
+				npm: false,
+				npmTag: 'Release v%VERSION%',
+				gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
 			}
 		},
 		watch: {
@@ -303,7 +293,6 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
-    grunt.registerTask('tagversion', ['version', 'buildcontrol']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('twig', ['twigRender']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
