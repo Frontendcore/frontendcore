@@ -252,7 +252,7 @@ module.exports = function (grunt) {
 		push: {
 			options: {
 				files: ['package.json','bower.json','build/static/js/bower.json', 'css/core/bower.json'],
-				updateConfigs: ['pkg','bower'],
+				updateConfigs: ['pkg'],
 				releaseBranch: false,
 				add: true,
 				addFiles: ['.'], // '.' for all files except ingored files in .gitignore
