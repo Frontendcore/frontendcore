@@ -20,6 +20,18 @@
         }
       }
     },
+    "Architecture SCSS": {
+      "name": "Architecture CSS",
+      "icon": "table",
+      "href": "#architecture-css",
+      "id": "architecture-css",
+      "children": {
+        "Mediator": {
+          "name": "Sassdoc",
+          "href": "sassdoc.html"
+        }
+      }
+    },
     "Architecture JS": {
       "name": "Architecture JS",
       "icon": "table",

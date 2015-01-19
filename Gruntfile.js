@@ -1,4 +1,7 @@
 /*global module:false*/
+
+var pkg = require('./package.json');
+
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -19,14 +22,14 @@ module.exports = function (grunt) {
                     display: {
                         access: ['public'],
                         alias: false,
-                        watermark: true
+                        watermark: false
                     },
-                    package: './package.json'
+                    package: './package.json',
+                    basePath: 'http://www.frontendcore.com'
                 }
             }
 
         },
-
 		cssmin: {
 			combine: {
 				files: {
@@ -180,7 +183,7 @@ module.exports = function (grunt) {
 			tests: {
 				files: [{
 					expand: true,
-					src: 'tests/**/*.js',
+					src: 'js/test/**/*.test.js',
 					dest: 'build/tests',
 					cwd: './'
 				}]
@@ -201,7 +204,7 @@ module.exports = function (grunt) {
                     'build/static/js/ui/*.js'
                 ],
 				options: {
-					specs: 'tests/*.js',
+					specs: 'js/test/*.test.js',
                     vendor :  [
                         'js/base/_oGlobalSettings.js',
                         'build/static/js/core.js',
@@ -240,6 +243,38 @@ module.exports = function (grunt) {
 				]
 			}
 		},
+		buildcontrol: {
+			frontendcore_scss : {
+				options: {
+					dir: 'css/core/',
+					commit: true,
+					push: true,
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+				},
+				scss: {
+					options: {
+						remote: 'https://github.com/tonipinel/frontendcore-scss.git',
+						branch: 'master',
+						tag: pkg.version
+					}
+				}
+			},
+			frontendcore_js : {
+				options: {
+					dir: 'build/static/js/',
+					commit: true,
+					push: true,
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+				},
+				js: {
+					options: {
+						remote: 'https://github.com/tonipinel/frontendcore-js.git',
+						branch: 'master',
+						tag: pkg.version
+					}
+				}
+			}
+		},
 		watch: {
 			scripts: {
 				files: ['js/core/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
@@ -261,22 +296,13 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-sassdoc');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-twig-render');
-    grunt.loadNpmTasks('grunt-conventional-changelog');
+	require('load-grunt-tasks')(grunt);
+
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	//grunt.registerTask('scss', ['compass', 'cssmin','clean:sassdoc','sassdoc']);
 	grunt.registerTask('twig', ['twigRender']);
-	grunt.registerTask('scss', ['compass', 'cssmin','twig']);
+	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
 	grunt.registerTask('default', ['twig','scss', 'js']);
