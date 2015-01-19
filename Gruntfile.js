@@ -273,6 +273,21 @@ module.exports = function (grunt) {
 						tag: pkg.version
 					}
 				}
+			},
+			workspace : {
+				options: {
+					dir: './',
+					commit: true,
+					push: true,
+					message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+				},
+				js: {
+					options: {
+						remote: 'https://github.com/tonipinel/frontendcore-workspace.git',
+						branch: 'master',
+						tag: pkg.version
+					}
+				}
 			}
 		},
 		watch: {
