@@ -249,24 +249,94 @@ module.exports = function (grunt) {
 			},
 			files: ['bower.json','build/static/js/bower.json', 'css/core/bower.json']
 		},
-		push: {
+		version: {
 			options: {
-				files: ['package.json','bower.json','build/static/js/bower.json', 'css/core/bower.json'],
-				updateConfigs: ['pkg'],
-				releaseBranch: false,
-				add: true,
-				addFiles: ['.'], // '.' for all files except ingored files in .gitignore
-				commit: true,
-				commitMessage: 'Release v%VERSION%',
-				commitFiles: ['-a'], // '-a' for all files
-				createTag: true,
-				tagName: 'v%VERSION%',
-				tagMessage: 'Version %VERSION%',
-				push: true,
-				pushTo: 'origin',
-				npm: false,
-				npmTag: 'Release v%VERSION%',
-				gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
+				base: 'package.json'
+			},
+			files: ['bower.json','build/static/js/bower.json', 'css/core/bower.json']
+		},
+		gitcommit: {
+			scss: {
+				options: {
+					cwd: "css/core/",
+					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["bower.json"],
+						expand: true
+					}
+				]
+			},
+			js: {
+				options: {
+					cwd: "build/static/js/",
+					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["bower.json"],
+						expand: true
+					}
+				]
+			},
+			workspace: {
+				options: {
+					cwd: "./",
+					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["*.*","**/*.*"],
+						expand: true
+					}
+				]
+			}
+		},
+		gitpush: {
+			scss: {
+				options: {
+					cwd: "css/core/",
+					remote: "origin",
+					branch: "master"
+				}
+			},
+			js: {
+				options: {
+					cwd: "build/static/js/",
+					remote: "origin",
+					branch: "master"
+				}
+			},
+			workspace: {
+				options: {
+					cwd: "./",
+					remote: "origin",
+					branch: "master"
+				}
+			}
+		},
+		gittag: {
+			scss: {
+				options: {
+					cwd: "css/core/",
+					tag: pkg.version,
+					message: "Tag version " + pkg.version
+				}
+			},
+			js: {
+				options: {
+					cwd: "build/static/js",
+					tag: pkg.version,
+					message: "Tag version " + pkg.version
+				}
+			},
+			workspace: {
+				options: {
+					cwd: "./",
+					tag: pkg.version,
+					message: "Tag version " + pkg.version
+				}
 			}
 		},
 		watch: {
@@ -295,6 +365,7 @@ module.exports = function (grunt) {
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('twig', ['twigRender']);
+	grunt.registerTask('release', ['version','gitcommit','gitpush','gittag']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
