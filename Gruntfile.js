@@ -287,7 +287,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					{
-						src: ["bower.json","Gruntfile.js","css/core/","build/static/js/"],
+						src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/"],
 						expand: true,
 						cwd: "./"
 					}
