@@ -281,38 +281,53 @@ module.exports = function (grunt) {
 			files: ['bower.json','build/static/js/bower.json', 'css/core/bower.json']
 		},
 		gitcommit: {
-			scss: {
-				options: {
-					cwd: "css/core/",
-					message: "Release version " + pkg.version
+			version : {
+				scss: {
+					options: {
+						cwd: "css/core/",
+						message: "Release version " + pkg.version
+					},
+					files: [
+						{
+							src: ["bower.json"],
+							expand: true
+						}
+					]
 				},
-				files: [
-					{
-						src: ["bower.json"],
-						expand: true
-					}
-				]
-			},
-			js: {
-				options: {
-					cwd: "build/static/js/",
-					message: "Release version " + pkg.version
+				js: {
+					options: {
+						cwd: "build/static/js/",
+						message: "Release version " + pkg.version
+					},
+					files: [
+						{
+							src: ["bower.json"],
+							expand: true
+						}
+					]
 				},
-				files: [
-					{
-						src: ["bower.json"],
-						expand: true
-					}
-				]
+				workspace: {
+					options: {
+						cwd: "./",
+						message: "Release version " + pkg.version
+					},
+					files: [
+						{
+							src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/","build"],
+							expand: true,
+							cwd: "./"
+						}
+					]
+				}
 			},
-			workspace: {
+			stats: {
 				options: {
 					cwd: "./",
-					message: "Release version " + pkg.version
+					message: "Stats updated for version " + pkg.version
 				},
 				files: [
 					{
-						src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/","build"],
+						src: ["build/metrics"],
 						expand: true,
 						cwd: "./"
 					}
@@ -362,6 +377,16 @@ module.exports = function (grunt) {
 					cwd: "",
 					tag: pkg.version,
 					message: "Tag version " + pkg.version
+				}
+			}
+		},
+		gitadd: {
+			stats: {
+				options: {
+					force: true
+				},
+				files: {
+					src: ['build/metrics']
 				}
 			}
 		},
@@ -443,8 +468,8 @@ module.exports = function (grunt) {
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('twig', ['twigRender']);
-	grunt.registerTask('release', ['version','default','gitcommit','gitpush','gittag']);
-	grunt.registerTask('stats', ['phantomas','gitcommit:workspace','gitpush:workspace']);
+	grunt.registerTask('release', ['version','default','gitcommit:version','gitpush','gittag']);
+	grunt.registerTask('stats', ['phantomas','gitadd:stats','gitcommit:stats','gitpush:workspace']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
