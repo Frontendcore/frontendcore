@@ -1,0 +1,2204 @@
+{
+  "assertions": {},
+  "metrics": {
+    "requests": {
+      "values": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        null
+      ],
+      "sum": 65,
+      "min": 13,
+      "max": 13,
+      "median": 13,
+      "average": 13
+    },
+    "gzipRequests": {
+      "values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "sum": 10,
+      "min": 2,
+      "max": 2,
+      "median": 2,
+      "average": 2
+    },
+    "postRequests": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "httpsRequests": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "notFound": {
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
+    },
+    "bodySize": {
+      "values": [
+        87934,
+        87949,
+        154984,
+        164652,
+        183379,
+        null
+      ],
+      "sum": 678898,
+      "min": 87934,
+      "max": 183379,
+      "median": 154984,
+      "average": 135779.6
+    },
+    "contentLength": {
+      "values": [
+        544082,
+        544082,
+        544082,
+        544082,
+        544082,
+        null
+      ],
+      "sum": 2720410,
+      "min": 544082,
+      "max": 544082,
+      "median": 544082,
+      "average": 544082
+    },
+    "httpTrafficCompleted": {
+      "values": [
+        7191,
+        7307,
+        7415,
+        7744,
+        9719,
+        null
+      ],
+      "sum": 39376,
+      "min": 7191,
+      "max": 9719,
+      "median": 7415,
+      "average": 7875.2
+    },
+    "timeToFirstByte": {
+      "values": [
+        371,
+        389,
+        637,
+        1645,
+        1685,
+        null
+      ],
+      "sum": 4727,
+      "min": 371,
+      "max": 1685,
+      "median": 637,
+      "average": 945.4
+    },
+    "timeToLastByte": {
+      "values": [
+        385,
+        410,
+        651,
+        1656,
+        1697,
+        null
+      ],
+      "sum": 4799,
+      "min": 385,
+      "max": 1697,
+      "median": 651,
+      "average": 959.8
+    },
+    "ajaxRequests": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "htmlCount": {
+      "values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "sum": 10,
+      "min": 2,
+      "max": 2,
+      "median": 2,
+      "average": 2
+    },
+    "htmlSize": {
+      "values": [
+        34312,
+        34312,
+        34312,
+        34312,
+        34312,
+        null
+      ],
+      "sum": 171560,
+      "min": 34312,
+      "max": 34312,
+      "median": 34312,
+      "average": 34312
+    },
+    "cssCount": {
+      "values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "sum": 10,
+      "min": 2,
+      "max": 2,
+      "median": 2,
+      "average": 2
+    },
+    "cssSize": {
+      "values": [
+        159834,
+        159834,
+        159834,
+        159834,
+        159834,
+        null
+      ],
+      "sum": 799170,
+      "min": 159834,
+      "max": 159834,
+      "median": 159834,
+      "average": 159834
+    },
+    "jsCount": {
+      "values": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        null
+      ],
+      "sum": 25,
+      "min": 5,
+      "max": 5,
+      "median": 5,
+      "average": 5
+    },
+    "jsSize": {
+      "values": [
+        226866,
+        226866,
+        226866,
+        226866,
+        226866,
+        null
+      ],
+      "sum": 1134330,
+      "min": 226866,
+      "max": 226866,
+      "median": 226866,
+      "average": 226866
+    },
+    "jsonCount": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "jsonSize": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "imageCount": {
+      "values": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        null
+      ],
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
+    },
+    "imageSize": {
+      "values": [
+        39310,
+        39310,
+        39310,
+        39310,
+        39310,
+        null
+      ],
+      "sum": 196550,
+      "min": 39310,
+      "max": 39310,
+      "median": 39310,
+      "average": 39310
+    },
+    "videoCount": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "videoSize": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "webfontCount": {
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
+    },
+    "webfontSize": {
+      "values": [
+        83760,
+        83760,
+        83760,
+        83760,
+        83760,
+        null
+      ],
+      "sum": 418800,
+      "min": 83760,
+      "max": 83760,
+      "median": 83760,
+      "average": 83760
+    },
+    "base64Count": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "base64Size": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "otherCount": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "otherSize": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "cacheHits": {
+      "values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "sum": 10,
+      "min": 2,
+      "max": 2,
+      "median": 2,
+      "average": 2
+    },
+    "cacheMisses": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "cachePasses": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "cachingNotSpecified": {
+      "values": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        null
+      ],
+      "sum": 35,
+      "min": 7,
+      "max": 7,
+      "median": 7,
+      "average": 7
+    },
+    "cachingTooShort": {
+      "values": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        null
+      ],
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
+    },
+    "cachingDisabled": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "oldCachingHeaders": {
+      "values": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        null
+      ],
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
+    },
+    "consoleMessages": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "cookiesSent": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "cookiesRecv": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "domainsWithCookies": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "documentCookiesLength": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "documentCookiesCount": {
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
+    },
+    "documentHeight": {
+      "values": [
+        2250,
+        2366,
+        2366,
+        2366,
+        2366,
+        null
+      ],
+      "sum": 11714,
+      "min": 2250,
+      "max": 2366,
+      "median": 2366,
+      "average": 2342.8
+    },
+    "commentsSize": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "whiteSpacesSize": {
+      "values": [
+        24569,
+        24569,
+        24569,
+        24569,
+        24569,
+        null
+      ],
+      "sum": 122845,
+      "min": 24569,
+      "max": 24569,
+      "median": 24569,
+      "average": 24569
+    },
+    "DOMelementsCount": {
+      "values": [
+        763,
+        763,
+        763,
+        763,
+        763,
+        null
+      ],
+      "sum": 3815,
+      "min": 763,
+      "max": 763,
+      "median": 763,
+      "average": 763
+    },
+    "DOMelementMaxDepth": {
+      "values": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        null
+      ],
+      "sum": 65,
+      "min": 13,
+      "max": 13,
+      "median": 13,
+      "average": 13
+    },
+    "nodesWithInlineCSS": {
+      "values": [
+        51,
+        51,
+        51,
+        51,
+        51,
+        null
+      ],
+      "sum": 255,
+      "min": 51,
+      "max": 51,
+      "median": 51,
+      "average": 51
+    },
+    "imagesScaledDown": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "imagesWithoutDimensions": {
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
+    },
+    "DOMidDuplicated": {
+      "values": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        null
+      ],
+      "sum": 65,
+      "min": 13,
+      "max": 13,
+      "median": 13,
+      "average": 13
+    },
+    "hiddenContentSize": {
+      "values": [
+        38948,
+        38948,
+        38948,
+        38948,
+        38948,
+        null
+      ],
+      "sum": 194740,
+      "min": 38948,
+      "max": 38948,
+      "median": 38948,
+      "average": 38948
+    },
+    "DOMmutationsInserts": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "DOMmutationsRemoves": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "DOMmutationsAttributes": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "DOMqueries": {
+      "values": [
+        315,
+        315,
+        315,
+        315,
+        324,
+        null
+      ],
+      "sum": 1584,
+      "min": 315,
+      "max": 324,
+      "median": 315,
+      "average": 316.8
+    },
+    "DOMqueriesById": {
+      "values": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        null
+      ],
+      "sum": 150,
+      "min": 30,
+      "max": 30,
+      "median": 30,
+      "average": 30
+    },
+    "DOMqueriesByClassName": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "DOMqueriesByTagName": {
+      "values": [
+        280,
+        280,
+        280,
+        280,
+        289,
+        null
+      ],
+      "sum": 1409,
+      "min": 280,
+      "max": 289,
+      "median": 280,
+      "average": 281.8
+    },
+    "DOMqueriesByQuerySelectorAll": {
+      "values": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        null
+      ],
+      "sum": 25,
+      "min": 5,
+      "max": 5,
+      "median": 5,
+      "average": 5
+    },
+    "DOMinserts": {
+      "values": [
+        66,
+        66,
+        66,
+        66,
+        66,
+        null
+      ],
+      "sum": 330,
+      "min": 66,
+      "max": 66,
+      "median": 66,
+      "average": 66
+    },
+    "DOMqueriesDuplicated": {
+      "values": [
+        56,
+        56,
+        56,
+        56,
+        57,
+        null
+      ],
+      "sum": 281,
+      "min": 56,
+      "max": 57,
+      "median": 56,
+      "average": 56.2
+    },
+    "DOMqueriesAvoidable": {
+      "values": [
+        229,
+        229,
+        229,
+        229,
+        238,
+        null
+      ],
+      "sum": 1154,
+      "min": 229,
+      "max": 238,
+      "median": 229,
+      "average": 230.8
+    },
+    "domains": {
+      "values": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        null
+      ],
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
+    },
+    "maxRequestsPerDomain": {
+      "values": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        null
+      ],
+      "sum": 50,
+      "min": 10,
+      "max": 10,
+      "median": 10,
+      "average": 10
+    },
+    "medianRequestsPerDomain": {
+      "values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "sum": 10,
+      "min": 2,
+      "max": 2,
+      "median": 2,
+      "average": 2
+    },
+    "eventsBound": {
+      "values": [
+        105,
+        105,
+        105,
+        105,
+        112,
+        null
+      ],
+      "sum": 532,
+      "min": 105,
+      "max": 112,
+      "median": 105,
+      "average": 106.4
+    },
+    "globalVariables": {
+      "values": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        null
+      ],
+      "sum": 100,
+      "min": 20,
+      "max": 20,
+      "median": 20,
+      "average": 20
+    },
+    "globalVariablesFalsy": {
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
+    },
+    "headersCount": {
+      "values": [
+        161,
+        161,
+        161,
+        161,
+        161,
+        null
+      ],
+      "sum": 805,
+      "min": 161,
+      "max": 161,
+      "median": 161,
+      "average": 161
+    },
+    "headersSentCount": {
+      "values": [
+        38,
+        38,
+        38,
+        38,
+        38,
+        null
+      ],
+      "sum": 190,
+      "min": 38,
+      "max": 38,
+      "median": 38,
+      "average": 38
+    },
+    "headersRecvCount": {
+      "values": [
+        123,
+        123,
+        123,
+        123,
+        123,
+        null
+      ],
+      "sum": 615,
+      "min": 123,
+      "max": 123,
+      "median": 123,
+      "average": 123
+    },
+    "headersSize": {
+      "values": [
+        5332,
+        5332,
+        5332,
+        5334,
+        5334,
+        null
+      ],
+      "sum": 26664,
+      "min": 5332,
+      "max": 5334,
+      "median": 5332,
+      "average": 5332.8
+    },
+    "headersSentSize": {
+      "values": [
+        1746,
+        1746,
+        1746,
+        1746,
+        1746,
+        null
+      ],
+      "sum": 8730,
+      "min": 1746,
+      "max": 1746,
+      "median": 1746,
+      "average": 1746
+    },
+    "headersRecvSize": {
+      "values": [
+        3586,
+        3586,
+        3586,
+        3588,
+        3588,
+        null
+      ],
+      "sum": 17934,
+      "min": 3586,
+      "max": 3588,
+      "median": 3586,
+      "average": 3586.8
+    },
+    "headersBiggerThanContent": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "jQueryOnDOMReadyFunctions": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "jQuerySizzleCalls": {
+      "values": [
+        63,
+        63,
+        63,
+        63,
+        72,
+        null
+      ],
+      "sum": 324,
+      "min": 63,
+      "max": 72,
+      "median": 63,
+      "average": 64.8
+    },
+    "documentWriteCalls": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "evalCalls": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "jsErrors": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "localStorageEntries": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "redirects": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "redirectsTime": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "assetsNotGzipped": {
+      "values": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        null
+      ],
+      "sum": 35,
+      "min": 7,
+      "max": 7,
+      "median": 7,
+      "average": 7
+    },
+    "assetsWithQueryString": {
+      "values": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        null
+      ],
+      "sum": 25,
+      "min": 5,
+      "max": 5,
+      "median": 5,
+      "average": 5
+    },
+    "assetsWithCookies": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "smallImages": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "multipleRequests": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "timeToFirstCss": {
+      "values": [
+        1298,
+        1318,
+        1504,
+        2484,
+        2624,
+        null
+      ],
+      "sum": 9228,
+      "min": 1298,
+      "max": 2624,
+      "median": 1504,
+      "average": 1845.6
+    },
+    "timeToFirstJs": {
+      "values": [
+        2980,
+        2986,
+        2995,
+        3030,
+        3926,
+        null
+      ],
+      "sum": 15917,
+      "min": 2980,
+      "max": 3926,
+      "median": 2995,
+      "average": 3183.4
+    },
+    "timeToFirstImage": {
+      "values": [
+        3189,
+        3204,
+        4938,
+        6141,
+        6147,
+        null
+      ],
+      "sum": 23619,
+      "min": 3189,
+      "max": 6147,
+      "median": 4938,
+      "average": 4723.8
+    },
+    "domInteractive": {
+      "values": [
+        1350,
+        2368,
+        2371,
+        2626,
+        2646,
+        null
+      ],
+      "sum": 11361,
+      "min": 1350,
+      "max": 2646,
+      "median": 2371,
+      "average": 2272.2
+    },
+    "domContentLoaded": {
+      "values": [
+        1351,
+        2368,
+        2371,
+        2626,
+        2647,
+        null
+      ],
+      "sum": 11363,
+      "min": 1351,
+      "max": 2647,
+      "median": 2371,
+      "average": 2272.6
+    },
+    "domContentLoadedEnd": {
+      "values": [
+        1493,
+        2506,
+        2770,
+        2785,
+        5159,
+        null
+      ],
+      "sum": 14713,
+      "min": 1493,
+      "max": 5159,
+      "median": 2770,
+      "average": 2942.6
+    },
+    "domComplete": {
+      "values": [
+        1992,
+        3358,
+        6571,
+        6948,
+        7033,
+        null
+      ],
+      "sum": 25902,
+      "min": 1992,
+      "max": 7033,
+      "median": 6571,
+      "average": 5180.4
+    },
+    "timeBackend": {
+      "values": [
+        5,
+        5,
+        9,
+        33,
+        45,
+        null
+      ],
+      "sum": 97,
+      "min": 5,
+      "max": 45,
+      "median": 9,
+      "average": 19.4
+    },
+    "timeFrontend": {
+      "values": [
+        55,
+        67,
+        91,
+        95,
+        95,
+        null
+      ],
+      "sum": 403,
+      "min": 55,
+      "max": 95,
+      "median": 91,
+      "average": 80.6
+    },
+    "windowAlerts": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "windowConfirms": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "windowPrompts": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "bodyHTMLSize": {
+      "values": [
+        65320,
+        65320,
+        65320,
+        65320,
+        65341,
+        null
+      ],
+      "sum": 326621,
+      "min": 65320,
+      "max": 65341,
+      "median": 65320,
+      "average": 65324.2
+    },
+    "iframesCount": {
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null
+      ],
+      "sum": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0,
+      "average": 0
+    },
+    "smallestResponse": {
+      "values": [
+        581,
+        581,
+        581,
+        581,
+        581,
+        null
+      ],
+      "sum": 2905,
+      "min": 581,
+      "max": 581,
+      "median": 581,
+      "average": 581
+    },
+    "biggestResponse": {
+      "values": [
+        159253,
+        159253,
+        159253,
+        159253,
+        159253,
+        null
+      ],
+      "sum": 796265,
+      "min": 159253,
+      "max": 159253,
+      "median": 159253,
+      "average": 159253
+    },
+    "fastestResponse": {
+      "values": [
+        20,
+        41,
+        41,
+        53,
+        79,
+        null
+      ],
+      "sum": 234,
+      "min": 20,
+      "max": 79,
+      "median": 41,
+      "average": 46.8
+    },
+    "slowestResponse": {
+      "values": [
+        1656,
+        2348,
+        2932,
+        3082,
+        3122,
+        null
+      ],
+      "sum": 13140,
+      "min": 1656,
+      "max": 3122,
+      "median": 2932,
+      "average": 2628
+    },
+    "smallestLatency": {
+      "values": [
+        19,
+        36,
+        38,
+        47,
+        79,
+        null
+      ],
+      "sum": 219,
+      "min": 19,
+      "max": 79,
+      "median": 38,
+      "average": 43.8
+    },
+    "biggestLatency": {
+      "values": [
+        1645,
+        1985,
+        1986,
+        3082,
+        3122,
+        null
+      ],
+      "sum": 11820,
+      "min": 1645,
+      "max": 3122,
+      "median": 1986,
+      "average": 2364
+    },
+    "medianResponse": {
+      "values": [
+        508.5,
+        595,
+        617,
+        620,
+        776.5,
+        null
+      ],
+      "sum": 3117,
+      "min": 508.5,
+      "max": 776.5,
+      "median": 617,
+      "average": 623.4
+    },
+    "medianLatency": {
+      "values": [
+        182,
+        189.5,
+        346.5,
+        353.5,
+        353.5,
+        null
+      ],
+      "sum": 1425,
+      "min": 182,
+      "max": 353.5,
+      "median": 346.5,
+      "average": 285
+    }
+  },
+  "offenders": {
+    "gzipRequests": [
+      "http://www.frontendcore.com/content/carousel.html (gzip: 33.17 kB / uncompressed: 33.17 kB)",
+      "http://www.frontendcore.com/static/css/owl.video.play.png (gzip: 0.34 kB / uncompressed: 0.34 kB)"
+    ],
+    "notFound": [
+      "http://www.frontendcore.com/static/css/owl.video.play.png"
+    ],
+    "htmlCount": [
+      "http://www.frontendcore.com/content/carousel.html (33.17 kB)",
+      "http://www.frontendcore.com/static/css/owl.video.play.png (0.34 kB)"
+    ],
+    "cssCount": [
+      "http://www.frontendcore.com/static/css/main.css (155.52 kB)",
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 (0.57 kB)"
+    ],
+    "jsCount": [
+      "http://www.frontendcore.com/static/js/core.js (52.44 kB)",
+      "http://www.frontendcore.com/static/js/devices/desktop.js?v=1 (92.67 kB)",
+      "http://www.frontendcore.com/static/js/ui/sidemenu.js?v=1 (3.47 kB)",
+      "http://www.frontendcore.com/static/js/ui/code.js?v=1 (33.52 kB)",
+      "http://www.frontendcore.com/static/js/ui/carousel.js?v=1 (39.45 kB)"
+    ],
+    "imageCount": [
+      "http://www.frontendcore.com/static/img/frontendcore.png (6.89 kB)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (10.74 kB)",
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg (20.75 kB)"
+    ],
+    "webfontCount": [
+      "http://www.frontendcore.com/static/fonts/fontawesome-webfont.woff?v=4.1.0 (81.80 kB)"
+    ],
+    "cacheHits": [
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg",
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg"
+    ],
+    "cachingNotSpecified": [
+      "http://www.frontendcore.com/static/css/main.css",
+      "http://www.frontendcore.com/static/js/core.js",
+      "http://www.frontendcore.com/static/img/frontendcore.png",
+      "http://www.frontendcore.com/static/js/devices/desktop.js?v=1",
+      "http://www.frontendcore.com/static/js/ui/sidemenu.js?v=1",
+      "http://www.frontendcore.com/static/js/ui/code.js?v=1",
+      "http://www.frontendcore.com/static/js/ui/carousel.js?v=1"
+    ],
+    "cachingTooShort": [
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 cached for 86400 s",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg cached for 21600 s",
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg cached for 21600 s"
+    ],
+    "oldCachingHeaders": [
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 - Expires: Tue, 20 Jan 2015 14:54:09 GMT",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg - Expires: Tue, 20 Jan 2015 17:52:22 GMT",
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg - Expires: Tue, 20 Jan 2015 15:35:10 GMT",
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 - Expires: Tue, 20 Jan 2015 14:54:08 GMT",
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 - Expires: Tue, 20 Jan 2015 14:54:07 GMT"
+    ],
+    "nodesWithInlineCSS": [
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage (width: 19160px; -webkit-transform: translate3d(-3832px, 0px, 0px); -webkit-transition-property: initial; -webkit-transition-duration: 0s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten> div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-nav > div.owl-prev ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-nav > div.owl-next ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-dots ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-2 (display: none; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage (width: 17244px; -webkit-transform: translate3d(-3832px, 0px, 0px); -webkit-transition-property: initial; -webkit-transition-duration: 0s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned > article[0] > div.owl-video-wrapper (width:100%px;height:300px;)",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned > article[0] > div.owl-video-wrapper > a.carousel-video.owl-video (display: none; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned > article[0] > div.owl-video-wrapper > div.owl-video-tn.owl-lazy (background-image: url(http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg); opacity: 1; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center > article[0] > div.owl-video-wrapper (width:100%px;height:300px;)",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center > article[0] > div.owl-video-wrapper > a.carousel-video.owl-video (display: none; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center > article[0] > div.owl-video-wrapper > div.owl-video-tn.owl-lazy (background-image: url(http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg); opacity: 1; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item (width: 1906px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item > article[0] > div.owl-video-wrapper (width:100%px;height:300px;)",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item > article[0] > div.owl-video-wrapper > a.carousel-video.owl-video (display: none; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item > article[0] > div.owl-video-wrapper > div.owl-video-tn.owl-lazy (background-image: url(http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg); opacity: 1; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned > article[0] > div.owl-video-wrapper > div.owl-video-tn.owl-lazy (background-image: url(http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg); opacity: 1; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-nav > div.owl-prev ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-nav > div.owl-next ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-controls > div.owl-dots ()",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-2 (display: none; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage (width: 9020px; -webkit-transform: translate3d(-1804px, 0px, 0px); -webkit-transition-property: initial; -webkit-transition-duration: 0s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage (width: 8118px; -webkit-transform: translate3d(-1804px, 0px, 0px); -webkit-transition-property: initial; -webkit-transition-duration: 0s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item (width: 892px; margin-right: 10px; )",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container> section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item > article[0] > div.owl-video-wrapper (width:100%px;height:300px;)"
+    ],
+    "imagesWithoutDimensions": [
+      "body > header.header.pb-n > a.logo > img[0] <http://www.frontendcore.com/static/img/frontendcore.png>"
+    ],
+    "DOMidDuplicated": [
+      "setup: 2 occurrences",
+      "architecture-css: 2 occurrences",
+      "architecture-js: 2 occurrences",
+      "structure: 2 occurrences",
+      "typography: 2 occurrences",
+      "navigation: 2 occurrences",
+      "media: 2 occurrences",
+      "content: 2 occurrences",
+      "buttons: 2 occurrences",
+      "forms: 2 occurrences",
+      "tables: 2 occurrences",
+      "callouts: 2 occurrences",
+      "modifiers: 2 occurrences"
+    ],
+    "hiddenContentSize": [
+      "body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[11] > ul#navigation (1694 characters)",
+      "body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[19] > ul#forms (2523 characters)",
+      "body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[25] > ul#modifiers (1237 characters)",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-2 (6515 characters)",
+      "body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-2 (3095 characters)",
+      "body > div#menu-1421765655537 (18445 characters)",
+      "body > div#menu-1421765653170 (18445 characters)",
+      "body > div#menu-1421765653343 (18445 characters)",
+      "body > div#menu-1421765653116 (18445 characters)",
+      "body > div#menu-1421765653369 (18445 characters)"
+    ],
+    "DOMqueriesById": [
+      "#tab-carousel-div-1 (in #document)",
+      "#tab-carousel-div-2 (in #document)",
+      "#tab-carousel-div-1-li (in #document)",
+      "#tab-carousel-div-1-header (in #document)",
+      "#tab-carousel-div-2-li (in #document)",
+      "#tab-carousel-div-2-header (in #document)",
+      "#tab-carousel-video-1 (in #document)",
+      "#tab-carousel-video-2 (in #document)",
+      "#tab-carousel-video-1-li (in #document)",
+      "#tab-carousel-video-1-header (in #document)",
+      "#tab-carousel-video-2-li (in #document)",
+      "#tab-carousel-video-2-header (in #document)",
+      "#menu-1421765655537 (in #document)",
+      "#menu (in #document)",
+      "#menu-1421765653170 (in #document)",
+      "#menu-1421765653343 (in #document)",
+      "#menu-1421765653116 (in #document)",
+      "#menu-1421765653369 (in #document)"
+    ],
+    "DOMqueriesByTagName": [
+      "head (in #document)",
+      "base (in #document)",
+      "script (in #document)",
+      "* (in div)",
+      "input (in #document)",
+      "form (in #document)",
+      "video (in #document)",
+      "audio (in #document)",
+      "source (in #document)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div[5])",
+      "script (in DocumentFragment > header#tab-carousel-div-1-header)",
+      "script (in DocumentFragment > header#tab-carousel-div-2-header)",
+      "script (in DocumentFragment > nav.tabs)",
+      "a (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container)",
+      "li (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container)",
+      "a (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-div-1-li)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container)",
+      "script (in DocumentFragment > header#tab-carousel-video-1-header)",
+      "script (in DocumentFragment > header#tab-carousel-video-2-header)",
+      "a (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-video-1-li)",
+      "img (in #document)",
+      "body (in #document)",
+      "script (in DocumentFragment > div#menu-1421765655537)",
+      "* (in body > div#menu-1421765655537)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel)",
+      "script (in DocumentFragment > div.owl-stage)",
+      "script (in DocumentFragment > div.owl-stage-outer)",
+      "* (in DocumentFragment > div.owl-stage-outer)",
+      "* (in div.owl-stage-outer)",
+      "script (in div.owl-stage-outer)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage)",
+      "script (in DocumentFragment > article.box.mb-n)",
+      "* (in div.owl-item)",
+      "script (in DocumentFragment > div.owl-item)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage > div.owl-item)",
+      "script (in div.owl-item)",
+      "script (in DocumentFragment > div.owl-item.cloned)",
+      "script (in DocumentFragment > span[0])",
+      "script (in DocumentFragment > div.owl-controls)",
+      "script (in DocumentFragment > div.owl-dots)",
+      "script (in DocumentFragment > div.owl-nav)",
+      "script (in div)",
+      "* (in div.owl-prev)",
+      "script (in DocumentFragment > div.owl-prev)",
+      "* (in div.owl-next)",
+      "script (in DocumentFragment > div.owl-next)",
+      "script (in DocumentFragment > div.owl-dot)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage)",
+      "script (in DocumentFragment > article[0])",
+      "img (in div.owl-item > article[0] > a.carousel-video.owl-video)",
+      "script (in DocumentFragment > div.owl-video-wrapper)",
+      "* (in DocumentFragment > div.owl-video-wrapper)",
+      "* (in div.owl-video-wrapper)",
+      "script (in div.owl-video-wrapper)",
+      "script (in DocumentFragment > a.carousel-video.owl-video)",
+      "script (in DocumentFragment > div.owl-video-tn.owl-lazy)",
+      "script (in DocumentFragment > div.owl-video-play-icon)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage > div.owl-item)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned)",
+      "* (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.active.center)",
+      "script (in DocumentFragment > div#menu-1421765653170)",
+      "* (in body > div#menu-1421765653170)",
+      "li (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten >div.tab-container)",
+      "script (in DocumentFragment > div#menu-1421765653343)",
+      "* (in body > div#menu-1421765653343)",
+      "script (in DocumentFragment > div#menu-1421765653116)",
+      "* (in body > div#menu-1421765653116)",
+      "script (in DocumentFragment > div#menu-1421765653369)",
+      "* (in body > div#menu-1421765653369)"
+    ],
+    "DOMqueriesByQuerySelectorAll": [
+      "[data-tc-modules=\"sidemenu\"] (in #document)",
+      "[data-tc-modules=\"toggle\"] (in #document)",
+      "[data-tc-modules=\"tabs\"] (in #document)",
+      "[data-tc-modules=\"carousel\"] (in #document)",
+      "[data-tc-modules=\"code\"] (in #document)"
+    ],
+    "DOMinserts": [
+      "\"script\" appended to \"head\"",
+      "\"div\" appended to \"html\"",
+      "\"input\" appended to \"html\"",
+      "\"DocumentFragment > header#tab-carousel-div-1-header\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container\"",
+      "\"DocumentFragment > header#tab-carousel-div-2-header\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container\"",
+      "\"DocumentFragment > nav.tabs\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container\"",
+      "\"DocumentFragment > header#tab-carousel-video-1-header\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container\"",
+      "\"DocumentFragment > header#tab-carousel-video-2-header\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container\"",
+      "\"DocumentFragment > div#menu-1421765655537\" appended to \"body\"",
+      "\"DocumentFragment > div.owl-stage-outer\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading\"",
+      "\"DocumentFragment > div.owl-item\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage\"",
+      "\"DocumentFragment > div.owl-item.cloned\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-stage-outer > div.owl-stage.owl-refresh\"",
+      "\"DocumentFragment > div.owl-controls\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center\"",
+      "\"DocumentFragment > div.owl-dots\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls\"",
+      "\"DocumentFragment > div.owl-nav\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls\"",
+      "\"DocumentFragment > div.owl-prev\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav\"",
+      "\"DocumentFragment > div.owl-next\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav\"",
+      "\"DocumentFragment\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots\"",
+      "\"DocumentFragment > div.owl-stage-outer\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading\"",
+      "\"DocumentFragment > div.owl-video-wrapper\" appended to \"div.owl-item > article[0]\"",
+      "\"DocumentFragment > a.carousel-video.owl-video\" appended to \"div.owl-item > article[0] > div.owl-video-wrapper\"",
+      "\"DocumentFragment > div.owl-video-tn.owl-lazy\" appended to \"div.owl-item > article[0] > div.owl-video-wrapper\"",
+      "\"DocumentFragment > div.owl-video-play-icon\" appended to \"div.owl-item > article[0] > div.owl-video-wrapper\"",
+      "\"DocumentFragment > div.owl-item\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage\"",
+      "\"DocumentFragment > div.owl-item.cloned\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-stage-outer > div.owl-stage.owl-refresh\"",
+      "\"DocumentFragment > div.owl-controls\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center\"",
+      "\"DocumentFragment > div.owl-dots\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls\"",
+      "\"DocumentFragment > div.owl-nav\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls\"",
+      "\"DocumentFragment > div.owl-prev\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav\"",
+      "\"DocumentFragment > div.owl-next\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav\"",
+      "\"DocumentFragment\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots\"",
+      "\"DocumentFragment > div#menu-1421765653170\" appended to \"body\"",
+      "\"DocumentFragment > div#menu-1421765653343\" appended to \"body\"",
+      "\"DocumentFragment > div.owl-item\" appended to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading> div.owl-stage-outer > div.owl-stage\"",
+      "\"DocumentFragment > div#menu-1421765653116\" appended to \"body\"",
+      "\"DocumentFragment > div#menu-1421765653369\" appended to \"body\""
+    ],
+    "DOMqueriesDuplicated": [
+      "tag name \"*\" (in div.owl-item): 22 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-item): 22 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-item.cloned): 16 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-video-wrapper): 15 queries",
+      "tag name \"script\" (in DocumentFragment > article.box.mb-n): 12 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-dot): 11 queries",
+      "tag name \"img\" (in #document): 10 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-stage-outer): 10 queries",
+      "tag name \"script\" (in DocumentFragment > article[0]): 10 queries",
+      "tag name \"script\" (in DocumentFragment > a.carousel-video.owl-video): 10 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-video-tn.owl-lazy): 10 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-video-play-icon): 10 queries",
+      "tag name \"script\" (in div.owl-item): 8 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-stage): 6 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage > div.owl-item): 6 queries",
+      "tag name \"img\" (in div.owl-item > article[0] > a.carousel-video.owl-video): 5 queries",
+      "tag name \"*\" (in DocumentFragment > div.owl-video-wrapper): 5 queries",
+      "tag name \"*\" (in div.owl-video-wrapper): 5 queries",
+      "tag name \"script\" (in div.owl-video-wrapper): 5 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading > div.owl-stage-outer > div.owl-stage > div.owl-item): 5 queries",
+      "tag name \"script\" (in DocumentFragment > nav.tabs): 4 queries",
+      "tag name \"script\" (in DocumentFragment > span[0]): 4 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-controls): 4 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-dots): 4 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-nav): 4 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-prev): 4 queries",
+      "tag name \"script\" (in DocumentFragment > div.owl-next): 4 queries",
+      "id \"#tab-carousel-div-1\" (in #document): 3 queries",
+      "id \"#tab-carousel-div-2\" (in #document): 3 queries",
+      "id \"#tab-carousel-video-1\" (in #document): 3 queries",
+      "id \"#tab-carousel-video-2\" (in #document): 3 queries",
+      "tag name \"script\" (in #document): 2 queries",
+      "tag name \"*\" (in body > div.grid.ph-l >div.col-4-5 > section.box-ligten > div[5]): 2 queries",
+      "tag name \"script\" (in DocumentFragment > header#tab-carousel-div-1-header): 2 queries",
+      "tag name \"script\" (in DocumentFragment > header#tab-carousel-div-2-header): 2 queries",
+      "tag name \"a\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container): 2 queries",
+      "tag name \"li\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container): 2 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container): 2 queries",
+      "id \"#tab-carousel-div-1-li\" (in #document): 2 queries",
+      "id \"#tab-carousel-div-1-header\" (in #document): 2 queries",
+      "id \"#tab-carousel-div-2-li\" (in #document): 2 queries",
+      "id \"#tab-carousel-div-2-header\" (in #document): 2 queries",
+      "tag name \"script\" (in DocumentFragment > header#tab-carousel-video-1-header): 2 queries",
+      "tag name \"script\" (in DocumentFragment > header#tab-carousel-video-2-header): 2 queries",
+      "id \"#tab-carousel-video-1-li\" (in #document): 2 queries",
+      "id \"#tab-carousel-video-1-header\" (in #document): 2 queries",
+      "id \"#tab-carousel-video-2-li\" (in #document): 2 queries",
+      "id \"#tab-carousel-video-2-header\" (in #document): 2 queries",
+      "tag name \"script\" (in DocumentFragment > div#menu-1421765655537): 2 queries",
+      "tag name \"*\" (in DocumentFragment > div.owl-stage-outer): 2 queries",
+      "tag name \"*\" (in div.owl-stage-outer): 2 queries",
+      "tag name \"script\" (in div.owl-stage-outer): 2 queries",
+      "tag name \"script\" (in div): 2 queries",
+      "tag name \"*\" (in div.owl-prev): 2 queries",
+      "tag name \"*\" (in div.owl-next): 2 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned): 2 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage > div.owl-item.cloned): 2 queries",
+      "tag name \"*\" (in body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div[5]): 2 queries",
+      "tag name \"script\" (in DocumentFragment > div#menu-1421765653170): 2 queries",
+      "tag name \"script\" (in DocumentFragment > div#menu-1421765653343): 2 queries",
+      "tag name \"a\" (in body >div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container): 2 queries",
+      "tag name \"script\" (in DocumentFragment > div#menu-1421765653116): 2 queries",
+      "tag name \"script\" (in DocumentFragment > div#menu-1421765653369): 2 queries"
+    ],
+    "domains": [
+      "www.frontendcore.com: 10 request(s)",
+      "img.youtube.com: 2 request(s)",
+      "fonts.googleapis.com: 1 request(s)"
+    ],
+    "eventsBound": [
+      "\"DOMContentLoaded\" bound to \"#document\"",
+      "\"load\" bound to \"window\"",
+      "\"load\" bound to \"script\"",
+      "\"error\" bound to \"script\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[1] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[3] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[5] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[7] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[9] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[11] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[13] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[15] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[17] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[19] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[21] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[23] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-1-5 > nav#menu > ul[1] > li[25] > a[1]\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-div-1-li > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-div-2-li > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > header#tab-carousel-div-1-header > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > header#tab-carousel-div-2-header > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-video-1-li > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > nav.tabs > ul[0] > li#tab-carousel-video-2-li > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > header#tab-carousel-video-1-header > a.update-tabs\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > header#tab-carousel-video-2-header > a.update-tabs\"",
+      "\"unveil\" bound to \"body > header.header.pb-n > a.logo > img[0]\"",
+      "\"scroll\" bound to \"window\"",
+      "\"resize\" bound to \"window\"",
+      "\"touchstart\" bound to \"body > header.header.pb-n > a.button.mobile.tablet.fl-l.mt-s.mr-l\"",
+      "\"touchend\" bound to \"body > header.header.pb-n > a.button.mobile.tablet.fl-l.mt-s.mr-l\"",
+      "\"change\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"initialized\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"changed\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"loaded\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"resize\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"refresh\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"prepared\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"translated\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"dragged\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"drag\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"translate\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"refreshed\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"play\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"stop\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"mouseover\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"mouseout\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"add\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"remove\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel\"",
+      "\"hashchange\" bound to \"window\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav > div.owl-prev\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav > div.owl-next\"",
+      "\"mousedown\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"dragstart\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"touchcancel\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"touchstart\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"webkitTransitionEnd\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"next\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"prev\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"to\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"destroy\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"replace\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-div-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"change\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"initialized\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"changed\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"loaded\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"resize\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"refresh\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"prepared\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"translated\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"dragged\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"drag\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"translate\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"refreshed\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"play\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"stop\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"mouseover\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"mouseout\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"add\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"remove\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-dots\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav > div.owl-prev\"",
+      "\"click\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-loading.owl-center > div.owl-controls > div.owl-nav > div.owl-next\"",
+      "\"mousedown\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"dragstart\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"touchcancel\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"touchstart\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"webkitTransitionEnd\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded > div.owl-stage-outer > div.owl-stage\"",
+      "\"next\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"prev\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"to\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"destroy\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\"",
+      "\"replace\" bound to \"body > div.grid.ph-l > div.col-4-5 > section.box-ligten > div.tab-container > section#tab-carousel-video-1 > div.box-background > section.carousel.carousel-theme.owl-center.owl-loaded\""
+    ],
+    "globalVariables": [
+      "isMobile",
+      "require",
+      "define",
+      "oPolyfills",
+      "nKey",
+      "hljs",
+      "_gaq",
+      "FC",
+      "aModules",
+      "requirejs",
+      "oModules",
+      "oGlobalSettings",
+      "jQuery",
+      "TinyCore",
+      "onDomReady",
+      "$",
+      "html5",
+      "Modernizr",
+      "yepnope",
+      "jQuery211073063909471966330.48390479758381844",
+      "jQuery211059151473944075410.7289229950401932",
+      "jQuery211027404216071590780.9279513177461922",
+      "jQuery2110216179041191935540.7581631618086249",
+      "jQuery211083432235987856980.6543617472052574"
+    ],
+    "globalVariablesFalsy": [
+      "_gaq = null"
+    ],
+    "assetsNotGzipped": [
+      "http://www.frontendcore.com/static/css/main.css (CSS)",
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 (CSS)",
+      "http://www.frontendcore.com/static/js/core.js (JS)",
+      "http://www.frontendcore.com/static/js/devices/desktop.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/sidemenu.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/code.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/carousel.js?v=1 (JS)"
+    ],
+    "assetsWithQueryString": [
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 (CSS)",
+      "http://www.frontendcore.com/static/js/devices/desktop.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/sidemenu.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/code.js?v=1 (JS)",
+      "http://www.frontendcore.com/static/js/ui/carousel.js?v=1 (JS)"
+    ],
+    "timeToFirstCss": [
+      "http://www.frontendcore.com/static/css/main.css received in 2484 ms",
+      "http://www.frontendcore.com/static/css/main.css received in 1504 ms",
+      "http://www.frontendcore.com/static/css/main.css received in 1298 ms",
+      "http://www.frontendcore.com/static/css/main.css received in 2624 ms",
+      "http://www.frontendcore.com/static/css/main.css received in 1318 ms"
+    ],
+    "timeToFirstJs": [
+      "http://www.frontendcore.com/static/js/core.js received in 3926 ms",
+      "http://www.frontendcore.com/static/js/core.js received in 2995 ms",
+      "http://www.frontendcore.com/static/js/core.js received in 3030 ms",
+      "http://www.frontendcore.com/static/js/core.js received in 2980 ms",
+      "http://www.frontendcore.com/static/js/core.js received in 2986 ms"
+    ],
+    "timeToFirstImage": [
+      "http://www.frontendcore.com/static/img/frontendcore.png received in 4938 ms",
+      "http://www.frontendcore.com/static/img/frontendcore.png received in 3204 ms",
+      "http://www.frontendcore.com/static/img/frontendcore.png received in 6147 ms",
+      "http://www.frontendcore.com/static/img/frontendcore.png received in 3189 ms",
+      "http://www.frontendcore.com/static/img/frontendcore.png received in 6141 ms"
+    ],
+    "smallestResponse": [
+      "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300 (0.57 kB)"
+    ],
+    "biggestResponse": [
+      "http://www.frontendcore.com/static/css/main.css (155.52 kB)"
+    ],
+    "fastestResponse": [
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (41 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (79 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (53 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (20 ms)"
+    ],
+    "slowestResponse": [
+      "http://www.frontendcore.com/static/js/core.js (2348 ms)",
+      "http://www.frontendcore.com/static/js/devices/desktop.js?v=1 (2932 ms)",
+      "http://www.frontendcore.com/static/img/frontendcore.png (3082 ms)",
+      "http://www.frontendcore.com/content/carousel.html (1656 ms)",
+      "http://www.frontendcore.com/static/img/frontendcore.png (3122 ms)"
+    ],
+    "smallestLatency": [
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg (36 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (79 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (38 ms)",
+      "http://img.youtube.com/vi/EF_kj2ojZaE/hqdefault.jpg (47 ms)",
+      "http://img.youtube.com/vi/mYdrpj6sb0Y/hqdefault.jpg (19 ms)"
+    ],
+    "biggestLatency": [
+      "http://www.frontendcore.com/static/js/core.js (1985 ms)",
+      "http://www.frontendcore.com/static/js/core.js (1986 ms)",
+      "http://www.frontendcore.com/static/img/frontendcore.png (3082 ms)",
+      "http://www.frontendcore.com/content/carousel.html (1645 ms)",
+      "http://www.frontendcore.com/static/img/frontendcore.png (3122 ms)"
+    ]
+  }
+}

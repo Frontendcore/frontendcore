@@ -365,6 +365,58 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		phantomas: {
+			gruntSite : {
+				options : {
+					indexPath : 'build/metrics/',
+					group   : {
+						'COUNTS & SIZES' : [
+							'jsSize',
+							'cssSize',
+							'webfontSize',
+							'jsCount',
+							'cssCount',
+							'webfontCount'
+						],
+						'REQUESTS' : [
+							'requests',
+							'gzipRequests',
+							'notFound'
+						],
+						'TIMINGS' : [
+							'timeToFirstByte',
+							'timeToLastByte',
+							'timeToFirstCss',
+							'timeToFirstJs',
+							'timeToFirstImage',
+							'onDOMReadyTime',
+							'onDOMReadyTimeEnd',
+							'windowOnLoadTime',
+							'windowOnLoadTimeEnd',
+							'httpTrafficCompleted',
+							'timeFrontend'
+						],
+						'JAVASCRIPT' : [
+							'eventsBound',
+							'jsErrors',
+							'globalVariables'
+						],
+						'DOM QUERIES' : [
+							'DOMqueries',
+							'DOMqueriesById',
+							'DOMqueriesByClassName',
+							'DOMqueriesByTagName',
+							'DOMqueriesByQuerySelectorAll',
+							'DOMinserts',
+							'DOMqueriesDuplicated',
+							'jQuerySizzleCalls'
+						]
+					},
+					url       : 'http://www.frontendcore.com/content/carousel.html',
+					buildUi   : true
+				}
+			}
+		},
 		watch: {
 			scripts: {
 				files: ['js/core/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
@@ -392,6 +444,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('twig', ['twigRender']);
 	grunt.registerTask('release', ['version','default','gitcommit','gitpush','gittag']);
+	grunt.registerTask('stats', ['phantomas','gitcommit:workspace','gitpush:workspace']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
