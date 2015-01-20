@@ -312,7 +312,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					{
-						src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/"],
+						src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/","build"],
 						expand: true,
 						cwd: "./"
 					}
@@ -386,12 +386,12 @@ module.exports = function (grunt) {
 
 	});
 
-	require('load-grunt-tasks')(grunt);
+	require('load-grunt-tasks')(grunt, {pattern: ['*', '!grunt-template-jasmine-requirejs', '!grunt-lib-phantomjs', '!bower', '!load-grunt-tasks']});
 
     grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
 	grunt.registerTask('tests', ['uglify:tests','jasmine']);
 	grunt.registerTask('twig', ['twigRender']);
-	grunt.registerTask('release', ['version','gitcommit','gitpush','gittag']);
+	grunt.registerTask('release', ['version','default','gitcommit','gitpush','gittag']);
 	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
