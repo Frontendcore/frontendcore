@@ -1,0 +1,36 @@
+{% set current_children = "Center box" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1 class="mr-l">Center box</h1>
+    <p>Somtimes you need that a box centers in the middle of the screen. This can be useful for landings, login or register pages.</p>
+    {{ demos.demo(
+        'centerbox',
+        '../_demos/structure/center-box.html',
+        false, false, false, '300px'
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-tc-height",
+            "description" : "Height of the center box",
+            "default" : "auto"
+        },
+        "2" : {
+            "name" :        "data-tc-width",
+            "description" : "Width of the center box",
+            "default" : "auto"
+        },
+        "3" : {
+            "name" :       "data-tc-position",
+            "description" : "Defines if the position css attribute is absolute or fixed. When the position is absolute is relative to his parent but if it's fixed will be relative to the window.",
+            "default" : "absolute"
+        }
+    }
+    )}}
+{% endblock %}

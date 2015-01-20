@@ -89,11 +89,11 @@
                                 Structure
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="structure"  class="hidden">
+                                                        <ul id="structure" >
                                                             <li >
                                     <a href=".././structure/grids.html">Grids </a>
                                 </li>
-                                                            <li >
+                                                            <li  class="active">
                                     <a href=".././structure/center-box.html">Center box <span class="fl-r cp">JS</span> </a>
                                 </li>
                                                         </ul>
@@ -296,7 +296,7 @@
                                 Modifiers
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
-                                                        <ul id="modifiers" >
+                                                        <ul id="modifiers"  class="hidden">
                                                             <li >
                                     <a href=".././modifiers/colors.html">Colors </a>
                                 </li>
@@ -309,7 +309,7 @@
                                                             <li >
                                     <a href=".././modifiers/margin-padding.html">Margins & Paddings </a>
                                 </li>
-                                                            <li  class="active">
+                                                            <li >
                                     <a href=".././modifiers/measures.html">Measures </a>
                                 </li>
                                                             <li >
@@ -321,50 +321,50 @@
             </nav>
             </div>
     <div class="col-4-5">
-            <h1>Margin & Padding modifiers</h1>
-        <div data-tc-modules="tabs">
-        <section id="tab-1" data-tc-name="Description">
-            <p class="box-background"> Description:<br />
-Provides a common system for setting % width between properties HTML elements.<br />
-<br />
-Usage:<br />
-Mark the element with the desired measure class.<br />
-<br />
-Complete acronym reference based on Emmet:<br />
-<br />
-LETTERS BEFORE THE DASH<br />
-w = width<br />
-<br />
-NUMBERS AFTER THE DASH<br />
-<br />
-* Use multiples of 5 up to 100 to establish percent width. E.g: w-5, w-25, w-100<br />
-<br />
-</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
-<br />
-$measures-percent: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100;<br />
-<br />
-@each $measure in $measures-percent {<br />
-	.w-#{$measure} {<br />
-		width: 0% + $measure !important;<br />
-	}<br />
-}</pre></code></div>
+            <h1 class="mr-l">Center box</h1>
+    <p>Somtimes you need that a box centers in the middle of the screen. This can be useful for landings, login or register pages.</p>
+                                <div data-tc-modules="tabs">
+                <section id="tab-centerbox-1" data-tc-name="Demo">
+            <div class="box-background" style="min-height:300px">
+                                                <div class="box-primary" data-tc-modules="center-box">
+	<h1>I'm always in the middle of everthing</h1>
+	<p>My position is absolute and JS helps me to be always in the middle of the page, no matter what device it is.</p>
+</div>
+                                            </div>
         </section>
-        <section id="tab-0" data-tc-name="Demo">
+                <section id="tab-centerbox-2" data-tc-name="Code">
             <div class="box-background">
-                <p class="w-20 box">Lorem ipsum</p>
-<p class="w-50 box">Lorem ipsum</p>
-<p class="w-90 box">Lorem ipsum</p>            </div>
-        </section>
-        <section id="tab-3" data-tc-name="Demo Code">
-            <div class="box-background">
-                    <pre>
-                        <code data-tc-modules="code">&lt;p class=&quot;w-20 box&quot;&gt;Lorem ipsum&lt;/p&gt;
-&lt;p class=&quot;w-50 box&quot;&gt;Lorem ipsum&lt;/p&gt;
-&lt;p class=&quot;w-90 box&quot;&gt;Lorem ipsum&lt;/p&gt;</code>
-                    </pre>
+                <pre>
+	                <code data-tc-modules="code">&lt;div class=&quot;box-primary&quot; data-tc-modules=&quot;center-box&quot;&gt;
+	&lt;h1&gt;I&#039;m always in the middle of everthing&lt;/h1&gt;
+	&lt;p&gt;My position is absolute and JS helps me to be always in the middle of the page, no matter what device it is.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+                </pre>
             </div>
         </section>
-    </div>
+                    </div>
+
+
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-tc-height</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Height of the center box</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-tc-width</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Width of the center box</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-tc-position</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines if the position css attribute is absolute or fixed. When the position is absolute is relative to his parent but if it's fixed will be relative to the window.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: absolute</p>
+                            </dd>
+                    </dl>
 
     </div>
 </div>

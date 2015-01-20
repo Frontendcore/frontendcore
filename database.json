@@ -53,6 +53,11 @@
         "Grids": {
           "name": "Grids",
           "href": "grids.html"
+        },
+        "CenterBox": {
+          "name": "Center box",
+          "href": "center-box.html",
+          "js" : true
         }
       }
     },
