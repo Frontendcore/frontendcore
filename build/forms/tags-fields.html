@@ -325,17 +325,25 @@
                                 <div data-tc-modules="tabs">
                 <section id="tab-text-fields-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <input name="tags"  data-tc-modules="tags" value="foo" data-tc-values="foo,baz,bar" />                                            </div>
+                                <form class="forms" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input name="tags"  data-tc-modules="tags" data-tc-values="foo,baz,bar" placeholder="add tags separated by comma" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
         </section>
                 <section id="tab-text-fields-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;input name=&quot;tags&quot;  data-tc-modules=&quot;tags&quot; value=&quot;foo&quot; data-tc-values=&quot;foo,baz,bar&quot; /&gt;</code>
+	                <code data-tc-modules="code">&lt;input name=&quot;tags&quot;  data-tc-modules=&quot;tags&quot; data-tc-values=&quot;foo,baz,bar&quot; placeholder=&quot;add tags separated by comma&quot; /&gt;</code>
                 </pre>
             </div>
         </section>
                     </div>
-
 
             <hr />
         <h2 class="mb-m">Attributes</h2>
