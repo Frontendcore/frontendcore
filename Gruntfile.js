@@ -7,7 +7,7 @@ module.exports = function (grunt) {
     grunt.registerTask('js', ['newer:uglify', 'newer:jshint','newer:jasmine']);
 	grunt.registerTask('tests', ['newer:uglify','newer:jasmine']);
 	grunt.registerTask('twig', ['newer:twigRender']);
-	grunt.registerTask('release', ['version','default','gitcommit:version','gitsush','gittag']);
+	grunt.registerTask('release', ['version','default','gitcommit:version','gittag','gitpush']);
 	grunt.registerTask('stats', ['phantomas','gitadd:stats','gitcommit:stats','gitpush:workspace']);
 	grunt.registerTask('scss', ['concurrent:compileSass', 'concurrent:documentSass','newer:cssmin','concurrent:templates']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
