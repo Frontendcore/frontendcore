@@ -1,10 +1,12 @@
-module.exports =  {
-	stats: {
-		options: {
-			force: true
-		},
-		files: {
-			src: ['build/metrics']
+module.exports = function(grunt) {
+	grunt.initConfig({
+		stats: {
+			options: {
+				force: true
+			},
+			files: {
+				src: ['build/metrics']
+			}
 		}
-	}
+	});
 };

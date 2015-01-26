@@ -1,56 +1,59 @@
 var pkg = require('../package.json');
 
-module.exports =  {
-	version : {
-		scss: {
-			options: {
-				cwd: "css/core/",
+module.exports = function(grunt) {
+	grunt.initConfig({
+
+		version: {
+			scss: {
+				options: {
+					cwd: "css/core/",
 					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["bower.json"],
+						expand: true
+					}
+				]
 			},
-			files: [
-				{
-					src: ["bower.json"],
-					expand: true
-				}
-			]
-		},
-		js: {
-			options: {
-				cwd: "build/static/js/",
+			js: {
+				options: {
+					cwd: "build/static/js/",
 					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["bower.json"],
+						expand: true
+					}
+				]
 			},
-			files: [
-				{
-					src: ["bower.json"],
-					expand: true
-				}
-			]
+			workspace: {
+				options: {
+					cwd: "./",
+					message: "Release version " + pkg.version
+				},
+				files: [
+					{
+						src: ["package.json", "bower.json", "Gruntfile.js", "css/core/", "build/static/js/", "build"],
+						expand: true,
+						cwd: "./"
+					}
+				]
+			}
 		},
-		workspace: {
+		stats: {
 			options: {
 				cwd: "./",
-					message: "Release version " + pkg.version
+				message: "Stats updated for version " + pkg.version
 			},
 			files: [
 				{
-					src: ["package.json","bower.json","Gruntfile.js","css/core/","build/static/js/","build"],
+					src: ["build/metrics"],
 					expand: true,
 					cwd: "./"
 				}
 			]
 		}
-	},
-	stats: {
-		options: {
-			cwd: "./",
-				message: "Stats updated for version " + pkg.version
-		},
-		files: [
-			{
-				src: ["build/metrics"],
-				expand: true,
-				cwd: "./"
-			}
-		]
-	}
+	});
 };

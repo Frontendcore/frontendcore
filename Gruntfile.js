@@ -1,14 +1,15 @@
 module.exports = function (grunt) {
 
 	require('load-grunt-config')(grunt);
-	require('load-grunt-tasks')(grunt, { pattern: ['!grunt-lib-phantomjs', '!bower']});
 
-    grunt.registerTask('js', ['uglify:core', 'jshint','jasmine']);
-	grunt.registerTask('tests', ['uglify:tests','jasmine']);
-	grunt.registerTask('twig', ['twigRender']);
+	require('jit-grunt')(grunt);
+
+    grunt.registerTask('js', ['newer:uglify', 'newer:jshint','newer:jasmine']);
+	grunt.registerTask('tests', ['newer:uglify','newer:jasmine']);
+	grunt.registerTask('twig', ['newer:twigRender']);
 	grunt.registerTask('release', ['version','default','gitcommit:version','gitsush','gittag']);
 	grunt.registerTask('stats', ['phantomas','gitadd:stats','gitcommit:stats','gitpush:workspace']);
-	grunt.registerTask('scss', ['compass', 'clean:sassdoc','sassdoc','cssmin','twig']);
+	grunt.registerTask('scss', ['concurrent:compileSass', 'concurrent:documentSass','newer:cssmin','concurrent:templates']);
 	grunt.registerTask('log', ['clean:changelog','changelog','stencil']);
 
 	grunt.registerTask('default', ['twig','scss', 'js']);
