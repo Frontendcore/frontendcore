@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-	grunt.initConfig({
+module.exports = {
 		scss: {
 			options: {
 				cwd: "css/core/",
@@ -21,5 +20,4 @@ module.exports = function(grunt) {
 				branch: "master"
 			}
 		}
-	});
 };

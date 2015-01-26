@@ -1,7 +1,6 @@
 var pkg = require('../package.json');
 
-module.exports = function(grunt) {
-	grunt.initConfig({
+module.exports = {
 		scss: {
 			options: {
 				cwd: "css/core/",
@@ -23,5 +22,4 @@ module.exports = function(grunt) {
 				message: "Tag version " + pkg.version
 			}
 		}
-	});
 };
