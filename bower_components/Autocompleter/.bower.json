@@ -1,0 +1,21 @@
+{
+  "name": "jquery-autocompleter",
+  "version": "0.1.8",
+  "description": "Simple, easy, customisable and with cache support.",
+  "author": {
+    "name": "Artem Fitiskin",
+    "email": "me@artemfitiskin.ru",
+    "url": "http://codler.ru"
+  },
+  "license": "MIT",
+  "homepage": "http://github.com/ArtemFitiskin/jquery-autocompleter",
+  "_release": "0.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.8",
+    "commit": "0090a10c61b854125cbf7b43575e1900c288b591"
+  },
+  "_source": "git://github.com/ArtemFitiskin/jquery-autocompleter.git",
+  "_target": "~0.1.5",
+  "_originalSource": "Autocompleter"
+}

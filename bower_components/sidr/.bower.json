@@ -1,0 +1,14 @@
+{
+  "name": "sidr",
+  "homepage": "https://github.com/artberri/sidr",
+  "version": "1.2.1",
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.1",
+    "commit": "f9847351c3f515ad7379659e69b4b86ec314da96"
+  },
+  "_source": "https://github.com/artberri/sidr.git",
+  "_target": "~1.2.1",
+  "_originalSource": "https://github.com/artberri/sidr.git"
+}

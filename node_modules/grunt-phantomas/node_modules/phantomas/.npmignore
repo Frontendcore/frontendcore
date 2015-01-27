@@ -1,0 +1,10 @@
+log
+*.log
+*.swp
+*.har
+filmstrip
+html
+
+node_modules
+npm-debug.log
+.idea

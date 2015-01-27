@@ -1,0 +1,97 @@
+/*
+ * grunt-phantomas
+ * https://github.com/stefanjudis/grunt-phantomas
+ *
+ * Copyright (c) 2013 stefan judis
+ * Licensed under the MIT license.
+ */
+
+/**
+ * Colors
+ */
+$c-blue       : #49a2dc;
+$c-blueDark   : #253f50;
+$c-blueDarker : adjust-lightness( $c-blueDark, -2 );
+
+$c-purple : #9b8eb4;
+
+$c-green  : #45b5b3;
+
+$c-red    : #A33838;
+
+$c-white : #fff;
+$c-black : #000;
+
+$c-gray                   : #4d626d;
+$c-grayDark               : #274354;
+$c-grayDarker             : adjust-lightness( $c-grayDark, -8 );
+$c-grayDarker-transparent : rgba( $c-grayDarker, 0.9 );
+$c-grayLight              : #d3d8dc;
+
+
+/**
+ * Font stuff
+ */
+$f-baseFamily    : sans-serif;
+$f-baseSize      : 14px;
+$f-baseWeight    : 100;
+$f-letterSpacing : 1px;
+$f-headlineColor : $c-green;
+
+
+/**
+ * Dimensions stuff ( widths / height )
+ */
+$d-baseWidth    : 98%;
+
+
+/**
+ * Z-index
+ */
+$z-filmstrip-time : 5;
+$z-header         : 6;
+$z-loading        : 5;
+
+
+/**
+ * Configs for _graphs.scss
+ */
+$description-height : 1.5em;
+$description-width  : 1.5em;
+
+
+/**
+ * Table config stuff
+ */
+$t-colorBody      : $c-white;
+$t-colorBorder    : $c-grayDarker;
+$t-colorDate      : $c-green;
+$t-colorHead      : $c-green;
+$t-colorHighlight : $c-grayDark;
+$t-colorActive    : $c-green;
+
+$t-baseFontWeight : $f-baseWeight;
+$t-baseFontSize   : 0.8 * $f-baseSize;
+
+$t-numberOfColumns : 8;
+$t-columnWidth     : 100% / $t-numberOfColumns;
+
+
+/**
+ * Breakpoints
+ */
+$b-medium: 700px;
+$b-big : 1000px;
+
+
+/**
+ * Header style
+ */
+$header-bg-color       : $c-grayDarker;
+$header-headline-color : $c-green;
+
+
+/**
+ * Stuff that fits nowhere else
+ */
+$baseBorderRadius : 3px;

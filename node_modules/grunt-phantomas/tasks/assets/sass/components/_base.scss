@@ -1,0 +1,138 @@
+/*
+ * grunt-phantomas
+ * https://github.com/stefanjudis/grunt-phantomas
+ *
+ * Copyright (c) 2013 stefan judis
+ * Licensed under the MIT license.
+ */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: $c-purple;
+  position: relative;
+  text-decoration: none;
+
+  &.fancy {
+    &:before {
+      content: attr(data-url);
+      position: absolute;
+
+      color: $c-green;
+
+      text-overflow: clip;
+      white-space: nowrap;
+      text-align: left;
+      text-shadow: 0 1px 1px #000;
+
+      width: 0;
+      height: 105%;
+
+      left: 0;
+      top: 0;
+
+      overflow: hidden;
+
+      @include transition( width 0.5s ease-in );
+    }
+
+    &:hover, &:active, a:focus {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+body {
+  background-color: $c-blueDark;
+  color: $c-grayLight;
+
+  font-size      : $f-baseSize;
+  font-family    : $f-baseFamily;
+  font-weight    : $f-baseWeight;
+  letter-spacing : $f-letterSpacing;
+}
+
+main {
+  width: $d-baseWidth;
+
+  margin  : 0 auto 1em;
+  padding : 0;
+
+  background : $c-blueDarker;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $f-headlineColor;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  position: relative;
+
+  margin: 0.5em 0;
+  padding: 1em 0;
+  font-size: $f-baseSize * 2;
+  font-weight: $f-baseWeight;
+
+  background : $c-blueDark;
+
+  &:first-child {
+    margin-top : 3em;
+  }
+}
+
+h3 {
+  position : relative;
+
+  margin: 0.75em -0.5em;
+  padding: 0.5em 0;
+
+  font-size   : $f-baseSize * 1.5;
+  font-weight : $f-baseWeight;
+  line-height : $f-baseSize * 2;
+  color       : $c-white;
+
+  background-color: $c-green;
+
+  @include box-shadow( 0 0.125em 0.125em $c-grayDarker );
+
+  &:before, &:after {
+    position : absolute;
+    z-index  : -1;
+
+    content : '';
+
+    top : 100%;
+
+    border-top    : solid 0.5em transparent;
+    border-bottom : solid 0.5em transparent;
+
+    margin-top : -0.5em;
+  }
+
+  &:before {
+    left : 0;
+
+    border-right   : solid 0.5em $c-green;
+  }
+
+  &:after {
+    right : 0;
+
+    border-left   : solid 0.5em $c-green;
+  }
+}
+
+h4 {
+  margin: 0.5em 0;
+
+  font-size: $f-baseSize;
+  font-weight: $f-baseWeight;
+}

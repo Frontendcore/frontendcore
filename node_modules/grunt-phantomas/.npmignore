@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+tmp
+phantomas
+.sass-cache
+tasks/lib/phantomas-cov.js

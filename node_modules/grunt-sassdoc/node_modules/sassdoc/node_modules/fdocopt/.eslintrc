@@ -1,0 +1,8 @@
+env:
+  node: true
+
+rules:
+  quotes: single
+  no-comma-dangle: false
+  no-underscore-dangle: false
+  no-use-before-define: nofunc

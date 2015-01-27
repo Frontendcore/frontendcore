@@ -1,0 +1,22 @@
+{
+  "name": "opentip",
+  "version": "2.4.6",
+  "main": [
+    "css/opentip.css",
+    "lib/opentip.js",
+    "lib/adapter-component.js"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.0"
+  },
+  "homepage": "https://github.com/enyo/opentip",
+  "_release": "2.4.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.4.6",
+    "commit": "a516a795b08789b5d5528fdef0224f9655b4a76d"
+  },
+  "_source": "git://github.com/enyo/opentip.git",
+  "_target": "~2.4.6",
+  "_originalSource": "opentip"
+}

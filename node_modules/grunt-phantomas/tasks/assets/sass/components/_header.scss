@@ -1,0 +1,104 @@
+/*
+ * grunt-phantomas
+ * https://github.com/stefanjudis/grunt-phantomas
+ *
+ * Copyright (c) 2013 stefan judis
+ * Licensed under the MIT license.
+ */
+
+.p--header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: $z-header;
+
+  width: 100%;
+  height: 4em;
+
+  padding: 1em;
+
+  background-color: $header-bg-color;
+
+  @include box-shadow( 0 1px 0.125em $c-black);
+  @include translateZ( 0 );
+
+  h2 {
+    display: inline;
+    color: $header-headline-color;
+  }
+}
+
+
+.p--header--notification {
+  float : right;
+
+  background : $c-red;
+
+  height      : 2em;
+  line-height : 2;
+
+  margin  : 0;
+  padding : 0 1em;
+}
+
+
+.p--header--span {
+  font-size: $f-baseSize * 1.5;
+}
+
+
+.p--header--warnings {
+  list-style : none;
+
+  margin  : 0 0.25em;
+  padding : 0;
+
+  &, & li {
+    float : right;
+  }
+
+  li {
+    > a {
+      position : relative;
+      display : block;
+
+      margin : 0 0.25em;
+
+      width  : 2em;
+      height : 0;
+
+      padding-top : 2em;
+
+      overflow : hidden;
+
+      background : $c-red;
+
+      cursor : pointer;
+
+      &:before {
+        position : absolute;
+        content : '!';
+
+        top    : 0;
+        left   : 0;
+        bottom : 0;
+        right  : 0;
+
+        line-height : 1.5;
+        text-align  : center;
+        font-size   : 1.5em;
+
+        color : $c-white;
+      }
+    }
+  }
+}
+
+
+[class*="p--switcher"] {
+  float: right;
+
+  margin : 0 0 0 0.5em;
+  padding: 0;
+}

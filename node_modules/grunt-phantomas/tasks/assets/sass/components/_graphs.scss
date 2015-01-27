@@ -1,0 +1,422 @@
+/*
+ * grunt-phantomas
+ * https://github.com/stefanjudis/grunt-phantomas
+ *
+ * Copyright (c) 2013 stefan judis
+ * Licensed under the MIT license.
+ */
+.p--graphs {
+  position: relative;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.p--graphs--button__expand, .p--graphs--button__offenders {
+  position : absolute;
+
+  height : 2em;
+  width  : 5.5em;
+
+  top  : 0.25em;
+
+  margin : 0 0 1em 0;
+
+  background-color : $c-green;
+
+  border : none;
+
+  color      : $c-white;
+  text-align : center;
+
+  @include transition(
+    background-color 0.25s ease-in
+  );
+
+  &:hover {
+    background-color : adjust-lightness( $c-green, 10 );
+  }
+}
+
+.p--graphs--button__expand {
+  left : 0;
+}
+
+.p--graphs--button__offenders {
+  left : 6em;
+}
+
+.p--graphs--description, .p--graphs--warning {
+  width      : calc( 80% - 5em );
+  max-height : 14em;
+  position : absolute;
+
+  top   : 0;
+  right : 7em;
+
+  padding : 1em 1em;
+
+  overflow : hidden;
+
+  color : $c-green;
+
+  background-color : $c-grayDarker-transparent;
+
+  &[hidden] {
+    display : none;
+  }
+}
+
+.p--graphs--descriptionBtn, .p--graphs--warningBtn {
+  position : absolute;
+  top   : 0.25em;
+
+  width  : $description-width;
+  height : 0;
+
+  padding : $description-height 0 0 0;
+
+
+  overflow : hidden;
+
+  cursor : default;
+
+  @include transition(
+    background-color  0.2s ease-in
+  );
+
+  &.active {
+    cursor : pointer;
+  }
+
+  &:before {
+    position : absolute;
+
+    content : '?';
+
+    color : $c-white;
+
+    top    : 0;
+    right  : 0;
+    bottom : 0;
+    left   : 0;
+
+    text-align  : center;
+    line-height : $description-height;
+  }
+}
+
+.p--graphs--descriptionBtn {
+  right : 0;
+
+  background-color : rgba( $c-green, 0.1 );
+
+  &.active {
+    background-color : $c-green;
+
+    &:hover {
+      background-color : adjust-lightness( $c-green, 10 );
+    }
+  }
+
+
+  &:before {
+    content : '?';
+  }
+}
+
+.p--graphs--warningBtn {
+  right : 2em;
+
+  background-color : rgba( $c-purple, 0.1 );
+
+  &.active {
+    background-color : $c-purple;
+
+    &:hover {
+      background-color : adjust-lightness( $c-purple, 10 );
+    }
+  }
+
+
+  &:before {
+    content : '!';
+  }
+}
+
+.p--graphs--detailBox {
+  position: absolute;
+  width: 150px;
+  padding: 0.5em;
+
+  background-color : $c-grayDarker-transparent;
+
+  color: $c-green;
+  text-align: center;
+
+  border-radius: $baseBorderRadius;
+
+  &:before {
+    position: absolute;
+
+    content: '';
+
+    width: 0;
+    height: 0;
+
+    top: 100%;
+    left: 50%;
+
+    margin-left: -6px;
+
+    border-left  : 6px solid transparent;
+    border-right : 6px solid transparent;
+    border-top   : 6px solid $c-grayDarker-transparent;
+  }
+
+  dl {
+    margin: 0;
+    padding: 0;
+  }
+
+  dt, dd {
+    display: inline-block;
+    width: calc( 50% );
+
+    margin: 0;
+    padding: 0;
+  }
+
+  dt {
+    text-align: left;
+  }
+
+  dd {
+    text-align: right;
+  }
+
+}
+
+.p--graphs--graph {
+  position: relative;
+
+  width: 100%;
+  min-height: 250px;
+
+  display        : inline-block;
+  vertical-align : top;
+
+  border-bottom: 1px solid $c-green;
+  box-shadow : 0  1px 0 $c-grayDarker;
+
+  margin: 0 2.5% 2.5em 2.5%;
+
+  &.failed {
+    box-shadow : 0 0 0 3px $c-red, 0 0 1px 4px $c-grayDarker;
+  }
+
+  @media screen and ( min-width: $b-medium ) {
+    width: 45%;
+    margin: 0 2.5% 2.5em 2.5%;
+  }
+
+  @media screen and ( min-width: $b-big ) {
+    width: 31.333%;
+    margin: 0 1% 2.5em 1%;
+  }
+}
+
+.p--graphs--loading {
+  display : none;
+
+  position : absolute;
+  z-index : $z-loading;
+
+  top    : 0;
+  right  : 0;
+  bottom : 0;
+  left   : 0;
+
+  background : rgba( $c-black, 0.25 );
+
+  .spinner {
+    position : absolute;
+
+    top  : 40%;
+    left : 50%;
+
+    margin-left : -2em;
+
+    height   : 4em;
+    width    : 4em;
+
+    border : 0.5em solid $c-green;
+    border-top: 0.5em solid adjust-lightness( $c-green, 20 );
+
+    border-radius : 100%;
+
+    @include animation( rotator 2s infinite linear );
+  }
+
+  &.is-active {
+    display : block;
+  }
+}
+
+.p--graphs--svg {
+  width  : 100%;
+  height : 0;
+
+  padding-top : calc( 40% + 80px );
+
+  &.is-initialized {
+    height : auto;
+    padding : 0;
+  }
+}
+
+
+.p--lineChart--area {
+  fill: rgba( $c-gray, 0.5 );
+}
+
+.p--lineChart--assertion {
+  > line {
+    stroke : rgba( $c-red, 0.85 );
+    stroke-width : 2;
+    fill   : none;
+  }
+
+  > text {
+    stroke : $c-white;
+    text-anchor : middle;
+
+    font-size : 0.75em;
+  }
+}
+
+.p--lineChart--assertionBox {
+  fill : rgba( 255, 0, 0, 0.2 );
+}
+
+.p--lineChart--assertionTextBg {
+  fill : $c-red;
+  stroke : none;
+}
+
+.p--lineChart--areaLine {
+  fill   : none;
+  stroke : $c-green;
+  stroke-width: 2;
+}
+
+.p--lineChart--pane {
+  cursor : move;
+  fill : none;
+  pointer-events : all;
+
+}
+
+.p--lineChart--reset, .p--lineChart--resetText {
+  display : none;
+
+  cursor : pointer;
+
+  &.active {
+    display : block;
+  }
+}
+
+.p--lineChart--reset {
+  fill : rgba( $c-green, 0.8 );
+
+  &:hover {
+    fill : rgba( adjust-lightness( $c-green, 10 ), 0.8 );
+  }
+}
+
+.p--lineChart--resetText {
+  fill : $c-white;
+
+  text-anchor : middle;
+
+  font-size : 0.8em;
+}
+
+// TODO make that fit in conventions
+.lineChart--bubble--label {
+  fill: none;
+  // stroke: $c-blue;
+
+  // font-size: $f-sizeBubbleLabel;
+  font-style: italic;
+  // font-weight: $f-weight;
+}
+
+.lineChart--bubble--value {
+  fill   : #fff;
+  stroke : #fff;
+
+  // font-size: $f-sizeBubbleValue;
+  // font-weight: $f-weight;
+}
+.lineChart--circle {
+  fill : $c-blue;
+
+  stroke       : #fff;
+  stroke-width : 2;
+
+  cursor : pointer;
+
+  &.failed {
+    fill   : $c-red;
+
+    &.highlighted {
+      fill : $c-red;
+    }
+  }
+
+  &.highlighted {
+    fill   : $c-purple;
+    stroke : $c-white;
+  }
+}
+
+.lineChart--gradientBackgroundArea--top {
+  stop-opacity : 0.1;
+}
+
+.lineChart--gradientBackgroundArea--bottom {
+  stop-opacity : 0.6;
+}
+
+// d3.js doesn't let me BEM it. :(
+.lineChart--xAxisTicks, .lineChart--xAxis, .lineChart--yAxisTicks {
+  .domain {
+    display: none;
+  }
+}
+
+.lineChart--xAxis {
+  .tick {
+    line {
+      display: none;
+    }
+
+    text {
+      fill: $c-white;
+    }
+  }
+}
+
+.lineChart--xAxisTicks, .lineChart--yAxisTicks {
+  .tick {
+    line {
+      fill: none;
+      stroke: $c-gray;
+      stroke-width: 1;
+    }
+  }
+}

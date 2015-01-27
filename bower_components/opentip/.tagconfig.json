@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "name": "README.md",
+      "regexs": [
+        "Version ###"
+      ]
+    },
+    {
+      "name": "src/opentip.coffee",
+      "regexs": [
+        "Opentip v###",
+        "Opentip\\.version = \"###\""
+      ]
+    },
+    {
+      "name": "lib/opentip.js",
+      "regexs": [
+        "Opentip v###",
+        "Opentip\\.version = \"###\""
+      ]
+    },
+    {
+      "name": "component.json",
+      "regexs": [
+        "\"version\": \"###\""
+      ]
+    },
+    {
+      "name": "bower.json",
+      "regexs": [
+        "\"version\": \"###\""
+      ]
+    },
+    {
+      "name": "package.json",
+      "regexs": [
+        "\"version\": \"###\""
+      ]
+    },
+
+
+    {
+      "name": "downloads/opentip-jquery-excanvas.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-jquery.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-native-excanvas.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-native.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-prototype-excanvas.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-prototype.js",
+      "regexs": [
+        "Opentip\\.version = \"###\"",
+        "Opentip v###"
+      ]
+    },
+
+    {
+      "name": "downloads/opentip-jquery-excanvas.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-jquery.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-native-excanvas.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-native.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-prototype-excanvas.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "downloads/opentip-prototype.min.js",
+      "regexs": [
+        "Opentip\\.version=\"###\"",
+        "Opentip v###"
+      ]
+    },
+    {
+      "name": "Gruntfile.coffee",
+      "regexs": [
+        "Opentip v###"
+      ]
+    }
+
+  ]
+}

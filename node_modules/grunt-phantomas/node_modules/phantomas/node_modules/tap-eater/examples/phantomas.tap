@@ -1,0 +1,97 @@
+TAP version 13
+# phantomas v0.8.1 results for <http://phantomjs.org>
+1..92
+ok 1 requests
+ok 2 gzipRequests # SKIP
+ok 3 postRequests # SKIP
+ok 4 httpsRequests # SKIP
+ok 5 redirects
+ok 6 notFound # SKIP
+ok 7 timeToFirstByte
+ok 8 timeToLastByte # SKIP
+ok 9 bodySize # SKIP
+ok 10 contentLength # SKIP
+ok 11 ajaxRequests # SKIP
+ok 12 htmlCount # SKIP
+ok 13 htmlSize # SKIP
+ok 14 cssCount # SKIP
+ok 15 cssSize # SKIP
+ok 16 jsCount # SKIP
+ok 17 jsSize # SKIP
+ok 18 jsonCount # SKIP
+ok 19 jsonSize # SKIP
+ok 20 imageCount # SKIP
+ok 21 imageSize # SKIP
+ok 22 webfontCount # SKIP
+ok 23 webfontSize # SKIP
+ok 24 base64Count # SKIP
+ok 25 base64Size # SKIP
+ok 26 otherCount # SKIP
+ok 27 otherSize # SKIP
+ok 28 cacheHits # SKIP
+ok 29 cacheMisses # SKIP
+ok 30 cachingNotSpecified # SKIP
+ok 31 cachingTooShort # SKIP
+ok 32 cachingDisabled # SKIP
+not ok 33 domains # expected 3 to be less than or equal 2
+ok 34 maxRequestsPerDomain # SKIP
+ok 35 medianRequestsPerDomain # SKIP
+ok 36 DOMqueries # SKIP
+ok 37 DOMqueriesById # SKIP
+ok 38 DOMqueriesByClassName # SKIP
+ok 39 DOMqueriesByTagName # SKIP
+ok 40 DOMqueriesByQuerySelectorAll # SKIP
+ok 41 DOMinserts # SKIP
+ok 42 DOMqueriesDuplicated # SKIP
+ok 43 eventsBound # SKIP
+ok 44 headersCount # SKIP
+ok 45 headersSentCount # SKIP
+ok 46 headersRecvCount # SKIP
+ok 47 headersSize # SKIP
+ok 48 headersSentSize # SKIP
+ok 49 headersRecvSize # SKIP
+ok 50 documentWriteCalls # SKIP
+ok 51 evalCalls # SKIP
+ok 52 jQueryVersion # SKIP
+ok 53 jQueryOnDOMReadyFunctions # SKIP
+ok 54 jQuerySizzleCalls # SKIP
+ok 55 jsErrors # SKIP
+ok 56 assetsNotGzipped # SKIP
+ok 57 assetsWithQueryString # SKIP
+ok 58 smallImages # SKIP
+ok 59 multipleRequests # SKIP
+ok 60 timeToFirstCss # SKIP
+ok 61 timeToFirstJs # SKIP
+ok 62 timeToFirstImage # SKIP
+ok 63 onDOMReadyTime # SKIP
+ok 64 onDOMReadyTimeEnd # SKIP
+ok 65 windowOnLoadTime # SKIP
+ok 66 windowOnLoadTimeEnd # SKIP
+not ok 67 httpTrafficCompleted # expected 6605 to be less than or equal 1000
+ok 68 windowAlerts # SKIP
+ok 69 windowConfirms # SKIP
+ok 70 windowPrompts # SKIP
+ok 71 consoleMessages # SKIP
+ok 72 cookiesSent # SKIP
+ok 73 cookiesRecv # SKIP
+ok 74 domainsWithCookies # SKIP
+ok 75 documentCookiesLength # SKIP
+ok 76 documentCookiesCount # SKIP
+ok 77 bodyHTMLSize # SKIP
+ok 78 iframesCount # SKIP
+ok 79 imagesWithoutDimensions # SKIP
+ok 80 commentsSize # SKIP
+ok 81 hiddenContentSize # SKIP
+ok 82 whiteSpacesSize # SKIP
+ok 83 DOMelementsCount # SKIP
+ok 84 DOMelementMaxDepth # SKIP
+ok 85 nodesWithInlineCSS # SKIP
+ok 86 globalVariables # SKIP
+ok 87 localStorageEntries # SKIP
+ok 88 smallestResponse # SKIP
+ok 89 biggestResponse # SKIP
+ok 90 fastestResponse # SKIP
+ok 91 slowestResponse # SKIP
+ok 92 medianResponse # SKIP
+# Total: 92
+# Failed: 2

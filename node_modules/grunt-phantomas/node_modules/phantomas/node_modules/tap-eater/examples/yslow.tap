@@ -1,0 +1,77 @@
+TAP version 13
+1..24
+ok 1 B (88) overall score
+not ok 2 C (72) ynumreq: Make fewer HTTP requests
+  ---
+  message: This page has 7 external Javascript scripts.  Try combining them into one.
+This page has 5 external stylesheets.  Try combining them into one.
+  ...
+ok 3 C (70) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 3 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://yslow.org/faq#faq_cdn">YSlow FAQ</a> for details.</p>
+  offenders:
+    - "yslow.org: 1 component, 8.0K (8.0K GZip)"
+    - "fonts.googleapis.com: 1 component, 1.0K (1.0K GZip)"
+    - "widgets.twimg.com: 1 component, 0.8K"
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (12) yexpires: Add Expires headers
+  ---
+  message: There are 8 static components without a far-future expiration date.
+  offenders:
+    - "http://yslow.org/stylesheets/styles-min.css"
+    - "https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700"
+    - "http://widgets.twimg.com/j/2/widget.css"
+    - "http://www.google-analytics.com/ga.js"
+    - "http://widgets.twimg.com/j/2/widget.js"
+    - "http://d.yimg.com/jc/ydn/yslow-ss.png"
+    - "http://widgets.twimg.com/i/widget-logo.png"
+    - "http://yslow.org/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 2 inline css"
+    - "There is a total of 2 inline scripts"
+  ...
+not ok 11 C (70) ydns: Reduce DNS lookups
+  ---
+  message: The components are split over more than 4 domains
+  offenders:
+    - "yslow.org: 3 components, 17.6K (17.6K GZip)"
+    - "fonts.googleapis.com: 1 component, 1.0K (1.0K GZip)"
+    - "themes.googleusercontent.com: 4 components, 0.0K"
+    - "widgets.twimg.com: 3 components, 49.2K (48.4K GZip)"
+    - "www.google-analytics.com: 1 component, 36.5K (36.5K GZip)"
+    - "d.yimg.com: 2 components, 49.5K"
+    - "a0.twimg.com: 1 component, 3.6K"
+    - "www.facebook.com: 1 component, 10.8K (10.8K GZip)"
+    - "static.ak.fbcdn.net: 10 components, 948.5K (354.1K GZip)"
+    - "profile.ak.fbcdn.net: 1 component, 2.4K"
+  ...
+ok 12 A (90) yminify: Minify JavaScript and CSS
+  ---
+  message: There is 1 component that can be minified
+  offenders:
+    - "inline &lt;style&gt; tag #2"
+  ...
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+ok 15 A (100) yetags: Configure entity tags (ETags)
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+ok 19 A (100) yno404: Avoid HTTP 404 (Not Found) error
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (95) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon is not cacheable
+  ...

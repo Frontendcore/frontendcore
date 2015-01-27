@@ -1,0 +1,23 @@
+/*
+ * grunt-phantomas
+ * https://github.com/stefanjudis/grunt-phantomas
+ *
+ * Copyright (c) 2013 stefan judis
+ * Licensed under the MIT license.
+ */
+
+@import "compass/css3";
+@import "variables";
+@import "mixins/clearfix";
+@import "components/base";
+@import "components/header";
+@import "components/filmstrip";
+@import "components/footer";
+@import "components/graphs";
+@import "components/keyframes";
+@import "components/offenders";
+@import "components/table";
+
+.clearfix {
+  @include clearfix;
+}

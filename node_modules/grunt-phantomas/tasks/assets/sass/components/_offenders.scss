@@ -1,0 +1,166 @@
+.p--offenders {
+  margin : 0;
+
+  @include clearfix();
+
+  dt {
+    position : relative;
+
+    margin: 0.75em 0 1em -0.5em;
+    padding: 0.5em;
+
+    font-size   : 1.25em;
+    font-weight : 100;
+    line-height : 1.25em;
+
+    color            : $c-white;
+    background-color : $c-purple;
+
+    display: inline-block;
+
+    @include box-shadow( 0 0.125em 0.125em $c-grayDarker );
+
+    &:before {
+      position : absolute;
+
+      z-index : -1;
+
+      left : 0;
+      top  : 100%;
+
+      margin-top : -0.5em;
+
+      content : '';
+
+      border-top    : solid 0.5em transparent;
+      border-right   : solid 0.5em $c-purple;
+      border-bottom : solid 0.5em transparent;
+    }
+  }
+
+  dd {
+    margin : 0 0 0.25em 1%;
+    line-height : 1.25em;
+
+    font-size : 0.9em;
+
+    width : 98%;
+
+    display : block;
+
+    overflow : auto;
+
+    padding : 0.75em;
+
+    &:nth-child(2n) {
+      background : $c-blueDarker;
+    }
+  }
+}
+
+.p--offenders--headline {
+  margin-left : -0.5em;
+}
+
+#p--modal__overlay {
+  opacity : 0;
+
+  position : fixed;
+
+  top    : 0;
+  bottom : 0;
+  left   : 0;
+  right  : 0;
+
+  z-index : 100;
+
+  background : $c-black;
+
+  display: none;
+}
+
+.p--offenders__header {
+  display : none;
+}
+
+.p--offenders__container {
+  display : none;
+
+  opacity    : 0;
+  transition : opacity 1s linear;
+
+  &.in-modal {
+    display : block;
+    opacity : 1;
+
+    position : fixed;
+
+    left  : 5em;
+    right : 5em;
+    top   : 3em;
+
+    max-height     : 80vh;
+    padding-bottom : 2em;
+
+    z-index: 11000;
+
+    background : $c-blueDark;
+  }
+}
+
+.p--offenders__terms {
+  overflow-y : auto;
+  max-height : 65vh;
+}
+
+#p--modal__close {
+  position : fixed;
+  right    : 6.4em;
+  top      : 3.8em;
+  z-index : 12000;
+
+  display : none;
+
+  color      : $c-white;
+  border     : none;
+  background : none;
+
+  width   : 6em;
+  height  : 0;
+  margin  : 0;
+  padding : 6em 0 0 0;
+
+  overflow : hidden;
+
+
+  &:hover, &:focus {
+    border-color : transparent adjust-lightness( $c-green, 10 ) transparent transparent
+  }
+
+  &:active {
+    &:before {
+      border-color : transparent adjust-lightness( $c-green, -10 ) transparent transparent;
+    }
+  }
+
+  &:before {
+    position : absolute;
+
+    top  : 0;
+    left : 0;
+
+    content : '';
+
+    border-style : solid;
+    border-width : 0 6em 6em 0;
+    border-color : transparent $c-green transparent transparent;
+  }
+
+  &:after {
+    content   : '×';
+    position  : absolute;
+    top       : 1em;
+    left      : 2.8em;
+    font-size : 1.25em;
+  }
+}

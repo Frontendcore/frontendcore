@@ -1,0 +1,13 @@
+{
+  "name": "jquery.sortable",
+  "_cacheHeaders": {
+    "ETag": "\"2ebca6fa626f62466ba233424e871ccb20fba94e\"",
+    "Content-Length": "2826",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:2ebca6fa6",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/farhadi/html5sortable/master/jquery.sortable.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/farhadi/html5sortable/master/jquery.sortable.js"
+}
