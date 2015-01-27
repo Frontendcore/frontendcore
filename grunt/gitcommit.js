@@ -1,6 +1,10 @@
 var pkg = require('../package.json');
 
 module.exports =  {
+	options : {
+		allowEmpty: true,
+		verbose: true
+	},
 	version: {
 		scss: {
 			options: {
@@ -9,7 +13,7 @@ module.exports =  {
 			},
 			files: [
 				{
-					src: ["bower.json"],
+					src: ["**/*.*"],
 					expand: true
 				}
 			]
@@ -21,7 +25,7 @@ module.exports =  {
 			},
 			files: [
 				{
-					src: ["bower.json"],
+					src: ["**/*.*"],
 					expand: true
 				}
 			]
@@ -33,7 +37,7 @@ module.exports =  {
 			},
 			files: [
 				{
-					src: ["package.json", "bower.json", "Gruntfile.js", "css/core/", "build/static/js/", "build"],
+					src: ["**/*.*"],
 					expand: true,
 					cwd: "./"
 				}

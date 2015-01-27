@@ -2,6 +2,8 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'wysiwyg.css',
 		mediator :  TinyCore.Toolbox.request( 'mediator' ),
+		bResize : false,
+		bParentRelative: false,
 		_oConstants : {
 			EDITOR_SUFIX : '-editor',
 			TEXTAREA_SUFIX : '-textarea',
@@ -85,11 +87,8 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 			oLinkScreen.className = 'button button-slim';
 
 			oLinkGroup.className= 'fc-wysiwyg-switch button-group ph-n';
-
 			oLinkGroup.appendChild(oLinkHTML);
 			oLinkGroup.appendChild(oLinkScreen);
-
-
 
 			oTarget.className = self._oConstants.TEXTAREA_CLASS + ' fc-wysiwyg-html';
 
@@ -117,10 +116,6 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			editor = new Pen(oSettings);
 
-			require(['autosizeLibs'], function() {
-				$(oTarget).autosize();
-			});
-
 			$('#' + sId).parents('form').on('submit', function() {
 
 				if ( $('#' + sId).is(':visible') ) {
@@ -143,6 +138,16 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 					this.innerHTML = self._oConstants.HTML_TEXT;
 					self.updateEditArea(sId, oTarget );
 				} else {
+
+					if (self.bResize === false ) {
+
+						// @todo not to call directly to autosize
+						require(['autosizeLibs'], function() {
+							$(oTarget).autosize();
+						});
+						self.bResize = true;
+					}
+
 					self.closeFormatOptions();
 					this.innerHTML = self._oConstants.VISUAL_TEXT;
 					self.updateTextarea(sId, oTarget);
@@ -161,8 +166,17 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 				$(this).parent().toggleClass('fc-wysiwyg-switch-full-screen');
 
 				if (this.innerHTML.indexOf(self._oConstants.MINSCREEN_TEXT) == -1) {
+
+					$('body').css({'overflow':'hidden', 'height':'100%'});
+
+					if (self.bParentRelative === false ) {
+						$(oTarget).parent().css('position','relative');
+						self.bParentRelative = true;
+					}
+
 					this.innerHTML = self._oConstants.MINSCREEN_TEXT;
 				} else {
+					$('body').css({'overflow':'auto', 'height':'auto'});
 					this.innerHTML = self._oConstants.FULLSCREEN_TEXT;
 				}
 
