@@ -15,7 +15,7 @@ module.exports = {
 		},
 		workspace: {
 			options: {
-				cwd: "",
+				cwd: "./",
 				remote: "origin",
 				branch: "master"
 			}

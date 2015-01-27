@@ -2,7 +2,7 @@ module.exports =  {
 	options: {
 		verbose: true,
 		all: true,
-		force: true
+		force: false
 	},
 	scss: {
 		options: {

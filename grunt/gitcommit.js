@@ -13,7 +13,7 @@ module.exports =  {
 			},
 			files: [
 				{
-					src: ["**/*.*"],
+					src: ["./"],
 					expand: true
 				}
 			]
@@ -25,7 +25,7 @@ module.exports =  {
 			},
 			files: [
 				{
-					src: ["**/*.*"],
+					src: ["./"],
 					expand: true
 				}
 			]
