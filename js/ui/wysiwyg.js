@@ -8,10 +8,11 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 			TEXTAREA_SUFIX : '-textarea',
 			TEXTAREA_CLASS : 'fc-wysiwyg-textarea',
 			FULLSCREEN_EDITABLE_CLASS: 'fc-wysiwyg-full-screen',
-			VISUAL_TEXT : '<i class="icon-eye"></i> VISUAL',
-			HTML_TEXT : '<i class="icon-code"></i> HTML',
-			FULLSCREEN_TEXT : '<i class="icon-arrows-alt"></i> FULLSCREEN',
-			MINSCREEN_TEXT : '<i class="icon-minus"></i> MINIMIZE'
+			TextHelp : 'Select some text to get some formatting options.',
+			TextVisual : '<i class="icon-eye"></i> VISUAL',
+			TextHtml : '<i class="icon-code"></i> HTML',
+			TextFullscreen : '<i class="icon-arrows-alt"></i> FULLSCREEN',
+			TextMinscreen : '<i class="icon-minus"></i> MINIMIZE'
 		},
 		oDefault: {
 			class: 'fc-wysiwyg', // {String} class of the editor,
@@ -34,8 +35,15 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 				});
 			});
 
+			self.fDatePollyfill();
+
 			self.mediator.subscribe( 'close:wysiwyg', this.closeFormatOptions );
 
+		},
+		fDatePollyfill: function() {
+			if (!Date.now) {
+				Date.now = function() { return new Date().getTime(); };
+			}
 		},
 		closeFormatOptions : function() {
 			$('.fc-wysiwyg-menu').hide();
@@ -48,74 +56,39 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 			document.getElementById(sId).innerHTML = $('#' + oTarget.id).val();
 		},
-		autobind: function (oTarget) {
-
-			if (!Date.now) {
-				Date.now = function() { return new Date().getTime(); };
-			}
-
-			$(oTarget).parent().css('position','relative');
-
-			var oSettings,
-				oOptions = {},
-				self = this,
-				editor,
-				sDate = Math.floor(Date.now() / 1000),
-				sId = oTarget.id ? oTarget.id + self._oConstants.EDITOR_SUFIX : sDate + self._oConstants.EDITOR_SUFIX,
-				sValues = oTarget.getAttribute('data-tc-format-options'),
-				oEditArea = document.createElement('div'),
-				oLinkGroup = document.createElement('div'),
-				oLinkHTML = document.createElement('a'),
-				oLinkScreen = document.createElement('a');
-
-			if (oTarget.id === '') {
-				oTarget.id = sDate + self._oConstants.TEXTAREA_SUFIX;
-			}
+		createEditArea: function(sId, oTarget, oText){
+			var oEditArea = document.createElement('div');
 
 			oEditArea.id = sId;
 			oEditArea.className = 'fc-wysiwyg';
 			oEditArea.innerHTML = $(oTarget).text();
-			oEditArea.dataset.help = oTarget.dataset.help ? oTarget.dataset.help : 'Select some text to get some formatting options.';
+			oEditArea.dataset.help = oText.help;
 
-			oLinkHTML.innerHTML = self._oConstants.HTML_TEXT;
-			oLinkHTML.href = '#';
-			oLinkHTML.id = 'html-' + sId;
-			oLinkHTML.className = 'button button-slim';
+			return oEditArea;
+		},
+		createLink: function( sId, sName, sText ) {
 
-			oLinkScreen.innerHTML = self._oConstants.FULLSCREEN_TEXT;
-			oLinkScreen.href = '#';
-			oLinkScreen.id = 'screen-' + sId;
-			oLinkScreen.className = 'button button-slim';
+			var oLink = document.createElement('a');
 
+			oLink.innerHTML = sText;
+			oLink.href = '#';
+			oLink.id = sName + '-' + sId;
+			oLink.className = 'button button-slim';
+
+			return oLink;
+		},
+		createLinkGroup : function ( aElements) {
+			var oLinkGroup = document.createElement('div');
 			oLinkGroup.className= 'fc-wysiwyg-switch button-group ph-n';
-			oLinkGroup.appendChild(oLinkHTML);
-			oLinkGroup.appendChild(oLinkScreen);
 
-			oTarget.className = self._oConstants.TEXTAREA_CLASS + ' fc-wysiwyg-html';
-
-			$(oTarget).before(oEditArea);
-
-			$(oTarget).after(oLinkGroup);
-
-			oOptions.editor = document.getElementById(sId);
-			oOptions.textarea = oTarget;
-
-			if (sValues !== null) {
-
-				aValues = sValues.split(',');
-
-				oOptions.list = [];
-
-				for( var nKey = 0; aValues.length > nKey; nKey++){
-					oOptions.list.push(aValues[nKey]);
-				}
-
+			for (var nKey = 0; nKey < aElements.length; nKey++) {
+				oLinkGroup.appendChild(aElements[nKey]);
 			}
+			return oLinkGroup;
+		},
+		bindForm : function(sId, oTarget) {
 
-
-			oSettings = FC.mixOptions(oOptions, self.oDefault);
-
-			editor = new Pen(oSettings);
+			var self = this;
 
 			$('#' + sId).parents('form').on('submit', function() {
 
@@ -126,6 +99,10 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 				}
 
 			});
+		},
+		bindHtmlButton : function(sId, oTarget, oText) {
+
+			var self = this;
 
 			$('#html-' + sId).on('click', function (event) {
 
@@ -136,7 +113,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 				$('#'+ oTarget.id).toggleClass(self._oConstants.TEXTAREA_CLASS);
 
 				if ( $('#' + sId).is(':visible') ) {
-					this.innerHTML = self._oConstants.HTML_TEXT;
+					this.innerHTML = oText.html;
 					self.updateEditArea(sId, oTarget );
 				} else {
 
@@ -150,11 +127,15 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 					}
 
 					self.closeFormatOptions();
-					this.innerHTML = self._oConstants.VISUAL_TEXT;
+					this.innerHTML = oText.visual;
 					self.updateTextarea(sId, oTarget);
 				}
 
 			});
+		},
+		bindScreenButton: function(sId, oTarget, oText) {
+
+			var self = this;
 
 			$('#screen-' + sId).on('click', function (event) {
 
@@ -166,23 +147,131 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 				$(this).parent().toggleClass('fc-wysiwyg-switch-full-screen');
 
-				if (this.innerHTML.indexOf(self._oConstants.MINSCREEN_TEXT) == -1) {
+				if (this.innerHTML.indexOf(oText.minscreen) == -1) {
 
 					$('body').css({'overflow':'hidden', 'height':'100%'});
+					this.innerHTML = oText.minscreen;
 
-
-					this.innerHTML = self._oConstants.MINSCREEN_TEXT;
 				} else {
+
 					$('body').css({'overflow':'auto', 'height':'auto'});
-					this.innerHTML = self._oConstants.FULLSCREEN_TEXT;
+					this.innerHTML = oText.fullscreen;
+
 				}
 
 			});
+		},
+		bindTextarea: function(sId, oTarget) {
+
+			var self = this;
 
 			$('#' + sId).on('blur', function() {
 				self.updateTextarea(sId, oTarget);
 			});
 
+		},
+		getText: function(oTarget) {
+			var self = this,
+				oText = {},
+				sName;
+
+			var aText = ['visual','help','fullscreen','minscreen','html'];
+
+			for (var nKey = 0; nKey < aText.length; nKey++) {
+
+				sName = aText[nKey];
+
+				if ( oTarget.getAttribute('data-tc-text-' + sName ) !== null) {
+					oText[ sName ] = oTarget.getAttribute('data-tc-text-' + sName );
+				} else {
+					oText[ sName ] = self._oConstants['Text' + sName.charAt(0).toUpperCase() + sName.slice(1) ];
+				}
+
+			}
+
+			return oText;
+		},
+		autobind: function (oTarget) {
+
+			// To help CSS to position the buttons
+			$(oTarget).parent().css('position','relative');
+
+			var oOptions = {},
+				self = this,
+				oText = self.getText(oTarget),
+				sDate = Math.floor(Date.now() / 1000),
+				sId = oTarget.id ? oTarget.id + self._oConstants.EDITOR_SUFIX : sDate + self._oConstants.EDITOR_SUFIX,
+				sValues = oTarget.getAttribute('data-tc-format-options'),
+				oEditArea = self.createEditArea(sId, oTarget, oText),
+				oSettings,
+				editor,
+				oLinkHTML,
+				oLinkScreen,
+				oLinkGroup,
+				aLinks = [];
+
+
+			// If the textarea has no id we assigned a new one
+			if (oTarget.id === '') {
+				oTarget.id = sDate + self._oConstants.TEXTAREA_SUFIX;
+			}
+
+			// check if the HTML option is enabled and creates the button
+			if (oTarget.dataset.tcHtml !== 'false') {
+				oLinkHTML = self.createLink(sId, 'html', oText.html);
+				aLinks.push(oLinkHTML);
+			}
+
+			// check if the Fullscreen option is enabled and creates the button
+			if (oTarget.dataset.tcFullscreen !== 'false') {
+				oLinkScreen = self.createLink(sId, 'screen', oText.fullscreen);
+				aLinks.push(oLinkScreen);
+			}
+
+			// If there are buttons append all of them after the Target
+			if (aLinks.length > 0 ) {
+				oLinkGroup = self.createLinkGroup(aLinks);
+				$(oTarget).after(oLinkGroup);
+			}
+
+			// Add the class to the textarea
+			oTarget.className = self._oConstants.TEXTAREA_CLASS + ' fc-wysiwyg-html';
+
+
+			// Append the link group and the edit area
+			$(oTarget).before(oEditArea);
+
+			// Set the editor and the textarea target
+			oOptions.editor = document.getElementById(sId);
+			oOptions.textarea = oTarget;
+
+			// Get the format options to show the buttons on the toolbox
+			if (sValues !== null) {
+
+				aValues = sValues.split(',');
+
+				oOptions.list = [];
+
+				for( var nKey = 0; aValues.length > nKey; nKey++){
+					oOptions.list.push(aValues[nKey]);
+				}
+
+			}
+
+			// Call the editor with the options
+			oSettings = FC.mixOptions(oOptions, self.oDefault);
+			editor = new Pen(oSettings);
+
+			self.bindForm(sId, oTarget, oText);
+			self.bindTextarea(sId, oTarget, oText);
+
+			if (oTarget.dataset.tcHtml !== 'false') {
+				self.bindHtmlButton(sId, oTarget, oText);
+			}
+
+			if (oTarget.dataset.tcFullscreen !== 'false') {
+				self.bindScreenButton(sId, oTarget, oText);
+			}
 
 		},
 		onStop: function () {

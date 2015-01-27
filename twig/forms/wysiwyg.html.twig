@@ -14,17 +14,46 @@
     )}}
         {{ demos.settings(
     {
-        "1" : {
-            "name" :        "data-tc-help",
+        "2" : {
+            "name" :        "data-tc-text-help",
             "description" : "Text that will be shown on focus editor",
             "default" : "Select some text to get some formatting options."
         },
-        "2" : {
+        "3" : {
+            "name" :        "data-tc-fullscreen",
+            "description" : "Boolean to activate or desactivate the fulscreen option",
+            "default" : "True"
+        },
+        "4" : {
+            "name" :        "data-tc-text-fullscreen",
+            "description" : "Html Text for the action button to activate fullscreen",
+            "default" : '<i class="icon-arrows-alt"></i> FULLSCREEN'
+        },
+        "5" : {
+            "name" :        "data-tc-text-minscreen",
+            "description" : "Html Text for the action button to activate fullscreen",
+            "default" : '<i class="icon-minus"></i> MINIMIZE'
+        },
+        "6" : {
+            "name" :        "data-tc-html",
+            "description" : "Boolean to activate or desactivate the html editor option",
+            "default" : "True"
+        },
+        "7" : {
+            "name" :        "data-tc-text-visual",
+            "description" : "Html Text for the action button to activate the Visual editor",
+            "default" : '<i class="icon-eye"></i> VISUAL'
+        },
+        "8" : {
+            "name" :        "data-tc-text-html",
+            "description" : "Html Text for the action button to activate the HTML editor",
+            "default" : '<i class="icon-code"></i> HTML"'
+        },
+        "1" : {
             "name" :        "data-tc-format-options",
             "description" : "List separated by coma and ordered of the format options. The posible values are: <ul class='list'><li>blockquote</li><li>h2</li><li>h3</li><li>p</li><li>pre</li><li>insertorderedlist</li><li>insertunorderedlist</li><li>indent</li><li>outdent</li><li>bold</li><li>italic</li><li>underline</li><li>createlink</li><li>inserthorizontalrule</li></ul>",
             "default" : "bold,italic,underline,insertunorderedlist,createlink"
-        },
-
+        }
     }
     )}}
 {% endblock %}

@@ -8,7 +8,7 @@ module.exports =  {
 	scss: {
 		options: {
 			cwd: "css/core/",
-			message: "Release version " + pkg.version
+			message: pkg.lastFeature + " v" + pkg.version
 		},
 		files: [
 			{
@@ -20,7 +20,7 @@ module.exports =  {
 	js: {
 		options: {
 			cwd: "build/static/js/",
-			message: "Release version " + pkg.version
+			message: pkg.lastFeature + " v" + pkg.version
 		},
 		files: [
 			{
@@ -32,7 +32,7 @@ module.exports =  {
 	workspace: {
 		options: {
 			cwd: "./",
-			message: "Release version " + pkg.version
+			message: pkg.lastFeature + " v" + pkg.version
 		},
 		files: [
 			{
