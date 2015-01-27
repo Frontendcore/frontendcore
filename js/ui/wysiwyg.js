@@ -3,7 +3,6 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'wysiwyg.css',
 		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		bResize : false,
-		bParentRelative: false,
 		_oConstants : {
 			EDITOR_SUFIX : '-editor',
 			TEXTAREA_SUFIX : '-textarea',
@@ -54,6 +53,8 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 			if (!Date.now) {
 				Date.now = function() { return new Date().getTime(); };
 			}
+
+			$(oTarget).parent().css('position','relative');
 
 			var oSettings,
 				oOptions = {},
@@ -169,10 +170,6 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 					$('body').css({'overflow':'hidden', 'height':'100%'});
 
-					if (self.bParentRelative === false ) {
-						$(oTarget).parent().css('position','relative');
-						self.bParentRelative = true;
-					}
 
 					this.innerHTML = self._oConstants.MINSCREEN_TEXT;
 				} else {

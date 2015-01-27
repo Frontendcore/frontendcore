@@ -3,7 +3,7 @@ module.exports = {
 		'build/static/js/ui/*.js'
 	],
 	options: {
-		specs: 'js/test/*.test.js',
+		specs: 'build/static/js/test/*.test.js',
 		vendor: [
 			'js/base/_oGlobalSettings.js',
 			'build/static/js/core.js',
