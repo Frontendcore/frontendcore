@@ -147,6 +147,8 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 
 				$(this).parent().toggleClass('fc-wysiwyg-switch-full-screen');
 
+				$('.pen-menu').toggleClass('pen-menu-full-screen');
+
 				if (this.innerHTML.indexOf(oText.minscreen) == -1) {
 
 					$('body').css({'overflow':'hidden', 'height':'100%'});
