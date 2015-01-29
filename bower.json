@@ -1,10 +1,10 @@
 {
   "name": "frontendcore-workspace",
-  "version": "1.3.16",
+  "version": "1.3.17",
   "authors": [
     "Toni Pinel <tonipinel@gmail.com>"
   ],
-  "description": "Improvements on sortable library",
+  "description": "The all in one frontend framework based on components for the real life",
   "main": [
     "index.html"
   ],
