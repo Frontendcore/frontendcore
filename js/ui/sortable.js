@@ -24,7 +24,8 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 				this.oldContainer = container;
 			}
 
-			//this.hideEmptyList(oTarget);
+			this.showEmptyList(oTarget);
+			this.hideEmptyList(oTarget);
 
 			$(oTarget).sortable("refresh");
 		},
@@ -59,6 +60,8 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 			$("body").removeClass("dragging");
 
+			this.hideEmptyList(oTarget);
+
 			_super(item);
 		},
 		onDrag: function ($item, position, _super, event) {
@@ -72,9 +75,6 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 			$item.addClass("dragged");
 
 			$("body").addClass("dragging");
-
-			this.addEmptyList(oTarget);
-			//this.showEmptyList(oTarget);
 
 		},
 		isValidTarget: function ($item, container) {
@@ -114,11 +114,24 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 			if (oTarget !== undefined) {
 
+				var nDepth,
+					nTotalDepth = oTarget.getAttribute('data-tc-depth') !== null ? oTarget.getAttribute('data-tc-depth') : 2;
+
 				$('li', oTarget).each(function(){
 
-					if ( $('ol li', this)[0] === undefined ) {
+					nDepth = $( this ,"#" + oTarget.id).parents("ol").length;
 
-						$('ol', this).css('height','1px');
+					console.log(nDepth + '...' + nTotalDepth);
+
+					if ( nDepth >= nTotalDepth ) {
+
+						$('ol', this).css({
+							height: '1px',
+							padding: '0px',
+							margin: '0px',
+							background: 'transparent',
+							position: 'absolute'
+						});
 					}
 				});
 			}
@@ -236,6 +249,10 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 				$(oTarget).addClass('sortable');
 				oOptions.nested = true;
 			}
+
+
+			this.addEmptyList(oTarget);
+			this.hideEmptyList(oTarget);
 
 			oOptions.isValidTarget = this.isValidTarget;
 			oOptions.addEmptyList = this.addEmptyList;

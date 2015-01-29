@@ -4,7 +4,7 @@
   "authors": [
     "Toni Pinel <tonipinel@gmail.com>"
   ],
-  "description": "The all in one frontend framework based on components for the real life",
+  "description": "Improvements on sortable library",
   "main": [
     "index.html"
   ],
