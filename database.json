@@ -26,7 +26,11 @@
       "href": "#architecture-css",
       "id": "architecture-css",
       "children": {
-        "Mediator": {
+        "Animations": {
+          "name": "Animations",
+          "href": "animations.html"
+        },
+        "Sassdoc": {
           "name": "Sassdoc",
           "href": "sassdoc.html"
         }
@@ -145,6 +149,11 @@
         "Polaroid": {
           "name": "Polaroid Images",
           "href": "image-polaroid.html"
+        },
+        "Responsive": {
+          "name": "Responsive Images",
+          "href": "image-responsive.html",
+          "js" : true
         }
       }
     },
@@ -199,7 +208,7 @@
           "href": "buttons.html"
         },
         "Button Groups": {
-          "name": "Button Groups",
+          "name": "Buttons group",
           "href": "button-group.html"
         }
       }

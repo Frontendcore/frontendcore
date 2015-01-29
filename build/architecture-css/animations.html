@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=".././static/css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src=".././static//js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '.././static/js/modules/',
+            sPathJsLibs : '.././static/js/libs/',
+            sPathRoot: '.././static/',
+            sPathCss: '.././static/css/',
+            bCss : false,
+            bResponsiveImages: true
+        }
+    </script>
+    <script src=".././static/js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+<header class="header pb-n">
+    <a href="https://github.com/tonipinel/frontendcore" class="button-ok icon-github fl-r mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.14</span></a>
+    <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
+    <a title="Frontend Core" href="../index.html" class="logo"><img src=".././static/img/frontendcore.png" class="" alt="FRONTEND CORE" /></a>
+</header>
+<div class="header-spacing"></div>
+<div class="grid ph-l">
+    <div class="col-1-5">
+                    <nav id="menu" class="navigation navigation-vertical desktop">
+                <ul>
+                                            <li>
+                            <a href="#setup" data-tc-modules="toggle">
+                                Setup
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="setup"  class="hidden">
+                                                            <li >
+                                    <a href=".././setup/getting-started.html">Getting started </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././setup/installation.html">Installation </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#architecture-css" data-tc-modules="toggle">
+                                Architecture CSS
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="architecture-css" >
+                                                            <li  class="active">
+                                    <a href=".././architecture-css/animations.html">Animations </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-css/sassdoc.html">Sassdoc </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#architecture-js" data-tc-modules="toggle">
+                                Architecture JS
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="architecture-js"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#structure" data-tc-modules="toggle">
+                                Structure
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="structure"  class="hidden">
+                                                            <li >
+                                    <a href=".././structure/grids.html">Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././structure/center-box.html">Center box <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#typography" data-tc-modules="toggle">
+                                Typography
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="typography"  class="hidden">
+                                                            <li >
+                                    <a href=".././typography/titles.html">Titles </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/paragraphs.html">Paragraphs </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/lists.html">Lists </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/labels.html">Labels </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#navigation" data-tc-modules="toggle">
+                                Navigation
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="navigation"  class="hidden">
+                                                            <li >
+                                    <a href=".././navigation/navigation.html">Navigation <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/navigation-sub.html">Subnavigation </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/filters.html">Filters </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/pagination.html">Pagination </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tabs.html">Tabs <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tags.html">Tags </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/side-menu.html">Side Menu <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/steps.html">Steps </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#media" data-tc-modules="toggle">
+                                Media
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="media"  class="hidden">
+                                                            <li >
+                                    <a href=".././media/image-thumb.html">Thumbnail Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-circle.html">Circle Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-polaroid.html">Polaroid Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-responsive.html">Responsive Images <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#content" data-tc-modules="toggle">
+                                Content
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="content"  class="hidden">
+                                                            <li >
+                                    <a href=".././content/boxes.html">Boxes </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/ratings.html">Ratings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/carousel.html">Carousel <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/parallax.html">Parallax </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/cart.html">Cart <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/truncate.html">Truncate <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/sortable.html">Sortable lists <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#buttons" data-tc-modules="toggle">
+                                Buttons
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="buttons"  class="hidden">
+                                                            <li >
+                                    <a href=".././buttons/buttons.html">Buttons </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././buttons/button-group.html">Buttons group </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#forms" data-tc-modules="toggle">
+                                Forms
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="forms"  class="hidden">
+                                                            <li >
+                                    <a href=".././forms/form-grids.html">Form Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/text-fields.html">Text Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/number-fields.html">Number Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/option-fields.html">Option Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/select-fields.html">Select Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/error-fields.html">Error Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/read-only-fields.html">Read Only Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/search-form.html">Search Form </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autocomplete.html">Autocomplete <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autosize.html">Autosize <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/wysiwyg.html">Wysiwyg <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#tables" data-tc-modules="toggle">
+                                Tables
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="tables"  class="hidden">
+                                                            <li >
+                                    <a href=".././tables/static-table.html">Static Table </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././tables/dynamic-table.html">Dynamic Table <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././tables/stats-tables.html">Stats Tables <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#callouts" data-tc-modules="toggle">
+                                Callouts & Prompts
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
+                                    <a href=".././callouts/messages.html">Messages </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/notifications.html">Notifications <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/tips.html">Tips <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/modals.html">Modal windows <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#modifiers" data-tc-modules="toggle">
+                                Modifiers
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="modifiers"  class="hidden">
+                                                            <li >
+                                    <a href=".././modifiers/colors.html">Colors </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/fonts.html">Font sizes </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/text.html">Text align & decoration </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/margin-padding.html">Margins & Paddings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/measures.html">Measures </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/borders.html">Borders </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            </div>
+    <div class="col-4-5">
+        <h1>Animations</h1>
+    <p class="msg-info">Frontendcore is using the animate.css developed by <a href="https://github.com/daneden" target="_blank">daneden</a>. So you can find extra info in the <a href="https://github.com/daneden/animate.css" target="_blank">github page of the project.</a></p>
+    <section class="box-background">
+        <h2><span class="label-css fz-xl va-m">CSS</span> Basic Usage</h2>
+        <ol class="list pl-n">
+            <li class="mb-l">Add the class animated to the element you want to animate. You may also want to include the class infinite for an infinite loop.</li>
+            <li>Finally you need to add one of the following classes:
+                <div class="grid box-foreground mt-l">
+                    <div class="col-1-4">
+                        <ul class="list">
+                            <li><code>bounce</code></li>
+                            <li><code>flash</code></li>
+                            <li><code>pulse</code></li>
+                            <li><code>rubberBand</code></li>
+                            <li><code>shake</code></li>
+                            <li><code>swing</code></li>
+                            <li><code>tada</code></li>
+                            <li><code>wobble</code></li>
+                            <li><code>bounceIn</code></li>
+                            <li><code>bounceInDown</code></li>
+                            <li><code>bounceInLeft</code></li>
+                            <li><code>bounceInRight</code></li>
+                            <li><code>bounceInUp</code></li>
+                            <li><code>bounceOut</code></li>
+                            <li><code>bounceOutDown</code></li>
+                            <li><code>bounceOutLeft</code></li>
+                            <li><code>bounceOutRight</code></li>
+                            <li><code>bounceOutUp</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-1-4">
+                        <ul class="list">
+                            <li><code>fadeIn</code></li>
+                            <li><code>fadeInDown</code></li>
+                            <li><code>fadeInDownBig</code></li>
+                            <li><code>fadeInLeft</code></li>
+                            <li><code>fadeInLeftBig</code></li>
+                            <li><code>fadeInRight</code></li>
+                            <li><code>fadeInRightBig</code></li>
+                            <li><code>fadeInUp</code></li>
+                            <li><code>fadeInUpBig</code></li>
+                            <li><code>fadeOut</code></li>
+                            <li><code>fadeOutDown</code></li>
+                            <li><code>fadeOutDownBig</code></li>
+                            <li><code>fadeOutLeft</code></li>
+                            <li><code>fadeOutLeftBig</code></li>
+                            <li><code>fadeOutRight</code></li>
+                            <li><code>fadeOutRightBig</code></li>
+                            <li><code>fadeOutUp</code></li>
+                            <li><code>fadeOutUpBig</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-1-4">
+                        <ul class="list">
+                            <li><code>flipInX</code></li>
+                            <li><code>flipInY</code></li>
+                            <li><code>flipOutX</code></li>
+                            <li><code>flipOutY</code></li>
+                            <li><code>lightSpeedIn</code></li>
+                            <li><code>lightSpeedOut</code></li>
+                            <li><code>rotateIn</code></li>
+                            <li><code>rotateInDownLeft</code></li>
+                            <li><code>rotateInDownRight</code></li>
+                            <li><code>rotateInUpLeft</code></li>
+                            <li><code>rotateInUpRight</code></li>
+                            <li><code>rotateOut</code></li>
+                            <li><code>rotateOutDownLeft</code></li>
+                            <li><code>rotateOutDownRight</code></li>
+                            <li><code>rotateOutUpLeft</code></li>
+                            <li><code>rotateOutUpRight</code></li>
+                            <li><code>rollIn</code></li>
+                            <li><code>rollOut</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-1-4">
+                        <ul class="list">
+                            <li><code>hinge</code></li>
+                            <li><code>zoomIn</code></li>
+                            <li><code>zoomInDown</code></li>
+                            <li><code>zoomInLeft</code></li>
+                            <li><code>zoomInRight</code></li>
+                            <li><code>zoomInUp</code></li>
+                            <li><code>zoomOut</code></li>
+                            <li><code>zoomOutDown</code></li>
+                            <li><code>zoomOutLeft</code></li>
+                            <li><code>zoomOutRight</code></li>
+                            <li><code>zoomOutUp</code></li>
+                            <li><code>slideInDown</code></li>
+                            <li><code>slideInLeft</code></li>
+                            <li><code>slideInRight</code></li>
+                            <li><code>slideInUp</code></li>
+                            <li><code>slideOutDown</code></li>
+                            <li><code>slideOutLeft</code></li>
+                            <li><code>slideOutRight</code></li>
+                            <li><code>slideOutUp</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <p>Example</p>
+        <pre><code data-tc-modules="code">&lt;h1 class=&quot;animated infinite bounce&quot;&gt;Example&lt;/h1&gt;</code></pre>
+    </section>
+    <section class="box-background">
+        <h2><span class="label-css fz-xl">CSS</span> <span class="label-js fz-xl">JS</span> Advanced Usage</h2>
+        <p>You can do a whole bunch of other stuff with animate.css when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:</p>
+        <pre><code data-tc-modules="code">$('#yourElement').addClass('animated bounceOutLeft');</code></pre>
+        <p>You can also detect when an animation ends:</p>
+        <pre><code data-tc-modules="code">$('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);</code></pre>
+        <p><a href="https://www.youtube.com/watch?v=CBQGl6zokMs" target="_blank">View a video tutorial</a> on how to use Animate.css with jQuery here. </p>
+        <p class="msg-info"><code>jQuery.one()</code> is used when you want to execute the event handler at most <em>once</em>. More information <a href="http://api.jquery.com/one/" target="_blank">here</a>.</p>
+    </section>
+    </div>
+</div>
+<footer class="footer box-primary">
+    <div class="col-2-4">
+        <h3 class="fw-n">About us</h3>
+        <p>FrontendCore comes form the experience of <a href="https://twitter.com/tonipinel" target="_blank" class="td-u fw-b">Toni Pinel</a>. He was working as Principal Frontend Engineer at <a href="https://www.softonic.com" target="_blank" class="td-u">www.Softonic.com</a> & <a href="https://www.obolog.com" target="_blank" class="td-u">www.obolog.com</a>. Is based in the knowledge and the needs to create high quality code and be the more agile possible.</p>
+        <p>Be free to contribute to the project, any ideas or developments should be welcome!</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -18,7 +18,7 @@ FC.getDataModules = function(sData) {
 FC.mixOptions = function( oOptions, oSettings ) {
     var key;
 
-    for (key in oOptions) {
+    for ( key in oOptions) {
         if (oOptions.hasOwnProperty(key)) {
             oSettings[key] = oOptions[key];
         }

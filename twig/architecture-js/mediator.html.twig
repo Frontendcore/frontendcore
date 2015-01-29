@@ -6,10 +6,10 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
-    <div class="box-lighten">
-
-    <h1>Module Communication (Mediator)</h1>
+    <h1><span class="label-js fz-xl va-m">JS</span> Module Communication (Mediator)</h1>
     <p>The Mediator is a tool for TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
+
+    <div class="box-background">
     <h2>Why do I need a publish/subscribe system?</h2>
     <p>Sometimes you need modules to communicate between them, but if you call directly from one to another you are adding critical dependencies.It's very common that one day someone or even you, needs to modify one of this modules, or delete some functions adding a bug to the another one. Use the mediator to subscribe and publish events that will other modules can hear and trigger some events with a total independence of each module.</p>
     <h2>API</h2>

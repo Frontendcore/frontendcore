@@ -6,7 +6,8 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
-    <h1 class="mr-l">Grids</h1>
+    <h1 class="mr-l"><span class="label-css fz-xl va-m">CSS</span> Grids</h1>
+    <div class="box-background">
     <p class="mb-n">The grids in Frontendcore are totally configurable, you've got several columns options and you can overwrite the map $grid to personalize it:</p>
     <pre>
 	<code data-tc-modules="code" class="hljs scss">
@@ -27,6 +28,7 @@
     </code>
 </pre>
     <p>By default the Grid is based on <a href="http://thisisdallas.github.io/Simple-Grid/">Simple grid</a>. As His author explain Simple Grid was created for developers who need a barebones grid. Simple Grid works well with 1140px layouts but easily adapts to any size of layout. With fluid columns, Simple Grid is responsive down to mobile.</p>
+    </div>
     <h2 class="mt-l">1 Column</h2>
     {{ demos.demo(
         '1-column',

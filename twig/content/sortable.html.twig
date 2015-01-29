@@ -7,7 +7,15 @@
 
 
 {% block main %}
-    <h1>Sortable Lists</h1>
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Sortable Lists</h1>
+    <section class="box-lighten">
+        <h2>Nested Lists</h2>
+        <p>Drag & Drop sortable lists and allow you to order as parent or children up 2 levels</p>
+        {{ demos.demo(
+            'sortable-categories',
+            '../_demos/content/sortable-categories.html'
+        )}}
+    </section>
     <section class="box-lighten">
         <h2>Order to input</h2>
          <p>Drag & Drop sortable lists to input field</p>
@@ -30,19 +38,28 @@
     {
         "1" : {
             "name" :        "data-tc-url",
-            "description" : "Url of the ajax service to save changes.",
-            "default" : "false"
+            "description" : "Url of the ajax service to save changes. If it's not defined there is not ajax call.",
         },
         "2" : {
-            "name" :        "data-tc-handle",
-            "description" : "Define it if you want just one element as handle.",
-            "default" : "none"
+            "name" :        "data-tc-input",
+            "description" : "Id of the Input that should get the order. If it's not defined no data will be send to any input.",
+            "default" : "sortable"
         },
         "3" : {
-            "name" :        "data-tc-object",
-            "description" : "Name of the object array that should be send to the ajax. (Example &object[1]=sortable-1)",
-            "default" : "sortable"
-        }
+            "name" :        "data-tc-output",
+            "description" : "Define how will be the output send, by a string separated by comma or a complex json.",
+            "default" : "string"
+        },
+        "4" : {
+            "name" :        "data-tc-type",
+            "description" : "If you define this as 'nested' will work with 2 levels of lists.",
+            "default" : "normal"
+        },
+        "5" : {
+            "name" :        "data-tc-handle",
+            "description" : "Looks for just an element (using jquery selector) inside the items to be the handle.",
+            "default" : ""
+        },
     }
     )}}
 {% endblock %}

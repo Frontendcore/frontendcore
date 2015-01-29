@@ -78,7 +78,8 @@ module.exports = {
 			],
 			'build/static/js/ui/sortable.js': [
 				'js/libs/jquery-serialize/jquery.serializetree.js',
-				'bower_components/jquery.sortable/index.js'
+				'js/libs/jquery-sortable/jquery-sortable.js'
+
 			],
 			'build/static/js/ui/serialize.js': [
 				'js/libs/jquery-serialize/jquery.serializetree.js',
