@@ -12,11 +12,11 @@ module.exports = {
 			tasks: ['scss']
 	},
 	twig: {
-		files: ['twig/**/*.twig'],
+		files: ['twig/**/*.twig','!twig/_**/*.twig'],
 			tasks: ['twig']
 	},
 	twigPartials: {
-		files: ['twig/**/*.html','database.json'],
+		files: ['twig/**/*.html','database.json','twig/_**/*.twig'],
 		tasks: ['twigRender']
 	}
 };

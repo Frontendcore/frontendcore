@@ -1,0 +1,32 @@
+input.gsc-search-button {
+	height: 38px !important;
+	background-image: url("http://www.google.com/uds/css/v2/search_box_icon.png") !important;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	padding: $spacing/4 $spacing !important;
+}
+
+div.gsc-control-cse {
+	padding: 0;
+	background: transparent;
+	border: 0px none;
+}
+
+form.gsc-search-box-tools {
+	padding: $spacing/2 0 !important;
+}
+
+div.gsc-input-box {
+	height: 38px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	@extend %field;
+	input {
+		border: 0px none !important;;
+		height: 32px !important;
+	}
+}
+
+#___gcse_0 {
+
+}
