@@ -24,7 +24,7 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 				this.oldContainer = container;
 			}
 
-			this.addEmptyList(oTarget);
+			//this.hideEmptyList(oTarget);
 
 			$(oTarget).sortable("refresh");
 		},
@@ -74,16 +74,23 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 			$("body").addClass("dragging");
 
 			this.addEmptyList(oTarget);
+			//this.showEmptyList(oTarget);
 
 		},
 		isValidTarget: function ($item, container) {
 
-			if ( $('.dragged').find('li')[0] !== undefined ) {
 
-				if (container.el.context.className.indexOf('sub-sortable')!== -1) {
-					return false;
-				}
+			var oTarget = $($item.context).closest('ol[data-tc-modules=sortable]')[0],
+				nDepth = $(container.el.context ,"#" + oTarget.id).parents("ol").length + 1,
+				nTotalDepth = oTarget.getAttribute('data-tc-depth') !== null ? oTarget.getAttribute('data-tc-depth') : 2;
 
+
+			if (nDepth > nTotalDepth) {
+				return false;
+			}
+
+			if ( $('.dragged').find('li')[0] !== undefined && nDepth > ( nTotalDepth -1 ) ) {
+				return false;
 			}
 
 			return true;
@@ -92,7 +99,7 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 			if (oTarget !== undefined) {
 
-				$('#' + oTarget.id + '> li').each(function(){
+				$('li', oTarget).each(function(){
 
 					if ( $('ol', this)[0] === undefined ) {
 
@@ -101,6 +108,35 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 				});
 			}
 
+			$(oTarget).sortable("refresh");
+		},
+		hideEmptyList: function(oTarget) {
+
+			if (oTarget !== undefined) {
+
+				$('li', oTarget).each(function(){
+
+					if ( $('ol li', this)[0] === undefined ) {
+
+						$('ol', this).css('height','1px');
+					}
+				});
+			}
+		},
+		showEmptyList: function(oTarget) {
+
+			if (oTarget !== undefined) {
+
+				$('li', oTarget).each(function(){
+
+					if ( $('ol li', this)[0] === undefined ) {
+
+						$('ol', this).removeAttr('style');
+					}
+				});
+			}
+
+			$(oTarget).sortable("refresh");
 		},
 		onStart: function () {
 
@@ -203,6 +239,8 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 			oOptions.isValidTarget = this.isValidTarget;
 			oOptions.addEmptyList = this.addEmptyList;
+			oOptions.showEmptyList = this.showEmptyList;
+			oOptions.hideEmptyList = this.hideEmptyList;
 			oOptions.afterMove = this.afterMove;
 			oOptions.onDrop = this.onDrop;
 			oOptions.onDrag = this.onDrag;

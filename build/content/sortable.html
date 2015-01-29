@@ -44,7 +44,7 @@
         <div class="col-2-3">
             <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="../index.html" class="logo va-m"><img src=".././static/img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.15</span></a>
+            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.16</span></a>
         </div>
         <div class="col-1-3 desktop">
             <gcse:search></gcse:search>
@@ -508,12 +508,17 @@
                             </dd>
                         <dt><h5 class="mb-n c-primary">data-tc-type</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">If you define this as 'nested' will work with 2 levels of lists.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: normal</p>
+                <p class="mb-s">If you define this as 'nested' will work with data-tc-depth levels of lists.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: default</p>
                             </dd>
                         <dt><h5 class="mb-n c-primary">data-tc-handle</h5></dt>
             <dd class="mb-l">
                 <p class="mb-s">Looks for just an element (using jquery selector) inside the items to be the handle.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-tc-depth</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If you define the type as nested will set how many depth levels will accept</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 2</p>
                             </dd>
                     </dl>
 
