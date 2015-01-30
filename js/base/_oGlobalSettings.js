@@ -3,9 +3,7 @@ var oGlobalSettings = {
     sPathJsCore: '../',
     sPathJsModules : '../static/js/modules/',
     sPathJsLibs : '../static/js/libs/',
-    sPathRoot: '../',
     sPathCss: '../static/css/',
-    bCss : false,
     bResponsiveImages: true
 }
 

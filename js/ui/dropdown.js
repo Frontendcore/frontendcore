@@ -1,9 +1,9 @@
-TinyCore.AMD.define('dropdown', ['devicePackage'], function () {
+TinyCore.AMD.define('dropdown', [], function () {
 	return {
 		oOpened: false,
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('dropdown'),
+			var aTargets = oTools.getDataModules('dropdown'),
 				self = this;
 
 			self.bindClickOutside();
@@ -23,7 +23,7 @@ TinyCore.AMD.define('dropdown', ['devicePackage'], function () {
 
 			});
 
-			FC.trackEvent('JS_Libraries', 'call', 'dropdown');
+			oTools.trackModule('JS_Libraries', 'call', 'dropdown');
 
 		},
 		bindClickOutside: function () {

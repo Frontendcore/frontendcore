@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href=".././static/css/main.css" media="all">
+    <!--[if lte IE 8]>
+    <script src=".././static//js/ie-old.js"></script>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-old.css" media="all">
+    <script type="text/javascript">
+        var $buoop = {reminder: 0};
+        $buoop.ol = window.onload;
+        window.onload=function(){
+            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "//browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"  href=".././static/css/ie-new.css" media="all">
+    <![endif]-->
+    <script type="text/javascript">
+        var oGlobalSettings = {
+            sPathJs : 'static/js/',
+            sPathJsCore: '.././',
+            sPathJsModules : '.././static/js/modules/',
+            sPathJsLibs : '.././static/js/libs/',
+            sPathCss: '.././static/css/',
+            bResponsiveImages: true
+        }
+    </script>
+    <script src=".././static/js/core.js"></script>
+</head>
+<body data-tc-modules="polyfills">
+
+<header class="header pb-n o-h">
+    <div class="grid">
+        <div class="col-2-3">
+            <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
+            <a title="Frontend Core" href="../index.html" class="logo va-m"><img src=".././static/img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
+            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.4</span></a>
+        </div>
+        <div class="col-1-3 desktop">
+            <gcse:search></gcse:search>
+            <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
+        </div>
+    </div>
+    <div class="fl-l w-50">
+    </div>
+
+    <script>
+        (function() {
+            var cx = '014483888698585740321:x9o_wh1odaq';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+
+</header>
+<div class="header-spacing"></div>
+<div class="grid ph-l">
+    <div class="col-1-5">
+                    <nav id="menu" class="navigation navigation-vertical desktop">
+                <ul>
+                                            <li>
+                            <a href="#setup" data-tc-modules="toggle">
+                                Setup
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="setup"  class="hidden">
+                                                            <li >
+                                    <a href=".././setup/getting-started.html">Getting started </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././setup/installation.html">Installation </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#architecture-css" data-tc-modules="toggle">
+                                Architecture CSS
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="architecture-css"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture-css/animations.html">Animations </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-css/sassdoc.html">Sassdoc </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#architecture-js" data-tc-modules="toggle">
+                                Architecture JS
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="architecture-js" >
+                                                            <li  class="active">
+                                    <a href=".././architecture-js/global-settings.html">Global Settings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-js/tools.html">Tools </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#structure" data-tc-modules="toggle">
+                                Structure
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="structure"  class="hidden">
+                                                            <li >
+                                    <a href=".././structure/grids.html">Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././structure/center-box.html">Center box <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#typography" data-tc-modules="toggle">
+                                Typography
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="typography"  class="hidden">
+                                                            <li >
+                                    <a href=".././typography/titles.html">Titles </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/paragraphs.html">Paragraphs </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/lists.html">Lists </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././typography/labels.html">Labels </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#navigation" data-tc-modules="toggle">
+                                Navigation
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="navigation"  class="hidden">
+                                                            <li >
+                                    <a href=".././navigation/navigation.html">Navigation <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/navigation-sub.html">Subnavigation </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/filters.html">Filters </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/pagination.html">Pagination </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tabs.html">Tabs <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/tags.html">Tags </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/side-menu.html">Side Menu <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././navigation/steps.html">Steps </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#media" data-tc-modules="toggle">
+                                Media
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="media"  class="hidden">
+                                                            <li >
+                                    <a href=".././media/image-thumb.html">Thumbnail Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-circle.html">Circle Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-polaroid.html">Polaroid Images </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././media/image-responsive.html">Responsive Images <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#content" data-tc-modules="toggle">
+                                Content
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="content"  class="hidden">
+                                                            <li >
+                                    <a href=".././content/boxes.html">Boxes </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/ratings.html">Ratings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/carousel.html">Carousel <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/parallax.html">Parallax </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/cart.html">Cart <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/truncate.html">Truncate <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././content/sortable.html">Sortable lists <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#buttons" data-tc-modules="toggle">
+                                Buttons
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="buttons"  class="hidden">
+                                                            <li >
+                                    <a href=".././buttons/buttons.html">Buttons </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././buttons/button-group.html">Buttons group </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#forms" data-tc-modules="toggle">
+                                Forms
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="forms"  class="hidden">
+                                                            <li >
+                                    <a href=".././forms/form-grids.html">Form Grids </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/text-fields.html">Text Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/number-fields.html">Number Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/option-fields.html">Option Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/select-fields.html">Select Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/tags-fields.html">Tags Fields <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/error-fields.html">Error Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/read-only-fields.html">Read Only Fields </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/search-form.html">Search Form </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autocomplete.html">Autocomplete <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/autosize.html">Autosize <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././forms/wysiwyg.html">Wysiwyg <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#tables" data-tc-modules="toggle">
+                                Tables
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="tables"  class="hidden">
+                                                            <li >
+                                    <a href=".././tables/static-table.html">Static Table </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././tables/dynamic-table.html">Dynamic Table <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././tables/stats-tables.html">Stats Tables <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#callouts" data-tc-modules="toggle">
+                                Callouts & Prompts
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="callouts"  class="hidden">
+                                                            <li >
+                                    <a href=".././callouts/messages.html">Messages </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/notifications.html">Notifications <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/tips.html">Tips <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././callouts/modals.html">Modal windows <span class="fl-r cp">JS</span> </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <a href="#modifiers" data-tc-modules="toggle">
+                                Modifiers
+                                                                    <i class="icon-angle-down fl-r"></i>
+                                                            </a>
+                                                        <ul id="modifiers"  class="hidden">
+                                                            <li >
+                                    <a href=".././modifiers/colors.html">Colors </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/fonts.html">Font sizes </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/text.html">Text align & decoration </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/margin-padding.html">Margins & Paddings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/measures.html">Measures </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././modifiers/borders.html">Borders </a>
+                                </li>
+                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            </div>
+    <div class="col-4-5">
+            <h1><span class="label-js fz-xl va-m">JS</span> Global Settings</h1>
+    <p> The Global Settings are the Vars you need to personalize for each project.
+        Most of them are Paths to found files but there are also some general options. This is because core.js will access them, but it's not necessary to define them because all they have default values</p>
+    <p class="msg-warning">        <strong>You must declare them before the inclusion of the "core.js" file</strong> between script tags in your head.</p>
+    <p>These are the settings you can personalize and the default values:</p>
+    <pre><code data-tc-modules="code">var oGlobalSettings = {
+    // Defines the path of the Javascript
+    sPathJs : '/js/',
+
+    // Defines the path of the Javascript Core path (Where the core.js can be found)
+    sPathJsCore: oGlobalSettings.sPathJs + '../../',
+
+    // Defines the path where the Javascript Modules can be found
+    sPathJsModules : oGlobalSettings.sPathJs + 'modules',
+
+    // Defines the path where the Javascript Libs can be found
+    sPathJsLibs : oGlobalSettings.sPathJs + '../../',
+
+    // Defines the path where the CSS files can be found
+    sPathCss: './css/',
+
+    // Defines the path where the ui.css file can be found
+    sPathCssUi: oGlobalSettings.sPathCss + 'ui.css',
+
+    // Sends google analytics a call to get starts of calls an executions of the modules
+    bTrackModules: false,
+
+    // Defines the hash used to call all the static files ( example.js?v=). This is to avoid browser cache. The ideal is to update this number each deploy you do.
+    sHash: '1',
+
+    // Add or overwrite definitions to the RequireJS modules config. You can for example concatenate modals and tips and define modals and tips as a same file to avoid too many http requests.
+    oPaths: {},
+
+    // Set this to force always the mobile or desktop Javascript mode
+    sDevice: isMobile.any() ? 'mobile' : 'desktop',
+
+    // Activate or deactivate the responsive images module
+    bResponsiveImages: true,
+}</code></pre>
+    </div>
+</div>
+<footer class="footer box-primary">
+    <div class="col-2-4">
+        <h3 class="fw-n">About us</h3>
+        <p>FrontendCore comes form the experience of <a href="https://twitter.com/tonipinel" target="_blank" class="td-u fw-b">Toni Pinel</a>. He was working as Principal Frontend Engineer at <a href="https://www.softonic.com" target="_blank" class="td-u">www.Softonic.com</a> & <a href="https://www.obolog.com" target="_blank" class="td-u">www.obolog.com</a>. Is based in the knowledge and the needs to create high quality code and be the more agile possible.</p>
+        <p>Be free to contribute to the project, any ideas or developments should be welcome!</p>
+    </div>
+</footer>
+</body>
+</html>

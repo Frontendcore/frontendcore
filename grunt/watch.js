@@ -1,7 +1,11 @@
 module.exports = {
+	scripts_newer: {
+		files: ['js/ui/**/*.js', 'Gruntfile.js'],
+			tasks: ['js_newer']
+	},
 	scripts: {
-		files: ['js/core/**/*.js','js/base/**/*.js', 'js/ui/**/*.js', 'js/libs/**/*.js', 'Gruntfile.js'],
-			tasks: ['js']
+		files: ['js/core/**/*.js','js/tools/**/*.js','js/base/**/*.js', 'js/libs/**/*.js'],
+		tasks: ['js']
 	},
 	tests: {
 		files: ['tests/**/*.js'],

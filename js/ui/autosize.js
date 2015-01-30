@@ -1,18 +1,15 @@
-TinyCore.AMD.define('autosize', ['devicePackage'], function () {
+TinyCore.AMD.define('autosize', [], function () {
 	return {
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('autosize'),
+			var aTargets = oTools.getDataModules('autosize'),
 				self = this;
 
-			FC.trackEvent('JS_Libraries', 'call', 'autosize' );
+			oTools.trackModule('JS_Libraries', 'call', 'autosize' );
 
-			require(['autosizeLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
+			$(aTargets).each(function () {
+				self.autobind(this);
 			});
-
 
 		},
 		autobind: function (oTarget, sData) {

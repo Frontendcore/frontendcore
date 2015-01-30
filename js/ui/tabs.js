@@ -1,13 +1,13 @@
-TinyCore.AMD.define('tabs', ['devicePackage'] , function () {
+TinyCore.AMD.define('tabs', [] , function () {
 	return {
 		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		onStart: function () {
 
 			var aTarget = document.querySelectorAll('[data-tc-modules="tabs"]');
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'tabs' );
+			oTools.trackModule('JS_Libraries', 'call', 'tabs' );
 
 			this.autobind(aTarget);
 

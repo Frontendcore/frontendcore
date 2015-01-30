@@ -3,14 +3,14 @@ var pkg = require('../package.json');
 module.exports = {
 		scss: {
 			options: {
-				cwd: "css/core/",
+				cwd: "./../scss/",
 				tag: pkg.version,
 				message: "Tag version " + pkg.version
 			}
 		},
 		js: {
 			options: {
-				cwd: "build/static/js",
+				cwd: "./../js/",
 				tag: pkg.version,
 				message: "Tag version " + pkg.version
 			}

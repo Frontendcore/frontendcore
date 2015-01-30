@@ -1,11 +1,11 @@
-TinyCore.AMD.define('center-box', ['devicePackage'], function () {
+TinyCore.AMD.define('center-box', [], function () {
 	return {
 		onStart: function ( ) {
 
-			var aTargets = FC.getDataModules('center-box'),
+			var aTargets = oTools.getDataModules('center-box'),
                 self = this;
 
-			FC.trackEvent('JS_Libraries', 'call', 'center-box' );
+			oTools.trackModule('JS_Libraries', 'call', 'center-box' );
 
 			self.setPosition(aTargets);
 

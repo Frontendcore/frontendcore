@@ -1,4 +1,4 @@
-TinyCore.AMD.define('toggle', ['devicePackage'], function () {
+TinyCore.AMD.define('toggle', [], function () {
 	return {
 		aAnimations: ['flash','bounce','shake','tada','pulse','rubberband','fade','swing','tada','wobble','flip','rotate','slide','hinge','roll'],
 		aVariations: [
@@ -8,7 +8,7 @@ TinyCore.AMD.define('toggle', ['devicePackage'], function () {
 		],
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('toggle'),
+			var aTargets = oTools.getDataModules('toggle'),
 				self = this;
 
 			$(aTargets).each(function () {
@@ -30,7 +30,7 @@ TinyCore.AMD.define('toggle', ['devicePackage'], function () {
 
 			});
 
-            FC.trackEvent('JS_Libraries', 'call', 'toggle');
+            oTools.trackModule('JS_Libraries', 'call', 'toggle');
 
 		},
 		getOpositeAnimation: function (sClass) {

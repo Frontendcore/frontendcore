@@ -1,4 +1,4 @@
-TinyCore.AMD.define('truncate', ['devicePackage'], function () {
+TinyCore.AMD.define('truncate', [], function () {
 	return {
 		oDefault: {
 			max_length: 100,
@@ -10,11 +10,9 @@ TinyCore.AMD.define('truncate', ['devicePackage'], function () {
 			var aTarget = document.querySelectorAll('[data-tc-modules="truncate"]'),
                 self = this;
 
-			FC.trackEvent('JS_Libraries', 'call', 'truncate' );
+			oTools.trackModule('JS_Libraries', 'call', 'truncate' );
 
-            require(['truncateLibs'], function() {
-                self.autobind(aTarget);
-            });
+			self.autobind(aTarget);
 
 		},
 		autobind: function (aTargets) {
@@ -38,7 +36,7 @@ TinyCore.AMD.define('truncate', ['devicePackage'], function () {
 					oOptions.less = this.getAttribute("data-tc-less");
 				}
 
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 				$(this).truncate(oSettings);
 

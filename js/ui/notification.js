@@ -1,16 +1,18 @@
-TinyCore.AMD.define('notification', ['devicePackage'], function () {
+TinyCore.AMD.define('notification', [], function () {
 	return {
-		mediator :  TinyCore.Toolbox.request( 'mediator' ),
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		bMessageCreated : false,
 		oTimer: null,
 		onStart: function ( ) {
 
-			var aTargets = FC.getDataModules('notification'),
+			var aTargets = oTools.getDataModules('notification'),
                 self = this,
 				oTarget,
 				sEvent;
 
-			FC.trackEvent('JS_Libraries', 'call', 'notification' );
+			oTools.trackModule('JS_Libraries', 'call', 'notification' );
+
+			oTools.loadCSS(this.sPathCss);
 
 			$(aTargets).each(function () {
 

@@ -1,7 +1,7 @@
 module.exports = {
 		scss: {
 			options: {
-				cwd: "css/core/",
+				cwd: "./../scss",
 				remote: "origin",
 				branch: "master",
 				tags: true
@@ -9,7 +9,7 @@ module.exports = {
 		},
 		js: {
 			options: {
-				cwd: "build/static/js/",
+				cwd: "./../js",
 				remote: "origin",
 				branch: "master",
 				tags: true

@@ -1,6 +1,6 @@
-TinyCore.AMD.define('stats', ['devicePackage'], function () {
+TinyCore.AMD.define('stats', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'stats.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			type: 'bar',
 			table: 'modal',
@@ -13,13 +13,11 @@ TinyCore.AMD.define('stats', ['devicePackage'], function () {
 			var aTargets = document.querySelectorAll('[data-tc-modules="stats"]'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'graph' );
+			oTools.trackModule('JS_Libraries', 'call', 'graph' );
 
-			require(['statsLibs'], function() {
-				self.autobind(aTargets);
-			});
+			self.autobind(aTargets);
 		},
 		autobind: function (aTargets) {
 
@@ -61,7 +59,7 @@ TinyCore.AMD.define('stats', ['devicePackage'], function () {
 					this.style.display = 'none';
 				}
 
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 				if (sTable === 'down') {
 					$(this).visualize(oSettings).insertBefore(this);

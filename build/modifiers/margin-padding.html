@@ -29,9 +29,7 @@
             sPathJsCore: '.././',
             sPathJsModules : '.././static/js/modules/',
             sPathJsLibs : '.././static/js/libs/',
-            sPathRoot: '.././static/',
             sPathCss: '.././static/css/',
-            bCss : false,
             bResponsiveImages: true
         }
     </script>
@@ -44,7 +42,7 @@
         <div class="col-2-3">
             <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="../index.html" class="logo va-m"><img src=".././static/img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.17</span></a>
+            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.4</span></a>
         </div>
         <div class="col-1-3 desktop">
             <gcse:search></gcse:search>
@@ -107,6 +105,12 @@
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
                                                         <ul id="architecture-js"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture-js/global-settings.html">Global Settings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-js/tools.html">Tools </a>
+                                </li>
                                                             <li >
                                     <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
                                 </li>
@@ -389,164 +393,167 @@ l = large ( $spacing )<br />
 xl = extra large ( $spacing*2 )<br />
 </p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code"><br />
 <br />
-.pt-n, .pv-n, .pa-n {<br />
-	padding-top: 0 !important;<br />
-}<br />
+@if $ui != true {<br />
 <br />
-.pt-s, .pv-s, .pa-s {<br />
-	padding-top: $spacing/4 !important;<br />
-}<br />
+	.pt-n, .pv-n, .pa-n {<br />
+		padding-top: 0 !important;<br />
+	}<br />
 <br />
-.pt-m, .pv-m, .pa-m {<br />
-	padding-top: $spacing/2 !important;<br />
-}<br />
+	.pt-s, .pv-s, .pa-s {<br />
+		padding-top: $spacing/4 !important;<br />
+	}<br />
 <br />
-.pt-l, .pv-l, .pa-l {<br />
-	padding-top: $spacing !important;<br />
-}<br />
+	.pt-m, .pv-m, .pa-m {<br />
+		padding-top: $spacing/2 !important;<br />
+	}<br />
 <br />
-.pt-xl, .pv-xl, .pa-xl {<br />
-	padding-top: $spacing*2 !important;<br />
-}<br />
+	.pt-l, .pv-l, .pa-l {<br />
+		padding-top: $spacing !important;<br />
+	}<br />
 <br />
-.pr-n, .ph-n, .pa-n {<br />
-	padding-right: 0 !important;<br />
-}<br />
+	.pt-xl, .pv-xl, .pa-xl {<br />
+		padding-top: $spacing*2 !important;<br />
+	}<br />
 <br />
-.pr-s, .phs, .pa-s {<br />
-	padding-right: $spacing/4 !important;<br />
-}<br />
+	.pr-n, .ph-n, .pa-n {<br />
+		padding-right: 0 !important;<br />
+	}<br />
 <br />
-.pr-m, .ph-m, .pa-m {<br />
-	padding-right: $spacing/2 !important;<br />
-}<br />
+	.pr-s, .phs, .pa-s {<br />
+		padding-right: $spacing/4 !important;<br />
+	}<br />
 <br />
-.pr-l, .ph-l, .pa-l {<br />
-	padding-right: $spacing !important;<br />
-}<br />
+	.pr-m, .ph-m, .pa-m {<br />
+		padding-right: $spacing/2 !important;<br />
+	}<br />
 <br />
-.pr-xl, .ph-xl, .pa-xl {<br />
-	padding-right: $spacing*2 !important;<br />
-}<br />
+	.pr-l, .ph-l, .pa-l {<br />
+		padding-right: $spacing !important;<br />
+	}<br />
 <br />
-.pb-n, .pv-n, .pa-n {<br />
-	padding-bottom: 0 !important;<br />
-}<br />
+	.pr-xl, .ph-xl, .pa-xl {<br />
+		padding-right: $spacing*2 !important;<br />
+	}<br />
 <br />
-.pb-s, .pv-s, .pa-s {<br />
-	padding-bottom: $spacing/4 !important;<br />
-}<br />
+	.pb-n, .pv-n, .pa-n {<br />
+		padding-bottom: 0 !important;<br />
+	}<br />
 <br />
-.pb-m, .pv-m, .pa-m {<br />
-	padding-bottom: $spacing/2 !important;<br />
-}<br />
+	.pb-s, .pv-s, .pa-s {<br />
+		padding-bottom: $spacing/4 !important;<br />
+	}<br />
 <br />
-.pb-l, .pv-l, .pa-l {<br />
-	padding-bottom: $spacing !important;<br />
-}<br />
+	.pb-m, .pv-m, .pa-m {<br />
+		padding-bottom: $spacing/2 !important;<br />
+	}<br />
 <br />
-.pb-xl, .pv-xl, .pa-xl {<br />
-	padding-bottom: $spacing*2 !important;<br />
-}<br />
+	.pb-l, .pv-l, .pa-l {<br />
+		padding-bottom: $spacing !important;<br />
+	}<br />
 <br />
-.pl-n, .ph-n, .pa-n {<br />
-	padding-left: 0 !important;<br />
-}<br />
+	.pb-xl, .pv-xl, .pa-xl {<br />
+		padding-bottom: $spacing*2 !important;<br />
+	}<br />
 <br />
-.pl-s, .ph-s, .pa-s {<br />
-	padding-left: $spacing/4 !important;<br />
-}<br />
+	.pl-n, .ph-n, .pa-n {<br />
+		padding-left: 0 !important;<br />
+	}<br />
 <br />
-.pl-m, .ph-m, .pa-m {<br />
-	padding-left: $spacing/2 !important;<br />
-}<br />
+	.pl-s, .ph-s, .pa-s {<br />
+		padding-left: $spacing/4 !important;<br />
+	}<br />
 <br />
-.pl-l, .ph-l, .pa-l {<br />
-	padding-left: $spacing !important;<br />
-}<br />
+	.pl-m, .ph-m, .pa-m {<br />
+		padding-left: $spacing/2 !important;<br />
+	}<br />
 <br />
-.pl-xl, .ph-xl, .pa-xl {<br />
-	padding-left: $spacing*2 !important;<br />
-}<br />
+	.pl-l, .ph-l, .pa-l {<br />
+		padding-left: $spacing !important;<br />
+	}<br />
 <br />
-.mt-n, .mv-n, .ma-n {<br />
-	margin-top: 0 !important;<br />
-}<br />
+	.pl-xl, .ph-xl, .pa-xl {<br />
+		padding-left: $spacing*2 !important;<br />
+	}<br />
 <br />
-.mt-s, .mv-s, .ma-s {<br />
-	margin-top: $spacing/4 !important;<br />
-}<br />
+	.mt-n, .mv-n, .ma-n {<br />
+		margin-top: 0 !important;<br />
+	}<br />
 <br />
-.mt-m, .mv-m, .ma-m {<br />
-	margin-top: $spacing/2 !important;<br />
-}<br />
+	.mt-s, .mv-s, .ma-s {<br />
+		margin-top: $spacing/4 !important;<br />
+	}<br />
 <br />
-.mt-l, .mv-l, .ma-l {<br />
-	margin-top: $spacing !important;<br />
-}<br />
+	.mt-m, .mv-m, .ma-m {<br />
+		margin-top: $spacing/2 !important;<br />
+	}<br />
 <br />
-.mt-xl, .mv-xl, .ma-xl {<br />
-	margin-top: $spacing*2 !important;<br />
-}<br />
+	.mt-l, .mv-l, .ma-l {<br />
+		margin-top: $spacing !important;<br />
+	}<br />
 <br />
-.mr-n, .mh-n, .ma-n {<br />
-	margin-right: 0 !important;<br />
-}<br />
+	.mt-xl, .mv-xl, .ma-xl {<br />
+		margin-top: $spacing*2 !important;<br />
+	}<br />
 <br />
-.mr-s, .mh-s, .ma-s {<br />
-	margin-right: $spacing/4 !important;<br />
-}<br />
+	.mr-n, .mh-n, .ma-n {<br />
+		margin-right: 0 !important;<br />
+	}<br />
 <br />
-.mr-m, .mh-m, .ma-m {<br />
-	margin-right: $spacing/2 !important;<br />
-}<br />
+	.mr-s, .mh-s, .ma-s {<br />
+		margin-right: $spacing/4 !important;<br />
+	}<br />
 <br />
-.mr-l, .mh-l, .ma-l {<br />
-	margin-right: $spacing !important;<br />
-}<br />
+	.mr-m, .mh-m, .ma-m {<br />
+		margin-right: $spacing/2 !important;<br />
+	}<br />
 <br />
-.mr-xl, .mh-xl, .ma-xl {<br />
-	margin-right: $spacing*2 !important;<br />
-}<br />
+	.mr-l, .mh-l, .ma-l {<br />
+		margin-right: $spacing !important;<br />
+	}<br />
 <br />
-.mb-n, .mv-n, .ma-n {<br />
-	margin-bottom: 0 !important;<br />
-}<br />
+	.mr-xl, .mh-xl, .ma-xl {<br />
+		margin-right: $spacing*2 !important;<br />
+	}<br />
 <br />
-.mb-s, .mv-s, .ma-s {<br />
-	margin-bottom: $spacing/4 !important;<br />
-}<br />
+	.mb-n, .mv-n, .ma-n {<br />
+		margin-bottom: 0 !important;<br />
+	}<br />
 <br />
-.mb-m, .mv-m, .ma-m {<br />
-	margin-bottom: $spacing/2 !important;<br />
-}<br />
+	.mb-s, .mv-s, .ma-s {<br />
+		margin-bottom: $spacing/4 !important;<br />
+	}<br />
 <br />
-.mb-l, .mv-l, .ma-l {<br />
-	margin-bottom: $spacing !important;<br />
-}<br />
+	.mb-m, .mv-m, .ma-m {<br />
+		margin-bottom: $spacing/2 !important;<br />
+	}<br />
 <br />
-.mb-xl, .mv-xl, .ma-xl {<br />
-	margin-bottom: $spacing*2 !important;<br />
-}<br />
+	.mb-l, .mv-l, .ma-l {<br />
+		margin-bottom: $spacing !important;<br />
+	}<br />
 <br />
-.ml-n, .mh-n, .ma-n {<br />
-	margin-left: 0 !important;<br />
-}<br />
+	.mb-xl, .mv-xl, .ma-xl {<br />
+		margin-bottom: $spacing*2 !important;<br />
+	}<br />
 <br />
-.ml-s, .mh-s, .ma-s {<br />
-	margin-left: $spacing/4 !important;<br />
-}<br />
+	.ml-n, .mh-n, .ma-n {<br />
+		margin-left: 0 !important;<br />
+	}<br />
 <br />
-.ml-m, .mh-m, .ma-m {<br />
-	margin-left: $spacing/2 !important;<br />
-}<br />
+	.ml-s, .mh-s, .ma-s {<br />
+		margin-left: $spacing/4 !important;<br />
+	}<br />
 <br />
-.ml-l, .mh-l, .ma-l {<br />
-	margin-left: $spacing !important;<br />
-}<br />
+	.ml-m, .mh-m, .ma-m {<br />
+		margin-left: $spacing/2 !important;<br />
+	}<br />
 <br />
-.ml-xl, .mh-xl, .ma-xl {<br />
-	margin-left: $spacing*2 !important;<br />
+	.ml-l, .mh-l, .ma-l {<br />
+		margin-left: $spacing !important;<br />
+	}<br />
+<br />
+	.ml-xl, .mh-xl, .ma-xl {<br />
+		margin-left: $spacing*2 !important;<br />
+	}<br />
 }</pre></code></div>
         </section>
         <section id="tab-0" data-tc-name="Demo">

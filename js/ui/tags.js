@@ -1,6 +1,6 @@
-TinyCore.AMD.define('tags', ['devicePackage'], function () {
+TinyCore.AMD.define('tags', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'tags.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			asHtmlID: false,
 			startText: "Add a tag...",
@@ -26,13 +26,11 @@ TinyCore.AMD.define('tags', ['devicePackage'], function () {
 			var aTarget = document.querySelectorAll('[data-tc-modules="tags"]'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'tags' );
+			oTools.trackModule('JS_Libraries', 'call', 'tags' );
 
-			require(['tagsLibs'], function() {
-				self.autobind(aTarget);
-			});
+			self.autobind(aTarget);
 
 		},
 		autobind: function (aTargets) {
@@ -101,7 +99,7 @@ TinyCore.AMD.define('tags', ['devicePackage'], function () {
 					};
 				}
 
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 				$(oTarget).autoSuggest(aData, oSettings).removeAttr('name');
 

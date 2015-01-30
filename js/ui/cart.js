@@ -1,6 +1,6 @@
-TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
+TinyCore.AMD.define('cart', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'cart.css',
+        sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
             cartColumns: [
                 { view: function(item, column){
@@ -29,13 +29,13 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
 		onStart: function () {
 
 			var self = this,
-                aTargets = FC.getDataModules('cart'),
+                aTargets = oTools.getDataModules('cart'),
                 oSettings = {},
                 oOptions = {},
                 aClasses = ['cart-checkout','cart-empty','cart-items','cart-total','cart-quantity','cart-tax','cart-tax-rate','cart-shipping','cart-grand-total','cart-shelf-item','cart-item-name','cart-item-price','cart-item-add','cart-item-quantity'],
                 aSimpleClasses = ['simpleCart_checkout','simpleCart_empty','simpleCart_items','simpleCart_total','simpleCart_quantity','simpleCart_tax','simpleCart_taxRate','simpleCart_shipping','simpleCart_grandTotal','simpleCart_shelfItem','item_name','item_price','item_add','item_Quantity'];
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
             for( nKey = 0; nKey < aClasses.length; nKey++ ) {
                 self.prepareBind( aClasses[nKey], aSimpleClasses[nKey] );
@@ -82,13 +82,13 @@ TinyCore.AMD.define('cart', ['devicePackage','cartLibs'], function () {
 
             });
 
-            oSettings = FC.mixOptions(oOptions, self.oDefault);
+            oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
             simpleCart(oSettings);
 
             simpleCart.init();
 
-            FC.trackEvent('JS_Libraries', 'call', 'autocomplete' );
+            oTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
 
 
 		},

@@ -1,6 +1,6 @@
-TinyCore.AMD.define('table', ['devicePackage'], function () {
+TinyCore.AMD.define('table', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'table.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			features: {
 				paginate: true,
@@ -52,17 +52,15 @@ TinyCore.AMD.define('table', ['devicePackage'], function () {
 		},
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('table'),
+			var aTargets = oTools.getDataModules('table'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'table' );
+			oTools.trackModule('JS_Libraries', 'call', 'table' );
 
-			require(['tableLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
+			$(aTargets).each(function () {
+				self.autobind(this);
 			});
 		},
 		autobind: function (oTarget, sData) {

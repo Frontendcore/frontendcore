@@ -6,7 +6,7 @@ module.exports =  {
 	},
 	scss: {
 		options: {
-			cwd: "css/core/"
+			cwd: "./../scss/"
 		},
 		files: {
 			src: ["./"]
@@ -14,7 +14,7 @@ module.exports =  {
 	},
 	js: {
 		options: {
-			cwd: "build/static/js/"
+			cwd: "./../js/"
 		},
 		files: {
 			src: ["./"]

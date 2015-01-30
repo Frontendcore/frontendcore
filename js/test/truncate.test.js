@@ -19,8 +19,8 @@ describe('truncate', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( FC, 'getDataModules');
-			spyOn( FC, 'trackEvent');
+			spyOn( oTools, 'getDataModules');
+			spyOn( oTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -29,8 +29,8 @@ describe('truncate', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call FC.trackEvent with "JS_Libraries", "call", "truncate"', function( done ) {
-			expect(FC.trackEvent).toHaveBeenCalledWith('JS_Libraries', 'call', 'truncate' );
+		it('should call oTools.trackModule with "JS_Libraries", "call", "truncate"', function( done ) {
+			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'truncate' );
 		});
 
 	});

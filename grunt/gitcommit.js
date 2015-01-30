@@ -7,7 +7,7 @@ module.exports =  {
 	},
 	scss: {
 		options: {
-			cwd: "css/core/",
+			cwd: "./../scss/",
 			message: pkg.lastFeature + " v" + pkg.version
 		},
 		files: [
@@ -19,7 +19,7 @@ module.exports =  {
 	},
 	js: {
 		options: {
-			cwd: "build/static/js/",
+			cwd: "./../js/",
 			message: pkg.lastFeature + " v" + pkg.version
 		},
 		files: [

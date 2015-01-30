@@ -29,9 +29,7 @@
             sPathJsCore: '.././',
             sPathJsModules : '.././static/js/modules/',
             sPathJsLibs : '.././static/js/libs/',
-            sPathRoot: '.././static/',
             sPathCss: '.././static/css/',
-            bCss : false,
             bResponsiveImages: true
         }
     </script>
@@ -44,7 +42,7 @@
         <div class="col-2-3">
             <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="../index.html" class="logo va-m"><img src=".././static/img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.17</span></a>
+            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.4</span></a>
         </div>
         <div class="col-1-3 desktop">
             <gcse:search></gcse:search>
@@ -107,6 +105,12 @@
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
                                                         <ul id="architecture-js"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture-js/global-settings.html">Global Settings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-js/tools.html">Tools </a>
+                                </li>
                                                             <li >
                                     <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
                                 </li>
@@ -388,77 +392,99 @@ fz-h1<br />
 	}<br />
 }<br />
 <br />
-h1, .fz-h1 {<br />
+%fz-h1 {<br />
 	@include rem-fallback(font-size, $font-size-xxl*$font-title-exponential, true);<br />
 	@extend %title;<br />
 }<br />
 <br />
-h2, .fz-h2 {<br />
+%fz-h2 {<br />
 	@include rem-fallback(font-size, $font-size-xl*$font-title-exponential, true);<br />
 	@extend %title;<br />
 }<br />
 <br />
-h3, .fz-h3 {<br />
+%fz-h3 {<br />
 	@include rem-fallback(font-size, $font-size-l*$font-title-exponential, true);<br />
 	@extend %title;<br />
 }<br />
 <br />
-h4, .fz-h4 {<br />
+%fz-h4 {<br />
 	@include rem-fallback(font-size, $font-size-ml*$font-title-exponential, true);<br />
 	@extend %title;<br />
 }<br />
 <br />
-h5, .fz-h5 {<br />
+%fz-h5 {<br />
 	@include rem-fallback(font-size, $font-size-m*$font-title-exponential, true);<br />
 	@extend %title;<br />
 }<br />
+@if $ui != true {<br />
 <br />
-.fz-xxxl {<br />
-	@include rem-fallback(font-size, $font-size-xxxl, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	h1, .fz-h1 {<br />
+		@extend %fz-h1;<br />
+	}<br />
 <br />
-.fz-xxl {<br />
-	@include rem-fallback(font-size, $font-size-xxl, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	h2, .fz-h2 {<br />
+		@extend %fz-h2;<br />
+	}<br />
 <br />
-.fz-xl {<br />
-	@include rem-fallback(font-size, $font-size-xl, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	h3, .fz-h3 {<br />
+		@extend %fz-h3;<br />
+	}<br />
 <br />
-.fz-l {<br />
-	@include rem-fallback(font-size, $font-size-l, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	h4, .fz-h4 {<br />
+		@extend %fz-h4;<br />
+	}<br />
 <br />
-.fz-m {<br />
-	@include rem-fallback(font-size, $font-size-m, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	h5, .fz-h5 {<br />
+		@extend %fz-h5;<br />
+	}<br />
 <br />
-.fz-default {<br />
-	@include rem-fallback(font-size, $font-size-default, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	.fz-xxxl {<br />
+		@include rem-fallback(font-size, $font-size-xxxl, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
 <br />
-.fz-s {<br />
-	@include rem-fallback(font-size, $font-size-xs, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	.fz-xxl {<br />
+		@include rem-fallback(font-size, $font-size-xxl, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
 <br />
-.fz-xs {<br />
-	@include rem-fallback(font-size, $font-size-xxs, true);<br />
-	line-height: $base-line-height;<br />
-}<br />
+	.fz-xl {<br />
+		@include rem-fallback(font-size, $font-size-xl, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
 <br />
-.fw-n {<br />
-	font-weight: normal;<br />
-}<br />
+	.fz-l {<br />
+		@include rem-fallback(font-size, $font-size-l, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
 <br />
-.fw-b {<br />
-	font-weight: bold;<br />
+	.fz-m {<br />
+		@include rem-fallback(font-size, $font-size-m, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
+<br />
+	.fz-default {<br />
+		@include rem-fallback(font-size, $font-size-default, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
+<br />
+	.fz-s {<br />
+		@include rem-fallback(font-size, $font-size-xs, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
+<br />
+	.fz-xs {<br />
+		@include rem-fallback(font-size, $font-size-xxs, true);<br />
+		line-height: $base-line-height;<br />
+	}<br />
+<br />
+	.fw-n {<br />
+		font-weight: normal;<br />
+	}<br />
+<br />
+	.fw-b {<br />
+		font-weight: bold;<br />
+	}<br />
 }</pre></code></div>
         </section>
         <section id="tab-0" data-tc-name="Demo">

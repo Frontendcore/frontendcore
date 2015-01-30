@@ -29,9 +29,7 @@
             sPathJsCore: '.././',
             sPathJsModules : '.././static/js/modules/',
             sPathJsLibs : '.././static/js/libs/',
-            sPathRoot: '.././static/',
             sPathCss: '.././static/css/',
-            bCss : false,
             bResponsiveImages: true
         }
     </script>
@@ -44,7 +42,7 @@
         <div class="col-2-3">
             <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="../index.html" class="logo va-m"><img src=".././static/img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.3.17</span></a>
+            <a href="https://github.com/tonipinel/frontendcore" class="button-ok d-ib icon-github va-m mt-m desktop" target="_blank">Download & Installation &nbsp;&nbsp;<span class="fz-default fw-n">v. 1.4</span></a>
         </div>
         <div class="col-1-3 desktop">
             <gcse:search></gcse:search>
@@ -107,6 +105,12 @@
                                                                     <i class="icon-angle-down fl-r"></i>
                                                             </a>
                                                         <ul id="architecture-js"  class="hidden">
+                                                            <li >
+                                    <a href=".././architecture-js/global-settings.html">Global Settings </a>
+                                </li>
+                                                            <li >
+                                    <a href=".././architecture-js/tools.html">Tools </a>
+                                </li>
                                                             <li >
                                     <a href=".././architecture-js/mediator.html">Module communication (Mediator) </a>
                                 </li>
@@ -355,11 +359,11 @@
             <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Sortable Lists</h1>
     <section class="box-lighten">
         <h2>Nested Lists</h2>
-        <p>Drag & Drop sortable lists and allow you to order as parent or children up 2 levels</p>
+        <p>Drag & Drop nestable lists. This is very useful to order categories for example.</p>
                                     <div data-tc-modules="tabs">
-                <section id="tab-sortable-categories-1" data-tc-name="Demo">
+                <section id="tab-sortable-nested-1" data-tc-name="Demo">
             <div class="box-background" >
-                                                <ol id="item" data-tc-modules="sortable" data-tc-type="nested" data-tc-output="json">
+                                                <ol id="item" class="js-sortable" data-tc-modules="sortable" data-tc-url="#" data-tc-type="nested" data-tc-output="json" data-tc-depth="2">
 	<li data-tc-id="0" data-tc-name="Item 1">
 		Item 1
 	</li>
@@ -379,7 +383,6 @@
 	</li>
 	<li data-tc-id="3" data-tc-name="Item 4">
 		Item 4
-
 	</li>
 	<li data-tc-id="4" data-tc-name="Item 5">
 		Item 5
@@ -389,10 +392,10 @@
 	</li>
 </ol>                                            </div>
         </section>
-                <section id="tab-sortable-categories-2" data-tc-name="Code">
+                <section id="tab-sortable-nested-2" data-tc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">&lt;ol id=&quot;item&quot; data-tc-modules=&quot;sortable&quot; data-tc-type=&quot;nested&quot; data-tc-output=&quot;json&quot;&gt;
+	                <code data-tc-modules="code">&lt;ol id=&quot;item&quot; class=&quot;js-sortable&quot; data-tc-modules=&quot;sortable&quot; data-tc-url=&quot;#&quot; data-tc-type=&quot;nested&quot; data-tc-output=&quot;json&quot; data-tc-depth=&quot;2&quot;&gt;
 	&lt;li data-tc-id=&quot;0&quot; data-tc-name=&quot;Item 1&quot;&gt;
 		Item 1
 	&lt;/li&gt;
@@ -412,7 +415,6 @@
 	&lt;/li&gt;
 	&lt;li data-tc-id=&quot;3&quot; data-tc-name=&quot;Item 4&quot;&gt;
 		Item 4
-
 	&lt;/li&gt;
 	&lt;li data-tc-id=&quot;4&quot; data-tc-name=&quot;Item 5&quot;&gt;
 		Item 5
@@ -487,8 +489,6 @@
                     </div>
 
     </section>
-
-
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">

@@ -1,6 +1,7 @@
 
-TinyCore.AMD.define('sortable', ['devicePackage'], function () {
+TinyCore.AMD.define('sortable', [], function () {
 	return {
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		sInput : null,
 		oTarget : [],
 		delay: 500,
@@ -121,8 +122,6 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 
 					nDepth = $( this ,"#" + oTarget.id).parents("ol").length;
 
-					console.log(nDepth + '...' + nTotalDepth);
-
 					if ( nDepth >= nTotalDepth ) {
 
 						$('ol', this).css({
@@ -156,12 +155,12 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 			var aTargets = document.querySelectorAll('[data-tc-modules="sortable"]'),
 				self = this;
 
-			FC.trackEvent('JS_Libraries', 'call', 'sortable' );
+			oTools.trackModule('JS_Libraries', 'call', 'sortable' );
 
-			require(['sortableLibs'], function() {
-				$(aTargets).each(function ( index) {
-					self.autobind(this, index);
-				});
+			oTools.loadCSS(this.sPathCss);
+
+			$(aTargets).each(function ( index) {
+				self.autobind(this, index);
 			});
 		},
 		arraylize : function( oTarget ) {
@@ -246,7 +245,7 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 			}
 
 			if (oTarget.getAttribute("data-tc-type") === 'nested') {
-				$(oTarget).addClass('sortable');
+				$(oTarget).addClass('js-sortable');
 				oOptions.nested = true;
 			}
 
@@ -267,7 +266,7 @@ TinyCore.AMD.define('sortable', ['devicePackage'], function () {
 				oOptions.handle = oTarget.getAttribute("data-tc-handle");
 			}
 
-			oSettings = FC.mixOptions(oOptions, self.oDefault);
+			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 			self.oTarget[index] = $(oTarget).sortable(oSettings);
 		}

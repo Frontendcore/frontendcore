@@ -42,6 +42,14 @@
       "href": "#architecture-js",
       "id": "architecture-js",
       "children": {
+        "globalSettings": {
+          "name": "Global Settings",
+          "href": "global-settings.html"
+        },
+        "toolBox": {
+          "name": "Tools",
+          "href": "tools.html"
+        },
         "Mediator": {
           "name": "Module communication (Mediator)",
           "href": "mediator.html"

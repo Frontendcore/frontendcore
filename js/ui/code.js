@@ -1,19 +1,17 @@
-TinyCore.AMD.define('code', ['devicePackage'], function (utils) {
+TinyCore.AMD.define('code', [], function (utils) {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'code.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		onStart: function ( ) {
 
-			var aTargets = FC.getDataModules('code'),
+			var aTargets = oTools.getDataModules('code'),
                 self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'code' );
+			oTools.trackModule('JS_Libraries', 'call', 'code' );
 
-            require(['codeLibs'], function() {
-                $(aTargets).each(function () {
-                    self.autobind(this);
-                });
+            $(aTargets).each(function () {
+                self.autobind(this);
             });
 
 		},

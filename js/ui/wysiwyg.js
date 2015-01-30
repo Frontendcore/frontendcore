@@ -1,6 +1,6 @@
-TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
+TinyCore.AMD.define('wysiwyg', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'wysiwyg.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		bResize : false,
 		_oConstants : {
@@ -25,14 +25,12 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 			var aTargets = document.querySelectorAll('[data-tc-modules="wysiwyg"]'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'wysiwyg' );
+			oTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
 
-			require(['wysiwygLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
+			$(aTargets).each(function () {
+				self.autobind(this);
 			});
 
 			self.fDatePollyfill();
@@ -261,7 +259,7 @@ TinyCore.AMD.define('wysiwyg', ['devicePackage'], function () {
 			}
 
 			// Call the editor with the options
-			oSettings = FC.mixOptions(oOptions, self.oDefault);
+			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 			editor = new Pen(oSettings);
 
 			self.bindForm(sId, oTarget, oText);

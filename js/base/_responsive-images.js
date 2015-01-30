@@ -8,7 +8,7 @@ TinyCore.AMD.define('responsive-images', ['devicePackage'], function () {
 				$("img").unveil(200);
 			});
 
-			FC.trackEvent('JS_Libraries', 'call', 'responsive-images' );
+			oTools.trackEvent('JS_Libraries', 'call', 'responsive-images' );
 		},
 		onStop: function () {
 			this.sPathCss = null;

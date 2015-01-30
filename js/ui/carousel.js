@@ -1,6 +1,6 @@
-TinyCore.AMD.define('carousel', ['devicePackage'], function () {
+TinyCore.AMD.define('carousel', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'carousel.css',
+        sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
             baseClass: 'carousel',
             themeClass: 'carousel-theme',
@@ -21,18 +21,16 @@ TinyCore.AMD.define('carousel', ['devicePackage'], function () {
 		},
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('carousel'),
+			var aTargets = oTools.getDataModules('carousel'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'carousel' );
+			oTools.trackModule('JS_Libraries', 'call', 'carousel' );
 
-			require(['carouselLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
-			});
+            $(aTargets).each(function () {
+                self.autobind(this);
+            });
 
 
 		},
@@ -83,7 +81,7 @@ TinyCore.AMD.define('carousel', ['devicePackage'], function () {
                 };
             }
 
-			oSettings = FC.mixOptions(oOptions, self.oDefault );
+			oSettings = oTools.mergeJSON(oOptions, self.oDefault );
 
 			if ( oSettings !== undefined ){
                 $(oTarget).owlCarousel(oSettings);

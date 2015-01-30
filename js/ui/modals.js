@@ -1,6 +1,6 @@
-TinyCore.AMD.define('modal', ['devicePackage'], function () {
+TinyCore.AMD.define('modal', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			scrolling: true,
 			maxWidth: '100%',
@@ -14,20 +14,17 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 			var aTargets = document.querySelectorAll('[data-tc-modules="modal"]'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'modal' );
+			oTools.trackModule('JS_Libraries', 'call', 'modal' );
 
-			require(['modalLibs'], function() {
-
-				$(document).bind('cbox_open', function() {
-					$('html').css({ overflow: 'hidden' });
-				}).bind('cbox_closed', function() {
-					$('html').css({ overflow: '' });
-				});
-
-				self.autobind(aTargets);
+			$(document).bind('cbox_open', function() {
+				$('html').css({ overflow: 'hidden' });
+			}).bind('cbox_closed', function() {
+				$('html').css({ overflow: '' });
 			});
+
+			self.autobind(aTargets);
 		},
 		autobind: function (aTargets) {
 
@@ -88,7 +85,7 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 					oOptions.height = false;
 				}
 
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 
 				$(this).colorbox(oSettings);
@@ -97,7 +94,7 @@ TinyCore.AMD.define('modal', ['devicePackage'], function () {
 		},
 		open: function (oOptions) {
 			var self = this,
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 			if (oSettings.sUrl !== undefined || oSettings.sUrl !== '#') {
 				$.colorbox(oSettings);

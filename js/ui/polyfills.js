@@ -1,6 +1,6 @@
 var oPolyfills = {};
 
-TinyCore.AMD.define('polyfills', ['devicePackage'] , function () {
+TinyCore.AMD.define('polyfills', [] , function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
 		onStart: function () {
@@ -61,7 +61,7 @@ TinyCore.AMD.define('loadPolyfills', ['polyfillsLibs'], function () {
 
 			$.webshims.polyfill(oPolyfills.shims);
 
-			FC.trackEvent('JS_Libraries', 'call', 'polyfills' );
+			oTools.trackModule('JS_Libraries', 'call', 'polyfills' );
 
 		}
 	};

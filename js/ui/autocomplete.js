@@ -1,22 +1,20 @@
-TinyCore.AMD.define('autocomplete', ['devicePackage'], function () {
+TinyCore.AMD.define('autocomplete', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'autocomplete.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			limit: 12
 		},
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('autocomplete'),
+			var aTargets = oTools.getDataModules('autocomplete'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'autocomplete' );
+			oTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
 
-			require(['autocompleteLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
+			$(aTargets).each(function () {
+				self.autobind(this);
 			});
 		},
 		autobind: function (oTarget, sData) {
@@ -45,7 +43,7 @@ TinyCore.AMD.define('autocomplete', ['devicePackage'], function () {
 
 				}
 
-				oSettings = FC.mixOptions(oOptions, self.oDefault);
+				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 				$Target.autocompleter(oSettings);
 

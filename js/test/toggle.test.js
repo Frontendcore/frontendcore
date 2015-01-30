@@ -21,8 +21,8 @@ describe('toggle', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( FC, 'getDataModules');
-			spyOn( FC, 'trackEvent');
+			spyOn( oTools, 'getDataModules');
+			spyOn( oTools, 'trackModule');
 			oTestedModule.onStart();
 		});
 
@@ -30,8 +30,8 @@ describe('toggle', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call FC.trackEvent with "JS_Libraries", "call", "toggle"', function( done ) {
-			expect(FC.trackEvent).toHaveBeenCalledWith('JS_Libraries', 'call', 'toggle' );
+		it('should call oTools.trackModule with "JS_Libraries", "call", "toggle"', function( done ) {
+			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'toggle' );
 		});
 
 	});

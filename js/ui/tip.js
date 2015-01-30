@@ -1,22 +1,20 @@
-TinyCore.AMD.define('tip', ['devicePackage'], function () {
+TinyCore.AMD.define('tip', [], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'tips.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			fixed: true
 		},
 		onStart: function () {
 
-			var aTargets = FC.getDataModules('tip'),
+			var aTargets = oTools.getDataModules('tip'),
 				self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'tip' );
+			oTools.trackModule('JS_Libraries', 'call', 'tip' );
 
-			require(['tipLibs'], function() {
-				$(aTargets).each(function () {
-					self.autobind(this);
-				});
+			$(aTargets).each(function () {
+				self.autobind(this);
 			});
 
 
@@ -35,7 +33,7 @@ TinyCore.AMD.define('tip', ['devicePackage'], function () {
 				oOptions.content = oTarget.getAttribute("data-tc-content");
 			}
 
-			oSettings = FC.mixOptions(oOptions, self.oDefault);
+			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
 			if ( oSettings.content !== undefined ){
 				new Opentip( oTarget , oSettings.content , oSettings);

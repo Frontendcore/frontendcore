@@ -1,22 +1,20 @@
-TinyCore.AMD.define('sidemenu', ['devicePackage'], function (utils) {
+TinyCore.AMD.define('sidemenu', [], function (utils) {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'sidemenu.css',
+		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			renaming: false
 		},
 		onStart: function ( ) {
 
-            var aTargets = FC.getDataModules('sidemenu'),
+            var aTargets = oTools.getDataModules('sidemenu'),
                 self = this;
 
-			FC.loadCSS(this.sPathCss);
+			oTools.loadCSS(this.sPathCss);
 
-			FC.trackEvent('JS_Libraries', 'call', 'sidemenu' );
+			oTools.trackModule('JS_Libraries', 'call', 'sidemenu' );
 
-            require(['sidemenuLibs'], function() {
-                $(aTargets).each(function () {
-                    self.autobind(this);
-                });
+            $(aTargets).each(function () {
+                self.autobind(this);
             });
 
 		},
@@ -40,7 +38,7 @@ TinyCore.AMD.define('sidemenu', ['devicePackage'], function (utils) {
                 oOptions.name = sHref.split('#')[1] + '-' + new Date().getTime();
             }
 
-            oSettings = FC.mixOptions(oOptions, self.oDefault);
+            oSettings = oTools.mergeJSON(oOptions, self.oDefault);
 
             $(oTarget).sidr(oSettings);
 
