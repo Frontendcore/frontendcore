@@ -1,16 +1,16 @@
 module.exports = {
 	src: [
-		'build/static/js/ui/*.js'
+		'./../site/build/static/js/ui/*.js'
 	],
 	options: {
-		specs: 'build/static/js/test/*.test.js',
+		specs: './../site/build/static/js/test/*.test.js',
 		vendor: [
 			'js/base/_oGlobalSettings.js',
-			'build/static/js/core.js',
-			'build/static/js/devices/desktop.js',
-			'build/static/js/ui/*.js'
+			'./../site/build/static/js/core.js',
+			'./../site/build/static/js/devices/desktop.js',
+			'./../site/build/static/js/ui/*.js'
 		],
-		outfile: 'build/data/tests.html',
+		outfile: './../site/build/data/tests.html',
 		keepRunner: true
 	}
 };

@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		gruntSite: {
 			options: {
-				indexPath: 'build/metrics/',
+				indexPath: './../site/build/metrics/',
 				group: {
 					'COUNTS & SIZES': [
 						'jsSize',

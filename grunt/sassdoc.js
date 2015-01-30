@@ -1,7 +1,7 @@
 module.exports = {
 	dist: {
 		src: 'css/core/',
-			dest: 'build/sassdoc/',
+			dest: './../site/build/sassdoc/',
 			options: {
 			verbose: false,
 				display: {

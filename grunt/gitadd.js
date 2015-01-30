@@ -20,6 +20,14 @@ module.exports =  {
 			src: ["./"]
 		}
 	},
+	site: {
+		options: {
+			cwd: "./../site/build/build/"
+		},
+		files: {
+			src: ["./"]
+		}
+	},
 	workspace: {
 		options: {
 			cwd: "./"

@@ -39,7 +39,7 @@ module.exports = {
 				expand: true,
 				cwd: 'twig/',
 				src: ['**/*.html.twig', '!**/_*.html.twig'],
-				dest: 'build/',
+				dest: './../site/build/',
 				ext: '.html'
 			}
 		]

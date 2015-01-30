@@ -6,6 +6,6 @@ module.exports = {
 		tasks: ['compass']
 	},
 	documentSass: {
-		tasks: ['clean:sassdoc','sassdoc']
+		tasks: ['grunt:clean_sassdoc','sassdoc']
 	}
 };

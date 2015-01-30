@@ -15,6 +15,13 @@ module.exports = {
 				message: "Tag version " + pkg.version
 			}
 		},
+		site: {
+			options: {
+				cwd: "./../site/build/build/",
+				tag: pkg.version,
+				message: "Tag version " + pkg.version
+			}
+		},
 		workspace: {
 			options: {
 				cwd: "",

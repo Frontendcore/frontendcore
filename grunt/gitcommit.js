@@ -8,7 +8,7 @@ module.exports =  {
 	scss: {
 		options: {
 			cwd: "./../scss/",
-			message: pkg.lastFeature + " v" + pkg.version
+			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
 		},
 		files: [
 			{
@@ -20,7 +20,19 @@ module.exports =  {
 	js: {
 		options: {
 			cwd: "./../js/",
-			message: pkg.lastFeature + " v" + pkg.version
+			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+		},
+		files: [
+			{
+				src: ["./"],
+				expand: true
+			}
+		]
+	},
+	site: {
+		options: {
+			cwd: "./../site/build/build/",
+			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
 		},
 		files: [
 			{
@@ -32,7 +44,7 @@ module.exports =  {
 	workspace: {
 		options: {
 			cwd: "./",
-			message: pkg.lastFeature + " v" + pkg.version
+			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
 		},
 		files: [
 			{

@@ -15,6 +15,14 @@ module.exports = {
 				tags: true
 			}
 		},
+		site: {
+			options: {
+				cwd: "./../site/build/build",
+				remote: "origin",
+				branch: "master",
+				tags: true
+			}
+		},
 		workspace: {
 			options: {
 				cwd: "./",

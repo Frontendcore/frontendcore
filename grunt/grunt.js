@@ -1,6 +1,10 @@
 module.exports = {
-	Sortable: {
-		gruntfile: 'bower_components/Sortable/Gruntfile.js',
-		task: 'jquery'
+	clean_site: {
+		gruntfile: './../site/Gruntfile.js',
+		task: 'clean:site'
+	},
+	clean_sassdoc: {
+		gruntfile: './../site/Gruntfile.js',
+		task: 'clean:sassdoc'
 	}
 }

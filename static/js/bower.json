@@ -1,0 +1,18 @@
+{
+  "name": "frontendcore-js",
+  "version": "1.4",
+  "authors": [
+    "Toni Pinel <tonipinel@gmail.com>"
+  ],
+  "main": "core.js",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "http://www.frontendcore.com",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "tests"
+  ]
+}
