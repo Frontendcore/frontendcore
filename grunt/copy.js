@@ -2,7 +2,7 @@ module.exports =  {
 	workspace: {
 		files: [
 			// makes all src relative to cwd
-			{expand: true, cwd: 'static/', src: ['**'], dest: './../site/build/build/static/'},
+			{expand: true, cwd: 'static/', src: ['**'], dest: './../site/build/static/'},
 		]
 	},
 	scss: {
@@ -14,7 +14,7 @@ module.exports =  {
 	js: {
 		files: [
 			// makes all src relative to cwd
-			{expand: true, cwd: './../site/build/build/static/js/', src: ['**'], dest: './../js/'},
+			{expand: true, cwd: './../site/build/static/js/', src: ['**'], dest: './../js/'},
 		]
 	}
 };

@@ -5,8 +5,6 @@ TinyCore.AMD.define('tabs', [] , function () {
 
 			var aTarget = document.querySelectorAll('[data-tc-modules="tabs"]');
 
-			oTools.loadCSS(this.sPathCss);
-
 			oTools.trackModule('JS_Libraries', 'call', 'tabs' );
 
 			this.autobind(aTarget);
@@ -77,6 +75,7 @@ TinyCore.AMD.define('tabs', [] , function () {
 			});
 		},
 		getTabsInfo: function(oTarget) {
+
 			var oTabsInfo = {};
 
 			$('> section', oTarget).each(function( nKey ) {
@@ -92,6 +91,7 @@ TinyCore.AMD.define('tabs', [] , function () {
 				} else {
 					oTabsInfo[nKey].name = self.id.replace('-', ' ');
 				}
+
 				oTabsInfo.length = nKey + 1;
 
 			});
