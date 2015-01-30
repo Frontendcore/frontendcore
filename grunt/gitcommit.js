@@ -31,7 +31,7 @@ module.exports =  {
 	},
 	site: {
 		options: {
-			cwd: "./../site/build/build/",
+			cwd: "./../site/build/",
 			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
 		},
 		files: [

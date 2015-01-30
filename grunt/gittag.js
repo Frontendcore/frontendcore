@@ -17,7 +17,7 @@ module.exports = {
 		},
 		site: {
 			options: {
-				cwd: "./../site/build/build/",
+				cwd: "./../site/build/",
 				tag: pkg.version,
 				message: "Tag version " + pkg.version
 			}

@@ -22,7 +22,7 @@ module.exports =  {
 	},
 	site: {
 		options: {
-			cwd: "./../site/build/build/"
+			cwd: "./../site/build/"
 		},
 		files: {
 			src: ["./"]
