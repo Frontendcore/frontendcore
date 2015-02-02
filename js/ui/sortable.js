@@ -225,10 +225,12 @@ TinyCore.AMD.define('sortable', [], function () {
 		},
 		sendAjax: function( sUrl, oReturn) {
 
+			var sJson = JSON.stringify( oReturn );
+
 			$.ajax({
 				url: sUrl,
 				type: 'POST',
-				data: oReturn,
+				data: { data : sJson },
 				dataType: 'json'
 			});
 
