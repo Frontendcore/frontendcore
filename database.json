@@ -42,6 +42,10 @@
       "href": "#architecture-js",
       "id": "architecture-js",
       "children": {
+        "getting-started": {
+          "name": "Getting Started",
+          "href": "getting-started.html"
+        },
         "globalSettings": {
           "name": "Global Settings",
           "href": "global-settings.html"
