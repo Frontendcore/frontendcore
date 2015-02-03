@@ -5,9 +5,9 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
+    <h1>Frontendcore Installation</h1>
+    <p>Congratulations! You've choose the best option to work with frontendcore, just follow the following steps to install.</p>
 <div class="box-background">
-    <h1>Get Started</h1>
-    <h2>Installation</h2>
     <ol class="list">
         <li>First of all, <a class="reference external" href="http://sass-lang.com/install">Install Ruby &amp; Sass</a></li>
         <li>Install the version 1.0 of Compass:<br/>
@@ -37,8 +37,11 @@
     css
     fonts
     js            </code></pre>
+            <p class="msg-info">Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).</p>
+        </li>
+        <li>
+            Congratulations! Now just execute "grunt" to compile the SCSS, test the Javascript or "grunt Watch" to compile when you change something.
         </li>
     </ol>
-    <p class="msg-info">Also you will have a folder called node_modules at the same level than static. Remember to ignore this on Git or SVN when you commit your code (this is only necessary on development enviroments).</p>
 </div>
 {% endblock %}
