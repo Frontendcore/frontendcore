@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 		'js',
 		'copy:scss',
 		'copy:js',
+		'compress',
 		'gitadd:scss',
 		'gitadd:js',
 		'gitadd:site',
