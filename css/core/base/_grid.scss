@@ -10,7 +10,10 @@ $susy: (
 	flow: map-get($grid, flow),
 	container-position: map-get($grid, container-position),
 	columns: 12,
-	gutters: map-get($grid, gutters)
+	gutters: map-get($grid, gutters),
+	use-custom: (
+			box-sizing: false,
+	)
 );
 
 @if $ui != true {
