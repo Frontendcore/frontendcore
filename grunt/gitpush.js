@@ -23,6 +23,14 @@ module.exports = {
 				tags: true
 			}
 		},
+		generator: {
+			options: {
+				cwd: "./../generator/",
+				remote: "origin",
+				branch: "master",
+				tags: true
+			}
+		},
 		workspace: {
 			options: {
 				cwd: "./",

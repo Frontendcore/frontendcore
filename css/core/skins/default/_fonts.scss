@@ -1,0 +1,28 @@
+$font-line-height-default: (
+		base: 1.5em,
+		title: 1.2em
+) !global !default;
+
+$font-faces-default: (
+		default: 'Tahoma, Arial, Verdana, sans-serif',
+		title: "'Open Sans Condensed','Arial Narrow', Tahoma, sans-serif",
+		title-weight: bold,
+		icons: true
+) !global !default;
+
+$font-sizes-default: (
+		base: 14px,
+		xxxl: 2.2rem,
+		xxl: 1.7rem,
+		xl: 1.4rem,
+		l: 1.2rem,
+		ml: 1.1rem,
+		m: 1rem,
+		default: .9rem,
+		s: .8rem,
+		xs: .75rem,
+		xxs: .7rem,
+		xxxs: .6rem,
+		xxxxs: .5rem,
+		title-exponential: 1.5
+) !global !default;

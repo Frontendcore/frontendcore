@@ -36,5 +36,14 @@ module.exports =  {
 			src: ["./"]
 		}
 
+	},
+	generator: {
+		options: {
+			cwd: "./../generator/"
+		},
+		files: {
+			src: ["./"]
+		}
+
 	}
 };

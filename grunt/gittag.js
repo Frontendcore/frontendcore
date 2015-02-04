@@ -22,6 +22,13 @@ module.exports = {
 				message: "Tag version " + pkg.version
 			}
 		},
+		generator: {
+			options: {
+				cwd: "./../generator/",
+				tag: pkg.version,
+				message: "Tag version " + pkg.version
+			}
+		},
 		workspace: {
 			options: {
 				cwd: "",

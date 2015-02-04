@@ -2,4 +2,6 @@ $skin: default !global !default;
 
 @import "_obolog.scss";
 
-@import "_default.scss";
+@import "default/__index.scss";
+
+@import "_maps.scss";

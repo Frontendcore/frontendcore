@@ -41,6 +41,18 @@ module.exports =  {
 			}
 		]
 	},
+	generator: {
+		options: {
+			cwd: "./../generator/",
+			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+		},
+		files: [
+			{
+				src: ["./"],
+				expand: true
+			}
+		]
+	},
 	workspace: {
 		options: {
 			cwd: "./",

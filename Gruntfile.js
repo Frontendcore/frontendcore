@@ -19,13 +19,17 @@ module.exports = function (grunt) {
 		'js',
 		'copy:scss',
 		'copy:js',
+		'copy:generator',
 		'compress',
+		'replace:generator',
 		'gitadd:scss',
 		'gitadd:js',
 		'gitadd:site',
+		'gitadd:generator',
 		'gitcommit:scss',
 		'gitcommit:js',
 		'gitcommit:site',
+		'gitcommit:generator',
 		'gitadd:workspace',
 		'gitcommit:workspace'
 	]);
