@@ -21,6 +21,14 @@
         "Installation": {
           "name": "Installation",
           "href": "installation.html"
+        },
+        "CSS": {
+          "name": "CSS",
+          "href": "css.html"
+        },
+        "Javascript": {
+          "name": "Javascript",
+          "href": "javascript.html"
         }
       }
     },
@@ -49,10 +57,6 @@
         "getting-started": {
           "name": "Getting Started",
           "href": "getting-started.html"
-        },
-        "globalSettings": {
-          "name": "Global Settings",
-          "href": "global-settings.html"
         },
         "toolBox": {
           "name": "Tools",

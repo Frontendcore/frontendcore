@@ -1,0 +1,38 @@
+&lt;script>
+var oGlobalSettings = {
+	// Defines the path of the Javascript
+	sPathJs : '/js/',
+
+	// Defines the path of the Javascript Core path (Where the core.js can be found)
+	sPathJsCore: oGlobalSettings.sPathJs + '../../',
+
+	// Defines the path where the Javascript Modules can be found
+	sPathJsModules : oGlobalSettings.sPathJs + 'modules',
+
+	// Defines the path where the Javascript Libs can be found
+	sPathJsLibs : oGlobalSettings.sPathJs + '../../',
+
+	// Defines the path where the CSS files can be found
+	sPathCss: './css/',
+
+	// Defines the path where the ui.css file can be found
+	sPathCssUi: oGlobalSettings.sPathCss + 'ui.css',
+
+	// Sends google analytics a call to get starts of calls an executions of the modules
+	bTrackModules: false,
+
+	// Defines the hash used to call all the static files ( example.js?v=).
+	// This is to avoid browser cache. The ideal is to update this number each deploy you do.
+	sHash: '1',
+
+	// Add or overwrite definitions to the RequireJS modules config.
+	// For example concatenate modals & tips to avoid too many requests and define them as one file.
+	oPaths: {},
+
+	// Set this to force always the mobile or desktop Javascript mode
+	sDevice: isMobile.any() ? 'mobile' : 'desktop',
+
+	// Activate or deactivate the responsive images module
+	bResponsiveImages: true,
+}
+&lt;/script>

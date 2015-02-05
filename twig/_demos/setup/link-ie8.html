@@ -1,0 +1,16 @@
+&lt;!-- Css and JS for IE8 or below including a little script that notifies about old browser -->
+&lt;!--[if lte IE 8]>
+&lt;script src="js/ie-old.js">&lt;/script>
+&lt;link rel="stylesheet" type="text/css"  href="css/ie-old.css" media="all">
+&lt;script type="text/javascript">
+	var $buoop = {reminder: 0};
+	$buoop.ol = window.onload;
+	window.onload=function(){
+		try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+		var e = document.createElement("script");
+		e.setAttribute("type", "text/javascript");
+		e.setAttribute("src", "//browser-update.org/update.js");
+		document.body.appendChild(e);
+	}
+	&lt;/script>
+&lt;![endif]-->
