@@ -99,7 +99,7 @@ TinyCore.AMD.define('tags', [], function () {
 					};
 				}
 
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 				$(oTarget).autoSuggest(aData, oSettings).removeAttr('name');
 

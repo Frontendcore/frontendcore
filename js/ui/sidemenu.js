@@ -38,7 +38,7 @@ TinyCore.AMD.define('sidemenu', [], function (utils) {
                 oOptions.name = sHref.split('#')[1] + '-' + new Date().getTime();
             }
 
-            oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+            oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
             $(oTarget).sidr(oSettings);
 

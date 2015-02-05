@@ -259,7 +259,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			}
 
 			// Call the editor with the options
-			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+
 			editor = new Pen(oSettings);
 
 			self.bindForm(sId, oTarget, oText);

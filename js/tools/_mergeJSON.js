@@ -5,7 +5,7 @@ oTools.mergeJSON = function ( oJson1, oJson2 ){
 
 	var oMergedJson = Object.create(oJson2); // Copying Source2 to a new Object
 
-	for (var attrname in oJson1) {
+	for ( var attrname in oJson1) {
 		if(oMergedJson.hasOwnProperty(attrname)) {
 			if ( oJson1[attrname]!=null && oJson1[attrname].constructor==Object ) {
 				 // Recursive call if the property is an object,

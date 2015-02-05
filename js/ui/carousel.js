@@ -81,7 +81,7 @@ TinyCore.AMD.define('carousel', [], function () {
                 };
             }
 
-			oSettings = oTools.mergeJSON(oOptions, self.oDefault );
+			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 			if ( oSettings !== undefined ){
                 $(oTarget).owlCarousel(oSettings);

@@ -36,7 +36,7 @@ TinyCore.AMD.define('truncate', [], function () {
 					oOptions.less = this.getAttribute("data-tc-less");
 				}
 
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 				$(this).truncate(oSettings);
 

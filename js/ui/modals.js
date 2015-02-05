@@ -85,7 +85,7 @@ TinyCore.AMD.define('modal', [], function () {
 					oOptions.height = false;
 				}
 
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 
 				$(this).colorbox(oSettings);
@@ -94,7 +94,7 @@ TinyCore.AMD.define('modal', [], function () {
 		},
 		open: function (oOptions) {
 			var self = this,
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 			if (oSettings.sUrl !== undefined || oSettings.sUrl !== '#') {
 				$.colorbox(oSettings);

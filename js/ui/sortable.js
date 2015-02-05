@@ -268,7 +268,7 @@ TinyCore.AMD.define('sortable', [], function () {
 				oOptions.handle = oTarget.getAttribute("data-tc-handle");
 			}
 
-			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 			self.oTarget[index] = $(oTarget).sortable(oSettings);
 		}

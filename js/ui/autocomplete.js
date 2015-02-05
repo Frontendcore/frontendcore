@@ -43,7 +43,7 @@ TinyCore.AMD.define('autocomplete', [], function () {
 
 				}
 
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 				$Target.autocompleter(oSettings);
 

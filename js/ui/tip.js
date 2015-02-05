@@ -33,7 +33,7 @@ TinyCore.AMD.define('tip', [], function () {
 				oOptions.content = oTarget.getAttribute("data-tc-content");
 			}
 
-			oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 			if ( oSettings.content !== undefined ){
 				new Opentip( oTarget , oSettings.content , oSettings);

@@ -82,7 +82,7 @@ TinyCore.AMD.define('cart', [], function () {
 
             });
 
-            oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+            oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
             simpleCart(oSettings);
 

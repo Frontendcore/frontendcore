@@ -59,7 +59,7 @@ TinyCore.AMD.define('stats', [], function () {
 					this.style.display = 'none';
 				}
 
-				oSettings = oTools.mergeJSON(oOptions, self.oDefault);
+				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 				if (sTable === 'down') {
 					$(this).visualize(oSettings).insertBefore(this);
