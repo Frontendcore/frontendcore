@@ -84,9 +84,7 @@
         </section>
         <section id="tab-3" data-tc-name="Demo Code">
             <div class="box-background">
-                    <pre>
-                        <code data-tc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code>
-                    </pre>
+                    <pre><code data-tc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code></pre>
             </div>
         </section>
     </div>
@@ -95,11 +93,7 @@
 {% macro scss_object(scsspath) %}
     <section class="box-lighten">
         <h2>Customize the appearance</h2>
-        <p class="msg-info">You can customize the appearance of this object by setting up in you config the following map. By defaults de values are the indicated here.</p>
-        <pre data-tc-modules="code">
-            <code data-tc-modules="scss-group" data-tc-group="vars">
-                {% filter nl2br %}{%  include scsspath |e('html') %}{% endfilter %}
-            </code>
-        </pre>
+        <p>You can customize the appearance of this object by setting up in you config the following map. By defaults de values are the indicated here.</p>
+        <pre data-tc-modules="code"><code data-tc-modules="scss-group" data-tc-group="vars">{%  include scsspath |e('html') %}</code></pre>
     </section>
 {% endmacro %}

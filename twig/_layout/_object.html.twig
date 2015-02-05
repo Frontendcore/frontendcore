@@ -1,0 +1,16 @@
+{% set relative_path = "../" %}
+
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {% block object_title %}{% endblock object_title %}
+    <div data-tc-modules="tabs" class="tabs-box">
+        <section id="demos" data-tc-name="Demos & Code">
+            <div class="box"> {% block object_demo %}{% endblock object_demo %}</div>
+        </section>
+        <section id="appearance" data-tc-name="Customize Appearance">
+            {% block object_scss_vars %}{% endblock object_scss_vars %}
+        </section>
+    </div>
+{% endblock %}

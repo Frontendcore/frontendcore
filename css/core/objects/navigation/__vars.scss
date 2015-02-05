@@ -1,4 +1,5 @@
 /* @group vars */
+
 $object-navigation-vars-default : (
 
 	// Background  first level:
@@ -41,8 +42,8 @@ $object-navigation-vars-default : (
 	style: default
 
 ) !global !default;
-/* @group vars */
 
+/* @endgroup vars */
 
 $object-navigation-vars-custom: () !global !default;
 

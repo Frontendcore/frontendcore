@@ -117,7 +117,11 @@
       "children": {
         "Navigation": {
           "name": "Navigation",
-          "href": "navigation.html",
+          "href": "navigation.html"
+        },
+        "NavigationDropdown": {
+          "name": "Navigation dropdown",
+          "href": "navigation-dropdown.html",
           "js": true
         },
         "Subnavigation": {

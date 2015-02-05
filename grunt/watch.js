@@ -22,5 +22,9 @@ module.exports = {
 	twigPartials: {
 		files: ['twig/**/*.html','database.json','twig/_**/*.twig'],
 		tasks: ['twigRender']
+	},
+	static: {
+		files: ['static/**/*'],
+		tasks: ['copy']
 	}
 };
