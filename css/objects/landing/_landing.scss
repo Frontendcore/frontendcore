@@ -1,8 +1,7 @@
 .landing {
 	& {
-		background-image: url("/static/img/earth-core.jpg");
-		background-size: cover;
-		background-repeat: no-repeat;
+		background-image: url("/static/img/home-puzzle-bg.png");
+		background-repeat: repeat;
 		color: $color-background;
 		min-height: 500px;
 	}

@@ -12,7 +12,7 @@ $object-navigation-vars-default : (
 	background-color-light: $color-primary-light,
 
 	// Link color
-	color: contrast-color($color-primary),
+	color: contrast-color($color-primary, $color-foreground, $color-background, 30%),
 
 	// Border Radius
 	border-radius: $default-border-radius,

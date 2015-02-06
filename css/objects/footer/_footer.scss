@@ -1,8 +1,6 @@
 .footer {
 	width: 100%;
 	margin-bottom: 0 !important;
-	background-image: url("/static/img/space.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	color: $color-background;
+	color: $color-foreground;
+	background-color: $color-secondary;
 }

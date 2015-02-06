@@ -1,13 +1,11 @@
 .header {
-	background-image: url("/static/img/space.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	color: $color-background;
-	min-height: 91px;
-}
-
-html {
-	background-image: url("/static/img/bg-space.jpg");
-	background-size: cover;
-	background-repeat: repeat-y;
+	& {
+		background-color: $color-secondary;
+		border-bottom: $spacing/4 solid $color-background;
+		color: $color-background;
+	}
+	.logo {
+		display: inline-block;
+		margin-bottom: $spacing/4;
+	}
 }
