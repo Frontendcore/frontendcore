@@ -58,7 +58,7 @@ module.exports = {
 				'js/ui/modals.js'
 			],
 			'./../site/build/static/js/ui/tags.js': [
-				'js/libs/jquery-autosuggest/jquery.autoSuggest.js',
+				'bower_components/magicsuggest/magicsuggest.js',
 				'js/ui/tags.js'
 			],
 			'./../site/build/static/js/ui/wysiwyg.js': [

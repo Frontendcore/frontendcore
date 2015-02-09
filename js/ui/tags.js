@@ -2,24 +2,7 @@ TinyCore.AMD.define('tags', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
-			asHtmlID: false,
-			startText: "Add a tag...",
-			emptyText: "No Results Found",
-			preFill: {},
-			limitText: "No More Selections Are Allowed",
-			selectedItemProp: "value", //name of object property
-			selectedValuesProp: "value", //name of object property
-			searchObjProps: "value", //comma separated list of object property names
-			queryParam: "q",
-			retrieveLimit: false, //number for 'limit' param on ajax request
-			extraParams: "",
-			matchCase: false,
-			minChars: 1,
-			keyDelay: 400,
-			resultsHighlight: true,
-			neverSubmit: true,
-			selectionLimit: false,
-			showResultList: true
+			useCommaKey: true
 		},
 		onStart: function () {
 
@@ -37,38 +20,52 @@ TinyCore.AMD.define('tags', [], function () {
 
 			var self = this;
 
-			$(aTargets).each(function () {
+			$(aTargets).each(function ( nTarget ) {
 
 				var oSettings,
 					oOptions = {},
 					oTarget = this,
 					aValues,
-					aData = [],
-					sName = this.getAttribute("name"),
-					$realInput,
-					bRequired = false;
+					fSuggest = [],
+					oRealTarget = this,
+					oRealId;
 
-				if (oTarget.getAttribute("required") !== null) {
-					bRequired = true;
+				if (oTarget.nodeName === 'INPUT') {
+					oRealTarget = document.createElement('div');
+					oRealId =  oTarget.getAttribute("name") !== '' ? oTarget.getAttribute("name") : 'tags_array_real';
+					oRealTarget.id = oRealId;
+					$(oTarget).before(oRealTarget).css({
+						"height": "1px",
+						"width" : "100%",
+						"border" : "0px none",
+						"padding" : "0",
+						"margin": "0",
+						"position" : "absolute"
+					}).parent().css("position","relative");
 				}
 
+				oOptions.name = oTarget.getAttribute("name") !== '' ? oTarget.getAttribute("name") + '_array' : "tags_array";
 
 				if (oTarget.getAttribute("data-tc-max") !== null) {
-					oOptions.selectionLimit = oTarget.getAttribute("data-tc-max");
+					oOptions.maxSelection = oTarget.getAttribute("data-tc-max");
 				}
 
-				if (oTarget.getAttribute("data-tc-text-noresult") !== null) {
-					oOptions.emptyText = oTarget.getAttribute("data-tc-text-noresult");
-				}
-
-				if (oTarget.getAttribute("data-tc-text-max") !== null) {
-					oOptions.limitText = oTarget.getAttribute("data-tc-text-max");
-				}
-
-				if (oTarget.value !== '') {
-					oOptions.preFill = oTarget.value;
+				if (oTarget.getAttribute("data-tc-mode") === 'restrict') {
+					oOptions.hideTrigger = false;
+					oOptions.allowFreeEntries = false;
 				} else {
-					oOptions.preFill = false;
+					oOptions.hideTrigger = true;
+				}
+
+				if (oTarget.getAttribute("data-tc-select") === 'true') {
+					oOptions.hideTrigger = false;
+				}
+
+				console.log(oOptions.hideTrigger);
+
+				if (oTarget.value !== '' && oTarget.value !== undefined) {
+
+					oOptions.value = oTarget.value.split(',');
 				}
 
 				if (oTarget.placeholder !== '') {
@@ -76,46 +73,33 @@ TinyCore.AMD.define('tags', [], function () {
 				}
 
 				if ( oTarget.getAttribute("data-tc-values") !== null) {
+
+					oOptions.data = [];
 					aValues = oTarget.getAttribute("data-tc-values").split(',');
 
 					for (var nKey in aValues) {
-						aData.push({ 'value': aValues[nKey] });
+						oOptions.data.push(aValues[nKey]);
 					}
-				} else {
-					aData.push({ 'value': '' });
-				}
-
-				if (bRequired) {
-
-					oOptions.selectionRemoved = function(elem) {
-						var $input = $('input[name='+ sName + ']');
-
-						if ($input.attr('value') == ',') {
-							$input.attr('value','');
-						}
-
-						elem.fadeTo("fast", 0, function(){ elem.remove(); });
-
-					};
 				}
 
 				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
-				$(oTarget).autoSuggest(aData, oSettings).removeAttr('name');
+				fSuggest[nTarget] = $(oRealTarget).magicSuggest(oSettings);
 
-				$realInput = $(oTarget).next();
+				$(fSuggest[nTarget]).on('selectionchange', function(){
+					var sValue ='',
+						aValue = fSuggest[nTarget].getValue();
 
-				$realInput.attr('name', sName);
+					for (var nCounter = 0; nCounter < aValue.length; nCounter++) {
+						sValue+= aValue[nCounter] + ',';
+					}
 
-				if (bRequired) {
+					oTarget.value = sValue;
 
-					$realInput
-						.attr('style', 'position:absolute; height:1px; padding:0;')
-						.attr('type', 'text')
-						.attr('required','required');
+				});
 
-					$(oTarget).removeAttr('required');
-				}
+
+				oOptions = null;
 
 			});
 		},

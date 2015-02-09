@@ -1,6 +1,6 @@
 {
   "name": "frontendcore-workspace",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "authors": [
     "Toni Pinel <tonipinel@gmail.com>"
   ],
@@ -40,6 +40,7 @@
     "dynatable": "~0.3.1",
     "OwlCarousel2": "https://github.com/OwlFonk/OwlCarousel2",
     "pen": "~0.0.3",
-    "Sortable": "~1.0.1"
+    "Sortable": "~1.0.1",
+    "magicsuggest": "~2.1.4"
   }
 }

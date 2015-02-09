@@ -12,6 +12,12 @@
         '../_demos/forms/tags-input.html',
         false,false,true
     )}}
+    {{ demos.demo(
+        'text-selects',
+        '../_demos/forms/tags-select.html',
+        false,false,true
+    )}}
+
     {{ demos.settings(
     {
         "1" : {
@@ -28,17 +34,17 @@
             "description" : "Max number of tags allowed.",
             "default" :     "add a tag..."
         },
-        "4" : {
-            "name" :        "data-tc-text-noresult",
-            "description" : "Text used when there is no results.",
-            "default" :     "No Results found"
-        },
         "5" : {
-            "name" :        "data-tc-text-max",
-            "description" : "Text used when no more tags are allowed",
-            "default" :     "No More Selections Are Allowed"
+            "name" :        "data-tc-select",
+            "description" : "If it's set to true show the dropdown select to view all the values defined in data-tc-values. ",
+            "default" :     "free"
         },
         "6" : {
+            "name" :        "data-tc-mode",
+            "description" : "Defines the mode of the tags entry (Restrict or free). Restrict only allow values defined in data-tc-values and allows any value. If you set the mode to Restrict, data-tc-select default value will be false.",
+            "default" :     "free"
+        },
+        "7" : {
             "name" :        "placeholder",
             "description" : "Text that will be displayed when is empty.",
             "default" :     "left"
