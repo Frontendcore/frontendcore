@@ -30,7 +30,10 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			oTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
 
 			$(aTargets).each(function () {
-				self.autobind(this);
+				if (this.dataset.tcActive !== 'true') {
+					this.dataset.tcActive = 'true';
+					self.autobind(this);
+				}
 			});
 
 			self.fDatePollyfill();
