@@ -42,33 +42,12 @@ TinyCore.AMD.define('sidemenu', [], function (utils) {
 
             $(oTarget).sidr(oSettings);
 
-			if (oOptions.side !== 'right') {
-				oBindActions.open = 'swipeLeft';
-				oBindActions.close = 'swipeRight';
-			}
-/*
-			$(document).on('swipeRight',function(e){
-				$.sidr('open', oOptions.name);
-			});
-
-			$(document).on('swipeLeft', function(e){
-				$.sidr('close', oOptions.name);
-			});*/
 		},
 		onStop: function () {
 			this.sPathCss = null;
 		},
 		onDestroy: function () {
 			delete this.sPathCss;
-		}
-	};
-});
-
-TinyCore.AMD.define('loadSideMenu', ['sidemenuLibs'], function () {
-	return {
-		onStart: function () {
-
-
 		}
 	};
 });

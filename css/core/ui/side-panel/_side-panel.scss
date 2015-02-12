@@ -1,0 +1,6 @@
+@if $ui-autocomplete == true and $ui == true {
+	.side-panel-default {
+		background: $color-background;
+		position: fixed;
+	}
+}

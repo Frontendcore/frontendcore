@@ -1,0 +1,38 @@
+{% set current_children = "Side Panel" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Side Panel</h1>
+    <section class="box-lighten">
+        <h2>Side Panel on the left</h2>
+        {{ demos.demo(
+            'side-panel-1',
+            '../_demos/navigation/side-panel-left.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Side panel on the right</h2>
+        {{ demos.demo(
+            'side-panel-2',
+            '../_demos/navigation/side-panel-right.html'
+        )}}
+    </section>
+    {{ demos.settings(
+        {
+            "href" : {
+                "name" :        "href",
+                "description" : "The href of the link will be an anchor to the menu."
+            },
+            "data-tc-position" : {
+                "name" :        "data-tc-position",
+                "description" : "Define the left or right position for the menu.",
+                "default" :     "left"
+            }
+        }
+    )}}
+
+{% endblock %}

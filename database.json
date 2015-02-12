@@ -145,6 +145,11 @@
           "name": "Tags",
           "href": "tags.html"
         },
+        "sidepanel": {
+          "name": "Side Panel",
+          "href": "side-panel.html",
+          "js": true
+        },
         "Side menu": {
           "name": "Side Menu",
           "href": "side-menu.html",
