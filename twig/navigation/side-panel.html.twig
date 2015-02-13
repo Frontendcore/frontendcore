@@ -1,0 +1,62 @@
+{% set current_children = "Side Panel" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Side Panel</h1>
+    <p>Inside this panel you can add the code you want, you can use it to show some info, add a menu or an image gallery for example.</p>
+    <section class="box-lighten">
+        <h2>Side Panel on the left</h2>
+        {{ demos.demo(
+            'side-panel-1',
+            '../_demos/navigation/side-panel-left.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Side panel on the right</h2>
+        {{ demos.demo(
+            'side-panel-2',
+            '../_demos/navigation/side-panel-right.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Side panel tabbed</h2>
+        <p>If you include the link inside sidepanel it will be shown as a vertical tab. If you want to personalize the appearance just use the data-tc-class parameter.</p>
+        {{ demos.demo(
+        'side-panel-tab',
+        '../_demos/navigation/side-panel-tab.html'
+        )}}
+    </section>
+    {{ demos.settings(
+        {
+            "href" : {
+                "name" :        "href",
+                "description" : "The href of the link will be an anchor to the menu."
+            },
+            "data-tc-position" : {
+                "name" :        "data-tc-position",
+                "description" : "Define the left or right position for the panel.",
+                "default" :     "left"
+            },
+            "data-tc-width" : {
+                "name" :        "data-tc-width",
+                "description" : "Define the width for the panel.",
+                "default" :     "15.6em"
+            },
+            "data-tc-class" : {
+                "name" :        "data-tc-class",
+                "description" : "Add a class to the panel container",
+                "default" :     "side-panel-default"
+            },
+            "data-tc-tab-top" : {
+                "name" :        "data-tc-tab-top",
+                "description" : "Defines the top position of the tab for the side panel tabbed",
+                "default" :     "50%"
+            }
+        }
+    )}}
+
+{% endblock %}

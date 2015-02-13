@@ -97,7 +97,7 @@ module.exports = {
 			],
 			'./../site/build/static/js/ui/sidemenu.js': [
 				'bower_components/sidr/dist/jquery.sidr.js',
-				'js/ui/sidemenu.js'
+				'js/ui/side-menu.js'
 			],
 			'./../site/build/static/js/ui/autosize.js': [
 				'bower_components/jquery-autosize/jquery.autosize.js',
@@ -118,6 +118,10 @@ module.exports = {
 			'./../site/build/static/js/ui/table.js': [
 				'bower_components/dynatable/jquery.dynatable.js',
 				'js/ui/table.js'
+			],
+			'./../site/build/static/js/ui/sidepanel.js': [
+				'bower_components/bigSlide/src/jquery.big-slide.js',
+				'js/ui/side-panel.js'
 			],
 			'./../site/build/static/js/ie-old.js': [
 				'js/libs/ie-polyfills/queryselector.js',
