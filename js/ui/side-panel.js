@@ -21,12 +21,12 @@ TinyCore.AMD.define('sidepanel', [], function () {
 
 			oTools.trackModule('JS_Libraries', 'call', 'sidepanel' );
 
-            $(aTargets).each(function () {
-                self.autobind(this);
+            $(aTargets).each(function ( nIndex ) {
+                self.autobind(this, nIndex);
             });
 
 		},
-		autobind: function ( oTarget ) {
+		autobind: function ( oTarget, nIndex ) {
 
 			var self = this,
                 oSettings,
@@ -37,8 +37,8 @@ TinyCore.AMD.define('sidepanel', [], function () {
                 oOptions.menuWidth = oTarget.getAttribute("data-tc-width");
             }
 
-			if (oTarget.getAttribute("data-tc-side") !== null) {
-				oOptions.side = oTarget.getAttribute("data-tc-side");
+			if (oTarget.getAttribute("data-tc-position") !== null) {
+				oOptions.side = oTarget.getAttribute("data-tc-position");
 			}
 
 			if (oTarget.getAttribute("data-tc-class") !== null) {
@@ -51,23 +51,44 @@ TinyCore.AMD.define('sidepanel', [], function () {
 
             oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
-			$(oSettings.menu).addClass( oSettings.class);
+			$(oSettings.menu).addClass( oSettings.class );
 
             $(oTarget).bigSlide(oSettings);
 
-			console.log(oSettings.side);
+			$(oTarget).on('click', function(){
+				if (oSettings.side === 'right' && $(oSettings.menu).css('right') === '0px') {
+					$(oSettings.menu).css('z-index','100');
+				} else {
+					$(oSettings.menu).css('z-index','200');
+				}
+			});
+
+
+			if ( $(oTarget).parent( oSettings.menu ).length > 0 ) {
+
+				var nWidth = $(oTarget).outerWidth();
+
+				if (oSettings.side === 'right') {
+					$(oTarget).css({'left' : '-' + (nWidth) + 'px'} );
+				} else {
+					$(oTarget).css({'right' : '-' + (nWidth) + 'px'} );
+				}
+
+				if (oTarget.getAttribute("data-tc-tab-top") !== null) {
+					$(oTarget).css('top', oTarget.getAttribute("data-tc-tab-top") );
+				}
+
+			}
 
 			if ( oSettings.side === 'right') {
 				$(oSettings.menu).css({
 					"right" : "-" + oSettings.menuWidth
-				});
+				}).addClass('side-panel-right');
 			} else {
 				$(oSettings.menu).css({
 					"left" : "-" + oSettings.menuWidth
-				});
+				}).addClass('side-panel-left');
 			}
-
-
 
 		},
 		onStop: function () {
