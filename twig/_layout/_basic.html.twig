@@ -36,12 +36,11 @@
     <script src="{{ relative_path ~ url.static }}js/core.js"></script>
 </head>
 <body data-tc-modules="polyfills">
-
 {% block fullmain %}
 <header class="header pb-n o-h">
     <div class="grid">
         <div class="col-2-3">
-            <a data-tc-modules="sidemenu" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
+            <a data-tc-modules="side-panel" href="#menu-mobile" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo va-m"><img src="{{ relative_path ~ url.static }}img/frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
         </div>
         <div class="col-1-3 desktop">
@@ -111,5 +110,28 @@
         <p><a href="{{ relative_path ~ urlbase }}setup/download.html" class="button-ok button-fat icon-download ta-l">Download & Installation <br/><span class="fz-default fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;Current release {{ version }}</span></a></p>
     </div>
 </footer>
+<nav id="menu-mobile" class="navigation navigation-vertical hidden">
+    <ul>
+        {% for section in sections %}
+            <li>
+                <a href="{{ section.href }}-mobile" data-tc-modules="toggle">
+                    {{ section.name }}
+                    {% if section.children|length > 0 %}
+                        <i class="icon-angle-down fl-r"></i>
+                    {% endif %}
+                </a>
+                {% if section.children|length > 0 %}
+                    <ul id="{{ section.id }}-mobile" {% if section.name != current_section %} class="hidden"{% endif %}>
+                        {% for subsection in section.children %}
+                            <li {% if subsection.name == current_children %} class="active"{% endif %}>
+                                <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}">{{ subsection.name }} {% if subsection.js %}<span class="fl-r cp">JS</span> {% endif %}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
 </body>
 </html>

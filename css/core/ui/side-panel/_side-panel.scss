@@ -1,11 +1,11 @@
-@if $ui-autocomplete == true and $ui == true {
+@if $ui-side-panel == true and $ui == true {
 	.side-panel-default {
 		& {
-			background: $color-background;
 			position: fixed;
 			z-index: 100;
+			overflow-y: auto;
 		}
-		a[data-tc-modules="sidepanel"] {
+		a[data-tc-modules="side-panel"] {
 			& {
 				display: block;
 				position: absolute;
@@ -23,12 +23,12 @@
 			}
 		}
 		&.side-panel-left {
-			a[data-tc-modules="sidepanel"] {
+			a[data-tc-modules="side-panel"] {
 				margin-right: -$spacing;
 			}
 		}
 		&.side-panel-right {
-			a[data-tc-modules="sidepanel"] {
+			a[data-tc-modules="side-panel"] {
 				margin-left: -$spacing;
 			}
 		}

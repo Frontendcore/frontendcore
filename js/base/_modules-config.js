@@ -12,7 +12,7 @@ if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = isMobile.any() ? 'deskto
 var oDefaultPaths = {
 		libs: oGlobalSettings.sPathJs
 	},
-	aModules = ['devicePackage','sidemenu','code','sortable','tags','modal','autocomplete','autosize','graph','stats','wysiwyg','truncate','tip','cart','polyfills','parallax','carousel','table','toggle','tabs','notification','dropdown','center-box','sidepanel'];
+	aModules = ['devicePackage','code','sortable','tags','modal','autocomplete','autosize','graph','stats','wysiwyg','truncate','tip','cart','polyfills','parallax','carousel','table','toggle','tabs','notification','dropdown','center-box','side-panel'];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {
 

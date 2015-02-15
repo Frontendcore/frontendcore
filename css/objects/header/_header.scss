@@ -3,6 +3,10 @@
 		background-color: $color-secondary;
 		border-bottom: $spacing/4 solid $color-background;
 		color: $color-background;
+		z-index: 500;
+	}
+	.col-2-3 {
+		margin: 0;
 	}
 	.logo {
 		display: inline-block;

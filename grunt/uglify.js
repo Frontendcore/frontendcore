@@ -95,10 +95,6 @@ module.exports = {
 				'js/libs/webshims/polyfiller.js',
 				'js/ui/polyfills.js'
 			],
-			'./../site/build/static/js/ui/sidemenu.js': [
-				'bower_components/sidr/dist/jquery.sidr.js',
-				'js/ui/side-menu.js'
-			],
 			'./../site/build/static/js/ui/autosize.js': [
 				'bower_components/jquery-autosize/jquery.autosize.js',
 				'js/ui/autosize.js'
@@ -119,7 +115,7 @@ module.exports = {
 				'bower_components/dynatable/jquery.dynatable.js',
 				'js/ui/table.js'
 			],
-			'./../site/build/static/js/ui/sidepanel.js': [
+			'./../site/build/static/js/ui/side-panel.js': [
 				'bower_components/bigSlide/src/jquery.big-slide.js',
 				'js/ui/side-panel.js'
 			],

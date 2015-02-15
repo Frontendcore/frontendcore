@@ -1,4 +1,4 @@
-TinyCore.AMD.define('sidepanel', [], function () {
+TinyCore.AMD.define('side-panel', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -12,14 +12,13 @@ TinyCore.AMD.define('sidepanel', [], function () {
 		},
 		onStart: function ( ) {
 
-            var aTargets = oTools.getDataModules('sidepanel'),
+            var aTargets = oTools.getDataModules('side-panel'),
                 self = this;
-
 
 
 			oTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'sidepanel' );
+			oTools.trackModule('JS_Libraries', 'call', 'side-panel' );
 
             $(aTargets).each(function ( nIndex ) {
                 self.autobind(this, nIndex);
@@ -31,7 +30,8 @@ TinyCore.AMD.define('sidepanel', [], function () {
 			var self = this,
                 oSettings,
 				sHref = oTarget.href,
-                oOptions = {};
+                oOptions = {},
+				oParent;
 
             if (oTarget.getAttribute("data-tc-width") !== null) {
                 oOptions.menuWidth = oTarget.getAttribute("data-tc-width");
@@ -51,34 +51,96 @@ TinyCore.AMD.define('sidepanel', [], function () {
 
             oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
-			$(oSettings.menu).addClass( oSettings.class );
+			$(oSettings.menu).addClass( oSettings.class).removeClass('hidden');
 
             $(oTarget).bigSlide(oSettings);
 
-			$(oTarget).on('click', function(){
-				if (oSettings.side === 'right' && $(oSettings.menu).css('right') === '0px') {
-					$(oSettings.menu).css('z-index','100');
-				} else {
-					$(oSettings.menu).css('z-index','200');
-				}
-			});
+
+			if ( $(oSettings.menu)[0].className.indexOf('navigation') !== -1 ) {
+
+				$(oTarget).on('click', function(){
+
+					if (oSettings.side === 'right') {
+						if ( $(oSettings.menu).css('right') !== '0px') {
+							$(oSettings.menu).css('z-index','1000');
+							$('html').css({
+								'position': 'absolute',
+								'overflow' : 'hidden',
+								'width' : $(window).width() + oSettings.menuWidth
+							}).animate({
+								'padding-right' : $(oSettings.menu).width()
+							});
+						} else {
+							$('html').css({
+								'position': 'relative',
+								'width' : 'auto',
+								'overflow' : 'auto'
+							}).animate({
+								'padding-right' : 0
+							});
+						}
+					} else {
+						if ( $(oSettings.menu).css('left') !== '0px') {
+							$(oSettings.menu).css('z-index','1000');
+							$('html').css({
+								'position': 'absolute',
+								'overflow' : 'hidden',
+								'width' : $(window).width() + oSettings.menuWidth
+							}).animate({
+								'padding-left' : $(oSettings.menu).width()
+							});
+						} else {
+							$('html').css({
+								'position': 'relative',
+								'width' : 'auto',
+								'overflow' : 'auto'
+							}).animate({
+								'padding-left' : 0
+							});
+
+						}
+					}
+
+				});
+				
+			} else {
+
+				$(oTarget).on('click', function(){
+					if (oSettings.side === 'right' && $(oSettings.menu).css('right') === '0px') {
+						$(oSettings.menu).css('z-index','1000');
+					} else {
+						$(oSettings.menu).css('z-index','1001');
+					}
+				});
+
+			}
 
 
-			if ( $(oTarget).parent( oSettings.menu ).length > 0 ) {
+
+			oParent = $(oTarget).parent( oSettings.menu )[0];
+
+			if ( oParent !== undefined) {
 
 				var nWidth = $(oTarget).outerWidth();
 
 				if (oSettings.side === 'right') {
-					$(oTarget).css({'left' : '-' + (nWidth) + 'px'} );
+					$(oTarget).css({'left' : '-' + (nWidth -1) + 'px'} );
 				} else {
-					$(oTarget).css({'right' : '-' + (nWidth) + 'px'} );
+					$(oTarget).css({'right' : '-' + (nWidth -1 ) + 'px'} );
 				}
 
 				if (oTarget.getAttribute("data-tc-tab-top") !== null) {
 					$(oTarget).css('top', oTarget.getAttribute("data-tc-tab-top") );
 				}
 
+
+				if (oParent.className.indexOf('box') !== -1){
+
+					$(oParent).css('overflow', 'visible');
+				}
 			}
+
+
 
 			if ( oSettings.side === 'right') {
 				$(oSettings.menu).css({
