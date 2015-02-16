@@ -200,14 +200,19 @@
           "name": "Ratings",
           "href": "ratings.html"
         },
+        "Parallax": {
+          "name": "Parallax",
+          "href": "parallax.html"
+        },
+        "Charts": {
+          "name": "Charts",
+          "href": "charts.html",
+          "js": true
+        },
         "Carousel": {
           "name": "Carousel",
           "href": "carousel.html",
           "js": true
-        },
-        "Parallax": {
-          "name": "Parallax",
-          "href": "parallax.html"
         },
         "Cart": {
           "name": "Cart",
@@ -315,11 +320,6 @@
         "Dynamic Table": {
           "name": "Dynamic Table",
           "href": "dynamic-table.html",
-          "js": true
-        },
-        "Stats Tables": {
-          "name": "Stats Tables",
-          "href": "stats-tables.html",
           "js": true
         }
       }
