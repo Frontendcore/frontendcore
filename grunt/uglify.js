@@ -48,10 +48,11 @@ module.exports = {
 			'./../site/build/static/js/ui/center-box.js': [
 				'js/ui/center-box.js'
 			],
-			'./../site/build/static/js/ui/stats.js': [
-				'js/libs/jquery-visualize/js/excanvas.js',
-				'js/libs/jquery-visualize/js/visualize.jQuery.js',
-				'js/ui/stats.js'
+			'./../site/build/static/js/ui/charts.js': [
+				'js/ui/chart.js'
+			],
+			'./../site/build/static/js/ui/chartLibs.js': [
+				'bower_components/chartjs/Chart.js'
 			],
 			'./../site/build/static/js/ui/modal.js': [
 				'bower_components/jquery-colorbox/jquery.colorbox.js',

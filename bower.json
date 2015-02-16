@@ -42,6 +42,7 @@
     "pen": "~0.0.3",
     "Sortable": "~1.0.1",
     "magicsuggest": "~2.1.4",
-    "bigSlide": "~0.6.0"
+    "bigSlide": "~0.6.0",
+    "chartjs": "~1.0.1"
   }
 }
