@@ -13,7 +13,7 @@
 				padding: $spacing/2;
 				@include border-radius($default-border-radius $default-border-radius 0 0);
 				background: $color-link;
-				color: contrast-color($color-link, $color-foreground, $color-background, 40%);
+				color: contrast-color($color-link, $color-foreground, $color-background);
 				box-sizing: border-box;
 				text-align: center;
 			}
