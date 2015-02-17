@@ -67,7 +67,7 @@ describe('toggle', function() {
 
         beforeEach(function() {
             $Object =  $('<a href="#toggle-slide" data-tc-modules="toggle" class="button">Click to toggle Class</a><div id="toggle-slide" class="box-invert"><p>Hello World!</p></div>');
-            spyOn(jQuery.fn, "slideToggle");
+            spyOn(jQuery.fn, "slideDown");
             oTestedModule.slideToggle($Object[0]);
         });
 
@@ -82,8 +82,9 @@ describe('toggle', function() {
 
         it('should Call jQuery slideToggle', function( done ) {
 
-            expect(jQuery.fn.slideToggle).toHaveBeenCalled();
+            expect(jQuery.fn.slideDown).toHaveBeenCalled();
         });
+
 
     });
 

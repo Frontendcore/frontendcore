@@ -28,10 +28,25 @@
                 "name" :        "href",
                 "description" : "The href of the link will be an anchor to the menu."
             },
-            "data-tc-position" : {
+                "data-tc-position" : {
                 "name" :        "data-tc-position",
-                "description" : "Define the left or right position for the menu.",
+                "description" : "Define the left or right position for the panel.",
                 "default" :     "left"
+            },
+                "data-tc-width" : {
+                "name" :        "data-tc-width",
+                "description" : "Define the width for the panel.",
+                "default" :     "15.6em"
+            },
+                "data-tc-class" : {
+                "name" :        "data-tc-class",
+                "description" : "Add a class to the panel container",
+                "default" :     "side-panel-default"
+            },
+                "data-tc-clone" : {
+                "name" :        "data-tc-clone",
+                "description" : "If you set this to true the content inside the panel should be a clone of the original. This is very useful to create sidemenus using the same menu of desktop, because the copy ignores the desktop, mobile and tablet classes.",
+                "default" :     "false"
             }
         }
     )}}

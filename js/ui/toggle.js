@@ -112,12 +112,35 @@ TinyCore.AMD.define('toggle', [], function () {
 		},
 		slideToggle: function (oThis) {
 
-			var self = this,
-                sHref = oThis.href;
+			var sHref = oThis.href;
 
-            if (sHref.indexOf('#') !== -1) {
-                $(document.getElementById(sHref.split('#')[1])).slideToggle();
-            }
+			if (sHref.indexOf('#') !== -1) {
+
+				var oTarget = document.getElementById(sHref.split('#')[1]);
+
+				if ($(oTarget).is(':visible')) {
+
+					$(oTarget).slideUp("normal", function () {
+						$(oTarget).css('position', 'fixed');
+
+						setTimeout(function () {
+							$(oTarget).css('position', 'relative');
+						}, 1);
+					});
+
+				} else {
+					$(oTarget).css('position', 'fixed');
+
+					setTimeout(function () {
+						$(oTarget).css('position', 'relative');
+					}, 1);
+
+					$(oTarget).slideDown();
+
+
+				}
+
+			}
 
 		}
 	};

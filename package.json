@@ -5,7 +5,7 @@
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
   "version": "1.5.0",
-  "lastFeature": "Improved fonts maps and fonts customization. Fix #8 and we are going to %v% !",
+  "lastFeature": "Improved side panel and toggle. %v% !",
   "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",
   "bugs": "https://github.com/tonipinel/frontendcore-workspace/issues",
