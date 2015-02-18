@@ -2,48 +2,62 @@ TinyCore.AMD.define('side-panel', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
-			menu : ('#side-panel'),
+			menu: ('#side-panel'),
 			push: ('.push'),
-			side :"left",
+			side: "left",
 			menuWidth: "200px",
 			speed: 300,
 			class: 'side-panel-default'
 		},
-		onStart: function ( ) {
+		onStart: function () {
 
-            var aTargets = oTools.getDataModules('side-panel'),
-                self = this;
+			var aTargets = oTools.getDataModules('side-panel'),
+				self = this;
 
 
 			oTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'side-panel' );
+			oTools.trackModule('JS_Libraries', 'call', 'side-panel');
 
-            $(aTargets).each(function ( nIndex ) {
-                self.autobind(this, nIndex);
-            });
+			$(aTargets).each(function (nIndex) {
+				self.autobind(this, nIndex);
+			});
 
 		},
-		autobind: function ( oTarget, nIndex ) {
+		autobind: function (oTarget, nIndex) {
 
 			var self = this,
-                oSettings,
+				oSettings,
 				sHref = oTarget.href,
-                oOptions = {},
+				oOptions = {},
 				oParent,
 				oClose = document.createElement('a'),
-				oMenu;
+				nInitialMenuWidth;
 
 
 			if (oTarget.id === '') {
 				oTarget.id = 'slide-panel-open' + nIndex;
 			}
 
-            if (oTarget.getAttribute("data-tc-width") !== null) {
-                oOptions.menuWidth = oTarget.getAttribute("data-tc-width");
-            }
+			if (oTarget.getAttribute("data-tc-width") !== null) {
 
-			if ( $(window).width() < 599 && oOptions.menuWidth > 599 ) {
+				nInitialMenuWidth = oTarget.getAttribute("data-tc-width");
+
+				oOptions.menuWidth = nInitialMenuWidth;
+
+				if (nInitialMenuWidth.indexOf('%') === -1 && nInitialMenuWidth.indexOf('px') === -1) {
+					oOptions.menuWidth += 'px';
+					nInitialMenuWidth = parseInt(nInitialMenuWidth, 10);
+				} else if (nInitialMenuWidth.indexOf('%') === -1) {
+					nInitialMenuWidth = $('window').width() / parseInt(nInitialMenuWidth, 10);
+				} else {
+					nInitialMenuWidth = parseInt(nInitialMenuWidth, 10);
+				}
+
+			}
+
+			if ($(window).width() < 599 && parseInt(oOptions.menuWidth, 10) > 599) {
+
 				oOptions.menuWidth = $(window).width() + 'px';
 			}
 
@@ -59,26 +73,26 @@ TinyCore.AMD.define('side-panel', [], function () {
 				oOptions.menu = '#' + sHref.split('#')[1];
 			}
 
-            oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
 
 			if (oTarget.getAttribute("data-tc-clone") === 'true') {
 
 				var sIdSufix = '-' + nIndex,
-					sCloneId =  $(oSettings.menu).attr("id") + '-' + nIndex,
-					$Clone = $(oSettings.menu).clone().attr("id", $(oSettings.menu).attr("id") + sIdSufix );
+					sCloneId = $(oSettings.menu).attr("id") + '-' + nIndex,
+					$Clone = $(oSettings.menu).clone().attr("id", $(oSettings.menu).attr("id") + sIdSufix);
 
 				oTarget.href = '#' + sCloneId;
 				oSettings.menu = '#' + sCloneId;
 
 				// Find all elements in $Clone that have an ID, and iterate using each()
-				$Clone.find('[id]').each(function() {
+				$Clone.find('[id]').each(function () {
 					//Perform the same replace as above
 					var $th = $(this);
 					var newID = $th.attr('id') + sIdSufix;
 					$th.attr('id', newID);
 				});
 
-				$Clone.find('[href]').each(function() {
+				$Clone.find('[href]').each(function () {
 					//Perform the same replace as above
 					var $th = $(this),
 						sTarget = $th.attr('href'),
@@ -94,15 +108,17 @@ TinyCore.AMD.define('side-panel', [], function () {
 				$('body').append($Clone[0]);
 			}
 
-            $(oTarget).bigSlide(oSettings);
+			$(oTarget).bigSlide(oSettings);
 
 			$(oSettings.menu).addClass('side-panel-default');
 
-			if ( $(oSettings.menu)[0].className.indexOf('navigation') !== -1 ) {
+
+
+			if ($(oSettings.menu)[0].className.indexOf('navigation') !== -1) {
 
 				// If is a navigation object
 
-				$(oTarget).on('click', function(){
+				$(oTarget).on('click', function () {
 
 					var nMenuWidth = $('#' + this.href.split('#')[1]).width();
 
@@ -110,16 +126,16 @@ TinyCore.AMD.define('side-panel', [], function () {
 
 						// If it's on the right side
 
-						if ( $(oSettings.menu).css('right') !== '0px') {
+						if ($(oSettings.menu).css('right') !== '0px') {
 
 							// Opening
-							$(oSettings.menu).css('z-index','1000');
+							$(oSettings.menu).css('z-index', '1000');
 							$('html').css({
 								'position': 'absolute',
-								'width' : $(window).width() + parseInt(oSettings.menuWidth, 10)
+								'width': $(window).width() + parseInt(oSettings.menuWidth, 10)
 							}).animate({
 								'left': '-' + nMenuWidth,
-								'padding-right' : nMenuWidth
+								'padding-right': nMenuWidth
 							});
 						} else {
 
@@ -127,27 +143,27 @@ TinyCore.AMD.define('side-panel', [], function () {
 
 							$('html').css({
 								'position': 'relative',
-								'width' : 'inherit'
+								'width': 'inherit'
 							}).animate({
 								'left': 0,
-								'padding-right' : 0
+								'padding-right': 0
 							});
 						}
 					} else {
 
 						// If it's on the left side
 
-						if ( $(oSettings.menu).css('left') !== '0px') {
+						if ($(oSettings.menu).css('left') !== '0px') {
 
 							// Opening
 
-							$(oSettings.menu).css('z-index','1000');
+							$(oSettings.menu).css('z-index', '1000');
 							$('html').css({
 								'position': 'absolute',
-								'overflow' : 'hidden',
-								'width' : $(window).width() + parseInt(oSettings.menuWidth, 10)
+								'overflow': 'hidden',
+								'width': $(window).width() + parseInt(oSettings.menuWidth, 10)
 							}).animate({
-								'padding-left' : nMenuWidth
+								'padding-left': nMenuWidth
 							});
 						} else {
 
@@ -155,10 +171,10 @@ TinyCore.AMD.define('side-panel', [], function () {
 
 							$('html').css({
 								'position': 'relative',
-								'width' : 'auto',
-								'overflow' : 'auto'
+								'width': 'auto',
+								'overflow': 'auto'
 							}).animate({
-								'padding-left' : 0
+								'padding-left': 0
 							});
 
 						}
@@ -168,41 +184,45 @@ TinyCore.AMD.define('side-panel', [], function () {
 
 			} else {
 
-				$(oTarget).on('click', function(){
+				$(oTarget).on('click', function () {
 
 					var nMenuRight = $(this.href.split('#')[1]).css('right');
 
 					if (oSettings.side === 'right' && nMenuRight === '0px') {
-						$(oSettings.menu).css('z-index','1000');
+						$(oSettings.menu).css('z-index', '1000');
 					} else {
-						$(oSettings.menu).css('z-index','1001');
+						$(oSettings.menu).css('z-index', '1001');
 					}
 				});
 			}
 
-			oParent = $(oTarget).parent( oSettings.menu )[0];
+			oParent = $(oTarget).parent(oSettings.menu)[0];
 
-			if ( oParent !== undefined) {
+			if (oParent !== undefined) {
+				// Hack to solve position problem with tabs
+				setTimeout(function () {
+					// if the link to open the panel is inside the panel
 
-				// if the link to open the panel is inside the panel
+					var nWidth = $(oTarget).outerWidth();
 
-				var nWidth = $(oTarget).outerWidth();
+					if (oSettings.side === 'right') {
+						$(oTarget).animate({'left': '-' + (nWidth - 1) + 'px'});
+					} else {
+						$(oTarget).animate({'right': '-' + (nWidth - 1 ) + 'px'});
+					}
 
-				if (oSettings.side === 'right') {
-					$(oTarget).css({'left' : '-' + (nWidth -1) + 'px'} );
-				} else {
-					$(oTarget).css({'right' : '-' + (nWidth -1 ) + 'px'} );
-				}
+					if (oTarget.getAttribute("data-tc-tab-top") !== null) {
+						$(oTarget).css('top', oTarget.getAttribute("data-tc-tab-top"));
+					}
 
-				if (oTarget.getAttribute("data-tc-tab-top") !== null) {
-					$(oTarget).css('top', oTarget.getAttribute("data-tc-tab-top") );
-				}
+					if (oParent.className.indexOf('box') !== -1) {
 
-				if (oParent.className.indexOf('box') !== -1){
+						$(oParent).css('overflow', 'visible');
+					}
+				}, 500);
+			}
 
-					$(oParent).css('overflow', 'visible');
-				}
-			} else if ( oTarget.getAttribute("data-tc-close") !== 'false' || ($(window).width() + 'px') == oSettings.menuWidth ) {
+			if (( oTarget.getAttribute("data-tc-close") !== 'false' && oParent === undefined) || $(window).width() <= nInitialMenuWidth) {
 
 				// The link is not inside the panel and close is not false
 
@@ -220,23 +240,23 @@ TinyCore.AMD.define('side-panel', [], function () {
 
 				$(oSettings.menu).append(oClose);
 
-				$('#slide-panel-close' + nIndex).on('click', function( e ){
+				$('#slide-panel-close' + nIndex).on('click', function (e) {
 
 					e.preventDefault();
 
-					$('#' + oTarget.id ).click();
+					$('#' + oTarget.id).click();
 
 				});
 
 			}
 
-			if ( oSettings.side === 'right') {
+			if (oSettings.side === 'right') {
 				$(oSettings.menu).css({
-					"right" : "-" + oSettings.menuWidth
+					"right": "-" + oSettings.menuWidth
 				}).addClass('side-panel-right');
 			} else {
 				$(oSettings.menu).css({
-					"left" : "-" + oSettings.menuWidth
+					"left": "-" + oSettings.menuWidth
 				}).addClass('side-panel-left');
 			}
 
