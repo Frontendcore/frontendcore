@@ -1,0 +1,53 @@
+{% set current_children = "Balloons" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_title %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Balloons</h1>
+{% endblock object_title %}
+
+{% block object_demo %}
+
+        <h2>Balloon left</h2>
+        {{ demos.demo(
+        'balloon-left',
+        '../_demos/content/balloon-left.html'
+        )}}
+
+        <h2>Balloon right</h2>
+        {{ demos.demo(
+        'balloon-right',
+        '../_demos/content/balloon-right.html'
+        )}}
+
+
+        <h2>Balloon top</h2>
+        {{ demos.demo(
+        'balloon-top',
+        '../_demos/content/balloon-top.html'
+        )}}
+
+
+        <h2>Balloon bottom</h2>
+        {{ demos.demo(
+        'balloon-bottom',
+        '../_demos/content/balloon-bottom.html'
+        )}}
+
+        <h2>Balloons with different background colors</h2>
+        <p>To customize the color of the background use balloon-#{color} modifiers. Check this examples:</p>
+        {{ demos.demo(
+            'balloon-colors',
+            '../_demos/content/balloon-colors.html'
+        )}}
+
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+     '../../css/core/objects/balloons/__vars.scss'
+     )}}
+ {% endblock object_scss_vars %}
