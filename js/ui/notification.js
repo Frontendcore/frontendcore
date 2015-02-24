@@ -1,5 +1,6 @@
 TinyCore.AMD.define('notification', [], function () {
 	return {
+		mediator :  TinyCore.Toolbox.request( 'mediator' ),
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		bMessageCreated : false,
 		oTimer: null,
