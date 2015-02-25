@@ -196,8 +196,8 @@ TinyCore.AMD.define('sortable', [], function () {
 
 				oTree[nIndex] = {
 					order: nIndex + 1,
-					id: this.dataset.tcId !== undefined ? this.dataset.tcId : this.id,
-					name: this.dataset.tcName !== undefined ? this.dataset.tcName : this.id,
+					id: this.getAttribute('data-tc-id') !== null ? this.getAttribute('data-tc-id') : this.id,
+					name: this.getAttribute('data-tc-name') !== null ? this.getAttribute('data-tc-name') : this.id,
 					subtree: {}
 				};
 
@@ -205,8 +205,8 @@ TinyCore.AMD.define('sortable', [], function () {
 				$('li', this).each(function (nLi) {
 					oTree[nIndex].subtree[nLi] = {
 						order: nLi + 1,
-						id: this.dataset.tcId !== undefined ? this.dataset.tcId : this.id,
-						name: this.dataset.tcName !== undefined ? this.dataset.tcName : this.id
+						id: this.getAttribute('data-tc-id') !== null ? this.getAttribute('data-tc-id') : this.id,
+						name: this.getAttribute('data-tc-name') !== null ? this.getAttribute('data-tc-name') : this.id
 					};
 				});
 
