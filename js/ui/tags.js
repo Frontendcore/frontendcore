@@ -61,8 +61,6 @@ TinyCore.AMD.define('tags', [], function () {
 					oOptions.hideTrigger = false;
 				}
 
-				console.log(oOptions.hideTrigger);
-
 				if (oTarget.value !== '' && oTarget.value !== undefined) {
 
 					oOptions.value = oTarget.value.split(',');

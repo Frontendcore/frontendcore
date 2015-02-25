@@ -30,8 +30,9 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			oTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
 
 			$(aTargets).each(function () {
-				if (this.dataset.tcActive !== 'true') {
-					this.dataset.tcActive = 'true';
+				if ( this.getAttribute('data-tc-active') !== 'true') {
+
+					this.setAttribute('data-tc-active', 'true');
 					self.autobind(this);
 				}
 			});
@@ -63,7 +64,7 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			oEditArea.id = sId;
 			oEditArea.className = 'fc-wysiwyg';
 			oEditArea.innerHTML = $(oTarget).text();
-			oEditArea.dataset.help = oText.help;
+			oEditArea.setAttribute('data-help', oText.help );
 
 			return oEditArea;
 		},
@@ -213,22 +214,33 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 				oLinkGroup,
 				aLinks = [];
 
-
 			// If the textarea has no id we assigned a new one
 			if (oTarget.id === '') {
 				oTarget.id = sDate + self._oConstants.TEXTAREA_SUFIX;
 			}
 
-			// check if the HTML option is enabled and creates the button
-			if (oTarget.dataset.tcHtml !== 'false') {
-				oLinkHTML = self.createLink(sId, 'html', oText.html);
-				aLinks.push(oLinkHTML);
-			}
+			if (window.navigator.userAgent.indexOf('MSIE') === -1) {
+				// check if the HTML option is enabled and creates the button
+				if (oTarget.getAttribute("data-tc-html") !== null) {
+					if (oTarget.getAttribute("data-tc-html") !== 'false') {
+						oLinkHTML = self.createLink(sId, 'html', oText.html);
+						aLinks.push(oLinkHTML);
+					}
+				} else {
+					oLinkHTML = self.createLink(sId, 'html', oText.html);
+					aLinks.push(oLinkHTML);
+				}
 
-			// check if the Fullscreen option is enabled and creates the button
-			if (oTarget.dataset.tcFullscreen !== 'false') {
-				oLinkScreen = self.createLink(sId, 'screen', oText.fullscreen);
-				aLinks.push(oLinkScreen);
+				// check if the Fullscreen option is enabled and creates the button
+				if (oTarget.getAttribute("data-tc-fullscreen") !== null) {
+					if (oTarget.getAttribute("data-tc-fullscreen") !== 'false') {
+						oLinkScreen = self.createLink(sId, 'screen', oText.fullscreen);
+						aLinks.push(oLinkScreen);
+					}
+				} else {
+					oLinkScreen = self.createLink(sId, 'screen', oText.fullscreen);
+					aLinks.push(oLinkScreen);
+				}
 			}
 
 			// If there are buttons append all of them after the Target
@@ -269,12 +281,24 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			self.bindForm(sId, oTarget, oText);
 			self.bindTextarea(sId, oTarget, oText);
 
-			if (oTarget.dataset.tcHtml !== 'false') {
-				self.bindHtmlButton(sId, oTarget, oText);
-			}
+			if (window.navigator.userAgent.indexOf('MSIE') === -1) {
 
-			if (oTarget.dataset.tcFullscreen !== 'false') {
-				self.bindScreenButton(sId, oTarget, oText);
+				if ( oTarget.getAttribute("data-tc-html") !== null ) {
+					if (oTarget.getAttribute("data-tc-html") !== 'false') {
+						self.bindHtmlButton(sId, oTarget, oText);
+					}
+				} else {
+					self.bindHtmlButton(sId, oTarget, oText);
+				}
+
+
+				if ( oTarget.getAttribute("data-tc-fullscreen") !== null ) {
+					if (oTarget.getAttribute("data-tc-fullscreen") !== 'false') {
+						self.bindScreenButton(sId, oTarget, oText);
+					}
+				} else {
+					self.bindScreenButton(sId, oTarget, oText);
+				}
 			}
 
 		},
