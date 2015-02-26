@@ -1,8 +1,10 @@
 module.exports =  {
+
 	workspace: {
 		files: [
 			// makes all src relative to cwd
-			{expand: true, cwd: 'static/', src: ['**'], dest: './../site/build/static/'}
+			{expand: true, cwd: 'static/', src: ['**'], dest: './../site/build/static/'},
+			{expand: true, cwd: './bower_components/webshim/js-webshim/minified/', src: ['**'], dest: './../site/build/static/js/shims/'}
 		]
 	},
 	scss: {
@@ -14,7 +16,7 @@ module.exports =  {
 	js: {
 		files: [
 			// makes all src relative to cwd
-			{expand: true, cwd: './../site/build/static/js/', src: ['**'], dest: './../js/'}
+			{expand: true, cwd: './../site/build/static/js/', src: ['**'], dest: './../js/'},
 		]
 	},
 	generator: {

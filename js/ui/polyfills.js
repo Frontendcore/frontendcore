@@ -2,7 +2,6 @@ var oPolyfills = {};
 
 TinyCore.AMD.define('polyfills', [] , function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
 		onStart: function () {
 
 			var aTags = ['video','audio','source'],
@@ -17,34 +16,29 @@ TinyCore.AMD.define('polyfills', [] , function () {
 
 			nInputs = aInputsType.indexOf('date') + aInputsType.indexOf('email') + aInputsType.indexOf('month') + aInputsType.indexOf('range') + aInputsType.indexOf('datetime');
 
-			oPolyfills.shims = [];
+			oPolyfills.shims = '';
 
 			if ( document.getElementsByTagName('form').length > 0 ) {
 
 				if ( !Modernizr.input.placeholder || !Modernizr.input.required )
 				{
-					oPolyfills.shims.push('forms');
+					oPolyfills.shims += 'forms ';
 				}
 
 				if ( nSupportInputs < 5 )
 				{
-					oPolyfills.shims.push('forms-ext');
+					oPolyfills.shims += ('forms-ext ');
 				}
 			}
 
 			for (var nCounter = 0; nCounter < aTags.length; nCounter++) {
 				if ($(aTags[nCounter])[0] !== undefined && !Modernizr[aTags[nCounter]] )
 				{
-					oPolyfills.shims.push(aTags[nCounter]);
+					oPolyfills.shims += aTags[nCounter] + ' ';
 				}
 			}
 
-			oPolyfills.options = {
-				basePath: oGlobalSettings.sPathJs + "shims/",
-				waitReady: false
-			};
-
-			if ( nInputs > -5 && nSupportInputs < 5) {
+			if ( nInputs < 0 && nSupportInputs < 5) {
 				TinyCore.AMD.requireAndStart( 'loadPolyfills');
 			}
 
@@ -54,12 +48,11 @@ TinyCore.AMD.define('polyfills', [] , function () {
 
 TinyCore.AMD.define('loadPolyfills', ['polyfillsLibs'], function () {
 	return {
-		sPathCss: oGlobalSettings.sPathCss + 'ui/' + 'modal.css',
 		onStart: function () {
 
-			$.webshims.setOptions(oPolyfills.options);
+			webshim.setOptions('basePath', oGlobalSettings.sPathJsCore + "shims/shims/");
 
-			$.webshims.polyfill(oPolyfills.shims);
+			webshim.polyfill(oPolyfills.shims);
 
 			oTools.trackModule('JS_Libraries', 'call', 'polyfills' );
 
