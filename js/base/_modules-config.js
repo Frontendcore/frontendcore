@@ -10,7 +10,8 @@ if (!oGlobalSettings.oPaths) oGlobalSettings.oPaths = {};
 if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = isMobile.any() ? 'desktop' : 'desktop' ;
 
 var oDefaultPaths = {
-		libs: oGlobalSettings.sPathJs
+		libs: oGlobalSettings.sPathJs,
+		polyfillsLibs : oGlobalSettings.sPathJsCore + "shims/polyfiller"
 	},
 	aModules = ['devicePackage','code','sortable','charts','chartLibs','tags','modal','autocomplete','autosize','graph','stats','wysiwyg','truncate','tip','cart','polyfills','parallax','carousel','table','toggle','tabs','notification','dropdown','center-box','side-panel'];
 
