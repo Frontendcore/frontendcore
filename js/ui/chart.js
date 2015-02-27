@@ -2,6 +2,7 @@ TinyCore.AMD.define('charts', [], function () {
 	return {
 		ChartJS : null,
 		aCharts : [],
+		isEmpty : true,
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		aDefaultColors: ['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc'],
 		oDefault: {
@@ -227,6 +228,8 @@ TinyCore.AMD.define('charts', [], function () {
 				aColors = aCustomColors.concat( self.aDefaultColors ),
 				oCanvas = document.getElementById(oTarget.id).getContext("2d");
 
+			self.isEmpty = true;
+
 			oSettings = oTools.mergeOptions( self.oDefault, oOptions );
 			
 			oChartData = self.getCanvasData( oTarget, self.getColors(aColors, oOptions.type) );
@@ -248,6 +251,28 @@ TinyCore.AMD.define('charts', [], function () {
 				self.createLegend(oTarget, oChart );
 			}
 
+			if (self.isEmpty) {
+				self.createEmptyMessage(oTarget);
+			}
+
+		},
+		createEmptyMessage: function(oTarget) {
+
+
+
+			var sId = oTarget.id + '-no-data',
+				sMessage = oTarget.getAttribute("data-tc-text-no-data") !== null ? oTarget.getAttribute("data-tc-text-no-data") : 'No data' ;
+
+			$(oTarget).before('<h3 id="'+ sId +'" class="charts-no-data"><i class="icon-bar-chart-o"></i>'+ sMessage  +'</h3>');
+
+			var nPositionLeft = ($(oTarget).width()/2) - ($('#' + sId).width()/2),
+				nPositionTop = ($(oTarget).height()/2) - ($('#' + sId).height()/2);
+
+			$('#' + sId).css({
+				'position' : 'absolute',
+				'left' : nPositionLeft,
+				'margin-top' : nPositionTop
+			});
 		},
 		getColors: function( aColors, sType ) {
 
@@ -284,6 +309,7 @@ TinyCore.AMD.define('charts', [], function () {
 			var self = this,
 				sLabel,
 				$InputsData = $('input[type=hidden]', oTarget),
+				nValue,
 				oChartData = {
 					groups : {
 						labels:  oTarget.getAttribute("data-tc-labels-x") !== null ?  oTools.attributeToArray(oTarget.getAttribute("data-tc-labels-x")) : [],
@@ -297,6 +323,8 @@ TinyCore.AMD.define('charts', [], function () {
 
 				// Get the label name
 				sLabel = this.name !== ''? this.name : 'unlabel';
+
+				nValue = parseInt( this.value, 10 );
 
 				if(sLabel === 'unlabel') {
 					oChartData.legend = false;
@@ -313,15 +341,19 @@ TinyCore.AMD.define('charts', [], function () {
 
 				// Push the data for Pie & Doughnut
 				oChartData.items[nInput] = {
-					value: parseInt( this.value, 10 ),
+					value: nValue,
 					label: sLabel
 				};
 
 				// Push the data for Pie & Doughnut
 				oChartData.items[nInput] = oTools.mergeOptions(oChartData.items[nInput], oColors[ nInput ]);
 
+				if (nValue > 0) {
+					self.isEmpty = false;
+				}
+
 			});
-			
+
 			return oChartData;
 		},
 		createChart: function( oCanvas, oChartData, oSettings, oChart ) {

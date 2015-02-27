@@ -35,6 +35,20 @@
             '../_demos/content/chart-bar.html'
         )}}
     </section>
+    <section class="box-lighten">
+        <h2>Doughnut charts no data</h2>
+        {{ demos.demo(
+        'chart-doughnut-no-data',
+        '../_demos/content/chart-doughnut-no-data.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Bar charts no data</h2>
+        {{ demos.demo(
+        'chart-bar-no-data',
+        '../_demos/content/chart-bar-no-data.html'
+        )}}
+    </section>
     <div class="grid">
         <div class="col-1-2">
             <h1>Canvas</h1>
@@ -64,6 +78,11 @@
                 "name" :        "data-tc-colors",
                 "description" : "Array or string separated by comma with the hex colors used for the charts.",
                 "default" : "['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc']"
+            },
+                "6" : {
+                "name" :        "data-tc-text-no-data",
+                "description" : "Text shown when all values are zero.",
+                "default" : "No data"
             }
             }
             )}}
