@@ -247,7 +247,6 @@ TinyCore.AMD.define('charts', [], function () {
 			}
 
 			if (oChartData.legend) {
-
 				self.createLegend(oTarget, oChart );
 			}
 
@@ -344,6 +343,13 @@ TinyCore.AMD.define('charts', [], function () {
 					value: nValue,
 					label: sLabel
 				};
+
+				// Check if one of the values is not zero
+				for (var nKeyData = 0; oChartData.groups.datasets[nInput].data.length > nKeyData; nKeyData++ ) {
+					if (oChartData.groups.datasets[nInput].data[nKeyData] > 0 ) {
+						nValue = 1;
+					}
+				}
 
 				// Push the data for Pie & Doughnut
 				oChartData.items[nInput] = oTools.mergeOptions(oChartData.items[nInput], oColors[ nInput ]);
