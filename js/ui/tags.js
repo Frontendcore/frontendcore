@@ -2,7 +2,9 @@ TinyCore.AMD.define('tags', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
-			useCommaKey: true
+			useCommaKey: true,
+			noSuggestionText: 'No result matching the term {{query}}',
+			placeholder: 'Add a Tag'
 		},
 		onStart: function () {
 
@@ -67,7 +69,11 @@ TinyCore.AMD.define('tags', [], function () {
 				}
 
 				if (oTarget.placeholder !== '') {
-					oOptions.startText = oTarget.placeholder;
+					oOptions.placeholder = oTarget.placeholder;
+				}
+
+				if (oTarget.getAttribute("data-tc-text-no-suggestion") !== null ) {
+					oOptions.noSuggestionText = oTarget.getAttribute("data-tc-text-no-suggestion");
 				}
 
 				if ( oTarget.getAttribute("data-tc-values") !== null) {
