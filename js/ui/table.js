@@ -1,6 +1,7 @@
 TinyCore.AMD.define('table', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
+		oTable : [],
 		oDefault: {
 			features: {
 				paginate: true,
@@ -59,11 +60,11 @@ TinyCore.AMD.define('table', [], function () {
 
 			oTools.trackModule('JS_Libraries', 'call', 'table' );
 
-			$(aTargets).each(function () {
-				self.autobind(this);
+			$(aTargets).each(function ( nIndex ) {
+				self.autobind(this, nIndex);
 			});
 		},
-		autobind: function (oTarget, sData) {
+		autobind: function (oTarget, nIndex) {
 
 			var self = this,
 				$Target = $(oTarget),
@@ -87,7 +88,13 @@ TinyCore.AMD.define('table', [], function () {
 					sClass = 'table-dynamic';
 				}
 
-				$Target.dynatable(self.oDefault).addClass(sClass);
+				$Target.addClass(sClass);
+
+				self.oTable[nIndex] = $Target.dynatable(self.oDefault);
+
+			$('input','.dynatable-search').keyup(function(){
+				$(this).blur().focus();
+			});
 
 		},
 		onStop: function () {
