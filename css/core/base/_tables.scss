@@ -55,4 +55,22 @@
 			padding: 0;
 		}
 	}
+
+}
+
+@mixin mobile-tables(){
+	.table {
+		& {
+			display: block;
+			overflow-x: auto;
+			width: 100%;
+			@include box-sizing(border-box);
+			max-width: 100%;
+			position: relative;
+
+		}
+		td, th {
+			white-space: nowrap;
+		}
+	}
 }
