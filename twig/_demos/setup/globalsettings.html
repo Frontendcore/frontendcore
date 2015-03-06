@@ -4,19 +4,19 @@ var oGlobalSettings = {
 	sPathJs : '/js/',
 
 	// Defines the path of the Javascript Core path (Where the core.js can be found)
-	sPathJsCore: oGlobalSettings.sPathJs + '../../',
+	sPathJsCore: this.sPathJs + '../../',
 
 	// Defines the path where the Javascript Modules can be found
-	sPathJsModules : oGlobalSettings.sPathJs + 'modules',
+	sPathJsModules : this.sPathJs + 'modules',
 
 	// Defines the path where the Javascript Libs can be found
-	sPathJsLibs : oGlobalSettings.sPathJs + '../../',
+	sPathJsLibs : this.sPathJs + '../../',
 
 	// Defines the path where the CSS files can be found
 	sPathCss: './css/',
 
 	// Defines the path where the ui.css file can be found
-	sPathCssUi: oGlobalSettings.sPathCss + 'ui.css',
+	sPathCssUi: this.sPathCss + 'ui.css',
 
 	// Sends google analytics a call to get starts of calls an executions of the modules
 	bTrackModules: false,

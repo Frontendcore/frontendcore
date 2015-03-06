@@ -10,13 +10,15 @@ TinyCore.AMD.define('code', [], function (utils) {
 
 			oTools.trackModule('JS_Libraries', 'call', 'code' );
 
+			hljs.configure({
+				tabReplace: '    '
+			});
+
             $(aTargets).each(function () {
                 self.autobind(this);
             });
-
 		},
 		autobind: function ( aTarget ) {
-
             hljs.highlightBlock(aTarget);
 		},
 		onStop: function () {
