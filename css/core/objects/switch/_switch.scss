@@ -38,7 +38,7 @@
 				width: $spacing;
 				height: $spacing;
 				padding-top: 1px;
-				font-family: "fontawesome";
+				font-family: 'fontawesome';
 				content: $fa-var-power-off;
 				text-indent: 0;
 				text-align: center;
@@ -71,7 +71,7 @@
 			margin-left: 0;
 			margin-right: 0;
 		}
-		input[type="checkbox"] + label, input[type="radio"] + label {
+		input[type='checkbox'] + label, input[type='radio'] + label {
 			display: inline-block;
 			margin-left: $spacing/3;
 			margin-right: $spacing/2;

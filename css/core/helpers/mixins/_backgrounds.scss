@@ -10,17 +10,17 @@
  * @group colors
  */
 
-@mixin background-transparent($bg-color: $color-background, $opacity:0.7) {
-  background-color:rgba($bg-color, $opacity);
+@mixin background-transparent($bg-color: $color-background, $opacity: 0.7) {
+	background-color: rgba($bg-color, $opacity);
 
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
-	@include has-layout;
+	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
+		@include has-layout;
 
-	// MS filter alpha channel has a different format from standard browsers.
-	$final-bg-color-ie:ie-hex-str(rgba($bg-color, $opacity));
-	// IE9 supports rgba & filters, so remember to disable the filter targeting IE9 only.
-	filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{$final-bg-color-ie}', endColorstr='#{$final-bg-color-ie}');
-  }
+		// MS filter alpha channel has a different format from standard browsers.
+		$final-bg-color-ie: ie-hex-str(rgba($bg-color, $opacity));
+		// IE9 supports rgba & filters, so remember to disable the filter targeting IE9 only.
+		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{$final-bg-color-ie}', endColorstr='#{$final-bg-color-ie}');
+	}
 }
 
 /**
@@ -36,8 +36,10 @@
  * @group colors
  */
 
-@mixin background-gradient-ie-old( $start-color: $color-box-dark, $end-color: $color-box-light, $orientation: vertical){
+@mixin background-gradient-ie-old($start-color: $color-box-dark, $end-color: $color-box-light, $orientation: vertical) {
 	@if $legacy-support-for-ie9 == true {
 		@include filter-gradient($start-color, $end-color, $orientation);
 	}
-};
+}
+
+;

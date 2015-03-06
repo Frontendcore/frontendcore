@@ -28,37 +28,34 @@
 //	 }
 //
 
-@mixin rem-fallback( $property, $values , $force: '' ) {
-	$values-length: length( $values );
+@mixin rem-fallback($property, $values, $force: '') {
+	$values-length: length($values);
 	$rem-values: '';
 	$px-values: '';
-
 
 	@if $force == true {
 		$force: '!important';
 	}
 
-
 	@if $legacy-support-for-ie6 == true or $legacy-support-for-ie7 == true or $legacy-support-for-ie8 == true {
 		@for $i from 1 through $values-length {
-			$value: strip-unit( nth( $values, $i ) );
+			$value: strip-unit(nth($values, $i));
 			$px-values: #{$px-values + $value * $px-to-em-proportion}px;
 
 			@if $i < $values-length {
-				$px-values: #{$px-values + " "};
+				$px-values: #{$px-values + ' '};
 			}
 		}
-
 
 		#{$property}: $px-values #{$force};
 	}
 
 	@for $i from 1 through $values-length {
-		$value: strip-unit( nth( $values, $i ) );
+		$value: strip-unit(nth($values, $i));
 		$rem-values: #{$rem-values + $value}rem;
 
 		@if $i < $values-length {
-			$rem-values: #{$rem-values + " "};
+			$rem-values: #{$rem-values + ' '};
 		}
 	}
 

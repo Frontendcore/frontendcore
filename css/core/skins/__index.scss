@@ -1,5 +1,5 @@
 $skin: default !global !default;
 
-@import "default/__index.scss";
+@import 'default/_index';
 
-@import "_maps.scss";
+@import 'maps';

@@ -1,11 +1,8 @@
 // base index
-@import 'base/__index.scss';
-
+@import 'base/_index';
 // Bombs index
-@import 'modifiers/__index.scss';
-
+@import 'modifiers/_index';
 // bricks index
-@import 'objects/__index.scss';
-
+@import 'objects/_index';
 // User Interface Index
-@import 'ui/__index.scss';
+@import 'ui/_index';

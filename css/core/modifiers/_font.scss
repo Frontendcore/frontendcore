@@ -21,7 +21,7 @@ fz-h1
 
 %title {
 	& {
-		font-family:$font-face-title;
+		font-family: $font-face-title;
 		line-height: map-get($fonts, line-height-title);
 		font-weight: map-get($fonts, weight-title);;
 		margin-bottom: $spacing/4;
@@ -56,6 +56,7 @@ fz-h1
 	@include rem-fallback(font-size, $font-size-m*$font-title-exponential, true);
 	@extend %title;
 }
+
 @if $ui != true {
 
 	h1, .fz-h1 {

@@ -9,7 +9,7 @@
 	.slide-panel-close {
 		& {
 			display: block;
-			font-family: "FontAwesome" !important;
+			font-family: 'FontAwesome' !important;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -34,12 +34,12 @@
 			z-index: 1000;
 			overflow-y: auto;
 			border-radius: 0 !important;
-			@include box-shadow(0 0 $spacing/8 rgba($color-foreground, .2) )
+			@include box-shadow(0 0 $spacing/8 rgba($color-foreground, .2))
 		}
 		&.hidden, &.desktop, &.mobile, &.tablet {
 			display: block !important;
 		}
-		a[data-tc-modules="side-panel"] {
+		a[data-tc-modules='side-panel'] {
 			& {
 				display: block;
 				position: absolute;
@@ -58,13 +58,13 @@
 			}
 		}
 		&.side-panel-left {
-			a[data-tc-modules="side-panel"] {
-				@include box-shadow($spacing/10 0 $spacing/10 rgba($color-foreground, .2) );
+			a[data-tc-modules='side-panel'] {
+				@include box-shadow($spacing/10 0 $spacing/10 rgba($color-foreground, .2));
 			}
 		}
 		&.side-panel-right {
-			a[data-tc-modules="side-panel"] {
-				@include box-shadow(-($spacing/10) 0 $spacing/10 rgba($color-foreground, .2) );
+			a[data-tc-modules='side-panel'] {
+				@include box-shadow(-($spacing/10) 0 $spacing/10 rgba($color-foreground, .2));
 			}
 		}
 	}

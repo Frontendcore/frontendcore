@@ -68,7 +68,7 @@ $default-text-shadow-h-offset: map-get($defaults, text-shadow-h-offset) !global;
  * Compass variable: The default vertical offset for text shadows. Positive is down.
  * @group measures
  */
-$default-text-shadow-v-offset: map-get($defaults, text-shadow-v-offset ) !global;
+$default-text-shadow-v-offset: map-get($defaults, text-shadow-v-offset) !global;
 
 /**
  * Compass variable: The default blur length for text shadows.

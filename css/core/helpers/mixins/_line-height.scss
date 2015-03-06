@@ -8,6 +8,6 @@
  * @group fonts
  */
 
-@mixin line-height-standard( $font-size: $font-size-default ) {
-	@include rem-fallback( line-height, $font-size );
+@mixin line-height-standard($font-size: $font-size-default) {
+	@include rem-fallback(line-height, $font-size);
 }

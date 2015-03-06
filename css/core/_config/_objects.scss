@@ -200,7 +200,7 @@ $object-labels: map-get($objects, labels) !global;
  * @link http://www.frontendcore.com/architecture-css/animations.html
  * @group objects
  */
-$object-animations: map-get($objects, animations ) !global;
+$object-animations: map-get($objects, animations) !global;
 
 /**
  * Includes the classes at main css for balloons
@@ -209,4 +209,4 @@ $object-animations: map-get($objects, animations ) !global;
  * @link http://www.frontendcore.com/content/balloons.html
  * @group objects
  */
-$object-balloons: map-get($objects, balloons ) !global;
+$object-balloons: map-get($objects, balloons) !global;

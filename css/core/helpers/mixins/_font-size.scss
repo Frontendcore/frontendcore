@@ -10,19 +10,16 @@
  * @group fonts
  */
 
-@mixin font-size( $size-value: 1.6, $line-height: true, $force-line-height: false ) {
-	@include rem-fallback( font-size, $size-value );
+@mixin font-size($size-value: 1.6, $line-height: true, $force-line-height: false) {
+	@include rem-fallback(font-size, $size-value);
 
-	@if ( $line-height == true ) {
-		@include line-height-standard( $size-value );
-	}
-	@else if ( $line-height == false ) {
+	@if ($line-height == true) {
+		@include line-height-standard($size-value);
+	} @else if ($line-height == false) {
 		// Do nothing
-	}
-	@else if ( $force-line-height == true ) {
+	} @else if ($force-line-height == true) {
 		line-height: $line-height;
-	}
-	@else {
-		@include line-height-standard( $line-height );
+	} @else {
+		@include line-height-standard($line-height);
 	}
 }

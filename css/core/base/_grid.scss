@@ -1,19 +1,19 @@
-@import "susy";
+@import 'susy';
 
 $susy: (
-	math: fluid,
-	output: float,
-	gutter-position: after,
-	container: auto,
-	column-width: false,
-	global-box-sizing: content-box,
-	flow: map-get($grid, flow),
-	container-position: map-get($grid, container-position),
-	columns: 12,
-	gutters: map-get($grid, gutters),
-	use-custom: (
-			box-sizing: false,
-	)
+		math: fluid,
+		output: float,
+		gutter-position: after,
+		container: auto,
+		column-width: false,
+		global-box-sizing: content-box,
+		flow: map-get($grid, flow),
+		container-position: map-get($grid, container-position),
+		columns: 12,
+		gutters: map-get($grid, gutters),
+		use-custom: (
+				box-sizing: false,
+		)
 );
 
 @if $ui != true {
@@ -140,8 +140,8 @@ $susy: (
 
 	.push-right {
 		float: right;
-		margin-left:$spacing;
-		margin-right:0;
+		margin-left: $spacing;
+		margin-right: 0;
 	}
 
 }
@@ -151,7 +151,6 @@ $susy: (
 		padding-right: $spacing;
 	}
 }
-
 
 @mixin mobile-grid() {
 
@@ -177,7 +176,7 @@ $susy: (
 		padding-right: $spacing/4 !important;
 	}
 	[class*='col-'] {
-		padding-left:0;
-		padding-right:0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

@@ -1,14 +1,14 @@
 // THE CONFIG OF YOUR PROJECT
-@import '_config/__index.scss';
+@import '_config/_index';
 
 // FRONTEND CORE BASE & SKIN
-@import 'core/_main.scss';
+@import 'core/main';
 
 // CUSTOM HELPERS
-@import 'helpers/__index.scss';
+@import 'helpers/_index';
 
 // OBJECTS
-@import 'objects/__index.scss';
+@import 'objects/_index';
 
 // MEDIA QUERIES FOR DEVICES
-@import 'devices/__index-devices.scss';
+@import 'devices/_index-devices';

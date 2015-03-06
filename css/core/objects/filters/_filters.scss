@@ -21,13 +21,13 @@
 			a {
 				font-weight: map-get($object-filters-vars, font-weight);
 				font-size: map-get($object-filters-vars, font-size);
-				color:  map-get($object-filters-vars, color);
+				color: map-get($object-filters-vars, color);
 			}
 			&.active {
 				&:after {
 					border: 8px solid transparent;
 					border-style: outset outset solid outset;
-					content: "";
+					content: '';
 					height: 0;
 					left: 0;
 					overflow: hidden;
@@ -37,7 +37,7 @@
 					top: 50%;
 					border-width: 6px;
 					margin-top: -6px;
-					border-bottom-color: map-get($object-filters-vars, color );
+					border-bottom-color: map-get($object-filters-vars, color);
 				}
 				a {
 					& {

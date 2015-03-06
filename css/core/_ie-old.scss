@@ -5,23 +5,21 @@
 // ------------------------------
 // INTERNAL CORE CSS IMPORT
 // BASE
-
-@import 'skins/__index.scss';
-
+@import 'skins/_index';
 @import 'basic-tools';
 
 .mobile, .tablet {
-	display:none !important;
+	display: none !important;
 }
 
 .desktop {
-	display:block !important;
+	display: block !important;
 }
 
 .navigation, .navigation-vertical, .subnavigation-vertical, .subnavigation {
-	display:block;
+	display: block;
 }
 
 [class*='box-'] {
-	display:block;
+	display: block;
 }

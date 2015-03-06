@@ -1,10 +1,8 @@
 .landing {
-	& {
-		background-color: $color-secondary;
-		background-image: url("/static/img/home-puzzle-bg.png");
-		background-repeat: repeat;
-		color: $color-background;
-		min-height: 500px;
-		overflow: hidden;
-	}
+	background-color: $color-secondary;
+	background-image: url('/static/img/home-puzzle-bg.png');
+	background-repeat: repeat;
+	color: $color-background;
+	min-height: 500px;
+	overflow: hidden;
 }

@@ -128,7 +128,7 @@ $color-header: map-get($colors, header-background) !global;
  * Color for the rank stars.
  * @group colors
  */
-$color-rank:map-get($colors, rank) !global;
+$color-rank: map-get($colors, rank) !global;
 
 /**
  * Color for the info message boxes.
@@ -146,7 +146,7 @@ $color-ok: map-get($colors, ok) !global;
  * Color for the error objects, such as msg-ko boxes.
  * @group colors
  */
-$color-ko : map-get($colors, ko) !global;
+$color-ko: map-get($colors, ko) !global;
 
 /**
  * Color for the warning objects, such as msg-warning boxes.
@@ -160,68 +160,68 @@ $color-warning: map-get($colors, warning) !global;
  */
 $color-focus: map-get($colors, input-focus) !global;
 
-$color-box-invert: map-get($colors, megacontrast ) !global;
+$color-box-invert: map-get($colors, megacontrast) !global;
 
 @if $color-foreground-light == auto {
-	@if ( brightness( $color-foreground ) > 30% ) {
-		$color-text-light: lighten( $color-foreground, 15% ) !global;
+	@if (brightness( $color-foreground ) > 30%) {
+		$color-text-light: lighten($color-foreground, 15%) !global;
 	} @else {
-		$color-text-light: darken( $color-foreground, 15% ) !global;
+		$color-text-light: darken($color-foreground, 15%) !global;
 	}
 }
 
 @if $color-foreground-dark == auto {
-	@if ( brightness( $color-foreground ) > 30% ) {
-		$color-text-dark: darken( $color-foreground, 15% ) !global;
+	@if (brightness( $color-foreground ) > 30%) {
+		$color-text-dark: darken($color-foreground, 15%) !global;
 	} @else {
-		$color-text-dark: lighten( $color-foreground, 15% ) !global;
+		$color-text-dark: lighten($color-foreground, 15%) !global;
 	}
 }
 
 @if $color-primary-light == auto {
-	@if ( brightness( $color-primary ) > 30% ) {
-		$color-primary-light: lighten( $color-primary , 15% ) !global;
+	@if (brightness( $color-primary ) > 30%) {
+		$color-primary-light: lighten($color-primary, 15%) !global;
 	} @else {
-		$color-primary-light: darken( $color-primary , 15% ) !global;
+		$color-primary-light: darken($color-primary, 15%) !global;
 	}
 }
 
 @if $color-primary-dark == auto {
-	@if ( brightness( $color-primary ) > 30% ) {
-		$color-primary-dark: darken( $color-primary , 15% ) !global;
+	@if (brightness( $color-primary ) > 30%) {
+		$color-primary-dark: darken($color-primary, 15%) !global;
 	} @else {
-		$color-primary-dark: lighten( $color-primary , 15% ) !global;
+		$color-primary-dark: lighten($color-primary, 15%) !global;
 	}
 }
 
 @if $color-secondary-light == auto {
-	@if ( brightness( $color-secondary ) > 30% ) {
-		$color-secondary-light: lighten( $color-secondary , 10% ) !global;
+	@if (brightness( $color-secondary ) > 30%) {
+		$color-secondary-light: lighten($color-secondary, 10%) !global;
 	} @else {
-		$color-secondary-light: darken( $color-secondary , 10% ) !global;
+		$color-secondary-light: darken($color-secondary, 10%) !global;
 	}
 }
 
 @if $color-secondary-dark == auto {
-	@if ( brightness( $color-secondary ) > 30% ) {
-		$color-secondary-dark: darken( $color-secondary , 10% ) !global;
+	@if (brightness( $color-secondary ) > 30%) {
+		$color-secondary-dark: darken($color-secondary, 10%) !global;
 	} @else {
-		$color-secondary-dark: lighten( $color-secondary , 10% ) !global;
+		$color-secondary-dark: lighten($color-secondary, 10%) !global;
 	}
 }
 
 @if $color-box-light == auto {
-	@if ( brightness( $color-box ) > 30% ) {
-		$color-box-light: lighten( $color-box , 10% ) !global;
+	@if (brightness( $color-box ) > 30%) {
+		$color-box-light: lighten($color-box, 10%) !global;
 	} @else {
-		$color-box-light: darken( $color-box , 15% ) !global;
+		$color-box-light: darken($color-box, 15%) !global;
 	}
 }
 
 @if $color-box-dark == auto {
-	@if ( brightness( $color-box ) > 30% ) {
-		$color-box-dark: darken( $color-box , 15% ) !global ;
+	@if (brightness( $color-box ) > 30%) {
+		$color-box-dark: darken($color-box, 15%) !global;
 	} @else {
-		$color-box-dark: lighten( $color-box , 15% ) !global;
+		$color-box-dark: lighten($color-box, 15%) !global;
 	}
 }

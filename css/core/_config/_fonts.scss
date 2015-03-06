@@ -18,14 +18,18 @@ $font-face-title: unquote(map-get($fonts, face-title)) !global;
 
 $px-to-em-proportion: strip-unit(map-get($fonts, size-base)) !global;
 
-$icons-font: map-get($fonts,  face-icons) !global !global;
+$icons-font: map-get($fonts, face-icons) !global !global;
 
 // Defaults for compass
 
-$base-font-size: map-get($fonts, size-base) !global; // Sets the base font size
-$base-line-height: map-get($fonts, line-height-base) !global; // Sets the base line height
-$round-to-nearest-half-line: true !global; // Allows compass to round to  multiples of 0.5x line height
-$rhythm-unit: "rem" !global; // Sets rhythm unit to rem. Remove to use default em unit.
+$base-font-size: map-get($fonts, size-base) !global;
+// Sets the base font size
+$base-line-height: map-get($fonts, line-height-base) !global;
+// Sets the base line height
+$round-to-nearest-half-line: true !global;
+// Allows compass to round to  multiples of 0.5x line height
+$rhythm-unit: 'rem' !global;
+// Sets rhythm unit to rem. Remove to use default em unit.
 
 /**
  * @group fonts
@@ -85,9 +89,9 @@ $font-size-xxxs: map-get($fonts, size-xxxs) !global;
 /**
  * @group fonts
  */
-$font-size-xxxxs: map-get($fonts, size-xxxxs)!global;
+$font-size-xxxxs: map-get($fonts, size-xxxxs) !global;
 
 /**
  * @group fonts
  */
-$font-title-exponential: map-get($fonts, size-title-exponential )!global;
+$font-title-exponential: map-get($fonts, size-title-exponential) !global;

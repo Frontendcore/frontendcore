@@ -4,7 +4,7 @@
 
 		.mobile, .tablet {
 			& {
-				display:none;
+				display: none;
 			}
 			&.d-ib, &.d-b {
 				display: none !important;
@@ -12,7 +12,7 @@
 		}
 		.desktop {
 			& {
-				display:block !important;
+				display: block !important;
 			}
 			&.d-ib, &.inline-block {
 				display: inline-block !important;

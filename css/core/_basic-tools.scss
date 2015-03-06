@@ -1,7 +1,4 @@
 @import 'compass';
-
-@import 'helpers/functions/__index.scss';
-
-@import '_config/__index.scss';
-
-@import 'helpers/__index.scss';
+@import 'helpers/functions/_index';
+@import '_config/_index';
+@import 'helpers/_index';

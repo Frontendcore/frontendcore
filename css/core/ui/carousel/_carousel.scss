@@ -27,7 +27,6 @@
 		}
 	}
 
-
 	@keyframes fadeOut {
 		0% {
 			opacity: 1;
@@ -37,7 +36,6 @@
 		}
 	}
 
-
 	.owl-height {
 		-webkit-transition: height 500ms ease-in-out;
 		-moz-transition: height 500ms ease-in-out;
@@ -45,7 +43,6 @@
 		-o-transition: height 500ms ease-in-out;
 		transition: height 500ms ease-in-out;
 	}
-
 
 	.carousel {
 		display: none;
@@ -57,7 +54,7 @@
 			position: relative;
 			-ms-touch-action: pan-Y;
 			&:after {
-				content: ".";
+				content: '.';
 				display: block;
 				clear: both;
 				visibility: hidden;
@@ -175,7 +172,7 @@
 			top: 50%;
 			margin-left: -60px;
 			margin-top: -10px;
-			background: url("owl.video.play.png") no-repeat;
+			background: url('owl.video.play.png') no-repeat;
 			cursor: pointer;
 			z-index: 1;
 			-webkit-backface-visibility: hidden;
@@ -185,11 +182,11 @@
 			-o-transition: scale 100ms ease;
 			transition: scale 100ms ease;
 			&:before {
-				font-family: "fontawesome";
+				font-family: 'fontawesome';
 				content: $fa-var-play-circle-o;
 				font-size: 10rem;
 				font-weight: normal;
-				color: #FFF;
+				color: #fff;
 				text-shadow: 1px 1px 1px #000;
 			}
 			&:hover {
@@ -246,14 +243,14 @@
 				[class*=owl-] {
 					& {
 						font-family: 'FontAwesome';
-						color: #FFF;
+						color: #fff;
 						font-size: 2.5rem;
 						padding: $spacing/4;
 						margin: $spacing/4;
 						display: inline-block;
 						cursor: pointer;
 						@include opacity(.5);
-						@include text-shadow(0 0 10px rgba(0,0,0,.5));
+						@include text-shadow(0 0 10px rgba(0, 0, 0, .5));
 						top: 33%;
 					}
 					&:hover {
@@ -268,14 +265,14 @@
 			}
 			.owl-prev {
 				position: absolute;
-				left:0;
+				left: 0;
 				&:before {
 					content: $fa-var-chevron-left;
 				}
 			}
 			.owl-next {
 				position: absolute;
-				right:0;
+				right: 0;
 				&:before {
 					content: $fa-var-chevron-right;
 				}

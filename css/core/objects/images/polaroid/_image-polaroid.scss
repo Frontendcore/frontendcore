@@ -6,12 +6,12 @@
 
 	a.image-polaroid {
 		& {
-			text-decoration:none;
-			display:inline-block;
+			text-decoration: none;
+			display: inline-block;
 			@extend %images-polaroid;
 		}
 		&.left, &.right {
-			margin-bottom:$spacing;
+			margin-bottom: $spacing;
 		}
 	}
 

@@ -1,7 +1,7 @@
 @if $object-messages != false and $ui != true {
 	.msg-warning {
 		& {
-			border-color:$color-warning;
+			border-color: $color-warning;
 			@include background-transparent($color-warning, .1);
 		}
 		i {

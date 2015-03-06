@@ -1,19 +1,13 @@
-	// Visual formatting properties
-	@import "_visual-formatting.scss";
-
-	// Spacers for paddings and margins
-	@import "_margin-padding.scss";
-
-	// Text properties
-	@import "_text.scss";
-
-	@import "_colors.scss";
-
-	// Font properties
-	@import "_font.scss";
-
-	// Border properties
-	@import "_border.scss";
-
-	@import "_transform.scss";
-	@import "_measures.scss";
+// Visual formatting properties
+@import 'visual-formatting';
+// Spacers for paddings and margins
+@import 'margin-padding';
+// Text properties
+@import 'text';
+@import 'colors';
+// Font properties
+@import 'font';
+// Border properties
+@import 'border';
+@import 'transform';
+@import 'measures';

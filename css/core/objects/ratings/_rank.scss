@@ -7,9 +7,9 @@
 			$star-content: '';
 			@for $star from 1 through 5 {
 				@if $star > $rank {
-					$star-content: $star-content + "\f006";
+					$star-content: $star-content + '\f006';
 				} @else {
-					$star-content: $star-content + "\f005";
+					$star-content: $star-content + '\f005';
 				}
 			}
 			content: $star-content;

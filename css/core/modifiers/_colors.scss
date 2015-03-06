@@ -28,7 +28,7 @@ bg-primary
 bg-ok
 */
 
-$colors-list: 'foreground','background','foreground-light','primary','secondary','box','ko','ok','info','warning' ;
+$colors-list: 'foreground', 'background', 'foreground-light', 'primary', 'secondary', 'box', 'ko', 'ok', 'info', 'warning';
 
 @if $ui != true {
 

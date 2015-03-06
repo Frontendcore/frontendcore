@@ -3,19 +3,19 @@
 	.form-search {
 		& {
 			@extend %field;
-			position:relative;
+			position: relative;
 			overflow: hidden;
 			padding: 0;
 		}
-		input[type="search"] {
+		input[type='search'] {
 			border: none;
 			width: 100%;
 		}
 		button {
 			& {
-				position:absolute;
-				top:1px;
-				right:1px;
+				position: absolute;
+				top: 1px;
+				right: 1px;
 				border: 1px solid $color-box-dark;
 				padding-left: $spacing/2;
 				padding-right: $spacing/2;
@@ -30,10 +30,10 @@
 				& {
 					font-family: $font-face-title;
 					@include rem-fallback(font-size, $font-size-m, true);
-					width:35%;
-					min-width:210px;
-					float:right;
-					margin:$spacing/6 $spacing/6 0 0;
+					width: 35%;
+					min-width: 210px;
+					float: right;
+					margin: $spacing/6 $spacing/6 0 0;
 					height: 38px;
 				}
 				button {
@@ -48,7 +48,7 @@
 		.navigation-sub {
 			.form-search {
 				& {
-					margin:-4px 2px 0 0;
+					margin: -4px 2px 0 0;
 					height: 38px;
 				}
 				button {

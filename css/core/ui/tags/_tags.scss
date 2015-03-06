@@ -80,7 +80,7 @@
 				border: 0;
 				box-shadow: none;
 				-webkit-transition: none;
-				background: #FFF;
+				background: #fff;
 			}
 			&::-ms-clear {
 				width: 0;
@@ -103,17 +103,17 @@
 				width: 0;
 				height: 0;
 				vertical-align: top;
-				border-top: 4px solid rgba($color-foreground,.5);
+				border-top: 4px solid rgba($color-foreground, .5);
 				border-right: 4px solid transparent;
 				border-left: 4px solid transparent;
-				content: "";
+				content: '';
 				margin-left: -4px;
 				margin-top: -4px;
 				left: 50%;
 				top: 50%;
 			}
 			&:hover {
-				&{
+				& {
 					cursor: pointer;
 					background-color: rgba($color-link, .2);
 					color: contrast-color($color-link);
@@ -182,7 +182,6 @@
 		padding-right: 0;
 	}
 
-
 	.ms-sel-ctn {
 		.ms-sel-item {
 			float: left;
@@ -214,7 +213,7 @@
 	}
 
 	.ms-sel-ctn .ms-sel-text {
-		background: #FFF;
+		background: #fff;
 		color: #666;
 		padding-right: 0;
 		margin-left: 0;
@@ -222,16 +221,15 @@
 		font-weight: normal;
 	}
 
-
 	.ms-res-ctn .ms-res-item em {
 		font-style: normal;
 		background: #565656;
-		color: #FFF;
+		color: #fff;
 	}
 
 	.ms-sel-ctn {
 		.ms-sel-text:hover {
-			background: #FFF;
+			background: #fff;
 		}
 		.ms-sel-item-active {
 			background: #757575;
@@ -319,10 +317,10 @@
 		font-size: 14px;
 		background-color: #fff;
 		border: 1px solid #ccc;
-		border: 1px solid rgba(0,0,0,.15);
+		border: 1px solid rgba(0, 0, 0, .15);
 		border-radius: 4px;
-		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 		background-clip: padding-box;
 	}
 

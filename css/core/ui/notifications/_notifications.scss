@@ -8,7 +8,7 @@
 			padding: 0 15%;
 			z-index: 10000;
 			transition: 1s ease-in-out;
-			@include background-image(linear-gradient(top, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 100%));
+			@include background-image(linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 0) 100%));
 		}
 		.icon-times {
 			& {

@@ -18,8 +18,8 @@
 					border-top-color: $color-primary;
 					background-color: $color-box-light;
 					border-color: $color-box;
-					border-style:solid;
-					border-width:1px 1px 0 1px;
+					border-style: solid;
+					border-width: 1px 1px 0 1px;
 					color: $color-foreground;
 				}
 				&:hover {
@@ -48,27 +48,27 @@
 		}
 		a {
 			& {
-				display:block;
-				position:relative;
+				display: block;
+				position: relative;
 				padding: $spacing/4 $spacing/2;
 				border-top-color: $color-primary;
 				background-color: $color-box-light;
 				border: 1px solid $color-box;
 				@extend .fz-h4;
 				color: $color-foreground;
-				text-transform:capitalize;
+				text-transform: capitalize;
 				text-decoration: none;
-				margin:0;
+				margin: 0;
 			}
 			&:hover {
-				background:$color-link;
+				background: $color-link;
 				color: contrast-color($color-link);
 			}
 			&:after {
 				font-family: 'FontAwesome';
-				content: "\f078";
-				position:absolute;
-				right:$spacing/2;
+				content: '\f078';
+				position: absolute;
+				right: $spacing/2;
 				top: $spacing/4;
 			}
 		}
@@ -77,7 +77,7 @@
 				margin-bottom: 0;
 			}
 			&:last-of-type {
-				margin-bottom:0;
+				margin-bottom: 0;
 			}
 			> a {
 				&, &:hover {
@@ -92,7 +92,7 @@
 
 		}
 		&:last-of-type {
-			margin-bottom:$spacing;
+			margin-bottom: $spacing;
 		}
 
 	}
@@ -106,7 +106,7 @@
 @if $object-tabs == default and $ui != true {
 	.tabs {
 		& {
-			@include background-image(linear-gradient(transparent 95%,$color-box ));
+			@include background-image(linear-gradient(transparent 95%, $color-box));
 
 		}
 		li {
@@ -132,19 +132,19 @@
 			}
 		}
 	}
-	$colors-list: 'foreground','background','primary','secondary','box','info';
+	$colors-list: 'foreground', 'background', 'primary', 'secondary', 'box', 'info';
 
 	@each $color in $colors-list {
 
 		.tabs-#{$color} > nav li.active > a, .tabs-#{$color} > ul li.active > a {
-				background-color: map-get($colors, $color) !important;
-				color: contrast-color(map-get($colors, $color)) !important;
+			background-color: map-get($colors, $color) !important;
+			color: contrast-color(map-get($colors, $color)) !important;
 		}
 	}
 
-	.tabs-darken > nav li.active > a  {
-			@include background-transparent($color-foreground, .3);
-			color: $color-background;
+	.tabs-darken > nav li.active > a {
+		@include background-transparent($color-foreground, .3);
+		color: $color-background;
 	}
 
 	.tabs-lighten > nav li.active > a {
@@ -154,10 +154,11 @@
 	}
 
 }
+
 @mixin desktop-tabs {
 	@if $object-tabs != false {
 		header.tab {
-			display:none !important;
+			display: none !important;
 		}
 	}
 }
@@ -165,7 +166,7 @@
 @mixin mobile-tabs {
 	@if $object-tabs != false {
 		.tabs {
-			display:none !important;
+			display: none !important;
 		}
 	}
 }

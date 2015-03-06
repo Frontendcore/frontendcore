@@ -29,7 +29,7 @@
 						&:before {
 							border: $spacing/3 solid transparent;
 							border-style: outset outset solid outset;
-							content: "";
+							content: '';
 							height: 0;
 							left: 50%;
 							margin-left: -$spacing/3;
@@ -157,7 +157,7 @@
 					&:after {
 						border: $arrow-size solid transparent;
 						border-style: outset outset solid outset;
-						content: "";
+						content: '';
 						height: 0;
 						left: 50%;
 						margin-left: -$arrow-size;
@@ -278,7 +278,7 @@
 							}
 							&:before {
 								font-family: 'FontAwesome';
-								content: "\f111";
+								content: '\f111';
 								@include rem-fallback(font-size, .4em);
 								@include opacity(.5);
 								min-width: 16px;
@@ -295,7 +295,7 @@
 							color: $color-foreground;
 						}
 						&:before {
-							content: "\f0da ";
+							content: '\f0da ';
 							@include rem-fallback(font-size, $font-size-default);
 							color: $color-ok;
 							@include opacity(1);

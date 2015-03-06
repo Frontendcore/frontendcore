@@ -9,7 +9,7 @@
  */
 
 @function rem-to-px($rem-value) {
-	$px-value: strip-unit( $rem-value ) * $px-to-em-proportions + "px";
+	$px-value: strip-unit( $rem-value ) * $px-to-em-proportions + 'px';
 	@return $px-value;
 }
 

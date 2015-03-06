@@ -1,0 +1,26 @@
+scss_files: 'css/core/**/*.scss'
+
+exclude:
+  - 'css/core/external/**'
+  - 'css/core/ui/**'
+
+linters:
+  ImportPath:
+    enabled: false
+  FinalNewline:
+    enabled: false
+  Indentation:
+    character: tab
+    width: 1
+  SpaceBetweenParens:
+    enabled: false
+  ColorVariable:
+    enabled: false
+  HexNotation:
+    enabled: false
+  EmptyLineBetweenBlocks:
+    enabled: false
+  UnnecessaryParentReference:
+    enabled: false
+  ImportantRule:
+    enabled: false

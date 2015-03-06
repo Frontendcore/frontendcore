@@ -109,7 +109,7 @@
 		line-height: 120%;
 		padding: $spacing/2 $spacing;
 		color: $color-foreground;
-		text-shadow: -1px -1px 0px rgba(255,255,255,0.2);
+		text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.2);
 	}
 	.opentip-container .opentip .header {
 		margin: 0;
@@ -121,8 +121,8 @@
 		position: absolute;
 		top: -12px;
 		left: 60px;
-		color: rgba(0,0,0,0.5);
-		background: rgba(0,0,0,0);
+		color: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0);
 		text-decoration: none;
 	}
 	.opentip-container .opentip .ot-close span {
@@ -151,12 +151,12 @@
 	.opentip-container.style-dark .opentip,
 	.opentip-container.style-alert .opentip {
 		color: $color-box;
-		text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 	}
 	.opentip-container.style-glass .opentip {
 		padding: 15px 25px;
 		color: $color-primary;
-		text-shadow: 1px 1px 8px rgba(0,94,153,0.3);
+		text-shadow: 1px 1px 8px rgba(0, 94, 153, 0.3);
 	}
 	.opentip-container.ot-hide-effect-fade {
 		-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 1s ease-in-out;
@@ -171,7 +171,7 @@
 	.opentip-container.ot-hide-effect-fade.ot-hiding {
 		opacity: 0;
 		filter: alpha(opacity=0);
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
 	}
 	.opentip-container.ot-show-effect-appear.ot-going-to-show,
 	.opentip-container.ot-show-effect-appear.ot-showing {
@@ -184,7 +184,7 @@
 	.opentip-container.ot-show-effect-appear.ot-going-to-show {
 		opacity: 0;
 		filter: alpha(opacity=0);
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
 	}
 	.opentip-container.ot-show-effect-appear.ot-showing {
 		opacity: 1;

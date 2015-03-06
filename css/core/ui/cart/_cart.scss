@@ -20,7 +20,7 @@
 			min-width: 300px;
 			z-index: 9999;
 			color: $color-foreground;
-			font-family: "FreightSansMedium", sans-serif;
+			font-family: 'FreightSansMedium', sans-serif;
 			@include border-radius;
 			@include box-shadow(0 1px 3px rgba($color-foreground, .5));
 			@include background($color-background);

@@ -10,11 +10,9 @@
  * @group utilities
  */
 
-@mixin parallax-slides(
-	$slide-class: 'slide',
-	$slides-heights: (600px),
-	$slides-bg-img: (none)
-){
+@mixin parallax-slides($slide-class: 'slide',
+$slides-heights: (600px),
+$slides-bg-img: (none)) {
 
 	[class^='#{$slide-class}'] {
 		& {
@@ -23,16 +21,20 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: 50% 0;
-			background-attachment:fixed;
+			background-attachment: fixed;
 		}
 
 	}
 
 	@for $i from 0 to length($slides-bg-img) {
-		.#{$slide-class}-#{$i+1} { background-image: url(nth($slides-bg-img, $i+1)) }
+		.#{$slide-class}-#{$i+1} {
+			background-image: url(nth($slides-bg-img, $i+1))
+		}
 	}
 
 	@for $i from 0 to length($slides-heights) {
-		.#{$slide-class}-#{$i+1} { height:nth($slides-heights, $i+1) }
+		.#{$slide-class}-#{$i+1} {
+			height: nth($slides-heights, $i+1)
+		}
 	}
 }

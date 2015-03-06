@@ -1,8 +1,8 @@
-@import "labels/__index.scss";
-@import "google-search/__index.scss";
-@import "landing/__index.scss";
-@import "header/__index.scss";
-@import "footer/__index.scss";
-@import "_slides.scss";
-@import "_changelog.scss";
-@import "_tabs.scss";
+@import "labels/_index";
+@import "google-search/_index";
+@import "landing/_index";
+@import "header/_index";
+@import "footer/_index";
+@import "slides";
+@import "changelog";
+@import "tabs";

@@ -15,7 +15,7 @@
 			padding: 0 0 $spacing/4 0;
 			margin: 0 0 $spacing/2 0;
 			color: $color-foreground;
-			border-bottom:1px solid $color-box-dark;
+			border-bottom: 1px solid $color-box-dark;
 			font: normal $font-size-xl $font-face-title;
 			width: 100%;
 		}
@@ -71,7 +71,7 @@
 					color: $color-ko;
 				}
 				&:before {
-					padding-right:5px;
+					padding-right: 5px;
 				}
 			}
 			input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='datetime-local'], input[type='month'], select, textarea {
@@ -83,7 +83,7 @@
 			width: 100%;
 			font-size: $font-size-default;
 		}
-		input[readonly],textarea[readonly],input[readonly='readonly'],textarea[readonly='readonly'] {
+		input[readonly], textarea[readonly], input[readonly='readonly'], textarea[readonly='readonly'] {
 			border: 0px none;
 			background: none;
 			outline: 0;
@@ -120,7 +120,7 @@
 			border-style: solid;
 			border-width: 1px;
 			border-color: $color-box-dark;
-			padding:$spacing/4;
+			padding: $spacing/4;
 			color: rgba(0, 0, 0, 0.75);
 			line-height: normal;
 			border-radius: 0;
@@ -203,11 +203,11 @@
 				& {
 					overflow: hidden;
 					position: relative;
-					border:1px solid $color-box-dark;
+					border: 1px solid $color-box-dark;
 					padding: $spacing $spacing*2 $spacing $spacing*8;
 					margin-bottom: $spacing;
 					background-color: $color-background;
-					@include box-shadow(inset 0 2px 8px rgba( $color-foreground, .2 ),0 1px 1px rgba( $color-background, .5 ));
+					@include box-shadow(inset 0 2px 8px rgba($color-foreground, .2), 0 1px 1px rgba($color-background, .5));
 					@include border-radius;
 				}
 				&:hover, &.selected {
@@ -219,8 +219,10 @@
 					padding-left: $spacing*4;
 				}
 			}
-			p { margin: 0; }
-			input[type="radio"], input[type="checkbox"] {
+			p {
+				margin: 0;
+			}
+			input[type='radio'], input[type='checkbox'] {
 				position: absolute;
 				left: $spacing*1.25;
 				top: 45%;

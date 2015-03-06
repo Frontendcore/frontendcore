@@ -1,9 +1,8 @@
-// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most 'contrasty'
 @function contrast-color($color, $dark: $color-foreground, $light: $color-background) {
 	@if $color == null {
 		@return null;
-	}
-	@else {
+	} @else {
 		$color-brightness: brightness($color);
 		$light-text-brightness: brightness($light);
 		$dark-text-brightness: brightness($dark);

@@ -1,14 +1,10 @@
 // reset
-@import '_reset.scss';
-
+@import 'reset';
 // common
-@import '_defaults.scss';
-
+@import 'defaults';
 // typography
-@import '_fonts.scss';
-
+@import 'fonts';
 // grid
-@import '_grid.scss';
-
+@import 'grid';
 // tables
-@import '_tables.scss';
+@import 'tables';

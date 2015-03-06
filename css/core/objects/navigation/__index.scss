@@ -1,11 +1,7 @@
-@import "__vars-navigation.scss";
-@import "__vars-navigation-sub.scss";
-@import "__vars-mix.scss";
-
-@import "__pattern.scss";
-
-@import "_navigation.scss";
-
-@import "_navigation-sub.scss";
-
-@import "_navigation-dropdown.scss";
+@import '_vars-navigation';
+@import '_vars-navigation-sub';
+@import '_vars-mix';
+@import '_pattern';
+@import 'navigation';
+@import 'navigation-sub';
+@import 'navigation-dropdown';

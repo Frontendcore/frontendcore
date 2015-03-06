@@ -37,10 +37,10 @@
 			& {
 				color: $color-foreground;
 				@include background-transparent($color-foreground, .05);
-				border:1px solid $color-box;
+				border: 1px solid $color-box;
 			}
 			&:hover {
-				background:$color-link;
+				background: $color-link;
 				color: contrast-color($color-link);
 			}
 		}
