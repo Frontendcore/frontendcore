@@ -37,6 +37,9 @@ module.exports = function (grunt) {
 	grunt.registerTask('release', [
 		'commit',
 		'gittag',
+		'gitpush',
+		'githubChanges',
+		'gitcommit:workspace',
 		'gitpush'
 	]);
 
