@@ -3,9 +3,10 @@
 	.hljs {
 		display: block;
 		overflow-x: auto;
-		padding: 0.5em;
-		color: #333;
-		background: #f8f8f8;
+		padding: $spacing/2;
+		color: $color-foreground;
+		background: $color-background;
+		border: 1px dashed rgba($color-foreground, .2);
 	}
 
 	.hljs-comment,

@@ -1,8 +1,23 @@
 .landing {
-	background-color: $color-secondary;
-	background-image: url('/static/img/home-puzzle-bg.png');
-	background-repeat: repeat;
-	color: $color-background;
-	min-height: 500px;
-	overflow: hidden;
+	& {
+		background-color: #89c1b6;
+		background-image: url('/static/img/home-puzzle-bg.png');
+		background-repeat: repeat;
+		color: $color-background;
+		min-height: 500px;
+		overflow: hidden;
+	}
+
+	h2 {
+		font-weight: bold;
+		color: $color-primary;
+	}
+
+	.fz-s {
+		font-family: $font-face-default;
+	}
+
+	.col-1-2:first-of-type {
+		padding-left: $spacing*2;
+	}
 }

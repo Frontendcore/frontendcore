@@ -1,6 +1,6 @@
 .footer {
 	width: 100%;
 	margin-bottom: 0 !important;
-	color: $color-foreground;
-	background-color: $color-secondary;
+	color: contrast-color($color-header);
+	background-color: $color-header;
 }
