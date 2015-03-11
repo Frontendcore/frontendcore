@@ -91,9 +91,7 @@
 {% endmacro %}
 
 {% macro scss_object(scsspath) %}
-    <section class="box-lighten">
         <h2>Customize the appearance</h2>
         <p>You can customize the appearance of this object by setting up in your config folder the following map. By default de values are the indicated here.</p>
         <pre><code data-tc-modules="code"> {% filter nl2br|replace({'vars-default':'vars-custom','/*':'<span class="c-foreground-light">//','*/':'</span>'}) %}{%  include scsspath|e('html') %}{% endfilter %}</code></pre>
-    </section>
 {% endmacro %}
