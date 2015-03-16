@@ -1,0 +1,6 @@
+@mixin papa-boxes() {
+	.box {
+		margin-bottom: $spacing;
+		padding: $spacing;
+	}
+}

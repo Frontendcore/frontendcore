@@ -1,0 +1,64 @@
+{% set current_children = "Folder structure" %}
+{% set current_section = "Architecture CSS" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Folder structure</h1>
+    <p>If you do the installation through Yeoman you will have a css folder structure like this:</p>
+    <pre><code data-tc-modules="code">_config/
+devices/
+helpers/
+    classes/
+    functions/
+    mixins/
+    placeholders/
+modifiers/
+objects/
+ui/</code></pre>
+    <p>These folders are just for your project, all the FrontendCore folders and files are inside the components folder and you should never modify anything inside there.
+    There are several ways to customize the objects or even disable them to get out of your final css file. Check the object documentation to know how.
+    Let's take a look to all the folders and what should them contain.</p>
+
+    <section class="box-background">
+        <h4><i class="icon-cog"></i> config</h4>
+        <p>This folder must contain just config files: variables & maps. In the final compilation this folder should not generate any css code, is just to define your global variables or FrontendCore variables/maps to customize the objects.</p>
+        <p>All the variables inside FrontendCore are defined with !default, so if you define them before call FrontendCore you will be able to override anything.</p>
+    </section>
+
+    <section class="box-background">
+        <h4><i class="icon-mobile"></i> Devices</h4>
+        <p>Here you will find the media queries. By default there are three breakpoints (mobile, tablet & desktop), but you can modify them or create new ones as you need. Just remember to add them to the _index.scss file on this folder.</p>
+        <p>This files should not contain any code apart of the media-query definition. Check the <a href="/architecture-css/media-queries.html">Media-queries documentation</a> to learn more.</p>
+    </section>
+
+    <section class="box-background">
+        <h4><i class="icon-stethoscope"></i> Helpers</h4>
+        <p>Here you should add your global helpers. In the final compilation this folder should not generate any css code.</p>
+            <p>There are 3 types of helpers:</p>
+        <ul class="list">
+            <li><strong>Functions:</strong> SCSS global functions that you will use in your project.</li>
+            <li><strong>Mixins:</strong> SCSS global mixins that you will use in your project.</li>
+            <li><strong>Placeholders:</strong> SCSS global placeholders that you will use in your project.</li>
+        </ul>
+        <p>By global we mean about helpers that can be used in several objects or situations. If you for example have a placeholder used to create different buttons, probably is best idea to have this placeholder inside the button object folder.</p>
+    </section>
+
+    <section class="box-background">
+        <h4><i class="icon-adjust"></i> Modifiers</h4>
+        <p>Here you should add your customs modifiers. A modifier is a small class that just do one thing but with the !important statement. By default FrontendCore provides you a lot of modifiers but if you want to add more this is the place.</p>
+    </section>
+
+    <section class="box-background">
+        <h4><i class="icon-university"></i> Objects</h4>
+        <p>Here you should add all your objects. You should create a folder for each object and include them in the __index.scss file you will find in this folder.</p>
+    </section>
+
+    <section class="box-background">
+        <h4><i class="icon-puzzle-piece"></i> UI</h4>
+        <p>All the FrontendCore JS components that need CSS are calling asynchronous the ui.css. If you want to do the same with your JS components just add in this folder a new folder for your component scss and add it to the __index.scss. You also will need to setup your JS module to call the css on loading.</p>
+    </section>
+
+{% endblock %}

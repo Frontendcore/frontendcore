@@ -1,0 +1,18 @@
+@mixin papa-boxes($spacing) {
+	.box {
+		margin-bottom: $spacing;
+		padding: $spacing;
+	}
+}
+
+@media screen and  (min-width:800px) and (max-width: 978px) {
+
+	@include papa-boxes(16px);
+
+}
+
+@media screen and (min-width: 980px){
+
+	@include papa-boxes(32px);
+
+}
