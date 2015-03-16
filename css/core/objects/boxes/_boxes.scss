@@ -32,8 +32,8 @@
 	}
 
 	.box-foreground {
-		background: $color-box-invert;
-		color: contrast-color($color-box-invert);
+		background: $color-foreground;
+		color: contrast-color($color-foreground);
 	}
 
 	.box-ok {

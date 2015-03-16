@@ -1,51 +1,33 @@
 $object-pagination-vars-default: (
 
-	/* Padding to the links */
-	padding: $spacing/4,
-
-	/* Minimum width to the links */
-	min-width: false,
-
-	/* Background color */
-	background-color: rgba($color-foreground, .1),
-
-	/* Color */
-	color: $color-foreground,
-
-	/* Background color for active items */
-	background-color-active: $color-background,
-
-	/* Color for active items */
-	color-active: $color-foreground,
-
-	/* Background color on hover items */
-	background-color-hover: $color-link,
-
-	/* Color on hover items */
-	color-hover: contrast-color($color-link),
-
-	/* Border width to the links */
-	border-width: 1px,
-
-	/* Border style to the links */
-	border-style: solid,
-
-	/* Border color to the links */
-	border-color: rgba($color-foreground, .1),
-
-	/* Border Radius */
-	border-radius: $default-border-radius,
-
-	/* Font family to the links */
+	/* Page container */
 	font-family: $font-face-default,
-
-	/* Font weight to the links */
+	font-size: $font-size-default,
 	font-weight: normal,
+	border-radius: $default-border-radius,
+	background-color: transparent,
+	color: $color-foreground,
+	text-align: center,
+	padding: 0,
 
-	/* Font weight on active items*/
+	/* Page item */
+	padding-page: $spacing/4,
+	min-width-page: $spacing,
+	color-page: $color-foreground,
+	background-color-page: $color-box,
+	border-width-page: 1px,
+	border-style-page: solid,
+	border-color-page: $color-box,
+	border-radius-page: $default-border-radius,
+
+	/* Page active */
+	background-color-active: $color-background,
+	color-active: $color-foreground,
+	border-color-active: rgba($color-foreground, .1),
 	font-weight-active: bold,
 
-	/* Font size to the links */
-	font-size: $font-size-default,
+	/* Page hover */
+	background-color-hover: $color-link,
+	color-hover: contrast-color($color-link),
 
 ) !global !default;
