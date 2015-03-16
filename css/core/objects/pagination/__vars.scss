@@ -1,22 +1,48 @@
 $object-pagination-vars-default: (
-	/* Background  first level: */
-		background-color: transparent,
-	/* Background second level: */
-		background-color-dark: $color-primary-dark,
-	/* Background gradients (from background-color to background-color-light) */
-		background-color-light: $color-primary-light,
-	/* Link color */
-		color: $color-link,
-	/* Link color active */
-		color-active: $color-foreground,
+
+	/* Padding to the links */
+	padding: $spacing/4,
+
+	/* Background color */
+	background-color: rgba($color-foreground, .1),
+
+	/* Color */
+	color: $color-foreground,
+
+	/* Background color for active items */
+	background-color-active: $color-background,
+
+	/* Color for active items */
+	color-active: $color-foreground,
+
+	/* Background color on hover items */
+	background-color-hover: $color-link,
+
+	/* Color on hover items */
+	color-hover: contrast-color($color-link),
+
+	/* Border width to the links */
+	border-width: 1px,
+
+	/* Border style to the links */
+	border-style: solid,
+
+	/* Border color to the links */
+	border-color: rgba($color-foreground, .1),
+
 	/* Border Radius */
-		border-radius: $default-border-radius,
-	/* Font family first level */
-		font-family: $font-face-title,
-	/* Font weight first level */
-		font-weight: normal,
-	/* Font weight first level */
-		font-weight-active: bold,
-	/* Font size first level */
-		font-size: $font-size-default,
+	border-radius: $default-border-radius,
+
+	/* Font family to the links */
+	font-family: $font-face-default,
+
+	/* Font weight to the links */
+	font-weight: normal,
+
+	/* Font weight on active items*/
+	font-weight-active: bold,
+
+	/* Font size to the links */
+	font-size: $font-size-default,
+
 ) !global !default;

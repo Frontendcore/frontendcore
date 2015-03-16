@@ -1,4 +1,5 @@
 @if $object-pagination != false and $ui != true {
+
 	.pagination {
 		& {
 			overflow: hidden;
@@ -6,6 +7,9 @@
 			clear: both;
 			width: auto;
 			text-align: center;
+			font-family: map-get($object-pagination-vars, font-family);
+			@include rem-fallback(font-size, map-get($object-pagination-vars, font-size) );
+
 		}
 		&.right {
 			float: right;
@@ -21,11 +25,11 @@
 		a {
 			& {
 				display: block;
-				padding: $spacing/4 $spacing/4;
+				padding: map-get($object-pagination-vars, padding);
 				line-height: 100%;
 				margin-bottom: $spacing/4;
 				text-decoration: none;
-				font-weight: bold;
+				font-weight: map-get($object-pagination-vars, font-weight);
 			}
 		}
 	}
@@ -35,19 +39,20 @@
 	.pagination {
 		a {
 			& {
-				color: $color-foreground;
-				@include background-transparent($color-foreground, .05);
-				border: 1px solid $color-box;
+				color: map-get($object-pagination-vars, color);
+				background-color: map-get($object-pagination-vars, background-color);
+				border: map-get($object-pagination-vars, border-width) map-get($object-pagination-vars, border-style) map-get($object-pagination-vars, border-color);
 			}
 			&:hover {
-				background: $color-link;
-				color: contrast-color($color-link);
+				background: map-get($object-pagination-vars, background-color-hover);
+				color: map-get($object-pagination-vars, color-hover);
 			}
 		}
 		.active {
 			a {
-				background: $color-background;
-				color: $color-foreground;
+				background: map-get($object-pagination-vars, background-color-active);
+				color: map-get($object-pagination-vars, color-active);
+				font-weight: map-get($object-pagination-vars, font-weight-active);
 			}
 		}
 	}
