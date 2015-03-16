@@ -3,6 +3,9 @@ $object-pagination-vars-default: (
 	/* Padding to the links */
 	padding: $spacing/4,
 
+	/* Padding to the links */
+	min-width: false,
+
 	/* Background color */
 	background-color: rgba($color-foreground, .1),
 

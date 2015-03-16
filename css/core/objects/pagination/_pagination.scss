@@ -27,6 +27,9 @@
 				display: block;
 				padding: map-get($object-pagination-vars, padding);
 				line-height: 100%;
+				@if (map-get($object-pagination-vars, min-width) != 'false') {
+					min-width: map-get($object-pagination-vars, min-width);
+				}
 				margin-bottom: $spacing/4;
 				text-decoration: none;
 				font-weight: map-get($object-pagination-vars, font-weight);
@@ -39,6 +42,7 @@
 	.pagination {
 		a {
 			& {
+				@include border-radius(map-get($object-pagination-vars, border-radius));
 				color: map-get($object-pagination-vars, color);
 				background-color: map-get($object-pagination-vars, background-color);
 				border: map-get($object-pagination-vars, border-width) map-get($object-pagination-vars, border-style) map-get($object-pagination-vars, border-color);
