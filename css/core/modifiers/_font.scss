@@ -79,6 +79,13 @@ fz-h1
 		@extend %fz-h5;
 	}
 
+	h1, h2, h3, h4, h5, .fz-h1, .fz-h2, .fz-h3, .fz-h4 , .fz-h5 {
+		&.logo {
+			font-family: $font-face-logo;
+			font-weight: $font-weight-logo;
+		}
+	}
+
 	.fz-xxxl {
 		@include rem-fallback(font-size, $font-size-xxxl, true);
 		line-height: $base-line-height;

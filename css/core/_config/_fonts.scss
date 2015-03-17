@@ -5,16 +5,34 @@
 $font-weight-default: unquote(map-get($fonts, weight-default)) !global;
 
 /**
+ * Titles font weight, used in the body.
+ * @group fonts
+ */
+$font-weight-title: unquote(map-get($fonts, weight-title)) !global;
+
+/**
+ * Logo font weight, used in the body.
+ * @group fonts
+ */
+$font-weight-logo: unquote(map-get($fonts, weight-logo)) !global;
+
+/**
  * Default font face, used in the body.
  * @group fonts
  */
 $font-face-default: unquote(map-get($fonts, face-default)) !global;
 
 /**
- * Font face used for titles, buttons and some other elements
+ * Font face used for titles
  * @group fonts
  */
 $font-face-title: unquote(map-get($fonts, face-title)) !global;
+
+/**
+ * Font face used for logo
+ * @group fonts
+ */
+$font-face-logo: unquote(map-get($fonts, face-logo)) !global;
 
 $px-to-em-proportion: strip-unit(map-get($fonts, size-base)) !global;
 
@@ -95,3 +113,8 @@ $font-size-xxxxs: map-get($fonts, size-xxxxs) !global;
  * @group fonts
  */
 $font-title-exponential: map-get($fonts, size-title-exponential) !global;
+
+/**
+ * @group fonts
+ */
+$font-logo-exponential: map-get($fonts, size-logo-exponential) !global;

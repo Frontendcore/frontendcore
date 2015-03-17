@@ -6,8 +6,10 @@ $object-navigation-vars-default: (
 	border-radius: $default-border-radius,
 	font-family: $font-face-default,
 	font-weight: normal,
+	font-weight-active: bold,
 	font-size: $font-size-default,
 	vertical-separator: true,
+	text-transform: capitalize,
 
 	/* Inner levels */
 	background-color-dark: $color-primary-dark,
@@ -15,8 +17,6 @@ $object-navigation-vars-default: (
 	inner-font-family: $font-face-default,
 	inner-font-weight: normal,
 	inner-font-size: $font-size-s,
-
-	/* Object style (Default or tabbed) */
-	style: default
+	inner-text-transform: capitalize,
 
 ) !global !default;

@@ -28,7 +28,7 @@ $susy: (
 		@include container(map-get($grid, container-width));
 	}
 
-	body > .grid:first-of-type {
+	body > .grid {
 		& {
 			@if map-get($grid, container-width) != 100% {
 				padding: 0 $spacing;

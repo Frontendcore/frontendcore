@@ -9,7 +9,8 @@
 	}
 
 	h2 {
-		font-weight: bold;
+		font-weight: bold !important;
+		font-size: $font-size-xxxl !important;
 		color: $color-primary;
 	}
 

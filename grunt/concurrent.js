@@ -3,7 +3,10 @@ module.exports = {
 		tasks: ['twig']
 	},
 	compileSass: {
-		tasks: ['compass']
+		tasks: ['compass:css']
+	},
+	compileAllSass: {
+		tasks: ['compass:css','compass:skins']
 	},
 	documentSass: {
 		tasks: ['grunt:clean_sassdoc','sassdoc']

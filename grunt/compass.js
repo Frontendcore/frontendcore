@@ -1,8 +1,14 @@
 module.exports = {
-	dist: {
+	css: {
 		options: {
 			require: 'susy',
 				config: 'config.rb'
+		}
+	},
+	skins: {
+		options: {
+			require: 'susy',
+			config: 'skins/config.rb'
 		}
 	}
 };

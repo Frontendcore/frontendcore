@@ -9,7 +9,10 @@
 	& > a {
 		color: $color-background;
 	}
-	.logo {
+	h1.logo, .logo {
+		font-family: $font-face-logo;
+		@include rem-fallback(font-size, $font-size-xl * $font-logo-exponential, true);
+		font-weight: $font-weight-logo;
 		max-width: 75%;
 	}
 }

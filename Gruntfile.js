@@ -15,7 +15,11 @@ module.exports = function (grunt) {
 		'grunt:clean_site',
 		'copy:workspace',
 		'twigRender',
-		'scss',
+		'concurrent:compileAllSass',
+		'grunt:clean_sassdoc',
+		'sassdoc',
+		'newer:cssmin',
+		'concurrent:templates',
 		'js',
 		'copy:scss',
 		'copy:js',
@@ -51,7 +55,15 @@ module.exports = function (grunt) {
 	grunt.registerTask('stats', ['phantomas','gitadd:stats','gitcommit','gitpush:workspace']);
 
 
-	grunt.registerTask('default', ['twig','scss', 'js']);
+	grunt.registerTask('default', [
+		'twig',
+		'concurrent:compileAllSass',
+		'grunt:clean_sassdoc',
+		'sassdoc',
+		'newer:cssmin',
+		'concurrent:templates',
+		'js'
+	]);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);
