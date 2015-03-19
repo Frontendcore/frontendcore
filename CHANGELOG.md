@@ -1,5 +1,10 @@
 ## Change Log
 
+### 1.6.0 (2015/03/19 17:26 +00:00)
+- [52275f0](https://github.com/Frontendcore/frontendcore/commit/52275f0236c59ce833e00959b814b8333076fe19) Added Skins, now it's posible to create skins. Improved customization of objects. Release version1.5.12 ! (@tonipinel)
+- [588e771](https://github.com/Frontendcore/frontendcore/commit/588e771b03d702e2738e69bb0c81b333e2caffd3) WARNING: Abstraction of TinyCore, breaks the API (@tonipinel)
+- [dd2bb74](https://github.com/Frontendcore/frontendcore/commit/dd2bb74299e295c9c0a4bbd268730d13e690b052) Back Compatibility Break. Check the changelog. Release version1.6.0 ! (@tonipinel)
+
 ### 1.5.12 (2015/03/17 16:38 +00:00)
 - [bfbb342](https://github.com/Frontendcore/frontendcore/commit/bfbb342934d9c1c8a230e203fdcc0f43684e958f) Release version1.5.11 ! (@tonipinel)
 - [18466e7](https://github.com/Frontendcore/frontendcore/commit/18466e743d98853b2ad3f531efa5249ffa8f4ed7) Release version1.5.11 ! (@tonipinel)
@@ -130,13 +135,6 @@
 - [aa13b9b](https://github.com/Frontendcore/frontendcore/commit/aa13b9b87f4fde50e7eff424a6238c4bcb44e629) Wysiwyg refactoring and improved documentation v1.3.13 (@tonipinel)
 
 ### 1.3.12 (2015/01/27 09:36 +00:00)
-- [2a81e10](https://github.com/Frontendcore/frontendcore/commit/2a81e10b164af6b8773c128ab9320f6dc3f564a6) Commit (@tonipinel)
-- [a428c25](https://github.com/Frontendcore/frontendcore/commit/a428c25ab3e22db3a072a33e57a98a7dd8ec6280) Commit (@tonipinel)
-- [fdcedfe](https://github.com/Frontendcore/frontendcore/commit/fdcedfe2da4f3313b8674e1fff0220da281386fd) Commit (@tonipinel)
-- [630c69d](https://github.com/Frontendcore/frontendcore/commit/630c69da64bfc827dfcbf562e6055e343240c35c) Commit (@tonipinel)
-- [8bb3c44](https://github.com/Frontendcore/frontendcore/commit/8bb3c4490f6c50aff3605760a77a3916b3334630) Release version 1.3.12 (@tonipinel)
-
-### 1.3.9 (2015/01/27 09:03 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -170,6 +168,11 @@
 - [e5fb767](https://github.com/Frontendcore/frontendcore/commit/e5fb767d658256b28bdc7ea5d1b9791d1cbf3fd0) Revert "Commit" (@tonipinel)
 - [a6fb896](https://github.com/Frontendcore/frontendcore/commit/a6fb896eb9b5d967d92bbf64aec6278a78978208) Solved bugs on gittasks (@tonipinel)
 - [04ff0d9](https://github.com/Frontendcore/frontendcore/commit/04ff0d982db3012463ffa94d21a6d254cd411924) Commit (@tonipinel)
+- [2a81e10](https://github.com/Frontendcore/frontendcore/commit/2a81e10b164af6b8773c128ab9320f6dc3f564a6) Commit (@tonipinel)
+- [a428c25](https://github.com/Frontendcore/frontendcore/commit/a428c25ab3e22db3a072a33e57a98a7dd8ec6280) Commit (@tonipinel)
+- [fdcedfe](https://github.com/Frontendcore/frontendcore/commit/fdcedfe2da4f3313b8674e1fff0220da281386fd) Commit (@tonipinel)
+- [630c69d](https://github.com/Frontendcore/frontendcore/commit/630c69da64bfc827dfcbf562e6055e343240c35c) Commit (@tonipinel)
+- [8bb3c44](https://github.com/Frontendcore/frontendcore/commit/8bb3c4490f6c50aff3605760a77a3916b3334630) Release version 1.3.12 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
