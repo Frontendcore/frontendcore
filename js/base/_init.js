@@ -3,7 +3,7 @@ onDomReady(function () {
 	require(['devicePackage'], function() {
 		FrontendCore.domBoot(function (aModulesData) {
 			for (var nKey = 0; nKey < aModulesData.length; nKey++) {
-				FrontendTools.trackEvent('JS_Libraries', 'execute', aModulesData[nKey].name)
+				FrontendTools.trackEvent('JS_Libraries', 'execute', aModulesData[nKey].name);
 			}
 		});
 	});

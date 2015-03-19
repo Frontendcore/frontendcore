@@ -4,5 +4,5 @@ module.exports = {
 			console: true
 		}
 	},
-	files: ['Gruntfile.js', 'js/core/**/*.js', 'js/ui/**/*.js']
+	files: ['Gruntfile.js', 'js/core/**/*.js','js/base/**/*.js', 'js/ui/**/*.js']
 };
