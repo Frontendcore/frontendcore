@@ -1,11 +1,11 @@
 
-TinyCore.AMD.define('sortable', [], function () {
+FrontendCore.define('sortable', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		sInput : null,
 		oTarget : [],
 		delay: 500,
-		placeholer: '<li class="placeholder" data-tc-modules="va">',
+		placeholer: '<li class="placeholder" data-fc-modules="va">',
 		oDefault : {
 			oldContainer: null,
 			group: 'this',
@@ -13,7 +13,7 @@ TinyCore.AMD.define('sortable', [], function () {
 		},
 		afterMove: function (placeholder, container) {
 
-			var oTarget = $(container.el).closest('ol[data-tc-modules=sortable]')[0];
+			var oTarget = $(container.el).closest('ol[data-fc-modules=sortable]')[0];
 
 			if(this.oldContainer != container){
 
@@ -32,23 +32,23 @@ TinyCore.AMD.define('sortable', [], function () {
 		},
 		onDrop: function (item, container, _super) {
 
-			var oTarget = $(container.el).closest('ol[data-tc-modules=sortable]')[0] ? $(container.el).closest('ol[data-tc-modules=sortable]')[0] : $(container.el)[0],
+			var oTarget = $(container.el).closest('ol[data-fc-modules=sortable]')[0] ? $(container.el).closest('ol[data-fc-modules=sortable]')[0] : $(container.el)[0],
 				oReturn;
 
 			if (oTarget !== undefined) {
-				if (oTarget.getAttribute('data-tc-output') === 'json' ) {
+				if (oTarget.getAttribute('data-fc-output') === 'json' ) {
 					oReturn = this.serialize(oTarget);
 				} else {
 					oReturn = this.arraylize(oTarget);
 				}
 
-				if (oTarget.getAttribute('data-tc-input') !== null) {
-					this.fillInput( oTarget.getAttribute("data-tc-input"),  oReturn );
+				if (oTarget.getAttribute('data-fc-input') !== null) {
+					this.fillInput( oTarget.getAttribute("data-fc-input"),  oReturn );
 				}
 
-				if ( oTarget.getAttribute('data-tc-url') !== null ) {
+				if ( oTarget.getAttribute('data-fc-url') !== null ) {
 
-					this.sendAjax( oTarget.getAttribute('data-tc-url'),  oReturn );
+					this.sendAjax( oTarget.getAttribute('data-fc-url'),  oReturn );
 				}
 
 			}
@@ -71,7 +71,7 @@ TinyCore.AMD.define('sortable', [], function () {
 		},
 		onDragStart : function ($item, container, _super, event) {
 
-			var oTarget = $($item.context).closest('ol[data-tc-modules=sortable]')[0];
+			var oTarget = $($item.context).closest('ol[data-fc-modules=sortable]')[0];
 
 			$item.addClass("dragged");
 
@@ -81,9 +81,9 @@ TinyCore.AMD.define('sortable', [], function () {
 		isValidTarget: function ($item, container) {
 
 
-			var oTarget = $($item.context).closest('ol[data-tc-modules=sortable]')[0],
+			var oTarget = $($item.context).closest('ol[data-fc-modules=sortable]')[0],
 				nDepth = $(container.el.context ,"#" + oTarget.id).parents("ol").length + 1,
-				nTotalDepth = oTarget.getAttribute('data-tc-depth') !== null ? oTarget.getAttribute('data-tc-depth') : 2;
+				nTotalDepth = oTarget.getAttribute('data-fc-depth') !== null ? oTarget.getAttribute('data-fc-depth') : 2;
 
 
 			if (nDepth > nTotalDepth) {
@@ -116,7 +116,7 @@ TinyCore.AMD.define('sortable', [], function () {
 			if (oTarget !== undefined) {
 
 				var nDepth,
-					nTotalDepth = oTarget.getAttribute('data-tc-depth') !== null ? oTarget.getAttribute('data-tc-depth') : 2;
+					nTotalDepth = oTarget.getAttribute('data-fc-depth') !== null ? oTarget.getAttribute('data-fc-depth') : 2;
 
 				$('li', oTarget).each(function(){
 
@@ -152,12 +152,12 @@ TinyCore.AMD.define('sortable', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-tc-modules="sortable"]'),
+			var aTargets = document.querySelectorAll('[data-fc-modules="sortable"]'),
 				self = this;
 
-			oTools.trackModule('JS_Libraries', 'call', 'sortable' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'sortable' );
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
 			$(aTargets).each(function ( index) {
 				self.autobind(this, index);
@@ -196,8 +196,8 @@ TinyCore.AMD.define('sortable', [], function () {
 
 				oTree[nIndex] = {
 					order: nIndex + 1,
-					id: this.getAttribute('data-tc-id') !== null ? this.getAttribute('data-tc-id') : this.id,
-					name: this.getAttribute('data-tc-name') !== null ? this.getAttribute('data-tc-name') : this.id,
+					id: this.getAttribute('data-fc-id') !== null ? this.getAttribute('data-fc-id') : this.id,
+					name: this.getAttribute('data-fc-name') !== null ? this.getAttribute('data-fc-name') : this.id,
 					subtree: {}
 				};
 
@@ -205,8 +205,8 @@ TinyCore.AMD.define('sortable', [], function () {
 				$('li', this).each(function (nLi) {
 					oTree[nIndex].subtree[nLi] = {
 						order: nLi + 1,
-						id: this.getAttribute('data-tc-id') !== null ? this.getAttribute('data-tc-id') : this.id,
-						name: this.getAttribute('data-tc-name') !== null ? this.getAttribute('data-tc-name') : this.id
+						id: this.getAttribute('data-fc-id') !== null ? this.getAttribute('data-fc-id') : this.id,
+						name: this.getAttribute('data-fc-name') !== null ? this.getAttribute('data-fc-name') : this.id
 					};
 				});
 
@@ -246,7 +246,7 @@ TinyCore.AMD.define('sortable', [], function () {
 				oTarget.id = 'sortable-' + sDate.replace('.','');
 			}
 
-			if (oTarget.getAttribute("data-tc-type") === 'nested') {
+			if (oTarget.getAttribute("data-fc-type") === 'nested') {
 				$(oTarget).addClass('js-sortable');
 				oOptions.nested = true;
 			}
@@ -264,11 +264,11 @@ TinyCore.AMD.define('sortable', [], function () {
 			oOptions.onDrag = this.onDrag;
 			oOptions.onDragStart = this.onDragStart;
 
-			if (oTarget.getAttribute("data-tc-handle") !== null) {
-				oOptions.handle = oTarget.getAttribute("data-tc-handle");
+			if (oTarget.getAttribute("data-fc-handle") !== null) {
+				oOptions.handle = oTarget.getAttribute("data-fc-handle");
 			}
 
-			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			self.oTarget[index] = $(oTarget).sortable(oSettings);
 		}

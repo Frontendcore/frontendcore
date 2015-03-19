@@ -1,6 +1,6 @@
 
 // 1. Define your module and set 'modal' as dependency
-TinyCore.AMD.define('myModule', ['modal'], function () {
+FrontendCore.define('myModule', ['modal'], function () {
 	return {
 
 		// 2. Instantiate modal as a object in your module

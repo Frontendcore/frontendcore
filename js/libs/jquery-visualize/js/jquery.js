@@ -6232,7 +6232,7 @@ jQuery.extend({
 			// IE copies events bound via attachEvent when using cloneNode.
 			// Calling detachEvent on the clone will also remove the events
 			// from the original. In order to get around this, we use some
-			// proprietary methods to clear the events. Thanks to MooTools
+			// proprietary methods to clear the events. Thanks to MoFrontendTools
 			// guys for this hotness.
 
 			cloneFixAttributes( elem, clone );

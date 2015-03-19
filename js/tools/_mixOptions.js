@@ -1,4 +1,4 @@
 
-oTools.mixOptions = function( oOptions, oSettings ) {
-	return oTools.mergeJSON(oOptions, oSettings);
+FrontendTools.mixOptions = function( oOptions, oSettings ) {
+	return FrontendTools.mergeJSON(oOptions, oSettings);
 };

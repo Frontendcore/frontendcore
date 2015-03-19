@@ -11,7 +11,7 @@
     <section class="box-lighten">
         <h2>Show notification on page load</h2>
         <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
-        <input type="hidden"  data-tc-modules="notification" data-tc-event="load" data-tc-type="info" data-tc-text="This message is shown when this page is loaded" />
+        <input type="hidden"  data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
         {{ demos.code(
             'notifications-load',
             '../_demos/callouts/notification-load.html'
@@ -35,17 +35,17 @@
     {{ demos.settings(
     {
         "1" : {
-            "name" :        "data-tc-event",
+            "name" :        "data-fc-event",
             "description" : "Defines the content to load",
             "default":      "click"
         },
         "2" : {
-            "name" :        "data-tc-type",
+            "name" :        "data-fc-type",
             "description" : "Type of the message (ok, ko, warning or info)",
             "default" : "ok"
         },
         "3" : {
-            "name" :        "data-tc-text",
+            "name" :        "data-fc-text",
             "description" : "Text to show in the message. If it's not defined the message will not be shown."
         }
     }

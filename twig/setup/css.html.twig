@@ -11,22 +11,22 @@
     <article class="box-background">
         <h2>1. Add the meta viewport to the head</h2>
         <p>With the combination of this meta and the grids of frontendcore your site will be responsive without a great effort.</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/meta.html"|raw %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/meta.html"|raw %}</code></pre>
     </article>
     <article class="box-background">
         <h2>2. Link the main.css</h2>
         <p>The main.css is the most important file for your styles, include the link in the head of your page.</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/link-main.html"|raw %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/link-main.html"|raw %}</code></pre>
     </article>
     <article class="box-background">
         <h2>3. Add Css fixes for IE9</h2>
         <p>IE9 has some very specific issues with the css that are solved by this css, just add it to the head after the main css and between conditionals.</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/link-ie9.html"|raw %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/link-ie9.html"|raw %}</code></pre>
     </article>
     <article class="box-background">
         <h2>4. Add Css fixes & Javascript polyfills for IE8 (optional)</h2>
         <p>IE8 has no support for html5 tags, so you will need some javascript polyfills to make it work... and of course several css fixes. Just add them to the head after the main css and between conditionals.</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/link-ie8.html"|raw %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/link-ie8.html"|raw %}</code></pre>
     </article>
     <a href="javascript.html" class="icon-arrow-right fz-l"> <strong>Setup the Javascript</strong></a>
 {% endblock %}

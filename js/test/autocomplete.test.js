@@ -4,7 +4,7 @@ TinyCore.debugMode = true;
 describe('Autocomplete', function() {
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require(['autocomplete'], function() {
+		FrontendCore.require(['autocomplete'], function() {
 			if (done !== undefined) {
                 done();
             }
@@ -26,9 +26,9 @@ describe('Autocomplete', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'loadCSS');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'loadCSS');
+			spyOn( FrontendTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -37,12 +37,12 @@ describe('Autocomplete', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.load CSS', function( done ) {
-			expect(oTools.loadCSS).toHaveBeenCalled();
+		it('should call FrontendTools.load CSS', function( done ) {
+			expect(FrontendTools.loadCSS).toHaveBeenCalled();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "autocomplete"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'autocomplete' );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "autocomplete"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'autocomplete' );
 		});
 
 	});
@@ -50,9 +50,9 @@ describe('Autocomplete', function() {
 	describe('autobind', function() {
 
 		beforeEach(function() {
-			var $input =  $('<input name="toyName" value="foo" data-tc-values="foo,bar">');
+			var $input =  $('<input name="toyName" value="foo" data-fc-values="foo,bar">');
 			spyOn(jQuery.fn, "autocompleter");
-			spyOn(oTools, "mergeJSON");
+			spyOn(FrontendTools, "mergeJSON");
 			oTestedModule.autobind($input[0]);
 		});
 

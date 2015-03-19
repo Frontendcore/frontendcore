@@ -1,4 +1,4 @@
-TinyCore.AMD.define('autocomplete', [], function () {
+FrontendCore.define('autocomplete', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -6,12 +6,12 @@ TinyCore.AMD.define('autocomplete', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('autocomplete'),
+			var aTargets = FrontendTools.getDataModules('autocomplete'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
 
 			$(aTargets).each(function () {
 				self.autobind(this);
@@ -23,7 +23,7 @@ TinyCore.AMD.define('autocomplete', [], function () {
 				oSettings,
 				oOptions = {},
 				$Target = $(oTarget),
-				sValues = oTarget.getAttribute('data-tc-values'),
+				sValues = oTarget.getAttribute('data-fc-values'),
                 aValues,
                 aTemp = {};
 
@@ -31,7 +31,7 @@ TinyCore.AMD.define('autocomplete', [], function () {
 
 				if (sData === undefined && sValues !== null) {
 
-                    aValues = oTarget.getAttribute('data-tc-values').split(',');
+                    aValues = oTarget.getAttribute('data-fc-values').split(',');
 
                     for( var nKey = 0; aValues.length > nKey; nKey++){
                         aTemp = {};
@@ -43,7 +43,7 @@ TinyCore.AMD.define('autocomplete', [], function () {
 
 				}
 
-				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 				$Target.autocompleter(oSettings);
 

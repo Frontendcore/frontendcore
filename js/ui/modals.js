@@ -1,4 +1,4 @@
-TinyCore.AMD.define('modal', [], function () {
+FrontendCore.define('modal', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -6,17 +6,17 @@ TinyCore.AMD.define('modal', [], function () {
 			maxWidth: '100%',
 			maxHeight: '100%',
 			onComplete: function() {
-				TinyCore.AMD.domBoot( document.getElementById('cboxLoadedContent') );
+				FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
 			}
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-tc-modules="modal"]'),
+			var aTargets = document.querySelectorAll('[data-fc-modules="modal"]'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'modal' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'modal' );
 
 			$(document).bind('cbox_open', function() {
 				$('html').css({ overflow: 'hidden' });
@@ -24,25 +24,47 @@ TinyCore.AMD.define('modal', [], function () {
 				$('html').css({ overflow: '' });
 			});
 
-			self.autobind(aTargets);
+			$( aTargets ).each(function () {
+				self.autobind(this);
+			});
+
+
 		},
-		autobind: function (aTargets) {
+		autobind: function (oTarget) {
 
 			var sRel,
 				aClasses,
 				self = this,
-				sHref;
+				sHref = oTarget.href,
+				aHrefHash = sHref.split('#'),
+				oSettings,
+				nModalMeasure = isMobile.any() ? '100%' : '90%',
+				oOptions = {};
 
-			$( aTargets ).each(function () {
+				if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
 
-				var oSettings,
-					oOptions = {};
+					if ($('#modal-inline').length === 0) {
+						$('body').append('<div id="modal-inline" class="d-n"></div>');
+					}
+					if ($('#modal-preload').length === 0) {
+						$('body').append('<div id="modal-preload" class="d-n"></div>');
+					}
 
-				sHref = this.href;
+					$.get(aHrefHash[0], function(data) {
 
-				if (this.className.indexOf('group') != -1) {
+						$('#modal-preload').append(data);
+					});
 
-					aClasses = this.className.split(' ');
+					$('#modal-inline').append( $('#' + aHrefHash[1]).html() );
+					$('#modal-preload').html('');
+
+					oTarget.href = '#' + aHrefHash[1];
+
+				}
+
+				if (oTarget.className.indexOf('group') != -1) {
+
+					aClasses = oTarget.className.split(' ');
 
 					sRel = '';
 
@@ -57,13 +79,32 @@ TinyCore.AMD.define('modal', [], function () {
 					oOptions.rel = sRel;
 				}
 
-				if (sHref.indexOf('#') !== -1) {
-					oOptions.inline = true;
-					oOptions.href = '#' + sHref.split('#')[1];
+				if (oTarget.getAttribute("data-fc-width") !== null) {
+					oOptions.width = oTarget.getAttribute("data-fc-width");
 				} else {
+					oOptions.width = false;
+				}
 
+				if (oTarget.getAttribute("data-fc-height") !== null) {
+					oOptions.height = oTarget.getAttribute("data-fc-height");
+				} else {
+					oOptions.height = false;
+				}
+
+				if ( aHrefHash.length > 1 ) {
+					oOptions.inline = true;
+					oOptions.href = '#' + aHrefHash[1];
+				} else {
 					if (sHref.indexOf('.jpg') === -1 && sHref.indexOf('.png') === -1 && sHref.indexOf('.gif') === -1 && sHref.indexOf('.bmp') === -1) {
+
 						oOptions.iframe = true;
+
+						if (oTarget.getAttribute("data-fc-width") === null) {
+							oOptions.width = nModalMeasure;
+						}
+						if (oTarget.getAttribute("data-fc-height") === null) {
+							oOptions.height = nModalMeasure;
+						}
 					} else {
 						oOptions.iframe = false;
 					}
@@ -72,29 +113,15 @@ TinyCore.AMD.define('modal', [], function () {
 					oOptions.href = sHref;
 				}
 
-				if (this.getAttribute("data-tc-width") !== null) {
-					oOptions.width = this.getAttribute("data-tc-width");
-				} else {
-					oOptions.width = false;
-				}
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 
-				if (this.getAttribute("data-tc-height") !== null) {
-					oOptions.height = this.getAttribute("data-tc-height");
-				} else {
-					oOptions.height = false;
-				}
+				$(oTarget).colorbox(oSettings);
 
-				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
-
-
-				$(this).colorbox(oSettings);
-
-			});
 		},
 		open: function (oOptions) {
 			var self = this,
-				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			if (oSettings.sUrl !== undefined || oSettings.sUrl !== '#') {
 				$.colorbox(oSettings);

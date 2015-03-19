@@ -1,4 +1,4 @@
-TinyCore.AMD.define('tip', [], function () {
+FrontendCore.define('tip', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -6,12 +6,12 @@ TinyCore.AMD.define('tip', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('tip'),
+			var aTargets = FrontendTools.getDataModules('tip'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'tip' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'tip' );
 
 			$(aTargets).each(function () {
 				self.autobind(this);
@@ -25,15 +25,15 @@ TinyCore.AMD.define('tip', [], function () {
 				oSettings,
 				oOptions = {};
 
-			if (oTarget.getAttribute("data-tc-title") !== null) {
-				oOptions.title = oTarget.getAttribute("data-tc-title");
+			if (oTarget.getAttribute("data-fc-title") !== null) {
+				oOptions.title = oTarget.getAttribute("data-fc-title");
 			}
 
-			if (oTarget.getAttribute("data-tc-content") !== null) {
-				oOptions.content = oTarget.getAttribute("data-tc-content");
+			if (oTarget.getAttribute("data-fc-content") !== null) {
+				oOptions.content = oTarget.getAttribute("data-fc-content");
 			}
 
-			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			if ( oSettings.content !== undefined ){
 				new Opentip( oTarget , oSettings.content , oSettings);

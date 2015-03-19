@@ -1,25 +1,25 @@
-TinyCore.AMD.define('notification', [], function () {
+FrontendCore.define('notification', [], function () {
 	return {
-		mediator :  TinyCore.Toolbox.request( 'mediator' ),
+		mediator :  FrontendMediator,
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		bMessageCreated : false,
 		oTimer: null,
 		onStart: function ( ) {
 
-			var aTargets = oTools.getDataModules('notification'),
+			var aTargets = FrontendTools.getDataModules('notification'),
                 self = this,
 				oTarget,
 				sEvent;
 
-			oTools.trackModule('JS_Libraries', 'call', 'notification' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'notification' );
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
 			$(aTargets).each(function () {
 
 				oTarget = this;
 
-				sEvent = oTarget.getAttribute('data-tc-event');
+				sEvent = oTarget.getAttribute('data-fc-event');
 
 				if ( sEvent == 'load') {
 
@@ -42,8 +42,8 @@ TinyCore.AMD.define('notification', [], function () {
 		},
 		getAttributesAndExecute: function ( oTarget) {
 			var self = this,
-				sType = oTarget.getAttribute('data-tc-type') ? oTarget.getAttribute('data-tc-type') : 'ok',
-				sText = oTarget.getAttribute('data-tc-text') ? oTarget.getAttribute('data-tc-text') : null;
+				sType = oTarget.getAttribute('data-fc-type') ? oTarget.getAttribute('data-fc-type') : 'ok',
+				sText = oTarget.getAttribute('data-fc-text') ? oTarget.getAttribute('data-fc-text') : null;
 
 			if (sText !== null) {
 				self.showMessage(sType, sText);

@@ -5,10 +5,8 @@
 
 {% extends "../_layout/_basic.html.twig" %}
 
-
 {% block main %}
     <h1><span class="label-js fz-xl va-m">JS</span> Getting Started</h1>
-    <p class="msg-info">The JS architecture is based on <a href="https://github.com/mawrkus/tinycore/">TinyCore</a> developed by <a href="https://github.com/mawrkus">Mawrkus</a>.</p>
     <section class="box-background">
         <h2>Basic Usage</h2>
         <p>It's very easy to create a Scalable Modular Javascript Architecture using Frontendcore. You just need to follow the next guidelines</p>
@@ -18,9 +16,9 @@
             <li>Inside the modules each method should do only one thing to be testable.</li>
         </ul>
         <p>Let's see an example following the rules above. Imagine we want to print in blue the content of a div with javascript. First of all (in the html markup) we have to reference the module "print-to-blue".</p>
-        <pre><code data-tc-modules="code">&lt;div data-tc-modules=&quot;print-to-blue&quot;&gt;This is my html module&lt;/div&gt;</code></pre>
-        <p>After the DOM is loaded a DOM Boot will scan it looking for al the data-tc-modules attributes to know wich modules TinyCore has to load and start. So this will load de print-to-blue.js in our modules folder and expect to find the module defined like this:</p>
-        <pre><code data-tc-modules="code">{% include "../../static/js/modules/example.js" %}</code></pre>
+        <pre><code data-fc-modules="code">&lt;div data-fc-modules=&quot;print-to-blue&quot;&gt;This is my html module&lt;/div&gt;</code></pre>
+        <p>After the DOM is loaded a DOM Boot will scan it looking for al the data-fc-modules attributes to know wich modules TinyCore has to load and start. So this will load de print-to-blue.js in our modules folder and expect to find the module defined like this:</p>
+        <pre><code data-fc-modules="code">{% include "../../static/js/modules/example.js" %}</code></pre>
     </section>
     <section class="box-background">
         <h2>Benefits</h2>
@@ -32,4 +30,5 @@
             <li>Testing : modules can be tested individually both inside and outside of the application</li>
         </ul>
     </section>
+    <p class="msg-info">The JS architecture is based on <a href="https://github.com/mawrkus/tinycore/">TinyCore</a> developed by <a href="https://github.com/mawrkus">Mawrkus</a>.</p>
 {% endblock %}

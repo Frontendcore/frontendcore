@@ -1,11 +1,11 @@
-TinyCore.AMD.define('autosize', [], function () {
+FrontendCore.define('autosize', [], function () {
 	return {
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('autosize'),
+			var aTargets = FrontendTools.getDataModules('autosize'),
 				self = this;
 
-			oTools.trackModule('JS_Libraries', 'call', 'autosize' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'autosize' );
 
 			$(aTargets).each(function () {
 				self.autobind(this);

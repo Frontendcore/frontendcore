@@ -1,5 +1,5 @@
 // Defines the name of the module and the dependencies using RequireJS AMD standard definition
-TinyCore.AMD.define('print-to-blue', [], function () {
+FrontendCore.define('print-to-blue', [], function () {
 	return {
 
 		// Uses oTools to get all the DOM elements

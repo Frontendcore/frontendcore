@@ -36,7 +36,7 @@
     "sidr": "https://github.com/artberri/sidr.git#~1.2.1",
     "simplecart-js": "https://github.com/wojodesign/simplecart-js.git",
     "tinymce": "~4.1.1",
-    "tinycorejs": "~1.0.2",
+    "tinycorejs": "https://github.com/Frontendcore/tinycore.git#a84ac51c8064c04a4b14a52b1b85f8dd49648cfb",
     "dynatable": "~0.3.1",
     "OwlCarousel2": "https://github.com/OwlFonk/OwlCarousel2",
     "pen": "~0.0.3",

@@ -1,4 +1,4 @@
-TinyCore.AMD.define('cart', [], function () {
+FrontendCore.define('cart', [], function () {
 	return {
         sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -29,13 +29,13 @@ TinyCore.AMD.define('cart', [], function () {
 		onStart: function () {
 
 			var self = this,
-                aTargets = oTools.getDataModules('cart'),
+                aTargets = FrontendTools.getDataModules('cart'),
                 oSettings = {},
                 oOptions = {},
                 aClasses = ['cart-checkout','cart-empty','cart-items','cart-total','cart-quantity','cart-tax','cart-tax-rate','cart-shipping','cart-grand-total','cart-shelf-item','cart-item-name','cart-item-price','cart-item-add','cart-item-quantity'],
                 aSimpleClasses = ['simpleCart_checkout','simpleCart_empty','simpleCart_items','simpleCart_total','simpleCart_quantity','simpleCart_tax','simpleCart_taxRate','simpleCart_shipping','simpleCart_grandTotal','simpleCart_shelfItem','item_name','item_price','item_add','item_Quantity'];
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
             for( nKey = 0; nKey < aClasses.length; nKey++ ) {
                 self.prepareBind( aClasses[nKey], aSimpleClasses[nKey] );
@@ -45,30 +45,30 @@ TinyCore.AMD.define('cart', [], function () {
 
                 self.autobind(this);
 
-                if (this.getAttribute("data-tc-email") !== null) {
+                if (this.getAttribute("data-fc-email") !== null) {
                     oOptions.checkout = {};
                     oOptions.checkout.type = "PayPal";
-                    oOptions.checkout.email = this.getAttribute("data-tc-email");
+                    oOptions.checkout.email = this.getAttribute("data-fc-email");
                 }
 
-                if (this.getAttribute("data-tc-currency") !== null) {
-                    oOptions.currency = parseFloat(this.getAttribute("data-tc-currency"));
+                if (this.getAttribute("data-fc-currency") !== null) {
+                    oOptions.currency = parseFloat(this.getAttribute("data-fc-currency"));
                 }
 
-                if (this.getAttribute("data-tc-shipping-free-since") !== null) {
-                    oOptions.shippingFreeSince = parseFloat(this.getAttribute("data-tc-shipping-free-since"));
+                if (this.getAttribute("data-fc-shipping-free-since") !== null) {
+                    oOptions.shippingFreeSince = parseFloat(this.getAttribute("data-fc-shipping-free-since"));
                 } else {
                     oOptions.shippingFreeSince = self.oDefault.shippingFreeSince;
                 }
 
-                if (this.getAttribute("data-tc-shipping-cost") !== null) {
-                    oOptions.shippingCost = parseFloat(this.getAttribute("data-tc-shipping-cost"));
+                if (this.getAttribute("data-fc-shipping-cost") !== null) {
+                    oOptions.shippingCost = parseFloat(this.getAttribute("data-fc-shipping-cost"));
                 } else {
                     oOptions.shippingCost = self.oDefault.shippingCost;
                 }
 
-                if (this.getAttribute("data-tc-tax-rate") !== null) {
-                    oOptions.taxRate = parseFloat(this.getAttribute("data-tc-tax-rate"));
+                if (this.getAttribute("data-fc-tax-rate") !== null) {
+                    oOptions.taxRate = parseFloat(this.getAttribute("data-fc-tax-rate"));
                 }
 
                 oOptions.shippingCustom = function(){
@@ -82,13 +82,13 @@ TinyCore.AMD.define('cart', [], function () {
 
             });
 
-            oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+            oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
             simpleCart(oSettings);
 
             simpleCart.init();
 
-            oTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
+            FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
 
 
 		},

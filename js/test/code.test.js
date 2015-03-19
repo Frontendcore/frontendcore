@@ -4,7 +4,7 @@ TinyCore.debugMode = true;
 describe('code', function() {
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require(['code'], function() {
+		FrontendCore.require(['code'], function() {
             if (done !== undefined) {
                 done();
             }
@@ -19,8 +19,8 @@ describe('code', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -29,8 +29,8 @@ describe('code', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "code"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'code' );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "code"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'code' );
 		});
 
 	});

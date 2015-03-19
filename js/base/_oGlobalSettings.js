@@ -1,11 +1,13 @@
 var oGlobalSettings = {
-    sPathJs : '../static/js/',
-    sPathJsCore: '../',
-    sPathJsModules : '../static/js/modules/',
-    sPathJsLibs : '../static/js/libs/',
-    sPathCss: '../static/css/',
-    bResponsiveImages: true
-}
+	    sPathJs : '../static/js/',
+	    sPathJsCore: '../',
+	    sPathJsModules : '../static/js/modules/',
+	    sPathJsLibs : '../static/js/libs/',
+	    sPathCss: '../static/css/',
+	    bResponsiveImages: true
+	};
+
+
 
 window.define = function ( sModuleName, aDependencies, fpCreator )
 {

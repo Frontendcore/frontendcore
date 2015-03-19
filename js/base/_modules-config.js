@@ -27,9 +27,9 @@ for (var nKey = 0; nKey < aModules.length; nKey++) {
 	}
 }
 
-var oPaths = oTools.mergeJSON( oDefaultPaths, oGlobalSettings.oPaths);
+var oPaths = FrontendTools.mergeJSON( oDefaultPaths, oGlobalSettings.oPaths);
 
-TinyCore.AMD.config( {
+FrontendCore.config( {
 	require : {
 		urlArgs: "v=" + oGlobalSettings.sHash,
 		baseUrl : oGlobalSettings.sPathJsModules,

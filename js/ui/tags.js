@@ -1,4 +1,4 @@
-TinyCore.AMD.define('tags', [], function () {
+FrontendCore.define('tags', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -8,12 +8,12 @@ TinyCore.AMD.define('tags', [], function () {
 		},
 		onStart: function () {
 
-			var aTarget = document.querySelectorAll('[data-tc-modules="tags"]'),
+			var aTarget = document.querySelectorAll('[data-fc-modules="tags"]'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'tags' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'tags' );
 
 			self.autobind(aTarget);
 
@@ -48,18 +48,18 @@ TinyCore.AMD.define('tags', [], function () {
 
 				oOptions.name = oTarget.getAttribute("name") !== '' ? oTarget.getAttribute("name") + '_array' : "tags_array";
 
-				if (oTarget.getAttribute("data-tc-max") !== null) {
-					oOptions.maxSelection = oTarget.getAttribute("data-tc-max");
+				if (oTarget.getAttribute("data-fc-max") !== null) {
+					oOptions.maxSelection = oTarget.getAttribute("data-fc-max");
 				}
 
-				if (oTarget.getAttribute("data-tc-mode") === 'restrict') {
+				if (oTarget.getAttribute("data-fc-mode") === 'restrict') {
 					oOptions.hideTrigger = false;
 					oOptions.allowFreeEntries = false;
 				} else {
 					oOptions.hideTrigger = true;
 				}
 
-				if (oTarget.getAttribute("data-tc-select") === 'true') {
+				if (oTarget.getAttribute("data-fc-select") === 'true') {
 					oOptions.hideTrigger = false;
 				}
 
@@ -72,21 +72,21 @@ TinyCore.AMD.define('tags', [], function () {
 					oOptions.placeholder = oTarget.placeholder;
 				}
 
-				if (oTarget.getAttribute("data-tc-text-no-suggestion") !== null ) {
-					oOptions.noSuggestionText = oTarget.getAttribute("data-tc-text-no-suggestion");
+				if (oTarget.getAttribute("data-fc-text-no-suggestion") !== null ) {
+					oOptions.noSuggestionText = oTarget.getAttribute("data-fc-text-no-suggestion");
 				}
 
-				if ( oTarget.getAttribute("data-tc-values") !== null) {
+				if ( oTarget.getAttribute("data-fc-values") !== null) {
 
 					oOptions.data = [];
-					aValues = oTarget.getAttribute("data-tc-values").split(',');
+					aValues = oTarget.getAttribute("data-fc-values").split(',');
 
 					for (var nKey in aValues) {
 						oOptions.data.push(aValues[nKey]);
 					}
 				}
 
-				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 				fSuggest[nTarget] = $(oRealTarget).magicSuggest(oSettings);
 

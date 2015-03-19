@@ -43,12 +43,12 @@
     </script>
     <script src="{{ relative_path ~ url.static }}js/core.js"></script>
 </head>
-<body data-tc-modules="polyfills">
+<body data-fc-modules="polyfills">
 {% block fullmain %}
 <header class="header pb-n o-h">
     <div class="grid">
         <div class="col-2-3">
-            <a data-tc-modules="side-panel" data-tc-clone="true" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
+            <a data-fc-modules="side-panel" data-fc-clone="true" href="#menu" class="button mobile tablet fl-l mt-s mr-l"><i class="icon-align-justify"></i></a>
             <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo va-m"><img src="{{ relative_path ~ url.static }}img/frontendcore-small.png" class="va-m" alt="FRONTEND CORE" /></a>
         </div>
         <div class="col-1-3 desktop">
@@ -81,7 +81,7 @@
                 <ul>
                     {% for section in sections %}
                         <li>
-                            <a href="{{ section.href }}" data-tc-modules="toggle">
+                            <a href="{{ section.href }}" data-fc-modules="toggle">
                                 {{ section.name }}
                                 {% if section.children|length > 0 %}
                                     <i class="icon-angle-down fl-r"></i>

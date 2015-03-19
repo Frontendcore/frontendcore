@@ -6,7 +6,7 @@ describe('toggle', function() {
     var oTestedModule;
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require(['toggle'], function() {
+		FrontendCore.require(['toggle'], function() {
             if (done !== undefined) {
                 done();
             }
@@ -21,8 +21,8 @@ describe('toggle', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'trackModule');
 			oTestedModule.onStart();
 		});
 
@@ -30,8 +30,8 @@ describe('toggle', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "toggle"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'toggle' );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "toggle"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'toggle' );
 		});
 
 	});
@@ -41,7 +41,7 @@ describe('toggle', function() {
         var $Object;
 
 		beforeEach(function() {
-			$Object =  $('<a href="#toggle-class" data-tc-modules="toggle" data-tc-class="hidden" class="button">Click to toggle Class</a><div id="toggle-class" class="box-invert"><p>Hello World!</p></div>');
+			$Object =  $('<a href="#toggle-class" data-fc-modules="toggle" data-fc-class="hidden" class="button">Click to toggle Class</a><div id="toggle-class" class="box-invert"><p>Hello World!</p></div>');
             spyOn(jQuery.fn, "toggleClass");
             oTestedModule.toggleClass($Object[0]);
 		});
@@ -66,7 +66,7 @@ describe('toggle', function() {
         var $Object;
 
         beforeEach(function() {
-            $Object =  $('<a href="#toggle-slide" data-tc-modules="toggle" class="button">Click to toggle Class</a><div id="toggle-slide" class="box-invert"><p>Hello World!</p></div>');
+            $Object =  $('<a href="#toggle-slide" data-fc-modules="toggle" class="button">Click to toggle Class</a><div id="toggle-slide" class="box-invert"><p>Hello World!</p></div>');
             spyOn(jQuery.fn, "slideDown");
             oTestedModule.slideToggle($Object[0]);
         });
@@ -93,7 +93,7 @@ describe('toggle', function() {
         var $Object;
 
         beforeEach(function() {
-            $Object =  $('<a href="#toggle-animation-attention" data-tc-modules="toggle" data-tc-animation="bounce" class="button">bounce</a> <p class="fz-h1" id="toggle-animation-attention">Hello World!</p>');
+            $Object =  $('<a href="#toggle-animation-attention" data-fc-modules="toggle" data-fc-animation="bounce" class="button">bounce</a> <p class="fz-h1" id="toggle-animation-attention">Hello World!</p>');
             spyOn( oTestedModule, 'toggleAnimation');
             oTestedModule.toggleAnimation($Object[0]);
             console.info($Object[0]);

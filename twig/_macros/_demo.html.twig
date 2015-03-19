@@ -5,11 +5,11 @@
     {% set form = form|default(false) %}
     {% set scss = scss|default(false) %}
     {% set skin = skin|default(false) %}
-    <div data-tc-modules="tabs">
+    <div data-fc-modules="tabs">
         {% if test %}
         <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
         {% endif %}
-        <section id="tab-{{ id }}-1" data-tc-name="Demo">
+        <section id="tab-{{ id }}-1" data-fc-name="Demo">
             <div class="{% if skin == 'dark' %}box-invert{% else %}box-background{% endif %}" {% if minHeight != false %}style="min-height:{{ minHeight }}"{% endif %}>
                 {% if form == true %}
                 <form class="forms" method="get">
@@ -28,19 +28,19 @@
             </div>
         </section>
         {% if code %}
-        <section id="tab-{{ id }}-2" data-tc-name="Code">
+        <section id="tab-{{ id }}-2" data-fc-name="Code">
             <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code>
+	                <code data-fc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code>
                 </pre>
             </div>
         </section>
         {% endif %}
         {% if scss %}
-            <section id="tab-{{ id }}-3" data-tc-name="Scss">
+            <section id="tab-{{ id }}-3" data-fc-name="Scss">
                 <div class="box-background">
                 <pre>
-	                <code data-tc-modules="code">{% filter escape %}{%  include scss %}{% endfilter %}</code>
+	                <code data-fc-modules="code">{% filter escape %}{%  include scss %}{% endfilter %}</code>
                 </pre>
                 </div>
             </section>
@@ -53,7 +53,7 @@
     {% if test %}
         <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
     {% endif %}
-    <pre><code data-tc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
+    <pre><code data-fc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
 {% endmacro %}
 
 {% macro settings(terms) %}
@@ -73,18 +73,18 @@
 {% endmacro %}
 
 {% macro scss(demopath, scsspath) %}
-    <div data-tc-modules="tabs">
-        <section id="tab-1" data-tc-name="Description">
-            {% filter nl2br |replace({'/*':'<p class="box-background">', '*/':'</p></section><section id="tab-2" data-tc-name="SCSS code"><div class="box-background"><pre><code data-tc-modules="code">'}) %}{%  include scsspath |e('html') %}{% endfilter %}</pre></code></div>
+    <div data-fc-modules="tabs">
+        <section id="tab-1" data-fc-name="Description">
+            {% filter nl2br |replace({'/*':'<p class="box-background">', '*/':'</p></section><section id="tab-2" data-fc-name="SCSS code"><div class="box-background"><pre><code data-fc-modules="code">'}) %}{%  include scsspath |e('html') %}{% endfilter %}</pre></code></div>
         </section>
-        <section id="tab-0" data-tc-name="Demo">
+        <section id="tab-0" data-fc-name="Demo">
             <div class="box-background">
                 {%  include demopath %}
             </div>
         </section>
-        <section id="tab-3" data-tc-name="Demo Code">
+        <section id="tab-3" data-fc-name="Demo Code">
             <div class="box-background">
-                    <pre><code data-tc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code></pre>
+                    <pre><code data-fc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code></pre>
             </div>
         </section>
     </div>
@@ -93,5 +93,5 @@
 {% macro scss_object(scsspath) %}
         <h2>Customize the appearance</h2>
         <p>You can customize the appearance of this object by setting up in your config folder the following map. By default de values are the indicated here.</p>
-        <pre><code data-tc-modules="code"> {% filter nl2br|replace({'vars-default':'vars-custom','/*':'<span class="c-foreground-light">//','*/':'</span>'}) %}{%  include scsspath|e('html') %}{% endfilter %}</code></pre>
+        <pre><code data-fc-modules="code"> {% filter nl2br|replace({'vars-default':'vars-custom','/*':'<span class="c-foreground-light">//','*/':'</span>'}) %}{%  include scsspath|e('html') %}{% endfilter %}</code></pre>
 {% endmacro %}

@@ -1,7 +1,7 @@
-TinyCore.AMD.define('wysiwyg', [], function () {
+FrontendCore.define('wysiwyg', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		mediator :  TinyCore.Toolbox.request( 'mediator' ),
+		mediator :  FrontendMediator,
 		bResize : false,
 		_oConstants : {
 			EDITOR_SUFIX : '-editor',
@@ -22,17 +22,17 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-tc-modules="wysiwyg"]'),
+			var aTargets = document.querySelectorAll('[data-fc-modules="wysiwyg"]'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
 
 			$(aTargets).each(function () {
-				if ( this.getAttribute('data-tc-active') !== 'true') {
+				if ( this.getAttribute('data-fc-active') !== 'true') {
 
-					this.setAttribute('data-tc-active', 'true');
+					this.setAttribute('data-fc-active', 'true');
 					self.autobind(this);
 				}
 			});
@@ -185,8 +185,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 
 				sName = aText[nKey];
 
-				if ( oTarget.getAttribute('data-tc-text-' + sName ) !== null) {
-					oText[ sName ] = oTarget.getAttribute('data-tc-text-' + sName );
+				if ( oTarget.getAttribute('data-fc-text-' + sName ) !== null) {
+					oText[ sName ] = oTarget.getAttribute('data-fc-text-' + sName );
 				} else {
 					oText[ sName ] = self._oConstants['Text' + sName.charAt(0).toUpperCase() + sName.slice(1) ];
 				}
@@ -205,7 +205,7 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 				oText = self.getText(oTarget),
 				sDate = Math.floor(Date.now() / 1000),
 				sId = oTarget.id ? oTarget.id + self._oConstants.EDITOR_SUFIX : sDate + self._oConstants.EDITOR_SUFIX,
-				sValues = oTarget.getAttribute('data-tc-format-options'),
+				sValues = oTarget.getAttribute('data-fc-format-options'),
 				oEditArea = self.createEditArea(sId, oTarget, oText),
 				oSettings,
 				editor,
@@ -221,8 +221,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 
 			if (window.navigator.userAgent.indexOf('MSIE') === -1) {
 				// check if the HTML option is enabled and creates the button
-				if (oTarget.getAttribute("data-tc-html") !== null) {
-					if (oTarget.getAttribute("data-tc-html") !== 'false') {
+				if (oTarget.getAttribute("data-fc-html") !== null) {
+					if (oTarget.getAttribute("data-fc-html") !== 'false') {
 						oLinkHTML = self.createLink(sId, 'html', oText.html);
 						aLinks.push(oLinkHTML);
 					}
@@ -232,8 +232,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 				}
 
 				// check if the Fullscreen option is enabled and creates the button
-				if (oTarget.getAttribute("data-tc-fullscreen") !== null) {
-					if (oTarget.getAttribute("data-tc-fullscreen") !== 'false') {
+				if (oTarget.getAttribute("data-fc-fullscreen") !== null) {
+					if (oTarget.getAttribute("data-fc-fullscreen") !== 'false') {
 						oLinkScreen = self.createLink(sId, 'screen', oText.fullscreen);
 						aLinks.push(oLinkScreen);
 					}
@@ -274,7 +274,7 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 			}
 
 			// Call the editor with the options
-			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			editor = new Pen(oSettings);
 
@@ -283,8 +283,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 
 			if (window.navigator.userAgent.indexOf('MSIE') === -1) {
 
-				if ( oTarget.getAttribute("data-tc-html") !== null ) {
-					if (oTarget.getAttribute("data-tc-html") !== 'false') {
+				if ( oTarget.getAttribute("data-fc-html") !== null ) {
+					if (oTarget.getAttribute("data-fc-html") !== 'false') {
 						self.bindHtmlButton(sId, oTarget, oText);
 					}
 				} else {
@@ -292,8 +292,8 @@ TinyCore.AMD.define('wysiwyg', [], function () {
 				}
 
 
-				if ( oTarget.getAttribute("data-tc-fullscreen") !== null ) {
-					if (oTarget.getAttribute("data-tc-fullscreen") !== 'false') {
+				if ( oTarget.getAttribute("data-fc-fullscreen") !== null ) {
+					if (oTarget.getAttribute("data-fc-fullscreen") !== 'false') {
 						self.bindScreenButton(sId, oTarget, oText);
 					}
 				} else {

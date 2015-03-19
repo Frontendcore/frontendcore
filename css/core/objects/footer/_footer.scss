@@ -2,8 +2,7 @@
 
 	.footer {
 		@extend %header-footer;
-		margin: $spacing*4 -2px 0;
-		width: 102%;
+		margin: $spacing*4 0 0;
 	}
 
 }

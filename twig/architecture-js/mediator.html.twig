@@ -7,35 +7,33 @@
 
 {% block main %}
     <h1><span class="label-js fz-xl va-m">JS</span> Module Communication (Mediator)</h1>
-    <p>The Mediator is a tool for TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>. The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
+    <p class="msg-info">The Mediator is a tool for TinyCore developed by <a href="https://github.com/mawrkus">Mawrkus</a> an is <a href="https://github.com/mawrkus/tinycore/tree/master/src/tools/mediator">available on github</a>.</p>
+    <p>The mediator tool implements a simple publish/subscribe system, for inter-modules communication and all this in less than 1Kb minified.</p>
 
     <div class="box-background">
     <h2>Why do I need a publish/subscribe system?</h2>
     <p>Sometimes you need modules to communicate between them, but if you call directly from one to another you are adding critical dependencies.It's very common that one day someone or even you, needs to modify one of this modules, or delete some functions adding a bug to the another one. Use the mediator to subscribe and publish events that will other modules can hear and trigger some events with a total independence of each module.</p>
     <h2>API</h2>
-<pre><code data-tc-modules="code">var Mediator = {
+<pre><code data-fc-modules="code">var FrontendMediator = {
     subscribe : function ( topics, handler, context ) {},
     publish : function ( topic, data ) {},
     unsubscribe : function ( topics ) {},
     unsubscribeAll : function () {}
 };</code></pre>
     <h2>Example</h2>
-    <p>The Mediator can be requested explicitly via TinyCore.Toolbox.request :</p>
-<pre><code data-tc-modules="code">var Mediator = TinyCore.Toolbox.request( 'mediator' );
-
-Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
+    <p>The Mediator can be requested explicitly via FrontendMediator :</p>
+<pre><code data-fc-modules="code">FrontendMediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
     <p>Here you have an example on module implementation:</p>
-<pre><code data-tc-modules="code">TinyCore.Module.define( 'phone', ['devicePackage'], function ( mediator )
+<pre><code data-fc-modules="code">FrontendCore.define( 'phone', ['devicePackage'], function ( mediator )
 {
     return {
-        mediator :  TinyCore.Toolbox.request( 'mediator' ),
         onStart : function ()
         {
             var self = this;
 
-            self.mediator.publish( 'phone:boot', { when : +new Date() } );
+            FrontendMediator.publish( 'phone:boot', { when : +new Date() } );
 
-            self.mediator.subscribe( 'phone:call', function ( oTopic )
+            FrontendMediator.subscribe( 'phone:call', function ( oTopic )
             {
                 var oCallData = oTopic.data;
                 self.displayMessage( 'Call from '+oCallData.from );
@@ -43,15 +41,15 @@ Mediator.publish( 'phone:call', { from : '+34123456789' } );</code></pre>
 
             // Subscribe to several topics and...
             // ...specify the context in which "onBatteryStateChanged" should be executed.
-            self.mediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
+            FrontendMediator.subscribe( ['battery:charged', 'battery:empty'], this.onBatteryStateChanged, this );
         },
         onStop : function ()
         {
             var self = this;
 
-            self.mediator.unsubscribe( ['phone:call', 'battery:charged'] );
-            self.mediator.unsubscribe( 'battery:empty' );
-            // self.mediator.unsubscribeAll();
+            FrontendMediator.unsubscribe( ['phone:call', 'battery:charged'] );
+            FrontendMediator.unsubscribe( 'battery:empty' );
+            // FrontendMediator.unsubscribeAll();
         },
         onBatteryStateChanged : function ( oTopic )
         {

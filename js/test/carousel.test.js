@@ -6,7 +6,7 @@ describe('carousel', function() {
 	var sModuleName = 'carousel';
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require([sModuleName], function() {
+		FrontendCore.require([sModuleName], function() {
             if (done !== undefined) {
                 done();
             }
@@ -38,9 +38,9 @@ describe('carousel', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'loadCSS');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'loadCSS');
+			spyOn( FrontendTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -49,12 +49,12 @@ describe('carousel', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.load CSS', function( done ) {
-			expect(oTools.loadCSS).toHaveBeenCalled();
+		it('should call FrontendTools.load CSS', function( done ) {
+			expect(FrontendTools.loadCSS).toHaveBeenCalled();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "'+  sModuleName + '"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', sModuleName );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "'+  sModuleName + '"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', sModuleName );
 		});
 
 	});

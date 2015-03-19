@@ -1,4 +1,4 @@
-TinyCore.AMD.define('charts', [], function () {
+FrontendCore.define('charts', [], function () {
 	return {
 		ChartJS : null,
 		aCharts : [],
@@ -192,12 +192,12 @@ TinyCore.AMD.define('charts', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-tc-modules="charts"]'),
+			var aTargets = document.querySelectorAll('[data-fc-modules="charts"]'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'charts' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'charts' );
 
 			require(['chartLibs'], function(Chart){
 
@@ -222,15 +222,15 @@ TinyCore.AMD.define('charts', [], function () {
 				oChartData,
 				self = this,
 				oOptions = {
-					type : oTarget.getAttribute("data-tc-type") !== null ? oTarget.getAttribute("data-tc-type") : 'line'
+					type : oTarget.getAttribute("data-fc-type") !== null ? oTarget.getAttribute("data-fc-type") : 'line'
 				},
-				aCustomColors =  oTarget.getAttribute("data-tc-colors") !== null ? oTools.attributeToArray(oTarget.getAttribute("data-tc-colors")) : [],
+				aCustomColors =  oTarget.getAttribute("data-fc-colors") !== null ? FrontendTools.attributeToArray(oTarget.getAttribute("data-fc-colors")) : [],
 				aColors = aCustomColors.concat( self.aDefaultColors ),
 				oCanvas = document.getElementById(oTarget.id).getContext("2d");
 
 			self.isEmpty = true;
 
-			oSettings = oTools.mergeOptions( self.oDefault, oOptions );
+			oSettings = FrontendTools.mergeOptions( self.oDefault, oOptions );
 			
 			oChartData = self.getCanvasData( oTarget, self.getColors(aColors, oOptions.type) );
 
@@ -260,7 +260,7 @@ TinyCore.AMD.define('charts', [], function () {
 
 
 			var sId = oTarget.id + '-no-data',
-				sMessage = oTarget.getAttribute("data-tc-text-no-data") !== null ? oTarget.getAttribute("data-tc-text-no-data") : 'No data' ;
+				sMessage = oTarget.getAttribute("data-fc-text-no-data") !== null ? oTarget.getAttribute("data-fc-text-no-data") : 'No data' ;
 
 			$(oTarget).before('<h3 id="'+ sId +'" class="charts-no-data"><i class="icon-bar-chart-o"></i>'+ sMessage  +'</h3>');
 
@@ -311,7 +311,7 @@ TinyCore.AMD.define('charts', [], function () {
 				nValue,
 				oChartData = {
 					groups : {
-						labels:  oTarget.getAttribute("data-tc-labels-x") !== null ?  oTools.attributeToArray(oTarget.getAttribute("data-tc-labels-x")) : [],
+						labels:  oTarget.getAttribute("data-fc-labels-x") !== null ?  FrontendTools.attributeToArray(oTarget.getAttribute("data-fc-labels-x")) : [],
 						datasets : []
 					},
 					items : [],
@@ -330,10 +330,10 @@ TinyCore.AMD.define('charts', [], function () {
 				}
 
 				// Push the colors for default
-				oChartData.groups.datasets[nInput] = oTools.mergeOptions(oChartData.groups.datasets[nInput], oColors[ nInput ]);
+				oChartData.groups.datasets[nInput] = FrontendTools.mergeOptions(oChartData.groups.datasets[nInput], oColors[ nInput ]);
 
 				// Push the data for default
-				oChartData.groups.datasets[nInput].data = oTools.attributeToArray(this.value);
+				oChartData.groups.datasets[nInput].data = FrontendTools.attributeToArray(this.value);
 
 				// Push the label name
 				oChartData.groups.datasets[nInput].label = sLabel;
@@ -352,7 +352,7 @@ TinyCore.AMD.define('charts', [], function () {
 				}
 
 				// Push the data for Pie & Doughnut
-				oChartData.items[nInput] = oTools.mergeOptions(oChartData.items[nInput], oColors[ nInput ]);
+				oChartData.items[nInput] = FrontendTools.mergeOptions(oChartData.items[nInput], oColors[ nInput ]);
 
 				if (nValue > 0) {
 					self.isEmpty = false;

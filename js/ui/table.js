@@ -1,4 +1,4 @@
-TinyCore.AMD.define('table', [], function () {
+FrontendCore.define('table', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oTable : [],
@@ -53,12 +53,12 @@ TinyCore.AMD.define('table', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('table'),
+			var aTargets = FrontendTools.getDataModules('table'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'table' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'table' );
 
 			$(aTargets).each(function ( nIndex ) {
 				self.autobind(this, nIndex);
@@ -70,17 +70,17 @@ TinyCore.AMD.define('table', [], function () {
 				$Target = $(oTarget),
 				sClass = '';
 
-				if (oTarget.getAttribute("data-tc-pagination") === 'false') {
+				if (oTarget.getAttribute("data-fc-pagination") === 'false') {
 					self.oDefault.features.paginate = false;
 					self.oDefault.features.perPageSelect = false;
 					self.oDefault.features.recordCount = false;
 				}
 
-				if (oTarget.getAttribute("data-tc-sort") === 'false') {
+				if (oTarget.getAttribute("data-fc-sort") === 'false') {
 					self.oDefault.features.sort = false;
 				}
 
-				if (oTarget.getAttribute("data-tc-search") === 'false') {
+				if (oTarget.getAttribute("data-fc-search") === 'false') {
 					self.oDefault.features.search = false;
 				}
 

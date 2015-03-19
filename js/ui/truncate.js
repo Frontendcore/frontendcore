@@ -1,4 +1,4 @@
-TinyCore.AMD.define('truncate', [], function () {
+FrontendCore.define('truncate', [], function () {
 	return {
 		oDefault: {
 			max_length: 100,
@@ -7,10 +7,10 @@ TinyCore.AMD.define('truncate', [], function () {
 		},
 		onStart: function () {
 
-			var aTarget = document.querySelectorAll('[data-tc-modules="truncate"]'),
+			var aTarget = document.querySelectorAll('[data-fc-modules="truncate"]'),
                 self = this;
 
-			oTools.trackModule('JS_Libraries', 'call', 'truncate' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'truncate' );
 
 			self.autobind(aTarget);
 
@@ -24,19 +24,19 @@ TinyCore.AMD.define('truncate', [], function () {
 				var oSettings,
 					oOptions = {};
 
-				if (this.getAttribute("data-tc-max") !== null) {
-					oOptions.max_length = this.getAttribute("data-tc-max");
+				if (this.getAttribute("data-fc-max") !== null) {
+					oOptions.max_length = this.getAttribute("data-fc-max");
 				}
 
-				if (this.getAttribute("data-tc-more") !== null) {
-					oOptions.more = this.getAttribute("data-tc-more");
+				if (this.getAttribute("data-fc-more") !== null) {
+					oOptions.more = this.getAttribute("data-fc-more");
 				}
 
-				if (this.getAttribute("data-tc-less") !== null) {
-					oOptions.less = this.getAttribute("data-tc-less");
+				if (this.getAttribute("data-fc-less") !== null) {
+					oOptions.less = this.getAttribute("data-fc-less");
 				}
 
-				oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 				$(this).truncate(oSettings);
 

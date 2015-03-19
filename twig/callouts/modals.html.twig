@@ -18,7 +18,7 @@
     <section class="box-lighten">
         <h2>Images</h2>
         <h3>Single image</h3>
-        <p>Link to the image or html and add the  data-tc-modules="modal"</p>
+        <p>Link to the image or html and add the  data-fc-modules="modal"</p>
         {{ demos.demo(
             'modal-image',
             '../_demos/callouts/modal-image.html'
@@ -38,6 +38,14 @@
             '../_demos/callouts/modal-inline.html'
         )}}
     </section>
+    <section class="box-lighten">
+        <h2>Inline content of other page</h2>
+        <p>To open a modal window from a inline content of something located in other page/url.</p>
+        {{ demos.demo(
+            'modal-inline-url',
+            '../_demos/callouts/modal-inline-url.html'
+        )}}
+    </section>
     {{ demos.settings(
     {
         "1" : {
@@ -45,12 +53,12 @@
             "description" : "Defines the content to load"
         },
         "2" : {
-            "name" :        "data-tc-width",
+            "name" :        "data-fc-width",
             "description" : "Force the width of the modal window. Could be defined as px or %.",
             "default" : "auto"
         },
         "3" : {
-            "name" :        "data-tc-height",
+            "name" :        "data-fc-height",
             "description" : "NForce the height of the modal window. Could be defined as px or %.",
             "default" : "auto"
         }

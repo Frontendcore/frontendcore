@@ -1,4 +1,4 @@
-TinyCore.AMD.define( 'desktop', ['desktopPackage'], function ()
+FrontendCore.define( 'desktop', ['desktopPackage'], function ()
 {
 	return {
 		floor : null,
@@ -8,21 +8,21 @@ TinyCore.AMD.define( 'desktop', ['desktopPackage'], function ()
 		 */
 		onStart : function ( oStartData )
 		{
-			TinyCore.AMD.domBoot( function ( aModulesData )
+			FrontendCore.domBoot( function ( aModulesData )
 			{
 				for (var nKey = 0; nKey < aModulesData.length; nKey++){
-					oTools.trackEvent('JS_Libraries', 'execute', aModulesData[nKey].name )
+					FrontendTools.trackEvent('JS_Libraries', 'execute', aModulesData[nKey].name )
 				}
 			} );
 
 			if ( oGlobalSettings.bResponsiveImages === true ) {
-				TinyCore.AMD.requireAndStart('responsive-images');
-				oTools.trackEvent('JS_Libraries', 'execute', 'responsive-images' );
+				FrontendCore.requireAndStart('responsive-images');
+				FrontendTools.trackEvent('JS_Libraries', 'execute', 'responsive-images' );
 			}
 
 			if ( oGlobalSettings.bCart === true ) {
-				TinyCore.AMD.requireAndStart('cart');
-				oTools.trackEvent('JS_Libraries', 'execute', 'cart' );
+				FrontendCore.requireAndStart('cart');
+				FrontendTools.trackEvent('JS_Libraries', 'execute', 'cart' );
 			}
 		},
 		/**

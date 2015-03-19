@@ -1,4 +1,4 @@
-oTools.mergeJSON = function ( oJson1, oJson2 ){
+FrontendTools.mergeJSON = function ( oJson1, oJson2 ){
 
 	// Properties from the Souce1 object will be copied to Source2 Object.
 	// Note: This method will return a new merged object, Source1 and Source2 original values will not be replaced.

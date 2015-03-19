@@ -1,9 +1,9 @@
-TinyCore.AMD.define('dropdown', [], function () {
+FrontendCore.define('dropdown', [], function () {
 	return {
 		oOpened: false,
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('dropdown'),
+			var aTargets = FrontendTools.getDataModules('dropdown'),
 				self = this;
 
 			self.bindClickOutside();
@@ -23,7 +23,7 @@ TinyCore.AMD.define('dropdown', [], function () {
 
 			});
 
-			oTools.trackModule('JS_Libraries', 'call', 'dropdown');
+			FrontendTools.trackModule('JS_Libraries', 'call', 'dropdown');
 
 		},
 		bindClickOutside: function () {

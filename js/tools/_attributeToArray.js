@@ -1,4 +1,4 @@
 
-oTools.attributeToArray = function( sValue ) {
+FrontendTools.attributeToArray = function( sValue ) {
 	return sValue.replace('[','').replace(']','').split(',');
 };

@@ -1,4 +1,4 @@
-TinyCore.AMD.define('side-panel', [], function () {
+FrontendCore.define('side-panel', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -11,13 +11,13 @@ TinyCore.AMD.define('side-panel', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('side-panel'),
+			var aTargets = FrontendTools.getDataModules('side-panel'),
 				self = this;
 
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'side-panel');
+			FrontendTools.trackModule('JS_Libraries', 'call', 'side-panel');
 
 			$(aTargets).each(function (nIndex) {
 				self.autobind(this, nIndex);
@@ -39,9 +39,9 @@ TinyCore.AMD.define('side-panel', [], function () {
 				oTarget.id = 'slide-panel-open' + nIndex;
 			}
 
-			if (oTarget.getAttribute("data-tc-width") !== null) {
+			if (oTarget.getAttribute("data-fc-width") !== null) {
 
-				nInitialMenuWidth = oTarget.getAttribute("data-tc-width");
+				nInitialMenuWidth = oTarget.getAttribute("data-fc-width");
 
 				oOptions.menuWidth = nInitialMenuWidth;
 
@@ -61,21 +61,21 @@ TinyCore.AMD.define('side-panel', [], function () {
 				oOptions.menuWidth = $(window).width() + 'px';
 			}
 
-			if (oTarget.getAttribute("data-tc-position") !== null) {
-				oOptions.side = oTarget.getAttribute("data-tc-position");
+			if (oTarget.getAttribute("data-fc-position") !== null) {
+				oOptions.side = oTarget.getAttribute("data-fc-position");
 			}
 
-			if (oTarget.getAttribute("data-tc-class") !== null) {
-				oOptions.class = oTarget.getAttribute("data-tc-class");
+			if (oTarget.getAttribute("data-fc-class") !== null) {
+				oOptions.class = oTarget.getAttribute("data-fc-class");
 			}
 
 			if (sHref.indexOf('#') !== -1) {
 				oOptions.menu = '#' + sHref.split('#')[1];
 			}
 
-			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-			if (oTarget.getAttribute("data-tc-clone") === 'true') {
+			if (oTarget.getAttribute("data-fc-clone") === 'true') {
 
 				var sIdSufix = '-' + nIndex,
 					sCloneId = $(oSettings.menu).attr("id") + '-' + nIndex,
@@ -211,8 +211,8 @@ TinyCore.AMD.define('side-panel', [], function () {
 						$(oTarget).animate({'right': '-' + (nWidth - 1 ) + 'px'});
 					}
 
-					if (oTarget.getAttribute("data-tc-tab-top") !== null) {
-						$(oTarget).css('top', oTarget.getAttribute("data-tc-tab-top"));
+					if (oTarget.getAttribute("data-fc-tab-top") !== null) {
+						$(oTarget).css('top', oTarget.getAttribute("data-fc-tab-top"));
 					}
 
 					if (oParent.className.indexOf('box') !== -1) {
@@ -222,7 +222,7 @@ TinyCore.AMD.define('side-panel', [], function () {
 				}, 500);
 			}
 
-			if (( oTarget.getAttribute("data-tc-close") !== 'false' && oParent === undefined) || $(window).width() <= nInitialMenuWidth) {
+			if (( oTarget.getAttribute("data-fc-close") !== 'false' && oParent === undefined) || $(window).width() <= nInitialMenuWidth) {
 
 				// The link is not inside the panel and close is not false
 

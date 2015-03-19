@@ -1,14 +1,14 @@
-TinyCore.AMD.define('code', [], function (utils) {
+FrontendCore.define('code', [], function (utils) {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		onStart: function ( ) {
 
-			var aTargets = oTools.getDataModules('code'),
+			var aTargets = FrontendTools.getDataModules('code'),
                 self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'code' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'code' );
 
 			hljs.configure({
 				tabReplace: '    '

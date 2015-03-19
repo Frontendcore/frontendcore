@@ -1,6 +1,6 @@
 var oPolyfills = {};
 
-TinyCore.AMD.define('polyfills', [] , function () {
+FrontendCore.define('polyfills', [] , function () {
 	return {
 		onStart: function () {
 
@@ -39,14 +39,14 @@ TinyCore.AMD.define('polyfills', [] , function () {
 			}
 
 			if ( nInputs < 0 && nSupportInputs < 5) {
-				TinyCore.AMD.requireAndStart( 'loadPolyfills');
+				FrontendCore.requireAndStart( 'loadPolyfills');
 			}
 
 		}
 	};
 });
 
-TinyCore.AMD.define('loadPolyfills', ['polyfillsLibs'], function () {
+FrontendCore.define('loadPolyfills', ['polyfillsLibs'], function () {
 	return {
 		onStart: function () {
 
@@ -54,7 +54,7 @@ TinyCore.AMD.define('loadPolyfills', ['polyfillsLibs'], function () {
 
 			webshim.polyfill(oPolyfills.shims);
 
-			oTools.trackModule('JS_Libraries', 'call', 'polyfills' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'polyfills' );
 
 		}
 	};

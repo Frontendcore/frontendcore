@@ -1,11 +1,11 @@
-TinyCore.AMD.define('tabs', [] , function () {
+FrontendCore.define('tabs', [] , function () {
 	return {
-		mediator :  TinyCore.Toolbox.request( 'mediator' ),
+		mediator :  FrontendMediator,
 		onStart: function () {
 
-			var aTarget = document.querySelectorAll('[data-tc-modules="tabs"]');
+			var aTarget = document.querySelectorAll('[data-fc-modules="tabs"]');
 
-			oTools.trackModule('JS_Libraries', 'call', 'tabs' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'tabs' );
 
 			this.autobind(aTarget);
 
@@ -86,8 +86,8 @@ TinyCore.AMD.define('tabs', [] , function () {
 
 				oTabsInfo[nKey].id = this.id;
 
-				if ( self.getAttribute("data-tc-name") !== null) {
-					oTabsInfo[nKey].name = self.getAttribute("data-tc-name");
+				if ( self.getAttribute("data-fc-name") !== null) {
+					oTabsInfo[nKey].name = self.getAttribute("data-fc-name");
 				} else {
 					oTabsInfo[nKey].name = self.id.replace('-', ' ');
 				}

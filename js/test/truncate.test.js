@@ -4,7 +4,7 @@ TinyCore.debugMode = true;
 describe('truncate', function() {
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require(['truncate'], function() {
+		FrontendCore.require(['truncate'], function() {
             if (done !== undefined) {
                 done();
             }
@@ -19,8 +19,8 @@ describe('truncate', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -29,8 +29,8 @@ describe('truncate', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "truncate"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'truncate' );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "truncate"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'truncate' );
 		});
 
 	});
@@ -38,7 +38,7 @@ describe('truncate', function() {
 	describe('autobind', function( done ) {
 
 		beforeEach(function() {
-			var $Object =  $('' +'<div data-tc-modules="truncate" data-tc-max="50" data-tc-more="[Más]" data-tc-less="[Menos]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>');
+			var $Object =  $('' +'<div data-fc-modules="truncate" data-fc-max="50" data-fc-more="[Más]" data-fc-less="[Menos]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>');
             spyOn(jQuery.fn, "truncate");
 			oTestedModule.autobind($Object[0]);
 		});

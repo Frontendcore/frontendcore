@@ -4,7 +4,7 @@ TinyCore.debugMode = true;
 describe('autosize', function() {
 
 	beforeEach(function(done) {
-		TinyCore.AMD.require(['autosize'], function() {
+		FrontendCore.require(['autosize'], function() {
             if (done !== undefined) {
                 done();
             }
@@ -19,8 +19,8 @@ describe('autosize', function() {
 	describe('onStart', function() {
 
 		beforeEach(function() {
-			spyOn( oTools, 'getDataModules');
-			spyOn( oTools, 'trackModule');
+			spyOn( FrontendTools, 'getDataModules');
+			spyOn( FrontendTools, 'trackModule');
 			spyOn( oTestedModule, 'autobind');
 			oTestedModule.onStart();
 		});
@@ -29,8 +29,8 @@ describe('autosize', function() {
 			expect(oTestedModule.onStart).toBeTruthy();
 		});
 
-		it('should call oTools.trackModule with "JS_Libraries", "call", "autocomplete"', function( done ) {
-			expect(oTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'autosize' );
+		it('should call FrontendTools.trackModule with "JS_Libraries", "call", "autocomplete"', function( done ) {
+			expect(FrontendTools.trackModule).toHaveBeenCalledWith('JS_Libraries', 'call', 'autosize' );
 		});
 
 	});
@@ -38,7 +38,7 @@ describe('autosize', function() {
 	describe('autobind', function( done ) {
 
 		beforeEach(function() {
-			var $Object =  $('<textarea data-tc-modules="autosize"></textarea>');
+			var $Object =  $('<textarea data-fc-modules="autosize"></textarea>');
 			spyOn(jQuery.fn, "autosize");
 			spyOn(jQuery.fn, "addClass");
 			oTestedModule.autobind($Object[0]);

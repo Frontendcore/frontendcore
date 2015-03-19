@@ -1,11 +1,11 @@
-TinyCore.AMD.define('center-box', [], function () {
+FrontendCore.define('center-box', [], function () {
 	return {
 		onStart: function ( ) {
 
-			var aTargets = oTools.getDataModules('center-box'),
+			var aTargets = FrontendTools.getDataModules('center-box'),
                 self = this;
 
-			oTools.trackModule('JS_Libraries', 'call', 'center-box' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'center-box' );
 
 			self.setPosition(aTargets);
 
@@ -28,7 +28,7 @@ TinyCore.AMD.define('center-box', [], function () {
 
 				oTarget = this;
 
-				sPosition = oTarget.getAttribute('data-tc-position') ? oTarget.getAttribute('data-tc-position') : 'absolute';
+				sPosition = oTarget.getAttribute('data-fc-position') ? oTarget.getAttribute('data-fc-position') : 'absolute';
 
 				if ( sPosition == 'absolute') {
 					nWindowHeight = $( oTarget).parent().height();
@@ -41,8 +41,8 @@ TinyCore.AMD.define('center-box', [], function () {
 					'z-index' : 100
 				});
 
-				nHeight = oTarget.getAttribute('data-tc-height') ? oTarget.getAttribute('data-tc-height') : $(oTarget).height();
-				nWidth = oTarget.getAttribute('data-tc-width') ? oTarget.getAttribute('data-tc-width') : $(oTarget).width();
+				nHeight = oTarget.getAttribute('data-fc-height') ? oTarget.getAttribute('data-fc-height') : $(oTarget).height();
+				nWidth = oTarget.getAttribute('data-fc-width') ? oTarget.getAttribute('data-fc-width') : $(oTarget).width();
 
 				if (typeof nHeight === 'string') {
 					if (nHeight.indexOf('px') !== -1 ) {
@@ -59,11 +59,11 @@ TinyCore.AMD.define('center-box', [], function () {
 				nLeft = (nWindowWidth/2) - (nWidth/2);
 				nTop = (nWindowHeight/2) - (nHeight/2);
 
-				if ( oTarget.getAttribute('data-tc-height') ) {
+				if ( oTarget.getAttribute('data-fc-height') ) {
 					$(oTarget).css('height', nHeight);
 				}
 
-				if ( oTarget.getAttribute('data-tc-width') ) {
+				if ( oTarget.getAttribute('data-fc-width') ) {
 					$(oTarget).css('width', nWidth);
 				}
 

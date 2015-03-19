@@ -12,17 +12,17 @@
         <p> The Global Settings are the Vars you need to personalize for each project.
             Most of them are Paths to found files but there are also some general options. This is because core.js will access them, but it's not necessary to define them because all they have default values</p>
         <p>These are the settings you can personalize and the default values:</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/globalsettings.html"|e('html') %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/globalsettings.html"|e('html') %}</code></pre>
         <p class="msg-warning">        <strong>You must declare them before the inclusion of the "core.js" file</strong> between script tags in your head.</p>
     </section>
     <section class="box-background">
         <h2>2. Include the Core.js</h2>
         <p>Includes the core js with the minimum scripts, from here is all async and depending on the DOM boot.</p>
-        <pre><code data-tc-modules="code">{% include "../_demos/setup/script-core.html"|e('html') %}</code></pre>
+        <pre><code data-fc-modules="code">{% include "../_demos/setup/script-core.html"|e('html') %}</code></pre>
     </section>
     <section class="box-background">
         <h2>3. Activate the Polyfills (optional)</h2>
         <p>If you need to give suppor for IE9 or below this is a good idea, just call the module in the body Tag.</p>
-        <pre><code data-tc-modules="code">&lt;body data-tc-modules="polyfills"></code></pre>
+        <pre><code data-fc-modules="code">&lt;body data-fc-modules="polyfills"></code></pre>
     </section>
 {% endblock %}

@@ -1,4 +1,4 @@
-TinyCore.AMD.define('carousel', [], function () {
+FrontendCore.define('carousel', [], function () {
 	return {
         sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
@@ -21,12 +21,12 @@ TinyCore.AMD.define('carousel', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = oTools.getDataModules('carousel'),
+			var aTargets = FrontendTools.getDataModules('carousel'),
 				self = this;
 
-			oTools.loadCSS(this.sPathCss);
+			FrontendTools.loadCSS(this.sPathCss);
 
-			oTools.trackModule('JS_Libraries', 'call', 'carousel' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'carousel' );
 
             $(aTargets).each(function () {
                 self.autobind(this);
@@ -48,22 +48,22 @@ TinyCore.AMD.define('carousel', [], function () {
 
             for ( sProperty in self.oDefault ){
 
-                if (oTarget.getAttribute("data-tc-" + sProperty) !== null) {
-                    oOptions[sProperty] = oTarget.getAttribute("data-tc-" + sProperty);
+                if (oTarget.getAttribute("data-fc-" + sProperty) !== null) {
+                    oOptions[sProperty] = oTarget.getAttribute("data-fc-" + sProperty);
                 }
 
             }
 
-            if (oTarget.getAttribute("data-tc-video-height") !== null) {
-                oOptions.videoHeight = oTarget.getAttribute("data-tc-video-height");
+            if (oTarget.getAttribute("data-fc-video-height") !== null) {
+                oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
             }
-            if (oTarget.getAttribute("data-tc-video-width") !== null) {
-                oOptions.videoWidth = oTarget.getAttribute("data-tc-video-width");
+            if (oTarget.getAttribute("data-fc-video-width") !== null) {
+                oOptions.videoWidth = oTarget.getAttribute("data-fc-video-width");
             }
 
-            if (oTarget.getAttribute("data-tc-device-items") !== null) {
+            if (oTarget.getAttribute("data-fc-device-items") !== null) {
 
-                aDeviceItems = oTarget.getAttribute("data-tc-device-items").split(',');
+                aDeviceItems = oTarget.getAttribute("data-fc-device-items").split(',');
 
                 oOptions.responsive = {
                     '0':{
@@ -81,7 +81,7 @@ TinyCore.AMD.define('carousel', [], function () {
                 };
             }
 
-			oSettings = oTools.mergeOptions(self.oDefault, oOptions);
+			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			if ( oSettings !== undefined ){
                 $(oTarget).owlCarousel(oSettings);

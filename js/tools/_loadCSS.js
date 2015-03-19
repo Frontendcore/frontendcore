@@ -1,4 +1,4 @@
-oTools.loadCSS = function ( sPathCss ) {
+FrontendTools.loadCSS = function ( sPathCss ) {
 
 	var sId = sPathCss.replace('/','');
 

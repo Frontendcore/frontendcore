@@ -32,7 +32,7 @@
 		& > ul {
 			li {
 				&.active {
-					margin: 0 $spacing/4 0 0;
+					margin: 0 $spacing/4;
 				}
 				&.active a, &.active a:hover {
 					@include background-transparent(contrast-color(map-get($object-navigation-vars, background-color), $color-foreground, $color-background), .2);
