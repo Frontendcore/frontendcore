@@ -12,7 +12,9 @@ window.define = function (sModuleName, aDependencies, fpCreator) {
 };
 
 window.require = function (aModulesNames, fpCallback) {
-	fpCallback.apply(null, aModulesNames);
+	if (fpCallback !== undefined) {
+		fpCallback.apply(null, aModulesNames);
+	}
 };
 
 window.require.config = function () {

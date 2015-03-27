@@ -81,20 +81,27 @@ FrontendCore.define('sortable', [], function () {
 		isValidTarget: function ($item, container) {
 
 
-			var oTarget = $($item.context).closest('ol[data-fc-modules=sortable]')[0],
-				nDepth = $(container.el.context ,"#" + oTarget.id).parents("ol").length + 1,
-				nTotalDepth = oTarget.getAttribute('data-fc-depth') !== null ? oTarget.getAttribute('data-fc-depth') : 2;
+			var oTarget = $($item.context).closest('ol[data-fc-modules=sortable]')[0];
+
+			if (oTarget !== undefined) {
+				var nDepth = $(container.el.context ,"#" + oTarget.id).parents("ol").length + 1,
+					nTotalDepth = oTarget.getAttribute('data-fc-depth') !== null ? oTarget.getAttribute('data-fc-depth') : 2;
 
 
-			if (nDepth > nTotalDepth) {
-				return false;
+				if (nDepth > nTotalDepth) {
+					return false;
+				}
+
+				if ( $('.dragged').find('li')[0] !== undefined && nDepth > ( nTotalDepth -1 ) ) {
+					return false;
+				}
+
+				return true;
+			} else {
+				return true;
 			}
 
-			if ( $('.dragged').find('li')[0] !== undefined && nDepth > ( nTotalDepth -1 ) ) {
-				return false;
-			}
 
-			return true;
 		},
 		addEmptyList: function(oTarget) {
 

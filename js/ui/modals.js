@@ -30,6 +30,23 @@ FrontendCore.define('modal', [], function () {
 
 
 		},
+		stripTag : function( sHtml, sTag ) {
+			var div = document.createElement('div');
+			div.innerHTML = sHtml;
+			div.id = 'striptag-html';
+			var tags = div.getElementsByTagName(sTag),
+				nTags = tags.length;
+
+			while (nTags--) {
+				tags[nTags].parentNode.removeChild(tags[nTags]);
+			}
+
+			var sResult = div.innerHTML;
+
+			$('#striptag-html').remove();
+
+			return sResult;
+		},
 		autobind: function (oTarget) {
 
 			var sRel,
@@ -52,15 +69,22 @@ FrontendCore.define('modal', [], function () {
 
 					$.get(aHrefHash[0], function(data) {
 
-						$('#modal-preload').append(data);
-					});
+						var sHtml = self.stripTag(data, 'meta');
+						sHtml = self.stripTag(sHtml, 'script');
 
-					$('#modal-inline').append( $('#' + aHrefHash[1]).html() );
-					$('#modal-preload').html('');
+						$('#modal-preload').append(sHtml);
+
+						var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
+
+						$('#modal-inline').append( sHtmlTarget );
+						$('#modal-preload').html('');
+
+					});
 
 					oTarget.href = '#' + aHrefHash[1];
 
 				}
+
 
 				if (oTarget.className.indexOf('group') != -1) {
 
@@ -79,15 +103,15 @@ FrontendCore.define('modal', [], function () {
 					oOptions.rel = sRel;
 				}
 
-				if (oTarget.getAttribute("data-fc-width") !== null) {
+				if (oTarget.getAttribute("data-fc-width") !== null ) {
 					oOptions.width = oTarget.getAttribute("data-fc-width");
-				} else {
+				} else if (oOptions.width === undefined) {
 					oOptions.width = false;
 				}
 
-				if (oTarget.getAttribute("data-fc-height") !== null) {
+				if (oTarget.getAttribute("data-fc-height") !== null ) {
 					oOptions.height = oTarget.getAttribute("data-fc-height");
-				} else {
+				} else if (oOptions.height === undefined) {
 					oOptions.height = false;
 				}
 
@@ -114,7 +138,6 @@ FrontendCore.define('modal', [], function () {
 				}
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
-
 
 				$(oTarget).colorbox(oSettings);
 

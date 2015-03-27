@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('autosize', function() {
 
@@ -12,7 +12,7 @@ describe('autosize', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( 'autosize' );
+		oTestedModule = FrontendCore.instantiate( 'autosize' );
 		expect(oTestedModule).toBeTruthy();
 	});
 

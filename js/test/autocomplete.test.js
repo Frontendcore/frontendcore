@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('Autocomplete', function() {
 
@@ -12,7 +12,9 @@ describe('Autocomplete', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( 'autocomplete' );
+		oTestedModule = FrontendCore.instantiate( 'autocomplete' );
+
+
 		expect(oTestedModule).toBeTruthy();
 	});
 

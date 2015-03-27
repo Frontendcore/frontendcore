@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('dropdown', function() {
 
@@ -14,7 +14,7 @@ describe('dropdown', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( 'dropdown' );
+		oTestedModule = FrontendCore.instantiate( 'dropdown' );
 		expect(oTestedModule).toBeTruthy();
 	});
 

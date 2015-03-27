@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('code', function() {
 
@@ -12,7 +12,7 @@ describe('code', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( 'code' );
+		oTestedModule = FrontendCore.instantiate( 'code' );
 		expect(oTestedModule).toBeTruthy();
 	});
 

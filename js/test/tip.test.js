@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('tip', function() {
 
@@ -14,7 +14,7 @@ describe('tip', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( sModuleName );
+		oTestedModule = FrontendCore.instantiate( sModuleName );
 		expect(oTestedModule).toBeTruthy();
 	});
 

@@ -1,5 +1,5 @@
 // Don't catch errors.
-TinyCore.debugMode = true;
+FrontendCore.debug = true;
 
 describe('toggle', function() {
 
@@ -14,7 +14,7 @@ describe('toggle', function() {
 	});
 
 	it('should exist', function( done ) {
-		oTestedModule = TinyCore.Module.instantiate( 'toggle' );
+		oTestedModule = FrontendCore.instantiate( 'toggle' );
 		expect(oTestedModule).toBeTruthy();
 	});
 
