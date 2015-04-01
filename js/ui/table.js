@@ -42,7 +42,7 @@ FrontendCore.define('table', [], function () {
 				dynatable: 'table',
 				queries: 'queries',
 				sorts: 'sorts',
-				page: '<i class="icon-page"></i>',
+				page: '',
 				perPage: 'perPage',
 				offset: 'offset',
 				records: '',
