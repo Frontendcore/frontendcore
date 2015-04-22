@@ -27,7 +27,9 @@
     ) !global;
     </code>
 </pre>
-    <p>By default the Grid is based on <a href="http://thisisdallas.github.io/Simple-Grid/">Simple grid</a>. As His author explain Simple Grid was created for developers who need a barebones grid. Simple Grid works well with 1140px layouts but easily adapts to any size of layout. With fluid columns, Simple Grid is responsive down to mobile.</p>
+    <p>By default the grid is set to 98% and modifies the with and position of the columns depending on the resolution of the device. Reduce and maximize this page to see it in action.</p>
+    <p>The <strong class="c-primary">.grid-main</strong> class should be only added in the main grid of your page (usually called #container"). This class will add some paddings depending on the device you are.</p>
+    <p>If you want to create fixed layouts (very useful for admin panels) add the <strong class="c-primary">.grid-fixed</strong> class to your main grid container.</p>
     </div>
     <h2 class="mt-l">1 Column</h2>
     {{ demos.demo(
