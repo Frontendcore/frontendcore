@@ -117,7 +117,7 @@ module.exports = {
 				'js/ui/table.js'
 			],
 			'./../site/build/static/js/ui/side-panel.js': [
-				'bower_components/bigSlide/src/jquery.big-slide.js',
+				'bower_components/jquery-panelslider/jquery.panelslider.js',
 				'js/ui/side-panel.js'
 			],
 			'./../site/build/static/js/ie-old.js': [

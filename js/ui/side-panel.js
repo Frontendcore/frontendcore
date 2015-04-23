@@ -2,12 +2,10 @@ FrontendCore.define('side-panel', [], function () {
 	return {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
-			menu: ('#side-panel'),
-			push: ('.push'),
 			side: "left",
 			menuWidth: "200px",
-			speed: 300,
-			class: 'side-panel-default'
+			duration: 500,
+			clickClose: true
 		},
 		onStart: function () {
 
@@ -32,12 +30,17 @@ FrontendCore.define('side-panel', [], function () {
 				oOptions = {},
 				oParent,
 				oClose = document.createElement('a'),
-				nInitialMenuWidth;
+				nInitialMenuWidth,
+				nWindowWidth = $(window).width(),
+				nMenuWidth;
 
-
+			// if oTarget hast no ID creates a new one
 			if (oTarget.id === '') {
 				oTarget.id = 'slide-panel-open' + nIndex;
 			}
+
+			// Get the Initial Width
+
 
 			if (oTarget.getAttribute("data-fc-width") !== null) {
 
@@ -46,8 +49,11 @@ FrontendCore.define('side-panel', [], function () {
 				oOptions.menuWidth = nInitialMenuWidth;
 
 				if (nInitialMenuWidth.indexOf('%') === -1 && nInitialMenuWidth.indexOf('px') === -1) {
+
+					// If the unit is not defined, will be px by default
 					oOptions.menuWidth += 'px';
 					nInitialMenuWidth = parseInt(nInitialMenuWidth, 10);
+
 				} else if (nInitialMenuWidth.indexOf('%') === -1) {
 					nInitialMenuWidth = $('window').width() / parseInt(nInitialMenuWidth, 10);
 				} else {
@@ -56,24 +62,40 @@ FrontendCore.define('side-panel', [], function () {
 
 			}
 
-			if ($(window).width() < 599 && parseInt(oOptions.menuWidth, 10) > 599) {
+			nMenuWidth = nInitialMenuWidth;
 
-				oOptions.menuWidth = $(window).width() + 'px';
+			if ( nWindowWidth < 599 && nMenuWidth > 599) {
+
+				oOptions.menuWidth = nWindowWidth + 'px';
 			}
+
 
 			if (oTarget.getAttribute("data-fc-position") !== null) {
 				oOptions.side = oTarget.getAttribute("data-fc-position");
 			}
 
-			if (oTarget.getAttribute("data-fc-class") !== null) {
-				oOptions.class = oTarget.getAttribute("data-fc-class");
-			}
+
 
 			if (sHref.indexOf('#') !== -1) {
 				oOptions.menu = '#' + sHref.split('#')[1];
 			}
 
+
+			$(oOptions.menu).css({
+				width: oOptions.menuWidth
+			});
+
 			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+
+			if ( oTarget.getAttribute("data-fc-tab") !== null) {
+				$(oTarget).addClass('side-panel-tab').addClass('side-panel-tab-' + oSettings.side);
+
+				if (oTarget.getAttribute("data-fc-tab-top") !== null) {
+					$(oTarget).css('top', oTarget.getAttribute("data-fc-tab-top"));
+				}
+			}
+
+			// Clone if it's necessary
 
 			if (oTarget.getAttribute("data-fc-clone") === 'true') {
 
@@ -108,157 +130,35 @@ FrontendCore.define('side-panel', [], function () {
 				$('body').append($Clone[0]);
 			}
 
-			$(oTarget).bigSlide(oSettings);
-
-			$(oSettings.menu).addClass('side-panel-default');
-
-
-
-			if ($(oSettings.menu)[0].className.indexOf('navigation') !== -1) {
-
-				// If is a navigation object
-
-				$(oTarget).on('click', function () {
-
-					var nMenuWidth = $('#' + this.href.split('#')[1]).width();
-
-					if (oSettings.side === 'right') {
-
-						// If it's on the right side
-
-						if ($(oSettings.menu).css('right') !== '0px') {
-
-							// Opening
-							$(oSettings.menu).css('z-index', '1000');
-							$('html').css({
-								'position': 'absolute',
-								'width': $(window).width() + parseInt(oSettings.menuWidth, 10)
-							}).animate({
-								'left': '-' + nMenuWidth,
-								'padding-right': nMenuWidth
-							});
-						} else {
-
-							// Closing
-
-							$('html').css({
-								'position': 'relative',
-								'width': 'inherit'
-							}).animate({
-								'left': 0,
-								'padding-right': 0
-							});
-						}
-					} else {
-
-						// If it's on the left side
-
-						if ($(oSettings.menu).css('left') !== '0px') {
-
-							// Opening
-
-							$(oSettings.menu).css('z-index', '1000');
-							$('html').css({
-								'position': 'absolute',
-								'overflow': 'hidden',
-								'width': $(window).width() + parseInt(oSettings.menuWidth, 10)
-							}).animate({
-								'padding-left': nMenuWidth
-							});
-						} else {
-
-							// Closing
-
-							$('html').css({
-								'position': 'relative',
-								'width': 'auto',
-								'overflow': 'auto'
-							}).animate({
-								'padding-left': 0
-							});
-
-						}
-					}
-
-				});
-
-			} else {
-
-				$(oTarget).on('click', function () {
-
-					var nMenuRight = $(this.href.split('#')[1]).css('right');
-
-					if (oSettings.side === 'right' && nMenuRight === '0px') {
-						$(oSettings.menu).css('z-index', '1000');
-					} else {
-						$(oSettings.menu).css('z-index', '1001');
-					}
-				});
-			}
-
 			oParent = $(oTarget).parent(oSettings.menu)[0];
 
-			if (oParent !== undefined) {
-				// Hack to solve position problem with tabs
-				setTimeout(function () {
-					// if the link to open the panel is inside the panel
+			$(oSettings.menu).removeClass('desktop').removeClass('tablet').removeClass('mobile').hide();
 
-					var nWidth = $(oTarget).outerWidth();
+			function resizer () {
 
-					if (oSettings.side === 'right') {
-						$(oTarget).animate({'left': '-' + (nWidth - 1) + 'px'});
-					} else {
-						$(oTarget).animate({'right': '-' + (nWidth - 1 ) + 'px'});
-					}
-
-					if (oTarget.getAttribute("data-fc-tab-top") !== null) {
-						$(oTarget).css('top', oTarget.getAttribute("data-fc-tab-top"));
-					}
-
-					if (oParent.className.indexOf('box') !== -1) {
-
-						$(oParent).css('overflow', 'visible');
-					}
-				}, 500);
-			}
-
-			if (( oTarget.getAttribute("data-fc-close") !== 'false' && oParent === undefined) || $(window).width() <= nInitialMenuWidth) {
-
-				// The link is not inside the panel and close is not false
-
-				$(oSettings.menu).addClass('has-slide-panel-close');
-
-				oClose.id = 'slide-panel-close' + nIndex;
-				oClose.className = 'icon-times slide-panel-close';
-				oClose.href = '#' + oTarget.id;
-
-				if (oSettings.side === 'right') {
-					oClose.style.textAlign = 'left';
-				} else {
-					oClose.style.textAlign = 'right';
-				}
-
-				$(oSettings.menu).append(oClose);
-
-				$('#slide-panel-close' + nIndex).on('click', function (e) {
-
-					e.preventDefault();
-
-					$('#' + oTarget.id).click();
-
+				$('body').css({
+					'width': $(window).width()
 				});
 
+				$(window).off("resize", resizer);
 			}
 
-			if (oSettings.side === 'right') {
-				$(oSettings.menu).css({
-					"right": "-" + oSettings.menuWidth
-				}).addClass('side-panel-right');
-			} else {
-				$(oSettings.menu).css({
-					"left": "-" + oSettings.menuWidth
-				}).addClass('side-panel-left');
-			}
+			$(oTarget).click( function(){
+
+				var sStatus = $(oSettings.menu)[0].className.indexOf('ps-active-panel') === -1 ? 'opening' : 'closing';
+
+				if (sStatus === 'opening') {
+					$('body').css({
+						'width': $(window).width()
+					});
+
+					$(window).off("resize", resizer);
+					$(window).resize(resizer);
+				}
+
+			}).panelslider(oSettings);
+
+			$(oSettings.menu).addClass('side-panel-default').addClass('side-panel-' + oSettings.side);
 
 		},
 		onStop: function () {
