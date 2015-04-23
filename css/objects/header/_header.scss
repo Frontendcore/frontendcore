@@ -1,0 +1,25 @@
+
+.header {
+	& {
+		@extend %header-footer;
+		margin-bottom: $spacing;
+		z-index: 100;
+	}
+	.navigation {
+		border: 0px none;
+		@include box-shadow(none);
+	}
+	.menu {
+		& {
+			background: $color-primary;
+		}
+		.navigation {
+			min-height: 44px;
+		}
+	}
+}
+
+.header-spacing {
+	display: none;
+}
+

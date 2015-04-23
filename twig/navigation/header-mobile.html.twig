@@ -1,0 +1,26 @@
+{% set current_children = "Header Mobile" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Header mobile</h1>
+    <p>Set this object at the begining of your body. Here in this demo, the position is set to relative, but by default the position is set to fixed so it will be always in the top</p>
+    <div class="msg-info">
+        <h3>How to show a different header in mobile or desktop</h3>
+        <p>Remember to add the class .mobile or .tablet to this object if you only want to show this menu on mobile devices or tablets. You can also define another header with the .desktop class (shown only on desktop devices).  </p>
+    </div>
+    <style>
+        .box-background .header-mobile-container {
+            position: relative;
+        }
+    </style>
+    {{ demos.demo(
+        'header-mobile',
+        '../_demos/navigation/header-mobile.html'
+    )}}
+
+
+{% endblock %}
