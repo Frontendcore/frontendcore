@@ -1,9 +1,17 @@
 ## Change Log
 
+### 1.6.2 (2015/04/23 11:40 +00:00)
+- [9cb3f62](https://github.com/Frontendcore/frontendcore/commit/9cb3f6292cf9e690748f931085caed7fd8d9bcb4) Solved bugs on modals getting id from another page and improved namespace framework agnostic. Release version1.6.1 ! (@tonipinel)
+- [8486437](https://github.com/Frontendcore/frontendcore/commit/8486437c97ae751f6ff6ec8727ca5a7681f8e44f) table url html injected
+- [0c4fd4e](https://github.com/Frontendcore/frontendcore/commit/0c4fd4ef5355c07a3e40e861d70c839b3473994e) Improved grids on tablet vertical. Now 4  columns or less are respected on tablet. Also added grid-fixed to fix a grid. (@tonipinel)
+- [15229c6](https://github.com/Frontendcore/frontendcore/commit/15229c657fcbce49264c5431ec786af35f49f14a) Switch Bigslide as provider for side  menus and panels to jquery-panelslider (@tonipinel)
+- [2b9207e](https://github.com/Frontendcore/frontendcore/commit/2b9207eea1dbb2dbc7747e702ffbb4b7e551b187) Mobile navigation improvements: New objects and functions. Bug fixing. Release version1.6.2 ! (@tonipinel)
+
 ### 1.6.1 (2015/03/27 12:47 +00:00)
 - [3df46d1](https://github.com/Frontendcore/frontendcore/commit/3df46d1a4a9f624bd9e41591f9049acb018f963a) Back Compatibility Break. Check the changelog. Release version1.6.0 ! (@tonipinel)
 - [1aedb8d](https://github.com/Frontendcore/frontendcore/commit/1aedb8df8d7867502cfa40bfacf53321b8e36507) minor change in home of site (@tonipinel)
 - [da9f6f5](https://github.com/Frontendcore/frontendcore/commit/da9f6f5fa6a69678453f27a15babdc756f1aeabd) Solved jshint problems (@tonipinel)
+- [dbea2b9](https://github.com/Frontendcore/frontendcore/commit/dbea2b9dbfcaeeb85829dfed03ebd58033495e13) Solved bugs on modals getting id from another page and improved namespace framework agnostic. Release version1.6.1 ! (@tonipinel)
 
 ### 1.6.0 (2015/03/19 17:26 +00:00)
 - [52275f0](https://github.com/Frontendcore/frontendcore/commit/52275f0236c59ce833e00959b814b8333076fe19) Added Skins, now it's posible to create skins. Improved customization of objects. Release version1.5.12 ! (@tonipinel)
@@ -133,9 +141,6 @@
 - [64bcc9a](https://github.com/Frontendcore/frontendcore/commit/64bcc9a7e771cbca179d7ab33b9133c3b63ca629) Improved documentation, UI CSS organization & the Sortable component v1.3.15 (@tonipinel)
 
 ### 1.3.14 (2015/01/27 12:46 +00:00)
-- [b1ba977](https://github.com/Frontendcore/frontendcore/commit/b1ba97797b3494356254121dcae86ac00d7aa51d) Wysiwyg minor bug solved on fullscreen v1.3.14 (@tonipinel)
-
-### 1.3.13 (2015/01/27 12:32 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -160,11 +165,10 @@
 - [d085938](https://github.com/Frontendcore/frontendcore/commit/d085938fd83a45158d3dc9e96e28fa568ed1ecdd) Improvements on wysiwyg (@tonipinel)
 - [47a48f7](https://github.com/Frontendcore/frontendcore/commit/47a48f724d346a6e1678275327b8d22d0bc0fd00) bugs on grunt files (@tonipinel)
 - [e0e11f9](https://github.com/Frontendcore/frontendcore/commit/e0e11f9f4ab6eb059172d1b477d190e082223aa9) Commit (@tonipinel)
-- [f2b1904](https://github.com/Frontendcore/frontendcore/commit/f2b190442d35f1413d54b86a9358424cee2464d5) Commit (@tonipinel)
 - [c5ad903](https://github.com/Frontendcore/frontendcore/commit/c5ad903c033a0172ba883ea2c2237d366e76add4) Stats updated for version 1.3.8.1 (@tonipinel)
+- [f2b1904](https://github.com/Frontendcore/frontendcore/commit/f2b190442d35f1413d54b86a9358424cee2464d5) Commit (@tonipinel)
 - [d136415](https://github.com/Frontendcore/frontendcore/commit/d136415228f2558f8efc74466c5f385fc41c8162) Commit (@tonipinel)
 - [c345f73](https://github.com/Frontendcore/frontendcore/commit/c345f735bd4b81e2aaa014b9ef126929cf1a1bda) Commit (@tonipinel)
-- [8693f1c](https://github.com/Frontendcore/frontendcore/commit/8693f1c49204688ffab1f940289cb1ea266ebe16) Commit (@tonipinel)
 - [8693f1c](https://github.com/Frontendcore/frontendcore/commit/8693f1c49204688ffab1f940289cb1ea266ebe16) Commit (@tonipinel)
 - [d567175](https://github.com/Frontendcore/frontendcore/commit/d5671757197cac16d67c558aceda8b511a0901dd) Commit (@tonipinel)
 - [e5fb767](https://github.com/Frontendcore/frontendcore/commit/e5fb767d658256b28bdc7ea5d1b9791d1cbf3fd0) Revert "Commit" (@tonipinel)
@@ -177,6 +181,7 @@
 - [8bb3c44](https://github.com/Frontendcore/frontendcore/commit/8bb3c4490f6c50aff3605760a77a3916b3334630) Release version 1.3.12 (@tonipinel)
 - [75087b4](https://github.com/Frontendcore/frontendcore/commit/75087b4259cfadee4c1853ece90144b203f0a0ae) add tags to push (@tonipinel)
 - [aa13b9b](https://github.com/Frontendcore/frontendcore/commit/aa13b9b87f4fde50e7eff424a6238c4bcb44e629) Wysiwyg refactoring and improved documentation v1.3.13 (@tonipinel)
+- [b1ba977](https://github.com/Frontendcore/frontendcore/commit/b1ba97797b3494356254121dcae86ac00d7aa51d) Wysiwyg minor bug solved on fullscreen v1.3.14 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
