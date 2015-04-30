@@ -9,13 +9,15 @@ module.exports = function (grunt) {
 	grunt.registerTask('tests', ['newer:uglify','newer:jasmine']);
 	grunt.registerTask('build', ['grunt:clean_site','copy','default']);
 	grunt.registerTask('twig', ['newer:twigRender']);
-	grunt.registerTask('scss', ['concurrent:compileSass', 'grunt:clean_sassdoc','sassdoc','newer:cssmin','concurrent:templates']);
+	grunt.registerTask('scss', [
+		'sass',
+		'grunt:clean_sassdoc','sassdoc','newer:cssmin','concurrent:templates']);
 	grunt.registerTask('commit', [
 		'version',
 		'grunt:clean_site',
 		'copy:workspace',
 		'twigRender',
-		'concurrent:compileAllSass',
+		'sass',
 		'grunt:clean_sassdoc',
 		'sassdoc',
 		'newer:cssmin',
@@ -57,7 +59,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'twig',
-		'concurrent:compileAllSass',
+		'sass',
 		'grunt:clean_sassdoc',
 		'sassdoc',
 		'newer:cssmin',

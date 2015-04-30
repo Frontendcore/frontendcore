@@ -8,50 +8,33 @@
     <h1>Frontendcore Installation</h1>
     <p>Congratulations! You've choose the best option to work with frontendcore, just follow the following steps to install.</p>
     <article class="box-background">
-        <h2>1. Install Ruby & Sass</h2>
-        <p>Frontencore uses Sass to preprocess the CSS. So you will need to <a href="http://sass-lang.com/install" target="_blank">install Ruby &amp; Sass</a>. Follow the instructions in the official page.</p>
+        <h2>1. Install NodeJs v0.10.36</h2>
+        <p>Nodejs is required for the compilation and to execute the grunt tasks, so please <a href="http://blog.nodejs.org/2015/01/26/node-v0-10-36-stable/" target="_blank">download & install NodeJS</a> from the official site.</p>
+        <p class="msg-info"> The reason to install v.0.10.36 is because <a href="https://github.com/sindresorhus/grunt-sass/issues/203">a bug of libsass with latest versions of node.</a></p>
     </article>
     <article class="box-background">
-        <h2>2. Install Compass</h2>
-        <p>Frontendcore requires Compass to compile, mostly are using mixins and utilities.</p>
-        <code data-fc-modules="code" class="d-ib mt-s mb-l mt-s mb-l va-m">
-            gem install compass
-        </code>
-    </article>
-    <article class="box-background">
-        <h2>3. Install Susy</h2>
-        <p>Susy is required for the grid system and needs to be installed to compile the scss.</p>
-        <code data-fc-modules="code" class="d-ib mt-s mb-l va-m">
-            gem install susy
-        </code>
-    </article>
-    <article class="box-background">
-        <h2>4. Install NodeJs</h2>
-        <p>Nodejs is required for the compilation and to execute the grunt tasks, so please <a href="http://nodejs.org" target="_blank">download & install NodeJS</a> from the official site.</p>
-    </article>
-    <article class="box-background">
-        <h2>5. Install Yeoman</h2>
+        <h2>2. Install Yeoman</h2>
         <p><a href="http://yeoman.io" target="_blank">Yeoman</a> is required for the generator-frontendcore (next step) and it's necessary just to create the enviroment, once it's created frontendcore doesn't require Yeoman anymore.</p>
         <code data-fc-modules="code" class="d-ib mt-s mb-l va-m">
             npm install -g yo
         </code>
     </article>
     <article class="box-background">
-        <h2>6. Install Generator Frontendcore</h2>
+        <h2>3. Install Generator Frontendcore</h2>
         <p>You need to install this in your computer just to create the work enviroment, once it's created frontendcore doesn't require the Generator frontendcore anymore.</p>
         <code data-fc-modules="code" class="d-ib mt-s mb-l va-m">
             npm install -g generator-frontendcore
         </code>
     </article>
     <article class="box-background">
-        <h2>7. Install Frontendcore</h2>
+        <h2>4. Install Frontendcore</h2>
         <p>Finally you are ready to install frontendcore and create the workspace in your project. First go to the folder you want to install frontendcore and execute the generator.</p>
         <code data-fc-modules="code" class="d-ib mt-s mb-l va-m">
             yo frontendcore
         </code>
     </article>
     <article class="box-background">
-        <h2>8. Check that installation is ok</h2>
+        <h2>5. Check that installation is ok</h2>
         <p>First of all check that you've got the following folders in your project:</p>
         <pre><code data-fc-modules="code" class="d-ib mt-s mb-n pa-l">components/
 css/

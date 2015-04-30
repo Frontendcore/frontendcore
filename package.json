@@ -4,8 +4,8 @@
   "license": "Apache License, Version 2.0",
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
-  "version": "1.6.2",
-  "lastFeature": "Mobile navigation improvements: New objects and functions. Bug fixing. %v% !",
+  "version": "1.6.3",
+  "lastFeature": "Removed dependencies from Ruby,Sass,compass and susy. Now it's using nodeJs and libsass to compile scss. %v% !",
   "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",
   "bugs": "https://github.com/tonipinel/frontendcore-workspace/issues",
@@ -37,12 +37,14 @@
     "grunt-grunt": "^0.2.2",
     "grunt-newer": "^1.1.0",
     "grunt-phantomas": "^0.11.0",
+    "grunt-sass": "git://github.com/sindresorhus/grunt-sass",
     "grunt-sassdoc": "^1.2.1",
     "grunt-sync-version": "^0.2.1",
     "grunt-text-replace": "^0.4.0",
     "grunt-twig-render": "^1.6.0",
     "jit-grunt": "^0.9.0",
     "load-grunt-config": "^0.16.0",
-    "load-grunt-tasks": "^2.0.0"
+    "load-grunt-tasks": "^2.0.0",
+    "node-sass": "^2.1.1"
   }
 }

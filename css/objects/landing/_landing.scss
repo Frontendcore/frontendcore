@@ -5,6 +5,7 @@
 		background-repeat: repeat;
 		color: $color-background;
 		min-height: 500px;
+		max-width: 100%;
 		overflow: hidden;
 	}
 
@@ -16,9 +17,5 @@
 
 	.fz-s {
 		font-family: $font-face-default;
-	}
-
-	.col-1-2:first-of-type {
-		padding-left: $spacing*2;
 	}
 }

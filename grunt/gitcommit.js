@@ -8,7 +8,7 @@ module.exports =  {
 	scss: {
 		options: {
 			cwd: "./../scss/",
-			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+			message: pkg.lastFeature.replace('%v%', 'Release version ' + pkg.version)
 		},
 		files: [
 			{
@@ -20,7 +20,7 @@ module.exports =  {
 	js: {
 		options: {
 			cwd: "./../js/",
-			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+			message: pkg.lastFeature.replace('%v%', 'Release version ' + pkg.version)
 		},
 		files: [
 			{
@@ -32,7 +32,7 @@ module.exports =  {
 	site: {
 		options: {
 			cwd: "./../site/build/",
-			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+			message: pkg.lastFeature.replace('%v%', 'Release version ' + pkg.version)
 		},
 		files: [
 			{
@@ -44,7 +44,7 @@ module.exports =  {
 	generator: {
 		options: {
 			cwd: "./../generator/",
-			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+			message: pkg.lastFeature.replace('%v%', 'Release version ' + pkg.version)
 		},
 		files: [
 			{
@@ -56,7 +56,7 @@ module.exports =  {
 	workspace: {
 		options: {
 			cwd: "./",
-			message: pkg.lastFeature.replace('%v%', 'Release version' + pkg.version)
+			message: pkg.lastFeature.replace('%v%', 'Release version ' + pkg.version)
 		},
 		files: [
 			{
