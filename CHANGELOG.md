@@ -1,5 +1,17 @@
 ## Change Log
 
+### 1.6.4 (2015/05/08 11:49 +00:00)
+- [f991e8a](https://github.com/Frontendcore/frontendcore/commit/f991e8a26c989a93d1d245d8fb4b34b0a24c1498) Removed dependencies from Ruby,Sass,compass and susy. Now it's using nodeJs and libsass to compile scss. Release version 1.6.3 ! (@tonipinel)
+- [a8733b7](https://github.com/Frontendcore/frontendcore/commit/a8733b7ad1e010f33c5ffd1190f8b2a0a7997ccb) Action buttons are not visible until you focus on the field (@tonipinel)
+- [91b76c4](https://github.com/Frontendcore/frontendcore/commit/91b76c40dddf3e3459f43eccf1baf4e9a972621a) Added clean & Paste from word (@tonipinel)
+- [5940249](https://github.com/Frontendcore/frontendcore/commit/594024985ccf4f2d26582acc42c7e77b2cec66e1) Now the side panel opens with a black panel to hide all the other content and focus on the side panel. (@tonipinel)
+- [29647a4](https://github.com/Frontendcore/frontendcore/commit/29647a4696928b960b28217acbdc7500d07eeb4f) Added custom vars for forms: now the inputs appearance are customizable. (@tonipinel)
+- [f63ed52](https://github.com/Frontendcore/frontendcore/commit/f63ed52326baa122bba425343b5d5ece625f9601) Bug Fixind and improved customization of Forms. Release version 1.6.4 ! (@tonipinel)
+
+### 1.6.3 (2015/04/30 08:15 +00:00)
+- [d046967](https://github.com/Frontendcore/frontendcore/commit/d046967679f66775040d78034382912958707e20) Mobile navigation improvements: New objects and functions. Bug fixing. Release version1.6.2 ! (@tonipinel)
+- [acfd219](https://github.com/Frontendcore/frontendcore/commit/acfd21914d7620ad4aa9654f050ef2ecc07ecca6) Removed dependencies from Ruby,Sass,compass and susy. Now it's using nodeJs and libsass to compile scss. Release version 1.6.3 ! (@tonipinel)
+
 ### 1.6.2 (2015/04/23 11:40 +00:00)
 - [9cb3f62](https://github.com/Frontendcore/frontendcore/commit/9cb3f6292cf9e690748f931085caed7fd8d9bcb4) Solved bugs on modals getting id from another page and improved namespace framework agnostic. Release version1.6.1 ! (@tonipinel)
 - [8486437](https://github.com/Frontendcore/frontendcore/commit/8486437c97ae751f6ff6ec8727ca5a7681f8e44f) table url html injected
@@ -133,14 +145,6 @@
 - [3b1876e](https://github.com/Frontendcore/frontendcore/commit/3b1876e8b203baf9d8ad501981e0433395d3fff6) Improvements on sortable lib v1.3.17 (@tonipinel)
 
 ### 1.3.16 (2015/01/29 08:52 +00:00)
-- [b3d6565](https://github.com/Frontendcore/frontendcore/commit/b3d6565552c5f6939d1a6684008bd998fa86d3c7) updated version and bug on grunt release (@tonipinel)
-- [6781216](https://github.com/Frontendcore/frontendcore/commit/6781216d0676f96029fb0f09ffed68864db2bed6) added google search site to the documentation (@tonipinel)
-- [69d9374](https://github.com/Frontendcore/frontendcore/commit/69d9374b36ee35395c85ce1a5ee704952c18a29f) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
-
-### 1.3.15 (2015/01/29 04:51 +00:00)
-- [64bcc9a](https://github.com/Frontendcore/frontendcore/commit/64bcc9a7e771cbca179d7ab33b9133c3b63ca629) Improved documentation, UI CSS organization & the Sortable component v1.3.15 (@tonipinel)
-
-### 1.3.14 (2015/01/27 12:46 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -165,8 +169,8 @@
 - [d085938](https://github.com/Frontendcore/frontendcore/commit/d085938fd83a45158d3dc9e96e28fa568ed1ecdd) Improvements on wysiwyg (@tonipinel)
 - [47a48f7](https://github.com/Frontendcore/frontendcore/commit/47a48f724d346a6e1678275327b8d22d0bc0fd00) bugs on grunt files (@tonipinel)
 - [e0e11f9](https://github.com/Frontendcore/frontendcore/commit/e0e11f9f4ab6eb059172d1b477d190e082223aa9) Commit (@tonipinel)
-- [c5ad903](https://github.com/Frontendcore/frontendcore/commit/c5ad903c033a0172ba883ea2c2237d366e76add4) Stats updated for version 1.3.8.1 (@tonipinel)
 - [f2b1904](https://github.com/Frontendcore/frontendcore/commit/f2b190442d35f1413d54b86a9358424cee2464d5) Commit (@tonipinel)
+- [c5ad903](https://github.com/Frontendcore/frontendcore/commit/c5ad903c033a0172ba883ea2c2237d366e76add4) Stats updated for version 1.3.8.1 (@tonipinel)
 - [d136415](https://github.com/Frontendcore/frontendcore/commit/d136415228f2558f8efc74466c5f385fc41c8162) Commit (@tonipinel)
 - [c345f73](https://github.com/Frontendcore/frontendcore/commit/c345f735bd4b81e2aaa014b9ef126929cf1a1bda) Commit (@tonipinel)
 - [8693f1c](https://github.com/Frontendcore/frontendcore/commit/8693f1c49204688ffab1f940289cb1ea266ebe16) Commit (@tonipinel)
@@ -182,6 +186,10 @@
 - [75087b4](https://github.com/Frontendcore/frontendcore/commit/75087b4259cfadee4c1853ece90144b203f0a0ae) add tags to push (@tonipinel)
 - [aa13b9b](https://github.com/Frontendcore/frontendcore/commit/aa13b9b87f4fde50e7eff424a6238c4bcb44e629) Wysiwyg refactoring and improved documentation v1.3.13 (@tonipinel)
 - [b1ba977](https://github.com/Frontendcore/frontendcore/commit/b1ba97797b3494356254121dcae86ac00d7aa51d) Wysiwyg minor bug solved on fullscreen v1.3.14 (@tonipinel)
+- [64bcc9a](https://github.com/Frontendcore/frontendcore/commit/64bcc9a7e771cbca179d7ab33b9133c3b63ca629) Improved documentation, UI CSS organization & the Sortable component v1.3.15 (@tonipinel)
+- [b3d6565](https://github.com/Frontendcore/frontendcore/commit/b3d6565552c5f6939d1a6684008bd998fa86d3c7) updated version and bug on grunt release (@tonipinel)
+- [6781216](https://github.com/Frontendcore/frontendcore/commit/6781216d0676f96029fb0f09ffed68864db2bed6) added google search site to the documentation (@tonipinel)
+- [69d9374](https://github.com/Frontendcore/frontendcore/commit/69d9374b36ee35395c85ce1a5ee704952c18a29f) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
