@@ -125,7 +125,10 @@ FrontendCore.define('wysiwyg', [], function () {
 				if ( $('#' + sId).is(':visible') ) {
 					this.innerHTML = oText.html;
 					self.updateEditArea(sId, oTarget );
+					$('#' + sId).focus();
 				} else {
+
+					$('#' + sId.replace('editor','textarea')).focus();
 
 					if (self.bResize === false ) {
 
@@ -311,6 +314,17 @@ FrontendCore.define('wysiwyg', [], function () {
 				} else {
 					self.bindScreenButton(sId, oTarget, oText);
 				}
+			}
+
+			if ( document.querySelectorAll ) {
+
+				// Clean Paste
+
+				document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
+					e.preventDefault();
+					var text = e.clipboardData.getData("text/plain");
+					document.execCommand("insertHTML", false, text);
+				});
 			}
 
 		},
