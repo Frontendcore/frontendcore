@@ -106,6 +106,14 @@ FrontendCore.define('wysiwyg', [], function () {
 
 			var self = this;
 
+
+			$('#' + sId.replace('editor','textarea')).on('focus', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeIn();
+			}).on('blur', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeOut();
+				self.updateEditArea(sId, oTarget );
+			});
+
 			$('#html-' + sId).on('click', function (event) {
 
 				event.preventDefault();
@@ -117,12 +125,15 @@ FrontendCore.define('wysiwyg', [], function () {
 				if ( $('#' + sId).is(':visible') ) {
 					this.innerHTML = oText.html;
 					self.updateEditArea(sId, oTarget );
+					$('#' + sId).focus();
 				} else {
+
+					$('#' + sId.replace('editor','textarea')).focus();
 
 					if (self.bResize === false ) {
 
 						// @todo not to call directly to autosize
-						require(['autosizeLibs'], function() {
+						require(['autosize'], function() {
 							$(oTarget).autosize();
 						});
 						self.bResize = true;
@@ -132,8 +143,8 @@ FrontendCore.define('wysiwyg', [], function () {
 					this.innerHTML = oText.visual;
 					self.updateTextarea(sId, oTarget);
 				}
-
 			});
+
 		},
 		bindScreenButton: function(sId, oTarget, oText) {
 
@@ -171,6 +182,10 @@ FrontendCore.define('wysiwyg', [], function () {
 
 			$('#' + sId).on('blur', function() {
 				self.updateTextarea(sId, oTarget);
+				$(this).parent().find('.fc-wysiwyg-switch').fadeOut();
+
+			}).on('focus', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeIn();
 			});
 
 		},
@@ -299,6 +314,17 @@ FrontendCore.define('wysiwyg', [], function () {
 				} else {
 					self.bindScreenButton(sId, oTarget, oText);
 				}
+			}
+
+			if ( document.querySelectorAll ) {
+
+				// Clean Paste
+
+				document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
+					e.preventDefault();
+					var text = e.clipboardData.getData("text/plain");
+					document.execCommand("insertHTML", false, text);
+				});
 			}
 
 		},
