@@ -5,7 +5,13 @@ FrontendCore.define('side-panel', [], function () {
 			side: "left",
 			menuWidth: "200px",
 			duration: 500,
-			clickClose: true
+			clickClose: false,
+			onOpen : function() {
+				$('.black-panel').on('click', function(){
+					$.panelslider.close();
+					$(this).remove();
+				});
+			}
 		},
 		onStart: function () {
 
@@ -154,6 +160,10 @@ FrontendCore.define('side-panel', [], function () {
 
 					$(window).off("resize", resizer);
 					$(window).resize(resizer);
+				}
+
+				if ($('.black-panel')[0] === undefined) {
+					$('body').append('<div class="black-panel animated fade-in"></div>');
 				}
 
 			}).panelslider(oSettings);
