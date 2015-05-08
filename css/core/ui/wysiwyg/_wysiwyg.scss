@@ -2,6 +2,7 @@
 	.fc-wysiwyg {
 		& {
 			@extend %field;
+			overflow: hidden;
 			position: relative;
 			padding-bottom: $spacing*2;
 			min-height: 100px;
@@ -60,6 +61,7 @@
 		margin-top: -$spacing*2;
 		font-size: $font-size-default;
 		z-index: 1001;
+		display:none;
 	}
 	.fc-wysiwyg-switch-full-screen {
 		position: fixed;

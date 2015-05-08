@@ -106,6 +106,14 @@ FrontendCore.define('wysiwyg', [], function () {
 
 			var self = this;
 
+
+			$('#' + sId.replace('editor','textarea')).on('focus', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeIn();
+			}).on('blur', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeOut();
+				self.updateEditArea(sId, oTarget );
+			});
+
 			$('#html-' + sId).on('click', function (event) {
 
 				event.preventDefault();
@@ -122,7 +130,7 @@ FrontendCore.define('wysiwyg', [], function () {
 					if (self.bResize === false ) {
 
 						// @todo not to call directly to autosize
-						require(['autosizeLibs'], function() {
+						require(['autosize'], function() {
 							$(oTarget).autosize();
 						});
 						self.bResize = true;
@@ -132,8 +140,8 @@ FrontendCore.define('wysiwyg', [], function () {
 					this.innerHTML = oText.visual;
 					self.updateTextarea(sId, oTarget);
 				}
-
 			});
+
 		},
 		bindScreenButton: function(sId, oTarget, oText) {
 
@@ -171,6 +179,10 @@ FrontendCore.define('wysiwyg', [], function () {
 
 			$('#' + sId).on('blur', function() {
 				self.updateTextarea(sId, oTarget);
+				$(this).parent().find('.fc-wysiwyg-switch').fadeOut();
+
+			}).on('focus', function(){
+				$(this).parent().find('.fc-wysiwyg-switch').fadeIn();
 			});
 
 		},
