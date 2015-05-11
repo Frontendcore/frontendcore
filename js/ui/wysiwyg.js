@@ -107,7 +107,7 @@ FrontendCore.define('wysiwyg', [], function () {
 			var self = this;
 
 
-			$('#' + sId.replace('editor','textarea')).on('focus', function(){
+			$(oTarget).on('focus', function(){
 				$(this).parent().find('.fc-wysiwyg-switch').fadeIn();
 			}).on('blur', function(){
 				$(this).parent().find('.fc-wysiwyg-switch').fadeOut();
@@ -128,7 +128,7 @@ FrontendCore.define('wysiwyg', [], function () {
 					$('#' + sId).focus();
 				} else {
 
-					$('#' + sId.replace('editor','textarea')).focus();
+					$(oTarget).focus();
 
 					if (self.bResize === false ) {
 
