@@ -4,6 +4,7 @@
 		@extend %header-footer;
 		margin-bottom: $spacing;
 		z-index: 100;
+		box-sizing: border-box;
 	}
 	.navigation {
 		border: 0px none;
