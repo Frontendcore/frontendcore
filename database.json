@@ -191,6 +191,11 @@
           "name": "Polaroid Images",
           "href": "image-polaroid.html"
         },
+        "Zoom Images": {
+          "name": "Zoom Images",
+          "href": "image-zoom.html",
+          "js" : true
+        },
         "Responsive": {
           "name": "Responsive Images",
           "href": "image-responsive.html",

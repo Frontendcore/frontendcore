@@ -33,6 +33,11 @@ module.exports = {
 				'js/libs/modernizr/modernizr-custom.js',
 				'bower_components/jquery-unveil/jquery.unveil.js'
 			],
+			'./../site/build/static/js/ui/image-zoom.js': [
+				'bower_components/magnifier/demo/Event.js',
+				'bower_components/magnifier/Magnifier.js',
+				'js/ui/image-zoom.js'
+			],
 			'./../site/build/static/js/ui/tabs.js': [
 				'js/ui/tabs.js'
 			],

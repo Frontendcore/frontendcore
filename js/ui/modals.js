@@ -11,7 +11,7 @@ FrontendCore.define('modal', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-fc-modules="modal"]'),
+			var aTargets = FrontendTools.getDataModules('modal'),
 				self = this;
 
 			FrontendTools.loadCSS(this.sPathCss);

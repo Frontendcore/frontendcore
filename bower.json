@@ -43,7 +43,8 @@
     "Sortable": "~1.0.1",
     "magicsuggest": "~2.1.4",
     "chartjs": "~1.0.1",
-    "SyntaxHighlighter": "~3.0.83"
+    "SyntaxHighlighter": "~3.0.83",
+    "magnifier": "*"
   },
   "dependencies": {
     "webshim": "~1.15.7",

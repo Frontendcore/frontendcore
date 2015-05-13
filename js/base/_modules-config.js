@@ -13,7 +13,7 @@ var oDefaultPaths = {
 		libs: oGlobalSettings.sPathJs,
 		polyfillsLibs : oGlobalSettings.sPathJsCore + "shims/polyfiller"
 	},
-	aModules = ['devicePackage','code','sortable','charts','chartLibs','tags','modal','autocomplete','autosize','graph','stats','wysiwyg','truncate','tip','cart','polyfills','parallax','carousel','table','toggle','tabs','notification','dropdown','center-box','side-panel'];
+	aModules = ['devicePackage','code','sortable','charts','chartLibs','tags','modal','autocomplete','autosize','graph','stats','wysiwyg','truncate','tip','cart','polyfills','parallax','carousel','table','toggle','tabs','notification','dropdown','center-box','side-panel','image-zoom'];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {
 

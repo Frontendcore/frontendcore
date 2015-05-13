@@ -1,0 +1,41 @@
+{% set current_children = "Zoom Images" %}
+{% set current_section = "Media" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Zoom Image</h1>
+    <section class="box-lighten">
+        <h2>Zoom image</h2>
+        <p>Zoom to view details of the image on mouse hover</p>
+        {{ demos.demo(
+        'zoom-image',
+        '../_demos/media/zoom-image.html'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+        "name" :        "href",
+        "description" : "Defines the media to load"
+    },
+        "2" : {
+        "name" :        "data-fc-width",
+        "description" : "Width of the preview window. Must be defined as px.",
+        "default" : "350px"
+    },
+        "3" : {
+        "name" :        "data-fc-height",
+        "description" : "Height of the preview window. Must be defined as px.",
+        "default" : "350px"
+    },
+        "4" : {
+        "name" :        "data-fc-position",
+        "description" : "Position of the preview window (could be left or right)",
+        "default" : "right"
+    }
+    }
+    )}}
+{% endblock %}
