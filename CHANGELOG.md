@@ -1,5 +1,12 @@
 ## Change Log
 
+### 1.6.5 (2015/05/13 08:53 +00:00)
+- [34b7cd7](https://github.com/Frontendcore/frontendcore/commit/34b7cd7c13350aad8f5f77c18b0eb2e7c628223b) Bug Fixind and improved customization of Forms. Release version 1.6.4 ! (@tonipinel)
+- [1858556](https://github.com/Frontendcore/frontendcore/commit/18585564766b47068aa08f04325820c2b09412c2) Improved messages css for message of just one line. (@tonipinel)
+- [427dcda](https://github.com/Frontendcore/frontendcore/commit/427dcdaea1e16d7644da6d17285401d2f297c550) UX improvements on nested sortable lists (@tonipinel)
+- [bb9e142](https://github.com/Frontendcore/frontendcore/commit/bb9e14257e1d82afc91b2fa59b33caaee44a4986) Buttons are now customizable, and solved bugs on switch and pagination (@tonipinel)
+- [761f89f](https://github.com/Frontendcore/frontendcore/commit/761f89f007a5ee7f920f02d9832637851b605415) Bug Fixing and improved customization of Buttons. Release version 1.6.5 ! (@tonipinel)
+
 ### 1.6.4 (2015/05/08 11:49 +00:00)
 - [f991e8a](https://github.com/Frontendcore/frontendcore/commit/f991e8a26c989a93d1d245d8fb4b34b0a24c1498) Removed dependencies from Ruby,Sass,compass and susy. Now it's using nodeJs and libsass to compile scss. Release version 1.6.3 ! (@tonipinel)
 - [a8733b7](https://github.com/Frontendcore/frontendcore/commit/a8733b7ad1e010f33c5ffd1190f8b2a0a7997ccb) Action buttons are not visible until you focus on the field (@tonipinel)
@@ -140,11 +147,6 @@
 - [114433b](https://github.com/Frontendcore/frontendcore/commit/114433bb53cdd9663ddfb7454b22f148c32be1d0) Version 1.4 (@tonipinel)
 
 ### 1.3.17 (2015/01/29 12:51 +00:00)
-- [8498977](https://github.com/Frontendcore/frontendcore/commit/8498977dfe73b06547a91e5d7699bc9aadef47d8) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
-- [b5c8e31](https://github.com/Frontendcore/frontendcore/commit/b5c8e314aedc7c817fe19fdcb770bf5873ac4da6) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
-- [3b1876e](https://github.com/Frontendcore/frontendcore/commit/3b1876e8b203baf9d8ad501981e0433395d3fff6) Improvements on sortable lib v1.3.17 (@tonipinel)
-
-### 1.3.16 (2015/01/29 08:52 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -190,6 +192,9 @@
 - [b3d6565](https://github.com/Frontendcore/frontendcore/commit/b3d6565552c5f6939d1a6684008bd998fa86d3c7) updated version and bug on grunt release (@tonipinel)
 - [6781216](https://github.com/Frontendcore/frontendcore/commit/6781216d0676f96029fb0f09ffed68864db2bed6) added google search site to the documentation (@tonipinel)
 - [69d9374](https://github.com/Frontendcore/frontendcore/commit/69d9374b36ee35395c85ce1a5ee704952c18a29f) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
+- [8498977](https://github.com/Frontendcore/frontendcore/commit/8498977dfe73b06547a91e5d7699bc9aadef47d8) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
+- [b5c8e31](https://github.com/Frontendcore/frontendcore/commit/b5c8e314aedc7c817fe19fdcb770bf5873ac4da6) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
+- [3b1876e](https://github.com/Frontendcore/frontendcore/commit/3b1876e8b203baf9d8ad501981e0433395d3fff6) Improvements on sortable lib v1.3.17 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
