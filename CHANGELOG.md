@@ -1,5 +1,11 @@
 ## Change Log
 
+### 1.6.6 (2015/05/13 15:44 +00:00)
+- [0cc9256](https://github.com/Frontendcore/frontendcore/commit/0cc9256af81d340dc9654e867a6b1247c035dc9f) Bug Fixing and improved customization of Buttons. Release version 1.6.5 ! (@tonipinel)
+- [b98013c](https://github.com/Frontendcore/frontendcore/commit/b98013c49d1e69886f36fccb3c78c81fd46a58b1) Added Zoom images to the UI (@tonipinel)
+- [7191934](https://github.com/Frontendcore/frontendcore/commit/71919341bc7f3b46012a589476a4ba4143defb3d) Added edit images to the UI (@tonipinel)
+- [1e0ea48](https://github.com/Frontendcore/frontendcore/commit/1e0ea48061a0af546ca6e68aa0b6a68ef3312051) New UI elements: Image edit and Image Zoom. Release version 1.6.6 ! (@tonipinel)
+
 ### 1.6.5 (2015/05/13 08:53 +00:00)
 - [34b7cd7](https://github.com/Frontendcore/frontendcore/commit/34b7cd7c13350aad8f5f77c18b0eb2e7c628223b) Bug Fixind and improved customization of Forms. Release version 1.6.4 ! (@tonipinel)
 - [1858556](https://github.com/Frontendcore/frontendcore/commit/18585564766b47068aa08f04325820c2b09412c2) Improved messages css for message of just one line. (@tonipinel)
@@ -144,9 +150,6 @@
 - [7b62a0b](https://github.com/Frontendcore/frontendcore/commit/7b62a0b9ab0d2811ffbd5c6c4eb81565d50e558f) Release version1.4.0 (@tonipinel)
 
 ### 1.4 (2015/01/30 12:04 +00:00)
-- [114433b](https://github.com/Frontendcore/frontendcore/commit/114433bb53cdd9663ddfb7454b22f148c32be1d0) Version 1.4 (@tonipinel)
-
-### 1.3.17 (2015/01/29 12:51 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -195,6 +198,7 @@
 - [8498977](https://github.com/Frontendcore/frontendcore/commit/8498977dfe73b06547a91e5d7699bc9aadef47d8) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
 - [b5c8e31](https://github.com/Frontendcore/frontendcore/commit/b5c8e314aedc7c817fe19fdcb770bf5873ac4da6) Sortable component can define depth of the tree v1.3.16 (@tonipinel)
 - [3b1876e](https://github.com/Frontendcore/frontendcore/commit/3b1876e8b203baf9d8ad501981e0433395d3fff6) Improvements on sortable lib v1.3.17 (@tonipinel)
+- [114433b](https://github.com/Frontendcore/frontendcore/commit/114433bb53cdd9663ddfb7454b22f148c32be1d0) Version 1.4 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
