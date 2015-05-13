@@ -196,6 +196,11 @@
           "href": "image-zoom.html",
           "js" : true
         },
+        "Edit Images": {
+          "name": "Edit Images",
+          "href": "image-edit.html",
+          "js" : true
+        },
         "Responsive": {
           "name": "Responsive Images",
           "href": "image-responsive.html",

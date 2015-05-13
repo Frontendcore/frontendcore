@@ -4,9 +4,9 @@ module.exports = function (grunt) {
 
 	require('jit-grunt')(grunt);
 
-    grunt.registerTask('js_newer', ['newer:uglify', 'newer:jshint','newer:jasmine']);
-    grunt.registerTask('js', ['uglify', 'newer:jshint','jasmine']);
-	grunt.registerTask('tests', ['newer:uglify','newer:jasmine']);
+    grunt.registerTask('js_newer', ['newer:uglify', 'newer:jshint']);
+    grunt.registerTask('js', ['uglify', 'newer:jshint']);
+	grunt.registerTask('tests', ['newer:uglify']);
 	grunt.registerTask('build', ['grunt:clean_site','copy','default']);
 	grunt.registerTask('twig', ['newer:twigRender']);
 	grunt.registerTask('scss', [

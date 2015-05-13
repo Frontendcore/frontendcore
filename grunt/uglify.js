@@ -38,6 +38,15 @@ module.exports = {
 				'bower_components/magnifier/Magnifier.js',
 				'js/ui/image-zoom.js'
 			],
+			'./../site/build/static/js/ui/image-edit.js': [
+				'bower_components/darkroomjs/vendor/fabric.js',
+				'bower_components/darkroomjs/lib/js/darkroom.js',
+				'bower_components/darkroomjs/lib/js/plugins/darkroom.history.js',
+				'bower_components/darkroomjs/lib/js/plugins/darkroom.rotate.js',
+				'bower_components/darkroomjs/lib/js/plugins/darkroom.crop.js',
+				'js/ui/image-edit/darkroom.save.js',
+				'js/ui/image-edit.js'
+			],
 			'./../site/build/static/js/ui/tabs.js': [
 				'js/ui/tabs.js'
 			],
