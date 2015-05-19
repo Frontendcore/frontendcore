@@ -123,7 +123,7 @@ module.exports = {
 				'js/ui/cart.js'
 			],
 			'./../site/build/static/js/ui/carousel.js': [
-				'js/libs/owl-carousel/owl.carousel.js',
+				'bower_components/owl-carousel2/dist/owl.carousel.js',
 				'js/ui/carousel.js'
 			],
 			'./../site/build/static/js/ui/table.js': [

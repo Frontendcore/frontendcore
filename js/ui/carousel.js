@@ -83,6 +83,14 @@ FrontendCore.define('carousel', [], function () {
 
 			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
+			if (oSettings.lazyLoad === true || oSettings.lazyLoad === 'true') {
+				$('img', oTarget).each( function(){
+					if (this.getAttribute('data-src') !== null || this.getAttribute('data-src-retina') !== null) {
+						$(this).addClass('owl-lazy animated fade-in');
+					}
+				});
+			}
+
 			if ( oSettings !== undefined ){
                 $(oTarget).owlCarousel(oSettings);
 			}
