@@ -76,7 +76,12 @@ FrontendCore.define('image-zoom', [], function () {
 			}
 
 			oOptions.onthumbenter = function() {
-				$('#' + sIdPreview).fadeIn('fast');
+				oOffset = $(oImg).offset();
+
+				$('#' + sIdPreview).fadeIn('fast').css({
+					"left" : ( oOffset.left + ( $(oImg).width() + 1 ) )  + 'px',
+					"top" :  oOffset.top + 'px'
+				});
 			};
 
 			oOptions.onthumbleave= function() {

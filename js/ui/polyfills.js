@@ -5,7 +5,7 @@ FrontendCore.define('polyfills', [] , function () {
 		onStart: function () {
 
 			var aTags = ['video','audio','source'],
-				nSupportInputs = Modernizr.inputtypes.date + Modernizr.inputtypes.email + Modernizr.inputtypes.number + Modernizr.inputtypes.month + Modernizr.inputtypes.range + Modernizr.inputtypes.datetime,
+				nSupportInputs = Modernizr.inputtypes.date + Modernizr.inputtypes.email + Modernizr.inputtypes.number + Modernizr.inputtypes.month + Modernizr.inputtypes.range + Modernizr.inputtypes.datetime + Modernizr.inputtypes.color,
 				aInputs = document.getElementsByTagName('input'),
 				aInputsType = [],
 				nInputs = false;
@@ -14,7 +14,7 @@ FrontendCore.define('polyfills', [] , function () {
 				aInputsType.push(aInputs[nKey].type);
 			}
 
-			nInputs = aInputsType.indexOf('date') + aInputsType.indexOf('email') + aInputsType.indexOf('month') + aInputsType.indexOf('range') + aInputsType.indexOf('datetime');
+			nInputs = aInputsType.indexOf('date') + aInputsType.indexOf('email') + aInputsType.indexOf('month') + aInputsType.indexOf('range') + aInputsType.indexOf('datetime') + aInputsType.indexOf('color');
 
 			oPolyfills.shims = '';
 
@@ -42,9 +42,16 @@ FrontendCore.define('polyfills', [] , function () {
 				FrontendCore.requireAndStart( 'loadPolyfills');
 			}
 
+			if (!Modernizr.inputtypes.color) {
+				$("input[type='color']").css({
+					'min-width' : '170px'
+				}).after('<style>.color-popover input { padding:2px !important; min-width: 50px; }</style>');
+			}
+
 		}
 	};
 });
+
 
 FrontendCore.define('loadPolyfills', ['polyfillsLibs'], function () {
 	return {
