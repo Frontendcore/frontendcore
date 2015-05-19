@@ -205,10 +205,11 @@ FrontendCore.define('charts', [], function () {
 
 				$(aTargets).each(function (nIndex) {
 					self.autobind(this, nIndex);
+
+					FrontendTools.removeLoading(this);
 				});
 
 			});
-
 
 		},
 		autobind: function ( oTarget, nIndex ) {

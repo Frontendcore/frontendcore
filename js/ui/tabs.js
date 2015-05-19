@@ -50,6 +50,7 @@ FrontendCore.define('tabs', [] , function () {
 
 				self.updateTabs(oThis, oTabActive.href.split('#')[1]);
 
+				FrontendTools.removeLoading(oThis);
 
 			});
 		},

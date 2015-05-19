@@ -356,6 +356,11 @@
       "href": "#callouts",
       "id": "callouts",
       "children": {
+        "Loading": {
+          "name": "Loading",
+          "href": "loading.html",
+          "js": true
+        },
         "Messages": {
           "name": "Messages",
           "href": "messages.html"

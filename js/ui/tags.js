@@ -88,6 +88,8 @@ FrontendCore.define('tags', [], function () {
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
+				FrontendTools.removeLoading(oRealTarget);
+
 				fSuggest[nTarget] = $(oRealTarget).magicSuggest(oSettings);
 
 				$(fSuggest[nTarget]).on('selectionchange', function(){
@@ -101,7 +103,6 @@ FrontendCore.define('tags', [], function () {
 					oTarget.value = sValue;
 
 				});
-
 
 				oOptions = null;
 

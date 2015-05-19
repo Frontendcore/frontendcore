@@ -80,6 +80,8 @@ FrontendCore.define('cart', [], function () {
                     }
                 };
 
+                FrontendTools.removeLoading(this);
+
             });
 
             oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
@@ -88,7 +90,7 @@ FrontendCore.define('cart', [], function () {
 
             simpleCart.init();
 
-            FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
+            FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete');
 
 
 		},

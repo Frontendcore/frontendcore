@@ -2,8 +2,8 @@ FrontendCore.define('truncate', [], function () {
 	return {
 		oDefault: {
 			max_length: 100,
-			more: '[+]',
-			less: '[-]'
+			more: '+',
+			less: '-'
 		},
 		onStart: function () {
 
@@ -38,7 +38,11 @@ FrontendCore.define('truncate', [], function () {
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
+				FrontendTools.removeLoading(this);
+
 				$(this).truncate(oSettings);
+
+
 
 			});
 		},

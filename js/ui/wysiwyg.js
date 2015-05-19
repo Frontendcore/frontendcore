@@ -327,6 +327,8 @@ FrontendCore.define('wysiwyg', [], function () {
 				});
 			}
 
+			FrontendTools.removeLoading(oTarget);
+
 		},
 		onStop: function () {
 			this.sPathCss = null;

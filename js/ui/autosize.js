@@ -18,6 +18,8 @@ FrontendCore.define('autosize', [], function () {
 
 			$(oTarget).autosize();
 
+			FrontendTools.removeLoading(oTarget);
+
 		}
 	};
 });
