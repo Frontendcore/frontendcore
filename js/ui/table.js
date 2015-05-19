@@ -90,6 +90,8 @@ FrontendCore.define('table', [], function () {
 
 				$Target.addClass(sClass);
 
+				FrontendTools.removeLoading(oTarget);
+
 				self.oTable[nIndex] = $Target.dynatable(self.oDefault);
 
 			$('input','.dynatable-search').keyup(function(){

@@ -42,6 +42,8 @@ FrontendCore.define('carousel', [], function () {
                 sProperty,
                 aDeviceItems;
 
+			FrontendTools.removeLoading(oTarget);
+
             $('.carousel-video', oTarget).each( function(){
                 $(this).addClass('owl-video');
             });

@@ -28,12 +28,35 @@ FrontendCore.define('center-box', [], function () {
 
 				oTarget = this;
 
+				nWindowHeight = $( window ).height();
+				nWindowWidth = $( window ).width();
+
 				sPosition = oTarget.getAttribute('data-fc-position') ? oTarget.getAttribute('data-fc-position') : 'absolute';
 
 				if ( sPosition == 'absolute') {
-					nWindowHeight = $( oTarget).parent().height();
-					nWindowWidth = $( oTarget ).parent().width();
-					$( oTarget ).parent().css('position','relative');
+
+					nWindowHeight = $( oTarget).parent().outerHeight();
+					nWindowWidth = $( oTarget ).parent().outerWidth();
+
+					if ( $( oTarget ).parent().hasClass('loading') ) {
+
+						nWindowHeight = $( oTarget ).parent().parent().outerHeight();
+						nWindowWidth = $( oTarget ).parent().parent().outerWidth();
+
+						$( oTarget ).parent().css({
+							'height' : nWindowHeight + 'px',
+							'width' : nWindowWidth + 'px',
+							'top': 0,
+							'left': 0,
+							'position' : 'absolute'
+						});
+
+						$( oTarget ).parent().parent().css('position','relative');
+					} else {
+						$( oTarget ).parent().css('position','relative');
+
+					}
+
 				}
 
 				$(oTarget).css({
@@ -41,8 +64,8 @@ FrontendCore.define('center-box', [], function () {
 					'z-index' : 100
 				});
 
-				nHeight = oTarget.getAttribute('data-fc-height') ? oTarget.getAttribute('data-fc-height') : $(oTarget).height();
-				nWidth = oTarget.getAttribute('data-fc-width') ? oTarget.getAttribute('data-fc-width') : $(oTarget).width();
+				nHeight = oTarget.getAttribute('data-fc-height') ? oTarget.getAttribute('data-fc-height') : $(oTarget).outerHeight();
+				nWidth = oTarget.getAttribute('data-fc-width') ? oTarget.getAttribute('data-fc-width') : $(oTarget).outerWidth();
 
 				if (typeof nHeight === 'string') {
 					if (nHeight.indexOf('px') !== -1 ) {
@@ -71,6 +94,8 @@ FrontendCore.define('center-box', [], function () {
 					'left' : nLeft,
 					'top' : nTop
 				});
+
+				FrontendTools.removeLoading(oTarget);
 
 			});
 		},

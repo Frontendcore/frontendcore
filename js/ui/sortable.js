@@ -278,6 +278,8 @@ FrontendCore.define('sortable', [], function () {
 			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 			self.oTarget[index] = $(oTarget).sortable(oSettings);
+
+			FrontendTools.removeLoading(oTarget);
 		}
 	};
 });
