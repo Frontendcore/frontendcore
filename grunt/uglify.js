@@ -135,7 +135,6 @@ module.exports = {
 				'js/ui/table-responsive.js'
 			],
 			'./../site/build/static/js/ui/side-panel.js': [
-				'bower_components/jquery-panelslider/jquery.panelslider.js',
 				'js/ui/side-panel.js'
 			],
 			'./../site/build/static/js/ie-old.js': [

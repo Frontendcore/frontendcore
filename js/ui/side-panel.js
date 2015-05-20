@@ -3,21 +3,12 @@ FrontendCore.define('side-panel', [], function () {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		oDefault: {
 			side: "left",
-			menuWidth: "200px",
-			duration: 500,
-			clickClose: false,
-			onOpen : function() {
-				$('.black-panel').on('click', function(){
-					$.panelslider.close();
-					$(this).remove();
-				});
-			}
+			menuWidth: "200px"
 		},
 		onStart: function () {
 
 			var aTargets = FrontendTools.getDataModules('side-panel'),
 				self = this;
-
 
 			FrontendTools.loadCSS(this.sPathCss);
 
@@ -34,11 +25,11 @@ FrontendCore.define('side-panel', [], function () {
 				oSettings,
 				sHref = oTarget.href,
 				oOptions = {},
-				oParent,
 				oClose = document.createElement('a'),
 				nInitialMenuWidth,
 				nWindowWidth = $(window).width(),
-				nMenuWidth;
+				nMenuWidth,
+				oPanel;
 
 			// if oTarget hast no ID creates a new one
 			if (oTarget.id === '') {
@@ -46,7 +37,6 @@ FrontendCore.define('side-panel', [], function () {
 			}
 
 			// Get the Initial Width
-
 
 			if (oTarget.getAttribute("data-fc-width") !== null) {
 
@@ -80,16 +70,9 @@ FrontendCore.define('side-panel', [], function () {
 				oOptions.side = oTarget.getAttribute("data-fc-position");
 			}
 
-
-
 			if (sHref.indexOf('#') !== -1) {
-				oOptions.menu = '#' + sHref.split('#')[1];
+				oPanel = document.getElementById(sHref.split('#')[1] );
 			}
-
-
-			$(oOptions.menu).css({
-				width: oOptions.menuWidth
-			});
 
 			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
@@ -99,18 +82,25 @@ FrontendCore.define('side-panel', [], function () {
 				if (oTarget.getAttribute("data-fc-tab-top") !== null) {
 					$(oTarget).css('top', oTarget.getAttribute("data-fc-tab-top"));
 				}
+
+				var sTabHTML = oTarget.outerHTML;
+
+				$(oTarget).remove();
+				$('body').append(sTabHTML);
+
+				oTarget = document.getElementById(oTarget.id);
 			}
 
-			// Clone if it's necessary
+			// Clone if it's not necessary
 
-			if (oTarget.getAttribute("data-fc-clone") === 'true') {
+			if ( oTarget.getAttribute("data-fc-clone") !== 'false' ) {
 
 				var sIdSufix = '-' + nIndex,
-					sCloneId = $(oSettings.menu).attr("id") + '-' + nIndex,
-					$Clone = $(oSettings.menu).clone().attr("id", $(oSettings.menu).attr("id") + sIdSufix);
+					sCloneId = $(oPanel).attr("id") + '-' + nIndex,
+					$Clone = $(oPanel).clone().attr("id", $(oPanel).attr("id") + sIdSufix);
 
 				oTarget.href = '#' + sCloneId;
-				oSettings.menu = '#' + sCloneId;
+				//oSettings.menu = '#' + sCloneId;
 
 				// Find all elements in $Clone that have an ID, and iterate using each()
 				$Clone.find('[id]').each(function () {
@@ -134,41 +124,46 @@ FrontendCore.define('side-panel', [], function () {
 				});
 
 				$('body').append($Clone[0]);
+
+				$(oPanel).remove();
+
+				oPanel = document.getElementById(sCloneId);
+
+				$(oPanel).hide();
 			}
 
-			oParent = $(oTarget).parent(oSettings.menu)[0];
-
-			$(oSettings.menu).removeClass('desktop').removeClass('tablet').removeClass('mobile').hide();
-
-			function resizer () {
-
-				$('body').css({
-					'width': $(window).width()
-				});
-
-				$(window).off("resize", resizer);
-			}
+			$(oPanel).width(oOptions.menuWidth);
 
 			$(oTarget).click( function(){
 
-				var sStatus = $(oSettings.menu)[0].className.indexOf('ps-active-panel') === -1 ? 'opening' : 'closing';
+				$(oPanel).removeClass('slide-out-' + oSettings.side).addClass('animated slide-in-' + oSettings.side +' side-panel-default side-panel-' + oSettings.side);
+				$(oPanel).show();
 
-				if (sStatus === 'opening') {
-					$('body').css({
-						'width': $(window).width()
+				if ($('.side-black-panel')[0] === undefined) {
+
+					$('body').append('<div class="side-black-panel animated fade-in"></div>').css({
+						'overflow' : 'hidden',
+						'height' : '100%'
 					});
 
-					$(window).off("resize", resizer);
-					$(window).resize(resizer);
+					$('.side-black-panel').on('click', function(){
+
+						var oBlackPanel = this;
+						$(oPanel).addClass('slide-out-' + oSettings.side);
+						$(oBlackPanel).addClass('fade-out');
+
+						$('body').css({
+							'overflow' : 'auto',
+							'height' : 'initial'
+						});
+
+						setTimeout( function(){
+							$(oBlackPanel).remove();
+						}, 700);
+					});
 				}
 
-				if ($('.black-panel')[0] === undefined) {
-					$('body').append('<div class="black-panel animated fade-in"></div>');
-				}
-
-			}).panelslider(oSettings);
-
-			$(oSettings.menu).addClass('side-panel-default').addClass('side-panel-' + oSettings.side);
+			});
 
 		},
 		onStop: function () {
