@@ -4,7 +4,7 @@ FrontendCore.define('polyfills', [] , function () {
 	return {
 		onStart: function () {
 
-			var aTags = ['video','audio','source'],
+			var aTags = ['video','audio','source','details'],
 				nSupportInputs = Modernizr.inputtypes.date + Modernizr.inputtypes.email + Modernizr.inputtypes.number + Modernizr.inputtypes.month + Modernizr.inputtypes.range + Modernizr.inputtypes.datetime + Modernizr.inputtypes.color,
 				aInputs = document.getElementsByTagName('input'),
 				aInputsType = [],
