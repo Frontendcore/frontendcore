@@ -132,7 +132,9 @@ FrontendCore.define('side-panel', [], function () {
 
 			$(oPanel).width(oOptions.menuWidth);
 
-			$(oTarget).click( function(){
+			$(oTarget).click( function(e){
+
+				e.preventDefault();
 
 				$(oPanel).removeClass('slide-out-' + oSettings.side).addClass('animated slide-in-' + oSettings.side +' side-panel-default side-panel-' + oSettings.side);
 				$(oPanel).show();
