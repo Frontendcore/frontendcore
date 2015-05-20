@@ -347,7 +347,13 @@
           "name": "Dynamic Table",
           "href": "dynamic-table.html",
           "js": true
+        },
+        "Responsive Tables": {
+          "name": "Responsive Table",
+          "href": "responsive-table.html",
+          "js": true
         }
+
       }
     },
     "callouts & prompts": {

@@ -130,6 +130,10 @@ module.exports = {
 				'bower_components/dynatable/jquery.dynatable.js',
 				'js/ui/table.js'
 			],
+			'./../site/build/static/js/ui/table-responsive.js': [
+				'bower_components/stacktable/stacktable.js',
+				'js/ui/table-responsive.js'
+			],
 			'./../site/build/static/js/ui/side-panel.js': [
 				'bower_components/jquery-panelslider/jquery.panelslider.js',
 				'js/ui/side-panel.js'

@@ -3,12 +3,23 @@
 {% set relative_path = "../" %}
 {% import "../_macros/_demo.html.twig" as demos %}
 
-{% extends "../_layout/_basic.html.twig" %}
+{% extends "../_layout/_object.html.twig" %}
 
-{% block main %}
+{% block object_title %}
     <h1><span class="label-css fz-xl va-m">CSS</span> Static Table</h1>
+{% endblock object_title %}
+
+
+{% block object_demo %}
     {{ demos.demo(
         'statictable',
         '../_demos/tables/table-simple.html'
     )}}
-{% endblock %}
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+     '../../css/core/objects/tables/__vars.scss',
+     'statictable-vars'
+     )}}
+ {% endblock object_scss_vars %}

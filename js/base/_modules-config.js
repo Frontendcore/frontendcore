@@ -33,6 +33,7 @@ var oDefaultPaths = {
 		'parallax',
 		'carousel',
 		'table',
+		'table-responsive',
 		'toggle',
 		'tabs','notification',
 		'dropdown',

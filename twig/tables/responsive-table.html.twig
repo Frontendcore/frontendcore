@@ -1,0 +1,14 @@
+{% set current_children = "Responsive Table" %}
+{% set current_section = "Tables" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Responsive Table</h1>
+    {{ demos.demo(
+        'responsive-table',
+        '../_demos/tables/table-responsive.html'
+    )}}
+{% endblock %}

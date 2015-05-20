@@ -46,7 +46,8 @@
     "SyntaxHighlighter": "~3.0.83",
     "magnifier": "*",
     "darkroomjs": "*",
-    "owl-carousel2": "*"
+    "owl-carousel2": "*",
+    "stacktable": "~1.0.0"
   },
   "dependencies": {
     "webshim": "~1.15.7",
