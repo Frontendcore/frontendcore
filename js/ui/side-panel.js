@@ -25,7 +25,6 @@ FrontendCore.define('side-panel', [], function () {
 				oSettings,
 				sHref = oTarget.href,
 				oOptions = {},
-				oClose = document.createElement('a'),
 				nInitialMenuWidth,
 				nWindowWidth = $(window).width(),
 				nMenuWidth,
@@ -100,7 +99,6 @@ FrontendCore.define('side-panel', [], function () {
 					$Clone = $(oPanel).clone().attr("id", $(oPanel).attr("id") + sIdSufix);
 
 				oTarget.href = '#' + sCloneId;
-				//oSettings.menu = '#' + sCloneId;
 
 				// Find all elements in $Clone that have an ID, and iterate using each()
 				$Clone.find('[id]').each(function () {
