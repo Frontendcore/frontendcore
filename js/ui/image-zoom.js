@@ -58,7 +58,6 @@ FrontendCore.define('image-zoom', [], function () {
 				oPreview.style.right = oOffset.right + 'px';
 			}
 
-
 			oPreview.style.opacity = 0;
 			oPreview.className = "magnifier-preview";
 
@@ -96,6 +95,8 @@ FrontendCore.define('image-zoom', [], function () {
 
 				m.attach(oSettings);
 			}
+
+			FrontendTools.removeLoading(oTarget);
 
 		},
 		onStop: function () {
