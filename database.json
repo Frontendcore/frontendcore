@@ -312,6 +312,11 @@
           "name": "Read Only Fields",
           "href": "read-only-fields.html"
         },
+        "Validation": {
+          "name": "Validation",
+          "href": "validation.html",
+          "js" : true
+        },
         "Search Form": {
           "name": "Search Form",
           "href": "search-form.html"

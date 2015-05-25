@@ -3,7 +3,7 @@ FrontendCore.define('center-box', [], function () {
 		onStart: function ( ) {
 
 			var aTargets = FrontendTools.getDataModules('center-box'),
-                self = this;
+				self = this;
 
 			FrontendTools.trackModule('JS_Libraries', 'call', 'center-box' );
 
@@ -67,6 +67,10 @@ FrontendCore.define('center-box', [], function () {
 				nHeight = oTarget.getAttribute('data-fc-height') ? oTarget.getAttribute('data-fc-height') : $(oTarget).outerHeight();
 				nWidth = oTarget.getAttribute('data-fc-width') ? oTarget.getAttribute('data-fc-width') : $(oTarget).outerWidth();
 
+				if (nHeight > nWindowHeight) { nHeight = nWindowHeight; }
+
+				if (nWidth > nWindowWidth) { nWidth = nWindowWidth; }
+				
 				if (typeof nHeight === 'string') {
 					if (nHeight.indexOf('px') !== -1 ) {
 						nHeight = nHeight.replace('px','');

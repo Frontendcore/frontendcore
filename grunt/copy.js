@@ -16,6 +16,7 @@ module.exports =  {
 	js: {
 		files: [
 			// makes all src relative to cwd
+			{expand: true, cwd: 'bower_components/parsleyjs/src/i18n/', src: ['**'], dest: './../site/build/static/js/ui/forms-locale/'},
 			{expand: true, cwd: './../site/build/static/js/', src: ['**'], dest: './../js/'},
 		]
 	},

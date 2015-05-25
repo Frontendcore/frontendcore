@@ -137,6 +137,12 @@ module.exports = {
 			'./../site/build/static/js/ui/side-panel.js': [
 				'js/ui/side-panel.js'
 			],
+			'./../site/build/static/js/ui/form-validation.js': [
+				'js/ui/form-validation.js'
+			],
+			'./../site/build/static/js/ui/form-validation-libs.js': [
+				'bower_components/parsleyjs/dist/parsley.js'
+			],
 			'./../site/build/static/js/ie-old.js': [
 				'js/libs/ie-polyfills/queryselector.js',
 				'js/libs/ie-polyfills/html5shiv.js',

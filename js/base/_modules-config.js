@@ -39,6 +39,8 @@ var oDefaultPaths = {
 		'dropdown',
 		'center-box',
 		'side-panel',
+		'form-validation',
+		'form-validation-libs',
 		'image-zoom',
 		'image-edit'
 	];

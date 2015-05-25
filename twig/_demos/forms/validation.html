@@ -1,0 +1,38 @@
+<form class="form" data-fc-modules="form-validation">
+	<fieldset>
+		<legend>Text fields</legend>
+		<div data-fc-modules="tabs">
+			<section id="tab-1" data-fc-name="Tab 1">
+				<div class="box-text">Tab 1 content</div>
+			</section>
+			<section id="tab-2" data-fc-name="Tab 2">
+				<ol>
+					<li>
+						<label for="text-field">Name</label>
+						<input name="name" type="text" id="text-field" required placeholder="E.g. John"/>
+					</li>
+				</ol>
+			</section>
+			<section id="tab-3" data-fc-name="Tab 3">
+				<ol>
+					<li>
+						<label for="url-field">URL Field</label>
+						<input name="url" type="url" id="url-field" required />
+					</li>
+				</ol>
+			</section>
+		</div>
+		<ol>
+
+			<li>
+				<label for="email-field">Email Field</label>
+				<input name="email" type="email" id="email-field" required placeholder="email" />
+			</li>
+			<li>
+				<label for="Password-field">Password Field</label>
+				<input name="password" type="password" id="Password-field" required />
+			</li>
+		</ol>
+		<button type="submit" class="button button-ok">Send</button>
+	</fieldset>
+</form>
