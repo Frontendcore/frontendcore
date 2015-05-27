@@ -4,7 +4,8 @@ FrontendCore.define('tags', [], function () {
 		oDefault: {
 			useCommaKey: true,
 			noSuggestionText: 'No result matching the term {{query}}',
-			placeholder: 'Add a Tag'
+			placeholder: 'Add a Tag',
+			maxSelection: null
 		},
 		onStart: function () {
 
