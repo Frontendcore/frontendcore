@@ -4,11 +4,19 @@ FrontendCore.define('polyfills', [] , function () {
 	return {
 		onStart: function () {
 
-			var aTags = ['video','audio','source','details'],
+			var aTargets = FrontendTools.getDataModules('polyfills'),
+				oTarget = aTargets[0],
+				aTags,
 				nSupportInputs = Modernizr.inputtypes.date + Modernizr.inputtypes.email + Modernizr.inputtypes.number + Modernizr.inputtypes.month + Modernizr.inputtypes.range + Modernizr.inputtypes.datetime + Modernizr.inputtypes.color,
 				aInputs = document.getElementsByTagName('input'),
 				aInputsType = [],
 				nInputs = false;
+
+			if (oTarget.getAttribute("data-fc-tags") !== null) {
+				aTags = oTarget.getAttribute("data-fc-tags").split(',');
+			} else {
+				aTags = ['video','audio','source','details'];
+			}
 
 			for (var nKey = 0; nKey < aInputs.length; nKey++){
 				aInputsType.push(aInputs[nKey].type);
@@ -57,11 +65,15 @@ FrontendCore.define('loadPolyfills', ['polyfillsLibs'], function () {
 	return {
 		onStart: function () {
 
-			webshim.setOptions('basePath', oGlobalSettings.sPathJsCore + "shims/shims/");
+			if (oPolyfills.shims.length > 0 ) {
 
-			webshim.polyfill(oPolyfills.shims);
+				webshim.setOptions('basePath', oGlobalSettings.sPathJsCore + "shims/shims/");
+
+				webshim.polyfill(oPolyfills.shims);
+			}
 
 			FrontendTools.trackModule('JS_Libraries', 'call', 'polyfills' );
+
 
 		}
 	};
