@@ -126,6 +126,80 @@ fz-h1
 		line-height: $base-line-height;
 	}
 
+	@mixin baby-headings {
+		h1, .fz-h1 {
+			@include rem-fallback(font-size, $font-size-xxl*.9, true);
+			@extend %title;
+		}
+
+		h2, .fz-h2 {
+			@include rem-fallback(font-size, $font-size-xl*.9, true);
+			@extend %title;
+		}
+
+		h3, .fz-h3 {
+			@include rem-fallback(font-size, $font-size-l*.9, true);
+			@extend %title;
+		}
+
+		h4, .fz-h4 {
+			@include rem-fallback(font-size, $font-size-ml*.9, true);
+			@extend %title;
+		}
+
+		h5, .fz-h5 {
+			@include rem-fallback(font-size, $font-size-m*.9, true);
+			@extend %title;
+		}
+
+		h1, h2, h3, h4, h5, .fz-h1, .fz-h2, .fz-h3, .fz-h4 , .fz-h5 {
+			&.logo {
+				font-family: $font-face-logo;
+				font-weight: $font-weight-logo;
+			}
+		}
+
+		.fz-xxxl {
+			@include rem-fallback(font-size, $font-size-xxxl, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-xxl {
+			@include rem-fallback(font-size, $font-size-xxl, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-xl {
+			@include rem-fallback(font-size, $font-size-xl, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-l {
+			@include rem-fallback(font-size, $font-size-l, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-m {
+			@include rem-fallback(font-size, $font-size-m, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-default {
+			@include rem-fallback(font-size, $font-size-default, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-s {
+			@include rem-fallback(font-size, $font-size-xs, true);
+			line-height: $base-line-height;
+		}
+
+		.fz-xs {
+			@include rem-fallback(font-size, $font-size-xxs, true);
+			line-height: $base-line-height;
+		}
+	}
+
 	.fw-n {
 		font-weight: normal;
 	}

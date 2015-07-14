@@ -1,0 +1,38 @@
+{% set current_children = "Notifications" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Cookies disclaimer</h1>
+    <p>The Cookies disclaimer component has a dependency with the <a href="messages.html">CSS object messages</a> and the <a href="notifications.html">Notifications</a></p>
+    <section class="box-lighten">
+        <h2>Show notification on page load</h2>
+        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
+        <input type="hidden" data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
+        {{ demos.code(
+            'cookies-disclaimer',
+            '../_demos/callouts/cookies-disclaimer.html'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-autoclose",
+            "description" : "Defines on how many seconds will autoclose the notification.",
+            "default":      "5"
+        },
+        "2" : {
+            "name" :        "data-fc-type",
+            "description" : "Type of the message (ok, ko, warning or info)",
+            "default" : "ok"
+        },
+        "3" : {
+            "name" :        "data-fc-text",
+            "description" : "Text to show in the message. If it's not defined the message will not be shown."
+        }
+    }
+    )}}
+{% endblock %}

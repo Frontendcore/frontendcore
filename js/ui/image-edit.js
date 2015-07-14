@@ -45,10 +45,8 @@ FrontendCore.define('image-edit', [], function () {
 
 			new Darkroom('#' + oTarget.id, {
 				// Canvas initialization size
-				minWidth: 100,
-				minHeight: 100,
-				maxWidth: 500,
-				maxHeight: 500,
+				minWidth: nWidth,
+				minHeight: nHeight,
 
 				// Plugins options
 				plugins: {

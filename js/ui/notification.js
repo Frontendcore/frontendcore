@@ -4,6 +4,8 @@ FrontendCore.define('notification', [], function () {
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		bMessageCreated : false,
 		oTimer: null,
+		nSeconds : 5,
+		sPosition : 'top',
 		onStart: function ( ) {
 
 			var aTargets = FrontendTools.getDataModules('notification'),
@@ -45,6 +47,9 @@ FrontendCore.define('notification', [], function () {
 				sType = oTarget.getAttribute('data-fc-type') ? oTarget.getAttribute('data-fc-type') : 'ok',
 				sText = oTarget.getAttribute('data-fc-text') ? oTarget.getAttribute('data-fc-text') : null;
 
+			self.nSeconds = oTarget.getAttribute('data-fc-autoclose') ? oTarget.getAttribute('data-fc-autoclose') : 5;
+			self.sPosition = oTarget.getAttribute('data-fc-position') ? oTarget.getAttribute('data-fc-position') : 'top';
+
 			if (sText !== null) {
 				self.showMessage(sType, sText);
 			}
@@ -74,6 +79,10 @@ FrontendCore.define('notification', [], function () {
 
 				var oMessage = document.getElementById('notification-message'),
 					oContainer = document.getElementById('notification');
+
+				if ( self.sPosition === 'top') {
+
+				}
 
 				if (oContainer.style.top.toString() === '0px') {
 					oContainer.style.top = '-1000px';
@@ -120,7 +129,7 @@ FrontendCore.define('notification', [], function () {
 
 			$('body').prepend(oContainer);
 
-			$('#notification-close').on('click', function() {
+			$('#notification-message').on('click', function() {
 				document.getElementById('notification').style.top = '-1000px';
 			});
 
@@ -131,6 +140,7 @@ FrontendCore.define('notification', [], function () {
 				self.oTimer = setTimeout( function() {
 					document.getElementById('notification').style.top = '-1000px';
 				}, 5000);
+
 			});
 
 		},
