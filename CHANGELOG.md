@@ -1,5 +1,13 @@
 ## Change Log
 
+### 1.7.2 (2015/07/15 15:34 +00:00)
+- [dacf4e0](https://github.com/Frontendcore/frontendcore/commit/dacf4e025fde9bb1ef096da104f65fa7da05e1d8) Each chart on a var (@tonipinel)
+- [be59fb2](https://github.com/Frontendcore/frontendcore/commit/be59fb241ef67e5ed70fbbf82c448fdfbef6c6ad) Solved bug with Jquery and parsleyjs on form validation Release version 1.7.2 ! (@tonipinel)
+
+### 1.7.1 (2015/07/15 13:32 +00:00)
+- [636df2e](https://github.com/Frontendcore/frontendcore/commit/636df2ed8674841fbb8586ead9463ae85c89b042) Bug Fixing and improved performance. Release version 1.7 ! (@tonipinel)
+- [25650d1](https://github.com/Frontendcore/frontendcore/commit/25650d106310747a4dc52e29d41e8cc229c34025) New UI elements: Toggle and code Release version 1.7.1 ! (@tonipinel)
+
 ### 1.7 (2015/07/15 13:30 +00:00)
 - [3025355](https://github.com/Frontendcore/frontendcore/commit/3025355258b4912b497d0112fb52954f24b8d3a6) Updated Tips library because openTip requires an old version of Jquery and all modules are now on strict mode (@tonipinel)
 - [bf51c97](https://github.com/Frontendcore/frontendcore/commit/bf51c97bbb05e528b104c63c73d9dcb2bc27b24f) Bug Fixing and improved performance. Release version 1.7 ! (@tonipinel)
@@ -137,14 +145,6 @@
 - [a44f455](https://github.com/Frontendcore/frontendcore/commit/a44f455be87644cb0bf39f7303c8344687c234b1) Bug fix on side panel. Release version1.5.2 ! (@tonipinel)
 
 ### 1.5.1 (2015/02/17 18:02 +00:00)
-- [902dfdb](https://github.com/Frontendcore/frontendcore/commit/902dfdbbd0f5b81b71488f6ab1a6060c2b3a9327) Improved side panel and toggle. Release version1.5.0 ! (@tonipinel)
-- [ceb5f7a](https://github.com/Frontendcore/frontendcore/commit/ceb5f7afdfaec833b1ec5b9350e1af2d596dbb40) Improved side panel and toggle. Release version1.5.1 ! (@tonipinel)
-
-### 1.5.0 (2015/02/17 09:09 +00:00)
-- [cce8026](https://github.com/Frontendcore/frontendcore/commit/cce8026bd9271210345ea8b0af5e7464cc81a7db) Filters and navigation-sub are now fully customizable with scss maps (@tonipinel)
-- [68c84d5](https://github.com/Frontendcore/frontendcore/commit/68c84d54f35ac9c327a673e56fba77f2b996eeb2) Improved fonts maps and fonts customization. Fix #8 and we are going to Release version1.5.0 ! (@tonipinel)
-
-### 1.4.8 (2015/02/16 18:20 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -219,6 +219,10 @@
 - [98b9112](https://github.com/Frontendcore/frontendcore/commit/98b9112e1fdae57d2fb41c2f51aad744a5da6f82) Important: Removed sidemenu component, now to create sidemenus should use side-panel, check the docs! Release version1.4.7 (@tonipinel)
 - [d4d795c](https://github.com/Frontendcore/frontendcore/commit/d4d795cce956c4bee7b98b397d9e27d68e6a1ccb) Added Charts and removed table to stats (@tonipinel)
 - [fc677b8](https://github.com/Frontendcore/frontendcore/commit/fc677b8ca443f85d4e89a2b157303c3a848833e7) Important: Removed table stats component, now to create graph stats should use charts, check the docs! Release version1.4.8 (@tonipinel)
+- [cce8026](https://github.com/Frontendcore/frontendcore/commit/cce8026bd9271210345ea8b0af5e7464cc81a7db) Filters and navigation-sub are now fully customizable with scss maps (@tonipinel)
+- [68c84d5](https://github.com/Frontendcore/frontendcore/commit/68c84d54f35ac9c327a673e56fba77f2b996eeb2) Improved fonts maps and fonts customization. Fix #8 and we are going to Release version1.5.0 ! (@tonipinel)
+- [902dfdb](https://github.com/Frontendcore/frontendcore/commit/902dfdbbd0f5b81b71488f6ab1a6060c2b3a9327) Improved side panel and toggle. Release version1.5.0 ! (@tonipinel)
+- [ceb5f7a](https://github.com/Frontendcore/frontendcore/commit/ceb5f7afdfaec833b1ec5b9350e1af2d596dbb40) Improved side panel and toggle. Release version1.5.1 ! (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
