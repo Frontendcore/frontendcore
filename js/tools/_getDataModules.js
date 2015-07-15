@@ -1,3 +1,3 @@
 FrontendTools.getDataModules = function(sData) {
-	return document.querySelectorAll('[data-fc-modules*="'+ sData +'"]');
+	return $('[data-fc-modules*="'+ sData +'"]')
 };

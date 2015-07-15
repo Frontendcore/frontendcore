@@ -1,4 +1,7 @@
-FrontendCore.define('truncate', [], function () {
+; (function (window, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
+
+	FrontendCore.define('truncate', ['devicePackage'], function () {
 	return {
 		oDefault: {
 			max_length: 100,
@@ -54,3 +57,5 @@ FrontendCore.define('truncate', [], function () {
 		}
 	};
 });
+
+})(window, oGlobalSettings, FrontendTools, FrontendCore, $ );

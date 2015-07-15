@@ -32,7 +32,7 @@
 				// Could also be (and given directly from DOM) a valid selector like `'#div'`
 				errorsContainer: function (ParsleyField) {},
 				// ul elem that would receive errors' list
-				errorsWrapper: '<ul class="c-ko fz-default"></ul>',
+				errorsWrapper: '<ul class="form-error-message"></ul>',
 				// li elem that would receive error message
 				errorTemplate: '<li></li>'
 
@@ -45,10 +45,6 @@
 				FrontendTools.loadCSS(this.sPathCss);
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'form-validation');
-
-				if ( navigator.language ) {
-					$.getScript(oGlobalSettings.sPathJsCore + 'ui/forms-locale/' + navigator.language + '.js');
-				}
 
 				$(aTargets).each(function (nIndex) {
 					self.autobind(this, nIndex);
@@ -64,12 +60,22 @@
 
 				var self = this,
 					oSettings,
-					oOptions = {};
+					oOptions = {},
+					sLang = 'en';
 
-
-				if (oTarget.getAttribute("data-fc-width") !== null) {
-
+				if (oTarget.getAttribute("data-fc-language") !== null) {
+					sLang = oTarget.getAttribute("data-fc-language");
+				} else if (navigator.language) {
+					sLang = navigator.language;
+					if (navigator.language.indexOf('en-')!==-1) { sLang = 'en'; }
+					else if (navigator.language.indexOf('ar-')!==-1) { sLang = 'ar'; }
+					else if (navigator.language.indexOf('es-')!==-1) { sLang = 'es'; }
+					else if (navigator.language.indexOf('fr-')!==-1) { sLang = 'fr'; }
+					else if (navigator.language.indexOf('zh-tw')!==-1) { sLang = 'zh_tw'; }
+					else if (navigator.language.indexOf('zh-')!==-1) { sLang = 'zh_cn'; }
 				}
+
+				$.getScript(oGlobalSettings.sPathJsCore + 'ui/forms-locale/' + sLang + '.js');
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 

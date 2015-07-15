@@ -9,13 +9,17 @@ onDomReady(function () {
 	});
 
 	if ( oGlobalSettings.bResponsiveImages === true ) {
-		FrontendCore.requireAndStart('responsive-images');
-		FrontendTools.trackModule('JS_Libraries', 'execute', 'responsive-images' );
+		require(['devicePackage'], function() {
+			FrontendCore.requireAndStart('responsive-images');
+			FrontendTools.trackModule('JS_Libraries', 'execute', 'responsive-images' );
+		});
 	}
 
 	if ( oGlobalSettings.bCart === true ) {
-		FrontendCore.requireAndStart('cart');
-		FrontendTools.trackModule('JS_Libraries', 'execute', 'cart' );
+		require(['devicePackage'], function() {
+			FrontendCore.requireAndStart('cart');
+			FrontendTools.trackModule('JS_Libraries', 'execute', 'cart' );
+		});
 	}
 
 });

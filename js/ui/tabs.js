@@ -29,7 +29,7 @@ FrontendCore.define('tabs', [] , function () {
 					$(document.getElementById(oTabsInfo[nKey].id)).before( self.createMobileTabs(oTabsInfo[nKey].id, oTabsInfo[nKey].name ));
 				}
 
-				$(this).prepend(oTabs);
+				$(oThis).prepend(oTabs);
 
 				$('a.update-tabs', oThis).bind('click', function (event) {
 

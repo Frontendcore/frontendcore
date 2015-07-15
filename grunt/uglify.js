@@ -28,11 +28,6 @@ module.exports = {
 				'js/libs/modernizr/modernizr-custom.js',
 				'bower_components/jquery-unveil/jquery.unveil.js'
 			],
-			'./../site/build/static/js/devices/mobile.js': [
-				'bower_components/zepto/zepto.js',
-				'js/libs/modernizr/modernizr-custom.js',
-				'bower_components/jquery-unveil/jquery.unveil.js'
-			],
 			'./../site/build/static/js/ui/image-zoom.js': [
 				'bower_components/magnifier/demo/Event.js',
 				'bower_components/magnifier/Magnifier.js',
@@ -106,8 +101,6 @@ module.exports = {
 				'js/ui/truncate.js'
 			],
 			'./../site/build/static/js/ui/polyfills.js': [
-				'js/libs/modernizr/modernizr-custom.js',
-				'js/libs/webshims/polyfiller.js',
 				'js/ui/polyfills.js'
 			],
 			'./../site/build/static/js/ui/autosize.js': [

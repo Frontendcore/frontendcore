@@ -4,6 +4,12 @@ FrontendCore.define('polyfills', [] , function () {
 	return {
 		onStart: function () {
 
+			if (!isMobile.any() ) {
+				this.checkBrowser();
+			}
+
+		},
+		checkBrowser: function() {
 			var aTargets = FrontendTools.getDataModules('polyfills'),
 				oTarget = aTargets[0],
 				aTags,
