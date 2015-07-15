@@ -5,6 +5,7 @@
 	return {
 		ChartJS : null,
 		aCharts : [],
+		oCharts : [],
 		isEmpty : true,
 		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 		aDefaultColors: ['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc'],
@@ -196,7 +197,8 @@
 		onStart: function () {
 
 			var aTargets = FrontendTools.getDataModules('charts'),
-				self = this;
+				self = this,
+				oTarget;
 
 			FrontendTools.loadCSS(this.sPathCss);
 
@@ -207,10 +209,15 @@
 				self.ChartJS = Chart;
 
 				$(aTargets).each(function (nIndex) {
-					self.autobind(this, nIndex);
+
+					oTarget = this;
+
+					self.autobind(oTarget, nIndex);
 
 					FrontendTools.removeLoading(this);
 				});
+
+
 
 			});
 
@@ -221,8 +228,7 @@
 				oTarget.id = 'canvas-' + Date.now();
 			}
 
-			var oChart,
-				oSettings,
+			var oSettings,
 				oChartData,
 				self = this,
 				oOptions = {
@@ -243,15 +249,15 @@
 					oSettings.percentageInnerCutout = 50;
 					/* falls through */
 				case "pie":
-					oChart =  self.createChart( oCanvas, oChartData.items, oSettings, self.aCharts[nIndex] );
+					self.oCharts[nIndex] =  self.createChart( oCanvas, oChartData.items, oSettings, self.aCharts[nIndex], nIndex );
 					break;
 				default:
-					oChart =  self.createChart( oCanvas, oChartData.groups, oSettings, self.aCharts[nIndex] );
+					self.oCharts[nIndex] =  self.createChart( oCanvas, oChartData.groups, oSettings, self.aCharts[nIndex], nIndex );
 				break;
 			}
 
 			if (oChartData.legend) {
-				self.createLegend(oTarget, oChart );
+				self.createLegend(oTarget, self.oCharts[nIndex] );
 			}
 
 			if (self.isEmpty) {
@@ -366,14 +372,12 @@
 
 			return oChartData;
 		},
-		createChart: function( oCanvas, oChartData, oSettings, oChart ) {
+		createChart: function( oCanvas, oChartData, oSettings, oChart, nIndex ) {
 
 			var self = this,
 				sType = oSettings.type.charAt(0).toUpperCase() + oSettings.type.slice(1);
 
-			oChart = new self.ChartJS( oCanvas )[sType]( oChartData, oSettings);
-
-			return oChart;
+			return new self.ChartJS( oCanvas )[sType]( oChartData, oSettings);
 		},
 		createLegend: function(oTarget, oChart) {
 
