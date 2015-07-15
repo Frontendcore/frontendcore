@@ -1,5 +1,12 @@
 ## Change Log
 
+### 1.7 (2015/07/15 13:30 +00:00)
+- [3025355](https://github.com/Frontendcore/frontendcore/commit/3025355258b4912b497d0112fb52954f24b8d3a6) Updated Tips library because openTip requires an old version of Jquery and all modules are now on strict mode (@tonipinel)
+- [bf51c97](https://github.com/Frontendcore/frontendcore/commit/bf51c97bbb05e528b104c63c73d9dcb2bc27b24f) Bug Fixing and improved performance. Release version 1.7 ! (@tonipinel)
+
+### 1.6.13 (2015/07/15 05:47 +00:00)
+- [01ab192](https://github.com/Frontendcore/frontendcore/commit/01ab192cb5a8886e2e616c0dd72301fb92628230) Bug Fixing form validation languages. Release version 1.6.13 ! (@tonipinel)
+
 ### 1.6.12 (2015/07/14 14:43 +00:00)
 - [c98ac2b](https://github.com/Frontendcore/frontendcore/commit/c98ac2b6403e0ac8aecf0ef43e2b3c0835238421) Bug Fixing polyfills and firefox. Release version 1.6.12 ! (@tonipinel)
 
@@ -138,13 +145,6 @@
 - [68c84d5](https://github.com/Frontendcore/frontendcore/commit/68c84d54f35ac9c327a673e56fba77f2b996eeb2) Improved fonts maps and fonts customization. Fix #8 and we are going to Release version1.5.0 ! (@tonipinel)
 
 ### 1.4.8 (2015/02/16 18:20 +00:00)
-- [d4d795c](https://github.com/Frontendcore/frontendcore/commit/d4d795cce956c4bee7b98b397d9e27d68e6a1ccb) Added Charts and removed table to stats (@tonipinel)
-- [fc677b8](https://github.com/Frontendcore/frontendcore/commit/fc677b8ca443f85d4e89a2b157303c3a848833e7) Important: Removed table stats component, now to create graph stats should use charts, check the docs! Release version1.4.8 (@tonipinel)
-
-### 1.4.7 (2015/02/15 10:09 +00:00)
-- [98b9112](https://github.com/Frontendcore/frontendcore/commit/98b9112e1fdae57d2fb41c2f51aad744a5da6f82) Important: Removed sidemenu component, now to create sidemenus should use side-panel, check the docs! Release version1.4.7 (@tonipinel)
-
-### 1.4.6 (2015/02/13 09:51 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -216,6 +216,9 @@
 - [42f60cb](https://github.com/Frontendcore/frontendcore/commit/42f60cba8c21f56c3b5bcacfc7694fbe4ff63fd2) added side panel to navigation (@tonipinel)
 - [4424ede](https://github.com/Frontendcore/frontendcore/commit/4424edee7dc4b310bd4a1f4a80ec72498e64e389) Added side panel activated with tab (@tonipinel)
 - [ab7d5e4](https://github.com/Frontendcore/frontendcore/commit/ab7d5e46b34bb9d7b6b439691b2761f9c47cd5ae) Added side panel component Release version1.4.6 (@tonipinel)
+- [98b9112](https://github.com/Frontendcore/frontendcore/commit/98b9112e1fdae57d2fb41c2f51aad744a5da6f82) Important: Removed sidemenu component, now to create sidemenus should use side-panel, check the docs! Release version1.4.7 (@tonipinel)
+- [d4d795c](https://github.com/Frontendcore/frontendcore/commit/d4d795cce956c4bee7b98b397d9e27d68e6a1ccb) Added Charts and removed table to stats (@tonipinel)
+- [fc677b8](https://github.com/Frontendcore/frontendcore/commit/fc677b8ca443f85d4e89a2b157303c3a848833e7) Important: Removed table stats component, now to create graph stats should use charts, check the docs! Release version1.4.8 (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
