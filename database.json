@@ -240,19 +240,29 @@
           "href": "carousel.html",
           "js": true
         },
-        "Cart": {
-          "name": "Cart",
-          "href": "cart.html",
-          "js": true
-        },
         "Truncate": {
           "name": "Truncate",
           "href": "truncate.html",
           "js": true
         },
+        "Toggle": {
+          "name": "Toggle",
+          "href": "toggle.html",
+          "js": true
+        },
         "Sortable": {
           "name": "Sortable lists",
           "href": "sortable.html",
+          "js": true
+        },
+        "Code": {
+          "name": "Code beautifier",
+          "href": "code.html",
+          "js": true
+        },
+        "Cart": {
+          "name": "Cart",
+          "href": "cart.html",
           "js": true
         }
       }

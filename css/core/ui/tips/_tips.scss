@@ -1,284 +1,271 @@
 @if $ui-tips == true and $ui == true {
-	.opentip-container,
-	.opentip-container * {
-		@include box-sizing(border-box);
-	}
-	.opentip-container {
-		& {
-			position: absolute;
-			max-width: 300px;
-			z-index: 100;
-			-webkit-transition: -webkit-transform 1s ease-in-out;
-			-moz-transition: -moz-transform 1s ease-in-out;
-			-o-transition: -o-transform 1s ease-in-out;
-			-ms-transition: -ms-transform 1s ease-in-out;
-			transition: transform 1s ease-in-out;
-			pointer-events: none;
-			-webkit-transform: translateX(0) translateY(0);
-			-moz-transform: translateX(0) translateY(0);
-			-o-transform: translateX(0) translateY(0);
-			-ms-transform: translateX(0) translateY(0);
-			transform: translateX(0) translateY(0);
-		}
-		h1 {
-			@extend %fz-h4;
-		}
 
+	/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+	.tooltipster-default {
+		border-radius: $default-border-radius;
+		background: $color-warning;
+		color: contrast-color($color-warning);
 	}
-	.opentip-container.ot-fixed.ot-hidden.stem-top.stem-center,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-top.stem-center,
-	.opentip-container.ot-fixed.ot-hiding.stem-top.stem-center {
-		-webkit-transform: translateY(-5px);
-		-moz-transform: translateY(-5px);
-		-o-transform: translateY(-5px);
-		-ms-transform: translateY(-5px);
-		transform: translateY(-5px);
+
+	/* Use this next selector to style things like font-size and line-height: */
+	.tooltipster-default .tooltipster-content {
+		font-family: $font-face-default;
+		font-size: $font-size-default;
+		line-height: 150%;
+		padding: $spacing/4 $spacing/2;
+		overflow: hidden;
+		@include box-shadow(1px 1px 1px rgba($color-foreground, .4))
 	}
-	.opentip-container.ot-fixed.ot-hidden.stem-top.stem-right,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-top.stem-right,
-	.opentip-container.ot-fixed.ot-hiding.stem-top.stem-right {
-		-webkit-transform: translateY(-5px) translateX(5px);
-		-moz-transform: translateY(-5px) translateX(5px);
-		-o-transform: translateY(-5px) translateX(5px);
-		-ms-transform: translateY(-5px) translateX(5px);
-		transform: translateY(-5px) translateX(5px);
+
+	/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+	.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+		/* border-color: ... !important; */
 	}
-	.opentip-container.ot-fixed.ot-hidden.stem-middle.stem-right,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-middle.stem-right,
-	.opentip-container.ot-fixed.ot-hiding.stem-middle.stem-right {
-		-webkit-transform: translateX(5px);
-		-moz-transform: translateX(5px);
-		-o-transform: translateX(5px);
-		-ms-transform: translateX(5px);
-		transform: translateX(5px);
+
+	/* If you're using the icon option, use this next selector to style them */
+	.tooltipster-icon {
+		cursor: help;
+		margin-left: 4px;
 	}
-	.opentip-container.ot-fixed.ot-hidden.stem-bottom.stem-right,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-bottom.stem-right,
-	.opentip-container.ot-fixed.ot-hiding.stem-bottom.stem-right {
-		-webkit-transform: translateY(5px) translateX(5px);
-		-moz-transform: translateY(5px) translateX(5px);
-		-o-transform: translateY(5px) translateX(5px);
-		-ms-transform: translateY(5px) translateX(5px);
-		transform: translateY(5px) translateX(5px);
-	}
-	.opentip-container.ot-fixed.ot-hidden.stem-bottom.stem-center,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-bottom.stem-center,
-	.opentip-container.ot-fixed.ot-hiding.stem-bottom.stem-center {
-		-webkit-transform: translateY(5px);
-		-moz-transform: translateY(5px);
-		-o-transform: translateY(5px);
-		-ms-transform: translateY(5px);
-		transform: translateY(5px);
-	}
-	.opentip-container.ot-fixed.ot-hidden.stem-bottom.stem-left,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-bottom.stem-left,
-	.opentip-container.ot-fixed.ot-hiding.stem-bottom.stem-left {
-		-webkit-transform: translateY(5px) translateX(-5px);
-		-moz-transform: translateY(5px) translateX(-5px);
-		-o-transform: translateY(5px) translateX(-5px);
-		-ms-transform: translateY(5px) translateX(-5px);
-		transform: translateY(5px) translateX(-5px);
-	}
-	.opentip-container.ot-fixed.ot-hidden.stem-middle.stem-left,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-middle.stem-left,
-	.opentip-container.ot-fixed.ot-hiding.stem-middle.stem-left {
-		-webkit-transform: translateX(-5px);
-		-moz-transform: translateX(-5px);
-		-o-transform: translateX(-5px);
-		-ms-transform: translateX(-5px);
-		transform: translateX(-5px);
-	}
-	.opentip-container.ot-fixed.ot-hidden.stem-top.stem-left,
-	.opentip-container.ot-fixed.ot-going-to-show.stem-top.stem-left,
-	.opentip-container.ot-fixed.ot-hiding.stem-top.stem-left {
-		-webkit-transform: translateY(-5px) translateX(-5px);
-		-moz-transform: translateY(-5px) translateX(-5px);
-		-o-transform: translateY(-5px) translateX(-5px);
-		-ms-transform: translateY(-5px) translateX(-5px);
-		transform: translateY(-5px) translateX(-5px);
-	}
-	.opentip-container.ot-fixed .opentip {
-		pointer-events: auto;
-	}
-	.opentip-container.ot-hidden {
-		display: none;
-	}
-	.opentip-container .opentip {
-		position: relative;
-		font-size: 13px;
-		line-height: 120%;
-		padding: $spacing/2 $spacing;
-		color: $color-foreground;
-		text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.2);
-	}
-	.opentip-container .opentip .header {
-		margin: 0;
+
+
+	/* This is the base styling required to make all Tooltipsters work */
+	.tooltipster-base {
 		padding: 0;
-	}
-	.opentip-container .opentip .ot-close {
-		pointer-events: auto;
-		display: block;
+		font-size: 0;
+		line-height: 0;
 		position: absolute;
-		top: -12px;
-		left: 60px;
-		color: rgba(0, 0, 0, 0.5);
-		background: rgba(0, 0, 0, 0);
-		text-decoration: none;
+		left: 0;
+		top: 0;
+		z-index: 9999999;
+		pointer-events: none;
+		width: auto;
+		overflow: visible;
 	}
-	.opentip-container .opentip .ot-close span {
-		display: none;
+	.tooltipster-base .tooltipster-content {
+		overflow: hidden;
 	}
-	.opentip-container .opentip .ot-loading-indicator {
-		display: none;
-	}
-	.opentip-container.ot-loading .ot-loading-indicator {
-		width: 30px;
-		height: 30px;
-		font-size: 30px;
-		line-height: 30px;
-		font-weight: bold;
+
+
+	/* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
+	.tooltipster-arrow {
 		display: block;
-	}
-	.opentip-container.ot-loading .ot-loading-indicator span {
-		display: block;
-		-webkit-animation: otloading 2s linear infinite;
-		-moz-animation: otloading 2s linear infinite;
-		-o-animation: otloading 2s linear infinite;
-		-ms-animation: otloading 2s linear infinite;
-		animation: otloading 2s linear infinite;
 		text-align: center;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
 	}
-	.opentip-container.style-dark .opentip,
-	.opentip-container.style-alert .opentip {
-		color: $color-box;
-		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+	.tooltipster-arrow span, .tooltipster-arrow-border {
+		display: block;
+		width: 0;
+		height: 0;
+		position: absolute;
 	}
-	.opentip-container.style-glass .opentip {
-		padding: 15px 25px;
-		color: $color-primary;
-		text-shadow: 1px 1px 8px rgba(0, 94, 153, 0.3);
+	.tooltipster-arrow-top span, .tooltipster-arrow-top-right span, .tooltipster-arrow-top-left span {
+		border-left: 8px solid transparent !important;
+		border-right: 8px solid transparent !important;
+		border-top: 8px solid;
+		bottom: -7px;
 	}
-	.opentip-container.ot-hide-effect-fade {
-		-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-moz-transition: -moz-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-o-transition: -o-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-ms-transition: -ms-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		opacity: 1;
-		-ms-filter: none;
-		filter: none;
+	.tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-top-left .tooltipster-arrow-border {
+		border-left: 9px solid transparent !important;
+		border-right: 9px solid transparent !important;
+		border-top: 9px solid;
+		bottom: -7px;
 	}
-	.opentip-container.ot-hide-effect-fade.ot-hiding {
+
+	.tooltipster-arrow-bottom span, .tooltipster-arrow-bottom-right span, .tooltipster-arrow-bottom-left span {
+		border-left: 8px solid transparent !important;
+		border-right: 8px solid transparent !important;
+		border-bottom: 8px solid;
+		top: -7px;
+	}
+	.tooltipster-arrow-bottom .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+		border-left: 9px solid transparent !important;
+		border-right: 9px solid transparent !important;
+		border-bottom: 9px solid;
+		top: -7px;
+	}
+	.tooltipster-arrow-top span, .tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-bottom span, .tooltipster-arrow-bottom .tooltipster-arrow-border {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	.tooltipster-arrow-top-left span, .tooltipster-arrow-bottom-left span {
+		left: 6px;
+	}
+	.tooltipster-arrow-top-left .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+		left: 5px;
+	}
+	.tooltipster-arrow-top-right span,  .tooltipster-arrow-bottom-right span {
+		right: 6px;
+	}
+	.tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border {
+		right: 5px;
+	}
+	.tooltipster-arrow-left span, .tooltipster-arrow-left .tooltipster-arrow-border {
+		border-top: 8px solid transparent !important;
+		border-bottom: 8px solid transparent !important;
+		border-left: 8px solid;
+		top: 50%;
+		margin-top: -7px;
+		right: -7px;
+	}
+	.tooltipster-arrow-left .tooltipster-arrow-border {
+		border-top: 9px solid transparent !important;
+		border-bottom: 9px solid transparent !important;
+		border-left: 9px solid;
+		margin-top: -8px;
+	}
+	.tooltipster-arrow-right span, .tooltipster-arrow-right .tooltipster-arrow-border {
+		border-top: 8px solid transparent !important;
+		border-bottom: 8px solid transparent !important;
+		border-right: 8px solid;
+		top: 50%;
+		margin-top: -7px;
+		left: -7px;
+	}
+	.tooltipster-arrow-right .tooltipster-arrow-border {
+		border-top: 9px solid transparent !important;
+		border-bottom: 9px solid transparent !important;
+		border-right: 9px solid;
+		margin-top: -8px;
+	}
+
+
+	/* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
+
+	.tooltipster-fade {
 		opacity: 0;
-		filter: alpha(opacity=0);
-		-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+		-webkit-transition-property: opacity;
+		-moz-transition-property: opacity;
+		-o-transition-property: opacity;
+		-ms-transition-property: opacity;
+		transition-property: opacity;
 	}
-	.opentip-container.ot-show-effect-appear.ot-going-to-show,
-	.opentip-container.ot-show-effect-appear.ot-showing {
-		-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-moz-transition: -moz-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-o-transition: -o-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		-ms-transition: -ms-transform 0.5s ease-in-out, opacity 1s ease-in-out;
-		transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
+	.tooltipster-fade-show {
+		opacity: 1;
 	}
-	.opentip-container.ot-show-effect-appear.ot-going-to-show {
+
+	.tooltipster-grow {
+		-webkit-transform: scale(0,0);
+		-moz-transform: scale(0,0);
+		-o-transform: scale(0,0);
+		-ms-transform: scale(0,0);
+		transform: scale(0,0);
+		-webkit-transition-property: -webkit-transform;
+		-moz-transition-property: -moz-transform;
+		-o-transition-property: -o-transform;
+		-ms-transition-property: -ms-transform;
+		transition-property: transform;
+		-webkit-backface-visibility: hidden;
+	}
+	.tooltipster-grow-show {
+		-webkit-transform: scale(1,1);
+		-moz-transform: scale(1,1);
+		-o-transform: scale(1,1);
+		-ms-transform: scale(1,1);
+		transform: scale(1,1);
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	}
+
+	.tooltipster-swing {
 		opacity: 0;
-		filter: alpha(opacity=0);
-		-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+		-webkit-transform: rotateZ(4deg);
+		-moz-transform: rotateZ(4deg);
+		-o-transform: rotateZ(4deg);
+		-ms-transform: rotateZ(4deg);
+		transform: rotateZ(4deg);
+		-webkit-transition-property: -webkit-transform, opacity;
+		-moz-transition-property: -moz-transform;
+		-o-transition-property: -o-transform;
+		-ms-transition-property: -ms-transform;
+		transition-property: transform;
 	}
-	.opentip-container.ot-show-effect-appear.ot-showing {
+	.tooltipster-swing-show {
 		opacity: 1;
-		-ms-filter: none;
-		filter: none;
+		-webkit-transform: rotateZ(0deg);
+		-moz-transform: rotateZ(0deg);
+		-o-transform: rotateZ(0deg);
+		-ms-transform: rotateZ(0deg);
+		transform: rotateZ(0deg);
+		-webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 1);
+		-webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+		-moz-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+		-ms-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+		-o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+		transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
 	}
-	.opentip-container.ot-show-effect-appear.ot-visible {
-		opacity: 1;
-		-ms-filter: none;
-		filter: none;
-	}
-	@-moz-keyframes otloading {
-		0% {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			-moz-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
+	.tooltipster-fall {
+		top: 0;
+		-webkit-transition-property: top;
+		-moz-transition-property: top;
+		-o-transition-property: top;
+		-ms-transition-property: top;
+		transition-property: top;
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 	}
-	@-webkit-keyframes otloading {
-		0% {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
+	.tooltipster-fall-show {
+	}
+	.tooltipster-fall.tooltipster-dying {
+		-webkit-transition-property: all;
+		-moz-transition-property: all;
+		-o-transition-property: all;
+		-ms-transition-property: all;
+		transition-property: all;
+		top: 0px !important;
+		opacity: 0;
+	}
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			-moz-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
+	.tooltipster-slide {
+		left: -40px;
+		-webkit-transition-property: left;
+		-moz-transition-property: left;
+		-o-transition-property: left;
+		-ms-transition-property: left;
+		transition-property: left;
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+		transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 	}
-	@-o-keyframes otloading {
-		0% {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
+	.tooltipster-slide.tooltipster-slide-show {
+	}
+	.tooltipster-slide.tooltipster-dying {
+		-webkit-transition-property: all;
+		-moz-transition-property: all;
+		-o-transition-property: all;
+		-ms-transition-property: all;
+		transition-property: all;
+		left: 0px !important;
+		opacity: 0;
+	}
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			-moz-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
-	}
-	@-ms-keyframes otloading {
-		0% {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			-moz-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
+	/* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
+	.tooltipster-content-changing {
+		opacity: 0.5;
+		-webkit-transform: scale(1.1, 1.1);
+		-moz-transform: scale(1.1, 1.1);
+		-o-transform: scale(1.1, 1.1);
+		-ms-transform: scale(1.1, 1.1);
+		transform: scale(1.1, 1.1);
 	}
-	@keyframes otloading {
-		0% {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			-moz-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
-	}
 }

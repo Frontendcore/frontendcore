@@ -1,62 +1,67 @@
-FrontendCore.define('dropdown', [], function () {
-	return {
-		oOpened: false,
-		onStart: function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('dropdown'),
-				self = this;
+	FrontendCore.define('dropdown', [], function () {
+		return {
+			oOpened: false,
+			onStart: function () {
 
-			self.bindClickOutside();
+				var aTargets = FrontendTools.getDataModules('dropdown'),
+					self = this;
 
-			$(aTargets).each(function () {
+				self.bindClickOutside();
 
-				var oThis = this;
+				$(aTargets).each(function () {
 
-				$('.navigation-dropdown > a', oThis).bind('click', function (event) {
+					var oThis = this;
 
-					event.preventDefault();
+					$('.navigation-dropdown > a', oThis).bind('click', function (event) {
 
-					self.hideDropdowns(oThis, this);
+						event.preventDefault();
 
-					self.slideToggle(this);
+						self.hideDropdowns(oThis, this);
+
+						self.slideToggle(this);
+					});
+
 				});
 
-			});
+				FrontendTools.trackModule('JS_Libraries', 'call', 'dropdown');
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'dropdown');
+			},
+			bindClickOutside: function () {
+				var self = this;
+				$(document).bind('click', function (event) {
+					if (event.target != self.oOpened && event.target.nodeName !== 'A') {
+						self.hideDropdowns();
+					}
+				});
+			},
+			hideDropdowns: function (oContainer, oTarget) {
 
-		},
-		bindClickOutside: function () {
-			var self = this;
-			$(document).bind('click', function (event) {
-				if (event.target != self.oOpened && event.target.nodeName !== 'A') {
-					self.hideDropdowns();
+				$('.navigation-dropdown ul', oContainer).each(function () {
+
+					var sTarget = oTarget !== undefined? oTarget.href.split('#')[1] : '';
+
+					if (sTarget != this.id){
+						this.style.display = 'none';
+					}
+				});
+
+				this.oOpened = false;
+
+			},
+			slideToggle: function (oTarget) {
+
+				var sHref = oTarget.href;
+
+				if (sHref.indexOf('#') !== -1) {
+					$(document.getElementById(sHref.split('#')[1])).slideToggle('fast');
+					this.oOpened = oTarget;
 				}
-			});
-		},
-		hideDropdowns: function (oContainer, oTarget) {
 
-			$('.navigation-dropdown ul', oContainer).each(function () {
-
-				var sTarget = oTarget !== undefined? oTarget.href.split('#')[1] : '';
-
-				if (sTarget != this.id){
-					this.style.display = 'none';
-				}
-			});
-
-			this.oOpened = false;
-
-		},
-		slideToggle: function (oTarget) {
-
-			var sHref = oTarget.href;
-
-			if (sHref.indexOf('#') !== -1) {
-				$(document.getElementById(sHref.split('#')[1])).slideToggle('fast');
-				this.oOpened = oTarget;
 			}
+		};
+	});
 
-		}
-	};
-});
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

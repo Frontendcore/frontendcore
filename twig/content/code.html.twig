@@ -1,0 +1,21 @@
+{% set current_children = "Code beautifier" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% set codeTypes = ["html","css","scss","javascript","json","php","sql" ] %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-js fz-xl va-m">JS</span> Code Beautifier</h1>
+    <p>Show beauty code online for Apache, Bash, C#, C++, CSS, SCSS, CoffeeScript, Diff, HTML, XML, HTTP, Ini, JSON, Java, JavaScript, Makefile, Markdown, Nginx, Objective C, PHP, Perl, Python, Ruby and SQL.</p>
+{% for code in codeTypes %}
+    <section class="box-lighten">
+        <h2>{{ code }} Slide</h2>
+        {{ demos.demo(
+            'toggle-' ~ code,
+            '../_demos/content/code-'~ code ~'.html'
+        )}}
+    </section>
+{% endfor %}
+{% endblock %}

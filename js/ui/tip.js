@@ -1,52 +1,66 @@
-FrontendCore.define('tip', [], function () {
-	return {
-		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		oDefault: {
-			fixed: true
-		},
-		onStart: function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('tip'),
-				self = this;
+	FrontendCore.define('tip', [], function () {
+		return {
+			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
+			oDefault: {
+				contentAsHTML: true,
+				position: 'bottom'
+			},
+			onStart: function () {
 
-			FrontendTools.loadCSS(this.sPathCss);
+				var aTargets = FrontendTools.getDataModules('tip'),
+					self = this;
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'tip' );
+				FrontendTools.loadCSS(this.sPathCss);
 
-			$(aTargets).each(function () {
-				self.autobind(this);
-			});
+				FrontendTools.trackModule('JS_Libraries', 'call', 'tip' );
 
+				$(aTargets).each(function () {
+					self.autobind(this);
+				});
 
-		},
-		autobind: function (oTarget, sData) {
+			},
+			autobind: function (oTarget, sData) {
 
-			var self = this,
-				oSettings,
-				oOptions = {};
+				var self = this,
+					oSettings,
+					oOptions = {};
 
-			if (oTarget.getAttribute("data-fc-title") !== null) {
-				oOptions.title = oTarget.getAttribute("data-fc-title");
+				if (oTarget.getAttribute("data-fc-position") !== null) {
+					oOptions.position = oTarget.getAttribute("data-fc-position");
+				}
+
+				if (oTarget.getAttribute("data-fc-trigger") === 'click') {
+					oOptions.trigger = 'click';
+					oOptions.hideOnClick = true;
+
+					$(oTarget).click( function(e) {
+						e.preventDefault();
+					});
+				}
+
+				if (oTarget.getAttribute("data-fc-content") !== null) {
+					oOptions.content = oTarget.getAttribute("data-fc-content");
+				}
+
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+
+				if ( oSettings.content !== undefined ){
+					$(oTarget).tooltipster(oSettings);
+				}
+
+			},
+			onStop: function () {
+				this.sPathCss = null;
+				this.oDefault = null;
+			},
+			onDestroy: function () {
+				delete this.sPathCss;
+				delete this.oDefault;
 			}
+		};
+	});
 
-			if (oTarget.getAttribute("data-fc-content") !== null) {
-				oOptions.content = oTarget.getAttribute("data-fc-content");
-			}
-
-			oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
-
-			if ( oSettings.content !== undefined ){
-				new Opentip( oTarget , oSettings.content , oSettings);
-			}
-
-		},
-		onStop: function () {
-			this.sPathCss = null;
-			this.oDefault = null;
-		},
-		onDestroy: function () {
-			delete this.sPathCss;
-			delete this.oDefault;
-		}
-	};
-});
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

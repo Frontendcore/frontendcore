@@ -1,4 +1,4 @@
-; (function (window, oGlobalSettings, FrontendTools, FrontendCore, $) {
+; (function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
 	'use strict';
 
 	FrontendCore.define('form-validation', ['form-validation-libs'], function () {
@@ -104,4 +104,4 @@
 		};
 	});
 
-})(window, oGlobalSettings, FrontendTools, FrontendCore, $ );
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $ );

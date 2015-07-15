@@ -1,7 +1,7 @@
-; (function (window, oGlobalSettings, FrontendTools, FrontendCore, $) {
+; (function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
 	'use strict';
 
-	FrontendCore.define('truncate', ['devicePackage'], function () {
+	FrontendCore.define('truncate', [], function () {
 	return {
 		oDefault: {
 			max_length: 100,
@@ -10,7 +10,7 @@
 		},
 		onStart: function () {
 
-			var aTarget = document.querySelectorAll('[data-fc-modules="truncate"]'),
+			var aTarget = FrontendTools.getDataModules('truncate'),
                 self = this;
 
 			FrontendTools.trackModule('JS_Libraries', 'call', 'truncate' );
@@ -58,4 +58,4 @@
 	};
 });
 
-})(window, oGlobalSettings, FrontendTools, FrontendCore, $ );
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $ );

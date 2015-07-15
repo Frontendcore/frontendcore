@@ -1,26 +1,30 @@
-FrontendCore.define('autosize', [], function () {
-	return {
-		onStart: function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('autosize'),
-				self = this;
+	FrontendCore.define('autosize', [], function () {
+		return {
+			onStart: function () {
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'autosize' );
+				var aTargets = FrontendTools.getDataModules('autosize'),
+					self = this;
 
-			$(aTargets).each(function () {
-				self.autobind(this);
-			});
+				FrontendTools.trackModule('JS_Libraries', 'call', 'autosize');
 
-		},
-		autobind: function (oTarget, sData) {
+				$(aTargets).each(function () {
+					self.autobind(this);
+				});
 
-			$(oTarget).addClass('animated height');
+			},
+			autobind: function (oTarget, sData) {
 
-			$(oTarget).autosize();
+				$(oTarget).addClass('animated height');
 
-			FrontendTools.removeLoading(oTarget);
+				$(oTarget).autosize();
 
-		}
-	};
-});
+				FrontendTools.removeLoading(oTarget);
 
+			}
+		};
+	});
+
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

@@ -10,6 +10,8 @@ module.exports = {
 	core: {
 		files: {
 			'./../site/build/static/js/core.js': [
+				'bower_components/jquery/dist/jquery.js',
+				'js/libs/modernizr/modernizr-custom.js',
 				'bower_components/tinycorejs/build/TinyCore.js',
 				'bower_components/tinycorejs/build/tools/mediator/TinyCore.Toolbox.Mediator.min.js',
 				'bower_components/tinycorejs/build/extensions/AMD/require-2.1.4.min.js',
@@ -18,15 +20,9 @@ module.exports = {
 				'./../site/build/static/js/tools.js',
 				'js/base/_device-detection.js',
 				'js/base/_modules-config.js',
-				'js/base/_dom-ready.js',
-				'js/base/_query-selector.js',
 				'js/base/_responsive-images.js',
+				'js/base/_polyfills.js',
 				'js/base/_init.js'
-			],
-			'./../site/build/static/js/devices/desktop.js': [
-				'bower_components/jquery/dist/jquery.js',
-				'js/libs/modernizr/modernizr-custom.js',
-				'bower_components/jquery-unveil/jquery.unveil.js'
 			],
 			'./../site/build/static/js/ui/image-zoom.js': [
 				'bower_components/magnifier/demo/Event.js',
@@ -62,6 +58,9 @@ module.exports = {
 			],
 			'./../site/build/static/js/ui/chartLibs.js': [
 				'bower_components/chartjs/Chart.js'
+			],
+			'./../site/build/static/js/ui/responsive-images-libs.js': [
+				'bower_components/jquery-unveil/jquery.unveil.js'
 			],
 			'./../site/build/static/js/ui/modal.js': [
 				'bower_components/jquery-colorbox/jquery.colorbox.js',
@@ -100,15 +99,12 @@ module.exports = {
 				'bower_components/jquery.truncator.js/jquery.truncator.js',
 				'js/ui/truncate.js'
 			],
-			'./../site/build/static/js/ui/polyfills.js': [
-				'js/ui/polyfills.js'
-			],
 			'./../site/build/static/js/ui/autosize.js': [
 				'bower_components/jquery-autosize/jquery.autosize.js',
 				'js/ui/autosize.js'
 			],
 			'./../site/build/static/js/ui/tip.js': [
-				'bower_components/opentip/downloads/opentip-jquery.js',
+				'bower_components/tooltipster/js/jquery.tooltipster.js',
 				'js/ui/tip.js'
 			],
 			'./../site/build/static/js/ui/cart.js': [

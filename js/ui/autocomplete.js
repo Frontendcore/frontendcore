@@ -1,45 +1,48 @@
-FrontendCore.define('autocomplete', [], function () {
-	return {
-		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		oDefault: {
-			limit: 12
-		},
-		onStart: function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('autocomplete'),
-				self = this;
+	FrontendCore.define('autocomplete', [], function () {
+		return {
+			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
+			oDefault: {
+				limit: 12
+			},
+			onStart: function () {
 
-			FrontendTools.loadCSS(this.sPathCss);
+				var aTargets = FrontendTools.getDataModules('autocomplete'),
+					self = this;
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete' );
+				FrontendTools.loadCSS(this.sPathCss);
 
-			$(aTargets).each(function () {
-				self.autobind(this);
-			});
-		},
-		autobind: function (oTarget, sData) {
+				FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete');
 
-			var self = this,
-				oSettings,
-				oOptions = {},
-				$Target = $(oTarget),
-				sValues = oTarget.getAttribute('data-fc-values'),
-                aValues,
-                aTemp = {};
+				$(aTargets).each(function () {
+					self.autobind(this);
+				});
+			},
+			autobind: function (oTarget, sData) {
 
-                oOptions.source = [];
+				var self = this,
+					oSettings,
+					oOptions = {},
+					$Target = $(oTarget),
+					sValues = oTarget.getAttribute('data-fc-values'),
+					aValues,
+					aTemp = {};
+
+				oOptions.source = [];
 
 				if (sData === undefined && sValues !== null) {
 
-                    aValues = oTarget.getAttribute('data-fc-values').split(',');
+					aValues = oTarget.getAttribute('data-fc-values').split(',');
 
-                    for( var nKey = 0; aValues.length > nKey; nKey++){
-                        aTemp = {};
-                        aTemp.value = aValues[nKey];
-                        aTemp.label = aValues[nKey];
-                        oOptions.source.push(aTemp);
-                        oOptions.source.push(aTemp);
-                    }
+					for (var nKey = 0; aValues.length > nKey; nKey++) {
+						aTemp = {};
+						aTemp.value = aValues[nKey];
+						aTemp.label = aValues[nKey];
+						oOptions.source.push(aTemp);
+						oOptions.source.push(aTemp);
+					}
 
 				}
 
@@ -47,14 +50,15 @@ FrontendCore.define('autocomplete', [], function () {
 
 				$Target.autocompleter(oSettings);
 
-		},
-		onStop: function () {
-			this.sPathCss = null;
-			this.oDefault = null;
-		},
-		onDestroy: function () {
-			delete this.sPathCss;
-			delete this.oDefault;
-		}
-	};
-});
+			},
+			onStop: function () {
+				this.sPathCss = null;
+				this.oDefault = null;
+			},
+			onDestroy: function () {
+				delete this.sPathCss;
+				delete this.oDefault;
+			}
+		};
+	});
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

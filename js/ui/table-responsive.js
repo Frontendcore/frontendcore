@@ -1,33 +1,38 @@
-FrontendCore.define('table-responsive', [], function () {
-	return {
-		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		onStart: function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('table-responsive'),
-				self = this;
+		FrontendCore.define('table-responsive', [], function () {
+		return {
+			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
+			onStart: function () {
 
-			FrontendTools.loadCSS(this.sPathCss);
+				var aTargets = FrontendTools.getDataModules('table-responsive'),
+					self = this;
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'table-responsive' );
+				FrontendTools.loadCSS(this.sPathCss);
 
-			$(aTargets).each(function ( nIndex ) {
-				self.autobind(this, nIndex);
-			});
-		},
-		autobind: function (oTarget) {
+				FrontendTools.trackModule('JS_Libraries', 'call', 'table-responsive' );
 
-				$(oTarget).stacktable({myClass:'table table-mobile'});
+				$(aTargets).each(function ( nIndex ) {
+					self.autobind(this, nIndex);
+				});
+			},
+			autobind: function (oTarget) {
 
-				FrontendTools.removeLoading(oTarget);
+					$(oTarget).stacktable({myClass:'table table-mobile'});
 
-		},
-		onStop: function () {
-			this.sPathCss = null;
-			this.oDefault = null;
-		},
-		onDestroy: function () {
-			delete this.sPathCss;
-			delete this.oDefault;
-		}
-	};
-});
+					FrontendTools.removeLoading(oTarget);
+
+			},
+			onStop: function () {
+				this.sPathCss = null;
+				this.oDefault = null;
+			},
+			onDestroy: function () {
+				delete this.sPathCss;
+				delete this.oDefault;
+			}
+		};
+	});
+
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

@@ -1,4 +1,7 @@
-FrontendCore.define('charts', [], function () {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
+
+	FrontendCore.define('charts', [], function () {
 	return {
 		ChartJS : null,
 		aCharts : [],
@@ -192,7 +195,7 @@ FrontendCore.define('charts', [], function () {
 		},
 		onStart: function () {
 
-			var aTargets = document.querySelectorAll('[data-fc-modules="charts"]'),
+			var aTargets = FrontendTools.getDataModules('charts'),
 				self = this;
 
 			FrontendTools.loadCSS(this.sPathCss);
@@ -232,7 +235,7 @@ FrontendCore.define('charts', [], function () {
 			self.isEmpty = true;
 
 			oSettings = FrontendTools.mergeOptions( self.oDefault, oOptions );
-			
+
 			oChartData = self.getCanvasData( oTarget, self.getColors(aColors, oOptions.type) );
 
 			switch(oSettings.type) {
@@ -385,3 +388,5 @@ FrontendCore.define('charts', [], function () {
 		}
 	};
 });
+
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

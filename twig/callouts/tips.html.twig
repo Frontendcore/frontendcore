@@ -7,20 +7,36 @@
 
 {% block main %}
     <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Tips</h1>
-    {{ demos.demo(
+    <section class="box-lighten">
+        <h2>Simple tip on hover</h2>
+        {{ demos.demo(
+            'text-fields',
+            '../_demos/callouts/tip-simple.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Tip on click with close on click</h2>
+        {{ demos.demo(
         'text-fields',
-        '../_demos/callouts/simple-tip.html'
-    )}}
+        '../_demos/callouts/tip-click-close.html'
+        )}}
+    </section>
 
     {{ demos.settings(
     {
         "1" : {
-            "name" :        "data-fc-title",
-            "description" : "String with the text title of the tooltip"
-        },
-        "2" : {
             "name" :        "data-fc-content",
             "description" : "String with the text content of the tooltip"
+        },
+        "2" : {
+            "name" :        "data-fc-position",
+            "description" : "String with the text title of the tooltip. Possible values: right, left, top, top-right, top-left, bottom, bottom-right, bottom-left",
+            "default" : "bottom"
+        },
+        "3" : {
+            "name" :        "data-fc-trigger",
+            "description" : "Set how tooltips should be activated and closed.",
+            "default" : "hover"
         }
     }
     )}}

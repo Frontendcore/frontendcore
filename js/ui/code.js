@@ -1,31 +1,36 @@
-FrontendCore.define('code', [], function (utils) {
-	return {
-		sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		onStart: function ( ) {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+	'use strict';
 
-			var aTargets = FrontendTools.getDataModules('code'),
-                self = this;
+	FrontendCore.define('code', [], function (utils) {
+		return {
+			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
+			onStart: function () {
 
-			FrontendTools.loadCSS(this.sPathCss);
+				var aTargets = FrontendTools.getDataModules('code'),
+					self = this;
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'code' );
+				FrontendTools.loadCSS(this.sPathCss);
 
-			hljs.configure({
-				tabReplace: '    '
-			});
+				FrontendTools.trackModule('JS_Libraries', 'call', 'code');
 
-            $(aTargets).each(function () {
-                self.autobind(this);
-            });
-		},
-		autobind: function ( aTarget ) {
-            hljs.highlightBlock(aTarget);
-		},
-		onStop: function () {
-			this.sPathCss = null;
-		},
-		onDestroy: function () {
-			delete this.sPathCss;
-		}
-	};
-});
+				hljs.configure({
+					tabReplace: '    '
+				});
+
+				$(aTargets).each(function () {
+					self.autobind(this);
+				});
+			},
+			autobind: function (aTarget) {
+				hljs.highlightBlock(aTarget);
+			},
+			onStop: function () {
+				this.sPathCss = null;
+			},
+			onDestroy: function () {
+				delete this.sPathCss;
+			}
+		};
+	});
+
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);

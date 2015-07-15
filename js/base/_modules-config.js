@@ -7,14 +7,12 @@ if (!oGlobalSettings.sPathCssUI) oGlobalSettings.sPathCssUI = oGlobalSettings.sP
 if (!oGlobalSettings.bTrackModules) oGlobalSettings.bTrackModules = false;
 if (!oGlobalSettings.sHash) oGlobalSettings.sHash = '1';
 if (!oGlobalSettings.oPaths) oGlobalSettings.oPaths = {};
-if (!oGlobalSettings.sDevice) oGlobalSettings.sDevice = isMobile.any() ? 'desktop' : 'desktop' ;
 
 var oDefaultPaths = {
 		libs: oGlobalSettings.sPathJs,
 		polyfillsLibs : oGlobalSettings.sPathJsCore + "shims/polyfiller"
 	},
 	aModules = [
-		'devicePackage',
 		'code',
 		'sortable',
 		'charts',
@@ -41,20 +39,14 @@ var oDefaultPaths = {
 		'side-panel',
 		'form-validation',
 		'form-validation-libs',
+		'responsive-images-libs',
 		'image-zoom',
 		'image-edit'
 	];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {
 
-	switch (aModules[nKey]) {
-		case 'devicePackage':
-			oDefaultPaths.devicePackage = oGlobalSettings.oPaths[aModules[nKey]] !== undefined ? oGlobalSettings.oPaths[aModules[nKey]] : oGlobalSettings.sPathJsCore + 'devices/' + oGlobalSettings.sDevice;
-		break;
-		default :
-			oDefaultPaths[aModules[nKey]] = oGlobalSettings.oPaths[aModules[nKey]] !== undefined ? oGlobalSettings.oPaths[aModules[nKey]] : oGlobalSettings.sPathJsCore + 'ui/' + aModules[nKey].replace('', '');
-		break;
-	}
+	oDefaultPaths[aModules[nKey]] = oGlobalSettings.oPaths[aModules[nKey]] !== undefined ? oGlobalSettings.oPaths[aModules[nKey]] : oGlobalSettings.sPathJsCore + 'ui/' + aModules[nKey].replace('', '');
 }
 
 var oPaths = FrontendTools.mergeJSON( oDefaultPaths, oGlobalSettings.oPaths);
