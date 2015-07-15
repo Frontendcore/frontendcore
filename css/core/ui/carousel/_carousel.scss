@@ -234,7 +234,7 @@
 
 	//	Owl Carousel - Video Plugin
 
-	.carousel-theme {
+	.carousel {
 		&:hover {
 			.owl-nav {
 				& {
@@ -268,6 +268,7 @@
 				left: 0;
 				&:before {
 					content: $fa-var-chevron-left;
+					color: $color-foreground;
 				}
 			}
 			.owl-next {
@@ -275,6 +276,7 @@
 				right: 0;
 				&:before {
 					content: $fa-var-chevron-right;
+					color: $color-foreground;
 				}
 			}
 		}
@@ -285,7 +287,10 @@
 			.owl-nav {
 				display: none;
 			}
-
+		}
+		.owl-dots {
+			text-align: center;
+			padding-top: $spacing/2;
 		}
 		.owl-dots .owl-dot {
 			display: inline-block;

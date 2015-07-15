@@ -6,7 +6,6 @@
 			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			oDefault: {
 				baseClass: 'carousel',
-				themeClass: 'carousel-theme',
 				items: 1,
 				nav: true,
 				navText: ['', ''],
