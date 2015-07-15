@@ -10,15 +10,15 @@ module.exports = {
 	core: {
 		files: {
 			'./../site/build/static/js/core.js': [
-				'bower_components/jquery/dist/jquery.js',
 				'js/libs/modernizr/modernizr-custom.js',
 				'bower_components/tinycorejs/build/TinyCore.js',
 				'bower_components/tinycorejs/build/tools/mediator/TinyCore.Toolbox.Mediator.min.js',
 				'bower_components/tinycorejs/build/extensions/AMD/require-2.1.4.min.js',
 				'bower_components/tinycorejs/build/extensions/AMD/TinyCore.AMD+domBoot.min.js',
 				'js/base/_namespace.js',
-				'./../site/build/static/js/tools.js',
 				'js/base/_device-detection.js',
+				'bower_components/jquery/dist/jquery.js',
+				'./../site/build/static/js/tools.js',
 				'js/base/_modules-config.js',
 				'js/base/_responsive-images.js',
 				'js/base/_polyfills.js',

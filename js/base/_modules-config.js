@@ -55,6 +55,12 @@ FrontendCore.config( {
 	require : {
 		urlArgs: "v=" + oGlobalSettings.sHash,
 		baseUrl : oGlobalSettings.sPathJsModules,
-		paths : oPaths
+		paths : oPaths,
+		shim: {
+			"parsley": {
+				"deps" : ["jquery"],
+				"exports" : "parsley"
+			}
+		}
 	}
 });
