@@ -1,4 +1,4 @@
-;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $) {
 	'use strict';
 
 	FrontendCore.define('tabs', [] , function () {
@@ -162,4 +162,4 @@
 		};
 	});
 
-})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $);

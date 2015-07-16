@@ -1,11 +1,11 @@
-; (function (window, document, Darkroom) {
+; (function (window, document, FrontendMediator, Darkroom) {
 	'use strict';
 
 	Darkroom.plugins.save = Darkroom.Plugin.extend({
 		defaults: {
 			callback: function () {
 				this.darkroom.selfDestroy();
-				window.FrontendMediator.publish('image-edit:save', { oImage: this.darkroom.image._element});
+				FrontendMediator.publish('image-edit:save', { oImage: this.darkroom.image._element});
 
 			}
 		},
@@ -22,4 +22,4 @@
 
 		}
 	});
-})(window, document, Darkroom);
+})(window, document, FrontendMediator, Darkroom);

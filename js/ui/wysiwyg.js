@@ -1,4 +1,4 @@
-; (function (window, document,oGlobalSettings, FrontendTools, FrontendCore, $, Pen) {
+; (function (window, document,oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $, Pen) {
 	'use strict';
 
 	FrontendCore.define('wysiwyg', [], function () {
@@ -343,4 +343,4 @@
 		};
 	});
 
-})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $, Pen );
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $, Pen );
