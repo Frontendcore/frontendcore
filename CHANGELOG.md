@@ -1,5 +1,9 @@
 ## Change Log
 
+### 1.7.3 (2015/07/16 08:31 +00:00)
+- [04a637a](https://github.com/Frontendcore/frontendcore/commit/04a637a0aeb8a68d43738fd3809d6905b5d9017d) Solved bug with Jquery and parsleyjs on form validation Release version 1.7.2 ! (@tonipinel)
+- [76fd925](https://github.com/Frontendcore/frontendcore/commit/76fd9259d266e3a0748c3b176ab5331c975a91e0) Frontendmediator bug fixing. Release version 1.7.3 ! (@tonipinel)
+
 ### 1.7.2 (2015/07/15 15:34 +00:00)
 - [dacf4e0](https://github.com/Frontendcore/frontendcore/commit/dacf4e025fde9bb1ef096da104f65fa7da05e1d8) Each chart on a var (@tonipinel)
 - [be59fb2](https://github.com/Frontendcore/frontendcore/commit/be59fb241ef67e5ed70fbbf82c448fdfbef6c6ad) Solved bug with Jquery and parsleyjs on form validation Release version 1.7.2 ! (@tonipinel)
@@ -142,9 +146,6 @@
 - [1aef93b](https://github.com/Frontendcore/frontendcore/commit/1aef93b831e024c10abcd661675620aac39803dc) Bug fixes on navigation. Release version1.5.3 ! (@tonipinel)
 
 ### 1.5.2 (2015/02/18 10:43 +00:00)
-- [a44f455](https://github.com/Frontendcore/frontendcore/commit/a44f455be87644cb0bf39f7303c8344687c234b1) Bug fix on side panel. Release version1.5.2 ! (@tonipinel)
-
-### 1.5.1 (2015/02/17 18:02 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -223,6 +224,7 @@
 - [68c84d5](https://github.com/Frontendcore/frontendcore/commit/68c84d54f35ac9c327a673e56fba77f2b996eeb2) Improved fonts maps and fonts customization. Fix #8 and we are going to Release version1.5.0 ! (@tonipinel)
 - [902dfdb](https://github.com/Frontendcore/frontendcore/commit/902dfdbbd0f5b81b71488f6ab1a6060c2b3a9327) Improved side panel and toggle. Release version1.5.0 ! (@tonipinel)
 - [ceb5f7a](https://github.com/Frontendcore/frontendcore/commit/ceb5f7afdfaec833b1ec5b9350e1af2d596dbb40) Improved side panel and toggle. Release version1.5.1 ! (@tonipinel)
+- [a44f455](https://github.com/Frontendcore/frontendcore/commit/a44f455be87644cb0bf39f7303c8344687c234b1) Bug fix on side panel. Release version1.5.2 ! (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
