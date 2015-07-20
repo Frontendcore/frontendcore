@@ -62,7 +62,7 @@
 			& > li {
 				list-style: none;
 				display: block;
-				padding: 0 0 $spacing;
+				padding: map-get($object-forms-vars, field-margin);
 			}
 		}
 		.error-fields {
@@ -255,5 +255,21 @@
 	.form-error-message {
 		color: $color-ko;
 		font-size: $font-size-default;
+	}
+
+	::-webkit-input-placeholder {
+		color: map-get($object-forms-vars, field-placeholder-color);
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+		color: map-get($object-forms-vars, field-placeholder-color);
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: map-get($object-forms-vars, field-placeholder-color);
+	}
+
+	:-ms-input-placeholder {
+		color: map-get($object-forms-vars, field-placeholder-color);
 	}
 }

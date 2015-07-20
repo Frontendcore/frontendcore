@@ -1,10 +1,10 @@
 %button {
 	& {
-		@include border-radius;
-		margin: 0 $spacing/4 $spacing/4 0;
-		padding: $spacing/3 $spacing;
-		border: 0px none;
-		@include box-shadow(none);
+		@include border-radius(map-get($object-buttons-vars, border-radius));
+		margin: map-get($object-buttons-vars, margin);
+		padding: map-get($object-buttons-vars, padding);
+		border: map-get($object-buttons-vars, border);
+		@include box-shadow(map-get($object-buttons-vars, box-shadow));
 	}
 	&.small {
 		padding: $spacing/4 $spacing/2;

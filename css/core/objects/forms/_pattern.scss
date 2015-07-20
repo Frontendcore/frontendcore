@@ -7,9 +7,12 @@
 %field {
 	& {
 		display: block;
+		font-family: map-get($object-forms-vars, field-font-family);
+		font-size: map-get($object-forms-vars, field-font-size);
+		font-weight: map-get($object-forms-vars, field-font-weight);
 		padding: map-get($object-forms-vars, field-padding);
 		border: map-get($object-forms-vars, field-border);
-		background: $color-background;
+		background: map-get($object-forms-vars, field-background);
 		@include border-radius( map-get($object-forms-vars, field-border-radius));
 		@include box-sizing(border-box);
 		@include box-shadow(map-get($object-forms-vars, field-box-shadow))

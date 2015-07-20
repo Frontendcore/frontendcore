@@ -9,12 +9,23 @@
 			cursor: pointer;
 			box-sizing: border-box;
 			text-shadow: map-get($object-buttons-vars, text-shadow);
+			font-weight: map-get($object-buttons-vars, font-weight);
+			font-family: map-get($object-buttons-vars, font-family);
+			@include rem-fallback(font-size, map-get($object-buttons-vars, font-size));
 		}
 		&.button-icon {
 			padding: $spacing/4 0 $spacing/4 $spacing/4;
 			font-family: 'FontAwesome' !important;
 			min-height: 26px;
 			min-width: 26px;
+		}
+		&.button-slim {
+			font-family: map-get($object-buttons-vars, slim-font-family);
+			font-weight: map-get($object-buttons-vars, slim-font-weight);
+		}
+		&.button-fat {
+			font-family: map-get($object-buttons-vars, fat-font-family);
+			font-weight: map-get($object-buttons-vars, fat-font-weight);
 		}
 		&:hover {
 			@include opacity(.9);
@@ -45,8 +56,8 @@
 
 	.button-slim {
 		& {
-			padding: $spacing/6 $spacing/2;
-			@include rem-fallback(font-size, $font-size-xs);
+			padding: map-get($object-buttons-vars, slim-padding);
+			@include rem-fallback(font-size, map-get($object-buttons-vars, slim-font-size));
 		}
 		&.button-icon {
 			padding: $spacing/8 0 $spacing/8 $spacing/4;
@@ -86,7 +97,7 @@
 	.button-empty {
 		background: map-get($object-buttons-vars, empty-background);
 		color: map-get($object-buttons-vars, empty-color);
-
+		text-shadow: map-get($object-buttons-vars, empty-text-shadow);
 		&:hover {
 			text-decoration: underline;
 		}
@@ -101,16 +112,5 @@
 		color: #ccc;
 		cursor: default;
 		pointer-events: none;
-	}
-
-	[class*='button-'], .button {
-		& {
-			font-weight: bold;
-			font-family: $font-face-title;
-		}
-		&.button-slim {
-			font-family: $font-face-default;
-			font-weight: normal;
-		}
 	}
 }

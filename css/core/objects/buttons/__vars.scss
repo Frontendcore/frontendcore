@@ -1,6 +1,27 @@
 $object-buttons-vars-default: (
 	/* General settings */
 	text-shadow: 0 1px rgba($color-foreground, .3),
+	font-size: $font-size-default,
+	font-weight: bold,
+	text-transform: normal,
+	font-family: $font-face-title,
+	padding: $spacing/3 $spacing,
+	margin: 0 $spacing/4 $spacing/4 0,
+	border: 0px none,
+	border-radius: $default-border-radius,
+	box-shadow: none,
+
+	/* Button slim */
+	slim-font-family: $font-face-default,
+	slim-font-weight: normal,
+	slim-font-size: $font-size-xs,
+	slim-padding: $spacing/6 $spacing/2,
+
+	/* Button fat */
+	fat-font-family: $font-face-title,
+	fat-font-weight: bold,
+	fat-font-size: $font-size-xl,
+	fat-padding: $spacing/4 $spacing,
 
 	/* Default button */
 	default-background: rgba($color-foreground, .35),
@@ -27,5 +48,6 @@ $object-buttons-vars-default: (
 	/* Button empty */
 	empty-background: none,
 	empty-color: $color-link,
+	empty-text-shadow: none,
 
 ) !global !default;
