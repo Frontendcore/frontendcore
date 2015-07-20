@@ -1,4 +1,9 @@
 .footer {
 	@extend %header-footer;
+	background: $color-foreground;
 	margin: $spacing*4 0 0;
+
+	img {
+		max-width: 250px;
+	}
 }

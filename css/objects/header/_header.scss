@@ -2,13 +2,33 @@
 .header {
 	& {
 		@extend %header-footer;
+		background-image: url('/static/img/bg-landing.jpg');
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: cover;
 		margin-bottom: $spacing;
 		z-index: 100;
 		box-sizing: border-box;
+		@include box-shadow(1px 1px 3px rgba($color-foreground, .2));
 	}
 	.navigation {
 		border: 0px none;
 		@include box-shadow(none);
+	}
+	img {
+		max-width: 250px;
+		margin-bottom: $spacing/4;
+	}
+	input.gsc-search-button {
+		& {
+			border-color: $color-primary;
+			background-color: $color-primary;
+		}
+		&:hover {
+			border-color: lighten($color-primary, 10%);
+			background-color: lighten($color-primary, 10%);
+		}
+
 	}
 	.menu {
 		& {
@@ -22,5 +42,11 @@
 
 .header-spacing {
 	display: none;
+}
+
+.header-mobile {
+	img {
+		max-height: 30px !important;
+	}
 }
 
