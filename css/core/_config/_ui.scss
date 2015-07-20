@@ -1,5 +1,5 @@
 /**
- * Includes the classes at main css for Modals UI
+ * Includes the classes at UI css for Modals UI
  * @type boolean
  * @link http://www.frontendcore.com/callouts/modals.html
  * @group User Interface
@@ -7,7 +7,7 @@
 $ui-modals: map-get($user-interface, modals) !global;
 
 /**
- * Includes the classes at main css for Tags UI
+ * Includes the classes at UI css for Tags UI
  * @type boolean
  * @link http://www.frontendcore.com/forms/tags-fields.html
  * @group User Interface
@@ -15,7 +15,7 @@ $ui-modals: map-get($user-interface, modals) !global;
 $ui-tags: map-get($user-interface, tags) !global;
 
 /**
- * Includes the classes at main css for Code UI
+ * Includes the classes at UI css for Code UI
  * @type boolean
  * @link http://www.frontendcore.com/content/code.html
  * @group User Interface
@@ -23,7 +23,7 @@ $ui-tags: map-get($user-interface, tags) !global;
 $ui-code: map-get($user-interface, code) !global;
 
 /**
- * Includes the classes at main css for Side Menu UI
+ * Includes the classes at UI css for Side Menu UI
  * @type boolean
  * @link http://www.frontendcore.com/navigation/side-menu.html
  * @group User Interface
@@ -31,7 +31,7 @@ $ui-code: map-get($user-interface, code) !global;
 $ui-side-panel: map-get($user-interface, side-panel) !global;
 
 /**
- * Includes the classes at main css for Stats tables UI
+ * Includes the classes at UI css for Stats tables UI
  * @type boolean
  * @link http://www.frontendcore.com/tables/stats-tables.html
  * @group User Interface
@@ -39,7 +39,7 @@ $ui-side-panel: map-get($user-interface, side-panel) !global;
 $ui-charts: map-get($user-interface, charts) !global;
 
 /**
- * Includes the classes at main css for autocomplete UI
+ * Includes the classes at UI css for autocomplete UI
  * @type boolean
  * @link http://www.frontendcore.com/forms/autocomplete.html
  * @group User Interface
@@ -47,7 +47,7 @@ $ui-charts: map-get($user-interface, charts) !global;
 $ui-autocomplete: map-get($user-interface, autocomplete) !global;
 
 /**
- * Includes the classes at main css for Tips UI
+ * Includes the classes at UI css for Tips UI
  * @type boolean
  * @link http://www.frontendcore.com/callouts/tips.html
  * @group User Interface
@@ -55,7 +55,7 @@ $ui-autocomplete: map-get($user-interface, autocomplete) !global;
 $ui-tips: map-get($user-interface, tips) !global;
 
 /**
- * Includes the classes at main css for Carousel UI
+ * Includes the classes at UI css for Carousel UI
  * @type boolean
  * @link http://www.frontendcore.com/content/carousel.html
  * @group User Interface
@@ -63,7 +63,7 @@ $ui-tips: map-get($user-interface, tips) !global;
 $ui-carousel: map-get($user-interface, carousel) !global;
 
 /**
- * Includes the classes at main css for Dynamic tables UI
+ * Includes the classes at UI css for Dynamic tables UI
  * @type boolean
  * @link http://www.frontendcore.com/tables/dynamic-table.html
  * @group User Interface
@@ -71,7 +71,7 @@ $ui-carousel: map-get($user-interface, carousel) !global;
 $ui-tables: map-get($user-interface, tables) !global;
 
 /**
- * Includes the classes at main css for Notifications UI
+ * Includes the classes at UI css for Notifications UI
  * @type boolean
  * @link http://www.frontendcore.com/callouts/notifications.html
  * @group User Interface
@@ -79,7 +79,7 @@ $ui-tables: map-get($user-interface, tables) !global;
 $ui-notifications: map-get($user-interface, notifications) !global;
 
 /**
- * Includes the classes at main css for Wysiwyg UI
+ * Includes the classes at UI css for Wysiwyg UI
  * @type boolean
  * @link http://www.frontendcore.com/forms/wysiwyg.html
  * @group User Interface
@@ -87,7 +87,7 @@ $ui-notifications: map-get($user-interface, notifications) !global;
 $ui-wysiwyg: map-get($user-interface, wysiwyg) !global;
 
 /**
- * Includes the classes at main css for Sortable UI
+ * Includes the classes at UI css for Sortable UI
  * @type boolean
  * @link http://www.frontendcore.com/content/sortable.html
  * @group User Interface
@@ -95,7 +95,7 @@ $ui-wysiwyg: map-get($user-interface, wysiwyg) !global;
 $ui-sortable: map-get($user-interface, sortable) !global;
 
 /**
- * Includes the classes at main css for cart UI
+ * Includes the classes at UI css for cart UI
  * @type boolean
  * @link http://www.frontendcore.com/content/cart.html
  * @group User Interface
@@ -103,7 +103,7 @@ $ui-sortable: map-get($user-interface, sortable) !global;
 $ui-cart: map-get($user-interface, cart) !global;
 
 /**
- * Includes the classes at main css for Image-zoom UI
+ * Includes the classes at UI css for Image-zoom UI
  * @type boolean
  * @link http://www.frontendcore.com/media/image-zoom.html
  * @group User Interface
@@ -111,9 +111,17 @@ $ui-cart: map-get($user-interface, cart) !global;
 $ui-image-zoom: map-get($user-interface, image-zoom) !global;
 
 /**
- * Includes the classes at main css for Image-edit UI
+ * Includes the classes at UI css for Image-edit UI
  * @type boolean
  * @link http://www.frontendcore.com/media/image-edit.html
  * @group User Interface
  */
 $ui-image-edit: map-get($user-interface, image-edit) !global;
+
+/**
+ * Includes the classes at UI css for Select search UI
+ * @type boolean
+ * @link http://www.frontendcore.com/media/image-edit.html
+ * @group User Interface
+ */
+$ui-select-search: map-get($user-interface, select-search) !global;

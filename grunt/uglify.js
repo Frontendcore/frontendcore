@@ -70,6 +70,10 @@ module.exports = {
 				'bower_components/magicsuggest/magicsuggest.js',
 				'js/ui/tags.js'
 			],
+			'./../site/build/static/js/ui/select-search.js': [
+				'bower_components/bselect/js/bselect.js',
+				'js/ui/select-search.js'
+			],
 			'./../site/build/static/js/ui/wysiwyg.js': [
 				'bower_components/pen/src/pen.js',
 				'bower_components/pen/src/markdown.js',

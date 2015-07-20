@@ -309,6 +309,11 @@
           "name": "Select Fields",
           "href": "select-fields.html"
         },
+        "Select with search": {
+          "name": "Select with search",
+          "href": "select-search.html",
+          "js" : true
+        },
         "Tags Fields": {
           "name": "Tags Fields",
           "href": "tags-fields.html",

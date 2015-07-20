@@ -41,7 +41,8 @@ var oDefaultPaths = {
 		'form-validation-libs',
 		'responsive-images-libs',
 		'image-zoom',
-		'image-edit'
+		'image-edit',
+		'select-search'
 	];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {

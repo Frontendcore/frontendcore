@@ -1,0 +1,25 @@
+{% set current_children = "Select with search" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Select with search</h1>
+    {{ demos.demo(
+        'text-fields',
+        '../_demos/forms/select-search.html',
+        false,false,true
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-search",
+            "description" : "Show or hide the search input inside the select. Posible values: true, false",
+            "default": "true"
+        }
+    }
+    )}}
+{% endblock %}
