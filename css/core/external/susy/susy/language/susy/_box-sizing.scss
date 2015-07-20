@@ -15,10 +15,10 @@
   @if $inherit {
     @at-root {
        html { @include output((box-sizing: $box)); }
-       *, *:before, *:after { box-sizing: inherit; }
+///, *:before, *:after { box-sizing: inherit; }
      }
   } @else {
-    *, *:before, *:after { @include output((box-sizing: $box)); }
+///, *:before, *:after { @include output((box-sizing: $box)); }
   }
 
   @include susy-inspect(global-box-sizing, $inspect);

@@ -1,16 +1,16 @@
 module.exports = {
 	dist: {
 		src: 'css/core/',
+		options: {
 			dest: './../site/build/sassdoc/',
-			options: {
 			verbose: false,
-				display: {
+			display: {
 				access: ['public'],
-					alias: false,
-					watermark: false
+				alias: false,
+				watermark: false
 			},
 			package: './package.json',
-				basePath: 'http://www.frontendcore.com'
+			basePath: 'http://www.frontendcore.com'
 		}
 	}
 };

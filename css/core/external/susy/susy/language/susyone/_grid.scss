@@ -11,7 +11,7 @@
 // and adjust the grid math appropriately.
 @mixin border-box-sizing {
   $border-box-sizing: true !global;
-  * { @include box-sizing(border-box); }
+/// { @include box-sizing(border-box); }
 }
 
 // ---------------------------------------------------------------------------
@@ -150,7 +150,7 @@
   margin-#{$to}: 0;
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack}: - $gutter-width;
+///margin-#{$hack}: - $gutter-width;
     @include for-legacy-browser(ie, "6") {
       display: inline;
     }
@@ -200,7 +200,7 @@
   margin-#{$to}: auto;
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack}: auto;
+///margin-#{$hack}: auto;
     @include for-legacy-browser(ie, "6") {
       display: block;
     }
@@ -226,7 +226,7 @@
   margin-#{$to}: gutter($context, $style);
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack}: auto;
+///margin-#{$hack}: auto;
   }
 }
 

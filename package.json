@@ -36,7 +36,7 @@
     "grunt-grunt": "^0.2.2",
     "grunt-newer": "^1.1.0",
     "grunt-phantomas": "^0.11.0",
-    "grunt-sassdoc": "^1.2.1",
+    "grunt-sassdoc": "^2.0.0",
     "grunt-sync-version": "^0.2.1",
     "grunt-text-replace": "^0.4.0",
     "grunt-twig-render": "^1.6.0",
@@ -45,5 +45,8 @@
     "load-grunt-tasks": "^2.0.0",
     "grunt-sass": "git://github.com/sindresorhus/grunt-sass",
     "node-sass": "^2.1.1"
+  },
+  "dependencies": {
+    "sassdoc-theme-vulcan": "^0.2.0"
   }
 }

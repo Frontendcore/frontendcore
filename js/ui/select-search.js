@@ -19,6 +19,10 @@
 				$( aTargets ).each(function ( nIndex) {
 					self.autobind(this, nIndex);
 				});
+
+				$('a', '.bselect-option-list').on('click', function(e) {
+					e.preventDefault();
+				});
 			},
 			autobind: function (oTarget, nIndex) {
 

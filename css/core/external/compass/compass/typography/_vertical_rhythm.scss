@@ -58,7 +58,7 @@ $base-half-leader: $base-leader / 2;
   // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
   // whose root is set in ems. So we set the root font size in percentages of
   // the default font size.
-  * html {
+  html {
     font-size: 100% * ($font-size / $browser-default-font-size);
   }
   html {

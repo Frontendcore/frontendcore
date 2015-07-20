@@ -11,7 +11,10 @@ module.exports = function (grunt) {
 	grunt.registerTask('twig', ['newer:twigRender']);
 	grunt.registerTask('scss', [
 		'sass',
-		'grunt:clean_sassdoc','sassdoc','newer:cssmin','concurrent:templates']);
+		'sassdoc',
+		'newer:cssmin',
+		'concurrent:templates'
+	]);
 	grunt.registerTask('commit', [
 		'version',
 		'grunt:clean_site',
