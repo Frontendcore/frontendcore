@@ -1,5 +1,11 @@
 ## Change Log
 
+### 1.7.5 (2015/07/28 10:21 +00:00)
+- [08b0bf1](https://github.com/Frontendcore/frontendcore/commit/08b0bf11d337e05f3a75b07e5331d48d1c944ccb) New UI component: Select with search. Release version 1.7.4 ! (@tonipinel)
+- [74e1512](https://github.com/Frontendcore/frontendcore/commit/74e15121feccd83d57d86ce79293f259aa919e66) Updated sassdoc to last version (@tonipinel)
+- [9725580](https://github.com/Frontendcore/frontendcore/commit/972558027be71b2f9dfc8282ed1b1fe9fd67bc10) Updated corporate image (@tonipinel)
+- [1ee292f](https://github.com/Frontendcore/frontendcore/commit/1ee292f7e2dc7a2a367ae01f75c710d080eb52c7) New Grid custom system and improved header mobile. Release version 1.7.5 ! (@tonipinel)
+
 ### 1.7.4 (2015/07/20 06:19 +00:00)
 - [f700bb0](https://github.com/Frontendcore/frontendcore/commit/f700bb0edaed546fa12b27f3126a68a3c0272de2) Frontendmediator bug fixing. Release version 1.7.3 ! (@tonipinel)
 - [4966cef](https://github.com/Frontendcore/frontendcore/commit/4966cef755572017eb11b8b9f2eb7e68350efd13) Improved customization using custom-vars for buttons and forms (@tonipinel)
@@ -143,10 +149,6 @@
 - [e67b800](https://github.com/Frontendcore/frontendcore/commit/e67b800a266fa316d2f903d978a2d84154e5bc7d) Added new object balloons. Release version1.5.5 ! (@tonipinel)
 
 ### 1.5.4 (2015/02/24 08:53 +00:00)
-- [7d82cba](https://github.com/Frontendcore/frontendcore/commit/7d82cbaffa14785fa1cfc8704eae061a2b878295) Fixed bug on notification mediator and improved design of notifications (@tonipinel)
-- [f04a97e](https://github.com/Frontendcore/frontendcore/commit/f04a97e6ad76bf351703a827b1673682e2437dda) Bug fixes on notifications. Release version1.5.4 ! (@tonipinel)
-
-### 1.5.3 (2015/02/19 14:01 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -228,6 +230,8 @@
 - [a44f455](https://github.com/Frontendcore/frontendcore/commit/a44f455be87644cb0bf39f7303c8344687c234b1) Bug fix on side panel. Release version1.5.2 ! (@tonipinel)
 - [3473f70](https://github.com/Frontendcore/frontendcore/commit/3473f709564e724bc0f5e5ce78dad93dd649e92f) Added readme (@tonipinel)
 - [1aef93b](https://github.com/Frontendcore/frontendcore/commit/1aef93b831e024c10abcd661675620aac39803dc) Bug fixes on navigation. Release version1.5.3 ! (@tonipinel)
+- [7d82cba](https://github.com/Frontendcore/frontendcore/commit/7d82cbaffa14785fa1cfc8704eae061a2b878295) Fixed bug on notification mediator and improved design of notifications (@tonipinel)
+- [f04a97e](https://github.com/Frontendcore/frontendcore/commit/f04a97e6ad76bf351703a827b1673682e2437dda) Bug fixes on notifications. Release version1.5.4 ! (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
