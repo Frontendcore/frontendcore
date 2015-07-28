@@ -8,7 +8,4 @@ module.exports = {
 	compileAllSass: {
 		tasks: ['compass:css','compass:skins']
 	},
-	documentSass: {
-		tasks: ['grunt:clean_sassdoc','sassdoc']
-	}
 };

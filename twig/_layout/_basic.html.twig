@@ -76,7 +76,7 @@
         <nav class="header-mobile-buttons-left">
             <a data-fc-modules="side-panel" data-fc-clone="false" href="#menu" class="button"><i class="icon-align-justify"></i></a>
         </nav>
-        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
+        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo mb-m"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
         <nav class="header-mobile-buttons-right">
 
         </nav>
@@ -111,19 +111,23 @@
         {% endblock %}
     </div>
     <div class="col-4-5">
-        {% block main %}{% endblock main %}
+        <div class="box-none">{% block main %}{% endblock main %}</div>
     </div>
 </div>
 {% endblock fullmain %}
 <footer class="footer box-primary mb-n">
-    <div class="col-2-4">
-        <h3 class="fw-n">About us</h3>
-        <p>FrontendCore comes form the experience of <a href="https://twitter.com/tonipinel" target="_blank" class="td-u fw-b">Toni Pinel</a>. He was working as Principal Frontend Engineer at <a href="https://www.softonic.com" target="_blank" class="td-u">www.Softonic.com</a> & <a href="https://www.obolog.com" target="_blank" class="td-u">www.obolog.com</a>. Is based in the knowledge and the needs to create high quality code and be the more agile possible.</p>
-        <p>Be free to contribute to the project, any ideas or developments should be welcome!</p>
-    </div>
-    <div class="col-2-4 ta-r">
-        <p><a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo mr-m"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a></p>
-        <p><a href="{{ relative_path ~ urlbase }}setup/download.html" class="button-ok button-fat icon-download pv-m ta-l">Download & Installation <br/><span class="fz-default fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;Current release {{ version }}</span></a></p>
+    <div class="grid">
+        <div class="col-2-4">
+            <div class="box-primary mb-n">
+                <h3 class="fw-n">About us</h3>
+                <p>FrontendCore comes form the experience of <a href="https://twitter.com/tonipinel" target="_blank" class="td-u fw-b">Toni Pinel</a>. He was working as Principal Frontend Engineer at <a href="https://www.softonic.com" target="_blank" class="td-u">www.Softonic.com</a> & <a href="https://www.obolog.com" target="_blank" class="td-u">www.obolog.com</a>. Is based in the knowledge and the needs to create high quality code and be the more agile possible.</p>
+                <p>Be free to contribute to the project, any ideas or developments should be welcome!</p>
+            </div>
+        </div>
+        <div class="col-2-4">
+            <p><a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="logo mr-m"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a></p>
+            <p><a href="{{ relative_path ~ urlbase }}setup/download.html" class="button-ok button-fat icon-download pv-m ta-l">Download & Installation <br/><span class="fz-default fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;Current release {{ version }}</span></a></p>
+        </div>
     </div>
 </footer>
 <script>

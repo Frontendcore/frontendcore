@@ -5,40 +5,47 @@
 
 {% block fullmain %}
     <div id="landing" class="grid landing">
-        <div class="col-2-5">
+        <div class="col-3-5 col-t-2-3 col-bm-2-3">
             <div class="box-none">
                 <img src="{{ url.static }}img/logo-frontendcore-leitmotiv-bn.png" class="mt-s mb-l" width="380px" alt="Frontencore: The frontend framework for the real life" />
-                <p class="c-foreground ml-l">The web is growing so fast and there is always new plugins, tendencies and even more devices making the full process more complex and slow. Frontend Core, <strong>a mix of technology that make us 500% productive and be prepared for the future.</strong></p>
-                <p class="pt-l ml-l"><a href="setup/download.html" class="button-ok button-fat icon-download pv-m ta-l">Download<br/><span class="fz-s fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;Release {{ version }}</span></a> <a href="setup/getting-started.html" class="button-primary button-fat pv-m icon-file ta-l">Read the Docs <br/><span class="fz-s fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;&nbsp;How to & Demos</span></a></p>
+                <p class="c-foreground mh-m mb-xl">The web is growing so fast and there is always new plugins, tendencies and even more devices making the full process more complex and slow. Frontend Core, <strong>a mix of technology that make us 500% productive and be prepared for the future.</strong></p>
+                <div class="grid">
+                    <div class="col-1-2 col-bm-1-1">
+                        <a href="setup/download.html" class="button-ok button-fat icon-download pv-m ta-c w-100">Download<br/><span class="fz-s fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;Release {{ version }}</span></a>
+                    </div>
+                    <div class="col-1-2 col-bm-1-1">
+                        <a href="setup/getting-started.html" class="button-primary button-fat pv-m icon-file ta-c w-100">Read the Docs <br/><span class="fz-s fw-n pl-l d-ib">&nbsp;&nbsp;&nbsp;&nbsp;How to & Demos</span></a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-3-5">
+        <div class="col-2-5 col-t-1-3 col-bm-1-3 tablet desktop">
             &nbsp;
         </div>
     </div>
     <div id="features" class="grid ta-c">
-        <div class="col-1-4">
+        <div class="col-1-4 col-bm-1-2">
             <section class="box-none">
                 <img src="{{ url.static }}img/web-components.png" />
                 <h2 class="fw-n">Web components</h2>
                 <p>Based on the <a href="http://bradfrostweb.com/blog/post/atomic-web-design/" target="_blank">atomic design concept</a>, FrontendCore provides you <strong>patterns, objects & modifiers</strong> to create complex designs based on the markup.</p>
             </section>
         </div>
-        <div class="col-1-4">
+        <div class="col-1-4 col-bm-1-2">
             <section class="box-none">
                 <img src="{{ url.static }}img/mobile-responsive.png" />
                 <h2 class="fw-n">Responsive interface</h2>
                 <p>All the components are mobile first to make you site mobile from day 1 and is compatible with IE8+,FF,CH, SF with progressive enhancement techniques.</p>
             </section>
         </div>
-        <div class="col-1-4">
+        <div class="col-1-4 col-bm-1-2">
             <section class="box-none">
                 <img src="{{ url.static }}img/scalable-javascript.png" />
                 <h2 class="fw-n">Scalable Javascript</h2>
                 <p>Based on <strong><a href="https://github.com/mawrkus/tinycore" target="_blank">TinyCore</a></strong> and <strong><a href="http://requirejs.org/" target="_blank">RequireJS</a></strong>, loads and execute <strong>AMD modules</strong> based on the markup providing an incredible balance between easy of use and performance. </p>
             </section>
         </div>
-        <div class="col-1-4">
+        <div class="col-1-4 col-bm-1-2">
             <section class="box-none">
                 <img src="{{ url.static }}img/easy-interface.png" />
                 <h2 class="fw-n">Easy User Interface</h2>
@@ -51,7 +58,7 @@
     <div class="box-background">
         <h2>CSS technologies includes:</h2>
         <div class="grid">
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://sass-lang.com/" target="_blank">
                         <img src="../static/img/logo-sass.gif" class="w-100"/>
@@ -59,7 +66,7 @@
                     <p><strong>Sass</strong> is a css preprocessor. CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass lets you use features that don't exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://compass-style.org/" target="_blank">
                         <img src="../static/img/logo-compass.gif" class="w-100"/>
@@ -67,7 +74,7 @@
                     <p><strong>Compass</strong> is an open-source CSS authoring framework which uses the Sass stylesheet language to make writing stylesheets powerful and easy. Experience cleaner markup without presentational classes. Compass mixins make CSS3 easy.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://susy.oddbird.net/" target="_blank">
                         <img src="../static/img/logo-susy.gif" class="w-100"/>
@@ -75,7 +82,7 @@
                     <p><strong>Sussy</strong> is a grid math system for sass. In a world of agile development and super-tablet-multi-magic-laptop-phones, the best layouts can’t be contained in a single framework or technique. CSS Libraries are a bloated mess of opinions about how to do your job. Why let the table-saw tell you where to put the kitchen?</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://bower.io/" target="_blank">
                         <img src="../static/img/logo-sassdoc.gif" class="w-100"/>
@@ -88,7 +95,7 @@
     <div class="box-background">
         <h2>Javascript technologies includes:</h2>
         <div class="grid">
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://jquery.com/" target="_blank">
                         <img src="../static/img/logo-jquery.gif" class="w-100"/>
@@ -96,7 +103,7 @@
                     <p><strong>jQuery</strong> is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://zeptojs.com/" target="_blank">
                         <img src="../static/img/logo-zepto.gif" class="w-100"/>
@@ -104,7 +111,7 @@
                     <p><strong>Zepto</strong> is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API. If you use jQuery, you already know how to use Zepto.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://requirejs.org/" target="_blank">
                         <img src="../static/img/logo-requirejs.gif" class="w-100"/>
@@ -112,7 +119,7 @@
                     <p><strong>RequireJS</strong> is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://requirejs.org/" target="_blank">
                         <img src="../static/img/logo-jasmine.gif" class="w-100"/>
@@ -125,7 +132,7 @@
     <div class="box-background">
         <h2>Workspace enviroment includes:</h2>
         <div class="grid">
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://nodejs.org/" target="_blank">
                         <img src="../static/img/logo-nodejs.gif" class="w-100"/>
@@ -133,7 +140,7 @@
                     <p><strong>Node.js</strong> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://gruntjs.com/" target="_blank">
                         <img src="../static/img/logo-grunt.gif" class="w-100"/>
@@ -141,7 +148,7 @@
                     <p><strong>Grunt</strong> is in one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://yeoman.io/" target="_blank">
                         <img src="../static/img/logo-yo.gif" class="w-100"/>
@@ -149,7 +156,7 @@
                     <p><strong>Yeoman</strong> helps you to kickstart new projects, prescribing best practices and tools to help you stay productive. To do so, we provide a generator ecosystem. A generator is basically a plugin that can be run with the `yo` command to scaffold complete projects or useful parts.</p>
                 </div>
             </div>
-            <div class="col-1-4">
+            <div class="col-1-4 col-bm-1-2">
                 <div class="box-none">
                     <a href="http://bower.io/" target="_blank">
                         <img src="../static/img/logo-bower.gif" class="w-100"/>

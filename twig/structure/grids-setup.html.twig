@@ -1,0 +1,34 @@
+{% set current_children = "Grids setup" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1 class="mr-l"><span class="label-css fz-xl va-m">CSS</span> Grids setup</h1>
+    <div class="box-background">
+        <p class="mb-n">The grids in Frontendcore are totally configurable, you've got several columns options and you can overwrite the map $grid to personalize it:</p>
+    <pre>
+	<code data-fc-modules="code" class="hljs scss">
+        $grid: (
+        container-width: 1140px,
+        // Defines the max width of the container. Could be px or %.
+
+        gutters: .50,
+        // Defines the width of the space between columns. Should be relative.
+
+        flow: ltr,
+        // Defines how to flow left to right (ltr) or Right to left (rtl)
+
+        container-position: center
+        // Defines the position of the container (left,center or right)
+
+        ) !global;
+    </code>
+</pre>
+        <p>By default the grid is set to 98% and modifies the with and position of the columns depending on the resolution of the device. Reduce and maximize this page to see it in action.</p>
+        <p>The <strong class="c-primary">.grid-main</strong> class should be only added in the main grid of your page (usually called #container"). This class will add some paddings depending on the device you are.</p>
+        <p>If you want to create fixed layouts (very useful for admin panels) add the <strong class="c-primary">.grid-fixed</strong> class to your main grid container.</p>
+    </div>
+{% endblock %}

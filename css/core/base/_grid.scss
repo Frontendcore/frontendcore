@@ -7,7 +7,7 @@ $susy: (
 	global-box-sizing: border-box,
 	flow: map-get($grid, flow),
 	container-position: map-get($grid, container-position),
-	columns: 1 1 2 3 4 5 12,
+	columns: 1 2 3 4 5 12,
 	gutters: map-get($grid, gutters),
 	use-custom: (
 			box-sizing: false,
@@ -22,24 +22,115 @@ $susy: (
 		@include container(map-get($grid, container-width));
 	}
 
+	.grid-custom {
+		position: relative;
+		transition: left 300ms ease, right 300ms ease !important;
+		@include container(map-get($grid, container-width));
+	}
+
 	.grid-main {
 		@if map-get($grid, container-width) != 100% {
 			padding: 0 $spacing/4;
 		}
 	}
 
-	[class*='col-']:last-of-type,
-	.col-1-3:nth-child(3n+0),
-	.col-1-4:nth-child(4n+0),
-	.col-1-5:nth-child(5n+0),
-	.col-1-12:nth-child(12n+0), {
-		margin-right: 0;
+	.grid {
+		& > {
+			[class*='col-']:last-of-type,
+			.col-1-3:nth-child(3n+0),
+			.col-1-4:nth-child(4n+0),
+			.col-1-5:nth-child(5n+0),
+			.col-1-12:nth-child(12n+0), {
+				margin-right: 0;
+			}
+		}
 	}
 
 	[class*='col-'] {
 		overflow: hidden;
 	}
 
+}
+
+@mixin base-grid( $suffix ) {
+	.col-#{$suffix}-1-1 {
+		@include span(12 of 12);
+	}
+	.col-#{$suffix}-2-3, .col-#{$suffix}-8-12 {
+		@include span(8 of 12);
+	}
+
+	.col-#{$suffix}-1-2, .col-#{$suffix}-6-12, .col-#{$suffix}-2-4 {
+		@include span(6 of 12);
+	}
+
+	.col-#{$suffix}-1-3, .col-#{$suffix}-4-12 {
+		@include span(4 of 12);
+	}
+
+	.col-#{$suffix}-1-4, .col-#{$suffix}-3-12 {
+		@include span(3 of 12);
+	}
+
+	.col-#{$suffix}-1-5 {
+		@include span(2 of 10);
+	}
+
+	.col-#{$suffix}-2-5 {
+		@include span(4 of 10);
+	}
+
+	.col-#{$suffix}-3-5 {
+		@include span(6 of 10);
+	}
+
+	.col-#{$suffix}-4-5 {
+		@include span(8 of 10);
+	}
+
+	.col-#{$suffix}-1-12 {
+		@include span(1 of 12);
+	}
+
+	.col-#{$suffix}-2-12 {
+		@include span(2 of 12);
+	}
+
+	.col-#{$suffix}-11-12 {
+		@include span(11 of 12);
+	}
+
+	.col-#{$suffix}-10-12 {
+		@include span(10 of 12);
+	}
+
+	.col-#{$suffix}-9-12, .col-#{$suffix}-3-4 {
+		@include span(9 of 12);
+	}
+
+	.col-#{$suffix}-5-12 {
+		@include span(5 of 12);
+	}
+
+	.col-#{$suffix}-7-12 {
+		@include span(7 of 12);
+	}
+
+	.grid {
+		& > {
+			.col-#{$suffix}-1-2:nth-child(2n+0),
+			.col-#{$suffix}-1-3:nth-child(3n+0),
+			.col-#{$suffix}-1-4:nth-child(4n+0),
+			.col-#{$suffix}-1-5:nth-child(5n+0),
+			.col-#{$suffix}-1-12:nth-child(12n+0), {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.col-#{$suffix}-last {
+		margin-right: 0;
+	}
 }
 
 @mixin desktop-grid() {
@@ -119,9 +210,12 @@ $susy: (
 		margin-right: 0;
 	}
 
+	@include base-grid('d');
+
 }
 
 @mixin grid-fixed() {
+
 	.grid-fixed {
 
 		& > [class*='col-'] {
@@ -236,6 +330,17 @@ $susy: (
 		margin-left: $spacing;
 		margin-right: 0;
 	}
+	@include base-grid('t');
 }
 
-@mixin mobile-grid() {  }
+@mixin phablet-grid() {
+	@include base-grid('p');
+}
+
+@mixin mobile-grid() {
+	@include base-grid('m');
+}
+
+.col-last {
+	margin-right: 0;
+}

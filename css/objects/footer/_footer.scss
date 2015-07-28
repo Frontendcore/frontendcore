@@ -1,9 +1,32 @@
 .footer {
-	@extend %header-footer;
-	background: $color-foreground;
-	margin: $spacing*4 0 0;
-
+	& {
+		@extend %header-footer;
+		background: $color-foreground;
+		margin: $spacing*4 0 0;
+		background-image: url('/static/img/bg-landing.jpg');
+		background-repeat: no-repeat;
+		background-position: top left;
+		background-size: cover;
+		text-align: left;
+		border-top: 4px solid $color-primary;
+	}
+	.grid {
+		background: rgba(0,0,0,.6);
+	}
 	img {
 		max-width: 250px;
+	}
+	.col-2-4:last-of-type {
+		text-align: center;
+		padding-top: $spacing;
+	}
+}
+
+
+@media screen and (min-width: 980px){
+	.footer {
+		.col-2-4:last-of-type {
+			padding-top: 45px;
+		}
 	}
 }

@@ -9,7 +9,7 @@
 		.header-mobile-container {
 			background: $color-primary;
 			overflow: hidden;
-			text-align: center;
+			text-align: left;
 			position: fixed;
 			z-index: 100;
 			width: 100%;
@@ -19,6 +19,7 @@
 		.logo {
 			& {
 				display: inline-block;
+				vertical-align: middle;
 			}
 			img {
 				max-height: 43px;
@@ -29,19 +30,24 @@
 			background: none;
 			color: contrast-color($color-primary);
 			margin: 0;
+			padding-left: $spacing/2;
+			padding-right: $spacing/2;
 		}
 	}
 
 	.header-mobile-buttons-left {
 		display: inline-block;
 		vertical-align: middle;
-		float: left;
+		border-right: 1px solid rgba(255,255,255,.5);
+		margin-right: $spacing/2;
 	}
 
 	.header-mobile-buttons-right {
 		display: inline-block;
 		vertical-align: middle;
 		float: right;
+		border-left: 1px solid rgba(255,255,255,.5);
+		margin-left: $spacing/2;
 	}
 
 

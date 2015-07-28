@@ -21,7 +21,6 @@ module.exports = function (grunt) {
 		'copy:workspace',
 		'twigRender',
 		'sass',
-		'grunt:clean_sassdoc',
 		'sassdoc',
 		'newer:cssmin',
 		'concurrent:templates',
@@ -63,7 +62,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'twig',
 		'sass',
-		'grunt:clean_sassdoc',
 		'sassdoc',
 		'newer:cssmin',
 		'concurrent:templates',

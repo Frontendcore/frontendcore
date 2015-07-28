@@ -82,9 +82,17 @@
       "href": "#structure",
       "id": "structure",
       "children": {
-        "Grids": {
-          "name": "Grids",
-          "href": "grids.html"
+        "SetupGrid": {
+          "name": "Grids setup",
+          "href": "grids-setup.html"
+        },
+        "AutoGrids": {
+          "name": "Autoresponsive grids",
+          "href": "grids-autoresponsive.html"
+        },
+        "CustomGrids": {
+          "name": "Custom responsive grids",
+          "href": "grids-customresponsive.html"
         },
         "CenterBox": {
           "name": "Center box",

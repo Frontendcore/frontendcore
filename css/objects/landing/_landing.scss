@@ -6,11 +6,12 @@
 		background-position: bottom right;
 		background-size: cover;
 		color: $color-background;
-		min-height: 500px;
 		max-width: 100%;
 		overflow: hidden;
 	}
-
+	.col-3-5 {
+		background-color: rgba(255,255,255,.8);
+	}
 	h2 {
 		font-weight: bold !important;
 		font-size: $font-size-xxxl !important;

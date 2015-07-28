@@ -1,0 +1,86 @@
+{% set current_children = "Custom responsive grids" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h1 class="mr-l"><span class="label-css fz-xl va-m">CSS</span> Custom responsive Grids</h1>
+    <p>The custom responsive grids can be used standalon or in combination with the autoresponsive grids. The idea is to use the same col system classes that have the autogrids but that will work only in custom devices. The name of the class is the same but including an acronym of the device. Check the following examples:</p>
+    <table class="table" data-fc-modules="table-responsive">
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Acronym</th>
+                <th>Class example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mobile</td>
+                <td>m</td>
+                <td>.col-m-1-2</td>
+            </tr>
+            <tr>
+                <td>Phablet (Big mobile)</td>
+                <td>p</td>
+                <td>.col-p-1-2</td>
+            </tr>
+            <tr>
+                <td>Tablet</td>
+                <td>t</td>
+                <td>.col-t-1-2</td>
+            </tr>
+            <tr>
+                <td>Desktop</td>
+                <td>d</td>
+                <td>.col-d-1-2</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Check the following example to a better understanding:</p>
+    <h2 class="mt-l">Desktop 4 columns, tablet 2 columns, Phablet (Big mobile) 2 columns, mobile 1 column</h2>
+    {{ demos.demo(
+        'advance-1',
+        '../_demos/grids/advance-1.html'
+    )}}
+    <p>When you combine custom grids, it's very common that they are not wrapped correctly inside "grid" layers. For this purposes you will need to setup the "grid" layer as "grid-custom" and also to add a class to identify is the last column in the desired device with the following classes:</p>
+    <table class="table" data-fc-modules="table-responsive">
+        <thead>
+        <tr>
+            <th>Device</th>
+            <th>Acronym</th>
+            <th>Last col class</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Mobile</td>
+            <td>m</td>
+            <td>.col-m-last</td>
+        </tr>
+        <tr>
+            <td>Phablet (Big mobile)</td>
+            <td>p</td>
+            <td>.col-p-last</td>
+        </tr>
+        <tr>
+            <td>Tablet</td>
+            <td>t</td>
+            <td>.col-t-last</td>
+        </tr>
+        <tr>
+            <td>Desktop</td>
+            <td>d</td>
+            <td>.col-d-last</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>Check the following example to a better understanding:</p>
+    <h2 class="mt-l">Desktop 5 columns, tablet 3 columns + 2 column, Phablet (Big mobile) 2 columns + 2 columns + 1 column, mobile 1 column</h2>
+    {{ demos.demo(
+        'advance-2',
+        '../_demos/grids/advance-2.html'
+    )}}
+{% endblock %}
