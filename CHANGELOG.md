@@ -1,5 +1,9 @@
 ## Change Log
 
+### 1.7.6 (2015/08/10 15:03 +00:00)
+- [659faf0](https://github.com/Frontendcore/frontendcore/commit/659faf01d740f01978d20c012499623e82b347fc) New Grid custom system and improved header mobile. Release version 1.7.5 ! (@tonipinel)
+- [f959d19](https://github.com/Frontendcore/frontendcore/commit/f959d19f51c1773b240082dc6538a63b6b534b16) Sortable content serialize now is recursive. Release version 1.7.6 ! (@tonipinel)
+
 ### 1.7.5 (2015/07/28 10:21 +00:00)
 - [08b0bf1](https://github.com/Frontendcore/frontendcore/commit/08b0bf11d337e05f3a75b07e5331d48d1c944ccb) New UI component: Select with search. Release version 1.7.4 ! (@tonipinel)
 - [74e1512](https://github.com/Frontendcore/frontendcore/commit/74e15121feccd83d57d86ce79293f259aa919e66) Updated sassdoc to last version (@tonipinel)
@@ -144,11 +148,6 @@
 - [6621a37](https://github.com/Frontendcore/frontendcore/commit/6621a372595df4b4068704c92e4bdcd0d68420de) Bug fixing on IEgru. Release version1.5.6 ! (@tonipinel)
 
 ### 1.5.5 (2015/02/24 14:31 +00:00)
-- [223a678](https://github.com/Frontendcore/frontendcore/commit/223a678df193a53eee077295c84e344f4556fd5d) Added new balloon object (@tonipinel)
-- [920209a](https://github.com/Frontendcore/frontendcore/commit/920209ad5cbd76d6d84bb5df83676bbb90499ae0) delete comments with warning on sassdoc and improved indentation of template (@tonipinel)
-- [e67b800](https://github.com/Frontendcore/frontendcore/commit/e67b800a266fa316d2f903d978a2d84154e5bc7d) Added new object balloons. Release version1.5.5 ! (@tonipinel)
-
-### 1.5.4 (2015/02/24 08:53 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -232,6 +231,9 @@
 - [1aef93b](https://github.com/Frontendcore/frontendcore/commit/1aef93b831e024c10abcd661675620aac39803dc) Bug fixes on navigation. Release version1.5.3 ! (@tonipinel)
 - [7d82cba](https://github.com/Frontendcore/frontendcore/commit/7d82cbaffa14785fa1cfc8704eae061a2b878295) Fixed bug on notification mediator and improved design of notifications (@tonipinel)
 - [f04a97e](https://github.com/Frontendcore/frontendcore/commit/f04a97e6ad76bf351703a827b1673682e2437dda) Bug fixes on notifications. Release version1.5.4 ! (@tonipinel)
+- [223a678](https://github.com/Frontendcore/frontendcore/commit/223a678df193a53eee077295c84e344f4556fd5d) Added new balloon object (@tonipinel)
+- [920209a](https://github.com/Frontendcore/frontendcore/commit/920209ad5cbd76d6d84bb5df83676bbb90499ae0) delete comments with warning on sassdoc and improved indentation of template (@tonipinel)
+- [e67b800](https://github.com/Frontendcore/frontendcore/commit/e67b800a266fa316d2f903d978a2d84154e5bc7d) Added new object balloons. Release version1.5.5 ! (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
