@@ -192,36 +192,25 @@
 				return sValue;
 
 			},
-			serialize: function( oTarget ) {
+			getSubTree: function( $Target ) {
 
 				var oTree = {},
-					sTargetId = $(oTarget).attr('id'),
-					sId,
-					sName;
+					self = this;
 
-				$('#' + sTargetId + '> li').each(function( nIndex ){
-
-					sId = this.id;
-
-					oTree[nIndex] = {
-						order: nIndex + 1,
+				$Target.each(function (nLi) {
+					oTree[nLi] = {
+						order: nLi + 1,
 						id: this.getAttribute('data-fc-id') !== null ? this.getAttribute('data-fc-id') : this.id,
 						name: this.getAttribute('data-fc-name') !== null ? this.getAttribute('data-fc-name') : this.id,
-						subtree: {}
+						subtree: self.getSubTree( $(this).find('> ul').find('> li') )
 					};
-
-
-					$('li', this).each(function (nLi) {
-						oTree[nIndex].subtree[nLi] = {
-							order: nLi + 1,
-							id: this.getAttribute('data-fc-id') !== null ? this.getAttribute('data-fc-id') : this.id,
-							name: this.getAttribute('data-fc-name') !== null ? this.getAttribute('data-fc-name') : this.id
-						};
-					});
-
 				});
 
 				return oTree;
+			},
+			serialize: function( oTarget ) {
+
+				return this.getSubTree( $('#' + oTarget.id + '> li') );
 
 			},
 			fillInput : function(sInput, oReturn) {
