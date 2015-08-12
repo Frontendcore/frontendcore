@@ -202,7 +202,7 @@
 						order: nLi + 1,
 						id: this.getAttribute('data-fc-id') !== null ? this.getAttribute('data-fc-id') : this.id,
 						name: this.getAttribute('data-fc-name') !== null ? this.getAttribute('data-fc-name') : this.id,
-						subtree: self.getSubTree( $(this).find('> ul').find('> li') )
+						subtree: self.getSubTree( $(this).find('> ol').find('> li') )
 					};
 				});
 

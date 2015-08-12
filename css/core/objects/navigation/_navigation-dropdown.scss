@@ -1,6 +1,125 @@
 @if $object-navigation != false and $ui != true {
 
-	.navigation-dropdown {
+	.navigation {
+		li[data-fc-depth="1"] {
+			& >  a {
+				& {
+
+				}
+				&:hover {
+					background: rgba(255,255,255,.2);
+				}
+			}
+			&.js-navigation-dropdown-opened {
+				& >  a {
+					& {
+						background: $color-background;
+						color: $color-foreground;
+					}
+				}
+				&:after {
+					display: none;
+				}
+			}
+		}
+		li[data-fc-depth="2"] {
+			& >  a {
+				& {
+					background: $color-background;
+					color: $color-foreground;
+				}
+				&:hover {
+					background: $color-primary;
+					color: contrast-color($color-primary);
+				}
+			}
+			&.js-navigation-dropdown-opened {
+				& >  a {
+					& {
+						background: rgba($color-primary, .1);
+						color: $color-foreground;
+					}
+					&:hover {
+						background: $color-primary;
+						color: contrast-color($color-primary);
+					}
+				}
+			}
+		}
+		li[data-fc-depth="3"] {
+			& >  a {
+				& {
+					background: rgba($color-primary, .1);
+					color: $color-foreground;
+				}
+				&:hover {
+					background: $color-primary;
+					color: contrast-color($color-primary);
+				}
+			}
+			&.js-navigation-dropdown-opened {
+				& >  a {
+					& {
+						background: rgba($color-primary, .1);
+						color: $color-foreground;
+					}
+					&:hover {
+						background: $color-primary;
+						color: contrast-color($color-primary);
+					}
+				}
+			}
+		}
+		li[data-fc-depth="4"] {
+			& >  a {
+				& {
+					background: rgba($color-primary, .2);
+					color: $color-foreground;
+				}
+				&:hover {
+					background: $color-primary;
+					color: contrast-color($color-primary);
+				}
+			}
+			&.js-navigation-dropdown-opened {
+				& >  a {
+					& {
+						background: rgba($color-primary, .2);
+						color: $color-foreground;
+					}
+					&:hover {
+						background: $color-primary;
+						color: contrast-color($color-primary);
+					}
+				}
+			}
+		}
+	}
+	.navigation-vertical {
+		&[data-fc-modules="dropdown"] {
+			padding: 2px;
+		}
+		.js-navigation-dropdown {
+			&:after {
+				content: $fa-var-angle-right;
+			}
+			& > ul {
+				top: 0;
+			}
+		}
+	}
+	.navigation-sub {
+		.js-navigation-dropdown {
+			&:after {
+				top: $spacing/2;
+			}
+		}
+	}
+
+	.js-navigation-dropdown {
+		& {
+			position: relative;
+		}
 		& > a {
 			padding-right: $spacing !important;
 			margin-bottom: 0;
@@ -8,41 +127,43 @@
 		&:after {
 			@extend .#{$fa-css-prefix} !optional;
 			content: $fa-var-angle-down;
-			color: $color-background;
 			position: absolute;
-			@if map-get($object-navigation-vars, style) == 'tabbed' {
-				top: $spacing;
-				right: $spacing/3;
-			} @else {
-				top: $spacing/1.5;
-				right: $spacing/3;
+			top: $spacing/1.5;
+			right: $spacing/3;
+		}
+		.js-navigation-dropdown {
+			&:after {
+				content: $fa-var-angle-right;
+				top: $spacing/2;
 			}
 		}
-		.opened {
-			background: rgba($color-background, .5);
-		}
 		ul {
-			display: none;
-			position: absolute !important;
-			right: 0;
-			margin-top: 0;
-			background: map-get($object-navigation-vars, background-color);
-			@include box-shadow(0 0 $spacing/2 rgba($color-foreground, .25));
-			@include border-radius(0 0 map-get($object-navigation-vars, border-radius) map-get($object-navigation-vars, border-radius));
+			& {
+				display: none;
+				min-width: 150px;
+				background: $color-background !important;
+				position: absolute !important;
+				left: $spacing/8;
+				margin-top: 0;
+				@include box-sizing(border-box);
+				@include box-shadow($spacing/8 $spacing/8 $spacing/4 rgba($color-foreground, .3));
+				@include border-radius(0 0 map-get($object-navigation-vars, border-radius) map-get($object-navigation-vars, border-radius));
+			}
+			ul {
+				top: 0;
+			}
 		}
 		li {
 			& {
 				display: block;
+				position: relative;
 			}
 			a {
-				& {
-					margin: 0;
-					@include border-radius(0);
-				}
-				&:hover {
-					background: contrast-color(map-get($object-navigation-vars, background-color));
-				}
+				margin: 0;
+				@include border-radius(0);
+				white-space: nowrap;
 			}
 		}
 	}
+
 }
