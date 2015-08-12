@@ -1,7 +1,7 @@
 @mixin mobile-core {
 
 	@if $ui != true {
-		.desktop, .tablet {
+		.desktop, .tablet, .phablet {
 			& {
 				display: none;
 			}

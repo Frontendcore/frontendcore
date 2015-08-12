@@ -2,7 +2,7 @@
 
 	@if $ui != true {
 
-		.mobile, .tablet {
+		.mobile, .tablet, .phablet {
 			& {
 				display: none;
 			}

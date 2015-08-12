@@ -1,7 +1,7 @@
 @mixin phablet-core {
 
 	@if $ui != true {
-		.desktop, .tablet {
+		.desktop, .tablet, .mobile {
 			& {
 				display: none;
 			}
@@ -9,7 +9,7 @@
 				display: none !important;
 			}
 		}
-		.mobile {
+		.phablet {
 			& {
 				display: block !important;
 			}
@@ -18,7 +18,7 @@
 			}
 		}
 
-		td.mobile, th.mobile {
+		td.phablet, th.phablet {
 			display: table-cell !important;
 		}
 

@@ -1,6 +1,6 @@
 @mixin tablet-core {
 	@if $ui != true {
-		.desktop, .mobile {
+		.desktop, .mobile, .phablet {
 			& {
 				display: none;
 			}
