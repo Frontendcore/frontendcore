@@ -13,6 +13,7 @@
 		padding: map-get($object-forms-vars, field-padding);
 		border: map-get($object-forms-vars, field-border);
 		background: map-get($object-forms-vars, field-background);
+		color: map-get($object-forms-vars, field-color);
 		@include border-radius( map-get($object-forms-vars, field-border-radius));
 		@include box-sizing(border-box);
 		@include box-shadow(map-get($object-forms-vars, field-box-shadow))
@@ -21,8 +22,8 @@
 		@extend %focus;
 	}
 	&.error {
-		background: rgba($color-ko, .1);
-		border: 1px solid $color-ko;
+		background: map-get($object-forms-vars, field-error-background);
+		border: 1px solid map-get($object-forms-vars, field-error-border);
 	}
 }
 
