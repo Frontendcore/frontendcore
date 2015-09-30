@@ -1,5 +1,12 @@
 ## Change Log
 
+### 1.7.10 (2015/09/30 14:22 +00:00)
+- [8117705](https://github.com/Frontendcore/frontendcore/commit/8117705ee6992c9263396c3052a723091659f324) Improved image-zoom UI component and two new label colors. Release version 1.7.10 ! (@tonipinel)
+
+### 1.7.9 (2015/08/21 04:37 +00:00)
+- [b9fb04e](https://github.com/Frontendcore/frontendcore/commit/b9fb04ea05e772da9da70f5389cc33f9be50c066) New navigations dropdowns component with 4 levels, and phablet class to show only on phablets. Release version 1.7.8 ! (@tonipinel)
+- [b777cc1](https://github.com/Frontendcore/frontendcore/commit/b777cc1f68aabe6e756947427aed23b60064750c) Bug fixing on object forms. Release version 1.7.9 ! (@tonipinel)
+
 ### 1.7.8 (2015/08/12 10:57 +00:00)
 - [4b977ce](https://github.com/Frontendcore/frontendcore/commit/4b977ce0ffa5fbeb0b0f07f5a1107bae206102ff) Sortable content serialize now is recursive. Release version 1.7.6 ! (@tonipinel)
 - [e616ecb](https://github.com/Frontendcore/frontendcore/commit/e616ecbd6de527c95738576139c0a2a85170fc18) Navigation dropdown improved with 4 levels of dropdown, on mouseover or click (@tonipinel)
@@ -143,13 +150,6 @@
 - [7ad7d2d](https://github.com/Frontendcore/frontendcore/commit/7ad7d2d33f9a7db1b2aec0cf41e8384d4cbcefe9) Show message in charts when all data is zero. Release version1.5.9 ! (@tonipinel)
 
 ### 1.5.8 (2015/02/26 12:12 +00:00)
-- [6662d14](https://github.com/Frontendcore/frontendcore/commit/6662d14e9c14d8cf6ea0b84d0c330aa7ba4e874b) Solved bugs on polyfills and markup error on tabs for IE9 (@tonipinel)
-- [3423efd](https://github.com/Frontendcore/frontendcore/commit/3423efd3526c8321709d4e4b5a37b3ce89a18f9f) Bug fixing on Polyfills for old browsers. Release version1.5.8 ! (@tonipinel)
-
-### 1.5.7 (2015/02/25 17:34 +00:00)
-- [fa08868](https://github.com/Frontendcore/frontendcore/commit/fa0886829fda6181302863481298fe52084bcae6) Bug fixing on IE. Release version1.5.7 ! (@tonipinel)
-
-### 1.5.6 (2015/02/25 17:29 +00:00)
 - [c13b784](https://github.com/Frontendcore/frontendcore/commit/c13b784d563767e224110c0f0c4c1f13b454ec14) Release version (@tonipinel)
 - [a16e6f0](https://github.com/Frontendcore/frontendcore/commit/a16e6f02ffc665250b223a103dceb53612a7a97e) Release version (@tonipinel)
 - [b54d03a](https://github.com/Frontendcore/frontendcore/commit/b54d03a14a2f0c7704c9fad56c11858db8cb8b45) Release version 1.3.2 (@tonipinel)
@@ -238,6 +238,9 @@
 - [e67b800](https://github.com/Frontendcore/frontendcore/commit/e67b800a266fa316d2f903d978a2d84154e5bc7d) Added new object balloons. Release version1.5.5 ! (@tonipinel)
 - [75d2879](https://github.com/Frontendcore/frontendcore/commit/75d287990d44585cbe166e56cfe0c0cef6bbe9e5) fixed minor bugs on IE10 with some UI components (@tonipinel)
 - [6621a37](https://github.com/Frontendcore/frontendcore/commit/6621a372595df4b4068704c92e4bdcd0d68420de) Bug fixing on IEgru. Release version1.5.6 ! (@tonipinel)
+- [fa08868](https://github.com/Frontendcore/frontendcore/commit/fa0886829fda6181302863481298fe52084bcae6) Bug fixing on IE. Release version1.5.7 ! (@tonipinel)
+- [6662d14](https://github.com/Frontendcore/frontendcore/commit/6662d14e9c14d8cf6ea0b84d0c330aa7ba4e874b) Solved bugs on polyfills and markup error on tabs for IE9 (@tonipinel)
+- [3423efd](https://github.com/Frontendcore/frontendcore/commit/3423efd3526c8321709d4e4b5a37b3ce89a18f9f) Bug fixing on Polyfills for old browsers. Release version1.5.8 ! (@tonipinel)
 
 ### v1.3.0 (2015/01/19 16:12 +00:00)
 - [45df8a2](https://github.com/Frontendcore/frontendcore/commit/45df8a2fee1c61e2612ec063ebfcc83594c4f01b) First Commit Frontendcore Workspace (@tonipinel)
