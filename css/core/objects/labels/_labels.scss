@@ -31,4 +31,12 @@
 		background: $color-warning;
 		color: rgba(contrast-color(darken($color-warning, 10%)), .8);
 	}
+	.label-primary {
+		background: $color-primary;
+		color: rgba(contrast-color(darken($color-primary, 10%)), .8);
+	}
+	.label-secondary {
+		background: $color-secondary;
+		color: rgba(contrast-color(darken($color-secondary, 10%)), .8);
+	}
 }

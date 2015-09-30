@@ -3,103 +3,72 @@
 
 	FrontendCore.define('image-zoom', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-			oDefault: {
-				zoom: 3,
-				zoomable: true
-			},
 			onStart: function () {
 
-				var aTargets = FrontendTools.getDataModules('image-zoom'),
-					self = this;
-
-				FrontendTools.loadCSS(this.sPathCss);
+				var aTargets = FrontendTools.getDataModules('image-zoom');
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'image-zoom');
 
+				$.fn.imageZoom = function(){
 
-				$(aTargets).each(function (nIndex) {
-					self.autobind(this, nIndex);
-				});
+					return this.each(function() {
 
-			},
-			autobind: function (oTarget, nIndex) {
+						var subject = $(this); /* Get the subject element (AS canvas). */
 
-				var oImg = $('img', oTarget)[0];
+						var image_obj = $('img', subject);
+						var image = image_obj.attr('src');
+						var image_w = image_obj.outerWidth();
+						var image_h = image_obj.outerHeight();
 
-				if (oImg.id === '') {
-					oImg.id = 'zoom-image-' + nIndex;
-				}
+						/* Fit subject with the width and height of the default image. */
+						subject.css('width', image_w).css('height', image_h).css('display','block').css('overflow', 'hidden');
 
-				$(oTarget).addClass('magnifier-thumb-wrapper');
+						/* Position the default image. */
+						image_obj.css('position', 'relative').css({ top: 0, left: 0 });
 
-				var self = this,
-					oSettings,
-					oOptions = {},
-					oPreview = document.createElement('div'),
-					sIdPreview = oImg.id + '-preview',
-					nWidth = '350px',
-					nHeight = '350px',
-					oOffset = $(oImg).offset();
+						$('a', subject).bind('click onclick', function(event) {
+							event.preventDefault(); /* Disable clicking of a. */
+						});
 
-				if (oTarget.getAttribute("data-fc-width") !== null) {
-					nWidth = oTarget.getAttribute("data-fc-width").replace('px','') + 'px';
-				}
+						var image_zoom = subject.attr('href'); // Get the large image.
+						var image_zoom_w = 0;
+						var image_zoom_h = 0;
+						var image_zoom_obj = new Image() ;
 
-				if (oTarget.getAttribute("data-fc-height") !== null) {
-					nHeight= oTarget.getAttribute("data-fc-height").replace('px','') + 'px';
-				}
+						$(image_zoom_obj).on('load', function() {
 
-				oPreview.id = sIdPreview;
-				oPreview.style.width = nWidth;
-				oPreview.style.height = nHeight;
-				oPreview.style.top = oOffset.top + 'px';
+							image_zoom_w = this.width;
+							image_zoom_h = this.height;
 
-				if (oTarget.getAttribute("data-fc-position") !== 'left') {
-					oPreview.style.left = ( oOffset.left + ( $(oImg).width() + 1 ) )  + 'px';
-				} else {
-					oPreview.style.right = oOffset.right + 'px';
-				}
+							/* Bind the subject element with these events. */
+							subject.bind('mousemove mouseout', function(event) {
 
-				oPreview.style.opacity = 0;
-				oPreview.className = "magnifier-preview";
+								if(event.type == 'mousemove') {
 
-				document.body.appendChild(oPreview);
+									/* @start: Will position the mouse inside the canvas only. */
+									var mouse_x = event.pageX - subject.offset().left;
+									var mouse_y = event.pageY - subject.offset().top;
+									/* @end: Will position the mouse inside the canvas only. */
 
-				$('#' + sIdPreview).hide('fast', function() { $(this).css('opacity','1'); });
+									var goto_x = (Math.round((mouse_x / image_w) * 100) / 100) * (image_zoom_w - image_w);
+									var goto_y = (Math.round((mouse_y / image_h) * 100) / 100) * (image_zoom_h - image_h);
 
-				oOptions.thumb = '#' + oImg.id;
-				oOptions.largeWrapper = sIdPreview;
+									image_obj.css('cursor', 'crosshair').attr('src', image_zoom).css({ left: '-' + goto_x +'px', top: '-' + goto_y +'px', "max-width": 'none'});
 
-				if (oTarget.getAttribute("data-fc-url") !== null) {
-					oOptions.large = oTarget.getAttribute("data-fc-url");
-				} else {
-					oOptions.large = oTarget.href;
-				}
+								} else if(event.type == 'mouseout') {
 
-				oOptions.onthumbenter = function() {
-					oOffset = $(oImg).offset();
+									image_obj.css('cursor', 'default').attr('src', image).css({ top: 0, left: 0, "max-width": 'none' });
+								}
+							});
+						});
 
-					$('#' + sIdPreview).fadeIn('fast').css({
-						"left" : ( oOffset.left + ( $(oImg).width() + 1 ) )  + 'px',
-						"top" :  oOffset.top + 'px'
+						$(image_zoom_obj).attr('src', image_zoom);
 					});
 				};
 
-				oOptions.onthumbleave= function() {
-					$('#' + sIdPreview).hide();
-				};
-
-				if (oOptions.large !== null ) {
-					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
-
-					var evt = new Event(),
-						m = new Magnifier(evt);
-
-					m.attach(oSettings);
-				}
-
-				FrontendTools.removeLoading(oTarget);
+				$(aTargets).each(function (nIndex) {
+					$(this).imageZoom();
+				});
 
 			},
 			onStop: function () {

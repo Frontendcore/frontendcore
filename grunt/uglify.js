@@ -25,8 +25,6 @@ module.exports = {
 				'js/base/_init.js'
 			],
 			'./../site/build/static/js/ui/image-zoom.js': [
-				'bower_components/magnifier/demo/Event.js',
-				'bower_components/magnifier/Magnifier.js',
 				'js/ui/image-zoom.js'
 			],
 			'./../site/build/static/js/ui/image-edit.js': [

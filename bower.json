@@ -1,6 +1,6 @@
 {
   "name": "frontendcore-workspace",
-  "version": "1.7.9",
+  "version": "1.7.10",
   "authors": [
     "Toni Pinel <tonipinel@gmail.com>"
   ],
@@ -41,7 +41,6 @@
     "magicsuggest": "~2.1.4",
     "chartjs": "~1.0.1",
     "SyntaxHighlighter": "~3.0.83",
-    "magnifier": "*",
     "darkroomjs": "*",
     "owl-carousel2": "~2.0.0-beta.3",
     "stacktable": "~1.0.0",
