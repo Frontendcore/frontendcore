@@ -53,11 +53,11 @@
 									var goto_x = (Math.round((mouse_x / image_w) * 100) / 100) * (image_zoom_w - image_w);
 									var goto_y = (Math.round((mouse_y / image_h) * 100) / 100) * (image_zoom_h - image_h);
 
-									image_obj.css('cursor', 'crosshair').attr('src', image_zoom).css({ left: '-' + goto_x +'px', top: '-' + goto_y +'px', "max-width": 'none'});
+									image_obj.css('cursor', 'crosshair').attr('src', image_zoom).css({ left: '-' + goto_x +'px', top: '-' + goto_y +'px'});
 
 								} else if(event.type == 'mouseout') {
 
-									image_obj.css('cursor', 'default').attr('src', image).css({ top: 0, left: 0, "max-width": 'none' });
+									image_obj.css('cursor', 'default').attr('src', image).css({ top: 0, left: 0 });
 								}
 							});
 						});

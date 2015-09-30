@@ -60,6 +60,14 @@
 		max-width: 100%;
 		height: auto;
 	}
+	a[data-fc-modules*="image-zoom"] {
+		&:hover {
+			img,
+			object {
+				max-width: none;
+			}
+		}
+	}
 
 	/* @endgroup HELPERS */
 
