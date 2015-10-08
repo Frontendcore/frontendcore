@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 	]);
 	grunt.registerTask('commit', [
 		'version',
-		'grunt:clean_site',
+		'clean',
 		'copy:workspace',
 		'twigRender',
 		'sass',
