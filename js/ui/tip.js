@@ -6,7 +6,13 @@
 			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			oDefault: {
 				contentAsHTML: true,
-				position: 'bottom'
+				position: 'bottom',
+				functionReady: function(origin, continueTooltip) {
+					$('body').css("overflow-x", "");
+				},
+				functionAfter: function(origin, continueTooltip) {
+					$('body').css("overflow-x", "");
+				}
 			},
 			onStart: function () {
 
