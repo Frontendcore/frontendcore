@@ -1,0 +1,3 @@
+@media screen and (min-width: 0 ) and ( max-width: map_get($breakpoints, 'xs' ) - 1 ){
+  @include screen-xs-core;
+}

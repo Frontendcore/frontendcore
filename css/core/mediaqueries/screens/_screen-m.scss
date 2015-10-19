@@ -1,0 +1,8 @@
+@mixin screen-m-core {
+
+  @if $ui != true {
+
+	@include screen-display-query('m');
+
+  }
+}

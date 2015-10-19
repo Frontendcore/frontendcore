@@ -1,0 +1,8 @@
+@mixin screen-xl-core {
+
+  @if $ui != true {
+
+	@include screen-display-query('xl');
+
+  }
+}

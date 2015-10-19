@@ -4,7 +4,7 @@
   "license": "Apache License, Version 2.0",
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
-  "version": "1.7.13",
+  "version": "1.7.14",
   "lastFeature": "Bug fixing on $spacing. %v% !",
   "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",

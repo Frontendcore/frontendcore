@@ -1,0 +1,4 @@
+@media screen and  (min-width: map_get($breakpoints, 'm' ) ) and (max-width: map_get($breakpoints, 'l' ) - 1) {
+
+	@include tablet-core;
+}

@@ -1,0 +1,8 @@
+@mixin screen-xxl-core {
+
+  @if $ui != true {
+
+	@include screen-display-query('xxl');
+
+  }
+}

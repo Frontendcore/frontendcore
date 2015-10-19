@@ -14,7 +14,7 @@ module.exports = {
 	},
 	options: {
 		sourceMap: true,
-		outputStyle: 'compressed',
+		outputStyle: 'expanded',
 		imagePath: "../",
 	}
 };

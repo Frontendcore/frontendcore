@@ -1,0 +1,17 @@
+@mixin tablet-core {
+	@if $ui != true {
+
+	  @include device-display-query('tablet');
+
+	  @if $object-boxes != false {
+			@include papa-boxes;
+		}
+
+		@include tablet-grid;
+		@include grid-fixed;
+
+		@include mobile-tabs;
+
+		@include mobile-header;
+	}
+}

@@ -1,0 +1,25 @@
+$breakpoints-default: (
+	xs : 250px,
+	s: 500px,
+	m: 800px,
+	l: 980px,
+	xl: 1280px,
+	xxl: 1440px
+) !global !default;
+
+$breakpoints-custom: () !global !default;
+$breakpoints: map-merge($breakpoints-default, $breakpoints-custom) !global;
+
+$screens-and-devices-default: (
+	xs : 'mobile',
+	s: 'mobile',
+	m: 'phablet',
+	l: 'tablet',
+	xl: 'desktop',
+	xxl: 'desktop'
+) !global !default;
+
+
+$screens-and-devices-custom: () !global !default;
+$screens-and-devices: map-merge($screens-and-devices-default, $screens-and-devices-custom) !global;
+
