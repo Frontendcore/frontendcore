@@ -3,39 +3,39 @@
 
 	FrontendCore.define('image-zoom', [], function () {
 
-		function ImageZoomInit( oTarget ) {
+		var fp = {
+			ImageZoomInit: function ( oTarget ) {
 
-			var sImageWidth = 0,
-				sImageHeight = 0,
-				oImageOriginal = oTarget.getElementsByTagName('img')[0],
-				sImageOriginalId= oImageOriginal.src.substring(oImageOriginal.src.lastIndexOf('/') + 1).replace('.','') + '_original';
+				var self = this,
+					sImageWidth = 0,
+					sImageHeight = 0,
+					oImageOriginal = oTarget.getElementsByTagName('img')[0],
+					sImageOriginalId= oImageOriginal.src.substring(oImageOriginal.src.lastIndexOf('/') + 1).replace('.','') + '_original';
 
-			oImageOriginal.id = sImageOriginalId;
+				oImageOriginal.id = sImageOriginalId;
 
-			var fTimerContainer = setInterval( function(){
+				var fTimerContainer = setInterval( function(){
 
-				if ( sImageWidth === 0 || sImageHeight === 0 ) {
-					sImageWidth = $(oImageOriginal).width();
-					sImageHeight = $(oImageOriginal).height();
+					if ( sImageWidth === 0 || sImageHeight === 0 ) {
+						sImageWidth = $(oImageOriginal).width();
+						sImageHeight = $(oImageOriginal).height();
 
-				} else {
-					imageZoomBind(oImageOriginal, oTarget,sImageWidth, sImageHeight, sImageOriginalId );
-					clearInterval(fTimerContainer);
-				}
-			}, 500);
+					} else {
+						self.imageZoomBind(oImageOriginal, oTarget,sImageWidth, sImageHeight, sImageOriginalId );
+						clearInterval(fTimerContainer);
+					}
+				}, 500);
 
-			$('a', oTarget).bind('click', function(event) {
-				event.preventDefault();
-			});
+				$('a', oTarget).bind('click', function(event) {
+					event.preventDefault();
+				});
 
-		}
+			},
+			setTargetHeight: function( oTarget, sImageWidth, sImageHeight ) {
 
-		function setTargetHeight( oTarget, sImageWidth, sImageHeight ) {
-
-			$(oTarget).css('width', sImageWidth).css('height', sImageHeight).css('display','block').css('overflow', 'hidden');
-		}
-
-		function ImageMouseMove( oTarget, event, oImageOriginal, oImageZoom ) {
+				$(oTarget).css('width', sImageWidth).css('height', sImageHeight).css('display','block').css('overflow', 'hidden');
+			},
+			ImageMouseMove: function( oTarget, event, oImageOriginal, oImageZoom ) {
 
 			var sImageZoomWidth = $(oImageOriginal).width(),
 				sImageZoomHeight = $(oImageOriginal).height(),
@@ -66,58 +66,57 @@
 			oImageZoom.style.left = goto_x.toString() +'px';
 
 
-		}
+			},
+			ImageMouseOut: function( oTarget, oImageOriginal ) {
 
-		function ImageMouseOut( oTarget, oImageOriginal ) {
+				oTarget.title = oTarget.getAttribute('data-fc-title');
+				oTarget.getElementsByTagName('img')[0].alt = oTarget.getElementsByTagName('img')[0].getAttribute('data-fc-alt');
 
-			oTarget.title = oTarget.getAttribute('data-fc-title');
-			oTarget.getElementsByTagName('img')[0].alt = oTarget.getElementsByTagName('img')[0].getAttribute('data-fc-alt');
+			},
+			imageZoomBind: function(oImageOriginal, oTarget, sImageWidth, sImageHeight, sImageOriginalId ) {
 
-		}
+				var self = this,
+					sHrefImageZoom = oTarget.href,
+					sImageZoomWidth = 0,
+					sImageZoomHeight = 0,
+					oImageZoomImg = document.createElement('img'),
+					oImageId = sHrefImageZoom.substring(sHrefImageZoom.lastIndexOf('/') + 1).replace('.', '') + '_zoom';
 
+				this.setTargetHeight(oTarget, sImageWidth, sImageHeight);
 
-		function imageZoomBind(oImageOriginal, oTarget, sImageWidth, sImageHeight, sImageOriginalId ) {
+				oImageZoomImg.src = sHrefImageZoom;
+				oImageZoomImg.id = oImageId;
+				oImageZoomImg.style.display = 'none';
+				oImageZoomImg.style.position = 'absolute';
 
-			var sHrefImageZoom = oTarget.href,
-				sImageZoomWidth = 0,
-				sImageZoomHeight = 0,
-				oImageZoomImg = document.createElement('img'),
-				oImageId = sHrefImageZoom.substring(sHrefImageZoom.lastIndexOf('/') + 1).replace('.','') + '_zoom';
+				oTarget.appendChild(oImageZoomImg);
 
-			setTargetHeight( oTarget,sImageWidth, sImageHeight );
+				var oImageZoom = document.getElementById(oImageId);
 
-			oImageZoomImg.src = sHrefImageZoom;
-			oImageZoomImg.id = oImageId;
-			oImageZoomImg.style.display = 'none';
-			oImageZoomImg.style.position = 'absolute';
+				/* Bind the oTarget element with these events. */
+				$(oTarget).bind('mousemove mouseout mouseenter', function (event) {
 
-			oTarget.appendChild(oImageZoomImg);
+					if (event.type == 'mousemove') {
 
-			var oImageZoom = document.getElementById(oImageId);
+						$('#' + sImageOriginalId + ':visible').hide();
+						$('#' + oImageId + ':hidden').show();
 
-			/* Bind the oTarget element with these events. */
-			$(oTarget).bind('mousemove mouseout mouseenter', function(event) {
+						self.ImageMouseMove(this, event, oImageOriginal, oImageZoom);
 
-				if(event.type == 'mousemove') {
+					} else if (event.type == 'mouseout') {
 
-					$('#' + sImageOriginalId + ':visible').hide();
-					$('#' + oImageId + ':hidden').show();
+						$('#' + oImageId + ':visible').hide();
+						$('#' + sImageOriginalId + ':hidden').fadeIn(100);
 
-					ImageMouseMove( this, event, oImageOriginal, oImageZoom );
+						self.ImageMouseOut(this, oImageOriginal);
 
-				} else if( event.type == 'mouseout' ) {
+					}
 
-					$('#' + oImageId + ':visible').hide();
-					$('#' + sImageOriginalId + ':hidden').fadeIn(100);
+				});
+			}
 
-					ImageMouseOut( this, oImageOriginal );
+		};
 
-				}
-
-			});
-
-
-		}
 
 		return {
 			onStart: function () {
@@ -133,7 +132,7 @@
 
 			},
 			autobind: function(oTarget) {
-				ImageZoomInit(oTarget);
+				fp.ImageZoomInit(oTarget);
 			},
 			onDestroy: function () {
 
