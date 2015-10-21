@@ -37,33 +37,33 @@
 			},
 			ImageMouseMove: function( oTarget, event, oImageOriginal, oImageZoom ) {
 
-			var sImageZoomWidth = $(oImageOriginal).width(),
-				sImageZoomHeight = $(oImageOriginal).height(),
-				sImageWidth = $(oTarget).width(),
-				sImageHeight = $(oTarget).height(),
-				mouse_x = event.pageX - $(oTarget).offset().left,
-				mouse_y = event.pageY - $(oTarget).offset().top,
-				goto_x = (Math.round((mouse_x / sImageWidth) * 100) / 100) * (sImageZoomWidth - sImageWidth),
-				goto_y = (Math.round((mouse_y / sImageHeight) * 100) / 100) * (sImageZoomHeight - sImageHeight);
+				var sImageZoomWidth = $(oImageZoom).width(),
+					sImageZoomHeight = $(oImageZoom).height(),
+					sImageWidth = $(oTarget).width(),
+					sImageHeight = $(oTarget).height(),
+					mouse_x = event.pageX - $(oTarget).offset().left,
+					mouse_y = event.pageY - $(oTarget).offset().top,
+					goto_x = (Math.round((mouse_x / sImageWidth) * 100) / 100) * (sImageZoomWidth - sImageWidth),
+					goto_y = (Math.round((mouse_y / sImageHeight) * 100) / 100) * (sImageZoomHeight - sImageHeight);
 
-			oTarget.setAttribute('data-fc-title', oTarget.title);
-			oTarget.title = '';
-			oTarget.getElementsByTagName('img')[0].setAttribute('data-fc-alt', oTarget.getElementsByTagName('img')[0].alt );
-			oTarget.getElementsByTagName('img')[0].alt = "";
+				oTarget.setAttribute('data-fc-title', oTarget.title);
+				oTarget.title = '';
+				oTarget.getElementsByTagName('img')[0].setAttribute('data-fc-alt', oTarget.getElementsByTagName('img')[0].alt );
+				oTarget.getElementsByTagName('img')[0].alt = "";
 
-			$(oTarget).css('cursor', 'crosshair');
+				$(oTarget).css('cursor', 'crosshair');
 
 
-			if (goto_y > 0 ) {
-				goto_y = '-' + goto_y;
-			}
+				if (goto_y > 0 ) {
+					goto_y = '-' + goto_y;
+				}
 
-			if (goto_x > 0 ) {
-				goto_x = '-' + goto_x;
-			}
+				if (goto_x > 0 ) {
+					goto_x = '-' + goto_x;
+				}
 
-			oImageZoom.style.top = goto_y.toString() +'px';
-			oImageZoom.style.left = goto_x.toString() +'px';
+				oImageZoom.style.top = goto_y.toString() +'px';
+				oImageZoom.style.left = goto_x.toString() +'px';
 
 
 			},
@@ -77,8 +77,6 @@
 
 				var self = this,
 					sHrefImageZoom = oTarget.href,
-					sImageZoomWidth = 0,
-					sImageZoomHeight = 0,
 					oImageZoomImg = document.createElement('img'),
 					oImageId = sHrefImageZoom.substring(sHrefImageZoom.lastIndexOf('/') + 1).replace('.', '') + '_zoom';
 
