@@ -34,7 +34,7 @@
     "jquery-unveil": "https://github.com/luis-almeida/unveil.git#~1.3.0",
     "simplecart-js": "https://github.com/wojodesign/simplecart-js.git",
     "tinymce": "~4.1.1",
-    "tinycorejs": "https://github.com/Frontendcore/tinycore.git#a84ac51c8064c04a4b14a52b1b85f8dd49648cfb",
+    "tinycorejs": "https://github.com/Frontendcore/tinycore.git#1.0.3",
     "dynatable": "~0.3.1",
     "pen": "~0.0.3",
     "Sortable": "~1.0.1",

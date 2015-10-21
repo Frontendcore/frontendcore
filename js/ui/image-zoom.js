@@ -2,82 +2,141 @@
 	'use strict';
 
 	FrontendCore.define('image-zoom', [], function () {
+
+		function ImageZoomInit( oTarget ) {
+
+			var sImageWidth = 0,
+				sImageHeight = 0,
+				oImageOriginal = oTarget.getElementsByTagName('img')[0],
+				sImageOriginalId= oImageOriginal.src.substring(oImageOriginal.src.lastIndexOf('/') + 1).replace('.','') + '_original';
+
+			oImageOriginal.id = sImageOriginalId;
+
+			var fTimerContainer = setInterval( function(){
+
+				if ( sImageWidth === 0 || sImageHeight === 0 ) {
+					sImageWidth = $(oImageOriginal).width();
+					sImageHeight = $(oImageOriginal).height();
+
+				} else {
+					imageZoomBind(oImageOriginal, oTarget,sImageWidth, sImageHeight, sImageOriginalId );
+					clearInterval(fTimerContainer);
+				}
+			}, 500);
+
+			$('a', oTarget).bind('click', function(event) {
+				event.preventDefault();
+			});
+
+		}
+
+		function setTargetHeight( oTarget, sImageWidth, sImageHeight ) {
+
+			$(oTarget).css('width', sImageWidth).css('height', sImageHeight).css('display','block').css('overflow', 'hidden');
+		}
+
+		function ImageMouseMove( oTarget, event, oImageOriginal, oImageZoom ) {
+
+			var sImageZoomWidth = $(oImageOriginal).width(),
+				sImageZoomHeight = $(oImageOriginal).height(),
+				sImageWidth = $(oTarget).width(),
+				sImageHeight = $(oTarget).height(),
+				mouse_x = event.pageX - $(oTarget).offset().left,
+				mouse_y = event.pageY - $(oTarget).offset().top,
+				goto_x = (Math.round((mouse_x / sImageWidth) * 100) / 100) * (sImageZoomWidth - sImageWidth),
+				goto_y = (Math.round((mouse_y / sImageHeight) * 100) / 100) * (sImageZoomHeight - sImageHeight);
+
+			oTarget.setAttribute('data-fc-title', oTarget.title);
+			oTarget.title = '';
+			oTarget.getElementsByTagName('img')[0].setAttribute('data-fc-alt', oTarget.getElementsByTagName('img')[0].alt );
+			oTarget.getElementsByTagName('img')[0].alt = "";
+
+			$(oTarget).css('cursor', 'crosshair');
+
+
+			if (goto_y > 0 ) {
+				goto_y = '-' + goto_y;
+			}
+
+			if (goto_x > 0 ) {
+				goto_x = '-' + goto_x;
+			}
+
+			oImageZoom.style.top = goto_y.toString() +'px';
+			oImageZoom.style.left = goto_x.toString() +'px';
+
+
+		}
+
+		function ImageMouseOut( oTarget, oImageOriginal ) {
+
+			oTarget.title = oTarget.getAttribute('data-fc-title');
+			oTarget.getElementsByTagName('img')[0].alt = oTarget.getElementsByTagName('img')[0].getAttribute('data-fc-alt');
+
+		}
+
+
+		function imageZoomBind(oImageOriginal, oTarget, sImageWidth, sImageHeight, sImageOriginalId ) {
+
+			var sHrefImageZoom = oTarget.href,
+				sImageZoomWidth = 0,
+				sImageZoomHeight = 0,
+				oImageZoomImg = document.createElement('img'),
+				oImageId = sHrefImageZoom.substring(sHrefImageZoom.lastIndexOf('/') + 1).replace('.','') + '_zoom';
+
+			setTargetHeight( oTarget,sImageWidth, sImageHeight );
+
+			oImageZoomImg.src = sHrefImageZoom;
+			oImageZoomImg.id = oImageId;
+			oImageZoomImg.style.display = 'none';
+			oImageZoomImg.style.position = 'absolute';
+
+			oTarget.appendChild(oImageZoomImg);
+
+			var oImageZoom = document.getElementById(oImageId);
+
+			/* Bind the oTarget element with these events. */
+			$(oTarget).bind('mousemove mouseout mouseenter', function(event) {
+
+				if(event.type == 'mousemove') {
+
+					$('#' + sImageOriginalId + ':visible').hide();
+					$('#' + oImageId + ':hidden').show();
+
+					ImageMouseMove( this, event, oImageOriginal, oImageZoom );
+
+				} else if( event.type == 'mouseout' ) {
+
+					$('#' + oImageId + ':visible').hide();
+					$('#' + sImageOriginalId + ':hidden').fadeIn(100);
+
+					ImageMouseOut( this, oImageOriginal );
+
+				}
+
+			});
+
+
+		}
+
 		return {
 			onStart: function () {
 
-				var aTargets = FrontendTools.getDataModules('image-zoom');
+				var aTargets = FrontendTools.getDataModules('image-zoom'),
+					self = this;
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'image-zoom');
 
-				$.fn.imageZoom = function(){
-
-					return this.each(function() {
-
-						var subject = $(this); /* Get the subject element (AS canvas). */
-
-						var image_obj = $('img', subject);
-						var image = image_obj.attr('src');
-						var image_w = image_obj.outerWidth();
-						var image_h = image_obj.outerHeight();
-
-						/* Fit subject with the width and height of the default image. */
-						subject.css('width', image_w).css('height', image_h).css('display','block').css('overflow', 'hidden');
-
-						/* Position the default image. */
-						image_obj.css('position', 'relative').css({ top: 0, left: 0 });
-
-						$('a', subject).bind('click onclick', function(event) {
-							event.preventDefault(); /* Disable clicking of a. */
-						});
-
-						var image_zoom = subject.attr('href'); // Get the large image.
-						var image_zoom_w = 0;
-						var image_zoom_h = 0;
-						var image_zoom_obj = new Image() ;
-
-						$(image_zoom_obj).on('load', function() {
-
-							image_zoom_w = this.width;
-							image_zoom_h = this.height;
-
-							/* Bind the subject element with these events. */
-							subject.bind('mousemove mouseout', function(event) {
-
-								var sHref = this.href;
-
-								if(event.type == 'mousemove') {
-
-									/* @start: Will position the mouse inside the canvas only. */
-									var mouse_x = event.pageX - subject.offset().left;
-									var mouse_y = event.pageY - subject.offset().top;
-									/* @end: Will position the mouse inside the canvas only. */
-
-									var goto_x = (Math.round((mouse_x / image_w) * 100) / 100) * (image_zoom_w - image_w);
-									var goto_y = (Math.round((mouse_y / image_h) * 100) / 100) * (image_zoom_h - image_h);
-
-									image_obj.css('cursor', 'crosshair').attr('src', sHref).css({ left: '-' + goto_x +'px', top: '-' + goto_y +'px'});
-
-								} else if(event.type == 'mouseout') {
-
-									image_obj.css('cursor', 'default').attr('src', sHref).css({ top: 0, left: 0 });
-								}
-							});
-						});
-
-						$(image_zoom_obj).attr('src', image_zoom);
-					});
-				};
-
-				$(aTargets).each(function (nIndex) {
-					$(this).imageZoom();
+				$(aTargets).each( function() {
+					self.autobind(this);
 				});
 
 			},
-			onStop: function () {
-				this.sPathCss = null;
+			autobind: function(oTarget) {
+				ImageZoomInit(oTarget);
 			},
 			onDestroy: function () {
-				delete this.sPathCss;
+
 			}
 		};
 	});
