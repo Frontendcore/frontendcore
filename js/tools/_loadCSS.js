@@ -1,20 +1,23 @@
-FrontendTools.loadCSS = function ( sPathCss ) {
+FrontendTools.loadCSS = function ( sCssPath, sCssMedia ) {
 
-	var sId = sPathCss.replace('/','');
+	var sId = sCssPath.replace('/','');
 
 	// If the CSS is not already loaded
-	if ( sPathCss && !document.getElementById(sId) ) {
+	if ( sCssPath && !document.getElementById(sId) ) {
 
-		var oLink = document.createElement('link');
+		var head = document.getElementsByTagName('head')[0],
+			element = document.createElement('link');
 
-		// creates the link to the stylesheet
-		oLink.rel = 'stylesheet';
-		oLink.type = 'text/css';
-		oLink.id = sId;
-		oLink.href = sPathCss;
+		element.rel = 'stylesheet';
+		element.type = 'text/css';
+		element.href = sCssPath;
+		element.id = sId;
+		element.media = 'non-existant-media';
+		head.appendChild(element, head.firstChild);
+		setTimeout(function () {
+			element.media = sCssMedia ? sCssMedia : 'all';
+		});
 
-		// Load the CSS
-		$(document.body).append(oLink);
 	}
 
 }

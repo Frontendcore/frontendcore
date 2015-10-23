@@ -14,4 +14,13 @@ $( document ).ready(function() {
 		FrontendCore.requireAndStart('cart');
 		FrontendTools.trackModule('JS_Libraries', 'execute', 'cart' );
 	}
+
+	if ( oGlobalSettings.oCss ) {
+
+		for ( var property in oGlobalSettings.oCss) {
+			FrontendTools.loadCSS( oGlobalSettings.oCss[property], property );
+		}
+
+	}
+
 });

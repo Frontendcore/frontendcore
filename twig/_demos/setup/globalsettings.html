@@ -29,6 +29,11 @@ var oGlobalSettings = {
 	// For example concatenate modals & tips to avoid too many requests and define them as one file.
 	oPaths: {},
 
+	// This list of css and medias are Async loaded on init.
+	// For example: 'all' : 'main.css'
+	// Another example: 'screen and (min-width:900px)': 'desktop.scss'
+	oCss: {},
+
 	// Set this to force always the mobile or desktop Javascript mode
 	sDevice: isMobile.any() ? 'mobile' : 'desktop',
 
