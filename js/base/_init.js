@@ -18,7 +18,7 @@ $( document ).ready(function() {
 	if ( oGlobalSettings.oCss ) {
 
 		for ( var property in oGlobalSettings.oCss) {
-			FrontendTools.loadCSS( oGlobalSettings.oCss[property], property );
+			FrontendTools.loadCSS( property, oGlobalSettings.oCss[property] );
 		}
 
 	}

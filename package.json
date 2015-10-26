@@ -4,7 +4,7 @@
   "license": "Apache License, Version 2.0",
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
-  "version": "1.7.17",
+  "version": "1.7.18",
   "lastFeature": "Improved loadCSS tool and added Global setting to load css on init. Release %v% !",
   "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",
