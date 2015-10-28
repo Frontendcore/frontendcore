@@ -341,6 +341,14 @@ $susy: (
 	@include base-grid('m');
 }
 
+@mixin screen-xs-grid() {  @include base-grid('s-xs');  }
+@mixin screen-s-grid() {  @include base-grid('s-s');  }
+@mixin screen-m-grid() {  @include base-grid('s-m');  }
+@mixin screen-l-grid() {  @include base-grid('s-l');  }
+@mixin screen-xl-grid() {  @include base-grid('s-xl');  }
+@mixin screen-xxl-grid() {  @include base-grid('s-xxl');  }
+@mixin screen-xxxl-grid() {  @include base-grid('s-xxxl');  }
+
 .col-last {
 	margin-right: 0;
 }

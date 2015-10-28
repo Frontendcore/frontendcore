@@ -3,6 +3,6 @@
   @if $ui != true {
 
 	@include screen-display-query('s');
-
+    @include screen-s-grid();
   }
 }

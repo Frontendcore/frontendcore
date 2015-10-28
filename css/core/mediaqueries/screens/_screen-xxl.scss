@@ -3,6 +3,7 @@
   @if $ui != true {
 
 	@include screen-display-query('xxl');
+    @include screen-xxl-grid();
 
   }
 }
