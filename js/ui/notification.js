@@ -3,7 +3,6 @@
 
 	FrontendCore.define('notification', [], function () {
 		return {
-			mediator :  FrontendMediator,
 			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			bMessageCreated : false,
 			oTimer: null,
@@ -42,7 +41,7 @@
 					}
 				});
 
-				self.mediator.subscribe( ['notification'], this.processResponse, this );
+				FrontendMediator.subscribe( ['notification'], this.processResponse, this );
 
 			},
 			getAttributesAndExecute: function ( oTarget) {
@@ -148,12 +147,10 @@
 
 			},
 			onStop: function () {
-				this.mediator = null;
 				this.bMessageCreated = null;
 				this.oTimer = null;
 			},
 			onDestroy: function () {
-				delete this.mediator;
 				delete this.bMessageCreated;
 				delete this.oTimer;
 			}

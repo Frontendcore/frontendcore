@@ -65,10 +65,13 @@
 					}).after('<style>.color-popover input { padding:2px !important; min-width: 50px; }</style>');
 				}
 
+				if ( document.querySelectorAll('[data-object-fit]').length > 0 && !Modernizr.objectfit ) {
+					$.getScript(oGlobalSettings.sPathJsCore + "shims/object-fit.js" );
+				}
+
 			}
 		};
 	});
-
 
 	FrontendCore.define('loadPolyfills', ['polyfillsLibs'], function () {
 		return {

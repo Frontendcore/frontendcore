@@ -1,6 +1,6 @@
 {
   "name": "frontendcore-workspace",
-  "version": "1.7.20",
+  "version": "1.7.21",
   "authors": [
     "Toni Pinel <tonipinel@gmail.com>"
   ],
@@ -49,6 +49,7 @@
     "susy": "~2.2.3",
     "compass-mixins": "~1.0.2",
     "parsleyjs": "~2.0.7",
-    "bselect": "~0.3.4"
+    "bselect": "~0.3.4",
+    "object-fit-polyfill": "~0.1.0"
   }
 }
