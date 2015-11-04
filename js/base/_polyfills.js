@@ -66,7 +66,7 @@
 				}
 
 				if ( document.querySelectorAll('[data-object-fit]').length > 0 && !Modernizr.objectfit ) {
-					$.getScript(oGlobalSettings.sPathJsCore + "shims/object-fit.js" );
+					$.getScript(oGlobalSettings.sPathJsCore + "shims/object-fit-polyfill.js" );
 				}
 
 			}

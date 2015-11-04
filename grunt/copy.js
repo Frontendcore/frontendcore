@@ -5,7 +5,7 @@ module.exports =  {
 			// makes all src relative to cwd
 			{expand: true, cwd: 'static/', src: ['**'], dest: './../site/build/static/'},
 			{expand: true, cwd: './bower_components/webshim/js-webshim/minified/', src: ['**'], dest: './../site/build/static/js/shims/'},
-			{expand: true, cwd: './bower_components/object-fit-polyfill/src/', src: ['**'], dest: './../site/build/static/js/shims/'}
+			{expand: true, cwd: './bower_components/object-fit-polyfill/dist/', src: ['**'], dest: './../site/build/static/js/shims/'}
 		]
 	},
 	scss: {
