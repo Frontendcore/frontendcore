@@ -12,6 +12,7 @@
 			background: map-get($object-pagination-vars, background-color);
 			font-family: map-get($object-pagination-vars, font-family);
 			@include rem-fallback(font-size, map-get($object-pagination-vars, font-size) );
+			width: 100%;
 
 		}
 		&.right {

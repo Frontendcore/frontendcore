@@ -7,10 +7,10 @@
 			ImageZoomInit: function ( oTarget ) {
 
 				var self = this,
-					sImageWidth = 0,
-					sImageHeight = 0,
-					oImageOriginal = oTarget.getElementsByTagName('img')[0],
-					sImageOriginalId= oImageOriginal.src.substring(oImageOriginal.src.lastIndexOf('/') + 1).replace('.','') + '_original';
+						sImageWidth = 0,
+						sImageHeight = 0,
+						oImageOriginal = oTarget.getElementsByTagName('img')[0],
+						sImageOriginalId = oImageOriginal.id !== '' ? oImageOriginal.id : oImageOriginal.src.substring(oImageOriginal.src.lastIndexOf('/') + 1).replace('.','');
 
 				oImageOriginal.id = sImageOriginalId;
 
@@ -38,13 +38,13 @@
 			ImageMouseMove: function( oTarget, event, oImageOriginal, oImageZoom ) {
 
 				var sImageZoomWidth = $(oImageZoom).width(),
-					sImageZoomHeight = $(oImageZoom).height(),
-					sImageWidth = $(oTarget).width(),
-					sImageHeight = $(oTarget).height(),
-					mouse_x = event.pageX - $(oTarget).offset().left,
-					mouse_y = event.pageY - $(oTarget).offset().top,
-					goto_x = (Math.round((mouse_x / sImageWidth) * 100) / 100) * (sImageZoomWidth - sImageWidth),
-					goto_y = (Math.round((mouse_y / sImageHeight) * 100) / 100) * (sImageZoomHeight - sImageHeight);
+						sImageZoomHeight = $(oImageZoom).height(),
+						sImageWidth = $(oTarget).width(),
+						sImageHeight = $(oTarget).height(),
+						mouse_x = event.pageX - $(oTarget).offset().left,
+						mouse_y = event.pageY - $(oTarget).offset().top,
+						goto_x = (Math.round((mouse_x / sImageWidth) * 100) / 100) * (sImageZoomWidth - sImageWidth),
+						goto_y = (Math.round((mouse_y / sImageHeight) * 100) / 100) * (sImageZoomHeight - sImageHeight);
 
 				oTarget.setAttribute('data-fc-title', oTarget.title);
 				oTarget.title = '';
@@ -76,9 +76,9 @@
 			imageZoomBind: function(oImageOriginal, oTarget, sImageWidth, sImageHeight, sImageOriginalId ) {
 
 				var self = this,
-					sHrefImageZoom = oTarget.href,
-					oImageZoomImg = document.createElement('img'),
-					oImageId = sHrefImageZoom.substring(sHrefImageZoom.lastIndexOf('/') + 1).replace('.', '') + '_zoom';
+						sHrefImageZoom = oTarget.href,
+						oImageZoomImg = document.createElement('img'),
+						oImageId = sImageOriginalId + '_zoom';
 
 				this.setTargetHeight(oTarget, sImageWidth, sImageHeight);
 
@@ -90,6 +90,8 @@
 				oTarget.appendChild(oImageZoomImg);
 
 				var oImageZoom = document.getElementById(oImageId);
+
+				console.log(oImageZoom);
 
 				/* Bind the oTarget element with these events. */
 				$(oTarget).bind('mousemove mouseout mouseenter', function (event) {
@@ -120,7 +122,7 @@
 			onStart: function () {
 
 				var aTargets = FrontendTools.getDataModules('image-zoom'),
-					self = this;
+						self = this;
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'image-zoom');
 
