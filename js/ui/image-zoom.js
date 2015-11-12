@@ -91,8 +91,6 @@
 
 				var oImageZoom = document.getElementById(oImageId);
 
-				console.log(oImageZoom);
-
 				/* Bind the oTarget element with these events. */
 				$(oTarget).bind('mousemove mouseout mouseenter', function (event) {
 
