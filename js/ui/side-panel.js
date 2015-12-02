@@ -126,7 +126,10 @@
 
 					$('body').append($Clone[0]);
 
-					$(oPanel).remove();
+					if ( oTarget.getAttribute("data-fc-remove") !== 'false' ) {
+
+						$(oPanel).remove();
+					}
 
 					oPanel = document.getElementById(sCloneId);
 
