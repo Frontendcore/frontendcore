@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
 	require('jit-grunt')(grunt);
 
-	grunt.registerTask('default', ['sass_import','sass']);
+	grunt.registerTask('default', ['clean:build','sass_import','sass','copy']);
 
 
 // GIT TASKS
