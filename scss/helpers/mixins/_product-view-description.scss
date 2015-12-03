@@ -1,0 +1,18 @@
+@mixin product-view-description() {
+	& {
+		display: block;
+		overflow: hidden;
+		margin-bottom: $spacing;
+		text-align: justify;
+	}
+
+	div {
+		display: block;
+		margin-bottom: $spacing;
+	}
+
+	ul, ol {
+		@extend .list;
+		list-style: disc outside;
+	}
+}

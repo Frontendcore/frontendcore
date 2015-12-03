@@ -4,9 +4,8 @@ var pkg = require('../package.json'),
 			oBaseConfig = {
 				options: {
 					cwd: sRouteComponent,
-				},
-				files: {
-					src: ["./"]
+					remote: "origin",
+					branch: "master"
 				}
 			};
 
@@ -15,10 +14,9 @@ var pkg = require('../package.json'),
 	configComponent = function(grunt) {
 
 		var oConfig = {
-			options: {
-				verbose: true,
-				all: true,
-				force: false
+			options : {
+				allowEmpty: true,
+				verbose: true
 			}
 		};
 

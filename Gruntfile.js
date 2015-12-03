@@ -1,72 +1,24 @@
+var pkg = require('./package.json');
+
 module.exports = function (grunt) {
 
 	require('load-grunt-config')(grunt);
 
 	require('jit-grunt')(grunt);
 
-    grunt.registerTask('js_newer', ['newer:uglify', 'newer:jshint']);
-    grunt.registerTask('js', ['uglify', 'newer:jshint']);
-	grunt.registerTask('tests', ['newer:uglify']);
-	grunt.registerTask('build', ['grunt:clean_site','copy','default']);
-	grunt.registerTask('twig', ['newer:twigRender']);
-	grunt.registerTask('scss', [
-		'sass',
-		'sassdoc',
-		'newer:cssmin',
-		'concurrent:templates'
-	]);
-	grunt.registerTask('commit', [
-		'version',
-		'clean',
-		'copy:workspace',
-		'twigRender',
-		'sass',
-		'sassdoc',
-		'newer:cssmin',
-		'concurrent:templates',
-		'js',
-		'copy:scss',
-		'copy:js',
-		'copy:generator',
-		'compress',
-		'replace:generator',
-		'gitadd:scss',
-		'gitadd:js',
-		'gitadd:site',
-		'gitadd:generator',
-		'gitcommit:scss',
-		'gitcommit:js',
-		'gitcommit:site',
-		'gitcommit:generator',
-		'gitadd:workspace',
-		'gitcommit:workspace'
-	]);
-
-	grunt.registerTask('release', [
-		'commit',
-		'gittag',
-		'gitpush',
-		'githubChanges',
-		'gitcommit:workspace',
-		'gitpush'
-	]);
-
-	grunt.registerTask('push', [
-		'commit',
-		'gitpush'
-	]);
-
-	grunt.registerTask('stats', ['phantomas','gitadd:stats','gitcommit','gitpush:workspace']);
+	grunt.registerTask('default', ['sass_import','sass']);
 
 
-	grunt.registerTask('default', [
-		'twig',
-		'sass',
-		'sassdoc',
-		'newer:cssmin',
-		'concurrent:templates',
-		'js'
-	]);
+// GIT TASKS
+	for ( var nKey = 0; nKey < pkg.components.length; nKey ++ ) {
+		grunt.registerTask('push:' + pkg.components[nKey], ['gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]]);
+		grunt.registerTask('release:' + pkg.components[nKey], ['gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gittag:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]]);
+		grunt.registerTask('update:' + pkg.components[nKey], ['gitpull:' + pkg.components[nKey]]);
+		grunt.registerTask('checkout:' + pkg.components[nKey], ['gitcheckout:' + pkg.components[nKey]]);
+		grunt.registerTask('clone:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'update:' + pkg.components[nKey] ] );
+		grunt.registerTask('new:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'gitcheckout:' + pkg.components[nKey],'replace:' + pkg.components[nKey],'gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]] );
+	}
+
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);

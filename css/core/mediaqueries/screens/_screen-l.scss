@@ -1,9 +1,0 @@
-@mixin screen-l-core {
-
-  @if $ui != true {
-
-	@include screen-display-query('l');
-    @include screen-l-grid();
-
-  }
-}

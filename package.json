@@ -1,11 +1,11 @@
 {
-  "name": "frontendcore-workspace",
-  "title": "frontendcore",
+  "name": "Frontendcore",
+  "title": "Frontendcore",
   "license": "Apache License, Version 2.0",
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
-  "version": "1.7.22",
-  "lastFeature": "Bug fixing on image-zoom and navigation. Release %v% !",
+  "version": "2.0.0",
+  "lastFeature": "Release %v% !",
   "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",
   "bugs": "https://github.com/tonipinel/frontendcore-workspace/issues",
@@ -18,32 +18,21 @@
     "framework",
     "frontend"
   ],
+  "components": [
+    "essence"
+  ],
   "devDependencies": {
     "bower": "^1.3.7",
     "grunt": "^0.4.2",
     "grunt-cli": "^0.1.7",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-compress": "^0.13.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-cssmin": "^0.6.2",
-    "grunt-contrib-jasmine": "^0.5.2",
-    "grunt-contrib-jshint": "^0.4.3",
-    "grunt-contrib-requirejs": "^0.4.0",
-    "grunt-contrib-uglify": "^0.2.0",
-    "grunt-contrib-watch": "^0.3.1",
-    "grunt-git": "^0.3.3",
-    "grunt-github-changes": "0.0.5",
-    "grunt-grunt": "^0.2.2",
-    "grunt-newer": "^1.1.0",
-    "grunt-phantomas": "^0.11.0",
-    "grunt-sassdoc": "^2.0.0",
-    "grunt-sync-version": "^0.2.1",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-twig-render": "^1.6.0",
-    "jit-grunt": "^0.9.0",
+    "jit-grunt": "^0.9.1",
     "load-grunt-config": "^0.16.0",
     "load-grunt-tasks": "^2.0.0",
-    "grunt-sass": "git://github.com/sindresorhus/grunt-sass",
-    "node-sass": "^2.1.1"
+    "grunt-sass": "1.0.0",
+    "grunt-sass-import": "^0.1.0",
+    "node-sass": "^2.1.1",
+    "grunt-git": "^0.3.5",
+    "grunt-replace": "^0.11.0",
+    "grunt-mkdir": "^0.1.2"
   }
 }

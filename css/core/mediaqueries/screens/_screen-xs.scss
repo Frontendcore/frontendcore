@@ -1,8 +1,0 @@
-@mixin screen-xs-core {
-
-  @if $ui != true {
-
-	@include screen-display-query('xs');
-    @include screen-xs-grid();
-  }
-}

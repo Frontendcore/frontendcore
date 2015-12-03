@@ -1,0 +1,11 @@
+{
+    "name": "fc-@@component",
+    "version": "0.1.0",
+    "lastFeature" : "Release %v%",
+    "private": true,
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        "tests"
+    ]
+}

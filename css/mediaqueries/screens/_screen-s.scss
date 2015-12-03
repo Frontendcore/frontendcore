@@ -1,3 +1,0 @@
-@media screen and (min-width: map_get($breakpoints, 'xs' ) ) and ( max-width: map_get($breakpoints, 's' ) - 1 ){
-  @include screen-s-core;
-}

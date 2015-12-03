@@ -1,3 +1,0 @@
-@media screen and (min-width: map_get($breakpoints, 'l' ) ) and ( max-width: map_get($breakpoints, 'xl' ) - 1 ){
-  @include screen-xl-core;
-}

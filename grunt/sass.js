@@ -1,20 +1,15 @@
 module.exports = {
-	app: {
-		// Takes every file that ends with .scss from the scss
-		// directory and compile them into the css directory.
-		// Also changes the extension from .scss into .css.
-		// Note: file name that begins with _ are ignored automatically
+	common: {
 		files: [{
 			expand: true,
-			cwd: 'css',
+			cwd: 'scss/',
 			src: ['*.scss'],
-			dest: '../site/build/static/css/',
+			dest: 'build/static/css',
 			ext: '.css'
-		}]
-	},
-	options: {
-		sourceMap: true,
-		outputStyle: 'expanded',
-		imagePath: "../",
+		}],
+		options: {
+			sourceMap: false,
+			outputStyle: 'compressed'
+		}
 	}
-};
+}

@@ -1,39 +1,37 @@
-var pkg = require('../package.json');
+var pkg = require('../package.json'),
+	configBase = function( sComponent, grunt) {
+		var sRouteComponent = "components/" + sComponent + "/",
+			sBowerPath = sRouteComponent + 'bower.json',
+			pkgComponent = grunt.file.exists(sBowerPath) ? require( "../" + sBowerPath) : { version: "0.0.1", lastFeature: "none" },
+			oBaseConfig = {
+				options: {
+					cwd: sRouteComponent,
+					tag: pkgComponent.version,
+					message: "Tag version " + pkgComponent.version,
+					force: true
+				},
+			};
 
-module.exports = {
-		scss: {
-			options: {
-				cwd: "./../scss/",
-				tag: pkg.version,
-				message: "Tag version " + pkg.version
+		return oBaseConfig;
+	},
+	configComponent = function(grunt) {
+
+		var oConfig = {
+			options : {
+				allowEmpty: true,
+				verbose: true
 			}
-		},
-		js: {
-			options: {
-				cwd: "./../js/",
-				tag: pkg.version,
-				message: "Tag version " + pkg.version
-			}
-		},
-		site: {
-			options: {
-				cwd: "./../site/build/",
-				tag: pkg.version,
-				message: "Tag version " + pkg.version
-			}
-		},
-		generator: {
-			options: {
-				cwd: "./../generator/",
-				tag: pkg.version,
-				message: "Tag version " + pkg.version
-			}
-		},
-		workspace: {
-			options: {
-				cwd: "",
-				tag: pkg.version,
-				message: "Tag version " + pkg.version
-			}
+		};
+
+		for (var nKey = 0; nKey < pkg.components.length; nKey++){
+
+			oConfig[pkg.components[nKey]] = configBase(pkg.components[nKey], grunt);
 		}
+
+		return oConfig;
+	};
+
+module.exports = function(grunt) {
+	return configComponent(grunt);
 };
+

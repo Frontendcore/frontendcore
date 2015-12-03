@@ -1,9 +1,0 @@
-@mixin screen-xxxl-core {
-
-  @if $ui != true {
-
-	@include screen-display-query('xxxl');
-    @include screen-xxxl-grid();
-
-  }
-}
