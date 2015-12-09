@@ -21,5 +21,14 @@ var pkg = require('../package.json'),
 
 module.exports = function(grunt) {
 
-	return configComponent(grunt);
+	return {
+		css : {
+			gruntfile: 'components/essence/gruntfile.js',
+			tasks: ['css']
+		},
+		rebuild : {
+			gruntfile: 'components/essence/gruntfile.js',
+			tasks: ['rebuild']
+		}
+	};
 };

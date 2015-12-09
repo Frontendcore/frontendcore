@@ -1,9 +1,5 @@
-$device: 'desktop' !global;
-$screen: 'screen-xl' !global;
+@import "_config/__index.scss";
 
-
-@import "_config/_index";
-
-@import "frontendcore-tools";
+@import "../components/essence/dist/scss/_screen-xl.scss";
 
 @import "components_screen-xl";

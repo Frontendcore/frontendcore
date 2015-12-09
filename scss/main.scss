@@ -1,10 +1,7 @@
-$device: 'all' !global;
-$screen: 'all' !global;
-
 @import "_config/_index";
 
-@import "frontendcore-tools";
+@import "../components/essence/dist/scss/_main.scss";
 
-@import "components";
+@import "components_main";
 
 @import "objects/__index.scss";

@@ -1,7 +1,9 @@
-@import 'components/essence/dist/scss/_index_first';
-@import 'components/buttons/dist/scss/_button_vars';
-@import 'components/forms/dist/scss/_form_vars';
-@import 'components/buttons/dist/scss/_buttons_pattern';
-@import 'components/forms/dist/scss/_form_pattern';
-@import 'components/grids/dist/scss/grids_screen-s_screen-xs';
-@import 'components/boxes/dist/scss/_boxes_mobile';
+/* generated with grunt-sass-globbing */
+
+@import "../components/buttons/dist/scss/button_vars";
+@import "../components/forms/dist/scss/form_vars";
+@import "../components/buttons/dist/scss/buttons_pattern";
+@import "../components/forms/dist/scss/form_pattern";
+@import "../components/essence/dist/scss/screen-s";
+@import "../components/grids/dist/scss/grids_screen-s_screen-xs";
+@import "../components/boxes/dist/scss/boxes_mobile";

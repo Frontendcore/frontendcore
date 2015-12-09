@@ -1,8 +1,5 @@
-$device: 'mobile' !global;
-$screen: 'screen-xs' !global;
+@import "_config/__index.scss";
 
-@import "_config/_index";
-
-@import "frontendcore-tools";
+@import "../components/essence/dist/scss/_screen-xs.scss";
 
 @import "components_screen-xs";

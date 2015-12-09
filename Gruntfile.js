@@ -6,8 +6,9 @@ module.exports = function (grunt) {
 
 	require('jit-grunt')(grunt);
 
-	grunt.registerTask('css', ['sass_import','sass','postcss','copy']);
-	grunt.registerTask('css:fast', ['sass','postcss']);
+	grunt.registerTask('rebuild', ['grunt:rebuild']);
+	grunt.registerTask('css', ['grunt:css']);
+
 	grunt.registerTask('js', ['uglify']);
 	grunt.registerTask('html', ['twigRender']);
 

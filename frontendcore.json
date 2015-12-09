@@ -1,0 +1,21 @@
+{
+  "scss" : {
+    "cwd": "scss",
+    "dest": "build/static/css",
+    "browsers" : ["last 1 version"]
+  },
+  "bower" : {
+    "cwd": "components"
+  },
+  "components": [
+    "essence",
+    "animations",
+    "grids",
+    "boxes",
+    "typography",
+    "forms",
+    "callouts",
+    "buttons",
+    "icons"
+  ]
+}
