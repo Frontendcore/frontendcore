@@ -1,0 +1,22 @@
+{% set current_children = "Number Fields" %}
+{% set current_subtitle = "Just add the class .form to your form and take a break." %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_demo %}
+
+    {{ demos.demo(
+    'number-fields',
+    '../../components/forms/html/number-fields.html'
+    )}}
+{% endblock object_demo %}
+
+{% block object_scss_vars %}
+ {{ demos.scss_object(
+ '../../css/core/objects/forms/__vars.scss',
+ 'navigation-vars'
+ )}}
+{% endblock object_scss_vars %}

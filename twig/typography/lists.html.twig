@@ -1,0 +1,54 @@
+{% set current_children = "Lists" %}
+{% set current_subtile = "Classes and defaults" %}
+{% set current_section = "Typography" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+<div class="row">
+    <section class="col-6">
+        <h2>Unordered list</h2>
+        {{ demos.demo(
+            'ul-list',
+            PathComponents ~ 'typography/html/ul-list.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>Unordered list horizontal</h2>
+        {{ demos.demo(
+        'ul-list-horizontal',
+        PathComponents ~ 'typography/html/ul-list-horizontal.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>Ordered list</h2>
+        {{ demos.demo(
+            'ol-list',
+            PathComponents ~ 'typography/html/ol-list.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>Ordered list horizontal</h2>
+        {{ demos.demo(
+        'ol-list-horizontal',
+        PathComponents ~ 'typography/html/ol-list-horizontal.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>Data list</h2>
+        {{ demos.demo(
+            'dl-list',
+            PathComponents ~ 'typography/html/dl-list.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>Data list horizontal</h2>
+        {{ demos.demo(
+        'dl-list-horizontal',
+        PathComponents ~ 'typography/html/dl-list-horizontal.html'
+        )}}
+    </section>
+</div>
+{% endblock %}

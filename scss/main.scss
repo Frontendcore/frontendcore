@@ -1,5 +1,10 @@
+$device: 'all' !global;
+$screen: 'all' !global;
+
 @import "_config/_index";
 
 @import "frontendcore-tools";
 
 @import "components";
+
+@import "objects/__index.scss";

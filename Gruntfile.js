@@ -6,10 +6,13 @@ module.exports = function (grunt) {
 
 	require('jit-grunt')(grunt);
 
-	grunt.registerTask('scss', ['sass_import','sass','copy']);
-	grunt.registerTask('js', ['concat','uglify']);
+	grunt.registerTask('css', ['sass_import','sass','postcss','copy']);
+	grunt.registerTask('css:fast', ['sass','postcss']);
+	grunt.registerTask('js', ['uglify']);
+	grunt.registerTask('html', ['twigRender']);
 
-	grunt.registerTask('default', ['js','scss']);
+
+	grunt.registerTask('default', ['js','css','html']);
 
 
 // GIT TASKS
@@ -21,7 +24,6 @@ module.exports = function (grunt) {
 		grunt.registerTask('clone:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'update:' + pkg.components[nKey] ] );
 		grunt.registerTask('new:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'gitcheckout:' + pkg.components[nKey],'replace:' + pkg.components[nKey],'gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]] );
 	}
-
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);

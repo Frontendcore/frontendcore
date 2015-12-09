@@ -1,0 +1,33 @@
+{% set current_children = "Grids distribution" %}
+{% set current_subtitle = "Add classes to distribute the contents of a row or column." %}
+
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h2 class="mt-l">.row-around</h2>
+    {{ demos.demo(
+        'distribution-around',
+        PathComponents ~ 'grids/html/distribution-around.html'
+    )}}
+    <h2 class="mt-l">.row-between</h2>
+    {{ demos.demo(
+        'distribution-between',
+        PathComponents ~ 'grids/html/distribution-between.html'
+    )}}
+    <h2 class="mt-l">.row-center</h2>
+    {{ demos.demo(
+    'advance-2',
+    PathComponents ~ 'grids/html/alignment-center.html'
+    )}}
+    <h2 class="mt-l">Responsive distribution</h2>
+    <p>Different distribution for different resizes, resize the window to view it on action.</p>
+    {{ demos.demo(
+        'distribution-responsive',
+        PathComponents ~ 'grids/html/distribution-responsive.html'
+    )}}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% set current_children = "Option Fields" %}
+{% set current_subtitle = "Options for all tastes with a few classes" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {{ demos.demo(
+        'option-fields',
+        '../../components/forms/html/option-fields.html'
+    )}}
+{% endblock %}

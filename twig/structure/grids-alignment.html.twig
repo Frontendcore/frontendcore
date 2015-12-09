@@ -1,0 +1,47 @@
+{% set current_children = "Grids alignment" %}
+{% set current_subtitle = "Add classes to align elements to the start or end of a row as well as the top, bottom, or center of a column" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h2>.row-start</h2>
+    {{ demos.demo(
+        'advance-1',
+        PathComponents ~ 'grids/html/alignment-start.html'
+    )}}
+    <h2 class="mt-l">.row-center</h2>
+    {{ demos.demo(
+        'advance-2',
+        PathComponents ~ 'grids/html/alignment-center.html'
+    )}}
+    <h2 class="mt-l">.row-end</h2>
+    {{ demos.demo(
+        'advance-3',
+        PathComponents ~ 'grids/html/alignment-end.html'
+    )}}
+    <h2 class="mt-l">.row-top</h2>
+    {{ demos.demo(
+        'advance-4',
+        PathComponents ~ 'grids/html/alignment-top.html'
+    )}}
+    <h2 class="mt-l">.row-middle</h2>
+    {{ demos.demo(
+        'advance-5',
+        PathComponents ~ 'grids/html/alignment-middle.html'
+    )}}
+    <h2 class="mt-l">.row-bottom</h2>
+    {{ demos.demo(
+        'advance-6',
+        PathComponents ~ 'grids/html/alignment-bottom.html'
+    )}}
+    <h2 class="mt-l">Responsive alignment</h2>
+    <p>Different alignment for different resizes, resize the window to view it on action.</p>
+    {{ demos.demo(
+        'alignment-responsive',
+        PathComponents ~ 'grids/html/alignment-responsive.html'
+    )}}
+{% endblock %}

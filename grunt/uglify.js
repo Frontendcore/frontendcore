@@ -4,10 +4,11 @@ var pkg = require('../package.json'),
 			var oBaseConfig = {
 				files: [{
 					expand: true,
-					cwd: 'components/'+ sComponent + '/js/dist',
+					cwd: 'components/'+ sComponent + '/dist/js/',
 					src: '*.js',
 					dest: 'build/static/js/',
-					preserveComments: false
+					preserveComments: false,
+					beautify: true,
 				}]
 			};
 

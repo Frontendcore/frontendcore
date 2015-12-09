@@ -1,0 +1,15 @@
+{% set current_children = "Form Grids" %}
+{% set current_subtitle = "The same grids to structure your content, also in forms." %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {{ demos.demo(
+        'text-fields',
+        '../../components/forms/html/form-grids.html'
+    )}}
+
+{% endblock %}

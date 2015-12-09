@@ -1,0 +1,51 @@
+{% set current_children = "Custom responsive grids" %}
+{% set current_subtitle = "Specify the grids on all devices with just classes" %}
+
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <p>The custom responsive grids can be used standalone or in combination with the autoresponsive grids. The idea is to use the same col system classes that have the autogrids but that will work only in custom devices. The name of the class is the same but including an acronym of the device. Check the following examples:</p>
+    <table class="table" data-fc-modules="table-responsive">
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Acronym</th>
+                <th>Class example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mobile</td>
+                <td>s</td>
+                <td>.col-s-12</td>
+            </tr>
+            <tr>
+                <td>Phablet (Big mobile)</td>
+                <td>m</td>
+                <td>.col-m-12</td>
+            </tr>
+            <tr>
+                <td>Tablet</td>
+                <td>l</td>
+                <td>.col-l-12</td>
+            </tr>
+            <tr>
+                <td>Desktop</td>
+                <td>xl</td>
+                <td>.col-xl-12</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Check the following example to a better understanding:</p>
+    <h2 class="mt-l">Desktop 4 columns, tablet 2 columns, Phablet (Big mobile) 2+1+1 columns, mobile 1 column</h2>
+    {{ demos.demo(
+        'advance-1',
+        PathComponents ~ 'grids/html/advance-1.html'
+    )}}
+
+{% endblock %}

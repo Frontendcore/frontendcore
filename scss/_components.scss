@@ -1,1 +1,16 @@
-@import 'components/essence/scss/_index_pattern';
+@import 'components/essence/dist/scss/_index_first';
+@import 'components/buttons/dist/scss/_button_vars';
+@import 'components/forms/dist/scss/_form_vars';
+@import 'components/buttons/dist/scss/_buttons_pattern';
+@import 'components/forms/dist/scss/_form_pattern';
+@import 'components/animations/dist/scss/_animate_main';
+@import 'components/boxes/dist/scss/_boxes_main';
+@import 'components/buttons/dist/scss/_buttons-group_main';
+@import 'components/buttons/dist/scss/_buttons_main';
+@import 'components/callouts/dist/scss/_callouts_main';
+@import 'components/essence/dist/scss/_defaults_main';
+@import 'components/essence/dist/scss/_normalize_main';
+@import 'components/forms/dist/scss/_form_main';
+@import 'components/grids/dist/scss/grids_main';
+@import 'components/typography/dist/scss/_fonts_main';
+@import 'components/typography/dist/scss/_lists_main';

@@ -9,5 +9,16 @@ module.exports = {
 				dest: 'build/static/js/shims'
 			}
 		]
-	}
+	},
+	static: {
+		files: [
+			{
+				cwd: '_resources/static/',
+				expand: true,
+				flatten: false,
+				src: ['**/*.*'],
+				dest: 'build/static/'
+			}
+		]
+	},
 }

@@ -1,3 +1,6 @@
+$device: 'mobile' !global;
+$screen: 'screen-xs' !global;
+
 @import "_config/_index";
 
 @import "frontendcore-tools";

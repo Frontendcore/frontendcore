@@ -1,0 +1,38 @@
+{% set current_children = "Callouts" %}
+{% set current_subtitle = "Visual colors, and visual messages." %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+
+<div class="row">
+    <section class="col-6">
+        {{ demos.demo(
+            'callout-success',
+            '../../components/callouts/html/callout-success.html'
+        )}}
+    </section>
+    <section class="col-6">
+        {{ demos.demo(
+            'callout-error',
+            '../../components/callouts/html/callout-error.html'
+        )}}
+    </section>
+    <section class="col-6">
+        {{ demos.demo(
+            'callout-info',
+            '../../components/callouts/html/callout-info.html'
+        )}}
+    </section>
+    <section class="col-6">
+
+        {{ demos.demo(
+            'callout-warning',
+            '../../components/callouts/html/callout-warning.html'
+        )}}
+    </section>
+</div>
+{% endblock %}

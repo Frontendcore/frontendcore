@@ -3,6 +3,8 @@ module.exports = {
 	main: {
 		files: {
 			'scss/_components.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_main.scss'
 			]
@@ -11,6 +13,8 @@ module.exports = {
 	screenXXXL: {
 		files: {
 			'scss/_components_screen-xxxl.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-xxxl*.scss',
 				'components/**/*_desktop*.scss'
@@ -20,6 +24,8 @@ module.exports = {
 	screenXXL: {
 		files: {
 			'scss/_components_screen-xxl.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-xxl*.scss',
 				'components/**/*_desktop*.scss'
@@ -29,6 +35,8 @@ module.exports = {
 	screenXL: {
 		files: {
 			'scss/_components_screen-xl.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-xl*.scss',
 				'components/**/*_desktop*.scss'
@@ -38,6 +46,8 @@ module.exports = {
 	screenL: {
 		files: {
 			'scss/_components_screen-l.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-l*.scss',
 				'components/**/*_tablet*.scss'
@@ -47,6 +57,8 @@ module.exports = {
 	screenM: {
 		files: {
 			'scss/_components_screen-m.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-m*.scss',
 				'components/**/*_mobile*.scss'
@@ -56,6 +68,8 @@ module.exports = {
 	screenS: {
 		files: {
 			'scss/_components_screen-s.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-s*.scss',
 				'components/**/*_mobile*.scss'
@@ -65,6 +79,8 @@ module.exports = {
 	screenXS: {
 		files: {
 			'scss/_components_screen-xs.scss': [
+				'components/**/*_first.scss',
+				'components/**/*_vars.scss',
 				'components/**/*_pattern.scss',
 				'components/**/*_screen-xs*.scss',
 				'components/**/*_mobile*.scss'

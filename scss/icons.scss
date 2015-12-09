@@ -1,0 +1,8 @@
+$device: 'all' !global;
+$screen: 'all' !global;
+
+@import "components/icons/dist/_icons.scss";
+
+[class*='icon--'] {
+  @extend .icon;
+}

@@ -1,0 +1,34 @@
+{% set current_children = "Grids Order" %}
+{% set current_subtitle = "Add classes to reorder columns" %}
+
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h2 class="mt-l">.col-first</h2>
+    {{ demos.demo(
+        'order-first',
+        PathComponents ~ 'grids/html/order-first.html'
+    )}}
+    <h2 class="mt-l">.col-last</h2>
+    {{ demos.demo(
+        'order-last',
+        PathComponents ~ 'grids/html/order-last.html'
+    )}}
+    <h2 class="mt-l">.row-reverse</h2>
+    {{ demos.demo(
+    'order-reverse',
+    PathComponents ~ 'grids/html/order-reverse.html'
+    )}}
+
+    <h2 class="mt-l">Responsive order</h2>
+    <p>Different order for different resizes, resize the window to view it on action.</p>
+    {{ demos.demo(
+    'order-reverse',
+    PathComponents ~ 'grids/html/order-responsive.html'
+    )}}
+{% endblock %}

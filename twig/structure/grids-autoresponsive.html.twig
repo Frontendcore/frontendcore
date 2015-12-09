@@ -1,0 +1,74 @@
+{% set current_children = "Autoresponsive grids" %}
+{% set current_subtitle = "The grid system that adapts to all devices with a touch of magic" %}
+
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <p class="mb-n">The grid system use css flex system and a 12 column grid. So you can add any number of auto sizing columns to a grid (.col class) or specify how many cols will fill (.col-3 .col-12 ...). Let the grid figure it out. This grids works automatically with all resolutions. Resize the window to check the behaviour. </p>
+    <h2 class="mt-l">1 Column</h2>
+    {{ demos.demo(
+        '1-column',
+        PathComponents ~ 'grids/html/1-column.html'
+    )}}
+
+    <h2 class="mt-l">2 Columns</h2>
+    {{ demos.demo(
+        '2-column',
+        PathComponents ~ 'grids/html/2-columns.html'
+    )}}
+    <h2 class="mt-l">3 Columns</h2>
+    {{ demos.demo(
+        '3-column',
+        PathComponents ~ 'grids/html/3-columns.html'
+    )}}
+    <h2 class="mt-l">4 Columns</h2>
+    {{ demos.demo(
+        '4-column',
+        PathComponents ~ 'grids/html/4-columns.html'
+    )}}
+    <h2 class="mt-l">5 Columns</h2>
+    {{ demos.demo(
+        '5-column',
+        PathComponents ~ 'grids/html/5-columns.html'
+    )}}
+    <h2 class="mt-l">6 Columns</h2>
+    {{ demos.demo(
+        '6-column',
+        PathComponents ~ 'grids/html/6-columns.html'
+    )}}
+    <h2 class="mt-l">7 Columns</h2>
+    {{ demos.demo(
+        '7-column',
+        PathComponents ~ 'grids/html/7-columns.html'
+    )}}
+    <h2 class="mt-l">8 Columns</h2>
+    {{ demos.demo(
+        '8-column',
+        PathComponents ~ 'grids/html/8-columns.html'
+    )}}
+    <h2 class="mt-l">9 Columns</h2>
+    {{ demos.demo(
+        '8-column',
+        PathComponents ~ 'grids/html/9-columns.html'
+    )}}
+    <h2 class="mt-l">10 Columns</h2>
+    {{ demos.demo(
+        '8-column',
+        PathComponents ~ 'grids/html/10-columns.html'
+    )}}
+    <h2 class="mt-l">11 Columns</h2>
+    {{ demos.demo(
+        '8-column',
+        PathComponents ~ 'grids/html/11-columns.html'
+    )}}
+    <h2 class="mt-l">12 Columns</h2>
+    {{ demos.demo(
+        '12-column',
+        PathComponents ~ 'grids/html/12-columns.html'
+    )}}
+{% endblock main %}

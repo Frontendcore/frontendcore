@@ -1,3 +1,6 @@
+$device: 'tablet' !global;
+$screen: 'screen-l' !global;
+
 @import "_config/_index";
 
 @import "frontendcore-tools";

@@ -1,0 +1,38 @@
+{% set current_children = "Buttons" %}
+{% set current_subtitle = "buttons with variants for all your needs" %}
+
+{% set current_section = "Buttons" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_demo %}
+    <h2>Default buttons</h2>
+    {{ demos.demo(
+        'buttons',
+        '../../components/buttons/html/buttons.html'
+    )}}
+
+     <hr />
+        <h2>Small buttons</h2>
+        {{ demos.demo(
+            'button-slim',
+            '../../components/buttons/html/buttons-slim.html'
+        )}}
+    </section>
+    <hr />
+        <h2>Large buttons</h2>
+        {{ demos.demo(
+            'button-fat',
+            '../../components/buttons/html/buttons-fat.html'
+        )}}
+    </section>
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+     '../../css/core/objects/buttons/__vars.scss',
+     'buttons-vars'
+     )}}
+ {% endblock object_scss_vars %}

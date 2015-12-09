@@ -1,1 +1,7 @@
-@import 'components/essence/scss/_index_pattern';
+@import 'components/essence/dist/scss/_index_first';
+@import 'components/buttons/dist/scss/_button_vars';
+@import 'components/forms/dist/scss/_form_vars';
+@import 'components/buttons/dist/scss/_buttons_pattern';
+@import 'components/forms/dist/scss/_form_pattern';
+@import 'components/grids/dist/scss/grids_desktop';
+@import 'components/typography/dist/scss/_fonts_desktop';
