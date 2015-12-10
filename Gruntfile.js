@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('rebuild', ['grunt:rebuild']);
 	grunt.registerTask('css', ['grunt:css']);
 
-	grunt.registerTask('js', ['uglify']);
+	grunt.registerTask('js', ['grunt:js']);
 	grunt.registerTask('html', ['twigRender']);
 
 

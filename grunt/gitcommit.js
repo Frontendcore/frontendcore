@@ -1,13 +1,13 @@
-var pkg = require('../package.json'),
+var oData = require('../frontendcore.json'),
 	configBase = function( sComponent, grunt ) {
 
 		var sRouteComponent = "components/" + sComponent + "/",
 			sBowerPath = sRouteComponent + 'bower.json',
-			pkgComponent = grunt.file.exists(sBowerPath) ? require( "../" + sBowerPath ) : { version: "0.0.1", lastFeature: "none" },
+			oDataComponent = grunt.file.exists(sBowerPath) ? require( "../" + sBowerPath ) : { version: "0.0.1", lastFeature: "none" },
 			oBaseConfig = {
 				options: {
 					cwd: sRouteComponent,
-					message: pkgComponent.lastFeature.replace('%v%', 'Release version ' + pkgComponent.version)
+					message: oDataComponent.lastFeature.replace('%v%', 'Release version ' + oDataComponent.version)
 				},
 				files: [
 					{
@@ -28,9 +28,9 @@ var pkg = require('../package.json'),
 			}
 		};
 
-		for (var nKey = 0; nKey < pkg.components.length; nKey++){
+		for (var nKey = 0; nKey < oData.components.length; nKey++){
 
-			oConfig[pkg.components[nKey]] = configBase(pkg.components[nKey], grunt);
+			oConfig[oData.components[nKey]] = configBase(oData.components[nKey], grunt);
 		}
 
 		return oConfig;

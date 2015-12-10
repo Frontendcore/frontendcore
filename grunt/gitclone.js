@@ -1,4 +1,4 @@
-var pkg = require('../package.json'),
+var oData = require('../frontendcore.json'),
 	configBase = function( sComponent ) {
 		var oBaseConfig = {
 			options: {
@@ -20,9 +20,9 @@ var pkg = require('../package.json'),
 			}
 		};
 
-		for (var nKey = 0; nKey < pkg.components.length; nKey++){
+		for (var nKey = 0; nKey < oData.components.length; nKey++){
 
-			oConfig[pkg.components[nKey]] = configBase(pkg.components[nKey]);
+			oConfig[oData.components[nKey]] = configBase(oData.components[nKey]);
 		}
 
 		return oConfig;

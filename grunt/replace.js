@@ -1,4 +1,4 @@
-var pkg = require('../package.json'),
+var oData = require('../frontendcore.json'),
 	configBase = function( sComponent, grunt ) {
 
 		var oBaseConfig = {
@@ -27,8 +27,8 @@ var pkg = require('../package.json'),
 
 		var oConfig = {};
 
-		for (var nKey = 0; nKey < pkg.components.length; nKey++) {
-			oConfig[pkg.components[nKey]] = configBase(pkg.components[nKey], grunt);
+		for (var nKey = 0; nKey < oData.components.length; nKey++) {
+			oConfig[oData.components[nKey]] = configBase(oData.components[nKey], grunt);
 		}
 
 		return oConfig;

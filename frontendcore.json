@@ -4,6 +4,10 @@
     "dest": "build/static/css",
     "browsers" : ["last 1 version"]
   },
+  "js" : {
+    "cwd": "js",
+    "dest": "build/static/js"
+  },
   "bower" : {
     "cwd": "components"
   },
