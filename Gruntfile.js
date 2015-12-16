@@ -1,4 +1,5 @@
-var pkg = require('./package.json');
+var pkg = require('./package.json'),
+	fc = require('./frontendcore.json');
 
 module.exports = function (grunt) {
 
@@ -17,13 +18,13 @@ module.exports = function (grunt) {
 
 
 // GIT TASKS
-	for ( var nKey = 0; nKey < pkg.components.length; nKey ++ ) {
-		grunt.registerTask('push:' + pkg.components[nKey], ['gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]]);
-		grunt.registerTask('release:' + pkg.components[nKey], ['gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gittag:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]]);
-		grunt.registerTask('update:' + pkg.components[nKey], ['gitpull:' + pkg.components[nKey]]);
-		grunt.registerTask('checkout:' + pkg.components[nKey], ['gitcheckout:' + pkg.components[nKey]]);
-		grunt.registerTask('clone:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'update:' + pkg.components[nKey] ] );
-		grunt.registerTask('new:' + pkg.components[nKey], ['gitclone:' + pkg.components[nKey] ,'gitcheckout:' + pkg.components[nKey],'replace:' + pkg.components[nKey],'gitadd:' + pkg.components[nKey],'gitcommit:' + pkg.components[nKey],'gitpush:' + pkg.components[nKey]] );
+	for ( var nKey = 0; nKey < fc.components.length; nKey ++ ) {
+		grunt.registerTask('push:' + fc.components[nKey], ['gitadd:' + fc.components[nKey],'gitcommit:' + fc.components[nKey],'gitpush:' + fc.components[nKey]]);
+		grunt.registerTask('release:' + fc.components[nKey], ['gitadd:' + fc.components[nKey],'gitcommit:' + fc.components[nKey],'gittag:' + fc.components[nKey],'gitpush:' + fc.components[nKey]]);
+		grunt.registerTask('update:' + fc.components[nKey], ['gitpull:' + fc.components[nKey]]);
+		grunt.registerTask('checkout:' + fc.components[nKey], ['gitcheckout:' + fc.components[nKey]]);
+		grunt.registerTask('clone:' + fc.components[nKey], ['gitclone:' + fc.components[nKey] ,'update:' + fc.components[nKey] ] );
+		grunt.registerTask('new:' + fc.components[nKey], ['gitclone:' + fc.components[nKey] ,'gitcheckout:' + fc.components[nKey],'replace:' + fc.components[nKey],'gitadd:' + fc.components[nKey],'gitcommit:' + fc.components[nKey],'gitpush:' + fc.components[nKey]] );
 	}
 
 	grunt.event.on('watch', function (action, filepath) {

@@ -18,17 +18,6 @@
     "framework",
     "frontend"
   ],
-  "components": [
-    "essence",
-    "animations",
-    "grids",
-    "boxes",
-    "typography",
-    "forms",
-    "callouts",
-    "buttons",
-    "icons"
-  ],
   "devDependencies": {
     "bower": "^1.3.7",
     "grunt": "^0.4.2",

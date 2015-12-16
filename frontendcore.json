@@ -20,6 +20,7 @@
     "forms",
     "callouts",
     "buttons",
-    "icons"
+    "icons",
+    "roundtrip"
   ]
 }

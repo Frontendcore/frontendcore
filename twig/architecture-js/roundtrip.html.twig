@@ -1,0 +1,56 @@
+{% set current_children = "RoundTrip" %}
+{% set current_subtitle = "Create simple, easy and fast single page webapps" %}
+{% set current_section = "Architecture JS" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <div class="box--background">
+        <h3>What can I do with Frontendcore's RoundTrip?</h3>
+        <p>Roundtrip combines the power of twig.js and FrontendCore to render twig templates in realtime and refresh them
+            if there are changes in the data. Any of this renders can use FrontendCore UI modules or custom modules.
+        </p>
+    </div>
+    <div class="box--background">
+        <h3>What I can't do?</h3>
+        <p>Roundtrip doesn't have a system to change the main layout, or load different templates based on url, for things like this maybe it's a good idea to use angular, emberjs or something like that.</p>
+    </div>
+    <div class="box--background">
+        <h3>How it works?</h3>
+        <p>The system is pretty simple, so make it work is fast and easy. All you need is to include the script on your page:</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/script.html" %}{% endfilter %}</code></pre>
+        <p>Add a JSON with the data as javascript object</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/data.html" %}{% endfilter %}</code></pre>
+        <p>Add the markup for one of the template renders</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/product.html" %}{% endfilter %}</code></pre>
+        <p>This will render the template located in "twig/product-list.html.twig" with all the data from RoundTripData.</p>
+    </div>
+
+    <div class="box--background">
+        <h3>Get Data and channels from an external JSON file</h3>
+        <p>Add to the markup  of your template render the parameter "data-fc-data" with the url of the JSON file </p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/product-json.html" %}{% endfilter %}</code></pre>
+    </div>
+
+    <div class="box--background">
+        <h3>Get partial channels from RoundTripData</h3>
+        <p>Add to the markup  of your template an array with the key of RoundTripData object that you want to get</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/product-array.html" %}{% endfilter %}</code></pre>
+    </div>
+
+    <div class="box--background">
+        <h3>Update data</h3>
+        <p>Call on your module the Data method of RoundTrip and pass a new data object.</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/update.js" %}{% endfilter %}</code></pre>
+    </div>
+
+    <div class="box--background">
+        <h3>Bind elements</h3>
+        <p>Because on each render the jquery or javascript bind is lost, Roundtrip provides you a bind method that always work even the module is reloaded.</p>
+        <pre><code>{% filter escape %}{% include "../../components/roundtrip/html/bind.js" %}{% endfilter %}</code></pre>
+    </div>
+
+{% endblock %}
