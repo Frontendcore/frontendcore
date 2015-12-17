@@ -21,6 +21,7 @@
     "callouts",
     "buttons",
     "icons",
-    "roundtrip"
+    "roundtrip",
+    "modifiers"
   ]
 }

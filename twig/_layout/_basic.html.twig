@@ -42,45 +42,53 @@
             </div>
         </div>
     </header>
-    <div class="container container--center container--pad">
-        <div class="row row-center">
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9">
+    <div class="container--center container--pad">
+        <div class="row--center">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
                 {% block main %}{% endblock main %}
             </div>
         </div>
     </div>
-    <footer>
-        <div class="row">
-            <div class="col">
-                <gcse:search></gcse:search>
-                <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
+    <footer class="fc-footer">
+        <div class="container--center container--pad">
+            <div class="row">
+                <div class="col">
+                    <div id="menu" class="row---middle">
+                        {% for section in sections %}
+                            <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>{{ section.name }}</h5>
+                                    {% if section.children|length > 0 %}
+                                        <ul class="list pl-n c-foreground">
+                                            {% for subsection in section.children %}
+                                                <li {% if subsection.name == current_children %} class="active"{% endif %}>
+                                                    {% if subsection.done %}
+                                                    <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}">
+                                                    {% endif %}
+                                                        {{ subsection.name }} {% if subsection.js %}<span class="fl-r cp">JS</span> {% endif %}
+                                                    {% if subsection.done %}
+                                                    </a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <gcse:search></gcse:search>
+                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
+                </div>
             </div>
         </div>
     </footer>
     {% block navigation %}
-        <nav id="menu" class="navigation navigation-vertical desktop">
-            <ul>
-                {% for section in sections %}
-                    <li>
-                        <a href="{{ section.href }}" data-fc-modules="toggle">
-                            {{ section.name }}
-                            {% if section.children|length > 0 %}
-                                <i class="icon-angle-down fl-r"></i>
-                            {% endif %}
-                        </a>
-                        {% if section.children|length > 0 %}
-                            <ul id="{{ section.id }}" {% if section.name != current_section %} class="hhidden"{% endif %}>
-                                {% for subsection in section.children %}
-                                    <li {% if subsection.name == current_children %} class="active"{% endif %}>
-                                        <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}">{{ subsection.name }} {% if subsection.js %}<span class="fl-r cp">JS</span> {% endif %}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+
     {% endblock %}
 {% endblock fullmain %}
 <script type="text/javascript" async="async">

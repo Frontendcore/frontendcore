@@ -1,0 +1,81 @@
+.fc-footer {
+  & {
+    background-color: #202020;
+    margin-top: $spacing;
+    padding: $spacing 0;
+  }
+}
+
+.fc-header-top {
+  display: block;
+  background-color: #202020;
+  ul {
+    margin: 0;
+    text-align: right;
+  }
+  li {
+    list-style: none;
+    a {
+      color: contrast-color(#202020);
+      display: inline-block;
+      padding: $spacing/2 $spacing;
+      text-decoration: none;
+      border-left: 1px solid rgba(contrast-color(#202020), .5);
+    }
+  }
+
+}
+
+.fc-header-logo {
+  img {
+    max-height: 28px;
+    margin: $spacing/4 $spacing/2;
+  }
+}
+
+
+
+div.gsc-control-cse {
+  padding: 0 0 0 0;
+  background: transparent;
+  border: 0px none;
+}
+
+.gsc-input {
+  padding-right: 0 !important;
+}
+
+form.gsc-search-box-tools {
+  padding: $spacing/2 0 !important;
+}
+
+div.gsc-input-box {
+  height: 38px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  @extend %field;
+  input {
+    border: 0px none !important;;
+    height: 32px !important;
+  }
+}
+
+input.gsc-search-button {
+  padding: $spacing/4 0 !important;
+  background-color: #202020;
+  border:0px none;
+  display: none;
+}
+
+/*
+
+input.gsc-search-button {
+  height: 24px !important;
+  background-image: url("http://www.google.com/uds/css/v2/search_box_icon.png") !important;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: $spacing/4 $spacing !important;
+}
+
+
+*/
