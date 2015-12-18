@@ -33,7 +33,8 @@ var sys = require('sys'),
 
     },
     sCurrentPath = process.cwd(),
-    pkg  = path.join(path.dirname(fs.realpathSync(__filename)), '../package.json');
+    sFrontendCorePath = path.dirname(fs.realpathSync(__filename)),
+    pkg  = path.join( sFrontendCorePath , '../package.json');
 
 function log( error, stdout, stderr) {
     if (error) {
@@ -44,17 +45,17 @@ function log( error, stdout, stderr) {
 
 switch (param) {
     case "css":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ] );
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ] );
+        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
+        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
     break;
     case "css:compile":
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ] );
+        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
     break;
     case "css:import":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ] );
+        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
     break;
     default:
-        exec('grunt', ['--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ] );
+        exec('grunt', ['--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ], '--base=' + sFrontendCorePath + '/../' );
     break;
 }
 
