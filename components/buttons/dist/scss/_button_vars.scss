@@ -1,0 +1,57 @@
+$object-buttons-vars-default: (
+	/* General settings */
+	font-size: $font-size-m,
+	font-weight: bold,
+	text-transform: normal,
+	font-family: $font-face-title,
+	padding: $spacing/3 $spacing,
+	margin: 0 $spacing/4 $spacing/4 0,
+	border: 0px none,
+	border-radius: 1px,
+	box-shadow: "inset 1px 1px 0 rgba(255,255,255,.3), inset -1px -1px 0 rgba(0,0,0,.05)",
+	text-shadow: 1px 1px 0 rgba(0,0,0,.15),
+
+	/* Button small */
+	small-font-family: $font-face-default,
+	small-font-weight: normal,
+	small-font-size: $font-size-s,
+	small-padding: $spacing/6 $spacing/2,
+
+	/* Button Large */
+	large-font-family: $font-face-title,
+	large-font-weight: bold,
+	large-font-size: $font-size-l,
+	large-padding: $spacing/4 $spacing,
+
+	/* Default button */
+	default-background: $color-foreground-light,
+	default-color: $color-background,
+	default-background-active: rgba($color-foreground, .25),
+	default-color-active: $color-background,
+
+	/* Button primary */
+	primary-background: $color-primary,
+	primary-color: contrast-color($color-primary),
+
+	/* Button secondary */
+	secondary-background: $color-secondary,
+	secondary-color: contrast-color($color-secondary),
+
+	/* Button success */
+	success-background: $color-success,
+	success-color: contrast-color($color-success),
+
+	/* Button error */
+	error-background: $color-error,
+	error-color: contrast-color($color-error),
+
+	/* Button empty */
+	empty-background: none,
+	empty-color: $color-link,
+	empty-text-shadow: none,
+
+) !global !default;
+
+$object-buttons-vars-custom: () !global !default;
+
+$object-buttons-vars: map-merge($object-buttons-vars-default, $object-buttons-vars-custom) !global;

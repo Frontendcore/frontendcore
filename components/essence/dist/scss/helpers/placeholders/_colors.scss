@@ -1,0 +1,47 @@
+%c-text {
+	color: $color-foreground !important;
+}
+
+%c-background {
+	color: $color-background !important;
+}
+
+%c-main {
+	color: $color-primary !important;
+}
+
+%c-ko {
+	color: $color-error !important;
+}
+
+%c-ok {
+	color: $color-success !important;
+}
+
+%bg-text {
+	color: $color-foreground !important;
+}
+
+%bg-background {
+	color: $color-background !important;
+}
+
+%bg-main {
+	color: $color-primary !important;
+}
+
+%bg-ko {
+	color: $color-error !important;
+}
+
+%bg-ok {
+	color: $color-success !important;
+}
+
+%bg-box {
+	background-color: $color-box;
+}
+
+%bg-box-dark {
+	background-color: $color-box-dark;
+}

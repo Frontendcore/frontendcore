@@ -1,0 +1,125 @@
+[class^='button--'], .button {
+	@extend %button;
+	font-weight: map-get($object-buttons-vars, font-weight);
+	font-family: map-get($object-buttons-vars, font-family);
+	font-size: map-get($object-buttons-vars, font-size);
+	background: map-get($object-buttons-vars, default-background);
+	color: map-get($object-buttons-vars, default-color);
+	border-color: map-get($object-buttons-vars, default-background);
+}
+
+.button--hollow {
+	&:hover {
+		color: $color-foreground !important;
+		border-color: $color-foreground !important;
+	}
+}
+
+.button--small {
+	& {
+		padding: $spacing/4 $spacing/2;
+		font-family: map-get($object-buttons-vars, small-font-family);
+		font-weight: map-get($object-buttons-vars, small-font-weight);
+		font-size: map-get($object-buttons-vars, small-font-size);
+	}
+	[class^='icon--'] {
+		margin-right: $spacing/8;
+	}
+}
+
+.button--large {
+	& {
+		padding: $spacing/2 $spacing*1.5;
+		font-family: map-get($object-buttons-vars, large-font-family);
+		font-weight: map-get($object-buttons-vars, large-font-weight);
+		font-size: map-get($object-buttons-vars, large-font-size);
+	}
+	[class^='icon--'] {
+		margin-right: $spacing/2;
+	}
+}
+
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	height: auto;
+	width: auto;
+}
+
+.button--large {
+	padding: $spacing/4 $spacing;
+	font-size: $font-size-xl;
+}
+
+.button--small {
+	padding: map-get($object-buttons-vars, small-padding);
+	font-size: $font-size-s;
+
+}
+
+.button--primary {
+	background: map-get($object-buttons-vars, primary-background);
+	color: map-get($object-buttons-vars, primary-color);
+	border-color: map-get($object-buttons-vars, primary-background);
+}
+
+
+.button--secondary {
+	background: map-get($object-buttons-vars, secondary-background);
+	color: map-get($object-buttons-vars, secondary-color);
+	border-color: map-get($object-buttons-vars, secondary-background);
+}
+
+
+.button--success {
+	background: map-get($object-buttons-vars, success-background);
+	color: map-get($object-buttons-vars, success-color);
+	border-color: map-get($object-buttons-vars, success-background);
+}
+
+
+.button--error {
+	background: map-get($object-buttons-vars, error-background);
+	color: map-get($object-buttons-vars, error-color);
+	border-color: map-get($object-buttons-vars, error-background);
+}
+
+
+.button--hollow {
+	& {
+		background: transparent;
+		text-shadow: none;
+		color: map-get($object-buttons-vars, default-background);
+	}
+	&.button--primary {
+		color: map-get($object-buttons-vars, primary-background);
+	}
+	&.button--secondary {
+		color: map-get($object-buttons-vars, secondary-background);
+	}
+	&.button--success {
+		color: map-get($object-buttons-vars, success-background);
+	}
+	&.button--error {
+		color: map-get($object-buttons-vars, error-background);
+	}
+}
+
+.button--empty {
+	background: map-get($object-buttons-vars, empty-background);
+	color: map-get($object-buttons-vars, empty-color);
+	text-shadow: map-get($object-buttons-vars, empty-text-shadow);
+	box-shadow: none;
+	border-color: transparent;
+	&:hover {
+		color: map-get($object-buttons-vars, empty-color) !important;
+		text-decoration: underline;
+		border-color: transparent !important;
+	}
+}
+
+.button--disabled,
+.button--disabled:hover {
+	opacity: .2;
+	cursor: default;
+}

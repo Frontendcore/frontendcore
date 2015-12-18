@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script type="text/javascript" src="js/roundtrip.js"></script>
+        <script type="text/javascript" src="http://beta.frontendcore.dev//static/js/frontendcore.js?v=200"></script>
+        <script type="text/javascript" async="async">
+            var oGlobalSettings = {
+                sPathJs : '/http://beta.frontendcore.dev//static/js/',
+                sPathJsCore: '/http://beta.frontendcore.dev//static/js/',
+                sPathJsModules : 'js/modules/',
+                sPathJsLibs : 'http://beta.frontendcore.dev//static/js/libs/',
+                sPathCss: 'http://beta.frontendcore.dev//static/css/',
+                bResponsiveImages: true,
+                sHash : '200',
+                oCss: {
+                    'http://beta.frontendcore.dev//static/css/main.css?v=1' : 'all',
+                    'http://beta.frontendcore.dev//static/css/icons.css?v=1' : 'all',
+                    'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
+                    'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
+                    'http://beta.frontendcore.dev//static/css/screen-xs.css?v=1' : 'screen and (max-width:249px)',
+                    'http://beta.frontendcore.dev//static/css/screen-s.css?v=1' : 'screen and (min-width:249px) and (max-width:499px)',
+                    'http://beta.frontendcore.dev//static/css/screen-m.css?v=1' : 'screen and (min-width:500px) and (max-width:799px)',
+                    'http://beta.frontendcore.dev//static/css/screen-l.css?v=1' : 'screen and (min-width:799px) and (max-width:979px)',
+                    'http://beta.frontendcore.dev//static/css/screen-xl.css?v=1' : 'screen and (min-width:980px) and (max-width:1279px)',
+                    'http://beta.frontendcore.dev//static/css/screen-xxl.css?v=1' : 'screen and (min-width:1280px) and (max-width:1439px)',
+                    'http://beta.frontendcore.dev//static/css/screen-xxxl.css?v=1' : 'screen and (min-width:1440px)'
+                },
+                RoundTripData : {
+                    "products": {
+                        "0": {
+                            "name": "flower",
+                            "quantity": Math.random()
+                        },
+                        "1": {
+                            "name": "suitcase",
+                            "quantity": Math.random()
+                        },
+                        "2": {
+                            "name": "shit",
+                            "quantity": Math.random()
+                        }
+                    },
+                    "list": {
+                        "0": {
+                            "name": "flower",
+                            "quantity": Math.random()
+                        },
+                        "1": {
+                            "name": "suitcase",
+                            "quantity": Math.random()
+                        },
+                        "2": {
+                            "name": "shit",
+                            "quantity": Math.random()
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div data-fc-render="product-list" data-fc-template="twig/product-list.html.twig" data-fc-data="json/product-list.json"></div>
+                </div>
+                <div class="col">
+                    <div data-fc-render="product-2" data-fc-template="twig/product-total.html.twig" data-fc-data="[products]"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

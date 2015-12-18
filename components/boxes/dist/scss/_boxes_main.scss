@@ -1,0 +1,86 @@
+[class^='box--'], .box {
+	& {
+		box--sizing: border-box;
+		@if $default-border-radius > 0 {
+			border-radius: $default-border-radius;
+		}
+		margin-bottom: $spacing;
+		padding: $spacing;
+		overflow: hidden;
+		background: $color-box;
+		color: contrast-color($color-box);
+
+	}
+	.box--lighten {
+		background: $color-background;
+	}
+}
+
+.box--background {
+	& {
+		background: $color-background;
+		color: contrast-color($color-background);
+	}
+	& > .box--lighten {
+		background: $color-box;
+	}
+	.box--background {
+		border: 1px solid $color-box;
+	}
+}
+
+.box--empty {
+	background: transparent;
+}
+
+.box--foreground {
+	background: $color-foreground;
+	color: contrast-color($color-foreground);
+}
+
+.box--success {
+	background: $color-success;
+	color: contrast-color(darken($color-success, 10%));
+}
+
+.box--error {
+	background: $color-error;
+	color: contrast-color($color-error, $color-foreground, $color-background);
+}
+
+.box--info {
+	background: $color-info;
+	color: contrast-color($color-info, $color-foreground, $color-background);
+}
+
+.box--warning {
+	background: $color-warning;
+	color: contrast-color($color-warning, $color-foreground, $color-background);
+}
+
+.box--darken {
+	@include background-transparent($color-foreground, .3);
+	color: $color-background;
+	box--shadow: none;
+}
+
+.box--lighten {
+	@include background-transparent($color-background, .3);
+	color: $color-foreground;
+	box--shadow: none;
+}
+
+.box--primary {
+	& {
+		background: $color-primary;
+		color: contrast-color($color-primary, $color-foreground, $color-background);
+	}
+	a {
+		color: contrast-color($color-primary, $color-foreground, $color-background);
+	}
+}
+
+.box--secondary {
+	background: $color-secondary;
+	color: $color-background;
+}

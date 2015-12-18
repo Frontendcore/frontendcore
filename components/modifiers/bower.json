@@ -1,0 +1,11 @@
+{
+    "name": "fc-modifiers",
+    "version": "1.0.0",
+    "lastFeature" : "Release %v%",
+    "private": true,
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        "tests"
+    ]
+}

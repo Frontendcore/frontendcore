@@ -1,0 +1,15 @@
+<form class="form" data-fc-modules="product-list">
+    <fieldset>
+        <ul>
+            {% for product in list %}
+                <li>
+                <label for="product-{{ key }}">{{ product.name }}</label>
+                <input id="product-{{ key }}" name="product-{{ key }}-quaantity"type="text" value="{{ product.quantity }}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </fieldset>
+
+    <button type="submit">Send</button>
+</form>
+<a id="click-me">click-me</a>

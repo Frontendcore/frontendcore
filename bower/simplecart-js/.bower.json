@@ -1,0 +1,13 @@
+{
+  "name": "simplecart-js",
+  "homepage": "https://github.com/wojodesign/simplecart-js",
+  "_release": "51a9a38d71",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "51a9a38d71ecf4c3f778467b4754c3e25a5c3d4d"
+  },
+  "_source": "https://github.com/wojodesign/simplecart-js.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/wojodesign/simplecart-js.git"
+}

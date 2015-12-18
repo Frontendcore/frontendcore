@@ -1,0 +1,21 @@
+{
+  "name": "bselect",
+  "version": "0.3.4",
+  "main": [
+    "./bselect.js",
+    "./bselect.css"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.0"
+  },
+  "homepage": "https://github.com/gustavohenke/bselect",
+  "_release": "0.3.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.4",
+    "commit": "accfab94b433705ac80ac1eca3d1d9b85b03afe7"
+  },
+  "_source": "git://github.com/gustavohenke/bselect.git",
+  "_target": "~0.3.4",
+  "_originalSource": "bselect"
+}

@@ -1,0 +1,9 @@
+$grid-custom: () !default;
+
+$grid-default: (
+		container-width: 100%,
+		gutters: .8rem,
+		container-position: center,
+);
+
+$grid: map-merge($grid-default, $grid-custom) !global;

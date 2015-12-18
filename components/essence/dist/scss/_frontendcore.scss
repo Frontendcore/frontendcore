@@ -1,0 +1,17 @@
+// MODULAR SCALE FUNCTIONS
+@import '../../../../bower/modular-scale/stylesheets/_modular-scale.scss';
+
+// FRONTENDCORE FUNCTIONS
+@import 'helpers/functions/__index.scss';
+
+// FRONTENDCORE MIXINS
+@import 'helpers/mixins/__index.scss';
+
+// FRONTENDCORE DEFAULTS MAPS
+@import "defaults/__index.scss";
+
+// SET GLOBAL VARS
+@import "globals/__index.scss";
+
+// FRONTENDCORE PLACEHOLDERS
+@import "helpers/placeholders/__index.scss";

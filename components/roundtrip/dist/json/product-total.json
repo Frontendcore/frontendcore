@@ -1,0 +1,12 @@
+{
+  "products" : {
+    "0" : {
+      "name" : "flower",
+      "quantity" : 1
+    },
+    "1" : {
+      "name" : "suitcase",
+      "quantity" : 2
+    }
+  }
+}

@@ -3,10 +3,10 @@
 var param = process.argv[2];
 
 /*
-process.argv.forEach(function (val, index, array) {
-    console.log(array);
-    console.log(index + ': ' + val);
-});
+ process.argv.forEach(function (val, index, array) {
+ console.log(array);
+ console.log(index + ': ' + val);
+ });
  */
 
 
@@ -15,8 +15,14 @@ var sys = require('sys'),
     path = require('path'),
     fs   = require('fs'),
     spawn = require('child_process').spawn,
+    sCurrentPath = process.cwd(),
+    sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../') ,
     exec = function( bin, params ) {
-        var child = spawn(bin, params);
+        var child = spawn( bin, params, {
+            cwd: sFrontendCorePath,
+            env: process.env
+        });
+
 
         // Send data to the child process via its stdin stream
         child.stdin.write("Executing " + bin);
@@ -32,9 +38,9 @@ var sys = require('sys'),
         });
 
     },
-    sCurrentPath = process.cwd(),
-    sFrontendCorePath = path.dirname(fs.realpathSync(__filename)),
-    pkg  = path.join( sFrontendCorePath , '../package.json');
+    pkg  = path.join( sFrontendCorePath , 'package.json');
+
+console.log(sFrontendCorePath)
 
 function log( error, stdout, stderr) {
     if (error) {
@@ -45,17 +51,23 @@ function log( error, stdout, stderr) {
 
 switch (param) {
     case "css":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
-    break;
+        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        break;
     case "css:compile":
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
-    break;
+        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath , '--gruntfile=' + sFrontendCorePath + '/gruntfile.js'] );
+        break;
+    case "update":
+        exec('grunt', ['update','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        break;
+    case "clone":
+        exec('grunt', ['gitclone','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        break;
     case "css:import":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg, '--base=' + sFrontendCorePath + '/../' ] );
-    break;
+        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        break;
     default:
-        exec('grunt', ['--pathJSON=' + sCurrentPath, '--pathPKG=' + pkg ], '--base=' + sFrontendCorePath + '/../' );
-    break;
+        exec('grunt', ['--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        break;
 }
 

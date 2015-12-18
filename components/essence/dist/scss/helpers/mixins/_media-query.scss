@@ -1,0 +1,48 @@
+@mixin hide-on-query {
+  & {
+	display: none;
+  }
+  &.d-ib, &.d-b {
+	display: none !important;
+  }
+}
+
+@mixin show-on-query {
+  & {
+	display: block !important;
+  }
+  &.d-ib, &.inline-block {
+	display: inline-block !important;
+  }
+  &td, &th {
+	display: table-cell !important;
+  }
+}
+
+
+@mixin device-display-query ($current-device) {
+  @each $breakpoint, $device in $screens-and-devices {
+	.#{$device} {
+	  @if ($device != $current-device) {
+		@include hide-on-query;
+	  } @else {
+		@include show-on-query;
+	  }
+	}
+  }
+}
+
+@mixin screen-display-query($current-breakpoint) {
+
+  @each $breakpoint, $device in $screens-and-devices {
+
+	.screen-#{$breakpoint} {
+	  @if ($breakpoint != $current-breakpoint) {
+		@include hide-on-query;
+	  } @else {
+		@include show-on-query;
+	  }
+	}
+
+  }
+}

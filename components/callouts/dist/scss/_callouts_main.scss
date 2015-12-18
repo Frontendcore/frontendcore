@@ -1,0 +1,25 @@
+[class^='callout'] {
+  & {
+    padding: $spacing/2 $spacing;
+    margin: 0 0 $spacing;
+    color: $color-foreground;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0 0 0 $spacing/4;
+    background: $color-background;
+    position: relative;
+    box-shadow: 0 0 2px rgba($color-foreground, .5);
+    min-height: 26px;
+  }
+}
+
+@each $colorName, $colorValue in $colors-status {
+  .callout-#{$colorName} {
+    border-color: $colorValue;
+    h1,h2,h3,h4,h5,h6 {
+      color: $colorValue;
+    }
+  }
+}
+

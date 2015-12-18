@@ -1,0 +1,9 @@
+$device: 'all' !global;
+$screen: 'all' !global;
+
+// FRONTENDCORE
+@import '_frontendcore.scss';
+
+// NORMALIZE & DEFAULTS
+@import "normalize/_normalize.scss";
+@import "normalize/_defaults.scss";

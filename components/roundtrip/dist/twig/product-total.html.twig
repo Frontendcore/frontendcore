@@ -1,0 +1,19 @@
+<form id="product-total-form" data-fc-modules="product-total" action="#" class="form">
+    <fieldset>
+        <ul>
+            {% for product in products %}
+                <li>
+                <label for="product-total-{{ loop.index }}">{{ product.name }}</label>
+                <input id="product-total-{{ loop.index }}" name="product-{{ loop.index }}-quantity" type="text" value="{{ product.quantity }}" />
+            </li>
+            {% endfor %}
+            {% for product in list %}
+                <li>
+                    <label for="product-total-list{{ loop.index }}">{{ product.name }}</label>
+                    <input id="product-total-list{{ loop.index }}" name="product-total-list{{ loop.index }}-quaantity"type="text" value="{{ product.quantity }}" />
+                </li>
+            {% endfor %}
+        </ul>
+    </fieldset>
+    <button type="submit">Send</button>
+</form>

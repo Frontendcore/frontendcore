@@ -51,5 +51,9 @@
     "parsleyjs": "~2.0.7",
     "bselect": "~0.3.4",
     "object-fit-polyfill": "~0.1.0"
-  }
+  },
+  "dependencies": {
+      "normalize-css": "normalize.css#~3.0.3",
+      "modular-scale": "~2.1.1"
+    }
 }

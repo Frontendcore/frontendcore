@@ -1,0 +1,34 @@
+%button {
+	& {
+		border-radius: map-get($object-buttons-vars, border-radius);
+		margin: map-get($object-buttons-vars, margin);
+		padding: map-get($object-buttons-vars, padding);
+		box-shadow: unquote(map-get($object-buttons-vars, box-shadow));
+		text-shadow: unquote(map-get($object-buttons-vars, text-shadow));
+		display: inline-block;
+		vertical-align: middle;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		box-sizing: border-box;
+		font-weight: map-get($object-buttons-vars, font-weight);
+		font-family: map-get($object-buttons-vars, font-family);
+		font-size: map-get($object-buttons-vars, font-size);
+		border-width: 1px;
+		border-style: solid;
+		background: map-get($object-buttons-vars, default-background);
+		color: map-get($object-buttons-vars, default-color);
+		border-color: map-get($object-buttons-vars, default-background);
+	}
+	&:hover {
+		opacity: .9;
+		text-decoration: none;
+	}
+	&:active {
+		opacity: .8;
+		outline: 0;
+	}
+	[class^='icon--'] {
+		margin-right: $spacing/4;
+	}
+}

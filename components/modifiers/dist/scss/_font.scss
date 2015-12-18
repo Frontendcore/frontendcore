@@ -1,0 +1,70 @@
+/* Description:
+Provides a common system for setting font sizes and font title appearance between HTML elements.
+
+Usage:
+Mark the element with the desired font class.
+
+Complete acronym reference based on Emmet:
+
+FIRST 2 LETTERS
+fz = font-size
+
+WORDS AFTER THE DASH
+The words after the dash are based on shirt sizes or heading elements:
+h1, h2, h3, h4, h5
+xs, s, m, l, xl, xxl
+
+EXAMPLES
+fz-l
+fz-h1
+*/
+
+
+
+.fz-xxxl {
+	@include rem-fallback(font-size, $font-size-xxxl, true);
+	line-height: $base-line-height;
+}
+
+.fz-xxl {
+	@include rem-fallback(font-size, $font-size-xxl, true);
+	line-height: $base-line-height;
+}
+
+.fz-xl {
+	@include rem-fallback(font-size, $font-size-xl, true);
+	line-height: $base-line-height;
+}
+
+.fz-l {
+	@include rem-fallback(font-size, $font-size-l, true);
+	line-height: $base-line-height;
+}
+
+.fz-m {
+	@include rem-fallback(font-size, $font-size-m, true);
+	line-height: $base-line-height;
+}
+
+.fz-default {
+	@include rem-fallback(font-size, $font-size-default, true);
+	line-height: $base-line-height;
+}
+
+.fz-s {
+	@include rem-fallback(font-size, $font-size-xs, true);
+	line-height: $base-line-height;
+}
+
+.fz-xs {
+	@include rem-fallback(font-size, $font-size-xxs, true);
+	line-height: $base-line-height;
+}
+
+.fw-n {
+	font-weight: normal;
+}
+
+.fw-b {
+	font-weight: bold;
+}
