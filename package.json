@@ -4,14 +4,17 @@
   "license": "Apache License, Version 2.0",
   "homepage": "http://www.frontendcore.com",
   "description": "The all in one frontend framework based on components for the real life",
-  "version": "2.0.0",
+  "version": "2.0.0-beta",
   "lastFeature": "Release %v% !",
-  "main": "index.html",
   "author": "Toni Pinel (http://www.tonipinel.net)",
   "bugs": "https://github.com/tonipinel/frontendcore-workspace/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/tonipinel/frontendcore-workspace.git"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "frontendcore": "bin/index.js"
   },
   "keywords": [
     "grunt",
@@ -33,7 +36,6 @@
     "grunt-twig-render": "^1.7.2",
     "jit-grunt": "^0.9.1",
     "load-grunt-config": "^0.16.0",
-    "load-grunt-tasks": "^2.0.0",
-    "node-sass": "^2.1.1"
+    "load-grunt-tasks": "^2.0.0"
   }
 }

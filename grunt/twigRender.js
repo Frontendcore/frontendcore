@@ -27,21 +27,26 @@ function mergeJSON(source1,source2){
 }
 
 
-var pkg = require('../package.json'),
-    bbdd = require('../_resources/bbdd/sections.json'),
+var pkg, bbdd, data;
+
+module.exports = function(grunt) {
+
+    pkg = require(  grunt.option('pathPKG') );
+    bbdd = require('../_resources/bbdd/sections.json');
     data = mergeJSON(pkg, bbdd);
 
-module.exports = {
-    dist: {
-        files: [
-            {
-                data: data,
-                expand: true,
-                cwd: 'twig/',
-                src: ['**/*.html.twig', '!**/_*.html.twig'],
-                dest: 'build/',
-                ext: '.html'
-            }
-        ]
-    }
+    return {
+        dist: {
+            files: [
+                {
+                    data: data,
+                    expand: true,
+                    cwd: 'twig/',
+                    src: ['**/*.html.twig', '!**/_*.html.twig'],
+                    dest: 'build/',
+                    ext: '.html'
+                }
+            ]
+        }
+    };
 };

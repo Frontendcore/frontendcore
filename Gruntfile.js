@@ -1,7 +1,7 @@
-var pkg = require('./package.json'),
-	fc = require('./frontendcore.json');
-
 module.exports = function (grunt) {
+
+	var pkg = require( grunt.option('pathPKG')),
+		fc = require( grunt.option('pathJSON') + '/frontendcore.json');
 
 	require('load-grunt-config')(grunt);
 
@@ -13,11 +13,11 @@ module.exports = function (grunt) {
 	grunt.registerTask('js', ['grunt:js']);
 	grunt.registerTask('html', ['twigRender']);
 
+	grunt.registerTask('build', ['js','css','html']);
+	grunt.registerTask('default', ['js','css']);
 
-	grunt.registerTask('default', ['js','css','html']);
 
-
-// GIT TASKS
+	// GIT TASKS
 	for ( var nKey = 0; nKey < fc.components.length; nKey ++ ) {
 		grunt.registerTask('push:' + fc.components[nKey], ['gitadd:' + fc.components[nKey],'gitcommit:' + fc.components[nKey],'gitpush:' + fc.components[nKey]]);
 		grunt.registerTask('release:' + fc.components[nKey], ['gitadd:' + fc.components[nKey],'gitcommit:' + fc.components[nKey],'gittag:' + fc.components[nKey],'gitpush:' + fc.components[nKey]]);

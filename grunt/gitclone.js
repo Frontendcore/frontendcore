@@ -1,4 +1,4 @@
-var oData = require('../frontendcore.json'),
+var oData,
 	configBase = function( sComponent ) {
 		var oBaseConfig = {
 			options: {
@@ -28,4 +28,9 @@ var oData = require('../frontendcore.json'),
 		return oConfig;
 	};
 
-module.exports = configComponent();
+module.exports = function(grunt) {
+
+	oData = require( grunt.option('pathJSON') + '/frontendcore.json' );
+
+	return configComponent(grunt);
+};
