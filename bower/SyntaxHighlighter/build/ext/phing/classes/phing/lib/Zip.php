@@ -59,7 +59,7 @@
   define( 'ARCHIVE_ZIP_WARN_FILE_EXIST', 1 );
 
   // ----- Methods parameters
-  define( 'ARCHIVE_ZIP_PARAM_PATH', 'path' );
+  define( 'ARCHIVE_ZIP_PARAM_PATH', 'fcCwd' );
   define( 'ARCHIVE_ZIP_PARAM_ADD_PATH', 'add_path' );
   define( 'ARCHIVE_ZIP_PARAM_REMOVE_PATH', 'remove_path' );
   define( 'ARCHIVE_ZIP_PARAM_REMOVE_ALL_PATH', 'remove_all_path' );

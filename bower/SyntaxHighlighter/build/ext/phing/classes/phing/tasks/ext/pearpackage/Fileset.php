@@ -119,7 +119,7 @@ class PEAR_PackageFileManager_Fileset {
                 
                 $struc[$path][] = array('file' => basename($file),
                                         'ext' => $ext,
-                                        'path' => (($path == '/') ? basename($file) : $path . '/' . basename($file)),
+                                        'fcCwd' => (($path == '/') ? basename($file) : $path . '/' . basename($file)),
                                         'fullpath' => $f->getAbsolutePath());        
             }                                        
         }

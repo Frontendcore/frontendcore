@@ -36,7 +36,7 @@ var oData,
 
 module.exports = function(grunt) {
 
-	oData = require( grunt.option('pathJSON') + '/frontendcore.json' );
+	oData = require( grunt.option('appCwd') + '/frontendcore.json' );
 
 	return configComponent(grunt);
 };

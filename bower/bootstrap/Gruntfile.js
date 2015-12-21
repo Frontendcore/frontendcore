@@ -16,7 +16,7 @@ module.exports = function (grunt) {
   };
 
   var fs = require('fs');
-  var path = require('path');
+  var path = require('fcCwd');
   var npmShrinkwrap = require('npm-shrinkwrap');
   var generateGlyphiconsData = require('./grunt/bs-glyphicons-data-generator.js');
   var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');

@@ -34577,7 +34577,7 @@ define("tinymce/ui/Path", [
 			}
 
 			self._super(settings);
-			self.addClass('path');
+			self.addClass('fcCwd');
 			self.canFocus = true;
 
 			self.on('click', function(e) {

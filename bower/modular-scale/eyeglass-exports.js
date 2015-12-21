@@ -1,4 +1,4 @@
-var path = require('path');
+var path = require('fcCwd');
 
 module.exports = function(eyeglass, sass) {
   return {

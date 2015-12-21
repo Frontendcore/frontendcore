@@ -3885,7 +3885,7 @@ define('moxie/core/utils/Url', [], function() {
 	@return {Object} Hash containing extracted uri components
 	*/
 	var parseUrl = function(url, currentUrl) {
-		var key = ['source', 'scheme', 'authority', 'userInfo', 'user', 'pass', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'fragment']
+		var key = ['source', 'scheme', 'authority', 'userInfo', 'user', 'pass', 'host', 'port', 'relative', 'fcCwd', 'directory', 'file', 'query', 'fragment']
 		, i = key.length
 		, ports = {
 			http: 80,

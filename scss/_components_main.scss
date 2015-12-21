@@ -1,5 +1,6 @@
 /* generated with grunt-sass-globbing */
 
+@import "../components/essence/dist/scss/fc-main_essence";
 @import "../components/buttons/dist/scss/button_vars";
 @import "../components/forms/dist/scss/form_vars";
 @import "../components/buttons/dist/scss/buttons_pattern";
@@ -9,7 +10,6 @@
 @import "../components/buttons/dist/scss/buttons-group_main";
 @import "../components/buttons/dist/scss/buttons_main";
 @import "../components/callouts/dist/scss/callouts_main";
-@import "../components/essence/dist/scss/main";
 @import "../components/forms/dist/scss/form_main";
 @import "../components/grids/dist/scss/grids_main";
 @import "../components/modifiers/dist/scss/_index_main";

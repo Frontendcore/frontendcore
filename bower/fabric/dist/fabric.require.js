@@ -7506,7 +7506,7 @@ fabric.BaseBrush = fabric.util.createClass(/** @lends fabric.BaseBrush.prototype
       this._resetShadow();
       this.canvas.renderAll();
 
-      // fire event 'path' created
+      // fire event 'fcCwd' created
       this.canvas.fire('path:created', { path: path });
     }
   });
@@ -15280,7 +15280,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
      * @type String
      * @default
      */
-    type: 'path',
+    type: 'fcCwd',
 
     /**
      * Array of path points
@@ -19455,7 +19455,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
     'lineHeight',
     'textBackgroundColor',
     'useNative',
-    'path'
+    'fcCwd'
   );
 
   /**

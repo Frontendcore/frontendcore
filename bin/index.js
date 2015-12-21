@@ -51,23 +51,28 @@ function log( error, stdout, stderr) {
 
 switch (param) {
     case "css":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['css','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
         break;
     case "css:compile":
-        exec('grunt', ['css','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath , '--gruntfile=' + sFrontendCorePath + '/gruntfile.js'] );
+        exec('grunt', ['css:compile','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath] );
+        break;
+    case "docs":
+        exec('grunt', ['html','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath] );
         break;
     case "update":
-        exec('grunt', ['update','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['update','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
         break;
     case "clone":
-        exec('grunt', ['gitclone','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['gitclone','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
+        break;
+    case "js":
+        exec('grunt', ['js','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
         break;
     case "css:import":
-        exec('grunt', ['rebuild','--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['rebuild','--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
         break;
     default:
-        exec('grunt', ['--pathJSON=' + sCurrentPath, '--path=' + sFrontendCorePath ] );
+        exec('grunt', ['--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
         break;
 }
 

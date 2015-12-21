@@ -225,7 +225,7 @@ class PearPackage2Task extends PearPackageTask {
 
                     foreach($replacements as $replacement) { 
                         $this->pkg->addReplacement(
-                            $replacement['path'], 
+                            $replacement['fcCwd'],
 							$replacement['type'], 
 							$replacement['from'], 
 							$replacement['to']
