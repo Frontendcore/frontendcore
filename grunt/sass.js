@@ -2,7 +2,6 @@ module.exports = function( grunt ) {
 
 	var oData = require(grunt.option('appCwd') + '/frontendcore.json');
 
-
 	return  {
 		common: {
 			files: [{

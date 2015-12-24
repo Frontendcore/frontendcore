@@ -50,7 +50,8 @@
     "compass-mixins": "~1.0.2",
     "parsleyjs": "~2.0.7",
     "bselect": "~0.3.4",
-    "object-fit-polyfill": "~0.1.0"
+    "object-fit-polyfill": "~0.1.0",
+    "twig.js": "~0.8.4"
   },
   "dependencies": {
       "normalize-css": "normalize.css#~3.0.3",

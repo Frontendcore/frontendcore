@@ -1,29 +1,26 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json');
-
+	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
+		oPkg = require(grunt.option('fcCwd') + '/package.json'),
+		oComponents = oData.components !== undefined ? oData.components : oPkg.components;
 
 	function getComponentsJs() {
 
-		var oComponents = [];
+		var oFiles = [];
 
-		if (oData.components !== undefined) {
+		for (var nKey = 0; nKey < oComponents.length; nKey++) {
 
-			for (var nKey = 0; nKey < oData.components.length; nKey++) {
-
-				oComponents.push( {
-					expand: true,
-					cwd: grunt.option('fcCwd') + '/' +  oData.bower.cwd + '/'+ oData.components[nKey] + '/dist/js/',
-					src: '*.js',
-					dest: grunt.option('appCwd') + '/' +  oData.js.dest,
-					preserveComments: false,
-					beautify: true
-				} );
-			}
-
+			oFiles.push( {
+				expand: true,
+				cwd: grunt.option('fcCwd') + '/' +  oData.bower.cwd + '/'+ oComponents[nKey] + '/js/',
+				src: ['*.js','!_*.js'],
+				dest: grunt.option('appCwd') + '/' +  oData.js.dest + '/ui',
+				preserveComments: false,
+				beautify: true
+			} );
 		}
 
-		return oComponents;
+		return oFiles;
 	}
 
 	var oCore = {
@@ -32,9 +29,9 @@ module.exports = function(grunt) {
 			beautify: false
 		},
 		files: {}
-	}
+	};
 
-	oCore.files[ grunt.option('fcCwd') + '/dist/js/frontendcore.js'] = [
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/frontendcore.js'] = [
 		grunt.option('fcCwd') + '/components/essence/src/js/libs/modernizr-custom.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/build/TinyCore.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/src/tools/mediator/TinyCore.Toolbox.Mediator.js',
@@ -42,7 +39,7 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.domBoot.js',
 		grunt.option('fcCwd') + '/bower/jquery/dist/jquery.js',
-		grunt.option('fcCwd') + '/components/essence/js/namespace.js',
+		grunt.option('fcCwd') + '/components/essence/js/_namespace.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_bind.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_attributeToArray.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_getDataModules.js',
@@ -53,16 +50,30 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/essence/js/tools/_mixOptions.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_removeLoading.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_track-analytics.js',
-		grunt.option('fcCwd') + '/components/essence/js/modules-config.js',
-		grunt.option('fcCwd') + '/components/essence/js/init.js'
+		grunt.option('fcCwd') + '/components/essence/js/_modules-config.js',
+		grunt.option('fcCwd') + '/components/essence/js/_init.js'
 	];
+
+	var oRoundTrip = {
+		options: {
+			preserveComments: false,
+			beautify: false
+		},
+		files: {}
+	};
+
+	oRoundTrip.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/roundtrip.js' ] = [
+		grunt.option('fcCwd') + '/bower/twig.js/twig.js',
+		grunt.option('fcCwd') + '/components/roundtrip/js/_roundtrip.js'
+	];
+
 
 	return {
 		core: oCore,
+		rountrip: oRoundTrip,
 		components: {
 			files: getComponentsJs()
 		}
-
 	}
 
 }

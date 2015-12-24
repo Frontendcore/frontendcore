@@ -21,6 +21,20 @@
     "framework",
     "frontend"
   ],
+  "components": [
+    "essence",
+    "animations",
+    "grids",
+    "boxes",
+    "typography",
+    "forms",
+    "callouts",
+    "buttons",
+    "icons",
+    "roundtrip",
+    "modifiers",
+    "tabs"
+  ],
   "devDependencies": {
     "bower": "^1.3.7",
     "grunt": "^0.4.2",
@@ -31,15 +45,15 @@
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-git": "^0.3.5",
     "grunt-grunt": "^0.2.4",
-    "grunt-mkdir": "^0.1.2",
     "grunt-newer": "^1.1.1",
-    "grunt-replace": "^0.11.0",
     "grunt-twig-render": "^1.7.2",
     "grunt-postcss": "^0.7.1",
     "precss": "^1.3.0",
     "cssnext": "^1.8.4",
     "autoprefixer": "^6.1.2",
     "grunt-sass": "1.0.0",
-    "grunt-sass-globbing": "^1.4.0"
+    "grunt-sass-globbing": "^1.4.0",
+    "grunt-notify": "^0.4.3",
+    "grunt-webfont": "^1.0.2"
   }
 }

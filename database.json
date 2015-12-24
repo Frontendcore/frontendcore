@@ -155,7 +155,8 @@
         "Tabs": {
           "name": "Tabs",
           "href": "tabs.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Tags": {
           "name": "Tags",

@@ -2,6 +2,7 @@
 {% set current_subtitle = "Don't be mistaken" %}
 {% set current_section = "Forms" %}
 {% set relative_path = "../" %}
+
 {% import "../_macros/_demo.html.twig" as demos %}
 
 {% extends "../_layout/_object.html.twig" %}
@@ -16,7 +17,7 @@
 
 {% block object_scss_vars %}
     {{ demos.scss_object(
-    '../../css/core/objects/forms/__vars.scss',
+    '../../components/forms/scss/_form_vars.scss',
     'navigation-vars'
     )}}
 {% endblock object_scss_vars %}

@@ -1,3 +1,4 @@
+{#
 {% macro demo(id, path, scss, test, form, minHeight, skin, code) %}
     {% set test = test|default(false) %}
     {% set code = code|default(true) %}
@@ -21,7 +22,7 @@
         {% endif %}
 {% endmacro %}
 
-{#
+#}
 
 {% macro demo(id, path, scss, test, form, minHeight, skin, code) %}
     {% set test = test|default(false) %}
@@ -35,7 +36,7 @@
         <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
         {% endif %}
         <section id="tab-{{ id }}-1" class="o-v" data-fc-name="Demo">
-            <div class="{% if skin == 'dark' %}box-invert{% else %}box-background{% endif %} o-v" {% if minHeight != false %}style="min-height:{{ minHeight }}"{% endif %}>
+            <div class="{% if skin == 'dark' %}box--invert{% else %}box--background{% endif %} o-v" {% if minHeight != false %}style="min-height:{{ minHeight }}"{% endif %}>
                 {% if form == true %}
                 <form class="forms" method="get">
                     <fieldset>
@@ -54,9 +55,9 @@
         </section>
         {% if code %}
         <section id="tab-{{ id }}-2" data-fc-name="Code">
-            <div class="box-background">
+            <div class="box--background">
                 <pre>
-	                <code data-fc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code>
+	                <code {#data-fc-modules="code"#}>{% filter escape %}{%  include path %}{% endfilter %}</code>
                 </pre>
             </div>
         </section>
@@ -65,7 +66,7 @@
             <section id="tab-{{ id }}-3" data-fc-name="Scss">
                 <div class="box-background">
                 <pre>
-	                <code data-fc-modules="code">{% filter escape %}{%  include scss %}{% endfilter %}</code>
+	                <code {#data-fc-modules="code"#}>{% filter escape %}{%  include scss %}{% endfilter %}</code>
                 </pre>
                 </div>
             </section>
@@ -78,7 +79,7 @@
     {% if test %}
         <a href="{{ relative_path ~ url.base }}/tests/{{ test }}.html" target="_blank" class="js-tests"><i class="icon-external-link"></i> Launch Js Tests</a>
     {% endif %}
-    <pre><code data-fc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
+    <pre><code {#data-fc-modules="code"#}>{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
 {% endmacro %}
 
 {% macro settings(terms) %}
@@ -100,7 +101,7 @@
 {% macro scss(demopath, scsspath) %}
     <div data-fc-modules="tabs">
         <section id="tab-1" data-fc-name="Description">
-            {% filter nl2br |replace({'/*':'<p class="box-background">', '*/':'</p></section><section id="tab-2" data-fc-name="SCSS code"><div class="box-background"><pre><code data-fc-modules="code">'}) %}{%  include scsspath |e('html') %}{% endfilter %}</pre></code></div>
+            {% filter nl2br |replace({'/*':'<p class="box-background">', '*/':'</p></section><section id="tab-2" data-fc-name="SCSS code"><div class="box-background"><pre><code>'}) %}{%  include scsspath |e('html') %}{% endfilter %}</pre></code></div>
         </section>
         <section id="tab-0" data-fc-name="Demo">
             <div class="box-background">
@@ -109,7 +110,7 @@
         </section>
         <section id="tab-3" data-fc-name="Demo Code">
             <div class="box-background">
-                    <pre><code data-fc-modules="code">{% filter escape %}{%  include demopath %}{% endfilter %}</code></pre>
+                    <pre><code {#data-fc-modules="code"#}>{% filter escape %}{%  include demopath %}{% endfilter %}</code></pre>
             </div>
         </section>
     </div>
@@ -117,8 +118,8 @@
 
 {% macro scss_object(scsspath) %}
         <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up in your config folder the following map. By default de values are the indicated here.</p>
-        <pre><code data-fc-modules="code"> {% filter nl2br|replace({'vars-default':'vars-custom','/*':'<span class="c-foreground-light">//','*/':'</span>'}) %}{%  include scsspath|e('html') %}{% endfilter %}</code></pre>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code {#data-fc-modules="code"#}> {%  include scsspath|e('html') %}</code></pre>
 {% endmacro %}
 
 #}

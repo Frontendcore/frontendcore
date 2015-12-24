@@ -1,21 +1,11 @@
-module.exports = {
-	options: {
-		force: true
-	},
-	build: {
-		src: ['build/*']
+module.exports = function(grunt) {
+	return {
+		options: {
+			force: true
+		},
+		build: {
+			src: [ grunt.option('fcCwd') +'/build/*']
 
-	},
-	buildTpl: {
-		src: ['build/*.html']
-
-	},
-	buildCss: {
-		src: ['build/*.css']
-
-	},
-	buildJs: {
-		src: ['build/*.js']
-
+		}
 	}
 }

@@ -1,9 +1,12 @@
 /* generated with grunt-sass-globbing */
 
-@import "../components/essence/dist/scss/fc-screen-xxl_essence";
-@import "../components/buttons/dist/scss/button_vars";
-@import "../components/forms/dist/scss/form_vars";
-@import "../components/buttons/dist/scss/buttons_pattern";
-@import "../components/forms/dist/scss/form_pattern";
-@import "../components/grids/dist/scss/grids_desktop";
-@import "../components/typography/dist/scss/fonts_desktop";
+@import "../components/essence/scss/fc-screen-xxl_essence";
+@import "../components/essence/scss/frontendcore";
+@import "../components/forms/scss/form_vars";
+@import "../components/forms/scss/form_pattern";
+@import "../components/buttons/scss/button_vars";
+@import "../components/buttons/scss/buttons_pattern";
+@import "../components/tabs/scss/tabs_vars";
+@import "../components/grids/scss/grids_desktop";
+@import "../components/tabs/scss/tabs_desktop";
+@import "../components/typography/scss/fonts_desktop";

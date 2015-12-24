@@ -1,0 +1,59 @@
+{% set current_children = "Tabs" %}
+{% set current_subtitle = "Show/hide content or hidden sections" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_demo %}
+
+    <h2><span class="label-css fz-xl va-m">CSS</span> Static tabs</h2>
+    <p>Use this tabs for static tabs with links to new pages.</p>
+    {{ demos.demo(
+        'tabs',
+        '../../components/tabs/html/tabs.html'
+    )}}
+
+
+    <h2 class="mt-l"><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Dynamic tabs</h2>
+    <p>Use this tabs to show hidden content in the DOM.</p>
+    {{ demos.demo(
+        'tabs-js',
+        '../../components/tabs/html/tabs-js.html'
+    )}}
+
+
+    <h2 class="mt-l"><span class="label-css fz-xl va-m">CSS</span> Active Tab color</h2>
+    <p>By default the active tab is using color to match the .box-background but you can adjust it to match most common boxes</p>
+    <h3>Color box tab</h3>
+    {{ demos.demo(
+        'tabs-box',
+        '../../components/tabs/html/tabs-box.html'
+    )}}
+    <h3>Color foreground tab</h3>
+    {{ demos.demo(
+        'tabs-foreground',
+        '../../components/tabs/html/tabs-foreground.html'
+    )}}
+    <h3>Color primary tab</h3>
+    {{ demos.demo(
+        'tabs-primary',
+        '../../components/tabs/html/tabs-primary.html'
+    )}}
+    <h3>Color secondary tab</h3>
+    {{ demos.demo(
+        'tabs-secondary',
+        '../../components/tabs/html/tabs-secondary.html'
+    )}}
+
+
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+         '../../components/tabs/scss/_tabs_vars.scss',
+         'tabs-vars'
+     )}}
+ {% endblock object_scss_vars %}

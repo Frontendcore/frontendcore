@@ -9,14 +9,14 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-sass-globbing');
 	grunt.loadNpmTasks('grunt-git');
-	grunt.loadNpmTasks('grunt-mkdir');
 	grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-replace');
 	grunt.loadNpmTasks('grunt-twig-render');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-notify');
+	grunt.loadNpmTasks('grunt-webfont');
 
 	var oConfig = {},
-		aTaks = ['sass','sass_globbing','postcss','twigRender','uglify'];
+		aTaks = ['sass','sass_globbing','postcss','twigRender','uglify','watch','clean','copy','notify','webfont'];
 
 	for ( var nKey = 0; nKey < aTaks.length; nKey++){
 		oConfig[aTaks[nKey]] = require( grunt.option('fcCwd') + '/grunt/'+ aTaks[nKey] +'.js' )(grunt);
@@ -24,12 +24,19 @@ module.exports = function (grunt) {
 
 	grunt.initConfig(oConfig);
 
-	grunt.registerTask('html', ['twigRender']);
-	grunt.registerTask('js', ['uglify:components']);
-	grunt.registerTask('css:compile', ['sass','postcss']);
-	grunt.registerTask('css', ['sass_globbing','css:compile']);
+	grunt.registerTask('html', ['twigRender','notify:html']);
+	grunt.registerTask('js', ['uglify','notify:js']);
+	grunt.registerTask('js:compile', ['uglify:components','notify:js']);
+	grunt.registerTask('css:compile', ['sass','postcss','notify:css']);
+	grunt.registerTask('css', ['sass_globbing','css:compile','notify:css']);
+	grunt.registerTask('icons', ['webfont','notify:icons']);
 
-	grunt.registerTask('default', ['css']);
+	grunt.registerTask('docs', ['html']);
+
+	grunt.registerTask('default', ['css','js','icons','notify:all']);
+
+	grunt.registerTask('build', ['clean','copy','html','css','js','notify:all']);
+	grunt.registerTask('rebuild:js', ['uglify','notify:all']);
 
 	grunt.event.on('watch', function (action, filepath) {
 		grunt.config(['default'], filepath);

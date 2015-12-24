@@ -8,20 +8,12 @@
     "cwd": "js",
     "dest": "build/static/js"
   },
+  "icons" : {
+    "cwd" : "components/icons/font-awesome",
+    "default" : false,
+    "dest": "build/static/css"
+  },
   "bower" : {
     "cwd": "components"
-  },
-  "components": [
-    "essence",
-    "animations",
-    "grids",
-    "boxes",
-    "typography",
-    "forms",
-    "callouts",
-    "buttons",
-    "icons",
-    "roundtrip",
-    "modifiers"
-  ]
+  }
 }

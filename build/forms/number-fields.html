@@ -21,7 +21,7 @@
         <div class="fc-header-top">
             <div class="row">
                 <div class="col">
-                    <a data-fc-modules="side-panel" data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
+                    <a  data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
                 <ul class="col">
@@ -41,10 +41,12 @@
     <div class="container--center container--pad">
         <div class="row--center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                        <div data-fc-modules="tabs" class="tabs-box">
-        <section id="demos" data-fc-name="Demos & Code">
-            
-                                                            <form class="form">
+                    <section id="demos">
+        
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-number-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <form class="form">
 	<fieldset>
 		<legend>Numbers fields</legend>
 		<ol>
@@ -80,12 +82,82 @@
 			</li>
 		</ol>
 	</fieldset>
-</form>                        
+</form>                                            </div>
         </section>
-        <section id="appearance" data-fc-name="Customize Appearance">
-                 
+                <section id="tab-number-fields-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre>
+	                <code >&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Numbers fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;tel-field&quot;&gt;Telephone Field&lt;/label&gt;
+				&lt;input type=&quot;tel&quot; id=&quot;tel-field&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;text-field22&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;text-field22&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; /&gt;
+				&lt;span&gt;/ month&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;text-field23&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;text-field23&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
+				&lt;span&gt;/ click&lt;/span&gt;
+				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;date-field&quot;&gt;Date Field&lt;/label&gt;
+				&lt;input type=&quot;date&quot; id=&quot;date-field&quot; /&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;datetime-local&quot;&gt;datetime-local&lt;/label&gt;
+				&lt;input type=&quot;datetime-local&quot; id=&quot;datetime-local&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;month&quot;&gt;month&lt;/label&gt;
+				&lt;input type=&quot;month&quot; id=&quot;month&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code>
+                </pre>
+            </div>
         </section>
-    </div>
+                    </div>
+
+    </section>
+    <section id="appearance">
+                     <h2>Customize the appearance</h2>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code > $object-forms-vars-default: (
+  /* Field */
+        field-font-family: $font-face-default,
+        field-font-size: $font-size-default,
+        field-font-weight: normal,
+        field-background: #FFF,
+        field-color: #000,
+        field-padding: $spacing/2 $spacing/2,
+        field-margin: 0 $spacing/2 $spacing 0,
+        field-border-radius: 2px,
+        field-border: 1px solid rgba($color-foreground, .3),
+        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
+        field-placeholder-color: rgba($color-foreground, .3),
+  /* Field focus */
+        field-focus-border: $color-info,
+  /* Field error */
+        field-error-border: $color-error
+) !global !default;
+
+$object-forms-vars-custom: () !global !default;
+
+$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
+</code></pre>
+
+    </section>
             </div>
         </div>
     </div>
@@ -202,7 +274,9 @@
                                                                                             <li >
                                                                                                             Pagination                                                                                                     </li>
                                                                                             <li >
-                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                                        <a href=".././navigation/tabs.html">
+                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
                                                                                             <li >
                                                                                                             Tags                                                                                                     </li>
                                                                                             <li >

@@ -21,7 +21,7 @@
         <div class="fc-header-top">
             <div class="row">
                 <div class="col">
-                    <a data-fc-modules="side-panel" data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
+                    <a  data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
                 <ul class="col">
@@ -41,7 +41,10 @@
     <div class="container--center container--pad">
         <div class="row--center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                                                                            <form class="form mt-xl">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-complex-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <form class="form mt-xl">
 	<fieldset>
 		<legend>Read Only Text fields</legend>
 		<ol>
@@ -114,7 +117,90 @@
 	</fieldset>
 	<button type="submit" class="button-primary">Continue</button>
 </form>
-                        
+                                            </div>
+        </section>
+                <section id="tab-complex-fields-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre>
+	                <code >&lt;form class=&quot;form mt-xl&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only Text fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field&quot;&gt;Text Field 100%&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field&quot; readonly=&quot;readOnly&quot; value=&quot;Text field 100%&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field2&quot;&gt;Text Field &lt;em&gt;label class=&quot;w-50&quot;&lt;/em&gt;&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field2&quot; readonly=&quot;readOnly&quot; class=&quot;w-50&quot; value=&quot;Text field 50% - w-50&quot;/&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-url-field&quot;&gt;URL Field&lt;/label&gt;
+				&lt;input type=&quot;url&quot; id=&quot;readonly-url-field&quot; readonly=&quot;readOnly&quot; value=&quot;http://website.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-email-field&quot;&gt;Email Field&lt;/label&gt;
+				&lt;input type=&quot;email&quot; id=&quot;readonly-email-field&quot; readonly=&quot;readOnly&quot; value=&quot;your.email@website.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-Password-field&quot;&gt;Password Field&lt;/label&gt;
+				&lt;input type=&quot;password&quot; id=&quot;readonly-Password-field&quot; readonly=&quot;readOnly&quot; value=&quot;secret&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only Numbers fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-tel-field&quot;&gt;Telephone Field&lt;/label&gt;
+				&lt;input type=&quot;tel&quot; id=&quot;readonly-tel-field&quot; readonly=&quot;readOnly&quot; value=&quot;999999999&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field22&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field22&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; /&gt;
+				&lt;span&gt;/ month&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field23&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field23&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
+				&lt;span&gt;/ click&lt;/span&gt;
+				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-date-field&quot;&gt;Date Field&lt;/label&gt;
+				&lt;input type=&quot;date&quot; id=&quot;readonly-date-field&quot; readonly=&quot;readOnly&quot;/&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-datetime-local&quot;&gt;datetime-local&lt;/label&gt;
+				&lt;input type=&quot;datetime-local&quot; id=&quot;readonly-datetime-local&quot; readonly=&quot;readOnly&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-month&quot;&gt;month&lt;/label&gt;
+				&lt;input type=&quot;month&quot; id=&quot;readonly-month&quot; readonly=&quot;readOnly&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only textarea&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-area&quot;&gt;Textarea&lt;/label&gt;
+				&lt;textarea id=&quot;readonly-text-area&quot; readonly=&quot;readOnly&quot;&gt;Some text&lt;/textarea&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
+&lt;/form&gt;
+</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
             </div>
         </div>
     </div>
@@ -231,7 +317,9 @@
                                                                                             <li >
                                                                                                             Pagination                                                                                                     </li>
                                                                                             <li >
-                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                                        <a href=".././navigation/tabs.html">
+                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
                                                                                             <li >
                                                                                                             Tags                                                                                                     </li>
                                                                                             <li >

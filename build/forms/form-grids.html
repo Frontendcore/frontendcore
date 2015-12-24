@@ -21,7 +21,7 @@
         <div class="fc-header-top">
             <div class="row">
                 <div class="col">
-                    <a data-fc-modules="side-panel" data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
+                    <a  data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
                 <ul class="col">
@@ -41,7 +41,10 @@
     <div class="container--center container--pad">
         <div class="row--center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                                                                            <form class="form">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <form class="form">
 	<fieldset>
 		<legend>Text fields</legend>
 		<ol class="row">
@@ -131,7 +134,107 @@
 		</ol>
 		<button type="submit" class="button">Send</button>
 	</fieldset>
-</form>                        
+</form>                                            </div>
+        </section>
+                <section id="tab-text-fields-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre>
+	                <code >&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Text fields&lt;/legend&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;name&quot; required=&quot;required&quot; placeholder=&quot;Name&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;surname&quot;&gt;Surname&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;surname&quot; required=&quot;required&quot; placeholder=&quot;surname&quot;/&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col-s-12 col-m-12 col-l-12 col-xl-6&quot;&gt;
+				&lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;street&quot; required=&quot;required&quot; placeholder=&quot;street&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-s-6 col-m-6 col-l-6 col-xl-3&quot;&gt;
+				&lt;label for=&quot;number&quot;&gt;Number&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;number&quot; required=&quot;required&quot; placeholder=&quot;number&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col-s-6 col-m-6 col-l-6 col-xl-3&quot;&gt;
+				&lt;label for=&quot;postalcode&quot;&gt;Postal code&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;postalcode&quot; required=&quot;required&quot; placeholder=&quot;Postal code&quot;/&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;url-field&quot;&gt;Url&lt;/label&gt;
+				&lt;input type=&quot;url&quot; id=&quot;url-field&quot; required=&quot;required&quot; placeholder=&quot;Example: http://www.yoursite.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;email-field&quot;&gt;Email&lt;/label&gt;
+				&lt;input type=&quot;email&quot; id=&quot;email-field&quot; required=&quot;required&quot; placeholder=&quot;email&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;&lt;strong&gt;Select an option:&lt;/strong&gt;&lt;/label&gt;
+				&lt;ul class=&quot;list-horizontal&quot;&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;first-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;first-option1&quot; name=&quot;radio&quot; /&gt; First option&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;second-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;second-option1&quot; name=&quot;radio&quot; /&gt; Second option&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;third-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;third-option1&quot; name=&quot;radio&quot; /&gt; Third option&lt;/label&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;&lt;strong&gt;Choose as many as you want:&lt;/strong&gt;&lt;/label&gt;
+				&lt;ul class=&quot;list-horizontal&quot;&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ff&quot;&gt;
+							&lt;input id=&quot;browser_ff&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ff&quot;&gt;
+							Firefox
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ie&quot;&gt;
+							&lt;input id=&quot;browser_ie&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ie&quot;&gt;
+							Internet explorer
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_ch&quot;&gt;
+							&lt;input id=&quot;browser_ch&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ch&quot;&gt;
+							Chrome
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_op&quot;&gt;
+							&lt;input id=&quot;browser_op&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;op&quot;&gt;
+							Opera
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;browser_sa&quot;&gt;
+							&lt;input id=&quot;browser_sa&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;sa&quot;&gt;
+							Safari
+						&lt;/label&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Send&lt;/button&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
 
             </div>
         </div>
@@ -249,7 +352,9 @@
                                                                                             <li >
                                                                                                             Pagination                                                                                                     </li>
                                                                                             <li >
-                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                                        <a href=".././navigation/tabs.html">
+                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
                                                                                             <li >
                                                                                                             Tags                                                                                                     </li>
                                                                                             <li >

@@ -21,7 +21,7 @@
         <div class="fc-header-top">
             <div class="row">
                 <div class="col">
-                    <a data-fc-modules="side-panel" data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
+                    <a  data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
                 <ul class="col">
@@ -41,7 +41,10 @@
     <div class="container--center container--pad">
         <div class="row--center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                                                                            <form class="form">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-option-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <form class="form">
 	<fieldset>
 		<legend>Checkbox and Radio buttons</legend>
 		<ol>
@@ -203,7 +206,179 @@
 			</li>
 		</ul>
 	</fieldset>
-</form>                        
+</form>                                            </div>
+        </section>
+                <section id="tab-option-fields-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre>
+	                <code >&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Checkbox and Radio buttons&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;details open=&quot;&quot;&gt;
+					&lt;summary&gt;Details: Checkbox options &lt;em&gt;(optional)&lt;/em&gt;&lt;/summary&gt;
+					&lt;ul&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;browser_ff&quot;&gt;
+								&lt;input id=&quot;browser_ff&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ff&quot;&gt;
+								Firefox
+							&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;browser_ie&quot;&gt;
+								&lt;input id=&quot;browser_ie&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ie&quot;&gt;
+								Internet explorer
+							&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;browser_ch&quot;&gt;
+								&lt;input id=&quot;browser_ch&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;ch&quot;&gt;
+								Chrome
+							&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;browser_op&quot;&gt;
+								&lt;input id=&quot;browser_op&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;op&quot;&gt;
+								Opera
+							&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;browser_sa&quot;&gt;
+								&lt;input id=&quot;browser_sa&quot; name=&quot;available_browsers[]&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; value=&quot;sa&quot;&gt;
+								Safari
+							&lt;/label&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/details&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;details open=&quot;&quot;&gt;
+					&lt;summary&gt;Details: Radio buttons&lt;/summary&gt;
+					&lt;ul&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;first-option&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;first-option&quot; name=&quot;radio&quot; /&gt; First option&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;second-option&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;second-option&quot; name=&quot;radio&quot; /&gt; Second option&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;third-option&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;third-option&quot; name=&quot;radio&quot; /&gt; Third option&lt;/label&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/details&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;details open=&quot;&quot;&gt;
+					&lt;summary&gt;Details: Horizontal&lt;/summary&gt;
+					&lt;ul class=&quot;list-horizontal&quot;&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;first-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;first-option1&quot; name=&quot;radio&quot; /&gt; First option&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;second-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;second-option1&quot; name=&quot;radio&quot; /&gt; Second option&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;label for=&quot;third-option1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;third-option1&quot; name=&quot;radio&quot; /&gt; Third option&lt;/label&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/details&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Complex radio button - widh icon&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;ul class=&quot;radio-list-complex&quot;&gt;
+					&lt;li&gt;
+						&lt;input type=&quot;radio&quot; name=&quot;complex-radio&quot; id=&quot;complex-radio-1&quot; /&gt;
+						&lt;label for=&quot;complex-radio-1&quot;&gt;
+							&lt;img src=&quot;../static/img/chuck.jpg&quot; alt=&quot;image&quot; /&gt;
+							&lt;span class=&quot;title&quot;&gt;Complex option 1&lt;/span&gt;
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li class=&quot;selected&quot;&gt;
+						&lt;input type=&quot;radio&quot; name=&quot;complex-radio&quot; id=&quot;complex-radio-2&quot; checked=&quot;checked&quot; /&gt;
+						&lt;label for=&quot;complex-radio-2&quot;&gt;
+							&lt;img src=&quot;../static/img/chuck.jpg&quot; alt=&quot;image&quot; /&gt;
+							&lt;span class=&quot;title&quot;&gt;Complex option 2&lt;/span&gt;
+							&lt;span&gt;&lt;em&gt;Lorem ipsum dolor sit amet.&lt;/em&gt;&lt;/span&gt;
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;input type=&quot;radio&quot; name=&quot;complex-radio&quot; id=&quot;complex-radio-3&quot; /&gt;
+						&lt;label for=&quot;complex-radio-3&quot;&gt;
+							&lt;img src=&quot;../static/img/chuck.jpg&quot; alt=&quot;image&quot; /&gt;
+							&lt;span class=&quot;title&quot;&gt;Complex option 3&lt;/span&gt;
+							&lt;span&gt;&lt;em&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/em&gt;&lt;/span&gt;
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;input type=&quot;radio&quot; name=&quot;complex-radio&quot; id=&quot;complex-radio-4&quot; /&gt;
+						&lt;label for=&quot;complex-radio-4&quot;&gt;
+							&lt;img src=&quot;../static/img/chuck.jpg&quot; alt=&quot;image&quot; /&gt;
+							&lt;span class=&quot;title&quot;&gt;Complex option 4&lt;/span&gt;
+							&lt;span&gt;&lt;em&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/em&gt;&lt;/span&gt;
+						&lt;/label&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;input type=&quot;radio&quot; name=&quot;complex-radio&quot; id=&quot;complex-radio-5&quot; /&gt;
+						&lt;label for=&quot;complex-radio-5&quot;&gt;
+							&lt;img src=&quot;../static/img/chuck.jpg&quot; alt=&quot;image&quot; /&gt;
+							&lt;span class=&quot;title&quot;&gt;Complex option 5&lt;/span&gt;
+							&lt;span&gt;&lt;em&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/em&gt;&lt;/span&gt;
+						&lt;/label&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Complex radio button - without icon&lt;/legend&gt;
+		&lt;ul class=&quot;radio-list-complex no-icon&quot;&gt;
+			&lt;li&gt;
+				&lt;input type=&quot;radio&quot; id=&quot;listed_ad_yes&quot; name=&quot;choice_listed&quot; value=&quot;yes&quot; /&gt;
+				&lt;label for=&quot;listed_ad_yes&quot;&gt;
+					&lt;span class=&quot;title d-i&quot;&gt;Yes,&lt;/span&gt; &lt;em&gt;My software is currently listed on this website&lt;/em&gt;
+				&lt;/label&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;input type=&quot;radio&quot; id=&quot;not_listed_ad&quot; name=&quot;choice_listed&quot; value=&quot;yes&quot;&gt;
+				&lt;label for=&quot;not_listed_ad&quot;&gt;
+					&lt;span class=&quot;title d-i&quot;&gt;No,&lt;/span&gt; &lt;em&gt;If your software is not listed yet, create your ad and publish it later&lt;/em&gt;
+				&lt;/label&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;input type=&quot;hidden&quot; name=&quot;current_action&quot; value=&quot;listed&quot; /&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Extra checkbox&lt;/legend&gt;
+		&lt;ul class=&quot;checkbox-list-complex no-icon&quot;&gt;
+			&lt;li&gt;
+				&lt;input type=&quot;checkbox&quot; id=&quot;get-extra&quot; name=&quot;choice_listed&quot; value=&quot;yes&quot; /&gt;
+				&lt;label for=&quot;get-extra&quot;&gt;
+					&lt;span class=&quot;title&quot;&gt;Get extra daily clicks &lt;em&gt;by adding an ad targeting this sections.&lt;/em&gt;&lt;/span&gt;
+					&lt;em&gt;Your campaign daily budget will not be exceeded. This ad will complete the campaign consuming the undelivered budget.&lt;/em&gt;
+				&lt;/label&gt;
+				&lt;a title=&quot;View Sample&quot; href=&quot;#&quot; class=&quot;icon-eye-open&quot;&gt;Preview ad&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;selected&quot;&gt;
+				&lt;input type=&quot;checkbox&quot; id=&quot;get-extra2&quot; name=&quot;choice_listed&quot; value=&quot;yes&quot; checked=&quot;checked&quot; /&gt;
+				&lt;label for=&quot;get-extra2&quot;&gt;
+					&lt;span class=&quot;title&quot;&gt;Get extra daily clicks &lt;em&gt;by adding an ad targeting this sections.&lt;/em&gt;&lt;/span&gt;
+					&lt;em&gt;Your campaign daily budget will not be exceeded. This ad will complete the campaign consuming the undelivered budget.&lt;/em&gt;
+				&lt;/label&gt;
+				&lt;a title=&quot;View Sample&quot; href=&quot;#&quot; class=&quot;icon-eye-open&quot;&gt;Preview ad&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code>
+                </pre>
+            </div>
+        </section>
+                    </div>
+
             </div>
         </div>
     </div>
@@ -320,7 +495,9 @@
                                                                                             <li >
                                                                                                             Pagination                                                                                                     </li>
                                                                                             <li >
-                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                                        <a href=".././navigation/tabs.html">
+                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
                                                                                             <li >
                                                                                                             Tags                                                                                                     </li>
                                                                                             <li >
