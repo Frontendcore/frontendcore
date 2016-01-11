@@ -132,7 +132,8 @@
         },
         "Labels": {
           "name": "Labels",
-          "href": "labels.html"
+          "href": "labels.html",
+          "done": true
         }
       }
     },

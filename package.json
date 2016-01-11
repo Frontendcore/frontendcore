@@ -33,7 +33,8 @@
     "icons",
     "roundtrip",
     "modifiers",
-    "tabs"
+    "tabs",
+    "labels"
   ],
   "devDependencies": {
     "bower": "^1.3.7",

@@ -20,6 +20,7 @@ module.exports = function(grunt) {
 		},
 		html: {
 			files: [
+				grunt.option('appCwd') + '/components/**/*.html',
 				grunt.option('fcCwd') + '/twig/**/*.*',
 				grunt.option('fcCwd') + '/_resources/bbdd/sections.json'
 			],

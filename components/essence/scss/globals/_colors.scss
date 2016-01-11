@@ -1,4 +1,10 @@
 ///
+/// Array with all the standard names of the colors
+/// @group colors
+///
+$color-names: 'primary','secondary','foreground','background', 'box','success','error','info','warning' !global;
+
+///
 /// Color used for foreground elements, such as text.
 /// TIP: color-foreground can be used as background in a box with color-background for the text to create elements in negative
 /// @group colors
