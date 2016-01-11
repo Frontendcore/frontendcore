@@ -3,6 +3,6 @@ module.exports =  {
 		force: true
 	},
 	site: {
-		src: ['./../site/build/'],
+		src: ['./../site/build/']
 	}
 };
