@@ -42,6 +42,9 @@
 		font-size: $font-size-default;
 		color: $color-foreground-light;
 	}
+	input[type='radio'], input[type='checkbox'] {
+		margin-right: $spacing/8;
+	}
 	[class*='msg-'] {
 		font-size: $font-size-default;
 	}

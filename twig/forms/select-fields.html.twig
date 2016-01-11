@@ -1,0 +1,18 @@
+{% set current_children = "Select Fields" %}
+{% set current_subtitle = "Make your right choice" %}
+
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <span class="label--css">CSS</span>
+    <h1>Select Fields</h1>
+    {{ demos.demo(
+        'select-fields',
+        '../../components/forms/html/select-fields.html'
+    )}}
+{% endblock %}

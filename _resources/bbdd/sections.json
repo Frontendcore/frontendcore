@@ -335,7 +335,8 @@
         },
         "Select Fields": {
           "name": "Select Fields",
-          "href": "select-fields.html"
+          "href": "select-fields.html",
+          "done": true
         },
         "Select with search": {
           "name": "Select with search",
