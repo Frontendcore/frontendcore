@@ -123,7 +123,7 @@
     }
 </script>
 <![endif]-->
-<script type="text/javascript">
+<script type="text/javascript" async="async">
     var oGlobalSettings = {
         sPathJs : '/static/js/',
         sPathJsCore: '/static/js/',
@@ -137,7 +137,7 @@
         }
     }
 </script>
-<script defer src="{{ relative_path ~ url.static }}js/core.js?v={{ version|replace({'.':''}) }}"></script>
+<script async="async" src="{{ relative_path ~ url.static }}js/core.js?v={{ version|replace({'.':''}) }}"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
