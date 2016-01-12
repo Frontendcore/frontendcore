@@ -1,0 +1,82 @@
+{% set current_children = "Navigation" %}
+{% set current_subtitle = "Main navigation objects" %}
+
+{% set current_section = "Navigation" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_title %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Navigation</h1>
+{% endblock object_title %}
+
+{% block object_demo %}
+    <h2>Navigation default</h2>
+    {{ demos.demo(
+    'navigation',
+    PathComponents ~ 'navigation/html/navigation.html'
+    )}}
+    <h2>Navigation filter</h2>
+    {{ demos.demo(
+    'navigation--filter',
+    PathComponents ~ 'navigation/html/navigation--filter.html'
+    )}}
+
+    <h2>Navigation on main colors</h2>
+    {{ demos.demo(
+    'navigation--primary',
+    PathComponents ~ 'navigation/html/navigation--primary.html'
+    )}}
+    <h2>Navigation filter on main colors</h2>
+    {{ demos.demo(
+    'navigation--primary-navigation--filter',
+    PathComponents ~ 'navigation/html/navigation--primary--filter.html'
+    )}}
+
+    <h2>Navigation small</h2>
+    {{ demos.demo(
+    'navigation--small',
+    PathComponents ~ 'navigation/html/navigation--small.html'
+    )}}
+
+    <h2>Navigation large</h2>
+    {{ demos.demo(
+    'navigation-large',
+    PathComponents ~ 'navigation/html/navigation--large.html'
+    )}}
+
+    <h2>.navigation with .form-search</h2>
+    {{ demos.demo(
+    'navigation-search',
+    PathComponents ~ 'navigation/html/navigation-search.html'
+    )}}
+    <div class="row">
+        <div class="col">
+            <h2>Navigation vertical default</h2>
+            {{ demos.demo(
+            'navigation-vertical',
+            PathComponents ~ 'navigation/html/navigation-vertical.html'
+            )}}
+        </div>
+        <div class="col">
+            <h2>Navigation vertical primary</h2>
+            {{ demos.demo(
+            'navigation-vertical-primary',
+            PathComponents ~ 'navigation/html/navigation-vertical-primary.html'
+            )}}
+        </div>
+    </div>
+
+    <h2>Combine navigations</h2>
+    {{ demos.demo(
+    'navigation-subnavigation',
+    PathComponents ~ 'navigation/html/navigation-subnavigation.html'
+    )}}
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+     PathComponents ~ 'navigation/scss/_navigation_vars.scss',
+     'navigation-vars'
+     )}}
+ {% endblock object_scss_vars %}

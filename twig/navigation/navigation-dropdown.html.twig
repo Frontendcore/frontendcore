@@ -1,0 +1,34 @@
+{% set current_children = "Navigation dropdown" %}
+{% set current_subtitle = "Dropdown on mouse over navigation" %}
+
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_title %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> <span class="label-js fz-xl va-m">JS</span> Navigation with Dropdown</h1>
+{% endblock object_title %}
+
+{% block object_demo %}
+    <h2> .navigation with dropdown</h2>
+    {{ demos.demo(
+        'navigation-dropdown',
+        PathComponents ~ 'navigation/html/navigation-dropdown.html',
+        false, false, false, '200px'
+    )}}
+    <h2> .navigation-vertical with dropdown</h2>
+    {{ demos.demo(
+        'navigation-vertical-dropdown',
+        PathComponents ~ 'navigation/html/navigation-vertical-dropdown.html',
+        false, false, false, '200px'
+    )}}
+{% endblock object_demo %}
+
+ {% block object_scss_vars %}
+     {{ demos.scss_object(
+        PathComponents ~ 'navigation/scss/_navigation_vars.scss',
+        'navigation-vars'
+     )}}
+ {% endblock object_scss_vars %}

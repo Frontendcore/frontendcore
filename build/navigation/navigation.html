@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FrontendCore: The all in one frontend framework.</title>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="The frontend framework for the real Life. A mix of frontend technologies that makes you 500% productive and be prepared for the future." />
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="frontend, framework, sass, scss, javascript, requirejs, amd modules, scalable javascript architecture, grid sass" />
+    <style>
+        body { display: none; opacity: 0; }
+    </style>
+</head>
+<body class="animated fade-in">
+    <header class="fc-header">
+        <div class="fc-header-top">
+            <div class="row">
+                <div class="col">
+                    <a  data-fc-clone="false" href="#menu"><i class="icon-bars"></i></a>
+                    <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
+                </div>
+                <ul class="col">
+                    <li>
+                        <a href="#">Docs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Navigation</h1>
+                                    <p>Main navigation objects</p>
+                            </div>
+        </div>
+    </header>
+    <div class="container--center container--pad">
+        <div class="row--center">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
+                    <section id="demos">
+            <h2>Navigation default</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+                                            </div>
+        </section>
+                <section id="tab-navigation-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h2>Navigation filter</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation--filter-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--filter">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+                                            </div>
+        </section>
+                <section id="tab-navigation--filter-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--filter&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>Navigation on main colors</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation--primary-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <!-- PRIMARY -->
+<nav class="navigation navigation--primary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- SECONDARY -->
+<nav class="navigation navigation--secondary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- BOX -->
+<nav class="navigation navigation--box">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- FOREGROUND -->
+<nav class="navigation navigation--foreground">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- BACKGROUND -->
+<nav class="navigation navigation--background">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+                                            </div>
+        </section>
+                <section id="tab-navigation--primary-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;!-- PRIMARY --&gt;
+&lt;nav class=&quot;navigation navigation--primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- SECONDARY --&gt;
+&lt;nav class=&quot;navigation navigation--secondary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- BOX --&gt;
+&lt;nav class=&quot;navigation navigation--box&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- FOREGROUND --&gt;
+&lt;nav class=&quot;navigation navigation--foreground&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- BACKGROUND --&gt;
+&lt;nav class=&quot;navigation navigation--background&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h2>Navigation filter on main colors</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation--primary-navigation--filter-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <!-- PRIMARY -->
+<nav class="navigation navigation--filter navigation--primary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- SECONDARY -->
+<nav class="navigation navigation--filter navigation--secondary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- BOX -->
+<nav class="navigation navigation--filter navigation--box">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- FOREGROUND -->
+<nav class="navigation navigation--filter navigation--foreground">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+<!-- BACKGROUND -->
+<nav class="navigation navigation--filter navigation--background">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+
+                                            </div>
+        </section>
+                <section id="tab-navigation--primary-navigation--filter-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;!-- PRIMARY --&gt;
+&lt;nav class=&quot;navigation navigation--filter navigation--primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- SECONDARY --&gt;
+&lt;nav class=&quot;navigation navigation--filter navigation--secondary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- BOX --&gt;
+&lt;nav class=&quot;navigation navigation--filter navigation--box&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- FOREGROUND --&gt;
+&lt;nav class=&quot;navigation navigation--filter navigation--foreground&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- BACKGROUND --&gt;
+&lt;nav class=&quot;navigation navigation--filter navigation--background&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>Navigation small</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation--small-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--primary navigation--small">
+	<ul>
+		<li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation--small-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--primary navigation--small&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>Navigation large</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-large-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--primary navigation--large">
+	<ul>
+		<li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-large-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--primary navigation--large&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>.navigation with .form-search</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-search-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation">
+	<form name="form" action="#" method="post" class="form-search">
+		<input id="post_search-1" type="text" name="search" placeholder="Search..." value="">
+		<button type="submit" class="button"><i class="icon-search"></i></button>
+	</form>
+    <ul>
+        <li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+        <li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+        <li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+    </ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-search-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation&quot;&gt;
+	&lt;form name=&quot;form&quot; action=&quot;#&quot; method=&quot;post&quot; class=&quot;form-search&quot;&gt;
+		&lt;input id=&quot;post_search-1&quot; type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Search...&quot; value=&quot;&quot;&gt;
+		&lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;icon-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+	&lt;/form&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;active&quot;&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <div class="row">
+        <div class="col">
+            <h2>Navigation vertical default</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-vertical-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--vertical">
+	<ul>
+		<li>
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+			<ul id="tab1">
+				<li class="active">
+					<a title="Menu item 1" href="#tab1">Menu item 1</a>
+				</li>
+				<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+				<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+			</ul>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-vertical-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--vertical&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+			&lt;ul id=&quot;tab1&quot;&gt;
+				&lt;li class=&quot;active&quot;&gt;
+					&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+        </div>
+        <div class="col">
+            <h2>Navigation vertical primary</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-vertical-primary-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--vertical navigation--primary">
+	<ul>
+		<li>
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+			<ul id="tab1">
+				<li class="active">
+					<a title="Menu item 1" href="#tab1">Menu item 1</a>
+				</li>
+				<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+				<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+			</ul>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-vertical-primary-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--vertical navigation--primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+			&lt;ul id=&quot;tab1&quot;&gt;
+				&lt;li class=&quot;active&quot;&gt;
+					&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+        </div>
+    </div>
+
+    <h2>Combine navigations</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-subnavigation-1" class="o-v" data-fc-name="Demo">
+            <div class="box--background o-v" >
+                                                <nav class="navigation navigation--primary">
+	<ul class="mb-n">
+		<li class="active"><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>
+<nav class="navigation navigation--foreground navigation--filter">
+	<ul>
+		<li><a title="Menu item 1" href="#tab1">Menu item 1</a></li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a></li>
+		<li class="active"><a title="Menu item 3" href="#tab3">Menu item 3</a></li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-subnavigation-2" data-fc-name="Code">
+            <div class="box--background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation navigation--primary&quot;&gt;
+	&lt;ul class=&quot;mb-n&quot;&gt;
+		&lt;li class=&quot;active&quot;&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;nav class=&quot;navigation navigation--foreground navigation--filter&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;active&quot;&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section id="appearance">
+                         <h2>Customize the appearance</h2>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code data-fc-modules="code">$object-navigation-vars-default: (
+
+	/* First level */
+	background-color: $color-primary,
+	color: contrast-color($color-primary),
+	border-radius: $default-border-radius,
+	font-family: $font-face-default,
+	font-weight: normal,
+	font-weight-active: bold,
+	font-size: $font-size-default,
+	vertical-separator: true,
+	text-transform: capitalize,
+
+	/* Inner levels */
+	background-color-dark: $color-primary-dark,
+	background-color-light: $color-primary-light,
+	inner-font-family: $font-face-default,
+	inner-font-weight: normal,
+	inner-font-size: $font-size-s,
+	inner-text-transform: capitalize,
+
+) !global !default;
+
+$object-navigation-vars-custom: () !global !default;
+$object-navigation-vars: map-merge($object-navigation-vars-default, $object-navigation-vars-custom) !global;
+</code></pre>
+
+     </section>
+            </div>
+        </div>
+    </div>
+    <footer class="fc-footer">
+        <div class="container--center container--pad">
+            <div class="row">
+                <div class="col">
+                    <div id="menu" class="row---middle">
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Setup</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Getting started                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Download                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Installation                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            CSS                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Javascript                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Architecture CSS</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Folder structure                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Media Queries                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Animations                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Sassdoc                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Architecture JS</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Getting Started                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Tools                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Module communication (Mediator)                                                                                                     </li>
+                                                                                            <li >
+                                                                                                        <a href=".././architecture-js/roundtrip.html">
+                                                                                                            RoundTrip (Webapps)                                                                                                         </a>
+                                                                                                    </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Structure</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././structure/grids-setup.html">
+                                                                                                            Grids setup                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././structure/grids-autoresponsive.html">
+                                                                                                            Autoresponsive grids                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././structure/grids-customresponsive.html">
+                                                                                                            Custom responsive grids                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././structure/grids-alignment.html">
+                                                                                                            Grids alignment                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././structure/grids-distribution.html">
+                                                                                                            Grids distribution                                                                                                         </a>
+                                                                                                    </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Typography</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././typography/base.html">
+                                                                                                            Titles & paragraphs                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././typography/lists.html">
+                                                                                                            Lists                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././typography/labels.html">
+                                                                                                            Labels                                                                                                         </a>
+                                                                                                    </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Navigation</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li  class="active">
+                                                                                                        <a href=".././navigation/navigation.html">
+                                                                                                            Navigation                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././navigation/navigation-dropdown.html">
+                                                                                                            Navigation dropdown <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Pagination                                                                                                     </li>
+                                                                                            <li >
+                                                                                                        <a href=".././navigation/tabs.html">
+                                                                                                            Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Tags                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Side Panel <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Side Menu <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Header Mobile                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Steps                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Media</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Thumbnail Images                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Circle Images                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Polaroid Images                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Zoom Images <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Edit Images <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Responsive Images <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Content</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././content/boxes.html">
+                                                                                                            Boxes                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Balloons                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Ratings                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Parallax                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Charts <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Carousel <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Truncate <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Toggle <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Sortable lists <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                        <a href=".././content/code.html">
+                                                                                                            Code beautifier <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Cart <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Buttons</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././buttons/buttons.html">
+                                                                                                            Buttons                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././buttons/button-group.html">
+                                                                                                            Buttons group                                                                                                         </a>
+                                                                                                    </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Forms</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././forms/form-grids.html">
+                                                                                                            Form Grids                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/text-fields.html">
+                                                                                                            Text Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/number-fields.html">
+                                                                                                            Number Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/option-fields.html">
+                                                                                                            Option Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/select-fields.html">
+                                                                                                            Select Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Select with search <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Tags Fields <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/error-fields.html">
+                                                                                                            Error Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././forms/read-only-fields.html">
+                                                                                                            Read Only Fields                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Validation <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Search Form                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Autocomplete <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Autosize <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Wysiwyg <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Tables</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Static Table                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Dynamic Table <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Responsive Table <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Callouts & Prompts</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                            Loading <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                        <a href=".././callouts/Callouts.html">
+                                                                                                            Callouts                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                            Notifications <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Tips <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                            <li >
+                                                                                                            Modal windows <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                                    <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
+                                <div class="box--darken">
+                                    <h5>Modifiers</h5>
+                                                                            <ul class="list pl-n c-foreground">
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/colors.html">
+                                                                                                            Colors                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/fonts.html">
+                                                                                                            Font sizes                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/text.html">
+                                                                                                            Text align & decoration                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/margin-padding.html">
+                                                                                                            Margins & Paddings                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/measures.html">
+                                                                                                            Measures                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././modifiers/borders.html">
+                                                                                                            Borders                                                                                                         </a>
+                                                                                                    </li>
+                                                                                    </ul>
+                                                                    </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <gcse:search></gcse:search>
+                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" async="async">
+    var oGlobalSettings = {
+        sPathJs : '/..//static/js/',
+        sPathJsCore: '/..//static/js/',
+        sPathJsModules : '..//static/js/modules/',
+        sPathJsLibs : '..//static/js/libs/',
+        sPathCss: '..//static/css/',
+        bResponsiveImages: true,
+        sHash : '200-beta',
+        oCss: {
+            '..//static/css/main.css?v=200-beta' : 'all',
+            '..//static/css/icons.css?v=200-beta' : 'all',
+            'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
+            'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
+            '..//static/css/screen-xs.css?v=200-beta' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta' : 'screen and (min-width:1440px)'
+        }
+    }
+</script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60626121-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script>
+    (function() {
+        var cx = '014483888698585740321:x9o_wh1odaq';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+</body>
+</html>

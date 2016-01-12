@@ -115,7 +115,7 @@
 {% macro scss_object(scsspath) %}
         <h2>Customize the appearance</h2>
         <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code {#data-fc-modules="code"#}> {%  include scsspath|e('html') %}</code></pre>
+        <pre><code data-fc-modules="code">{%  include scsspath|e('html') %}</code></pre>
 {% endmacro %}
 
 #}

@@ -1,0 +1,117 @@
+.navigation {
+	@extend %navigation;
+}
+.navigation--vertical {
+	@extend %navigation-vertical;
+	a {
+		margin-right: $spacing/6 !important;
+	}
+}
+
+$local-color-names: 'foreground','background','primary','secondary','box';
+
+@each $color-name in $local-color-names {
+	.navigation--#{$color-name} {
+		&, a {
+			color: contrast-color(map_get($colors, $color-name));
+		}
+		& {
+			background: map_get($colors, $color-name);
+		}
+		a {
+			&:hover {
+				text-decoration: none;
+				background: rgba(contrast-color(map_get($colors, $color-name)), .08);
+			}
+		}
+		li.active {
+			a {
+				& {
+					background: rgba(contrast-color(map_get($colors, $color-name), $color-background, $color-foreground), .2);
+					color: contrast-color(map_get($colors, $color-name));
+				}
+				&:before {
+					color: rgba(contrast-color(map_get($colors, $color-name)), .5) !important;
+				}
+			}
+		}
+		&.navigation--vertical {
+			& > ul {
+				& > li {
+					& > a {
+						padding: $spacing/2;
+					}
+				}
+				ul {
+					margin-bottom: $spacing/2;
+				}
+			}
+
+		}
+	}
+}
+
+.navigation {
+	& {
+		border-radius: map-get($object-navigation-vars, border-radius);
+		font-size: map-get($object-navigation-vars, font-size);
+	}
+	a {
+		font-family: map-get($object-navigation-vars, font-family);
+		font-weight: map-get($object-navigation-vars, font-weight);
+		text-rendering: optimizeLegibility;
+		border-radius: map-get($object-navigation-vars, border-radius);
+		text-transform: map-get($object-navigation-vars, text-transform);
+	}
+}
+
+.navigation--vertical {
+	& > ul > li {
+		@if (map-get($object-navigation-vars, vertical-separator) == true) {
+			border-bottom: 1px solid rgba(contrast-color(map-get($object-navigation-vars, background-color), $color-foreground, $color-background), .2);
+		}
+	}
+}
+
+/*
+.navigation {
+
+
+	& > ul {
+		li {
+			&.active a, &.active a:hover {
+				border-top-color: rgba(255, 255, 255, .1);
+				border-bottom-color: rgba(0, 0, 0, .1);
+				font-weight: map-get($object-navigation-vars, font-weight-active);
+			}
+		}
+	}
+	ul ul {
+		& {
+			margin-top: 0;
+			background: map-get($object-navigation-vars, background-color-dark);
+			position: relative;
+			z-index: 1;
+		}
+		li {
+			a {
+				& {
+					font-family: map-get($object-navigation-vars, inner-font-family);
+					font-weight: map-get($object-navigation-vars, inner-font-weight);
+					font-size: map-get($object-navigation-vars, inner-font-size);
+					text-transform: map-get($object-navigation-vars, inner-text-transform);
+					background: none;
+				}
+			}
+			&.active {
+				a {
+					margin: 0;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+	&
+}
+
+*/

@@ -145,20 +145,14 @@
       "children": {
         "Navigation": {
           "name": "Navigation",
-          "href": "navigation.html"
+          "href": "navigation.html",
+          "done": true
         },
         "NavigationDropdown": {
           "name": "Navigation dropdown",
           "href": "navigation-dropdown.html",
-          "js": true
-        },
-        "Subnavigation": {
-          "name": "Subnavigation",
-          "href": "navigation-sub.html"
-        },
-        "Filters": {
-          "name": "Filters",
-          "href": "filters.html"
+          "js": true,
+          "done": true
         },
         "Pagination": {
           "name": "Pagination",
