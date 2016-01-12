@@ -280,7 +280,8 @@
         "Code": {
           "name": "Code beautifier",
           "href": "code.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Cart": {
           "name": "Cart",

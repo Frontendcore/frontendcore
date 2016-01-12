@@ -54,7 +54,8 @@
     "twig.js": "~0.8.4"
   },
   "dependencies": {
-      "normalize-css": "normalize.css#~3.0.3",
-      "modular-scale": "~2.1.1"
-    }
+    "normalize-css": "normalize.css#~3.0.3",
+    "modular-scale": "~2.1.1",
+    "highlightjs": "~9.0.0"
+  }
 }

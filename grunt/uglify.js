@@ -31,6 +31,7 @@ module.exports = function(grunt) {
 		files: {}
 	};
 
+	// FRONTENDCORE.JS
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/frontendcore.js'] = [
 		grunt.option('fcCwd') + '/components/essence/src/js/libs/modernizr-custom.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/build/TinyCore.js',
@@ -52,6 +53,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/essence/js/tools/_track-analytics.js',
 		grunt.option('fcCwd') + '/components/essence/js/_modules-config.js',
 		grunt.option('fcCwd') + '/components/essence/js/_init.js'
+	];
+
+	// CODE.JS
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/code.js' ] = [
+		grunt.option('fcCwd') + '/bower/highlightjs/highlight.pack.js',
+		grunt.option('fcCwd') + '/components/code/js/_code.js'
 	];
 
 	var oRoundTrip = {

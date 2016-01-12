@@ -33,6 +33,8 @@ dl.list {
 .list-horizontal {
   & {
     padding-left: 0 !important;
+    display: block;
+    overflow: hidden;
   }
   li {
     & {

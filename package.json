@@ -34,7 +34,8 @@
     "roundtrip",
     "modifiers",
     "tabs",
-    "labels"
+    "labels",
+    "code"
   ],
   "devDependencies": {
     "bower": "^1.3.7",
