@@ -36,7 +36,8 @@
     "tabs",
     "labels",
     "code",
-    "navigation"
+    "navigation",
+    "pagination"
   ],
   "devDependencies": {
     "bower": "^1.3.7",

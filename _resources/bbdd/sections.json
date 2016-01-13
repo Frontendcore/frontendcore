@@ -156,7 +156,8 @@
         },
         "Pagination": {
           "name": "Pagination",
-          "href": "pagination.html"
+          "href": "pagination.html",
+          "done": true
         },
         "Tabs": {
           "name": "Tabs",
