@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', ['css','js','icons','notify:all']);
 
-	grunt.registerTask('build', ['clean','copy','html','css','js','notify:all']);
+	grunt.registerTask('build', ['clean','copy','css','js','icons','html','notify:all']);
 	grunt.registerTask('rebuild:js', ['uglify','notify:all']);
 
 	grunt.event.on('watch', function (action, filepath) {

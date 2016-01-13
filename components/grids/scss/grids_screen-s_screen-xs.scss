@@ -167,61 +167,65 @@
   margin-left: 91.667%;
 }
 
-.row--start-s {
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  text-align: start;
-}
+.row {
 
-.row--center-s {
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
+  &._start-s {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    text-align: start;
+  }
 
-.row--end-s {
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-  text-align: end;
-}
+  &._center-s {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
 
-.row--top-s {
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  -webkit-box-align: start;
-  align-items: flex-start;
-}
+  &._end-s {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+  }
 
-.row--middle-s {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  align-items: center;
-}
+  &._top-s {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+  }
 
-.row--bottom-s {
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  -webkit-box-align: end;
-  align-items: flex-end;
-}
+  &._middle-s {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
 
-.row--around-s {
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-}
+  &._bottom-s {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    -webkit-box-align: end;
+    align-items: flex-end;
+  }
 
-.row--between-s {
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
+  &._around-s {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  &._between-s {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+
 }
 
 .col-first-s {

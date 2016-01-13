@@ -1,9 +1,11 @@
-.label--js {
-  background: #FF950B;
-  color: $color-background;
-}
+.label {
+  &._js {
+    background: #FF950B;
+    color: $color-background;
+  }
 
-.label--css {
-  background: #BA1464;
-  color: $color-background;
+  &._css {
+    background: #BA1464;
+    color: $color-background;
+  }
 }

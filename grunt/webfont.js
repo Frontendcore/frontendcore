@@ -38,12 +38,13 @@ module.exports = function(grunt) {
 				destHtml: sDestHtml,
 				htmlDemo : bHtmlDemo,
 				engine: 'node',
-				syntax: 'bem',
+				styles: 'font,icon,extra',
+				syntax: 'bootstrap',
 				embed: true,
 				types: 'woff',
 				templateOptions: {
 					baseClass: 'icon',
-					classPrefix: 'icon--',
+					classPrefix: 'icon-',
 					mixinPrefix: 'icon-'
 				}
 			}

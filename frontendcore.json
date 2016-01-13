@@ -10,7 +10,6 @@
   },
   "icons" : {
     "cwd" : "components/icons/font-awesome",
-    "default" : false,
     "dest": "build/static/css"
   },
   "bower" : {

@@ -1,4 +1,4 @@
-[class^='box--'], .box {
+.box {
 	& {
 		box--sizing: border-box;
 		@if $default-border-radius > 0 {
@@ -11,76 +11,75 @@
 		color: contrast-color($color-box);
 
 	}
-	.box--lighten {
+	&._lighten {
 		background: $color-background;
 	}
-}
-
-.box--background {
-	& {
-		background: $color-background;
-		color: contrast-color($color-background);
+	&._background {
+		& {
+			background: $color-background;
+			color: contrast-color($color-background);
+		}
+		& > &._lighten {
+			background: $color-box;
+		}
+		&._background {
+			border: 1px solid $color-box;
+		}
 	}
-	& > .box--lighten {
-		background: $color-box;
+
+	&._empty {
+		background: transparent;
 	}
-	.box--background {
-		border: 1px solid $color-box;
+
+	&._foreground {
+		background: $color-foreground;
+		color: contrast-color($color-foreground);
 	}
-}
 
-.box--empty {
-	background: transparent;
-}
-
-.box--foreground {
-	background: $color-foreground;
-	color: contrast-color($color-foreground);
-}
-
-.box--success {
-	background: $color-success;
-	color: contrast-color(darken($color-success, 10%));
-}
-
-.box--error {
-	background: $color-error;
-	color: contrast-color($color-error, $color-foreground, $color-background);
-}
-
-.box--info {
-	background: $color-info;
-	color: contrast-color($color-info, $color-foreground, $color-background);
-}
-
-.box--warning {
-	background: $color-warning;
-	color: contrast-color($color-warning, $color-foreground, $color-background);
-}
-
-.box--darken {
-	@include background-transparent($color-foreground, .3);
-	color: $color-background;
-	box--shadow: none;
-}
-
-.box--lighten {
-	@include background-transparent($color-background, .3);
-	color: $color-foreground;
-	box--shadow: none;
-}
-
-.box--primary {
-	& {
-		background: $color-primary;
-		color: contrast-color($color-primary, $color-foreground, $color-background);
+	&._success {
+		background: $color-success;
+		color: contrast-color(darken($color-success, 10%));
 	}
-	a {
-		color: contrast-color($color-primary, $color-foreground, $color-background);
-	}
-}
 
-.box--secondary {
-	background: $color-secondary;
-	color: $color-background;
+	&._error {
+		background: $color-error;
+		color: contrast-color($color-error, $color-foreground, $color-background);
+	}
+
+	&._info {
+		background: $color-info;
+		color: contrast-color($color-info, $color-foreground, $color-background);
+	}
+
+	&._warning {
+		background: $color-warning;
+		color: contrast-color($color-warning, $color-foreground, $color-background);
+	}
+
+	&._darken {
+		@include background-transparent($color-foreground, .3);
+		color: $color-background;
+		box--shadow: none;
+	}
+
+	&._lighten {
+		@include background-transparent($color-background, .3);
+		color: $color-foreground;
+		box--shadow: none;
+	}
+
+	&._primary {
+		& {
+			background: $color-primary;
+			color: contrast-color($color-primary, $color-foreground, $color-background);
+		}
+		a {
+			color: contrast-color($color-primary, $color-foreground, $color-background);
+		}
+	}
+
+	&._secondary {
+		background: $color-secondary;
+		color: $color-background;
+	}
 }

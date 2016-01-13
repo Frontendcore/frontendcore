@@ -3,13 +3,13 @@
 		position: relative;
 		width: auto;
 	}
-	&.navigation--large {
+	&._large {
 		a {
 			font-size: $font-size-l;
 			padding: $spacing/2 $spacing/2;
 		}
 	}
-	&.navigation--small {
+	&._small {
 		a {
 			padding: $spacing/3 $spacing/2;
 		}
@@ -36,7 +36,7 @@
 			}
 		}
 	}
-	&.navigation--filter {
+	&._filter {
 		li {
 			&.active {
 				a:before {

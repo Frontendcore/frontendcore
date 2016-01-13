@@ -47,6 +47,24 @@
 			}
 		}
 	}
+	@each $color in $color-names {
+
+		&._#{$color} > nav li.tabs-active > a, &._#{$color} > ul li.tabs-active > a {
+			background-color: map-get($colors, $color) !important;
+			color: contrast-color(map-get($colors, $color)) !important;
+		}
+	}
+
+	&._darken > nav li.tabs-active > a {
+		@include background-transparent($color-foreground, .3);
+		color: $color-background;
+	}
+
+	&._lighten > nav li.tabs-active > a {
+		@include background-transparent($color-background, .3);
+		color: $color-foreground;
+		box-shadow: none;
+	}
 }
 
 header.tab {
@@ -106,29 +124,14 @@ header.tab {
 	}
 
 }
+
 .tab-container {
+	.tabs {
+		margin-bottom: -1px;
+		position: relative;
+		z-index: 1;
+	}
 	& > section {
 		clear: both;
 	}
-}
-
-$colors-list: 'foreground', 'background', 'primary', 'secondary', 'box', 'info';
-
-@each $color in $colors-list {
-
-	.tabs--#{$color} > nav li.tabs-active > a, .tabs-º-#{$color} > ul li.tabs-active > a {
-		background-color: map-get($colors, $color) !important;
-		color: contrast-color(map-get($colors, $color)) !important;
-	}
-}
-
-.tabs--darken > nav li.tabs-active > a {
-	@include background-transparent($color-foreground, .3);
-	color: $color-background;
-}
-
-.tabs--lighten > nav li.tabs-active > a {
-	@include background-transparent($color-background, .3);
-	color: $color-foreground;
-	box-shadow: none;
 }

@@ -38,20 +38,20 @@
                             </div>
         </div>
     </header>
-    <div class="container--center container--pad">
-        <div class="row--center">
+    <div class="container _center _pad">
+        <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <div class="box--background">
+                    <div class="box _background">
         <h3>What can I do with Frontendcore's RoundTrip?</h3>
         <p>Roundtrip combines the power of twig.js and FrontendCore to render twig templates in realtime and refresh them
             if there are changes in the data. Any of this renders can use FrontendCore UI modules or custom modules.
         </p>
     </div>
-    <div class="box--background">
+    <div class="box _background">
         <h3>What I can't do?</h3>
         <p>Roundtrip doesn't have a system to change the main layout, or load different templates based on url, for things like this maybe it's a good idea to use angular, emberjs or something like that.</p>
     </div>
-    <div class="box--background">
+    <div class="box _background">
         <h3>How it works?</h3>
         <p>The system is pretty simple, so make it work is fast and easy. All you need is to include the script on your page:</p>
         <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/roundtrip.js&quot;&gt;&lt;/script&gt;</code></pre>
@@ -93,19 +93,19 @@
         <p>This will render the template located in "twig/product-list.html.twig" with all the data from RoundTripData.</p>
     </div>
 
-    <div class="box--background">
+    <div class="box _background">
         <h3>Get Data and channels from an external JSON file</h3>
         <p>Add to the markup  of your template render the parameter "data-fc-data" with the url of the JSON file </p>
         <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;json/product-list.json&quot;&gt;&lt;/div&gt;</code></pre>
     </div>
 
-    <div class="box--background">
+    <div class="box _background">
         <h3>Get partial channels from RoundTripData</h3>
         <p>Add to the markup  of your template an array with the key of RoundTripData object that you want to get</p>
         <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;[products]&quot;&gt;&lt;/div&gt;</code></pre>
     </div>
 
-    <div class="box--background">
+    <div class="box _background">
         <h3>Update data</h3>
         <p>Call on your module the Data method of RoundTrip and pass a new data object.</p>
         <pre><code>RoundTrip.Data({
@@ -118,7 +118,7 @@
 });</code></pre>
     </div>
 
-    <div class="box--background">
+    <div class="box _background">
         <h3>Bind elements</h3>
         <p>Because on each render the jquery or javascript bind is lost, Roundtrip provides you a bind method that always work even the module is reloaded.</p>
         <pre><code>RoundTrip.bind( &#039;#click-me&#039; , &#039;click&#039;, function(e){
@@ -131,12 +131,12 @@
         </div>
     </div>
     <footer class="fc-footer">
-        <div class="container--center container--pad">
+        <div class="container _center _pad">
             <div class="row">
                 <div class="col">
-                    <div id="menu" class="row---middle">
+                    <div id="menu" class="row _middle">
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Setup</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -153,7 +153,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Architecture CSS</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -168,7 +168,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Architecture JS</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -185,7 +185,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Structure</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -212,7 +212,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Typography</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -231,7 +231,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Navigation</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -262,7 +262,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Media</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -281,7 +281,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Content</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -314,7 +314,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Buttons</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -329,7 +329,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Forms</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -378,7 +378,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Tables</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -391,7 +391,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Callouts & Prompts</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
@@ -410,7 +410,7 @@
                                                                     </div>
                             </div>
                                                     <div class="col-s-12 col-m-6 col-l-4 col-xl-3">
-                                <div class="box--darken">
+                                <div class="box _darken">
                                     <h5>Modifiers</h5>
                                                                             <ul class="list pl-n c-foreground">
                                                                                             <li >
