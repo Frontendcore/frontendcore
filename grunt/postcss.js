@@ -1,7 +1,12 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
-		aBrowsers =  oData.scss.browsers !== undefined ? oData.scss.browsers : ["last 1 version"] ;
+	var oData = require(grunt.option('appCwd') + '/frontendcore.json');
+
+	if ( grunt.option('project') ) {
+		oData = oData[grunt.option('project')];
+	}
+	var	aBrowsers =  oData.scss.browsers !== undefined ? oData.scss.browsers : ["last 1 version"] ;
+
 
 	return {
 		options: {

@@ -10,13 +10,18 @@ var param = process.argv[2];
  */
 
 
+
+
 // or more concisely
 var sys = require('sys'),
     path = require('path'),
     fs   = require('fs'),
+    aProjects = [],
+    aParams = [],
     spawn = require('child_process').spawn,
     sCurrentPath = process.cwd(),
     sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../') ,
+    oData = require( sCurrentPath + '/frontendcore.json'),
     exec = function( bin, params ) {
         var child = spawn( bin, params, {
             cwd: sFrontendCorePath,
@@ -47,18 +52,48 @@ function log( error, stdout, stderr) {
     console.log(stdout);
 }
 
-switch (param) {
-    case "watch":
-    case "css":
-    case "css:compile":
-    case "docs":
-    case "js":
-    case "build":
-    case "icons":
-        exec('grunt', [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
-    break;
-    default:
-        exec('grunt', ['--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ] );
-    break;
+if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.hasOwnProperty('icons') && !oData.hasOwnProperty('bower') ) {
+
+
+    for (var key in oData) {
+        aProjects.push(key);
+    }
+
+} else {
+
+    aProjects.push('%default%');
 }
 
+for ( var key in aProjects ) {
+
+    switch (param) {
+        case "watch":
+        case "css":
+        case "css:compile":
+        case "docs":
+        case "js":
+        case "build":
+        case "icons":
+
+            aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
+
+            if ( aProjects[key] !== '%default%' ) {
+
+                aParams.push('--project=' + aProjects[key]);
+            }
+
+            exec('grunt', aParams );
+
+            break;
+        default:
+
+            aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ]
+
+            if ( aProjects[key] !== '%default%' ) {
+                aParams.push('--project=' + aProjects[key]);
+            }
+
+            exec('grunt',aParams );
+            break;
+    }
+}

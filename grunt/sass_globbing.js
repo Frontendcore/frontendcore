@@ -3,6 +3,10 @@ module.exports = function(grunt) {
 	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
 		oPkg = require(grunt.option('fcCwd') + '/package.json');
 
+	if ( grunt.option('project') ) {
+		oData = oData[grunt.option('project')];
+	}
+
 
 	function getRoutes( sScreen, sDevice ) {
 

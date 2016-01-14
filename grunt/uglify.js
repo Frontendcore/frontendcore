@@ -4,6 +4,10 @@ module.exports = function(grunt) {
 		oPkg = require(grunt.option('fcCwd') + '/package.json'),
 		oComponents = oData.components !== undefined ? oData.components : oPkg.components;
 
+	if ( grunt.option('project') ) {
+		oData = oData[grunt.option('project')];
+	}
+
 	function getComponentsJs() {
 
 		var oFiles = [];

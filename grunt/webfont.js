@@ -6,6 +6,10 @@ module.exports = function(grunt) {
 		bHtmlDemo = true,
 		sDestHtml = '';
 
+	if ( grunt.option('project') ) {
+		oData = oData[grunt.option('project')];
+	}
+
 	if ( oData.icons !== undefined) {
 		if ( oData.icons.cwd !== undefined) {
 			aPaths.push( grunt.option('appCwd') + '/' + oData.icons.cwd + '/*.svg' );
