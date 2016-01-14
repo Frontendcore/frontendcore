@@ -16,8 +16,14 @@
   -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
   flex: 0 0 auto;
-  padding-right: map_get($grid, gutters);
-  padding-left: map_get($grid, gutters);
+  border-right: map_get($grid, gutters) solid transparent;
+  &:last-child {
+    border-right: 0px none;
+  }
+}
+
+.col-l-last, .col-l-12 {
+  border-right: 0px none;
 }
 
 .col-l {

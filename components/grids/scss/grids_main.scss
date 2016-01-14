@@ -131,6 +131,10 @@
   }
 }
 
+.col-last, .col-12 {
+  border-right: 0px none;
+}
+
 .col {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
