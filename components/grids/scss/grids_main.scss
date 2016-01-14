@@ -35,8 +35,6 @@
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -(map_get($grid, gutters));
-    margin-left: -(map_get($grid, gutters));
   }
   &._reverse {
      -webkit-flex-direction: row--reverse;
@@ -102,6 +100,11 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
+  &._ungap {
+    [class*='col'] {
+      border-right: 0px none;
+    }
+  }
 }
 
 .col,
@@ -122,8 +125,10 @@
   -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
   flex: 0 0 auto;
-  padding-right: map_get($grid, gutters);
-  padding-left: map_get($grid, gutters);
+  border-right: map_get($grid, gutters) solid transparent;
+  &:last-child {
+    border-right: 0px none;
+  }
 }
 
 .col {
@@ -135,6 +140,7 @@
   -webkit-flex-basis: 0;
   flex-basis: 0;
   max-width: 100%;
+
 }
 
 .col-1 {
