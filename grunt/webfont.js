@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 			aPaths.push( grunt.option('appCwd') + '/' + oData.icons.cwd + '/*.svg' );
 		}
 
-		if ( oData.icons.default !== false) {
+		if ( oData.icons.default !== false || !oData.icons.hasOwnProperty('default')) {
 			aPaths.push( grunt.option('fcCwd') + '/components/icons/font-awesome/*.svg'  );
 		}
 

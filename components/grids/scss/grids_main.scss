@@ -101,7 +101,7 @@
     justify-content: space-between;
   }
   &._ungap {
-    [class*='col'] {
+    & > [class*='col'] {
       border-right: 0px none;
     }
   }

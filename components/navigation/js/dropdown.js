@@ -172,7 +172,7 @@
 					nExtraPixels = oSettings.nDepth > 1 ? 0 : 4;
 
 				// If is not the first level indent the menu based on this width
-				if (oSettings.nDepth > 1 || $(oTarget).parents('nav').hasClass('navigation--vertical') ) {
+				if (oSettings.nDepth > 1 || $(oTarget).parents('nav').hasClass('_vertical') ) {
 					oTarget.style.left =  $(oTarget).parents('.' + self.oConstants.DROPDOWN_CLASS ).width() + nExtraPixels + 'px';
 				}
 

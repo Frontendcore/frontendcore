@@ -20,9 +20,6 @@
 				border-bottom: 1px solid rgba(contrast-color(map-get($object-navigation-vars, background-color), $color-foreground, $color-background), .2);
 			}
 		}
-		a {
-			margin-right: $spacing/6 !important;
-		}
 	}
 	$local-color-names: 'foreground','background','primary','secondary','box';
 	@each $color-name in $local-color-names {
