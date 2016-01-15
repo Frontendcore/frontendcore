@@ -17,25 +17,36 @@
   -webkit-box-flex: 0;
   flex: 0 0 auto;
   border-right: map_get($grid, gutters) solid transparent;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
   &:last-child {
     border-right: 0px none;
-    padding-right: 0px;
   }
 }
 
 .col {
   &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col {
-    -ms-flex-preferred-size: 50%;
-    -webkit-flex-basis: 50%;
-    flex-basis: 48%;
-    max-width: 48%;
-    border-right: 0px none;
+    & {
+      -ms-flex-preferred-size: 50%;
+      -webkit-flex-basis: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+    &:nth-child(odd) {
+      border-right: map_get($grid, gutters)/2 solid transparent;
+    }
+    &:nth-child(even) {
+      border-right: 0px none;
+      border-left: map_get($grid, gutters)/2 solid transparent;
+    }
+
+
   }
+
 }
 
-.col-m-last, .col-m-12 {
+.col._ungap-m,.col-m-12 {
   border-right: 0px none;
-  padding-right: 0px;
 }
 
 .col-m {
