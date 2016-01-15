@@ -3,11 +3,26 @@
 		<legend>Select fields</legend>
 		<ol class="row">
 			<li class="col">
-				<label for="select-field">Select Field</label>
-				<select id="select-field"class="w-100">
+				<label for="select-field">System Default Select Field</label>
+				<select id="select-field" class="w-100">
 					<option>option 1</option>
 					<option>option 2</option>
 				</select>
+			</li>
+			<li class="col">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
+			</li>
+		</ol>
+		<ol class="row">
+			<li class="col">
+				<label for="select-field">Custom Select Field (wrap on a div.select)</label>
+				<div class="select">
+					<select id="select-field-2" class="w-100">
+						<option>option 1</option>
+						<option>option 2</option>
+					</select>
+				</div>
 			</li>
 			<li class="col">
 				<label>Text Field</label>
