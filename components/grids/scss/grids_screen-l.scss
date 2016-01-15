@@ -19,11 +19,13 @@
   border-right: map_get($grid, gutters) solid transparent;
   &:last-child {
     border-right: 0px none;
+    padding-right: 0px;
   }
 }
 
 .col-l-last, .col-l-12 {
   border-right: 0px none;
+  padding-right: 0px;
 }
 
 .col-l {

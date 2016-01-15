@@ -105,6 +105,10 @@
       border-right: 0px none;
     }
   }
+  &ol {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .col,
@@ -128,11 +132,14 @@
   border-right: map_get($grid, gutters) solid transparent;
   &:last-child {
     border-right: 0px none;
+    padding-right: 0px;
   }
 }
 
 .col-last, .col-12 {
   border-right: 0px none;
+  padding-right: 0px;
+
 }
 
 .col {
@@ -144,7 +151,8 @@
   -webkit-flex-basis: 0;
   flex-basis: 0;
   max-width: 100%;
-
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
 .col-1 {

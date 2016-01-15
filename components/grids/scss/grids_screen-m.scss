@@ -19,11 +19,23 @@
   border-right: map_get($grid, gutters) solid transparent;
   &:last-child {
     border-right: 0px none;
+    padding-right: 0px;
+  }
+}
+
+.col {
+  &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col {
+    -ms-flex-preferred-size: 50%;
+    -webkit-flex-basis: 50%;
+    flex-basis: 48%;
+    max-width: 48%;
+    border-right: 0px none;
   }
 }
 
 .col-m-last, .col-m-12 {
   border-right: 0px none;
+  padding-right: 0px;
 }
 
 .col-m {
