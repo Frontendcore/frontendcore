@@ -8,9 +8,11 @@
 @import "../components/boxes/scss/boxes_main";
 @import "../components/typography/scss/fonts_main";
 @import "../components/typography/scss/lists_main";
-@import "../components/forms/scss/form_vars";
-@import "../components/forms/scss/form_pattern";
-@import "../components/forms/scss/form_main";
+@import "../components/form/scss/form_vars";
+@import "../components/form/scss/form_pattern";
+@import "../components/form/scss/form_main";
+@import "../components/form-autocomplete/scss/form-autocomplete_main";
+@import "../components/form-validation/scss/form-validation_main";
 @import "../components/callouts/scss/callouts_main";
 @import "../components/buttons/scss/button_vars";
 @import "../components/buttons/scss/buttons_pattern";

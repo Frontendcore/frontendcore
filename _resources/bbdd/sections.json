@@ -367,7 +367,8 @@
         "Autocomplete": {
           "name": "Autocomplete",
           "href": "autocomplete.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Autosize": {
           "name": "Autosize",

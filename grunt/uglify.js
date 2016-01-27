@@ -66,12 +66,14 @@ module.exports = function(grunt) {
 	];
 
 	// FORM VALIDATION.JS
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/form-validation.js' ] = [
-		grunt.option('fcCwd') + '/components/forms/js/_form-validation.js'
-	];
-
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/form-validation-libs.js' ] = [
 		grunt.option('fcCwd') + '/bower/parsleyjs/dist/parsley.js'
+	];
+
+	// FORM AUTOCOMPLETE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/autocomplete.js' ] = [
+		grunt.option('fcCwd') + '/bower/Autocompleter/jquery.autocompleter.js',
+		grunt.option('fcCwd') + '/components/form-autocomplete/js/_autocomplete.js'
 	];
 
 	var oRoundTrip = {

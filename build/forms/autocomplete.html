@@ -33,99 +33,44 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Labels</h1>
-                                    <p>Titles, paragraphs and more font styles</p>
+                <h1>Autocomplete</h1>
+                                    <p>Show your code propertly</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <h1><span class="label _css fz-xl va-m">CSS</span> Labels</h1>
-    <section class="box-lighten">
-        <h2>Default Labels</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-labels-default-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <p>
-	<span class="label _background">Background Label</span>
-
-	<span class="label _foreground">Foreground Label</span>
-
-	<span class="label">Neutral Label</span>
-
-	<span class="label _success">Success Label</span>
-
-	<span class="label _error">Error Label</span>
-
-	<span class="label _warning">Warning Label</span>
-
-	<span class="label _info">Info Label</span>
-</p>
-                                            </div>
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" style="min-height:300px">
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input type="text" name="autocomplete"  data-fc-modules="autocomplete" data-fc-values="foo,baz,bar" value="" placeholder="click or type foo" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
         </section>
-                <section id="tab-labels-default-2" data-fc-name="Code">
+                <section id="tab-text-fields-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;p&gt;
-	&lt;span class=&quot;label _background&quot;&gt;Background Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _foreground&quot;&gt;Foreground Label&lt;/span&gt;
-
-	&lt;span class=&quot;label&quot;&gt;Neutral Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _success&quot;&gt;Success Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _error&quot;&gt;Error Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _warning&quot;&gt;Warning Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _info&quot;&gt;Info Label&lt;/span&gt;
-&lt;/p&gt;
-</code></pre>
+                <pre><code data-fc-modules="code">&lt;input type=&quot;text&quot; name=&quot;autocomplete&quot;  data-fc-modules=&quot;autocomplete&quot; data-fc-values=&quot;foo,baz,bar&quot; value=&quot;&quot; placeholder=&quot;click or type foo&quot; /&gt;</code></pre>
             </div>
         </section>
                     </div>
 
 
-    </section>
-    <section class="box-lighten">
-        <h2>Labels with fz modifiers</h2>
-        <p>You can use the fz modifiers to change the size of the label</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-labels-fz-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <p>
-	<span class="label fz-xs">Neutral Label</span>
-
-	<span class="label _success fz-default">Success Label</span>
-
-	<span class="label _error fz-m">Error Label</span>
-
-	<span class="label _warning fz-l">Warning Label</span>
-
-	<span class="label _info fz-xl">Info Label</span>
-</p>
-                                            </div>
-        </section>
-                <section id="tab-labels-fz-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;p&gt;
-	&lt;span class=&quot;label fz-xs&quot;&gt;Neutral Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _success fz-default&quot;&gt;Success Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _error fz-m&quot;&gt;Error Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _warning fz-l&quot;&gt;Warning Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _info fz-xl&quot;&gt;Info Label&lt;/span&gt;
-&lt;/p&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-values</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
+                            </dd>
+                    </dl>
 
             </div>
         </div>
@@ -223,7 +168,7 @@
                                                                                                         <a href=".././typography/lists.html">
                                                                                                             Lists                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././typography/labels.html">
                                                                                                             Labels                                                                                                         </a>
                                                                                                     </li>
@@ -372,7 +317,7 @@
                                                                                                     </li>
                                                                                             <li >
                                                                                                             Search Form                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././forms/autocomplete.html">
                                                                                                             Autocomplete <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

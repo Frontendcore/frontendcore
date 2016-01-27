@@ -312,18 +312,6 @@
 	}
 
 }
-.form-error-over {
-	.form-error-message {
-		position: absolute;
-		right: $spacing/2;
-		margin-top: -$spacing*1.4;
-	}
-}
-.form-error-message {
-	padding-top: $spacing/4;
-	color: $color-error;
-	font-size: $font-size-default;
-}
 
 ::-webkit-input-placeholder {
 	color: map-get($object-forms-vars, field-placeholder-color);
