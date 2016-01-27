@@ -5,6 +5,7 @@
   color: $color-foreground;
   background: rgba($color-foreground, .05);
   border: 1px dashed rgba($color-foreground, .2);
+  white-space: pre-wrap;
 }
 
 .hljs-comment,

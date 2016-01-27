@@ -1,5 +1,4 @@
-{% set current_children = "Read Only Fields" %}
-{% set current_subtitle = "Just add the class .form to your form and take a break." %}
+{% set current_children = "Autosize" %}
 {% set current_section = "Forms" %}
 {% set relative_path = "../" %}
 {% import "../_macros/_demo.html.twig" as demos %}
@@ -8,7 +7,8 @@
 
 {% block main %}
     {{ demos.demo(
-        'complex-fields',
-        '../../components/form/html/read-only-fields.html'
+        'text-fields',
+        '../../components/form-autosize/html/autosize-textarea.html',
+        false,false,true
     )}}
 {% endblock %}

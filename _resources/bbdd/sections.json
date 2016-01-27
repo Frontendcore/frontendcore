@@ -373,7 +373,8 @@
         "Autosize": {
           "name": "Autosize",
           "href": "autosize.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Wysiwyg": {
           "name": "Wysiwyg",

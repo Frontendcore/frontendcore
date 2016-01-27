@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 	var oCore = {
 		options: {
 			preserveComments: false,
-			beautify: true
+			beautify: false
 		},
 		files: {}
 	};
@@ -70,10 +70,16 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/bower/parsleyjs/dist/parsley.js'
 	];
 
-	// FORM AUTOCOMPLETE
+	// INPUT AUTOCOMPLETE
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/autocomplete.js' ] = [
 		grunt.option('fcCwd') + '/bower/Autocompleter/jquery.autocompleter.js',
 		grunt.option('fcCwd') + '/components/form-autocomplete/js/_autocomplete.js'
+	];
+
+	// TEXTAREA AUTOSIZE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/autosize.js' ] = [
+		grunt.option('fcCwd') + '/bower/jquery-autosize/jquery.autosize.js',
+		grunt.option('fcCwd') + '/components/form-autosize/js/_autosize.js'
 	];
 
 	var oRoundTrip = {

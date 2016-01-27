@@ -41,7 +41,167 @@
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                            </div>
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-select-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <form class="form">
+	<fieldset>
+		<legend>Select fields</legend>
+		<ol class="row">
+			<li class="col">
+				<label for="select-field">System Default Select Field</label>
+				<select id="select-field" class="w-100">
+					<option>option 1</option>
+					<option>option 2</option>
+				</select>
+			</li>
+			<li class="col">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
+			</li>
+		</ol>
+		<ol class="row">
+			<li class="col">
+				<label for="select-field">Custom Select Field (wrap on a div.select)</label>
+				<div class="select">
+					<select id="select-field-2" class="w-100">
+						<option>option 1</option>
+						<option>option 2</option>
+					</select>
+				</div>
+			</li>
+			<li class="col">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Select multiple</legend>
+		<ul id="countries_selector" class="select-multiple">
+			<li>
+				<a title="Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos." href="#" class="icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip" data-ov-content-id="tooltip-by-site"></a>
+				<label for="available_countries">Available countries</label>
+				<select id="available_countries" name="available_countries" multiple="multiple">
+					<optgroup>
+						<option value="DE">Alemania</option>
+						<option value="AU">Australia</option>
+						<option value="AT">Austria</option>
+						<option value="BR">Brasil</option>
+						<option value="CA">Canadá</option>
+						<option value="CN">China</option>
+						<option value="ES">España</option>
+					</optgroup>
+					<optgroup>
+						<option value="US">Estados Unidos</option>
+						<option value="FR">Francia</option>
+						<option value="IN">India</option>
+						<option value="IT">Italia</option>
+						<option value="JP">Japón</option>
+						<option value="NL">Países Bajos</option>
+						<option value="PL">Polonia</option>
+						<option value="GB">Reino Unido</option>
+						<option value="RU">Rusia</option>
+						<option value="SE">Suecia</option>
+						<option value="CH">Suiza</option>
+					</optgroup>
+				</select>
+			</li>
+			<li class="select-multiple-buttons">
+				<button type="button" id="add_countries" class="button"> Add <i class="icon-caret-right"></i></button>
+				<button type="button" id="remove_countries" class="button"><i class="icon-caret-left"></i> Delete</button>
+			</li>
+			<li>
+				<label for="selected_countries">Selected countries</label>
+				<select id="selected_countries" name="selected_countries[]" multiple="multiple">
+				</select>
+			</li>
+		</ul>
+	</fieldset>
+</form>                                            </div>
+        </section>
+                <section id="tab-select-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Select fields&lt;/legend&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;select-field&quot;&gt;System Default Select Field&lt;/label&gt;
+				&lt;select id=&quot;select-field&quot; class=&quot;w-100&quot;&gt;
+					&lt;option&gt;option 1&lt;/option&gt;
+					&lt;option&gt;option 2&lt;/option&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;Text Field&lt;/label&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;select-field&quot;&gt;Custom Select Field (wrap on a div.select)&lt;/label&gt;
+				&lt;div class=&quot;select&quot;&gt;
+					&lt;select id=&quot;select-field-2&quot; class=&quot;w-100&quot;&gt;
+						&lt;option&gt;option 1&lt;/option&gt;
+						&lt;option&gt;option 2&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;Text Field&lt;/label&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Select multiple&lt;/legend&gt;
+		&lt;ul id=&quot;countries_selector&quot; class=&quot;select-multiple&quot;&gt;
+			&lt;li&gt;
+				&lt;a title=&quot;Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos.&quot; href=&quot;#&quot; class=&quot;icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip&quot; data-ov-content-id=&quot;tooltip-by-site&quot;&gt;&lt;/a&gt;
+				&lt;label for=&quot;available_countries&quot;&gt;Available countries&lt;/label&gt;
+				&lt;select id=&quot;available_countries&quot; name=&quot;available_countries&quot; multiple=&quot;multiple&quot;&gt;
+					&lt;optgroup&gt;
+						&lt;option value=&quot;DE&quot;&gt;Alemania&lt;/option&gt;
+						&lt;option value=&quot;AU&quot;&gt;Australia&lt;/option&gt;
+						&lt;option value=&quot;AT&quot;&gt;Austria&lt;/option&gt;
+						&lt;option value=&quot;BR&quot;&gt;Brasil&lt;/option&gt;
+						&lt;option value=&quot;CA&quot;&gt;Canadá&lt;/option&gt;
+						&lt;option value=&quot;CN&quot;&gt;China&lt;/option&gt;
+						&lt;option value=&quot;ES&quot;&gt;España&lt;/option&gt;
+					&lt;/optgroup&gt;
+					&lt;optgroup&gt;
+						&lt;option value=&quot;US&quot;&gt;Estados Unidos&lt;/option&gt;
+						&lt;option value=&quot;FR&quot;&gt;Francia&lt;/option&gt;
+						&lt;option value=&quot;IN&quot;&gt;India&lt;/option&gt;
+						&lt;option value=&quot;IT&quot;&gt;Italia&lt;/option&gt;
+						&lt;option value=&quot;JP&quot;&gt;Japón&lt;/option&gt;
+						&lt;option value=&quot;NL&quot;&gt;Países Bajos&lt;/option&gt;
+						&lt;option value=&quot;PL&quot;&gt;Polonia&lt;/option&gt;
+						&lt;option value=&quot;GB&quot;&gt;Reino Unido&lt;/option&gt;
+						&lt;option value=&quot;RU&quot;&gt;Rusia&lt;/option&gt;
+						&lt;option value=&quot;SE&quot;&gt;Suecia&lt;/option&gt;
+						&lt;option value=&quot;CH&quot;&gt;Suiza&lt;/option&gt;
+					&lt;/optgroup&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;select-multiple-buttons&quot;&gt;
+				&lt;button type=&quot;button&quot; id=&quot;add_countries&quot; class=&quot;button&quot;&gt; Add &lt;i class=&quot;icon-caret-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+				&lt;button type=&quot;button&quot; id=&quot;remove_countries&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;icon-caret-left&quot;&gt;&lt;/i&gt; Delete&lt;/button&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;selected_countries&quot;&gt;Selected countries&lt;/label&gt;
+				&lt;select id=&quot;selected_countries&quot; name=&quot;selected_countries[]&quot; multiple=&quot;multiple&quot;&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -291,7 +451,9 @@
                                                                                                             Autocomplete <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
                                                                                             <li >
-                                                                                                            Autosize <span class="fl-r cp">JS</span>                                                                                                     </li>
+                                                                                                        <a href=".././forms/autosize.html">
+                                                                                                            Autosize <span class="fl-r cp">JS</span>                                                                                                         </a>
+                                                                                                    </li>
                                                                                             <li >
                                                                                                             Wysiwyg <span class="fl-r cp">JS</span>                                                                                                     </li>
                                                                                     </ul>
