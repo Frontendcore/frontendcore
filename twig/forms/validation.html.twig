@@ -1,0 +1,81 @@
+{% set current_children = "Validation" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {{ demos.demo(
+        'validation',
+        '../../components/forms/html/validation.html'
+    )}}
+    <h2>Add the following attributes to any input to validate them:</h2>
+    <style>
+        h2.mb-m, hr {  display: none;}
+    </style>
+    {{ demos.settings(
+    {
+        "2" : {
+        "name" :        "required",
+        "description" : "Validate that a required field has been filled with a non blank value."
+    },
+        "3" : {
+        "name" :        'type="email"',
+        "description" : "Validates that a value is a valid email address.",
+    },
+        "4" : {
+        "name" :        'type="number"',
+        "description" : "Validates that a value is a valid integer.",
+    },
+        "5" : {
+        "name" :        'data-fc-type="digits"',
+        "description" : "alidates that a value is only digits.",
+    },
+        "6" : {
+        "name" :        'data-fc-type="alphanum"',
+        "description" : "Validates that a value is a valid alphanumeric string.",
+    },
+        "7" : {
+        "name" :        'type="url"',
+        "description" : "Validates that a value is a valid url.",
+    },
+        "8" : {
+        "name" :        'minlength="6"',
+        "description" : "Validates that the length of a string is at least as long as the given limit.",
+    },
+        "9" : {
+        "name" :        'maxlength="6"',
+        "description" : "Validates that the length of a string is not larger than the given limit.",
+    },
+        "10" : {
+        "name" :        'min="6"',
+        "description" : "Validates that a given number is greater than or equal to some minimum number.",
+    },
+        "11" : {
+        "name" :        'max="10"',
+        "description" : "Validates that a given number is less than or equal to some maximum number.",
+    },
+        "12" : {
+        "name" :        'type="range"',
+        "description" : "Validates that a given number is between some minimum and maximum number.",
+    },
+        "13" : {
+        "name" :        'pattern="\d+"',
+        "description" : "Validates that a value matches a specific regular expression (regex).",
+    },
+        "14" : {
+        "name" :        'data-fc-mincheck="3"',
+        "description" : "Validates that a certain minimum number of checkboxes in a group are checked.",
+    },
+        "15" : {
+        "name" :        'data-fc-maxcheck="3"',
+        "description" : "Validates that a certain maximum number of checkboxes in a group are checked.",
+    },
+        "16" : {
+        "name" :        'data-fc-equalto="#anotherfield"',
+        "description" : "Validates that the value is identical to another field's value (useful for password confirmation check).",
+    }
+    }
+    )}}
+{% endblock main %}

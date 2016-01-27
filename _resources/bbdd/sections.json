@@ -357,7 +357,8 @@
         "Validation": {
           "name": "Validation",
           "href": "validation.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Search Form": {
           "name": "Search Form",

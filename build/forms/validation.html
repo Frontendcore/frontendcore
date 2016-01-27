@@ -33,163 +33,169 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Error Fields</h1>
-                                    <p>Don't be mistaken</p>
+                <h1>Validation</h1>
+                                    <p>Just add the class .form to your form and take a break.</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <section id="demos">
-        
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-error-fields-1" class="o-v" data-fc-name="Demo">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-validation-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <form class="form mt-xl">
+                                                <form class="form" data-fc-modules="form-validation">
 	<fieldset>
-		<legend>Forms errors - list errors</legend>
-		<p>Use class="error-fields" in each li when exist some labels with errors</p>
-		<div class="callout-error">
-			<h4>Error!</h4>
-			There are mistakes in the form.
+		<legend>Text fields</legend>
+		<div data-fc-modules="tabs">
+			<section id="tab-1" data-fc-name="Tab 1">
+				<div class="box-text">Tab 1 content</div>
+			</section>
+			<section id="tab-2" data-fc-name="Tab 2">
+				<ol>
+					<li>
+						<label for="text-field">Name</label>
+						<input name="name" type="text" id="text-field" required placeholder="E.g. John"/>
+					</li>
+				</ol>
+			</section>
+			<section id="tab-3" data-fc-name="Tab 3">
+				<ol>
+					<li>
+						<label for="url-field">URL Field</label>
+						<input name="url" type="url" id="url-field" required />
+					</li>
+				</ol>
+			</section>
 		</div>
-
 		<ol>
-			<li class="error-fields">
-				<label for="text-field-error">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error" placeholder="Text field 100%" />
-			</li>
-			<li class="error-fields">
-				<label for="text-field-error2">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
+
+			<li>
+				<label for="email-field">Email Field</label>
+				<input name="email" type="email" id="email-field" required placeholder="email" />
 			</li>
 			<li>
-				<label for="text-field-error2">Label without errors</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
+				<label for="Password-field">Password Field</label>
+				<input name="password" type="password" id="Password-field" required />
 			</li>
 		</ol>
+		<button type="submit" class="button button-success">Send</button>
 	</fieldset>
-
-	<fieldset class="error-fields">
-		<legend>Block div with errors</legend>
-		<p>You can use class error-fields in a general box to fix all inputs like an error</p>
-		<p class="callout-error ">
-			There are mistakes in the form.
-		</p>
-
-		<ol>
-			<li>
-				<label for="text-field-error3">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error3" placeholder="Text field 100%" />
-			</li>
-			<li>
-				<label for="text-field-error4">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error4" placeholder="Text field 100%" />
-			</li>
-		</ol>
-	</fieldset>
-	<button type="submit" class="button-primary">Continue</button>
 </form>                                            </div>
         </section>
-                <section id="tab-error-fields-2" data-fc-name="Code">
+                <section id="tab-validation-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form mt-xl&quot;&gt;
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot; data-fc-modules=&quot;form-validation&quot;&gt;
 	&lt;fieldset&gt;
-		&lt;legend&gt;Forms errors - list errors&lt;/legend&gt;
-		&lt;p&gt;Use class=&quot;error-fields&quot; in each li when exist some labels with errors&lt;/p&gt;
-		&lt;div class=&quot;callout-error&quot;&gt;
-			&lt;h4&gt;Error!&lt;/h4&gt;
-			There are mistakes in the form.
+		&lt;legend&gt;Text fields&lt;/legend&gt;
+		&lt;div data-fc-modules=&quot;tabs&quot;&gt;
+			&lt;section id=&quot;tab-1&quot; data-fc-name=&quot;Tab 1&quot;&gt;
+				&lt;div class=&quot;box-text&quot;&gt;Tab 1 content&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;section id=&quot;tab-2&quot; data-fc-name=&quot;Tab 2&quot;&gt;
+				&lt;ol&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;text-field&quot;&gt;Name&lt;/label&gt;
+						&lt;input name=&quot;name&quot; type=&quot;text&quot; id=&quot;text-field&quot; required placeholder=&quot;E.g. John&quot;/&gt;
+					&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/section&gt;
+			&lt;section id=&quot;tab-3&quot; data-fc-name=&quot;Tab 3&quot;&gt;
+				&lt;ol&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;url-field&quot;&gt;URL Field&lt;/label&gt;
+						&lt;input name=&quot;url&quot; type=&quot;url&quot; id=&quot;url-field&quot; required /&gt;
+					&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/section&gt;
 		&lt;/div&gt;
-
 		&lt;ol&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;email-field&quot;&gt;Email Field&lt;/label&gt;
+				&lt;input name=&quot;email&quot; type=&quot;email&quot; id=&quot;email-field&quot; required placeholder=&quot;email&quot; /&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Label without errors&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
+				&lt;label for=&quot;Password-field&quot;&gt;Password Field&lt;/label&gt;
+				&lt;input name=&quot;password&quot; type=&quot;password&quot; id=&quot;Password-field&quot; required /&gt;
 			&lt;/li&gt;
 		&lt;/ol&gt;
+		&lt;button type=&quot;submit&quot; class=&quot;button button-success&quot;&gt;Send&lt;/button&gt;
 	&lt;/fieldset&gt;
-
-	&lt;fieldset class=&quot;error-fields&quot;&gt;
-		&lt;legend&gt;Block div with errors&lt;/legend&gt;
-		&lt;p&gt;You can use class error-fields in a general box to fix all inputs like an error&lt;/p&gt;
-		&lt;p class=&quot;callout-error &quot;&gt;
-			There are mistakes in the form.
-		&lt;/p&gt;
-
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error3&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error3&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error4&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error4&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
 &lt;/form&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    </section>
-    <section id="appearance">
-                        <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-forms-vars-default: (
-  /* Field */
-        field-font-family: $font-face-default,
-        field-font-size: $font-size-default,
-        field-font-weight: normal,
-        field-background: #FFF,
-        field-color: #000,
-        field-padding: $spacing/4 $spacing/2,
-        field-margin: 0 $spacing/2 $spacing 0,
-        field-border-radius: 1px,
-        field-border: 1px solid rgba($color-foreground, .3),
-        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
-        field-placeholder-color: rgba($color-foreground, .3),
-  /* Field focus */
-        field-focus-border: $color-info,
-  /* Field error */
-        field-error-border: $color-error,
-  /* Label */
-        label-color: rgba($color-foreground, .5)
-) !global !default;
+    <h2>Add the following attributes to any input to validate them:</h2>
+    <style>
+        h2.mb-m, hr {  display: none;}
+    </style>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">required</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validate that a required field has been filled with a non blank value.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="email"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid email address.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="number"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid integer.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type="digits"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">alidates that a value is only digits.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type="alphanum"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid alphanumeric string.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="url"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid url.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">minlength="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the length of a string is at least as long as the given limit.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">maxlength="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the length of a string is not larger than the given limit.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">min="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is greater than or equal to some minimum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">max="10"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is less than or equal to some maximum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="range"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is between some minimum and maximum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">pattern="\d+"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value matches a specific regular expression (regex).</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-mincheck="3"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a certain minimum number of checkboxes in a group are checked.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-maxcheck="3"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a certain maximum number of checkboxes in a group are checked.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-equalto="#anotherfield"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the value is identical to another field's value (useful for password confirmation check).</p>
+                            </dd>
+                    </dl>
 
-$object-forms-vars-custom: () !global !default;
-
-$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
-</code></pre>
-
-    </section>
             </div>
         </div>
     </div>
@@ -421,7 +427,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                             Select with search <span class="fl-r cp">JS</span>                                                                                                     </li>
                                                                                             <li >
                                                                                                             Tags Fields <span class="fl-r cp">JS</span>                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././forms/error-fields.html">
                                                                                                             Error Fields                                                                                                         </a>
                                                                                                     </li>
@@ -429,7 +435,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                         <a href=".././forms/read-only-fields.html">
                                                                                                             Read Only Fields                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././forms/validation.html">
                                                                                                             Validation <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

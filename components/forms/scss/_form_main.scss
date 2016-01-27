@@ -21,7 +21,7 @@
 		padding-bottom: $spacing/4;
 		cursor: pointer;
 		text-align: left;
-		font-size: $font-size-s;
+		font-size: $font-size-default;
 		color: map-get($object-forms-vars, label-color);
 	}
 	details {
@@ -320,6 +320,7 @@
 	}
 }
 .form-error-message {
+	padding-top: $spacing/4;
 	color: $color-error;
 	font-size: $font-size-default;
 }

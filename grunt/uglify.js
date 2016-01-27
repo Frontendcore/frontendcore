@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 	var oCore = {
 		options: {
 			preserveComments: false,
-			beautify: false
+			beautify: true
 		},
 		files: {}
 	};
@@ -63,6 +63,15 @@ module.exports = function(grunt) {
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/code.js' ] = [
 		grunt.option('fcCwd') + '/bower/highlightjs/highlight.pack.js',
 		grunt.option('fcCwd') + '/components/code/js/_code.js'
+	];
+
+	// FORM VALIDATION.JS
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/form-validation.js' ] = [
+		grunt.option('fcCwd') + '/components/forms/js/_form-validation.js'
+	];
+
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/form-validation-libs.js' ] = [
+		grunt.option('fcCwd') + '/bower/parsleyjs/dist/parsley.js'
 	];
 
 	var oRoundTrip = {
