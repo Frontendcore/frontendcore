@@ -98,11 +98,11 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 
   /*no need to reduce columns' width when using _ungap in a row, use normal column width instead*/
   .row._ungap{
-    .col-#{$n} {
+    >.col-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
     }
-    .col-offset-#{$n} {
+    >.col-offset-#{$n} {
       margin-left: $column;
     }
   }

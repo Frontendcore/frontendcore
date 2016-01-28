@@ -9,6 +9,16 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
     margin-right: 0;
   }
 }
+/*when more than three columns, change to 50% width with automatic gutter space between */
+.col {
+  &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col {
+    & {
+      flex-basis: 50% - $gutter/2;
+      max-width: 50% - $gutter/2;
+      margin-right: 0;
+    }
+  }
+}
 
 @each $number in $grid {
   $n: index($grid, $number);
@@ -17,7 +27,7 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
 
-  .col-m-#{$n} {
+  .col-m-#{$n}, .col.col-m-#{$n}, {
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
   }
@@ -30,25 +40,15 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
   }
 
   .row._ungap{
-    .col-m-#{$n} {
+    >.col-m-#{$n}, >.col.col-m-#{$n}  {
       flex: 0 0 $column;
       max-width: $column;
     }
-    .col-m-offset-#{$n} {
+    >.col-m-offset-#{$n} {
       margin-left: $column;
     }
   }
 
-}
-/*when more than three columns, change to 50% width with automatic gutter space between */
-.col {
-  &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col {
-    & {
-      flex-basis: 50% - $gutter/2;
-      max-width: 50% - $gutter/2;
-      margin-right: 0;
-    }
-  }
 }
 
 .row {

@@ -65,13 +65,13 @@
 	}
 	ol {
 		& {
-			padding: 0 $spacing/2;
-			margin: 0 (-($spacing/2));
+			margin: 0;
+			padding: 0;
 		}
 		& > li {
 			list-style: none;
 			display: block;
-			padding: map-get($object-forms-vars, field-margin);
+			padding: $spacing/2 0;
 		}
 	}
 	.error-fields {

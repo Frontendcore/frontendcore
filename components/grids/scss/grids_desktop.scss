@@ -30,11 +30,11 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
   }
 
   .row._ungap{
-    .col-xl-#{$n} {
+    >.col-xl-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
     }
-    .col-xl-offset-#{$n} {
+    >.col-xl-offset-#{$n} {
       margin-left: $column;
     }
   }

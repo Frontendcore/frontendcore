@@ -28,11 +28,11 @@ $gutter: map_get($grid-default, gutters);
   }
 
   .row._ungap{
-    .col-s-#{$n} {
+    >.col-s-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
     }
-    .col-s-offset-#{$n} {
+    >.col-s-offset-#{$n} {
       margin-left: $column;
     }
   }
