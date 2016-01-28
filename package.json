@@ -56,7 +56,6 @@
     "grunt-postcss": "^0.7.1",
     "precss": "^1.3.0",
     "cssnext": "^1.8.4",
-    "autoprefixer": "^6.1.2",
     "grunt-sass": "1.0.0",
     "grunt-sass-globbing": "^1.4.0",
     "grunt-notify": "^0.4.3",

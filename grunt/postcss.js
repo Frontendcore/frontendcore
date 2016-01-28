@@ -11,8 +11,7 @@ module.exports = function(grunt) {
 	return {
 		options: {
 			processors: [
-				require(grunt.option('fcCwd') + '/node_modules/autoprefixer/lib/autoprefixer')({ browsers: aBrowsers }),
-				require(grunt.option('fcCwd') + '/node_modules/cssnext/dist/index')(),
+				require(grunt.option('fcCwd') + '/node_modules/cssnext/dist/index')({ browsers: aBrowsers }),
 				require(grunt.option('fcCwd') + '/node_modules/precss/index')()
 			]
 		},
