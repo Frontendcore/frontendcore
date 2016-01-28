@@ -1,0 +1,8 @@
+@mixin flex-order($screen...){
+  .col-first#{$screen} {
+    order: -1;
+  }
+  .col-last#{$screen} {
+    order: 1;
+  }
+}

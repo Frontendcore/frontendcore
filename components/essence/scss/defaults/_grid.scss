@@ -2,8 +2,10 @@ $grid-custom: () !default;
 
 $grid-default: (
 		container-width: 100%,
-		gutters: .8rem,
-		container-position: center,
+		gutters: 2%,
+
+		/*distribution: default and only recommended value, should not even be customisable at this level! */
+		distribution: between,
 );
 
 $grid: map-merge($grid-default, $grid-custom) !global;

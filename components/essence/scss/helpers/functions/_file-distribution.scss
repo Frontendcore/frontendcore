@@ -1,0 +1,10 @@
+@mixin flex-distribution($screen...){
+  &._start#{$screen} { justify-content: flex-start; }
+  &._center#{$screen} { justify-content: center; }
+  &._end#{$screen} { justify-content: flex-end; }
+  &._top#{$screen} { align-items: flex-start; }
+  &._middle#{$screen} { align-items: center; }
+  &._bottom#{$screen} { align-items: flex-end; }
+  &._around#{$screen} { justify-content: space-around; }
+  &._between#{$screen} { justify-content: space-between; }
+}

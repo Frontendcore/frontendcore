@@ -15,292 +15,101 @@
   }
 }
 
-
 .row {
   & {
     box-sizing: border-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
     display: flex;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    -webkit-box-flex: 0;
-    flex: 0 1 auto;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  &._reverse {
-     -webkit-flex-direction: row--reverse;
-     -ms-flex-direction: row--reverse;
-     -webkit-box-orient: horizontal;
-     -webkit-box-direction: reverse;
-     flex-direction: row--reverse;
-   }
-  &._start {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    text-align: start;
-  }
-
-  &._center {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-
-  }
-
-  &._end {
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    text-align: end;
-  }
-
-  &._top {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    -webkit-box-align: start;
-    align-items: flex-start;
-  }
-
-  &._middle {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-
-  &._bottom {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    -webkit-box-align: end;
-    align-items: flex-end;
-  }
-
-  &._around {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-  }
-
-  &._between {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    -webkit-box-pack: justify;
+    flex-flow: row wrap;
     justify-content: space-between;
+
+    /* ToDo remove this configuration for now, column compensation needs to tackled separately for each case
+    @if map_get($grid, distribution) == 'between' {
+    //11 gutters
+      justify-content: space-between;
+    }
+    @else if map_get($grid, distribution) == 'around'{
+  //13 gutters
+      justify-content: space-around;
+    }
+    @else if map_get($grid, distribution) == 'center'{
+      justify-content: center;
+    }
+    @else if map_get($grid, distribution) == 'start'{
+      justify-content: flex-start;
+    }
+    @else if map_get($grid, distribution) == 'end'{
+      justify-content: flex-end;
+    }*/
   }
+
+  @include flex-distribution();
+
   &._ungap {
-    & > [class*='col'] {
-      border-right: 0px none;
+    & > .col {
+      margin-right: 0;
     }
   }
-  &ol {
-    padding-left: 0px;
-    padding-right: 0px;
+  ol {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
-
-.col,
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
+.col, [class^="col-"]{
   box-sizing: border-box;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  -webkit-box-flex: 0;
-  flex: 0 0 auto;
-  border-right: map_get($grid, gutters) solid transparent;
-  &:last-child {
-    border-right: 0px none;
-    padding-right: 0px;
-  }
+  //border:1px solid #999;
+  overflow: hidden;
 }
 
-.col._ungap, .col-12 {
-  border-right: 0px none;
-  padding-right: 0px;
-
-}
+$grid: 1 2 3 4 5 6 7 8 9 10 11 12;
+$grid-total: last($grid);
+$gutter: (map_get($grid-default, gutters)) * 11 / 12;
 
 .col {
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  -ms-flex-preferred-size: 0;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
+  flex:1 1 0;
   max-width: 100%;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
+  margin-right: $gutter;
+  &:last-child:not(.col-last),
+  &.col-last,
+  &._ungap{
+    margin-right: 0;
+  }
 }
 
-.col-1 {
-  -ms-flex-preferred-size: 8.333%;
-  -webkit-flex-basis: 8.333%;
-  flex-basis: 8.333%;
-  max-width: 8.333%;
+@each $number in $grid {
+  $n: index($grid, $number);
+  $column: 100%/$grid-total * $n;
+  $compensation: $gutter * ($n/$grid-total);
+  $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
+  $offset: $column + $compensation + $gutter;
+
+  /*columns' width is reduced by gutter + compensation for missing last gutter (when 12 columns, 11 gutters)*/
+  .col-#{$n} {
+    flex: 0 0 $reduced-column;
+    max-width: $reduced-column;
+  }
+  .col-offset-#{$n} {
+    margin-left: $offset;
+  }
+
+  /*auto-columns don't need gutter in offsetting, only compensation*/
+  .col.col-offset-#{$n} {
+    margin-left: $column + $compensation;
+  }
+
+  /*no need to reduce columns' width when using _ungap in a row, use normal column width instead*/
+  .row._ungap{
+    .col-#{$n} {
+      flex: 0 0 $column;
+      max-width: $column;
+    }
+    .col-offset-#{$n} {
+      margin-left: $column;
+    }
+  }
 }
 
-.col-2 {
-  -ms-flex-preferred-size: 16.667%;
-  -webkit-flex-basis: 16.667%;
-  flex-basis: 16.667%;
-  max-width: 16.667%;
-}
-
-.col-3 {
-  -ms-flex-preferred-size: 25%;
-  -webkit-flex-basis: 25%;
-  flex-basis: 25%;
-  max-width: 25%;
-}
-
-.col-4 {
-  -ms-flex-preferred-size: 33.333%;
-  -webkit-flex-basis: 33.333%;
-  flex-basis: 33.333%;
-  max-width: 33.333%;
-}
-
-.col-5 {
-  -ms-flex-preferred-size: 41.667%;
-  -webkit-flex-basis: 41.667%;
-  flex-basis: 41.667%;
-  max-width: 41.667%;
-}
-
-.col-6 {
-  -ms-flex-preferred-size: 50%;
-  -webkit-flex-basis: 50%;
-  flex-basis: 50%;
-  max-width: 50%;
-}
-
-.col-7 {
-  -ms-flex-preferred-size: 58.333%;
-  -webkit-flex-basis: 58.333%;
-  flex-basis: 58.333%;
-  max-width: 58.333%;
-}
-
-.col-8 {
-  -ms-flex-preferred-size: 66.667%;
-  -webkit-flex-basis: 66.667%;
-  flex-basis: 66.667%;
-  max-width: 66.667%;
-}
-
-.col-9 {
-  -ms-flex-preferred-size: 75%;
-  -webkit-flex-basis: 75%;
-  flex-basis: 75%;
-  max-width: 75%;
-}
-
-.col-10 {
-  -ms-flex-preferred-size: 83.333%;
-  -webkit-flex-basis: 83.333%;
-  flex-basis: 83.333%;
-  max-width: 83.333%;
-}
-
-.col-11 {
-  -ms-flex-preferred-size: 91.667%;
-  -webkit-flex-basis: 91.667%;
-  flex-basis: 91.667%;
-  max-width: 91.667%;
-}
-
-.col-12 {
-  -ms-flex-preferred-size: 100%;
-  -webkit-flex-basis: 100%;
-  flex-basis: 100%;
-  max-width: 100%;
-}
-
-.col-offset-1 {
-  margin-left: 8.333%;
-}
-
-.col-offset-2 {
-  margin-left: 16.667%;
-}
-
-.col-offset-3 {
-  margin-left: 25%;
-}
-
-.col-offset-4 {
-  margin-left: 33.333%;
-}
-
-.col-offset-5 {
-  margin-left: 41.667%;
-}
-
-.col-offset-6 {
-  margin-left: 50%;
-}
-
-.col-offset-7 {
-  margin-left: 58.333%;
-}
-
-.col-offset-8 {
-  margin-left: 66.667%;
-}
-
-.col-offset-9 {
-  margin-left: 75%;
-}
-
-.col-offset-10 {
-  margin-left: 83.333%;
-}
-
-.col-offset-11 {
-  margin-left: 91.667%;
-}
-
-.col-first {
-  -webkit-order: -1;
-  -ms-flex-order: -1;
-  -webkit-box-ordinal-group: 0;
-  order: -1;
-}
-
-.col-last {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  -webkit-box-ordinal-group: 2;
-  order: 1;
-}
+@include flex-order();
 
 .col-reverse {
-  -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
   flex-direction: column-reverse;
 }

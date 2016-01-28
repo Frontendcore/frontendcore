@@ -1,243 +1,48 @@
-.col-xl,
-.col-xl-1,
-.col-xl-2,
-.col-xl-3,
-.col-xl-4,
-.col-xl-5,
-.col-xl-6,
-.col-xl-7,
-.col-xl-8,
-.col-xl-9,
-.col-xl-10,
-.col-xl-11,
-.col-xl-12 {
-  box-sizing: border-box;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  -webkit-box-flex: 0;
-  flex: 0 0 auto;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
-  border-right: map_get($grid, gutters) solid transparent;
-  &:last-child {
-    border-right: 0px none;
+$grid: 1 2 3 4 5 6 7 8 9 10 11 12;
+$grid-total: last($grid);
+$gutter: (map_get($grid-default, gutters)) * 11 / 12;
+
+.col {
+  &:last-child:not(.col-last-xl),
+  &.col-last-xl,
+  &._ungap{
+    margin-right: 0;
   }
 }
 
-.col._ungap-xl, .col-xl-12 {
-  border-right: 0px none;
-  padding-right: 0px;
-}
+@each $number in $grid {
+  $n: index($grid, $number);
+  $column: 100%/$grid-total * $n;
+  $compensation: $gutter * ($n/$grid-total);
+  $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
+  $offset: $column + $compensation + $gutter;
 
-.col-xl {
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  -ms-flex-preferred-size: 0;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  max-width: 100%;
-}
+  .col-xl-#{$n} {
+    flex: 0 0 $reduced-column;
+    max-width: $reduced-column;
+  }
+  .col-xl-offset-#{$n} {
+    margin-left: $offset;
+  }
 
-.col-xl-1 {
-  -ms-flex-preferred-size: 8.333%;
-  -webkit-flex-basis: 8.333%;
-  flex-basis: 8.333%;
-  max-width: 8.333%;
-}
+  .col.col-xl-offset-#{$n} {
+    margin-left: $column + $compensation;
+  }
 
-.col-xl-2 {
-  -ms-flex-preferred-size: 16.667%;
-  -webkit-flex-basis: 16.667%;
-  flex-basis: 16.667%;
-  max-width: 16.667%;
-}
+  .row._ungap{
+    .col-xl-#{$n} {
+      flex: 0 0 $column;
+      max-width: $column;
+    }
+    .col-xl-offset-#{$n} {
+      margin-left: $column;
+    }
+  }
 
-.col-xl-3 {
-  -ms-flex-preferred-size: 25%;
-  -webkit-flex-basis: 25%;
-  flex-basis: 25%;
-  max-width: 25%;
-}
-
-.col-xl-4 {
-  -ms-flex-preferred-size: 33.333%;
-  -webkit-flex-basis: 33.333%;
-  flex-basis: 33.333%;
-  max-width: 33.333%;
-}
-
-.col-xl-5 {
-  -ms-flex-preferred-size: 41.667%;
-  -webkit-flex-basis: 41.667%;
-  flex-basis: 41.667%;
-  max-width: 41.667%;
-}
-
-.col-xl-6 {
-  -ms-flex-preferred-size: 50%;
-  -webkit-flex-basis: 50%;
-  flex-basis: 50%;
-  max-width: 50%;
-}
-
-.col-xl-7 {
-  -ms-flex-preferred-size: 58.333%;
-  -webkit-flex-basis: 58.333%;
-  flex-basis: 58.333%;
-  max-width: 58.333%;
-}
-
-.col-xl-8 {
-  -ms-flex-preferred-size: 66.667%;
-  -webkit-flex-basis: 66.667%;
-  flex-basis: 66.667%;
-  max-width: 66.667%;
-}
-
-.col-xl-9 {
-  -ms-flex-preferred-size: 75%;
-  -webkit-flex-basis: 75%;
-  flex-basis: 75%;
-  max-width: 75%;
-}
-
-.col-xl-10 {
-  -ms-flex-preferred-size: 83.333%;
-  -webkit-flex-basis: 83.333%;
-  flex-basis: 83.333%;
-  max-width: 83.333%;
-}
-
-.col-xl-11 {
-  -ms-flex-preferred-size: 91.667%;
-  -webkit-flex-basis: 91.667%;
-  flex-basis: 91.667%;
-  max-width: 91.667%;
-}
-
-.col-xl-12 {
-  -ms-flex-preferred-size: 100%;
-  -webkit-flex-basis: 100%;
-  flex-basis: 100%;
-  max-width: 100%;
-}
-
-.col-xl-offset-1 {
-  margin-left: 8.333%;
-}
-
-.col-xl-offset-2 {
-  margin-left: 16.667%;
-}
-
-.col-xl-offset-3 {
-  margin-left: 25%;
-}
-
-.col-xl-offset-4 {
-  margin-left: 33.333%;
-}
-
-.col-xl-offset-5 {
-  margin-left: 41.667%;
-}
-
-.col-xl-offset-6 {
-  margin-left: 50%;
-}
-
-.col-xl-offset-7 {
-  margin-left: 58.333%;
-}
-
-.col-xl-offset-8 {
-  margin-left: 66.667%;
-}
-
-.col-xl-offset-9 {
-  margin-left: 75%;
-}
-
-.col-xl-offset-10 {
-  margin-left: 83.333%;
-}
-
-.col-xl-offset-11 {
-  margin-left: 91.667%;
 }
 
 .row {
-  &._start-xl {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    text-align: start;
-  }
-
-  &._center-xl {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-  }
-
-  &._end-xl {
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    text-align: end;
-  }
-
-  &._top-xl {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    -webkit-box-align: start;
-    align-items: flex-start;
-  }
-
-  &._middle-xl {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-
-  &._bottom-xl {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    -webkit-box-align: end;
-    align-items: flex-end;
-  }
-
-  &._around-xl {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-  }
-
-  &._between-xl {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-  }
+  @include flex-distribution(-xl);
 }
 
-
-.col-first-xl {
-  -webkit-order: -1;
-  -ms-flex-order: -1;
-  -webkit-box-ordinal-group: 0;
-  order: -1;
-}
-
-.col-last-xl {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  -webkit-box-ordinal-group: 2;
-  order: 1;
-}
+@include flex-order(-xl);

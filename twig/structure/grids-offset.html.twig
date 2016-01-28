@@ -1,0 +1,30 @@
+{% set current_children = "Grids offset" %}
+{% set current_subtitle = "Offset columns by any column number to control the space between" %}
+{% set current_section = "Structure" %}
+{% set relative_path = "../" %}
+
+{% import  "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h2>.col col-offset-n</h2>
+    <p>Automatic columns can be easily spaced using column specific offset classes (eg. col-offset-3)</p>
+    {{ demos.demo(
+        'offset-auto',
+        PathComponents ~ 'grids/html/offset-auto.html'
+    )}}
+    <h2>.row _ungap > .col col-offset-n</h2>
+    <p>Automatic columns in a row without gutters, spaced using offset classes</p>
+    {{ demos.demo(
+        'offset-ungap-auto',
+        PathComponents ~ 'grids/html/offset-ungap-auto.html'
+    )}}
+    <h2>.row _ungap > .col-n col-offset-n (requires ._start on row for proper alignment)</h2>
+    <p>For columns of a specified percentual width (eg. col-3) it is preferable to use a combination of grid-distribution setting (eg. _start) and _ungap to control the space between columns</p>
+    {{ demos.demo(
+        'offset-ungap-grid',
+        PathComponents ~ 'grids/html/offset-ungap-grid.html'
+    )}}
+
+{% endblock %}

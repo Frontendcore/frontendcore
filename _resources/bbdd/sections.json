@@ -111,7 +111,13 @@
           "name": "Grids distribution",
           "href": "grids-distribution.html",
           "done" : true
+        },
+        "OffsetGrids": {
+          "name": "Grids offset",
+          "href": "grids-offset.html",
+          "done" : true
         }
+
       }
     },
     "typography": {
