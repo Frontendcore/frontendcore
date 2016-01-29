@@ -33,99 +33,67 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>RoundTrip</h1>
-                                    <p>Create simple, easy and fast single page webapps</p>
+                <h1>Tips</h1>
+                                    <p>Visual colors, and visual messages.</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <div class="box _background">
-        <h3>What can I do with Frontendcore's RoundTrip?</h3>
-        <p>Roundtrip combines the power of twig.js and FrontendCore to render twig templates in realtime and refresh them
-            if there are changes in the data. Any of this renders can use FrontendCore UI modules or custom modules.
-        </p>
-    </div>
-    <div class="box _background">
-        <h3>What I can't do?</h3>
-        <p>Roundtrip doesn't have a system to change the main layout, or load different templates based on url, for things like this maybe it's a good idea to use angular, emberjs or something like that.</p>
-    </div>
-    <div class="box _background">
-        <h3>How it works?</h3>
-        <p>The system is pretty simple, so make it work is fast and easy. All you need is to include the script on your page:</p>
-        <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/roundtrip.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <p>Add a JSON with the data as javascript object</p>
-        <pre><code>&lt;script&gt;
-    var RoundTripData = {
-        &quot;products&quot; : {
-            &quot;0&quot; : {
-                &quot;name&quot; : &quot;hat&quot;,
-                &quot;quantity&quot; : 1
-            },
-            &quot;1&quot; : {
-                &quot;name&quot; : &quot;suitcase&quot;,
-                &quot;quantity&quot; : 2
-            },
-            &quot;2&quot; : {
-                &quot;name&quot; : &quot;umbrella&quot;,
-                &quot;quantity&quot; : 3
-            }
-        },
-        &quot;user&quot; : {
-            &quot;0&quot; : {
-                &quot;name&quot; : &quot;john&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            },
-            &quot;1&quot; : {
-                &quot;name&quot; : &quot;Marie&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            },
-            &quot;2&quot; : {
-                &quot;name&quot; : &quot;Mike&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            }
-        }
-    };
-&lt;/script&gt;</code></pre>
-        <p>Add the markup for one of the template renders</p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot;&gt;&lt;/div&gt;</code></pre>
-        <p>This will render the template located in "twig/product-list.html.twig" with all the data from RoundTripData.</p>
-    </div>
+                    <section class="box-lighten">
+        <h2>Simple tip on hover</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#" data-fc-modules="tip" data-fc-content="this is the content of the tip" class="icon-info-circle"> Tip</a>
+                                            </div>
+        </section>
+                <section id="tab-text-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#&quot; data-fc-modules=&quot;tip&quot; data-fc-content=&quot;this is the content of the tip&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Get Data and channels from an external JSON file</h3>
-        <p>Add to the markup  of your template render the parameter "data-fc-data" with the url of the JSON file </p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;json/product-list.json&quot;&gt;&lt;/div&gt;</code></pre>
-    </div>
+    </section>
+    <section class="box-lighten">
+        <h2>Tip on click with close on click</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#" data-fc-modules="tip" data-fc-content="this is the content of the tip" data-fc-trigger="click" class="icon-info-circle"> Tip</a>
+                                            </div>
+        </section>
+                <section id="tab-text-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#&quot; data-fc-modules=&quot;tip&quot; data-fc-content=&quot;this is the content of the tip&quot; data-fc-trigger=&quot;click&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Get partial channels from RoundTripData</h3>
-        <p>Add to the markup  of your template an array with the key of RoundTripData object that you want to get</p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;[products]&quot;&gt;&lt;/div&gt;</code></pre>
-    </div>
+    </section>
 
-    <div class="box _background">
-        <h3>Update data</h3>
-        <p>Call on your module the Data method of RoundTrip and pass a new data object.</p>
-        <pre><code>RoundTrip.Data({
-    &quot;Products&quot; : {
-        &quot;0&quot; : {
-            &quot;name&quot; : &quot;Coat&quot;,
-            &quot;quantity&quot; : 1
-        }
-    }
-});</code></pre>
-    </div>
-
-    <div class="box _background">
-        <h3>Bind elements</h3>
-        <p>Because on each render the jquery or javascript bind is lost, Roundtrip provides you a bind method that always work even the module is reloaded.</p>
-        <pre><code>RoundTrip.bind( &#039;#click-me&#039; , &#039;click&#039;, function(e){
-    e.preventDefault();
-    console.log(&#039;CLICK!&#039;)
-});</code></pre>
-    </div>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-content</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">String with the text content of the tooltip</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-position</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">String with the text title of the tooltip. Possible values: right, left, top, top-right, top-left, bottom, bottom-right, bottom-left</p>
+                                <p class="fz-xs c-secondary">DEFAULT: bottom</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-trigger</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Set how tooltips should be activated and closed.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: hover</p>
+                            </dd>
+                    </dl>
 
             </div>
         </div>
@@ -414,7 +382,7 @@
                                                                                                     </li>
                                                                                             <li >
                                                                                                             Notifications <span class="fl-r cp">JS</span>                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././callouts/tips.html">
                                                                                                             Tips <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

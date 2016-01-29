@@ -11,6 +11,7 @@
     position: relative;
     box-shadow: 0 0 2px rgba($color-foreground, .5);
     min-height: 26px;
+    font-size: $font-size-default;
   }
   @each $colorName, $colorValue in $colors-status {
     &._#{$colorName} {

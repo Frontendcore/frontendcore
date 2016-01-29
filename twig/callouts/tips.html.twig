@@ -1,0 +1,42 @@
+{% set current_children = "Tips" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <section class="box-lighten">
+        <h2>Simple tip on hover</h2>
+        {{ demos.demo(
+            'text-fields',
+            '../../components/tip/html/tip-simple.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Tip on click with close on click</h2>
+        {{ demos.demo(
+            'text-fields',
+            '../../components/tip/html/tip-click-close.html'
+        )}}
+    </section>
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-content",
+            "description" : "String with the text content of the tooltip"
+        },
+        "2" : {
+            "name" :        "data-fc-position",
+            "description" : "String with the text title of the tooltip. Possible values: right, left, top, top-right, top-left, bottom, bottom-right, bottom-left",
+            "default" : "bottom"
+        },
+        "3" : {
+            "name" :        "data-fc-trigger",
+            "description" : "Set how tooltips should be activated and closed.",
+            "default" : "hover"
+        }
+    }
+    )}}
+{% endblock %}

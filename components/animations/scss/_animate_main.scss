@@ -2805,3 +2805,13 @@ animation-name: rotate-out-up-left;
     -webkit-animation-name: roll-out;
     animation-name: roll-out;
   }
+
+@keyframes spin {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  100% {
+    transform:rotate(360deg);
+  }
+}

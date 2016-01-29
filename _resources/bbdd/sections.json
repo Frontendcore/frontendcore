@@ -435,7 +435,8 @@
         "Tips": {
           "name": "Tips",
           "href": "tips.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Modals": {
           "name": "Modal windows",

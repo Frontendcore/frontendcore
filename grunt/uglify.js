@@ -82,6 +82,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/form-autosize/js/_autosize.js'
 	];
 
+	// TIP
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/tip.js' ] = [
+		grunt.option('fcCwd') + '/bower/tooltipster/js/jquery.tooltipster.js',
+		grunt.option('fcCwd') + '/components/tip/js/_tip.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

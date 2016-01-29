@@ -1,0 +1,19 @@
+.loading {
+  &:before {
+    content:"\25CC" !important;
+    width: 100% !important;
+    font-size: 3em  !important;
+    display: block  !important;
+    overflow: hidden  !important;
+    text-align: center  !important;
+    background: transparent !important;
+    color: rgba($color-foreground, .5) !important;
+    padding: $spacing !important;
+    animation: spin 4s infinite linear !important;
+    box-sizing: border-box !important;
+    font-style: normal !important;
+  }
+  *  {
+    display: none !important;
+  }
+}
