@@ -320,16 +320,13 @@
 					}
 				}
 
-				if ( document.querySelectorAll ) {
+				// Clean Paste
 
-					// Clean Paste
-
-					document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
-						e.preventDefault();
-						var text = e.clipboardData.getData("text/plain");
-						document.execCommand("insertHTML", false, text);
-					});
-				}
+				$('div[contenteditable]').bind("paste", function(e){
+					e.preventDefault();
+					var text = e.originalEvent.clipboardData.getData('text');
+					document.execCommand("insertHTML", false, text);
+				});
 
 				FrontendTools.removeLoading(oTarget);
 
