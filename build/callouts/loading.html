@@ -33,163 +33,35 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Error Fields</h1>
-                                    <p>Don't be mistaken</p>
+                <h1>Loading</h1>
+                                    <p>Visual colors, and visual messages.</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <section id="demos">
-        
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-error-fields-1" class="o-v" data-fc-name="Demo">
+                        <p>Turns any div, section, article, p, a, span, strong, i or b into a loading object overriding and hiding all the css. All the JS components automatically removes the class 'loading' when are initialized</p>
+        <p class="mb-n">You can remove the loading class of any object on javascript calling the following FrontendTool:</p>
+        <pre class="mb-n">
+            <code data-fc-modules="code" class="mb-n">FrontendTools.removeLoading(Target, classNamesToAdd, callback);</code>
+        </pre>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-loading-simple-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <form class="form mt-xl">
-	<fieldset>
-		<legend>Forms errors - list errors</legend>
-		<p>Use class="error-fields" in each li when exist some labels with errors</p>
-		<div class="callout-error">
-			<h4>Error!</h4>
-			There are mistakes in the form.
-		</div>
-
-		<ol>
-			<li class="error-fields">
-				<label for="text-field-error">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error" placeholder="Text field 100%" />
-			</li>
-			<li class="error-fields">
-				<label for="text-field-error2">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
-			</li>
-			<li>
-				<label for="text-field-error2">Label without errors</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
-			</li>
-		</ol>
-	</fieldset>
-
-	<fieldset class="error-fields">
-		<legend>Block div with errors</legend>
-		<p>You can use class error-fields in a general box to fix all inputs like an error</p>
-		<p class="callout-error ">
-			There are mistakes in the form.
-		</p>
-
-		<ol>
-			<li>
-				<label for="text-field-error3">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error3" placeholder="Text field 100%" />
-			</li>
-			<li>
-				<label for="text-field-error4">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error4" placeholder="Text field 100%" />
-			</li>
-		</ol>
-	</fieldset>
-	<button type="submit" class="button-primary">Continue</button>
-</form>                                            </div>
+                                                <div class="loading">
+	<h1>Content hidden</h1>
+</div>                                            </div>
         </section>
-                <section id="tab-error-fields-2" data-fc-name="Code">
+                <section id="tab-loading-simple-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form mt-xl&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Forms errors - list errors&lt;/legend&gt;
-		&lt;p&gt;Use class=&quot;error-fields&quot; in each li when exist some labels with errors&lt;/p&gt;
-		&lt;div class=&quot;callout-error&quot;&gt;
-			&lt;h4&gt;Error!&lt;/h4&gt;
-			There are mistakes in the form.
-		&lt;/div&gt;
-
-		&lt;ol&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Label without errors&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-
-	&lt;fieldset class=&quot;error-fields&quot;&gt;
-		&lt;legend&gt;Block div with errors&lt;/legend&gt;
-		&lt;p&gt;You can use class error-fields in a general box to fix all inputs like an error&lt;/p&gt;
-		&lt;p class=&quot;callout-error &quot;&gt;
-			There are mistakes in the form.
-		&lt;/p&gt;
-
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error3&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error3&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error4&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error4&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;div class=&quot;loading&quot;&gt;
+	&lt;h1&gt;Content hidden&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    </section>
-    <section id="appearance">
-                        <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-forms-vars-default: (
-  /* Field */
-        field-font-family: $font-face-default,
-        field-font-size: $font-size-default,
-        field-font-weight: normal,
-        field-background: #FFF,
-        field-color: #000,
-        field-padding: $spacing/4 $spacing/2,
-        field-margin: 0 $spacing/2 $spacing 0,
-        field-border-radius: 1px,
-        field-border: 1px solid rgba($color-foreground, .3),
-        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
-        field-placeholder-color: rgba($color-foreground, .3),
-  /* Field focus */
-        field-focus-border: $color-info,
-  /* Field error */
-        field-error-border: $color-error,
-  /* Label */
-        label-color: rgba($color-foreground, .5)
-) !global !default;
-
-$object-forms-vars-custom: () !global !default;
-
-$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
-</code></pre>
-
-    </section>
             </div>
         </div>
     </div>
@@ -425,7 +297,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                             Select with search <span class="fl-r cp">JS</span>                                                                                                     </li>
                                                                                             <li >
                                                                                                             Tags Fields <span class="fl-r cp">JS</span>                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././forms/error-fields.html">
                                                                                                             Error Fields                                                                                                         </a>
                                                                                                     </li>
@@ -477,7 +349,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                         <a href=".././callouts/notifications.html">
                                                                                                             Notifications <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././callouts/loading.html">
                                                                                                             Loading <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

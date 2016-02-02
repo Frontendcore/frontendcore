@@ -185,10 +185,6 @@
         "Mobile menu": {
           "name": "Header Mobile",
           "href": "header-mobile.html"
-        },
-        "Steps": {
-          "name": "Steps",
-          "href": "steps.html"
         }
       }
     },
@@ -414,11 +410,6 @@
       "href": "#callouts",
       "id": "callouts",
       "children": {
-        "Loading": {
-          "name": "Loading",
-          "href": "loading.html",
-          "js": true
-        },
         "Callouts": {
           "name": "Callouts",
           "href": "Callouts.html",
@@ -427,7 +418,14 @@
         "Notifications": {
           "name": "Notifications",
           "href": "notifications.html",
-          "js": true
+          "js": true,
+          "done": true
+        },
+        "Loading": {
+          "name": "Loading",
+          "href": "loading.html",
+          "js": true,
+          "done" : true
         },
         "Tips": {
           "name": "Tips",

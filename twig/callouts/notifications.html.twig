@@ -1,0 +1,52 @@
+{% set current_children = "Notifications" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <p>The notifications component has a dependency with the <a href="messages.html">CSS object messages</a></p>
+    <section class="box-lighten">
+        <h2>Show notification on page load</h2>
+        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
+        <input type="hidden"  data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
+        {{ demos.code(
+            'notifications-load',
+            PathComponents ~ 'notification/html/notification-load.html'
+        )}}
+    </section>
+        <h2>Show notification on click</h2>
+        {{ demos.demo(
+            'notifications-click',
+            PathComponents ~ 'notification/html/notification-click.html'
+        )}}
+        <h2>Show notification in a module</h2>
+        <p>If you need to show a notification in a module the best way is to use the <a href="../architecture-js/mediator.html">module commnication (Mediator)</a>. Here you have an example of how to show a message when a module starts.</p>
+        {{ demos.code(
+            'notifications-module',
+            PathComponents ~ 'notification/html/notification-module.js'
+        )}}
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-event",
+            "description" : "Defines the content to load",
+            "default":      "click"
+        },
+        "2" : {
+            "name" :        "data-fc-type",
+            "description" : "Type of the message (success, error, warning or info)",
+            "default" : "ok"
+        },
+        "3" : {
+            "name" :        "data-fc-text",
+            "description" : "Text to show in the message. If it's not defined the message will not be shown."
+        },
+        "4" : {
+            "name" :        "data-fc-autclose",
+            "description" : "Defines how many seconds the message will be shown (1, 2, 3...). Also can disable autoclose (set it to false). By default is 5 seconds."
+        }
+    }
+    )}}
+{% endblock %}

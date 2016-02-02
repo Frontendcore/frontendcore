@@ -1,0 +1,18 @@
+{% set current_children = "Loading" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+        <p>Turns any div, section, article, p, a, span, strong, i or b into a loading object overriding and hiding all the css. All the JS components automatically removes the class 'loading' when are initialized</p>
+        <p class="mb-n">You can remove the loading class of any object on javascript calling the following FrontendTool:</p>
+        <pre class="mb-n">
+            <code data-fc-modules="code" class="mb-n">FrontendTools.removeLoading(Target, classNamesToAdd, callback);</code>
+        </pre>
+        {{ demos.demo(
+            'loading-simple',
+            PathComponents ~ 'loading/html/loading-simple.html'
+        )}}
+{% endblock %}

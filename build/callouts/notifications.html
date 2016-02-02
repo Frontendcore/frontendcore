@@ -33,163 +33,101 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Error Fields</h1>
-                                    <p>Don't be mistaken</p>
+                <h1>Notifications</h1>
+                                    <p>Visual colors, and visual messages.</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <section id="demos">
-        
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-error-fields-1" class="o-v" data-fc-name="Demo">
+                    <p>The notifications component has a dependency with the <a href="messages.html">CSS object messages</a></p>
+    <section class="box-lighten">
+        <h2>Show notification on page load</h2>
+        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
+        <input type="hidden"  data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
+                    <pre><code data-fc-modules="code">&lt;input type=&quot;hidden&quot;  data-fc-modules=&quot;notification&quot; data-fc-event=&quot;load&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;This message is shown when this page is loaded&quot; /&gt;</code></pre>
+
+    </section>
+        <h2>Show notification on click</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-notifications-click-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <form class="form mt-xl">
-	<fieldset>
-		<legend>Forms errors - list errors</legend>
-		<p>Use class="error-fields" in each li when exist some labels with errors</p>
-		<div class="callout-error">
-			<h4>Error!</h4>
-			There are mistakes in the form.
-		</div>
+                                                <!-- ok notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="success" data-fc-text="Congratulations!">Click me to show a success notification</a></p>
 
-		<ol>
-			<li class="error-fields">
-				<label for="text-field-error">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error" placeholder="Text field 100%" />
-			</li>
-			<li class="error-fields">
-				<label for="text-field-error2">Text Field 100%
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
-			</li>
-			<li>
-				<label for="text-field-error2">Label without errors</label>
-				<input type="text" id="text-field-error2" class="w-50" placeholder="Text field 50% - w-50" required />
-			</li>
-		</ol>
-	</fieldset>
+<!--  ko notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="error" data-fc-autoclose="3" data-fc-text="Error!">Click me to show an error notification</a></p>
 
-	<fieldset class="error-fields">
-		<legend>Block div with errors</legend>
-		<p>You can use class error-fields in a general box to fix all inputs like an error</p>
-		<p class="callout-error ">
-			There are mistakes in the form.
-		</p>
+<!--  warning notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="warning" data-fc-text="Caution!">Click me to show a warning notification</a></p>
 
-		<ol>
-			<li>
-				<label for="text-field-error3">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error3" placeholder="Text field 100%" />
-			</li>
-			<li>
-				<label for="text-field-error4">Label
-					<strong>Text error: Lorem ipsum dolor sit amet, is required</strong>
-				</label>
-				<input type="text" id="text-field-error4" placeholder="Text field 100%" />
-			</li>
-		</ol>
-	</fieldset>
-	<button type="submit" class="button-primary">Continue</button>
-</form>                                            </div>
+<!--  info notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="info" data-fc-text="Did you know?">Click me to show an info notification</a></p>
+                                            </div>
         </section>
-                <section id="tab-error-fields-2" data-fc-name="Code">
+                <section id="tab-notifications-click-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form mt-xl&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Forms errors - list errors&lt;/legend&gt;
-		&lt;p&gt;Use class=&quot;error-fields&quot; in each li when exist some labels with errors&lt;/p&gt;
-		&lt;div class=&quot;callout-error&quot;&gt;
-			&lt;h4&gt;Error!&lt;/h4&gt;
-			There are mistakes in the form.
-		&lt;/div&gt;
+                <pre><code data-fc-modules="code">&lt;!-- ok notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;success&quot; data-fc-text=&quot;Congratulations!&quot;&gt;Click me to show a success notification&lt;/a&gt;&lt;/p&gt;
 
-		&lt;ol&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;error-fields&quot;&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Text Field 100%
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error2&quot;&gt;Label without errors&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error2&quot; class=&quot;w-50&quot; placeholder=&quot;Text field 50% - w-50&quot; required /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
+&lt;!--  ko notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;error&quot; data-fc-autoclose=&quot;3&quot; data-fc-text=&quot;Error!&quot;&gt;Click me to show an error notification&lt;/a&gt;&lt;/p&gt;
 
-	&lt;fieldset class=&quot;error-fields&quot;&gt;
-		&lt;legend&gt;Block div with errors&lt;/legend&gt;
-		&lt;p&gt;You can use class error-fields in a general box to fix all inputs like an error&lt;/p&gt;
-		&lt;p class=&quot;callout-error &quot;&gt;
-			There are mistakes in the form.
-		&lt;/p&gt;
+&lt;!--  warning notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;warning&quot; data-fc-text=&quot;Caution!&quot;&gt;Click me to show a warning notification&lt;/a&gt;&lt;/p&gt;
 
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error3&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error3&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field-error4&quot;&gt;Label
-					&lt;strong&gt;Text error: Lorem ipsum dolor sit amet, is required&lt;/strong&gt;
-				&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;text-field-error4&quot; placeholder=&quot;Text field 100%&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+&lt;!--  info notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;Did you know?&quot;&gt;Click me to show an info notification&lt;/a&gt;&lt;/p&gt;
+</code></pre>
             </div>
         </section>
                     </div>
 
-    </section>
-    <section id="appearance">
-                        <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-forms-vars-default: (
-  /* Field */
-        field-font-family: $font-face-default,
-        field-font-size: $font-size-default,
-        field-font-weight: normal,
-        field-background: #FFF,
-        field-color: #000,
-        field-padding: $spacing/4 $spacing/2,
-        field-margin: 0 $spacing/2 $spacing 0,
-        field-border-radius: 1px,
-        field-border: 1px solid rgba($color-foreground, .3),
-        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
-        field-placeholder-color: rgba($color-foreground, .3),
-  /* Field focus */
-        field-focus-border: $color-info,
-  /* Field error */
-        field-error-border: $color-error,
-  /* Label */
-        label-color: rgba($color-foreground, .5)
-) !global !default;
+        <h2>Show notification in a module</h2>
+        <p>If you need to show a notification in a module the best way is to use the <a href="../architecture-js/mediator.html">module commnication (Mediator)</a>. Here you have an example of how to show a message when a module starts.</p>
+                    <pre><code data-fc-modules="code">
+// 1. Define your module and set &#039;notification&#039; as dependency
+FrontendCore.define(&#039;myModule&#039;, [&#039;notification&#039;], function () {
+	return {
+		onStart: function () {
+			//2 . Publish on mediator the notification
+			FrontendMediator.publish( &#039;notification&#039;, { type : &#039;success&#039;, message: &#039;Your message here&#039; } );
+		},
+		onStop: function () {
+			// 3.Set free some memory when module stops
+			FrontendMediator = null;
+		},
+		onDestroy: function () {
+			// 4. Delete oModal to avoid memory problems
+			delete this.mediator;
+		}
+	};
+});</code></pre>
 
-$object-forms-vars-custom: () !global !default;
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-event</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the content to load</p>
+                                <p class="fz-xs c-secondary">DEFAULT: click</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Type of the message (success, error, warning or info)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: ok</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text to show in the message. If it's not defined the message will not be shown.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-autclose</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines how many seconds the message will be shown (1, 2, 3...). Also can disable autoclose (set it to false). By default is 5 seconds.</p>
+                            </dd>
+                    </dl>
 
-$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
-</code></pre>
-
-    </section>
             </div>
         </div>
     </div>
@@ -425,7 +363,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                             Select with search <span class="fl-r cp">JS</span>                                                                                                     </li>
                                                                                             <li >
                                                                                                             Tags Fields <span class="fl-r cp">JS</span>                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././forms/error-fields.html">
                                                                                                             Error Fields                                                                                                         </a>
                                                                                                     </li>
@@ -473,7 +411,7 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
                                                                                                         <a href=".././callouts/Callouts.html">
                                                                                                             Callouts                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././callouts/notifications.html">
                                                                                                             Notifications <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

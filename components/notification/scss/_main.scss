@@ -1,0 +1,53 @@
+#notification {
+	& {
+		box-sizing: border-box;
+		position: fixed;
+		top: -1000px;
+		width: 100%;
+		padding: 0 15%;
+		z-index: 10000;
+		transition: 1s ease-in-out;
+		min-height: 100px;
+	}
+	&._success {
+		background: linear-gradient(to bottom, rgba($color-success, .55) 0%, rgba($color-success, .1) 65%, rgba($color-success, 0) 95%);
+	}
+	&._error {
+		background: linear-gradient(to bottom, rgba($color-error, .55) 0%, rgba($color-error, .1) 65%, rgba($color-error, 0) 95%);
+	}
+	&._info {
+		background: linear-gradient(to bottom, rgba($color-info, .55) 0%, rgba($color-info, .1) 65%, rgba($color-info, 0) 95%);
+	}
+	&._warning {
+		background: linear-gradient(to bottom, rgba($color-warning, .55) 0%, rgba($color-warning, .1) 65%, rgba($color-warning, 0) 95%);
+	}
+	.box {
+		position: relative;
+		box-shadow: 0 0 10px rgba($color-foreground, .5);
+		border-radius: 0 0 $default-border-radius $default-border-radius;
+	}
+	.callout {
+		padding-right: $spacing*1.5;
+		border-radius: 0 0 $default-border-radius $default-border-radius;
+	}
+}
+
+#notification-close {
+	& {
+		position: absolute;
+		right: $spacing/2;
+		top: $spacing/2;
+		color: #000;
+		opacity: .5;
+	}
+	&:after {
+		content: "\2715";
+	}
+	&:hover {
+		cursor: pointer;
+		color: $color-link;
+		z-index: 10001;
+		opacity: .8;
+		text-decoration: none;
+	}
+}
