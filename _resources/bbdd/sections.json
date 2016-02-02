@@ -178,7 +178,8 @@
         "sidepanel": {
           "name": "Side Panel",
           "href": "side-panel.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Side menu": {
           "name": "Side Menu",
