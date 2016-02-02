@@ -33,45 +33,288 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Autocomplete</h1>
-                                    <p>Show your code propertly</p>
+                <h1>Tags</h1>
+                                    <p>Show/hide content or hidden sections</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" style="min-height:300px">
-                                <form class="form" method="get">
-                    <fieldset>
-                        <ol>
-                            <li>
-                                                                <input type="text" name="autocomplete"  data-fc-modules="autocomplete" data-fc-values="foo,baz,bar" value="" placeholder="click or type foo" />                                                            </li>
-                        </ol>
-                        <button type="submit" class="button">Send</button>
-                    </fieldset>
-                </form>
-                            </div>
+                    <div class="row">
+        <div class="col">
+            <h2>Tag</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tags-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#" class="tag">tag 1</a>                                            </div>
         </section>
-                <section id="tab-text-fields-2" data-fc-name="Code">
+                <section id="tab-tags-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;input type=&quot;text&quot; name=&quot;autocomplete&quot;  data-fc-modules=&quot;autocomplete&quot; data-fc-values=&quot;foo,baz,bar&quot; value=&quot;&quot; placeholder=&quot;click or type foo&quot; /&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#&quot; class=&quot;tag&quot;&gt;tag 1&lt;/a&gt;</code></pre>
             </div>
         </section>
                     </div>
 
+        </div><div class="col">
+            <h2>Tag list</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tag-list-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <ul class="tag-list">
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+	<li>
+		<a href="#">tag 1</a>
+	</li>
+	<li>
+		<a href="#">tag 2</a>
+	</li>
+</ul>                                            </div>
+        </section>
+                <section id="tab-tag-list-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ul class=&quot;tag-list&quot;&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#&quot;&gt;tag 2&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
 
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-fc-values</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
-                            </dd>
-                    </dl>
+        </div>
+        <div class="col">
+            <h2>Tag cloud</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tag-cloud-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <ul class="tag-cloud">
+	<li>
+		<h1>
+			<a title="#" href="#">download bs player free windows 7 64 bit</a>
+		</h1>
+	</li>
+	<li>
+		<h2>
+			<a title="#" href="#">watch free movies online</a>
+		</h2>
+	</li>
+	<li>
+		<h2>
+			<a title="#" href="#">vcl</a>
+		</h2>
+	</li>
+	<li>
+		<h3>
+			<a title="#" href="#">download vlc media player</a>
+		</h3>
+	</li>
+	<li>
+		<h3>
+			<a title="#" href="#">vlc 2.0.2</a>
+		</h3>
+	</li>
+	<li>
+		<strong>
+			<a title="#" href="#">vcl media player</a>
+		</strong>
+	</li>
+	<li>
+		<strong>
+			<a title="#" href="#">lvc media player</a>
+		</strong>
+	</li>
+	<li>
+		<strong>
+			<a title="#" href="#">lvc player</a>
+		</strong>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">>youtube video vlc converter</a>
+		</em>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">kmplayer 2011 full version mobile</a>
+		</em>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">vlc 2.0.2 twoflower</a>
+		</em>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">vlc media player 2.1.3</a>
+		</em>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">>vlc 2.1.3</a>
+		</em>
+	</li>
+	<li>
+		<em>
+			<a title="#" href="#">vlc 2.0.1</a>
+		</em>
+	</li>
+</ul>                                            </div>
+        </section>
+                <section id="tab-tag-cloud-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ul class=&quot;tag-cloud&quot;&gt;
+	&lt;li&gt;
+		&lt;h1&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;download bs player free windows 7 64 bit&lt;/a&gt;
+		&lt;/h1&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;h2&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;watch free movies online&lt;/a&gt;
+		&lt;/h2&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;h2&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vcl&lt;/a&gt;
+		&lt;/h2&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;h3&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;download vlc media player&lt;/a&gt;
+		&lt;/h3&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;h3&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vlc 2.0.2&lt;/a&gt;
+		&lt;/h3&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;strong&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vcl media player&lt;/a&gt;
+		&lt;/strong&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;strong&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;lvc media player&lt;/a&gt;
+		&lt;/strong&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;strong&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;lvc player&lt;/a&gt;
+		&lt;/strong&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;&gt;youtube video vlc converter&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;kmplayer 2011 full version mobile&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vlc 2.0.2 twoflower&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vlc media player 2.1.3&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;&gt;vlc 2.1.3&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;em&gt;
+			&lt;a title=&quot;#&quot; href=&quot;#&quot;&gt;vlc 2.0.1&lt;/a&gt;
+		&lt;/em&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
 
+        </div>
+    </div>
             </div>
         </div>
     </div>
@@ -199,7 +442,7 @@
                                                                                                         <a href=".././navigation/tabs.html">
                                                                                                             Tabs <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././navigation/tags.html">
                                                                                                             Tags                                                                                                         </a>
                                                                                                     </li>
@@ -323,7 +566,7 @@
                                                                                                     </li>
                                                                                             <li >
                                                                                                             Search Form                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././forms/autocomplete.html">
                                                                                                             Autocomplete <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

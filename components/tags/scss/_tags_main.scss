@@ -1,0 +1,39 @@
+%tag {
+	display: inline-block;
+	padding: $spacing/8 $spacing/2 $spacing/8 $spacing/4;
+	color: rgba($color-foreground, .5);
+	border: 1px solid rgba($color-foreground, .5);
+	&:before {
+		content: "\274D";
+		padding-right: $spacing/4;
+		font-size: .5em;
+		vertical-align: top;
+		padding-top: .7em;
+		display: inline-block;
+	}
+	&:hover {
+		color: $color-link;
+		text-decoration: none;
+		border-color: $color-link;
+	}
+}
+
+.tag {
+	@extend %tag;
+}
+
+.tag-list {
+	& {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		padding: 0 $spacing/8 $spacing/4 0;
+	}
+	a {
+		@extend %tag;
+	}
+
+}

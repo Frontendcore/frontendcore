@@ -1,4 +1,4 @@
-{% set current_children = "Side Panel" %}
+{% set current_children = "Side Panel / Menu" %}
 {% set current_section = "Navigation" %}
 {% set relative_path = "../" %}
 {% import "../_macros/_demo.html.twig" as demos %}
@@ -27,6 +27,21 @@
         {{ demos.demo(
         'side-panel-tab',
         PathComponents ~ 'side-panel/html/side-panel-tab.html'
+        )}}
+    </section>
+    <p>The side panel is also the easiest way for doing your menu responsive.</p>
+    <section class="box-lighten">
+        <h2>Side menu on the left</h2>
+        {{ demos.demo(
+        'side-menu-1',
+        PathComponents ~ 'side-panel/html/sidemenu-left.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Side menu on the right</h2>
+        {{ demos.demo(
+        'side-menu-2',
+        PathComponents ~ 'side-panel/html/sidemenu-right.html'
         )}}
     </section>
     {{ demos.settings(

@@ -173,18 +173,14 @@
         },
         "Tags": {
           "name": "Tags",
-          "href": "tags.html"
+          "href": "tags.html",
+          "done": true
         },
         "sidepanel": {
-          "name": "Side Panel",
+          "name": "Side Panel / Menu",
           "href": "side-panel.html",
           "js": true,
           "done" : true
-        },
-        "Side menu": {
-          "name": "Side Menu",
-          "href": "side-menu.html",
-          "js": true
         },
         "Mobile menu": {
           "name": "Header Mobile",

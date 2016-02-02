@@ -1,0 +1,31 @@
+{% set current_children = "Tags" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <h2>Tag</h2>
+            {{ demos.demo(
+            'tags',
+            PathComponents ~ 'tags/html/tag.html'
+            )}}
+        </div><div class="col">
+            <h2>Tag list</h2>
+            {{ demos.demo(
+            'tag-list',
+            PathComponents ~ 'tags/html/tag-list.html'
+            )}}
+        </div>
+        <div class="col">
+            <h2>Tag cloud</h2>
+            {{ demos.demo(
+            'tag-cloud',
+            PathComponents ~ 'tags/html/tag-cloud.html'
+            )}}
+        </div>
+    </div>
+{% endblock %}

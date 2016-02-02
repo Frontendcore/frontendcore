@@ -42,7 +42,8 @@
     "pagination",
     "loading",
     "tip",
-    "side-panel"
+    "side-panel",
+    "tags"
   ],
   "devDependencies": {
     "bower": "^1.3.7",
