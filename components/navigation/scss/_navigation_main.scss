@@ -4,6 +4,36 @@
 		border-radius: map-get($object-navigation-vars, border-radius);
 		font-size: map-get($object-navigation-vars, font-size);
 	}
+	ul{
+		display: flex;
+		flex-flow: row wrap;
+		margin-bottom: 0;
+	}
+	li{
+		flex: 1 1 100%;
+	}
+	/*start deeper levels*/
+	>ul > li > ul{
+		overflow: hidden;
+		background: $color-background;
+		li{
+			text-align: left;
+		}
+		a{
+			padding: $spacing/4 $spacing/2 $spacing/8 $spacing*1.5;
+			color: contrast-color($color-background);
+		}
+	}
+	>ul > li > ul > li > ul{
+		li{
+			font-size: map-get($object-navigation-vars, font-size) * .85;
+		}
+		a{
+			padding: $spacing/8 $spacing/4 $spacing/8 $spacing*2;
+		}
+	}
+	/*end deeper levels*/
+
 	a {
 		font-family: map-get($object-navigation-vars, font-family);
 		font-weight: map-get($object-navigation-vars, font-weight);
@@ -36,6 +66,7 @@
 					background: rgba(contrast-color(map_get($colors, $color-name)), .08);
 				}
 			}
+			>ul > li > ul a{color: contrast-color($color-background);}
 			li.active {
 				a {
 					& {

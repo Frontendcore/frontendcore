@@ -154,6 +154,16 @@
           "href": "navigation.html",
           "done": true
         },
+        "Navigation distribution": {
+          "name": "Navigation distribution",
+          "href": "navigation-distribution.html",
+          "done": true
+        },
+        "Navigation alignment": {
+          "name": "Navigation alignment",
+          "href": "navigation-alignment.html",
+          "done": true
+        },
         "NavigationDropdown": {
           "name": "Navigation dropdown",
           "href": "navigation-dropdown.html",

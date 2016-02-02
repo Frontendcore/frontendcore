@@ -12,12 +12,21 @@
 {% endblock object_title %}
 
 {% block object_demo %}
+    <h2>Navigation multiple levels, css only</h2>
+    <p>A basic navigation can handle up to 3 levels of links in this automatic css-only manner. Note: change of orientation on the breakpoint mobile to desktop, class _vertical maintains mobile style throughout. Any distribution or color class can be applied.</p>
+    {{ demos.demo(
+    'navigation-flex',
+    PathComponents ~ 'navigation/html/navigation-flex.html',
+    false, false, false, '300px'
+    )}}
+    {#
     <h2> .navigation with dropdown</h2>
     {{ demos.demo(
         'navigation-dropdown',
         PathComponents ~ 'navigation/html/navigation-dropdown.html',
         false, false, false, '200px'
     )}}
+    #}
     <h2> .navigation-vertical with dropdown</h2>
     {{ demos.demo(
         'navigation-vertical-dropdown',

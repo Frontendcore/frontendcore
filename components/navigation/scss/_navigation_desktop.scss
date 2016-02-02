@@ -1,0 +1,64 @@
+.navigation {
+	& {
+		@extend %navigation;
+		border-radius: map-get($object-navigation-vars, border-radius);
+		font-size: map-get($object-navigation-vars, font-size);
+		@include flex-distribution(ul);
+	}
+
+	>ul{
+		display: flex;
+		flex-flow: row nowrap;
+	}
+	>ul > li{
+		flex: 0 0 auto;
+	}
+
+/*start deeper levels*/
+	&:not(._vertical){
+		>ul > li{
+			&:hover{
+				>ul{
+					max-height: 100vh;
+					box-shadow: rgba(contrast-color(white), 0.2) 0 5px 13px;
+					background: $color-background;
+				}
+			}
+		}
+		>ul > li > ul{
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+			display: flex;
+			max-height: 0;
+			li{
+				flex: 1 1 0;
+				text-align: left;
+			}
+			a{
+				padding: $spacing/2 $spacing/2 $spacing/4 $spacing/2;
+				color: contrast-color($color-background);
+			}
+		}
+		>ul > li > ul > li > ul{
+			display: block;
+			position: relative;
+			li{
+				display: block;
+				font-size: map-get($object-navigation-vars, font-size) * .85;
+			}
+			a{
+				padding: $spacing/4 $spacing/4 $spacing/4 $spacing/2;
+			}
+		}
+/*end deeper levels*/
+	}
+
+	&._filled{
+		&{
+			@extend %navigation-filled;
+		}
+	}
+}

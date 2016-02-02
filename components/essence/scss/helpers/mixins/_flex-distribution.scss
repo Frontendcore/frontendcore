@@ -1,0 +1,75 @@
+@mixin flex-distribution($child:"", $screen...){
+  &._start#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        justify-content: flex-start;
+      }
+    } @else{
+      justify-content: flex-start;
+    }
+  }
+  &._center#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        justify-content: center;
+      }
+    } @else{
+      justify-content: center;
+    }
+  }
+  &._end#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        justify-content: flex-end;
+      }
+    } @else{
+      justify-content: flex-end;
+    }
+  }
+  &._top#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        align-items: flex-start;
+      }
+    } @else{
+      align-items: flex-start;
+    }
+  }
+  &._middle#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        align-items: center;
+      }
+    } @else{
+      align-items: center;
+    }
+  }
+  &._bottom#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        align-items: flex-end;
+      }
+    } @else{
+      align-items: flex-end;
+    }
+  }
+  &._around#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        justify-content: space-around;
+      }
+    } @else{
+      justify-content: space-around;
+    }
+  }
+  &._between#{$screen} {
+    @if $child != "" {
+      #{$child} {
+        justify-content: space-between;
+      }
+    } @else{
+      justify-content: space-between;
+    }
+  }
+}
+

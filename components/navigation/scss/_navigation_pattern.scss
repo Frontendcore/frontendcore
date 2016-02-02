@@ -19,8 +19,7 @@
 	}
 	li {
 		& {
-			display: inline-block;
-			vertical-align: top;
+			list-style: none;
 		}
 		&.active {
 			a {
@@ -63,17 +62,14 @@
 }
 
 %navigation-vertical {
-	ul {
-		margin-bottom: 0;
+	ul{
+		display: flex;
+		flex-flow: row wrap;
 	}
-	li {
-		& {
-			float: none !important;
-			display: block !important;
-		}
+	li{
+		flex: 1 1 100%;
 		a {
 			padding: $spacing/4;
-
 		}
 		li {
 			& {
@@ -84,5 +80,11 @@
 				padding: $spacing/4;
 			}
 		}
+	}
+}
+
+%navigation-filled{
+	li{
+		flex: 1 1 0;
 	}
 }

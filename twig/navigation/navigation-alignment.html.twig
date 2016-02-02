@@ -1,0 +1,35 @@
+{% set current_children = "Navigation vertical alignment" %}
+{% set current_subtitle = "Vertical alignment within navigation" %}
+
+{% set current_section = "Navigation" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_title %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Navigation alignment</h1>
+{% endblock object_title %}
+
+{% block main %}
+    <h2 class="mt-l">.navigation _top</h2>
+    {{ demos.demo(
+    'navigation-around',
+    PathComponents ~ 'navigation/html/navigation-top.html'
+    )}}
+    <h2 class="mt-l">.navigation _middle</h2>
+    {{ demos.demo(
+    'navigation-between',
+    PathComponents ~ 'navigation/html/navigation-middle.html'
+    )}}
+    <h2 class="mt-l">.navigation _bottom</h2>
+    {{ demos.demo(
+    'navigation-center',
+    PathComponents ~ 'navigation/html/navigation-bottom.html'
+    )}}
+{#    <h2 class="mt-l">Responsive distribution</h2>
+    <p>Different distribution for different resizes, resize the window to view it on action.</p>
+    {{ demos.demo(
+    'distribution-responsive',
+    PathComponents ~ 'navigation/html/distribution-responsive.html'
+    )}}#}
+{% endblock %}

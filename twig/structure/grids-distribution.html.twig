@@ -9,21 +9,32 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
-    <h2 class="mt-l">.row _around</h2>
+    <h2>.row _around</h2>
     {{ demos.demo(
-        'distribution-around',
+        'row-distribution-around',
         PathComponents ~ 'grids/html/distribution-around.html'
     )}}
     <h2 class="mt-l">.row _between</h2>
     {{ demos.demo(
-        'distribution-between',
+        'row-distribution-between',
         PathComponents ~ 'grids/html/distribution-between.html'
     )}}
     <h2 class="mt-l">.row _center</h2>
     {{ demos.demo(
-    'advance-2',
-    PathComponents ~ 'grids/html/alignment-center.html'
+        'row-distribution-center',
+        PathComponents ~ 'grids/html/distribution-center.html'
     )}}
+    <h2 class="mt-l">.row _start</h2>
+    {{ demos.demo(
+        'row-distribution-start',
+        PathComponents ~ 'grids/html/distribution-start.html'
+    )}}
+    <h2 class="mt-l">.row _end</h2>
+    {{ demos.demo(
+        'row-distribution-end',
+        PathComponents ~ 'grids/html/distribution-end.html'
+    )}}
+
     <h2 class="mt-l">Responsive distribution</h2>
     <p>Different distribution for different resizes, resize the window to view it on action.</p>
     {{ demos.demo(

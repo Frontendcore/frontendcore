@@ -42,117 +42,127 @@
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
                     <section id="demos">
-            <h2> .navigation with dropdown</h2>
+            <h2>Navigation multiple levels, css only</h2>
+    <p>A basic navigation can handle up to 3 levels of links in this automatic css-only manner. Note: change of orientation on the breakpoint mobile to desktop, class _vertical maintains mobile style throughout. Any distribution or color class can be applied.</p>
                                 <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-navigation-dropdown-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" style="min-height:200px">
-                                                <nav class="navigation _primary" data-fc-modules="dropdown">
-    <ul>
-        <li>
-            <a title="Fruits" href="test.html">Hover (href is test.html)</a>
-            <ul>
-                <li>
-                    <a title="Oranges" href="test.html">Another level</a>
-                    <ul>
-                        <li>
-                            <a title="Menu item 1" href="test.html">Oranges OrangesOranges OrangesOranges</a>
-                            <ul>
-                                <li><a title="Menu item 1" href="#tab1">Oranges OrangesOranges OrangesOranges</a></li>
-                                <li><a title="Menu item 2" href="#tab2">Apples</a></li>
-                                <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
-                            </ul>
-                        </li>
-                        <li><a title="Menu item 2" href="#tab2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a title="Apples" href="test.html">Yep, more level</a>
-                    <ul>
-                        <li><a title="Menu item 1" href="#tab1">Oranges OrangesOranges OrangesOranges</a></li>
-                        <li><a title="Menu item 2" href="#tab2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li><a title="Bananas" href="#tab3">Bananas</a></li>
-            </ul>
-        </li>
-        <li>
-            <a title="Vegetables" href="#vegetables">Click (href is #vegetables) </a>
-            <ul id="vegetables">
-                <li>
-                    <a title="Menu item 1" href="#oranges">Oranges</a>
-                    <ul id="oranges">
-                        <li><a title="Menu item 1" href="#tab1">Oranges OrangesOranges OrangesOranges</a></li>
-                        <li><a title="Menu item 2" href="#tab2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li><a title="Menu item 2" href="#tab2">Apples</a></li>
-                <li><a title="Menu item 3" href="#tab3">Bananas</a></li>
-            </ul>
-        </li>
-        <li><a title="Menu item 3" href="#tab3">Lettuce</a></li>
-    </ul>
-</nav>
-                                            </div>
+                <section id="tab-navigation-flex-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" style="min-height:300px">
+                                                <!-- PRIMARY -->
+<nav class="navigation _primary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item 1</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a>
+			<ul>
+				<li><a title="Menu item 1" href="#tab1">Sub item 1</a></li>
+				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
+				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Aliquam eleifend velit consequat</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
+				<li><a title="Menu item 5" href="#tab1">Sub item 5</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam ut </a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam consequat</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 6" href="#tab1">Sub item 6</a></li>
+			</ul>
+
+		</li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a>
+			<ul>
+				<li><a title="Menu item 1" href="#tab1">Sub item 1</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
+				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>                                            </div>
         </section>
-                <section id="tab-navigation-dropdown-2" data-fc-name="Code">
+                <section id="tab-navigation-flex-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation _primary&quot; data-fc-modules=&quot;dropdown&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;
-            &lt;a title=&quot;Fruits&quot; href=&quot;test.html&quot;&gt;Hover (href is test.html)&lt;/a&gt;
-            &lt;ul&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Oranges&quot; href=&quot;test.html&quot;&gt;Another level&lt;/a&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;
-                            &lt;a title=&quot;Menu item 1&quot; href=&quot;test.html&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;
-                            &lt;ul&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Apples&quot; href=&quot;test.html&quot;&gt;Yep, more level&lt;/a&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Bananas&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a title=&quot;Vegetables&quot; href=&quot;#vegetables&quot;&gt;Click (href is #vegetables) &lt;/a&gt;
-            &lt;ul id=&quot;vegetables&quot;&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Menu item 1&quot; href=&quot;#oranges&quot;&gt;Oranges&lt;/a&gt;
-                    &lt;ul id=&quot;oranges&quot;&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Lettuce&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>
+                <pre><code data-fc-modules="code">&lt;!-- PRIMARY --&gt;
+&lt;nav class=&quot;navigation _primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 5&quot; href=&quot;#tab1&quot;&gt;Sub item 5&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut &lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam consequat&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 6&quot; href=&quot;#tab1&quot;&gt;Sub item 6&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
             </div>
         </section>
                     </div>
 
+    
     <h2> .navigation-vertical with dropdown</h2>
                                 <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-navigation-vertical-dropdown-1" class="o-v" data-fc-name="Demo">
@@ -410,6 +420,14 @@ $object-navigation-vars: map-merge($object-navigation-vars-default, $object-navi
                                                                                             <li >
                                                                                                         <a href=".././navigation/navigation.html">
                                                                                                             Navigation                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././navigation/navigation-distribution.html">
+                                                                                                            Navigation distribution                                                                                                         </a>
+                                                                                                    </li>
+                                                                                            <li >
+                                                                                                        <a href=".././navigation/navigation-alignment.html">
+                                                                                                            Navigation alignment                                                                                                         </a>
                                                                                                     </li>
                                                                                             <li  class="active">
                                                                                                         <a href=".././navigation/navigation-dropdown.html">

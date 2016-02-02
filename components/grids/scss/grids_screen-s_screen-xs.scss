@@ -39,7 +39,7 @@ $gutter: map_get($grid-default, gutters);
 }
 
 .row {
-  @include flex-distribution(-s);
+  @include flex-distribution("",-s);
 }
 
 @include flex-order(-s);

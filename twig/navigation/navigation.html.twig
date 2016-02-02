@@ -1,4 +1,4 @@
-{% set current_children = "Navigation" %}
+{% set current_children = "Navigation Flex" %}
 {% set current_subtitle = "Main navigation objects" %}
 
 {% set current_section = "Navigation" %}
@@ -11,16 +11,15 @@
 {% endblock object_title %}
 
 {% block object_demo %}
-    <h2>Navigation flex</h2>
-    {{ demos.demo(
-    'navigation-flex',
-    PathComponents ~ 'navigation/html/navigation-flex.html'
-    )}}
-
     <h2>Navigation default</h2>
     {{ demos.demo(
     'navigation',
     PathComponents ~ 'navigation/html/navigation.html'
+    )}}
+    <h2>Navigation filled</h2>
+    {{ demos.demo(
+    'navigation-filled',
+    PathComponents ~ 'navigation/html/navigation-filled.html'
     )}}
     <h2>Navigation filter</h2>
     {{ demos.demo(

@@ -52,7 +52,7 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 }
 
 .row {
-  @include flex-distribution(-m);
+  @include flex-distribution("",-m);
 }
 
 @include flex-order(-m);

@@ -1,0 +1,45 @@
+{% set current_children = "Navigation distribution" %}
+{% set current_subtitle = "Horizontal distribution within navigation" %}
+
+{% set current_section = "Navigation" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_object.html.twig" %}
+
+{% block object_title %}
+    <h1><span class="label-css fz-xl va-m">CSS</span> Navigation distribution</h1>
+{% endblock object_title %}
+
+{% block main %}
+    <h2 class="mt-l">.navigation _around</h2>
+    {{ demos.demo(
+    'navigation-around',
+    PathComponents ~ 'navigation/html/navigation-around.html'
+    )}}
+    <h2 class="mt-l">.navigation _between</h2>
+    {{ demos.demo(
+    'navigation-between',
+    PathComponents ~ 'navigation/html/navigation-between.html'
+    )}}
+    <h2 class="mt-l">.navigation _center</h2>
+    {{ demos.demo(
+    'navigation-center',
+    PathComponents ~ 'navigation/html/navigation-center.html'
+    )}}
+    <h2 class="mt-l">.navigation _start</h2>
+    {{ demos.demo(
+    'navigation-start',
+    PathComponents ~ 'navigation/html/navigation-start.html'
+    )}}
+    <h2 class="mt-l">.navigation _end</h2>
+    {{ demos.demo(
+    'navigation-end',
+    PathComponents ~ 'navigation/html/navigation-end.html'
+    )}}
+{#    <h2 class="mt-l">Responsive distribution</h2>
+    <p>Different distribution for different resizes, resize the window to view it on action.</p>
+    {{ demos.demo(
+    'distribution-responsive',
+    PathComponents ~ 'navigation/html/distribution-responsive.html'
+    )}}#}
+{% endblock %}
