@@ -446,7 +446,8 @@
         "Modals": {
           "name": "Modal windows",
           "href": "modals.html",
-          "js": true
+          "js": true,
+          "done": true
         }
       }
     },

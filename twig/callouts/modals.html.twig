@@ -1,0 +1,73 @@
+{% set current_children = "Modal windows" %}
+{% set current_section = "Callouts & Prompts" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <p>Open modal windows for inline content, iframes, images and/or galleries.</p>
+    <section class="box-lighten">
+        <h2>Iframe</h2>
+        {{ demos.demo(
+            'modal-iframe',
+            PathComponents ~ 'modal/html/modal-iframe.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Images</h2>
+        <h3>Single image</h3>
+        <p>Link to the image or html and add the  data-fc-modules="modal"</p>
+        {{ demos.demo(
+            'modal-image',
+            PathComponents ~ 'modal/html/modal-image.html'
+        )}}
+        <h3>Multiple images</h3>
+        <p>Just use the class group-X to group you images</p>
+        {{ demos.demo(
+            'modal-gallery',
+            PathComponents ~ 'modal/html/modal-gallery.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content</h2>
+        <p>To open a modal window from a inline content in the current page</p>
+        {{ demos.demo(
+            'modal-inline',
+            PathComponents ~ 'modal/html/modal-inline.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content of other page</h2>
+        <p>To open a modal window from a inline content of something located in other page/url.</p>
+        {{ demos.demo(
+            'modal-inline-url',
+            PathComponents ~ 'modal/html/modal-inline-url.html'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "href",
+            "description" : "Defines the content to load"
+        },
+        "2" : {
+            "name" :        "data-fc-width",
+            "description" : "Force the width of the modal window. Could be defined as px or %.",
+            "default" : "auto"
+        },
+        "3" : {
+            "name" :        "data-fc-height",
+            "description" : "NForce the height of the modal window. Could be defined as px or %.",
+            "default" : "auto"
+        }
+    }
+    )}}
+    <hr/>
+    <h2>Manual call</h2>
+    <p>Sometimes you need to call a modal from another module. Take this module as example.</p>
+    {{ demos.code(
+    'modal-manual',
+    PathComponents ~ 'modal/html/modal-manual.js'
+    )}}
+{% endblock %}

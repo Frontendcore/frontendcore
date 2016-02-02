@@ -15,6 +15,6 @@ FrontendTools.isMobile = {
 		return navigator.userAgent.match(/IEMobile/i);
 	},
 	any: function() {
-		return ( isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+		return ( FrontendTools.isMobile.Android() || FrontendTools.isMobile.BlackBerry() || FrontendTools.isMobile.iOS() || FrontendTools.isMobile.Opera() || FrontendTools.isMobile.Windows());
 	}
 };

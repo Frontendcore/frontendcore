@@ -88,6 +88,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/tip/js/_tip.js'
 	];
 
+	// MODAL
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/modal.js' ] = [
+		grunt.option('fcCwd') + '/bower/jquery-colorbox/jquery.colorbox.js',
+		grunt.option('fcCwd') + '/components/modal/js/_modal.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

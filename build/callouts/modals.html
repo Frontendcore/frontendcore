@@ -33,171 +33,177 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Grids Order</h1>
-                                    <p>Add classes to reorder columns</p>
+                <h1>Modal windows</h1>
+                                    <p>Visual colors, and visual messages.</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <h2 class="mt-l">.col-first</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-order-first-1" class="o-v" data-fc-name="Demo">
+                    <p>Open modal windows for inline content, iframes, images and/or galleries.</p>
+    <section class="box-lighten">
+        <h2>Iframe</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-modal-iframe-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <div class="row">
-    <div class="col-3">
-        <div class="box">1</div>
-    </div>
-    <div class="col-3">
-        <div class="box">2</div>
-    </div>
-    <div class="col-3">
-        <div class="box">3</div>
-    </div>
-    <div class="col-3 col-first">
-        <div class="box">4</div>
+                                                <a href="http://wikipedia.com"  data-fc-modules="modal">Iframe Link</a>                                            </div>
+        </section>
+                <section id="tab-modal-iframe-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;http://wikipedia.com&quot;  data-fc-modules=&quot;modal&quot;&gt;Iframe Link&lt;/a&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Images</h2>
+        <h3>Single image</h3>
+        <p>Link to the image or html and add the  data-fc-modules="modal"</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-modal-image-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-fc-modules="modal">Image Link</a>
+                                            </div>
+        </section>
+                <section id="tab-modal-image-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-fc-modules=&quot;modal&quot;&gt;Image Link&lt;/a&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+        <h3>Multiple images</h3>
+        <p>Just use the class group-X to group you images</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-modal-gallery-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-fc-modules="modal" class="group-1">Image Link 1</a></p>
+
+<p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg"  data-fc-modules="modal" class="group-1">Image Link 2</a></p>
+
+<p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg"  data-fc-modules="modal" class="group-1">Image Link 3</a></p>                                            </div>
+        </section>
+                <section id="tab-modal-gallery-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-fc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg&quot;  data-fc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg&quot;  data-fc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 3&lt;/a&gt;&lt;/p&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content</h2>
+        <p>To open a modal window from a inline content in the current page</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-modal-inline-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#modal" data-fc-modules="modal">Inline Link</a>
+<div class="hidden">
+    <div id="modal">
+        <img src="http://www.thinkstockphotos.es/CMS/StaticContent/WhyThinkstockImages/Best_Images.jpg" />
     </div>
 </div>                                            </div>
         </section>
-                <section id="tab-order-first-2" data-fc-name="Code">
+                <section id="tab-modal-inline-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;1&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;2&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;3&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3 col-first&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;4&lt;/div&gt;
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#modal&quot; data-fc-modules=&quot;modal&quot;&gt;Inline Link&lt;/a&gt;
+&lt;div class=&quot;hidden&quot;&gt;
+    &lt;div id=&quot;modal&quot;&gt;
+        &lt;img src=&quot;http://www.thinkstockphotos.es/CMS/StaticContent/WhyThinkstockImages/Best_Images.jpg&quot; /&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    <h2 class="mt-l">.col-last</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-order-last-1" class="o-v" data-fc-name="Demo">
+    </section>
+    <section class="box-lighten">
+        <h2>Inline content of other page</h2>
+        <p>To open a modal window from a inline content of something located in other page/url.</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-modal-inline-url-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <div class="row">
-    <div class="col-3 col-last">
-        <div class="box">1</div>
-    </div>
-    <div class="col-3">
-        <div class="box">2</div>
-    </div>
-    <div class="col-3">
-        <div class="box">3</div>
-    </div>
-    <div class="col-3">
-        <div class="box">4</div>
-    </div>
-</div>                                            </div>
+                                                <a href="/index.html#features" data-fc-modules="modal">Inline Link</a>                                            </div>
         </section>
-                <section id="tab-order-last-2" data-fc-name="Code">
+                <section id="tab-modal-inline-url-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-3 col-last&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;1&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;2&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;3&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;4&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;a href=&quot;/index.html#features&quot; data-fc-modules=&quot;modal&quot;&gt;Inline Link&lt;/a&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    <h2 class="mt-l">.row _reverse</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-order-reverse-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="row _reverse">
-    <div class="col-3">
-        <div class="box">1</div>
-    </div>
-    <div class="col-3">
-        <div class="box">2</div>
-    </div>
-    <div class="col-3">
-        <div class="box">3</div>
-    </div>
-    <div class="col-3">
-        <div class="box">4</div>
-    </div>
-</div>                                            </div>
-        </section>
-                <section id="tab-order-reverse-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;row _reverse&quot;&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;1&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;2&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;3&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;4&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
+    </section>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">href</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the content to load</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-width</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Force the width of the modal window. Could be defined as px or %.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-height</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">NForce the height of the modal window. Could be defined as px or %.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: auto</p>
+                            </dd>
+                    </dl>
 
+    <hr/>
+    <h2>Manual call</h2>
+    <p>Sometimes you need to call a modal from another module. Take this module as example.</p>
+                <pre><code data-fc-modules="code">
+// 1. Define your module and set &#039;modal&#039; as dependency
+FrontendCore.define(&#039;myModule&#039;, [&#039;modal&#039;], function () {
+	return {
 
-    <h2 class="mt-l">Responsive order</h2>
-    <p>Different order for different resizes, resize the window to view it on action.</p>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-order-reverse-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="row">
-    <div class="col-3 col-last-xl">
-        <div class="box">1</div>
-    </div>
-    <div class="col-3">
-        <div class="box">2</div>
-    </div>
-    <div class="col-3">
-        <div class="box">3</div>
-    </div>
-    <div class="col-3 col-first-s">
-        <div class="box">4</div>
-    </div>
-</div>                                            </div>
-        </section>
-                <section id="tab-order-reverse-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-3 col-last-xl&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;1&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;2&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;3&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-3 col-first-s&quot;&gt;
-        &lt;div class=&quot;box&quot;&gt;4&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
+		// 2. Instantiate modal as a object in your module
+		oModal:  TinyCore.Module.instantiate( &#039;modal&#039; ),
+
+		onStart: function () {
+
+			// 3. Save into a local var the scope
+			var self = this;
+
+			$(&#039;a&#039;).on(&#039;click&#039;,function(event) {
+				event.preventDefault();
+
+				// 4.Open in a modal this href
+				self.oModal.open({
+					href: this.href,
+					width: &#039;90%&#039;,
+					height: &#039;80%&#039;,
+					onComplete: function() {
+						// This function will be called when modal is rendered
+					}
+				});
+
+				// 5. Closes the modal window
+				self.oModal.close();
+			});
+		},
+		onStop: function () {
+
+			// 6.Set free some memory when module stops
+			this.oModal = null;
+		},
+		onDestroy: function () {
+
+			// 7. Delete oModal to avoid memory problems
+			delete this.oModal;
+		}
+	};
+});</code></pre>
 
             </div>
         </div>
@@ -313,14 +319,6 @@
                                                                                             <li >
                                                                                                         <a href=".././navigation/navigation.html">
                                                                                                             Navigation                                                                                                         </a>
-                                                                                                    </li>
-                                                                                            <li >
-                                                                                                        <a href=".././navigation/navigation-distribution.html">
-                                                                                                            Navigation distribution                                                                                                         </a>
-                                                                                                    </li>
-                                                                                            <li >
-                                                                                                        <a href=".././navigation/navigation-alignment.html">
-                                                                                                            Navigation alignment                                                                                                         </a>
                                                                                                     </li>
                                                                                             <li >
                                                                                                         <a href=".././navigation/navigation-dropdown.html">
@@ -502,7 +500,7 @@
                                                                                                         <a href=".././callouts/tips.html">
                                                                                                             Tips <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././callouts/modals.html">
                                                                                                             Modal windows <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
