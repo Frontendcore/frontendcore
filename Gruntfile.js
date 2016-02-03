@@ -27,8 +27,9 @@ module.exports = function (grunt) {
 	grunt.registerTask('html', ['twigRender','notify:html']);
 	grunt.registerTask('js', ['uglify','notify:js']);
 	grunt.registerTask('js:compile', ['uglify:components','notify:js']);
+	grunt.registerTask('css', ['sass_globbing','css:compile']);
+	grunt.registerTask('css:one', ['sass_globbing','css:compile']);
 	grunt.registerTask('css:compile', ['sass','postcss','notify:css']);
-	grunt.registerTask('css', ['sass_globbing','css:compile','notify:css']);
 	grunt.registerTask('icons', ['webfont','notify:icons']);
 
 	grunt.registerTask('docs', ['html']);

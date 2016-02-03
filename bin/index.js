@@ -1,15 +1,15 @@
 #! /usr/bin/env node
 
-var param = process.argv[2];
+var param = process.argv[2],
+    scssCwd = process.argv[3],
+    scssDest = process.argv[4];
 
 /*
- process.argv.forEach(function (val, index, array) {
+process.argv.forEach(function (val, index, array) {
  console.log(array);
  console.log(index + ': ' + val);
- });
- */
-
-
+});
+*/
 
 
 // or more concisely
@@ -54,7 +54,6 @@ function log( error, stdout, stderr) {
 
 if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.hasOwnProperty('icons') && !oData.hasOwnProperty('bower') ) {
 
-
     for (var key in oData) {
         aProjects.push(key);
     }
@@ -67,6 +66,16 @@ if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.has
 for ( var key in aProjects ) {
 
     switch (param) {
+        case "css:one":
+            aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath, '--scssCwd=' + scssCwd, '--scssDest=' + scssDest ];
+
+            if ( aProjects[key] !== '%default%' ) {
+
+                aParams.push('--project=' + aProjects[key]);
+            }
+
+            exec('grunt', aParams );
+        break;
         case "watch":
         case "css":
         case "css:compile":
