@@ -274,7 +274,8 @@
         "Toggle": {
           "name": "Toggle",
           "href": "toggle.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Sortable": {
           "name": "Sortable lists",

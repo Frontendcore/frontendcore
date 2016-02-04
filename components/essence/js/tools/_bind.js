@@ -1,68 +1,131 @@
-FrontendTools.bind = function ( target, sEvent, fpCallback  ) {
+FrontendTools.bind = function ( selector , eventType, callback  ) {
 
-    var oTarget = $(target)[0],
-        randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26)),
-        sId =  oTarget.id === '' ? randLetter + Date.now() : oTarget.id;
+    var elms;
 
-    if ( oTarget !== undefined ) {
+    if ( typeof selector === 'object' ) {
+        elms = [ selector ];
+    } else {
+        elms = document.querySelectorAll(selector);
+    }
 
+    if ( oGlobalSettings.oBindElements ===  undefined ) {
+        oGlobalSettings.oBindElements = {};
+    }
 
-        if ( oGlobalSettings.oBindElements ===  undefined ) {
-            oGlobalSettings.oBindElements = {};
-        }
+    document.addEventListener(eventType, function(event) {
 
-        oGlobalSettings.oBindElements[sId] = oTarget;
+        var target = event.target || window.event.srcElement,
+            xPath;
 
+        for (var i=0; i<elms.length; i++) {
 
-        if (sEvent === 'submit' ) {
+            xPath = FrontendTools.getSelector(elms[i]);
 
-            var keyStop = {
-                8: ":not(input:text, textarea, input:file, input:password)", // stop backspace = back
-                13: "input:text, input:password", // stop enter = submit
-                end: null
-            };
-
-            if ( oTarget.id === '') {
-                oTarget.id = sId;
+            if ( oGlobalSettings.oBindElements[xPath] === undefined ) {
+                oGlobalSettings.oBindElements[xPath] = {
+                    "xpath" : xPath,
+                    "action" : callback
+                };
             }
 
-            $(document).bind("keydown", function(e){
 
-                var selector = keyStop[e.which],
-                    oParentForm = $(e.target).parents('form')[0];
+            if ( oGlobalSettings.oBindElements[xPath].xpath === FrontendTools.getSelector(target)) {
+                callback.call(elms[i], event);
+            }
+        }
+    });
 
-                if( selector !== undefined && $(e.target).is(selector) ) {
 
-                    if ( oParentForm !== undefined ) {
+/*
+    var $Target = target instanceof jQuery ? target : $(target);
 
-                        if ( oParentForm.id === oTarget.id ) {
+    for ( var nKey = 0; nKey < $Target.length; nKey++  ) {
 
-                            fpCallback(e);
+        var oTarget = $Target[nKey],
+            sId = oTarget.id !== '' ? oTarget.id : $Target.selector;
+
+
+        if ( oTarget !== undefined ) {
+
+
+            if ( oGlobalSettings.oBindElements ===  undefined ) {
+                oGlobalSettings.oBindElements = {};
+            }
+
+            oGlobalSettings.oBindElements[sId] = oTarget;
+
+            if (sEvent === 'submit' ) {
+
+                var keyStop = {
+                    8: ":not(input:text, textarea, input:file, input:password)", // stop backspace = back
+                    13: "input:text, input:password", // stop enter = submit
+                    end: null
+                };
+
+                if ( oTarget.id === '') {
+                    oTarget.id = sId;
+                }
+
+                $(document).bind("keydown", function(e){
+
+                    var selector = keyStop[e.which],
+                        oParentForm = $(e.target).parents('form')[0];
+
+                    if( selector !== undefined && $(e.target).is(selector) ) {
+
+                        if ( oParentForm !== undefined ) {
+
+                            if ( oParentForm.id === oTarget.id ) {
+
+                                fpCallback(e);
+                            }
                         }
+
                     }
 
-                }
+                }).on('click' ,function(e) {
 
-            }).on('click' ,function(e) {
+                    var oParentForm = $(e.target).parents('form')[0];
 
-                var oParentForm = $(e.target).parents('form')[0];
+                    if ( e.target.nodeName === 'BUTTON' && oParentForm.id === oTarget.id ) {
 
-                if ( e.target.nodeName === 'BUTTON' && oParentForm.id === oTarget.id ) {
+                        fpCallback(e);
+                    }
+                });
 
-                    fpCallback(e);
-                }
-            });
+            } else {
 
-        } else {
+                $(document).addEvent(sEvent ,function(e) {
 
-            $(document).on(sEvent ,function(e) {
+                    if (sEvent === 'click') {
+                        e.preventDefault();
+                    }
 
-                if ( e.target.outerHTML === oTarget.outerHTML ) {
+                    var eventObject = $(e.target)[0],
+                        originalObject = $(oTarget)[0],
+                        currentObject;
 
-                    fpCallback(e);
-                }
-            });
+                    if ( eventObject.nodeName !== originalObject.nodeName ) {
+                        currentObject = eventObject.parentNode;
+                    } else {
+                        currentObject = eventObject;
+                    }
+
+                    if ( currentObject.dataset.fcModules !== undefined ) {
+                        var bModules = currentObject.dataset.fcModules == originalObject.dataset.fcModules;
+                    } else {
+                        var bModules = true;
+                    }
+
+                    if ( currentObject.nodeName == originalObject.nodeName && bModules && originalObject.className.indexOf(currentObject.className) !== -1  ) {
+                        fpCallback(e, currentObject);
+                    }
+
+                });
+            }
+
         }
 
     }
+*/
 };

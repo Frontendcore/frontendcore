@@ -5,12 +5,44 @@ module.exports = function(grunt) {
 		sOneScreen = undefined,
 		oConfig = {};
 
+	function getDeviceByScreen( sScreen) {
+
+		var sDevice = '';
+
+		switch (sScreen) {
+			case "screen-xxxl":
+			case "screen-xxl":
+			case "screen-xl":
+				sDevice = 'desktop';
+				break;
+			case "screen-l":
+				sDevice = 'tablet';
+				break;
+			case "screen-m":
+			case "screen-s":
+			case "screen-xs":
+				sDevice = 'mobile';
+				break;
+			case "main":
+			default:
+				sDevice = undefined;
+				break;
+		}
+
+		return sDevice;
+
+	}
+
 
 	if ( grunt.option('scssCwd') !== undefined ) {
 
 		var aTemp = grunt.option('scssCwd').split('/');
 
 		sOneScreen = aTemp[aTemp.length - 1].replace('.scss','');
+	}
+
+	if ( grunt.option('project') ) {
+		oData = oData[grunt.option('project')];
 	}
 
 	if ( sOneScreen === undefined) {
@@ -46,39 +78,6 @@ module.exports = function(grunt) {
 				files: getRoutes(sOneScreen, getDeviceByScreen(sOneScreen) )
 			}
 		}
-	}
-
-
-	if ( grunt.option('project') ) {
-		oData = oData[grunt.option('project')];
-	}
-
-	function getDeviceByScreen( sScreen) {
-
-		var sDevice = '';
-
-		switch (sScreen) {
-			case "screen-xxxl":
-			case "screen-xxl":
-			case "screen-xl":
-				sDevice = 'desktop';
-			break;
-			case "screen-l":
-				sDevice = 'tablet';
-			break;
-			case "screen-m":
-			case "screen-s":
-			case "screen-xs":
-				sDevice = 'mobile';
-			break;
-			case "main":
-			default:
-				sDevice = undefined;
-			break;
-		}
-
-		return sDevice;
-
 	}
 
 	function getRoutes( sScreen, sDevice ) {

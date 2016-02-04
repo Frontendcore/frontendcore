@@ -45,6 +45,7 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.domBoot.js',
 		grunt.option('fcCwd') + '/bower/jquery/dist/jquery.js',
 		grunt.option('fcCwd') + '/components/essence/js/_namespace.js',
+		grunt.option('fcCwd') + '/components/essence/js/tools/_getSelector.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_bind.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_attributeToArray.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_getDataModules.js',

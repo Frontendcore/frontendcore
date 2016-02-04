@@ -33,8 +33,9 @@
 						);
 					});
 
+
 					$('a.update-tabs', oTarget).each( function(){
-						FrontendTools.bind( this, 'click', onClick);
+
 
 					});
 
@@ -52,19 +53,7 @@
 		}
 
 
-		function onClick(event) {
 
-			event.preventDefault();
-
-			FrontendMediator.publish('close:wysiwyg');
-
-			var href = '#' + event.target.href.split('#')[1],
-				target = $( event.target).parents('[data-fc-modules=tabs]')[0];
-
-			if (href) {
-				updateTabs( target, href);
-			}
-		}
 
 		function updateTabs(target, selector) {
 
@@ -103,6 +92,22 @@
 				var aTargets = FrontendTools.getDataModules('tabs');
 				FrontendTools.trackModule('JS_Libraries', 'call', 'tabs');
 				start(aTargets);
+
+				FrontendTools.bind( 'a.update-tabs', 'click', function(event) {
+
+
+					event.preventDefault();
+
+					FrontendMediator.publish('close:wysiwyg');
+
+					var href = '#' + event.target.href.split('#')[1],
+						target = $( event.target).parents('[data-fc-modules=tabs]')[0];
+
+					if (href) {
+						updateTabs( target, href);
+					}
+				} );
+
 			}
 		};
 	});

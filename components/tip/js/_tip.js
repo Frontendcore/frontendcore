@@ -31,6 +31,10 @@
 					oSettings,
 					oOptions = {};
 
+				if ( oTarget.id === '') {
+					oTarget.id = FrontendTools.getSelector(oTarget);
+				}
+
 				if (oTarget.getAttribute("data-fc-position") !== null) {
 					oOptions.position = oTarget.getAttribute("data-fc-position");
 				}
@@ -39,9 +43,10 @@
 					oOptions.trigger = 'click';
 					oOptions.hideOnClick = true;
 
-					$(oTarget).click( function(e) {
+					$(oTarget).click(function (e) {
 						e.preventDefault();
 					});
+
 				}
 
 				if (oTarget.getAttribute("data-fc-content") !== null) {
@@ -51,7 +56,24 @@
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 				if ( oSettings.content !== undefined ){
-					$(oTarget).tooltipster(oSettings);
+
+					if ( window.RoundTrip !== undefined) {
+
+						oSettings.trigger = 'click';
+
+						FrontendTools.bind( oTarget , 'mouseover', function(currentTarget, e) {
+
+							$(currentTarget.target)
+								.tooltipster(oSettings)
+								.click();
+
+						});
+					} else {
+						$(oTarget).tooltipster(oSettings);
+					}
+
+
+
 				}
 
 			},
