@@ -33,7 +33,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Autosize</h1>
+                <h1>Truncate</h1>
                                     <p>Show your code propertly</p>
                             </div>
         </div>
@@ -44,35 +44,39 @@
                                                 <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                <form class="form" method="get">
-                    <fieldset>
-                        <ol>
-                            <li>
-                                                                <textarea name="textarea" data-fc-modules="autosize">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Try typing something...
-</textarea>                                                            </li>
-                        </ol>
-                        <button type="submit" class="button">Send</button>
-                    </fieldset>
-                </form>
-                            </div>
+                                                <div data-fc-modules="truncate" data-fc-max="50" data-fc-more="...More" data-fc-less="Less">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>                                            </div>
         </section>
                 <section id="tab-text-fields-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;textarea name=&quot;textarea&quot; data-fc-modules=&quot;autosize&quot;&gt;
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Try typing something...
-&lt;/textarea&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;div data-fc-modules=&quot;truncate&quot; data-fc-max=&quot;50&quot; data-fc-more=&quot;...More&quot; data-fc-less=&quot;Less&quot;&gt;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+&lt;/div&gt;</code></pre>
             </div>
         </section>
                     </div>
+
+
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-max</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max character to crop text.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 100</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-more</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Call to action to show more.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: [+]</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-less</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Call to action to show less</p>
+                                <p class="fz-xs c-secondary">DEFAULT: [-]</p>
+                            </dd>
+                    </dl>
 
             </div>
         </div>
@@ -261,7 +265,7 @@ Try typing something...
                                                                                                         <a href=".././content/carousel.html">
                                                                                                             Carousel <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././content/truncate.html">
                                                                                                             Truncate <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
@@ -347,7 +351,7 @@ Try typing something...
                                                                                                         <a href=".././forms/autocomplete.html">
                                                                                                             Autocomplete <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././forms/autosize.html">
                                                                                                             Autosize <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

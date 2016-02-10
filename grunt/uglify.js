@@ -120,6 +120,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/carousel/js/_carousel.js'
 	];
 
+	// TRUNCATE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/truncate.js' ] = [
+		grunt.option('fcCwd') + '/bower/jquery.truncator.js/jquery.truncator.js',
+		grunt.option('fcCwd') + '/components/truncate/js/_truncate.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

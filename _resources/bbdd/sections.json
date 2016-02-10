@@ -270,7 +270,8 @@
         "Truncate": {
           "name": "Truncate",
           "href": "truncate.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Toggle": {
           "name": "Toggle",
