@@ -3,7 +3,6 @@
 
 	FrontendCore.define('side-panel', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			oDefault: {
 				side: "left",
 				menuWidth: "200px"
@@ -12,8 +11,6 @@
 
 				var aTargets = FrontendTools.getDataModules('side-panel'),
 					self = this;
-
-				FrontendTools.loadCSS(this.sPathCss);
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'side-panel');
 

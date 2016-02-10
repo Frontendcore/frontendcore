@@ -95,6 +95,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/modal/js/_modal.js'
 	];
 
+	// SELECT WITH SEARCH
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/select-search.js' ] = [
+		grunt.option('fcCwd') + '/bower/bselect/js/bselect.js',
+		grunt.option('fcCwd') + '/components/form-select-search/js/_select-search.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

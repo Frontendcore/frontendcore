@@ -347,7 +347,8 @@
         "Select with search": {
           "name": "Select with search",
           "href": "select-search.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Tags Fields": {
           "name": "Tags Fields",

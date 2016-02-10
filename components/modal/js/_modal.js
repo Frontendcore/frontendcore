@@ -3,7 +3,6 @@
 
 	FrontendCore.define('modal', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			oDefault: {
 				scrolling: true,
 				maxWidth: '100%',
@@ -16,8 +15,6 @@
 
 				var aTargets = FrontendTools.getDataModules('modal'),
 					self = this;
-
-				FrontendTools.loadCSS(this.sPathCss);
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'modal' );
 

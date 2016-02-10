@@ -30,6 +30,8 @@
     "form",
     "form-autocomplete",
     "form-validation",
+    "form-select-search",
+    "form-autosize",
     "callouts",
     "buttons",
     "icons",

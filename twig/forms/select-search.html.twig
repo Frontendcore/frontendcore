@@ -1,0 +1,24 @@
+{% set current_children = "Select with search" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {{ demos.demo(
+        'text-fields',
+        PathComponents ~ 'form-select-search/html/select-search.html',
+        false,false,true
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-search",
+            "description" : "Show or hide the search input inside the select. Posible values: true, false",
+            "default": "true"
+        }
+    }
+    )}}
+{% endblock %}

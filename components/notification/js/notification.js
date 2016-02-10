@@ -2,8 +2,7 @@
 	'use strict';
 
 
-	var sPathCss = oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
-		bMessageCreated = false,
+	var bMessageCreated = false,
 		oTimer = null,
 		nSeconds = 5000,
 		bAutoClose = true,
@@ -158,8 +157,6 @@
 					sEvent;
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'notification' );
-
-				FrontendTools.loadCSS(sPathCss);
 
 				$(aTargets).each(function () {
 

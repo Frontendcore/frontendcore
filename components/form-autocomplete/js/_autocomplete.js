@@ -3,7 +3,6 @@
 
 	FrontendCore.define('autocomplete', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			oDefault: {
 				limit: 12
 			},
@@ -11,8 +10,6 @@
 
 				var aTargets = FrontendTools.getDataModules('autocomplete'),
 					self = this;
-
-				FrontendTools.loadCSS(this.sPathCss);
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete');
 
