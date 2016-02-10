@@ -1,0 +1,108 @@
+{% set current_children = "Carousel" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <section class="box-lighten">
+        <h2>HTML carousel</h2>
+        <p>Use this carousel to show any kind of html content.</p>
+        {{ demos.demo(
+            'carousel-div',
+            PathComponents ~ 'carousel/html/carousel-div.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>HTML carousel with controls inside</h2>
+        {{ demos.demo(
+        'carousel-div-inside',
+        PathComponents ~ 'carousel/html/carousel-div-controls-inside.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>HTML carousel with controls inside on hover</h2>
+        {{ demos.demo(
+        'carousel-div-inside-hover',
+        PathComponents ~ 'carousel/html/carousel-div-controls-hover.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>HTML carousel with no controls</h2>
+        {{ demos.demo(
+        'carousel-div-no-controls',
+        PathComponents ~ 'carousel/html/carousel-div-no-controls.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Images carousel</h2>
+        <p>Use this carousel to show images. The images on carousel are fully compatible with <a href="/media/image-responsive.html">lazy load & responsive images</a>.</p>
+        {{ demos.demo(
+            'carousel-img',
+            PathComponents ~ 'carousel/html/carousel-img.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Video carousel</h2>
+        <p>Use this carousel to display online videos.</p>
+        {{ demos.demo(
+            'carousel-video',
+            PathComponents ~ 'carousel/html/carousel-video.html'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-items",
+            "description" : "The number of items you want to see on the screen.",
+            "default" : "1"
+    },
+        "2" : {
+            "name" :        "data-fc-nav",
+            "description" : "Show next/prev buttons.",
+            "default" : "true"
+    },
+        "3" : {
+            "name" :        "data-fc-margin",
+            "description" : "margin-right(px) on item",
+            "default" : "10"
+    },
+        "5" : {
+            "name" :        "data-fc-video",
+            "description" : "Enable fetching YouTube/Vimeo videos.",
+            "default" : "true"
+    },
+        "9" : {
+            "name" :        "data-fc-video-width",
+            "description" : "Width of the videos.",
+            "default" : "100%"
+    },
+        "10" : {
+            "name" :        "data-fc-video-height",
+            "description" : "Height of the videos.",
+            "default" : "300"
+    },
+        "6" : {
+            "name" :        "data-fc-center",
+            "description" : "Center item. Works well with even an odd number of items.",
+            "default" : "true"
+    },
+        "7" : {
+            "name" :        "data-fc-autoplay",
+            "description" : "Autoplay",
+            "default" : "true"
+    },
+        "8" : {
+            "name" :        "data-fc-device-items",
+            "description" : "The number of items you want to see on the screen separated by coma. First number is on mobile, second on tablet and third in desktop.",
+            "default" : "1,1,1"
+    },
+        "9" : {
+        "name" :        "data-fc-controls",
+        "description" : "Defines how to show the controls of the carousel. Posible values are: true, false, hover, inside",
+        "default" : "true"
+    }
+    }
+    )}}
+{% endblock %}

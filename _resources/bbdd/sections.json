@@ -264,7 +264,8 @@
         "Carousel": {
           "name": "Carousel",
           "href": "carousel.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Truncate": {
           "name": "Truncate",

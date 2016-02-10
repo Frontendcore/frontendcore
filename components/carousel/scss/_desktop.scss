@@ -1,0 +1,13 @@
+.carousel {
+	&._controls-hover {
+		.owl-nav, .owl-dots {
+			display: none !important;
+		}
+
+		&:hover {
+			.owl-nav, .owl-dots {
+				display: block !important;
+			}
+		}
+	}
+}

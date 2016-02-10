@@ -114,6 +114,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/form-wysiwyg/js/_wysiwyg.js'
 	];
 
+	// CAROUSEL
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/carousel.js' ] = [
+		grunt.option('fcCwd') + '/bower/owl-carousel2/dist/owl.carousel.js',
+		grunt.option('fcCwd') + '/components/carousel/js/_carousel.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,
