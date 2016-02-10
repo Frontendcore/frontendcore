@@ -101,6 +101,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/form-select-search/js/_select-search.js'
 	];
 
+	// TAG FIELD
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/tag-field.js' ] = [
+		grunt.option('fcCwd') + '/bower/magicsuggest/magicsuggest.js',
+		grunt.option('fcCwd') + '/components/form-tag-field/js/_tag-field.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

@@ -33,223 +33,96 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>Boxes</h1>
-                                    <p>Think in & out the box</p>
+                <h1>Tag Field</h1>
+                                    <p>Make your right choice</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                <div class="row">
-    <section class="col-6">
-        <h2>Box default</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-1" class="o-v" data-fc-name="Demo">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <div class="box">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input name="tags_input" value="one,two,three,four,five,six,seven,eight,nine,ten,eleven"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" placeholder="add tags separated by comma" required="required" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
         </section>
-                <section id="tab-box-2" data-fc-name="Code">
+                <section id="tab-text-fields-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_input&quot; value=&quot;one,two,three,four,five,six,seven,eight,nine,ten,eleven&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    </section>
-    <section class="col-6">
-        <h2>Box empty</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-empty-1" class="o-v" data-fc-name="Demo">
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-selects-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <div class="box _empty">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input name="tags_select"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" data-fc-mode="restrict" placeholder="add tags separated by comma" required="required" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
         </section>
-                <section id="tab-box-empty-2" data-fc-name="Code">
+                <section id="tab-text-selects-2" data-fc-name="Code">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _empty&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_select&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; data-fc-mode=&quot;restrict&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
             </div>
         </section>
                     </div>
 
-    </section>
-    <section class="col-6">
-        <h2>Box background</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-text-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _background">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-text-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _background&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
 
-    </section>
-    <section class="col-6">
-        <h2>Box primary</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-primary-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _primary">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-primary-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _primary&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">value</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Tags separated by coma. Use it also to prefill the input with tags.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-values</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: left</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-max</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max number of tags allowed.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: add a tag...</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-select</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If it's set to true show the dropdown select to view all the values defined in data-fc-values. </p>
+                                <p class="fz-xs c-secondary">DEFAULT: free</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-mode</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the mode of the tags entry (Restrict or free). Restrict only allow values defined in data-fc-values and allows any value. If you set the mode to Restrict, data-fc-select default value will be false.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: free</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text-no-suggestion</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text that will be displayed when there are no suggestions. Use {{ query }} to show the query.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: No result matching the term {{query}}</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">placeholder</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">No result matching the term {{query}}</p>
+                                <p class="fz-xs c-secondary">DEFAULT: Add a Tag</p>
+                            </dd>
+                    </dl>
 
-    </section>
-    <section class="col-6">
-        <h2>Box secondary</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-secondary-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _secondary">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-secondary-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _secondary&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="col-6">
-        <h2>Box foreground</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-foreground-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _foreground">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-foreground-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _foreground&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="col-6">
-        <h2>Box ok</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-ok-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _success">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-ok-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _success&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="col-6">
-        <h2>Box ko</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-ko-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _error">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-ko-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _error&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="col-6">
-        <h2>Box info</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-box-info-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div class="box _info">
-    <p>Box example</p>
-	<div class="box _darken">.box _darken</div>
-	<div class="box _lighten">.box _lighten</div>
-</div>                                            </div>
-        </section>
-                <section id="tab-box-info-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div class=&quot;box _info&quot;&gt;
-    &lt;p&gt;Box example&lt;/p&gt;
-	&lt;div class=&quot;box _darken&quot;&gt;.box _darken&lt;/div&gt;
-	&lt;div class=&quot;box _lighten&quot;&gt;.box _lighten&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-</div>
             </div>
         </div>
     </div>
@@ -421,7 +294,7 @@
                                 <div class="box _darken">
                                     <h5>Content</h5>
                                                                             <ul class="list pl-n c-foreground">
-                                                                                            <li  class="active">
+                                                                                            <li >
                                                                                                         <a href=".././content/boxes.html">
                                                                                                             Boxes                                                                                                         </a>
                                                                                                     </li>
@@ -495,7 +368,7 @@
                                                                                                         <a href=".././forms/select-search.html">
                                                                                                             Select with search <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././forms/tag-field.html">
                                                                                                             Tag Field <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>

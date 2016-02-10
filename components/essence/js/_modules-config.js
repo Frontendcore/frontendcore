@@ -17,7 +17,7 @@ var oDefaultPaths = {
 		'sortable',
 		'charts',
 		'chartLibs',
-		'tags',
+		'tag-field',
 		'modal',
 		'autocomplete',
 		'autosize',

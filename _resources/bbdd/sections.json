@@ -350,10 +350,11 @@
           "js": true,
           "done" : true
         },
-        "Tags Fields": {
-          "name": "Tags Fields",
-          "href": "tags-fields.html",
-          "js": true
+        "Tag Field": {
+          "name": "Tag Field",
+          "href": "tag-field.html",
+          "js": true,
+          "done" : true
         },
         "Error Fields": {
           "name": "Error Fields",
