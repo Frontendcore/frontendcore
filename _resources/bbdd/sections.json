@@ -282,7 +282,8 @@
         "Sortable": {
           "name": "Sortable lists",
           "href": "sortable.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Code": {
           "name": "Code beautifier",

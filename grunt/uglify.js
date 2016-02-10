@@ -126,6 +126,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/truncate/js/_truncate.js'
 	];
 
+	// SORTABLE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/sortable.js' ] = [
+		grunt.option('fcCwd') + '/bower/jquery-sortable/source/js/jquery-sortable.js',
+		grunt.option('fcCwd') + '/components/sortable/js/_sortable.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,
