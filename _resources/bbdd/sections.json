@@ -374,7 +374,8 @@
         },
         "Search Form": {
           "name": "Search Form",
-          "href": "search-form.html"
+          "href": "search-form.html",
+          "done": true
         },
         "Autocomplete": {
           "name": "Autocomplete",
