@@ -46,11 +46,15 @@
 	}
 	.ms-sel-ctn input {
 		& {
-			float: left;
+			display: inline-block;
 			padding: $spacing/8 0;
 			border: 0px none;
 			box-shadow: none;
 			max-width: 50%;
+		}
+		&:focus {
+			box-shadow: none !important;
+			outline: none !important;
 		}
 	}
 }
@@ -73,6 +77,7 @@
 			box-shadow: none;
 			-webkit-transition: none;
 			background: #fff;
+			outline: none;
 		}
 		&::-ms-clear {
 			width: 0;
@@ -175,31 +180,20 @@
 }
 
 .ms-sel-ctn {
-	.ms-sel-item {
-		float: left;
-		background: $color-box;
-		color: $color-foreground;
-		padding: $spacing/2 $spacing/4;
-		border-radius: $default-border-radius;
-		margin: 3px 0px 1px 0;
-	}
 	.ms-sel-invalid {
 		background: #FDF2F2 !important;
 	}
 }
 
-.ms-ctn .ms-sel-item {
+.ms-sel-item {
 	& {
-		float: left;
-		background: $color-box;
-		color: $color-foreground;
-		padding: $spacing/8 $spacing/4;
-		border-radius: $default-border-radius;
-		margin: 1px $spacing/4 1px 0;
+		@extend %tag;
+		margin: 0 $spacing/2 $spacing/8 0;
+		position: relative;
 	}
 	&:hover {
 		cursor: default;
-		background-color: rgba($color-link, .2);
+		background: $color-box;
 		color: $color-foreground;
 	}
 }
@@ -209,14 +203,15 @@
 	color: #666;
 	padding-right: 0;
 	margin-left: 0;
-	font-size: 14px;
+	font-size: $font-size-default;
 	font-weight: normal;
 }
 
 .ms-res-ctn .ms-res-item em {
 	font-style: normal;
-	background: #565656;
-	color: #fff;
+	background: $color-link;
+	color: contrast-color($color-link);
+	padding: 0 !important;
 }
 
 .ms-sel-ctn {
@@ -232,18 +227,30 @@
 	float: inherit;
 }
 
-.ms-sel-ctn .ms-sel-item .ms-close-btn {
-	&:after {
-		cursor: pointer;
+.ms-close-btn {
+	& {
+		display: inline-block;
+		background: $color-primary;
+		color: contrast-color($color-primary);
+		padding: 0 $spacing/8;
 		float: right;
-		margin: 1px 0 0 $spacing/4;
+		cursor: pointer;
+		margin: 0 0 0 $spacing/4;
+		position: absolute;
+		top: -$spacing/8;
+		right: -$spacing/4;
+		border-radius: 50%;
+		width: 10px;
+		text-align: center;
+		box-shadow: 1px 1px 1px rgba(0,0,0, .1);
+	}
+
+	&:after {
 		content: "\00D7";
-		opacity: .5;
 	}
 	&:hover {
-		&:after {
-			opacity: .3;
-		}
+		background: $color-link;
+		contrast-color: $color-link;
 	}
 }
 
@@ -252,10 +259,10 @@
 }
 
 .ms-helper {
-	color: #AAA;
-	font-size: 10px;
+	font-size: $font-size-s;
+	color: $color-error;
 	position: absolute;
-	top: -$spacing*1.5;
+	top: -$spacing;
 	right: 0;
 }
 

@@ -1,0 +1,24 @@
+%tag {
+  display: inline-block;
+  padding: $spacing/8 $spacing/2 $spacing/8 $spacing/4;
+  background: $color-box;
+  color: rgba($color-foreground, .8);
+  box-shadow: 1px 1px 0 rgba(0,0,0, .2);
+
+  &:before {
+    color: $color-background;
+    content: "\25A0";
+    padding-right: $spacing/4;
+    font-size: .5em;
+    vertical-align: top;
+    padding-top: .7em;
+    display: inline-block;
+    line-height: 1;
+    text-shadow: -1px -1px 0 rgba(0,0,0, .2);
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $color-link;
+    color: contrast-color($color-link);
+  }
+}
