@@ -391,7 +391,8 @@
         "Wysiwyg": {
           "name": "Wysiwyg",
           "href": "wysiwyg.html",
-          "js": true
+          "js": true,
+          "done": true
         }
       }
     },

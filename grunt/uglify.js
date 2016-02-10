@@ -107,6 +107,13 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/form-tag-field/js/_tag-field.js'
 	];
 
+	// WYSIWYG
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/wysiwyg.js' ] = [
+		grunt.option('fcCwd') + '/bower/pen/src/pen.js',
+		grunt.option('fcCwd') + '/bower/pen/src/markdown.js',
+		grunt.option('fcCwd') + '/components/form-wysiwyg/js/_wysiwyg.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,
