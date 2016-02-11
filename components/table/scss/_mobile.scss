@@ -1,0 +1,20 @@
+.table-mobile {
+  display: table !important;
+}
+.table {
+  & {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+  }
+  &[data-fc-modules="table"] {
+    display: table !important;
+  }
+  &[data-fc-modules="table-responsive"] {
+    display: none;
+  }
+  td, th {
+    white-space: nowrap;
+  }
+}

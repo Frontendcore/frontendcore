@@ -409,7 +409,8 @@
       "children": {
         "Static Table": {
           "name": "Static Table",
-          "href": "static-table.html"
+          "href": "static-table.html",
+          "done": true
         },
         "Dynamic Table": {
           "name": "Dynamic Table",

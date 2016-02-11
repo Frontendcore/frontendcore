@@ -55,7 +55,8 @@
     "carousel",
     "truncate",
     "sortable",
-    "chart"
+    "chart",
+    "table"
   ],
   "devDependencies": {
     "bower": "^1.3.7",
