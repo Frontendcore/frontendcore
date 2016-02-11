@@ -27,7 +27,7 @@ var oDefaultPaths = {
 		'truncate',
 		'tip',
 		'cart',
-		'polyfills',
+		'polyfiller',
 		'parallax',
 		'carousel',
 		'table-dynamic',

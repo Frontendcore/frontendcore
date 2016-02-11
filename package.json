@@ -63,7 +63,8 @@
     "image-circle",
     "image-polaroid",
     "image-zoom",
-    "image-responsive"
+    "image-responsive",
+    "polyfiller"
   ],
   "devDependencies": {
     "bower": "^1.3.7",

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
 	// FRONTENDCORE.JS
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/frontendcore.js'] = [
-		grunt.option('fcCwd') + '/components/essence/src/js/libs/modernizr-custom.js',
+		grunt.option('fcCwd') + '/components/essence/js/libs/modernizr-custom.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/build/TinyCore.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/src/tools/mediator/TinyCore.Toolbox.Mediator.js',
 		grunt.option('fcCwd') + '/bower/tinycorejs/build/extensions/AMD/require-2.1.4.min.js',
