@@ -131,6 +131,12 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/bower/chartjs/Chart.js'
 	];
 
+	// IMAGE RESPONSIVE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/image-responsive.js' ] = [
+		grunt.option('fcCwd') + '/bower/jquery-unveil/jquery.unveil.js',
+		grunt.option('fcCwd') + '/components/image-responsive/js/_image-responsive.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

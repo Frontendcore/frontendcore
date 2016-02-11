@@ -62,7 +62,8 @@
     "image-thumbnail",
     "image-circle",
     "image-polaroid",
-    "image-zoom"
+    "image-zoom",
+    "image-responsive"
   ],
   "devDependencies": {
     "bower": "^1.3.7",

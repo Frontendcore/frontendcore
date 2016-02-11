@@ -228,7 +228,8 @@
         "Responsive": {
           "name": "Responsive Images",
           "href": "image-responsive.html",
-          "js": true
+          "js": true,
+          "done": true
         }
       }
     },

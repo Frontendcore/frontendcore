@@ -39,7 +39,7 @@ var oDefaultPaths = {
 		'side-panel',
 		'form-validation',
 		'form-validation-libs',
-		'responsive-images-libs',
+		'image-responsive',
 		'image-zoom',
 		'image-edit',
 		'select-search'
