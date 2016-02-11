@@ -222,12 +222,8 @@
         "Zoom Images": {
           "name": "Zoom Images",
           "href": "image-zoom.html",
-          "js": true
-        },
-        "Edit Images": {
-          "name": "Edit Images",
-          "href": "image-edit.html",
-          "js": true
+          "js": true,
+          "done": true
         },
         "Responsive": {
           "name": "Responsive Images",
