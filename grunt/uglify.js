@@ -114,6 +114,18 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/sortable/js/_sortable.js'
 	];
 
+	// TABLE DYNAMIC
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/table-dynamic.js' ] = [
+		grunt.option('fcCwd') + '/bower/dynatable/jquery.dynatable.js',
+		grunt.option('fcCwd') + '/components/table-dynamic/js/_table-dynamic.js'
+	];
+
+	// TABLE RESPONSIVE
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/table-responsive.js' ] = [
+		grunt.option('fcCwd') + '/bower/stacktable/stacktable.js',
+		grunt.option('fcCwd') + '/components/table-responsive/js/_table-responsive.js'
+	];
+
 	// CHART LIB
 	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/chartLibs.js' ] = [
 		grunt.option('fcCwd') + '/bower/chartjs/Chart.js'

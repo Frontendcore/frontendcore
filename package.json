@@ -56,7 +56,9 @@
     "truncate",
     "sortable",
     "chart",
-    "table"
+    "table",
+    "table-dynamic",
+    "table-responsive"
   ],
   "devDependencies": {
     "bower": "^1.3.7",

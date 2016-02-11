@@ -30,7 +30,7 @@ var oDefaultPaths = {
 		'polyfills',
 		'parallax',
 		'carousel',
-		'table',
+		'table-dynamic',
 		'table-responsive',
 		'toggle',
 		'tabs','notification',
