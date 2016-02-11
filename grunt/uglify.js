@@ -2,29 +2,11 @@ module.exports = function(grunt) {
 
 	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
 		oPkg = require(grunt.option('fcCwd') + '/package.json'),
-		oComponents = oData.components !== undefined ? oData.components : oPkg.components;
+		oComponents = oData.components !== undefined ? oData.components : oPkg.components,
+		oConfig = {};
 
 	if ( grunt.option('project') ) {
 		oData = oData[grunt.option('project')];
-	}
-
-	function getComponentsJs() {
-
-		var oFiles = [];
-
-		for (var nKey = 0; nKey < oComponents.length; nKey++) {
-
-			oFiles.push( {
-				expand: true,
-				cwd: grunt.option('fcCwd') + '/' +  oData.bower.cwd + '/'+ oComponents[nKey] + '/js/',
-				src: ['*.js','!_*.js'],
-				dest: grunt.option('appCwd') + '/' +  oData.js.dest + '/ui',
-				preserveComments: false,
-				beautify: true
-			} );
-		}
-
-		return oFiles;
 	}
 
 	var oCore = {
@@ -145,13 +127,25 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/roundtrip/js/_roundtrip.js'
 	];
 
-
-	return {
+	oConfig = {
 		core: oCore,
-		rountrip: oRoundTrip,
-		components: {
-			files: getComponentsJs()
-		}
+		rountrip: oRoundTrip
 	}
+
+	for (var nKey = 0; nKey < oComponents.length; nKey++) {
+
+		oConfig[oComponents[nKey]] = {
+			files: [{
+				expand: true,
+				cwd: grunt.option('fcCwd') + '/components/'+ oComponents[nKey] + '/js/',
+				src: ['*.js','!_*.js'],
+				dest: grunt.option('appCwd') + '/' +  oData.js.dest + '/ui',
+				preserveComments: false,
+				beautify: true
+			}]
+		};
+	}
+
+	return oConfig;
 
 }

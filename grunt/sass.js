@@ -1,7 +1,7 @@
 module.exports = function( grunt ) {
 
 	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
-		scssCwd = '',
+		scssCwd = grunt.option('appCwd') + '/',
 		scssSrc = '*.scss',
 		scssDest;
 
@@ -10,6 +10,8 @@ module.exports = function( grunt ) {
 	}
 
 	// GET SRC PATH & FILE FOR JUST ONE FILE
+
+	var aPaths = [];
 
 	if ( grunt.option('scssCwd') !== undefined ) {
 
@@ -26,7 +28,7 @@ module.exports = function( grunt ) {
 		}
 	} else {
 
-		var aPaths = [];
+
 
 		if ( Object.prototype.toString.call( oData.scss.cwd ) === '[object Array]' ) {
 			for ( var nKey = 0; nKey < oData.scss.cwd.length; nKey++ ) {
@@ -45,7 +47,7 @@ module.exports = function( grunt ) {
 		scss: {
 			files: [{
 				expand: true,
-				cwd: grunt.option('appCwd') + '/' + scssCwd + '/',
+				cwd: scssCwd,
 				src: [scssSrc],
 				dest: grunt.option('appCwd') + '/' + scssDest + '/',
 				ext: '.css'
