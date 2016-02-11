@@ -25,7 +25,18 @@ module.exports = function( grunt ) {
 
 		}
 	} else {
-		scssCwd = oData.scss.cwd;
+
+		var aPaths = [];
+
+		if ( Object.prototype.toString.call( oData.scss.cwd ) === '[object Array]' ) {
+			for ( var nKey = 0; nKey < oData.scss.cwd.length; nKey++ ) {
+				aPaths.push( grunt.option('appCwd') + '/' +  oData.scss.cwd[nKey] );
+			}
+		} else {
+			aPaths.push( grunt.option('appCwd') + '/' +  oData.scss.cwd );
+		}
+
+		scssCwd = aPaths[0];
 	}
 
 	scssDest = grunt.option('scssDest') !== undefined ? grunt.option('scssDest') : oData.scss.dest;
