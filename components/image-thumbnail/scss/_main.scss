@@ -1,0 +1,58 @@
+.thumbnail, .image-thumbnail {
+	& {
+		line-height: 0;
+		display: inline-block;
+		border: solid $spacing/4 $color-background;
+		max-width: 100%;
+		box-shadow: 0 0 2px 1px rgba($color-foreground, 0.2);
+		transition: all 200ms ease-out;
+	}
+	&:hover {
+		opacity: .9;
+		box-shadow: 0 0 2px 1px rgba($color-link, 0.4);
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+.thumbnail-actions {
+	& {
+		position: absolute;
+		overflow: hidden;
+		z-index: 100;
+		bottom: $spacing/4;
+		right: $spacing/4;
+		margin: 0 0 1px 0;
+	}
+	li {
+		float: left;
+		margin: 0 1px 0 0 !important;
+	}
+	a {
+		& {
+			padding: $spacing/4;
+			background: rgba($color-background, .7);
+			color: $color-foreground;
+		}
+		&:hover {
+			background: $color-link;
+			color: contrast-color($color-link);
+			text-decoration: none;
+		}
+	}
+}
+
+.thumbnail-group {
+	& {
+		overflow: hidden;
+		width: auto;
+		padding-top: $spacing/4;
+		margin-bottom: $spacing;
+	}
+	li {
+		display: inline-block;
+		margin: 0 $spacing/2 $spacing/2 0;
+		position: relative;
+	}
+}

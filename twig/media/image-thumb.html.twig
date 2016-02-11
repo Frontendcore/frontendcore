@@ -1,0 +1,44 @@
+{% set current_children = "Thumbnail Images" %}
+{% set current_section = "Media" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <section class="box-lighten">
+        <h2>Thumbnail on image</h2>
+        {{ demos.demo(
+            'thumbnail-image',
+            PathComponents ~ 'image-thumbnail/html/thumbnail-image.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Thumbnail on link</h2>
+        {{ demos.demo(
+            'thumbnail-link',
+            PathComponents ~ 'image-thumbnail/html/thumbnail-link.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Thumbnail group</h2>
+        {{ demos.demo(
+            'thumbnail-group',
+            PathComponents ~ 'image-thumbnail/html/thumbnail-group.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Thumbnail group with actions</h2>
+        {{ demos.demo(
+            'thumbnail-actions',
+            PathComponents ~ 'image-thumbnail/html/thumbnail-actions.html'
+        )}}
+    </section>
+    <section class="box-lighten">
+        <h2>Thumbnail carousel <small>JS</small></h2>
+        {{ demos.demo(
+            'thumbnail-carousel',
+            PathComponents ~ 'image-thumbnail/html/thumbnail-carousel.html'
+        )}}
+    </section>
+{% endblock %}

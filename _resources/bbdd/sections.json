@@ -206,15 +206,18 @@
       "children": {
         "Thumbnail": {
           "name": "Thumbnail Images",
-          "href": "image-thumb.html"
+          "href": "image-thumb.html",
+          "done": true
         },
         "Circles": {
           "name": "Circle Images",
-          "href": "image-circle.html"
+          "href": "image-circle.html",
+          "done": true
         },
         "Polaroid": {
           "name": "Polaroid Images",
-          "href": "image-polaroid.html"
+          "href": "image-polaroid.html",
+          "done": true
         },
         "Zoom Images": {
           "name": "Zoom Images",
