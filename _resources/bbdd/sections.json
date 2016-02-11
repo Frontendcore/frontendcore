@@ -259,7 +259,8 @@
         "Charts": {
           "name": "Charts",
           "href": "charts.html",
-          "js": true
+          "js": true,
+          "done" : true
         },
         "Carousel": {
           "name": "Carousel",

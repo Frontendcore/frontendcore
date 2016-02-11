@@ -1,0 +1,51 @@
+.chart-wrapper {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.doughnut-legend, .line-legend, .pie-legend, .bar-legend {
+	& {
+		display: block;
+		overflow: hidden;
+	}
+	li {
+		display: inline-block;
+		margin: $spacing/2 $spacing $spacing/2;
+		font-size: $font-size-default;
+	}
+	span {
+		display: inline-block;
+		width: $font-size-default;
+		height: $font-size-default;
+		vertical-align: middle;
+		margin-right: $spacing/4;
+		border-radius: $default-border-radius;
+	}
+}
+
+.doughnut-legend, .pie-legend {
+	text-align: center;
+}
+
+.line-legend, .bar-legend {
+	text-align: left;
+}
+
+.charts-no-data {
+	& {
+		display: inline-block;
+		text-shadow: 1px 1px 5px $color-background;
+		transform: rotate(-8deg);
+	}
+	i {
+		position: absolute;
+		font-size: 8rem;
+		opacity: .1;
+		margin-top: -2.5rem;
+		left: 50%;
+		margin-left: -4.3rem;
+	}
+}
+

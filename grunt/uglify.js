@@ -114,6 +114,11 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/sortable/js/_sortable.js'
 	];
 
+	// CHART LIB
+	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/chartLibs.js' ] = [
+		grunt.option('fcCwd') + '/bower/chartjs/Chart.js'
+	];
+
 	var oRoundTrip = {
 		options: {
 			preserveComments: false,

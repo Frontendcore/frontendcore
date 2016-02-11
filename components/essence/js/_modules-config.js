@@ -15,7 +15,7 @@ var oDefaultPaths = {
 	aModules = [
 		'code',
 		'sortable',
-		'charts',
+		'chart',
 		'chartLibs',
 		'tag-field',
 		'modal',

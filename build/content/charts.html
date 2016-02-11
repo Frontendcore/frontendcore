@@ -33,100 +33,229 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>RoundTrip</h1>
-                                    <p>Create simple, easy and fast single page webapps</p>
+                <h1>Charts</h1>
+                                    <p>Think in & out the box</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <div class="box _background">
-        <h3>What can I do with Frontendcore's RoundTrip?</h3>
-        <p>Roundtrip combines the power of twig.js and FrontendCore to render twig templates in realtime and refresh them
-            if there are changes in the data. Any of this renders can use FrontendCore UI modules or custom modules.
-        </p>
-    </div>
-    <div class="box _background">
-        <h3>What I can't do?</h3>
-        <p>Roundtrip doesn't have a system to change the main layout, or load different templates based on url, for things like this maybe it's a good idea to use angular, emberjs or something like that.</p>
-    </div>
-    <div class="box _background">
-        <h3>How it works?</h3>
-        <p>The system is pretty simple, so make it work is fast and easy. All you need is to include the script on your page:</p>
-        <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/roundtrip.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <p>Add a JSON with the data as javascript object</p>
-        <pre><code>&lt;script&gt;
-    var RoundTripData = {
-        &quot;products&quot; : {
-            &quot;0&quot; : {
-                &quot;name&quot; : &quot;hat&quot;,
-                &quot;quantity&quot; : 1
-            },
-            &quot;1&quot; : {
-                &quot;name&quot; : &quot;suitcase&quot;,
-                &quot;quantity&quot; : 2
-            },
-            &quot;2&quot; : {
-                &quot;name&quot; : &quot;umbrella&quot;,
-                &quot;quantity&quot; : 3
-            }
-        },
-        &quot;user&quot; : {
-            &quot;0&quot; : {
-                &quot;name&quot; : &quot;john&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            },
-            &quot;1&quot; : {
-                &quot;name&quot; : &quot;Marie&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            },
-            &quot;2&quot; : {
-                &quot;name&quot; : &quot;Mike&quot;,
-                &quot;surname&quot; : &quot;Doe&quot;
-            }
-        }
-    };
-&lt;/script&gt;</code></pre>
-        <p>Add the markup for one of the template renders</p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot;&gt;&lt;/div&gt;</code></pre>
-        <p>This will render the template located in "twig/product-list.html.twig" with all the data from RoundTripData.</p>
-    </div>
+                    <section class="box-lighten">
+        <h2>Doughnut charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-doughnut-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
+	<input name="done" type="hidden" value="10" />
+	<input name="backlog" type="hidden" value="30" />
+	<input name="Work in progress" type="hidden" value="40" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-doughnut-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
+	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
+	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
+	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Get Data and channels from an external JSON file</h3>
-        <p>Add to the markup  of your template render the parameter "data-fc-data" with the url of the JSON file </p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;json/product-list.json&quot;&gt;&lt;/div&gt;</code></pre>
-    </div>
+    </section>
+    <section class="box-lighten">
+        <h2>Pie charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-pie-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="pie">
+	<input name="Costs" type="hidden" value="10" />
+	<input name="Indirect sales" type="hidden" value="30" />
+	<input name="Direct sales" type="hidden" value="40" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-pie-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;pie&quot;&gt;
+	&lt;input name=&quot;Costs&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
+	&lt;input name=&quot;Indirect sales&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
+	&lt;input name=&quot;Direct sales&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Get partial channels from RoundTripData</h3>
-        <p>Add to the markup  of your template an array with the key of RoundTripData object that you want to get</p>
-        <pre><code>&lt;div data-fc-render=&quot;product&quot; data-fc-template=&quot;twig/product-list.html.twig&quot; data-fc-data=&quot;[products]&quot;&gt;&lt;/div&gt;</code></pre>
-    </div>
+    </section>
+    <section class="box-lighten">
+        <h2>Line charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-line-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="line" data-fc-labels-x="[January,February,March,June,July]">
+	<!-- The value could be an array... -->
+	<input name="results last year" type="hidden" value="[60,90,30,70,40]" />
+	<!-- ... or a string separated by comma -->
+	<input name="results this year" type="hidden" value="80,50,60,40,80" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-line-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;line&quot; data-fc-labels-x=&quot;[January,February,March,June,July]&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;results last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;results this year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Update data</h3>
-        <p>Call on your module the Data method of RoundTrip and pass a new data object.</p>
-        <pre><code>RoundTrip.Data({
-    &quot;Products&quot; : {
-        &quot;0&quot; : {
-            &quot;name&quot; : &quot;Coat&quot;,
-            &quot;quantity&quot; : 1
-        }
-    }
-});</code></pre>
-    </div>
+    </section>
+    <section class="box-lighten">
+        <h2>Bar charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-bar-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-labels-x="January,February,March,June,July">
+	<!-- The value could be an array... -->
+	<input name="Sales last year" type="hidden" value="[60,90,30,70,40]" />
+	<!-- ... or a string separated by comma -->
+	<input name="Sales last year" type="hidden" value="80,50,60,40,80" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-bar-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h3>Bind elements</h3>
-        <p>Because on each render the jquery or javascript bind is lost, Roundtrip provides you a bind method that always work even the module is reloaded.</p>
-        <pre><code>RoundTrip.bind( &#039;#click-me&#039; , &#039;click&#039;, function(e){
-    e.preventDefault();
-    console.log(&#039;CLICK!&#039;)
-});</code></pre>
-    </div>
+    </section>
+    <section class="box-lighten">
+        <h2>Doughnut charts no data</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-doughnut-no-data-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
+	<input name="done" type="hidden" value="0" />
+	<input name="backlog" type="hidden" value="0" />
+	<input name="Work in progress" type="hidden" value="0" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-doughnut-no-data-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
+	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
 
+    </section>
+    <section class="box-lighten">
+        <h2>Bar charts no data</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-bar-no-data-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-text-no-data="Ops! No data here..." data-fc-labels-x="January,February,March,June,July">
+	<!-- The value could be an array... -->
+	<input name="Sales last year" type="hidden" value="[0,0,0,0,0]" />
+	<!-- ... or a string separated by comma -->
+	<input name="Sales last year" type="hidden" value="0,0,0,0,0" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-bar-no-data-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-text-no-data=&quot;Ops! No data here...&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[0,0,0,0,0]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;0,0,0,0,0&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <div class="grid">
+        <div class="col-1-2">
+            <h1>Canvas</h1>
+                    <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Type of stats (pie, bar, area or line)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: line</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">width</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max Width in pixels of the stats and the table</p>
+                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">height</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max Height in pixels of the stats and the table in px</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 300</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-labels-x</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the name of the labels for the X axis. The Pie chart and the doughnut chart does'nt have X Axis.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: []</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-colors</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the hex colors used for the charts.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: ['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc']</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text-no-data</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text shown when all values are zero.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: No data</p>
+                            </dd>
+                    </dl>
+
+        </div>
+        <div class="col-1-2">
+            <h1>Inputs</h1>
+            <p>You need to create an input hidden for each value (pie, doughnut) or group of values (line, bars)</p>
+                    <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">name</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">The attribute 'name' of each input will be used as label for the legend. If one is missing the legend will not be shown.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: unlabel</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">value</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the values of the chart.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
+                            </dd>
+                    </dl>
+
+        </div>
+    </div>
             </div>
         </div>
     </div>
@@ -308,7 +437,7 @@
                                                                                                             Ratings                                                                                                     </li>
                                                                                             <li >
                                                                                                             Parallax                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././content/charts.html">
                                                                                                             Charts <span class="fl-r cp">JS</span>                                                                                                         </a>
                                                                                                     </li>
