@@ -11,7 +11,7 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 }
 /*when more than three columns, change to 50% width with automatic gutter space between */
 .col {
-  &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col {
+  &:nth-last-child(n+3), &:nth-last-child(n+3) ~ .col:not([class*="col-m-"]) {
     & {
       flex-basis: 50% - $gutter/2;
       max-width: 50% - $gutter/2;
