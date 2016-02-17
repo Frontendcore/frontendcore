@@ -1,5 +1,7 @@
 div.table-body {
-  .row {
+  & > .row {
+    border-top-color: $color-box-dark;
+    border-top-width: $spacing/8;
     & > .col {
       padding-left: 20%;
     }

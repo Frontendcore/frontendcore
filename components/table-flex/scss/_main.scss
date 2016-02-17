@@ -13,7 +13,7 @@ div.table-head {
   & {
     display: none;
   }
-  .row {
+  & > .row {
     & {
       border-width: map-get($object-tables-vars, thead-cell-border-width);
       border-color: map-get($object-tables-vars, thead-cell-border-color);
@@ -41,13 +41,13 @@ div.table-body {
     color: map-get($object-tables-vars, tbody-color);
     background: map-get($object-tables-vars, tbody-background);
   }
-  .row:nth-child(odd) {
+  & > .row:nth-child(odd) {
     background-color: map-get($object-tables-vars, tr-odd-background);
   }
-  .row:hover {
+  & > .row:hover {
     background-color: map-get($object-tables-vars, tr-hover-background);
   }
-  .row {
+  & > .row {
     & {
       border-width: map-get($object-tables-vars, tbody-cell-border-width);
       border-color: map-get($object-tables-vars, tbody-cell-border-color);
