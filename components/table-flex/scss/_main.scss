@@ -1,0 +1,92 @@
+div.table {
+  & {
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    border-width: map-get($object-tables-vars, table-border-width);
+    border-color: map-get($object-tables-vars, table-border-color);
+    border-style: map-get($object-tables-vars, table-border-style);
+  }
+}
+
+div.table-head {
+  & {
+    display: none;
+  }
+  .row {
+    & {
+      border-width: map-get($object-tables-vars, thead-cell-border-width);
+      border-color: map-get($object-tables-vars, thead-cell-border-color);
+      border-style: map-get($object-tables-vars, thead-cell-border-style);
+      background: map-get($object-tables-vars, thead-cell-background);
+      color: map-get($object-tables-vars, thead-cell-color);
+    }
+    & > .col {
+      padding: map-get($object-tables-vars, thead-cell-padding);
+      font-weight: map-get($object-tables-vars, thead-cell-font-weight);
+      font-family: map-get($object-tables-vars, thead-cell-font-family);
+      font-size: map-get($object-tables-vars, thead-cell-font-size);
+      text-align: map-get($object-tables-vars, thead-cell-align);
+      vertical-align: map-get($object-tables-vars, thead-cell-vertical-align);
+    }
+  }
+}
+
+div.table-body {
+  & {
+    outline: map-get($object-tables-vars, tbody-outline);
+    border-width: map-get($object-tables-vars, tbody-border-width);
+    border-color: map-get($object-tables-vars, tbody-border-color);
+    border-style: map-get($object-tables-vars, tbody-border-style);
+    color: map-get($object-tables-vars, tbody-color);
+    background: map-get($object-tables-vars, tbody-background);
+  }
+  .row:nth-child(odd) {
+    background-color: map-get($object-tables-vars, tr-odd-background);
+  }
+  .row:hover {
+    background-color: map-get($object-tables-vars, tr-hover-background);
+  }
+  .row {
+    & {
+      border-width: map-get($object-tables-vars, tbody-cell-border-width);
+      border-color: map-get($object-tables-vars, tbody-cell-border-color);
+      border-style: map-get($object-tables-vars, tbody-cell-border-style);
+      font-weight:  map-get($object-tables-vars, tbody-cell-font-weight);
+      font-family:  map-get($object-tables-vars, tbody-cell-font-family);
+      font-size:  map-get($object-tables-vars, tbody-cell-font-size);
+      background: map-get($object-tables-vars, tbody-cell-background);
+      color: map-get($object-tables-vars, tbody-cell-color);
+    }
+    & > .col {
+      & {
+        padding: map-get($object-tables-vars, tbody-cell-padding);
+        text-align: map-get($object-tables-vars, tbody-cell-align);
+        vertical-align: map-get($object-tables-vars, tbody-cell-vertical-align);
+        position: relative;
+
+      }
+      &:before {
+        content: attr(data-label);
+        padding: map-get($object-tables-vars, tbody-cell-padding);
+        color: rgba($color-foreground, .5);
+        width: 37%;
+        height: 100%;
+        display: block;
+        text-align: right;
+        border-right: 1px solid $color-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+

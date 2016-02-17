@@ -21,6 +21,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    padding: 0;
 
     /* ToDo remove this configuration for now, column compensation needs to tackled separately for each case
     @if map_get($grid, distribution) == 'between' {
@@ -56,8 +57,8 @@
 }
 .col, [class^="col-"]{
   box-sizing: border-box;
-  //border:1px solid #999;
   overflow: hidden;
+  padding: 0;
 }
 
 $grid-columns: 1 2 3 4 5 6 7 8 9 10 11 12;

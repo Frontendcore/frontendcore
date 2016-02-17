@@ -58,6 +58,7 @@
     "chart",
     "table",
     "table-dynamic",
+    "table-flex",
     "table-responsive",
     "image-thumbnail",
     "image-circle",

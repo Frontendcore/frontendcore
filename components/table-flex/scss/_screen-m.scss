@@ -1,0 +1,7 @@
+div.table-body {
+  .row {
+    & > .col {
+      padding-left: 20%;
+    }
+  }
+}

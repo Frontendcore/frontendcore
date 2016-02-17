@@ -33,161 +33,104 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1>FrontendCore V2</h1>
-                                    <p>New super powers unleashed</p>
+                <h1>Flex Table</h1>
+                                    <p>Global settings for your all your grids</p>
                             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row _center">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
-                    <div class="box _empty ph-n">
-        <h2>Wait for it: Work in progress</h2>
-        <p>The web is growing so fast and there is always new plugins, tendencies and even more devices making the full process more complex and slow. Frontend Core, a mix of technology that make us 500% productive and be prepared for the future.</p>
-    </div>
-    <div id="features" class="row">
-        <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-            <section class="box _empty">
-                <img src="/static/icons/components.svg" width="100" />
-                <h2 class="fw-n">Web components</h2>
-                <p>Based on the <a href="http://bradfrostweb.com/blog/post/atomic-web-design/" target="_blank">atomic design concept</a>, FrontendCore provides you <strong>patterns, objects & modifiers</strong> to create complex designs based on the markup.</p>
-            </section>
-        </div>
-        <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-            <section class="box _empty">
-                <img src="/static/icons/responsive.svg" width="100" />
-                <h2 class="fw-n">Responsive interface</h2>
-                <p>All the components are mobile first to make you site mobile from day 1 and is compatible with IE8+,FF,CH, SF with progressive enhancement techniques.</p>
-            </section>
-        </div>
-        <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-            <section class="box _empty">
-                <img src="/static/icons/scalable.svg" width="100" />
-                <h2 class="fw-n">Scalable Javascript</h2>
-                <p>Based on <strong><a href="https://github.com/mawrkus/tinycore" target="_blank">TinyCore</a></strong> and <strong><a href="http://requirejs.org/" target="_blank">RequireJS</a></strong>, loads and execute <strong>AMD modules</strong> based on the markup providing an incredible balance between easy of use and performance. </p>
-            </section>
-        </div>
-        <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-            <section class="box _empty">
-                <img src="/static/icons/easy.svg" width="100" />
-                <h2 class="fw-n">Easy User Interface</h2>
-                <p>FrontendCore provides you User interface components based on data attributes providing your user a <strong>great User experience and fast development to you.</strong></p>
-            </section>
+                    <section id="demos">
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-flex-table-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <div class="table">
+    <div class="table-head">
+        <div class="row">
+            <div class="col">Name</div>
+            <div class="col">Age</div>
+            <div class="col">City</div>
+            <div class="col">From</div>
+            <div class="col">To</div>
+            <div class="col">Visits</div>
         </div>
     </div>
+    <div class="table-body">
+        <div class="row">
+            <div class="col" data-label="Name">George</div>
+            <div class="col" data-label="Age">19</div>
+            <div class="col" data-label="City">San Francisco</div>
+            <div class="col" data-label="From">01/01/14</div>
+            <div class="col" data-label="To">07/07/15</div>
+            <div class="col" data-label="Visits">15</div>
+        </div>
+        <div class="row">
+            <div class="col" data-label="Name">Robin</div>
+            <div class="col" data-label="Age">23</div>
+            <div class="col" data-label="City">Washington</div>
+            <div class="col" data-label="From">01/01/14</div>
+            <div class="col" data-label="To">07/07/15</div>
+            <div class="col" data-label="Visits">15</div>
+        </div>
+        <div class="row">
+            <div class="col" data-label="Name">Charles</div>
+            <div class="col" data-label="Age">20</div>
+            <div class="col" data-label="City">San Diego</div>
+            <div class="col" data-label="From">01/01/14</div>
+            <div class="col" data-label="To">07/07/15</div>
+            <div class="col" data-label="Visits">15</div>
+        </div>
+    </div>
+</div>                                            </div>
+        </section>
+                <section id="tab-flex-table-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;div class=&quot;table&quot;&gt;
+    &lt;div class=&quot;table-head&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col&quot;&gt;Name&lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;Age&lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;City&lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;From&lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;To&lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;Visits&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;table-body&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Name&quot;&gt;George&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Age&quot;&gt;19&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;City&quot;&gt;San Francisco&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;From&quot;&gt;01/01/14&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;To&quot;&gt;07/07/15&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Visits&quot;&gt;15&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Name&quot;&gt;Robin&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Age&quot;&gt;23&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;City&quot;&gt;Washington&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;From&quot;&gt;01/01/14&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;To&quot;&gt;07/07/15&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Visits&quot;&gt;15&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Name&quot;&gt;Charles&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Age&quot;&gt;20&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;City&quot;&gt;San Diego&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;From&quot;&gt;01/01/14&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;To&quot;&gt;07/07/15&lt;/div&gt;
+            &lt;div class=&quot;col&quot; data-label=&quot;Visits&quot;&gt;15&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
 
-    <div class="box _background">
-        <h4>CSS</h4>
-        <div class="row">
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://sass-lang.com/" target="_blank">
-                        <img src="../static/img/logo-sass.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Sass</strong> is a css preprocessor. CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass lets you use features that don't exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://compass-style.org/" target="_blank">
-                        <img src="../static/img/logo-compass.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Compass</strong> is an open-source CSS authoring framework which uses the Sass stylesheet language to make writing stylesheets powerful and easy. Experience cleaner markup without presentational classes. Compass mixins make CSS3 easy.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://susy.oddbird.net/" target="_blank">
-                        <img src="../static/img/logo-susy.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Sussy</strong> is a row math system for sass. In a world of agile development and super-tablet-multi-magic-laptop-phones, the best layouts can’t be contained in a single framework or technique. CSS Libraries are a bloated mess of opinions about how to do your job. Why let the table-saw tell you where to put the kitchen?</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://bower.io/" target="_blank">
-                        <img src="../static/img/logo-sassdoc.gif" class="w-100"/>
-                    </a>
-                    <p><strong>SassDoc</strong> is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye. Among other things, SassDoc is: Usable out of the box, Highly customisable, Blazingly fast, Fully themable, Integrated with Grunt/Gulp/Broccoli or directly Node.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box _background">
-        <h4>Javascript</h4>
-        <div class="row">
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://jquery.com/" target="_blank">
-                        <img src="../static/img/logo-jquery.gif" class="w-100"/>
-                    </a>
-                    <p><strong>jQuery</strong> is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://zeptojs.com/" target="_blank">
-                        <img src="../static/img/logo-zepto.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Zepto</strong> is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API. If you use jQuery, you already know how to use Zepto.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://requirejs.org/" target="_blank">
-                        <img src="../static/img/logo-requirejs.gif" class="w-100"/>
-                    </a>
-                    <p><strong>RequireJS</strong> is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://requirejs.org/" target="_blank">
-                        <img src="../static/img/logo-jasmine.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Jasmine</strong> is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box _background">
-        <h4>Workspace</h4>
-        <div class="row">
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://nodejs.org/" target="_blank">
-                        <img src="../static/img/logo-nodejs.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Node.js</strong> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://gruntjs.com/" target="_blank">
-                        <img src="../static/img/logo-grunt.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Grunt</strong> is in one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://yeoman.io/" target="_blank">
-                        <img src="../static/img/logo-yo.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Yeoman</strong> helps you to kickstart new projects, prescribing best practices and tools to help you stay productive. To do so, we provide a generator ecosystem. A generator is basically a plugin that can be run with the `yo` command to scaffold complete projects or useful parts.</p>
-                </div>
-            </div>
-            <div class="col-s-12 col-m-6 col-l-6 col-xl-3">
-                <div class="box _empty">
-                    <a href="http://bower.io/" target="_blank">
-                        <img src="../static/img/logo-bower.gif" class="w-100"/>
-                    </a>
-                    <p><strong>Bower</strong> works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. Bower keeps track of these packages in a manifest file, bower.json. How you use packages is up to you. Bower provides hooks to facilitate using packages in your tools and workflows.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    </section>
+    <section id="appearance">
+                </section>
             </div>
         </div>
     </div>
@@ -496,7 +439,7 @@
                                                                                                         <a href=".././tables/static-table.html">
                                                                                                             Static Table                                                                                                         </a>
                                                                                                     </li>
-                                                                                            <li >
+                                                                                            <li  class="active">
                                                                                                         <a href=".././tables/flex-table.html">
                                                                                                             Flex Table                                                                                                         </a>
                                                                                                     </li>

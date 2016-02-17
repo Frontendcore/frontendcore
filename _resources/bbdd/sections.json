@@ -417,6 +417,11 @@
           "href": "static-table.html",
           "done": true
         },
+        "Flex Table": {
+          "name": "Flex Table",
+          "href": "flex-table.html",
+          "done": true
+        },
         "Dynamic Table": {
           "name": "Dynamic Table",
           "href": "dynamic-table.html",

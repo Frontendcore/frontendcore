@@ -1,0 +1,18 @@
+div.table-body {
+  .row {
+    & > .col {
+      padding: map-get($object-tables-vars, tbody-cell-padding);
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+div.table-head {
+  display: block;
+}
+
+div.table-body .row > .col:first-child {
+  padding-left: $spacing/2;
+}

@@ -1,7 +1,7 @@
-.table-mobile {
+table.table-mobile {
   display: table !important;
 }
-.table {
+table.table {
   & {
     display: block;
     overflow-x: auto;
