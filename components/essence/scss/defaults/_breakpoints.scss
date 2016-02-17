@@ -1,10 +1,11 @@
 $breakpoints-default: (
-	xs : 250px,
-	s: 500px,
-	m: 800px,
-	l: 980px,
-	xl: 1280px,
-	xxl: 1440px
+	xs : 0,
+	s : 250px,
+	m: 500px,
+	l: 800px,
+	xl: 980px,
+	xxl: 1280px,
+	xxxl: 1440px,
 );
 
 $breakpoints-custom: () !default;
@@ -17,7 +18,8 @@ $screens-and-devices-default: (
 	m: 'phablet',
 	l: 'tablet',
 	xl: 'desktop',
-	xxl: 'desktop'
+	xxl: 'desktop',
+	xxxl: 'desktop'
 );
 
 $screens-and-devices-custom: () !default;

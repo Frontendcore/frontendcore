@@ -6,7 +6,15 @@
   }
 }
 .form-error-message {
-  padding-top: $spacing/4;
-  color: $color-error;
-  font-size: $font-size-default;
+  & {
+    color: $color-error;
+    font-size: $font-size-default;
+    margin: 0;
+  }
+  li:first-of-type {
+    padding-top: $spacing/4;
+  }
+  li {
+    padding-bottom: $spacing/4;
+  }
 }

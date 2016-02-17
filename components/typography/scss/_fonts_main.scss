@@ -29,9 +29,13 @@ hr {
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
   margin: 0;
-  line-height: 1;
+  line-height: map-get($fonts, line-height-title);
   font-family: $font-face-title;
   margin-bottom: $spacing/2;
+}
+
+p {
+  line-height: map-get($fonts, line-height-default);
 }
 
 h1, .h1 {

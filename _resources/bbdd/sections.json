@@ -343,6 +343,11 @@
           "href": "option-fields.html",
           "done" : true
         },
+        "Switch Fields": {
+          "name": "Switch",
+          "href": "switch.html",
+          "done" : true
+        },
         "Select Fields": {
           "name": "Select Fields",
           "href": "select-fields.html",
@@ -497,6 +502,11 @@
         "Borders": {
           "name": "Borders",
           "href": "borders.html",
+          "done" : true
+        },
+        "Visibility": {
+          "name": "Visiblity",
+          "href": "visibility.html",
           "done" : true
         }
       }

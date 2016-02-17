@@ -3,7 +3,6 @@ if (!oGlobalSettings.sPathJsModules) oGlobalSettings.sPathJsModules = oGlobalSet
 if (!oGlobalSettings.sPathJsLibs) oGlobalSettings.sPathJsLibs = oGlobalSettings.sPathJs + '../../';
 if (!oGlobalSettings.sPathJsCore) oGlobalSettings.sPathJsCore = oGlobalSettings.sPathJs + '../../';
 if (!oGlobalSettings.sPathCss) oGlobalSettings.sPathCss = './css/';
-if (!oGlobalSettings.sPathCssUI) oGlobalSettings.sPathCssUI = oGlobalSettings.sPathCss + 'ui.css';
 if (!oGlobalSettings.bTrackModules) oGlobalSettings.bTrackModules = false;
 if (!oGlobalSettings.sHash) oGlobalSettings.sHash = '1';
 if (!oGlobalSettings.oPaths) oGlobalSettings.oPaths = {};

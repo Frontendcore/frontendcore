@@ -1,0 +1,38 @@
+{% set current_children = "Visibility" %}
+{% set current_section = "Modifiers" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+
+{% block main %}
+    <h2>Hide an element</h2>
+    <p>There are three classes available to hide an element, always depending on the case.<p/>
+    <dl class="list">
+        <dt class="c-primary">.d-n</dt>
+        <dd>Adds a "display:none !important" to the element, so it never will be visible.</dd>
+        <dt class="c-primary">.hidden</dt>
+        <dd>Adds a "display:none" to the element. Very useful to elements that javascript may force to show.</dd>
+        <dt class="c-primary">.out-of-viewport</dt>
+        <dd>Move the element outside of the viewport (the user can't see it but it remains visible). This is very useful for example to hide charts or other elements that should be visible to a correct rendering.</dd>
+
+    </dl>
+    {{ demos.demo(
+        'hidden',
+        PathComponents ~ 'visibility/html/hidden.html'
+    )}}
+
+    <h2>Show elements only on some devices</h2>
+    {{ demos.demo(
+        'devices',
+        PathComponents ~ 'visibility/html/devices.html'
+    )}}
+
+    <h2>Show elements only on some screens</h2>
+    {{ demos.demo(
+        'screens',
+        PathComponents ~ 'visibility/html/screens.html'
+    )}}
+
+{% endblock main %}
