@@ -73,10 +73,10 @@
 		}
 		li {
 			& {
-				margin-left: $spacing;
+				margin: 0 $spacing/2;
 			}
 			a {
-				display: inline-block;
+				display: block;
 				padding: $spacing/4;
 			}
 		}

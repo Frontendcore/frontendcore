@@ -83,11 +83,11 @@
 				padding-right: 5px;
 			}
 		}
-		input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='datetime-local'], input[type='month'], select, textarea {
+		input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {
 			@extend %field-error;
 		}
 	}
-	input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='datetime-local'], input[type='month'], select, textarea {
+	input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {
 		@extend %field;
 		width: 100%;
 		font-size: $font-size-default;
@@ -149,7 +149,7 @@
 		background: black;
 		color: red;
 	}
-	input[type='tel'], input[type='date'], input[type='datetime-local'], input[type='month'] {
+	input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'] {
 		max-width: 300px;
 	}
 	input[type='radio'] {

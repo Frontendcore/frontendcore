@@ -1,7 +1,6 @@
 .ms-ctn {
 	@extend %field;
-	padding-top: $spacing/4;
-	padding-bottom: $spacing/4;
+	padding: 0;
 	position: relative;
 	height: auto;
 }
@@ -292,7 +291,7 @@
 		}
 	}
 	.ms-sel-ctn {
-		margin-left: -7px;
+		padding: map-get($object-forms-vars, field-padding);
 	}
 	.ms-trigger:hover {
 		width: 24px;

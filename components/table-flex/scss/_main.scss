@@ -1,7 +1,6 @@
 div.table {
   & {
     max-width: 100%;
-    min-width: 100%;
     box-sizing: border-box;
     border-width: map-get($object-tables-vars, table-border-width);
     border-color: map-get($object-tables-vars, table-border-color);

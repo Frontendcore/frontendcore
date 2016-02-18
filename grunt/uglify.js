@@ -32,6 +32,7 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/essence/js/tools/_attributeToArray.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_getDataModules.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_isMobile.js',
+		grunt.option('fcCwd') + '/components/essence/js/tools/_isVisible.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_loadCSS.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_mergeJSON.js',
 		grunt.option('fcCwd') + '/components/essence/js/tools/_mergeOptions.js',
@@ -40,6 +41,7 @@ module.exports = function(grunt) {
 		grunt.option('fcCwd') + '/components/essence/js/tools/_track-analytics.js',
 		grunt.option('fcCwd') + '/components/essence/js/_modules-config.js',
 		grunt.option('fcCwd') + '/components/essence/js/_init.js'
+
 	];
 
 	// CODE.JS
