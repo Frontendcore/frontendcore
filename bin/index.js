@@ -20,6 +20,7 @@ var sys = require('sys'),
     aParams = [],
     spawn = require('child_process').spawn,
     sCurrentPath = process.cwd(),
+    sGruntPath = sCurrentPath + '/node_modules/grunt-cli/bin/grunt',
     sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../') ,
     oData = require( sCurrentPath + '/frontendcore.json'),
     exec = function( bin, params ) {
@@ -28,6 +29,8 @@ var sys = require('sys'),
             env: process.env
         });
 
+
+        console.log(sFrontendCorePath);
 
         // Send data to the child process via its stdin stream
         child.stdin.write("Executing " + bin);
@@ -66,6 +69,12 @@ if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.has
 for ( var key in aProjects ) {
 
     switch (param) {
+        case "init":
+            console.log("INSTALL BOWER DEPENDENCIES");
+
+            exec( "node_modules/bower/bin/bower", ["install"] );
+
+        break;
         case "css:one":
             aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath, '--scssCwd=' + scssCwd, '--scssDest=' + scssDest ];
 
@@ -74,7 +83,7 @@ for ( var key in aProjects ) {
                 aParams.push('--project=' + aProjects[key]);
             }
 
-            exec('grunt', aParams );
+            exec(sGruntPath, aParams );
         break;
         case "watch":
         case "css":
@@ -91,7 +100,7 @@ for ( var key in aProjects ) {
                 aParams.push('--project=' + aProjects[key]);
             }
 
-            exec('grunt', aParams );
+            exec(sGruntPath, aParams );
 
             break;
         default:
@@ -102,7 +111,7 @@ for ( var key in aProjects ) {
                 aParams.push('--project=' + aProjects[key]);
             }
 
-            exec('grunt',aParams );
+            exec(sGruntPath,aParams );
             break;
     }
 }
