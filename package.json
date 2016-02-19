@@ -14,7 +14,8 @@
   },
   "preferGlobal": true,
   "bin": {
-    "frontendcore": "bin/index.js"
+    "frontendcore": "bin/index.js",
+    "_fc": "bin/index.js"
   },
   "keywords": [
     "grunt",
