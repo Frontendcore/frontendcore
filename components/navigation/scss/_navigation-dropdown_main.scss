@@ -1,4 +1,7 @@
 .navigation[data-fc-modules^="dropdown"] {
+	>ul > li > ul {
+		background: $color-background;
+	}
 	ul {
 		overflow: visible;
 	}

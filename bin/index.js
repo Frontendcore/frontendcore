@@ -2,7 +2,15 @@
 
 var param = process.argv[2],
     scssCwd = process.argv[3],
-    scssDest = process.argv[4];
+    scssDest = process.argv[4],
+    sCurrentProject = '';
+
+// set currentProject
+for ( var key in process.argv ) {
+    if (process.argv[key].indexOf('--p=') !== -1 ) {
+        sCurrentProject = process.argv[key].replace('--p=','');
+    }
+}
 
 /*
 process.argv.forEach(function (val, index, array) {
@@ -57,8 +65,13 @@ function log( error, stdout, stderr) {
 
 if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.hasOwnProperty('icons') && !oData.hasOwnProperty('bower') ) {
 
-    for (var key in oData) {
-        aProjects.push(key);
+
+    if ( sCurrentProject !== '') {
+        aProjects.push(sCurrentProject);
+    } else {
+        for (var key in oData) {
+            aProjects.push(key);
+        }
     }
 
 } else {
