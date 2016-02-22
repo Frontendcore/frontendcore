@@ -4,11 +4,11 @@
     "static": "/static/"
   },
   "sections": {
-    "setup": {
-      "name": "Setup",
+    "GettingStarted": {
+      "name": "GettingStarted",
       "icon": "table",
-      "href": "#setup",
-      "id": "setup",
+      "href": "#getting-started",
+      "id": "getting-started",
       "children": {
         "GettingStarted": {
           "name": "Getting started",
