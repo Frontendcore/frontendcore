@@ -11,10 +11,29 @@
 	}
 	li{
 		flex: 1 1 100%;
+		position: relative;
+	}
+	.toggle{
+		width: 2rem;
+		position: absolute;
+		right: 0;
+		top:0;
+		margin: 0;
+		padding-right: 0;
+		padding-left: 0;
+		font-size: $font-size-m;
+		text-align: center;
 	}
 	/*start deeper levels*/
-	>ul > li > ul{
+	>ul ul{
+		display: none;
 		overflow: hidden;
+		&.swish{
+			display: flex;
+		}
+	}
+	>ul > li > ul{
+		background: $color-background;
 		li{
 			text-align: left;
 		}
@@ -48,6 +67,18 @@
 			@if (map-get($object-navigation-vars, vertical-separator) == true) {
 				border-bottom: 1px solid rgba(contrast-color(map-get($object-navigation-vars, background-color), $color-foreground, $color-background), .2);
 			}
+		}
+	}
+	&._border{
+		>ul > li{
+			border-bottom: 1px solid rgba($color-foreground-light,.3);
+		}
+	}
+	&._contained{
+		>ul{
+			max-width: map-get($grid, container-width);
+			margin: auto;
+			position: relative;
 		}
 	}
 	$local-color-names: 'foreground','background','primary','secondary','box';

@@ -3,6 +3,8 @@
 .container {
   & {
     max-width: map_get($grid, container-width);
+    overflow: hidden;
+    margin: 0 auto;
   }
   &._center {
     margin-right: auto;
