@@ -108,7 +108,6 @@ a [class*=" <%= classPrefix %>"] {
 li [class^="<%= classPrefix %>"],
 li [class*=" <%= classPrefix %>"] {
 	display:inline-block;
-	width:1.25em;
 	text-align:center;
 }
 /* 1.5 increased font size for <%= classPrefix %>large * 1.25 width */
