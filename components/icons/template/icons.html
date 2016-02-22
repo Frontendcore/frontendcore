@@ -1,0 +1,15 @@
+<div class="row" id="icons">
+	<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
+		<div class="col-s-12 col-m-6 col-l-4 col-xl-3 col-xxl-3 col-xxxl-2" data-name="<%= glyph %>">
+			<p><i class="<%= classPrefix %><%= glyph %> _fw"></i> <%= classPrefix %><%= glyph %></p>
+		</div>
+	<% } %>
+</div>
+
+<% if (addLigatures) { %>
+<div class="ligature-icons" style="display:none">
+	<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx]; %>
+		<%= glyph %>
+	<% } %>
+</div>
+<% } %>

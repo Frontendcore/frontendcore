@@ -140,6 +140,11 @@
           "name": "Labels",
           "href": "labels.html",
           "done": true
+        },
+        "Icons": {
+          "name": "Icons",
+          "href": "icons.html",
+          "done": true
         }
       }
     },

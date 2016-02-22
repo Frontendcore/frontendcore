@@ -4,6 +4,8 @@ module.exports = function(grunt) {
 		aPaths = [],
 		sPathDest = '/',
 		bHtmlDemo = true,
+		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.css.tpl',
+		sPathDemoTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.html',
 		sDestHtml = '';
 
 	if ( grunt.option('project') ) {
@@ -24,7 +26,7 @@ module.exports = function(grunt) {
 		}
 
 		if ( oData.icons.destHtml !== undefined ) {
-			sPathDest = grunt.option('appCwd') + '/' + oData.icons.destHtml;
+			sDestHtml = grunt.option('appCwd') + '/' + oData.icons.destHtml;
 		} else {
 			sDestHtml = sPathDest;
 			bHtmlDemo = false;
@@ -46,6 +48,8 @@ module.exports = function(grunt) {
 				syntax: 'bootstrap',
 				embed: true,
 				types: 'woff',
+				template: sPathTemplate,
+				htmlDemoTemplate: sPathDemoTemplate,
 				templateOptions: {
 					baseClass: 'icon',
 					classPrefix: 'icon-',

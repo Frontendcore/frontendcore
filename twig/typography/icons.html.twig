@@ -1,0 +1,32 @@
+{% set current_children = "Icons" %}
+{% set current_subtile = "SVG to font icons" %}
+{% set current_section = "Typography" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <section class="box _empty">
+        <h3>Default icons</h3>
+        <p>By default frontendcore include the following icons based on the standard created by <a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>.</p>
+        {% include  PathComponents ~ '/icons/html/icons.html' %}
+    </section>
+    <section class="box _empty">
+        <h3>Fixed width</h3>
+        <p>Use _fw to set icons at a fixed width. Great to use when different icon widths throw off alignment. Especially useful in things like nav lists & list groups.</p>
+        {{ demos.demo(
+            'icons-fixed',
+            PathComponents ~ '/icons/html/fixed.html'
+        )}}
+    </section>
+    <section class="box _empty">
+        <h3>Animated icons</h3>
+        <p>Use the _spin class to get any icon to rotate, and use _pulse to have it rotate with 8 steps. Works well with icon-spinner, icon-refresh, and icon-cog.</p>
+        {{ demos.demo(
+            'icons-animation',
+            PathComponents ~ '/icons/html/animated.html'
+        )}}
+    </section>
+
+{% endblock %}
