@@ -10,7 +10,7 @@
 
 .side-panel-default {
 	& {
-		position: fixed;
+		position: fixed !important;
 		z-index: 1000;
 		overflow-y: auto;
 		top: 0;

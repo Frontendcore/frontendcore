@@ -57,6 +57,10 @@
 
 				}
 
+				if (oTarget.getAttribute("data-fc-max-width") !== null) {
+					oOptions.menuMaxWidth = oTarget.getAttribute("data-fc-max-width");
+				}
+
 				nMenuWidth = nInitialMenuWidth;
 
 				if ( nWindowWidth < 599 && nMenuWidth > 599) {
@@ -134,6 +138,10 @@
 				}
 
 				$(oPanel).width(oOptions.menuWidth);
+
+				if ( oOptions.menuMaxWidth !== undefined ) {
+					$(oPanel).css('max-width', oOptions.menuMaxWidth);
+				}
 
 				$(oTarget).click( function(e){
 
