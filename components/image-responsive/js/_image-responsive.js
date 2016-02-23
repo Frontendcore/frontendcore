@@ -11,7 +11,7 @@
 					$("img").unveil(200);
 				});
 
-				FrontendTools.trackEvent('JS_Libraries', 'call', 'responsive-images' );
+				FrontendTools.trackEvent('JS_Libraries', 'call', 'image-responsive' );
 			},
 			onStop: function () {
 				this.sPathCss = null;
