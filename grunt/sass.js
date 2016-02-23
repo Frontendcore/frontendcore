@@ -28,8 +28,6 @@ module.exports = function( grunt ) {
 		}
 	} else {
 
-
-
 		if ( Object.prototype.toString.call( oData.scss.cwd ) === '[object Array]' ) {
 			for ( var nKey = 0; nKey < oData.scss.cwd.length; nKey++ ) {
 				aPaths.push( grunt.option('appCwd') + '/' +  oData.scss.cwd[nKey] );

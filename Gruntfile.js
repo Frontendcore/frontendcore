@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 	grunt.initConfig(oConfig);
 
 	grunt.registerTask('html', ['twigRender','notify:html']);
-	grunt.registerTask('js', ['uglify','notify:js']);
+	grunt.registerTask('js', ['copy:js','notify:js']);
 	grunt.registerTask('js:compile', ['uglify:components','notify:js']);
 	grunt.registerTask('css', ['sass_globbing','css:compile']);
 	grunt.registerTask('css:one', ['sass_globbing','css:compile']);
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', ['copy:Polyfills','css','js','icons','notify:all']);
 
-	grunt.registerTask('build', ['clean','copy','css','js','icons','html','notify:all']);
+	grunt.registerTask('build', ['clean','copy:Polyfills','copy:static','css','js','icons','html','notify:all']);
 	grunt.registerTask('rebuild:js', ['uglify','notify:all']);
 
 	grunt.event.on('watch', function (action, filepath) {

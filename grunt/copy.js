@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+
+	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
+		sModulesFolder = oData.js.modulesFolder !== undefined ? '/' + oData.js.modulesFolder : '/modules' ;
+
 	return {
 		Polyfills: {
 			files: [
@@ -19,6 +23,17 @@ module.exports = function(grunt) {
 					flatten: false,
 					src: ['**/*.*'],
 					dest: grunt.option('fcCwd') +'/build/static/'
+				}
+			]
+		},
+		js: {
+			files: [
+				{
+					cwd: grunt.option('appCwd') +'/'+ oData.js.cwd + '/',
+					expand: true,
+					flatten: false,
+					src: ['**/*.js'],
+					dest: grunt.option('appCwd') +'/'+ oData.js.dest +'/' + sModulesFolder+ '/'
 				}
 			]
 		},

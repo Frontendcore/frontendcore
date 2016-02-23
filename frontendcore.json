@@ -6,7 +6,9 @@
   },
   "js" : {
     "cwd": "js",
-    "dest": "build/static/js"
+    "dest": "build/static/js",
+    "uglify": true,
+    "jshint" : true
   },
   "icons" : {
     "cwd" : "components/icons/font-awesome",
