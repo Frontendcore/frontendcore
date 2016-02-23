@@ -54,7 +54,7 @@
 				}
 			},
 			wrap: function(oTarget) {
-				$(oTarget).wrap('<div class="table-dynamic-wrapper"></div>')
+				$(oTarget).wrap('<div class="table-dynamic-wrapper"></div>');
 			},
 			onStart: function () {
 

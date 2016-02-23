@@ -30,7 +30,7 @@
 						} else {
 							self.slideToggle(oThis);
 						}
-					}  )
+					});
 
 				});
 

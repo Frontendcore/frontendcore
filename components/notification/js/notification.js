@@ -25,9 +25,11 @@
 				break;
 			case "ok" :
 			case "success" :
+				sType = 'success';
+			break;
 			default:
 				sType = 'success';
-				break;
+			break;
 
 		}
 
@@ -49,7 +51,7 @@
 		if (sText !== null) {
 			showMessage(sType, sText);
 		}
-	};
+	}
 
 	function showMessage( sType, sText ) {
 
@@ -76,7 +78,7 @@
 		} else {
 			createMessage(sType, sText);
 		}
-	};
+	}
 
 	function setMessageVisibile( oMessage, oContainer, sType, sText ) {
 
@@ -91,7 +93,7 @@
 			}, nSeconds );
 		}
 
-	};
+	}
 
 	function processResponse(oResponse) {
 
@@ -99,7 +101,7 @@
 			sText = oResponse.data.message ? oResponse.data.message : 'Success';
 
 		showMessage( sType, sText );
-	};
+	}
 
 	function createMessage( sType, sText ) {
 
@@ -146,7 +148,7 @@
 
 		});
 
-	};
+	}
 
 	FrontendCore.define('notification', [], function () {
 		return {

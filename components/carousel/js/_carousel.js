@@ -62,6 +62,7 @@
 					break;
 					case "hover":
 						sClass += ' _controls-hover';
+						/* falls through */
 					case "inside":
 						sClass += ' _controls-inside';
 					break;
