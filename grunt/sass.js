@@ -1,6 +1,6 @@
 module.exports = function( grunt ) {
 
-	require(grunt.option('appCwd') + "/grunt/_tools.js")(grunt);
+	require(grunt.option('fcCwd') + "/grunt/_tools.js")(grunt);
 
 	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
 		scssCwd = grunt.option('appCwd') + '/',
