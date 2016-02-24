@@ -13,13 +13,6 @@ for ( var key in process.argv ) {
     }
 }
 
-/*
-process.argv.forEach(function (val, index, array) {
- console.log(array);
- console.log(index + ': ' + val);
-});
-*/
-
 
 // or more concisely
 var sys = require('sys'),
@@ -38,11 +31,8 @@ var sys = require('sys'),
             env: process.env
         });
 
-
-        console.log(sFrontendCorePath);
-
         // Send data to the child process via its stdin stream
-        child.stdin.write("Executing " + bin);
+        child.stdin.write("Executing " + bin.yellow);
 
         // Listen for any response from the child:
         child.stdout.on('data', function (data) {
@@ -88,16 +78,16 @@ for ( var key in aProjects ) {
             var sVersion = " FRONTENDCORE v" + pkg.version;
 
             console.log();
-            console.log("************************************************************".blue)
+            console.log("************************************************************".blue);
             console.log( sVersion.blue );
             console.log( " The All in one Frontend Framework".blue );
-            console.log("************************************************************".blue)
+            console.log("************************************************************".blue);
             console.log();
             console.log("You can execute the tasks typing '" + "frontendcore".blue + "' or '" + "_fc".blue + "' on the root path of your project (Where the frontendcore.json is).");
             console.log("If you do so the default task will be executed, also you can specify the tasks and some other options: ");
             console.log();
 
-            console.log(" help".green)
+            console.log(" help".green);
             console.log("   Shows this help".white);
 
             console.log(" init".green);
