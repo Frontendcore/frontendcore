@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+require("../grunt/_tools.js")();
+
 var param = process.argv[2],
     scssCwd = process.argv[3],
     scssDest = process.argv[4],
@@ -22,9 +24,10 @@ var sys = require('sys'),
     aParams = [],
     spawn = require('child_process').spawn,
     sCurrentPath = process.cwd(),
+    settingsPath = sCurrentPath + '/frontendcore.json',
     sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../') ,
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
-    oData = require( sCurrentPath + '/frontendcore.json'),
+    oData = null,
     exec = function( bin, params ) {
         var child = spawn( bin, params, {
             cwd: sFrontendCorePath,
@@ -47,6 +50,11 @@ var sys = require('sys'),
     },
     pkg  = require( path.join( sFrontendCorePath , 'package.json') );
 
+
+if ( fileExists( settingsPath) ) {
+    oData = require(settingsPath);
+}
+
 function log( error, stdout, stderr) {
     if (error) {
         console.log(error);
@@ -54,8 +62,7 @@ function log( error, stdout, stderr) {
     console.log(stdout);
 }
 
-if ( !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.hasOwnProperty('icons') && !oData.hasOwnProperty('bower') ) {
-
+if ( oData !== null && !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('js') && !oData.hasOwnProperty('icons') && !oData.hasOwnProperty('bower') ) {
 
     if ( sCurrentProject !== '') {
         aProjects.push(sCurrentProject);

@@ -1,13 +1,11 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
-		oPkg = require(grunt.option('fcCwd') + '/package.json'),
-		oComponents = oData.components !== undefined ? oData.components : oPkg.components,
+	require(fcCwd + "/grunt/_data.js")(grunt);
+
+	var oPkg = require(fcCwd + '/package.json'),
+		oComponents = oData !== null && oData.components !== undefined  ? oData.components : oPkg.components,
 		oConfig = {};
 
-	if ( grunt.option('project') ) {
-		oData = oData[grunt.option('project')];
-	}
 
 	var oCore = {
 		options: {
@@ -17,158 +15,161 @@ module.exports = function(grunt) {
 		files: {}
 	};
 
-	// FRONTENDCORE.JS
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/frontendcore.js'] = [
-		grunt.option('fcCwd') + '/components/essence/js/libs/modernizr-custom.js',
-		grunt.option('fcCwd') + '/bower/tinycorejs/build/TinyCore.js',
-		grunt.option('fcCwd') + '/bower/tinycorejs/src/tools/mediator/TinyCore.Toolbox.Mediator.js',
-		grunt.option('fcCwd') + '/bower/tinycorejs/build/extensions/AMD/require-2.1.4.min.js',
-		grunt.option('fcCwd') + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.js',
-		grunt.option('fcCwd') + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.domBoot.js',
-		grunt.option('fcCwd') + '/bower/jquery/dist/jquery.js',
-		grunt.option('fcCwd') + '/components/essence/js/_namespace.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_getSelector.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_bind.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_attributeToArray.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_getDataModules.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_isMobile.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_isVisible.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_loadCSS.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_mergeJSON.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_mergeOptions.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_mixOptions.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_removeLoading.js',
-		grunt.option('fcCwd') + '/components/essence/js/tools/_track-analytics.js',
-		grunt.option('fcCwd') + '/components/essence/js/_modules-config.js',
-		grunt.option('fcCwd') + '/components/essence/js/_init.js'
+	if (oData !== undefined) {
 
-	];
+		// FRONTENDCORE.JS
+		oCore.files[ jsDest + '/frontendcore.js'] = [
+			fcCwd + '/components/essence/js/libs/modernizr-custom.js',
+			fcCwd + '/bower/tinycorejs/build/TinyCore.js',
+			fcCwd + '/bower/tinycorejs/src/tools/mediator/TinyCore.Toolbox.Mediator.js',
+			fcCwd + '/bower/tinycorejs/build/extensions/AMD/require-2.1.4.min.js',
+			fcCwd + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.js',
+			fcCwd + '/bower/tinycorejs/src/extensions/AMD/TinyCore.AMD.domBoot.js',
+			fcCwd + '/bower/jquery/dist/jquery.js',
+			fcCwd + '/components/essence/js/_namespace.js',
+			fcCwd + '/components/essence/js/tools/_getSelector.js',
+			fcCwd + '/components/essence/js/tools/_bind.js',
+			fcCwd + '/components/essence/js/tools/_attributeToArray.js',
+			fcCwd + '/components/essence/js/tools/_getDataModules.js',
+			fcCwd + '/components/essence/js/tools/_isMobile.js',
+			fcCwd + '/components/essence/js/tools/_isVisible.js',
+			fcCwd + '/components/essence/js/tools/_loadCSS.js',
+			fcCwd + '/components/essence/js/tools/_mergeJSON.js',
+			fcCwd + '/components/essence/js/tools/_mergeOptions.js',
+			fcCwd + '/components/essence/js/tools/_mixOptions.js',
+			fcCwd + '/components/essence/js/tools/_removeLoading.js',
+			fcCwd + '/components/essence/js/tools/_track-analytics.js',
+			fcCwd + '/components/essence/js/_modules-config.js',
+			fcCwd + '/components/essence/js/_init.js'
 
-	// CODE.JS
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/code.js' ] = [
-		grunt.option('fcCwd') + '/bower/highlightjs/highlight.pack.js',
-		grunt.option('fcCwd') + '/components/code/js/_code.js'
-	];
+		];
 
-	// FORM VALIDATION.JS
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/form-validation-libs.js' ] = [
-		grunt.option('fcCwd') + '/bower/parsleyjs/dist/parsley.js'
-	];
+		// CODE.JS
+		oCore.files[jsDest + '/ui/code.js'] = [
+			fcCwd + '/bower/highlightjs/highlight.pack.js',
+			fcCwd + '/components/code/js/_code.js'
+		];
 
-	// INPUT AUTOCOMPLETE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/autocomplete.js' ] = [
-		grunt.option('fcCwd') + '/bower/Autocompleter/jquery.autocompleter.js',
-		grunt.option('fcCwd') + '/components/form-autocomplete/js/_autocomplete.js'
-	];
+		// FORM VALIDATION.JS
+		oCore.files[jsDest + '/ui/form-validation-libs.js'] = [
+			fcCwd + '/bower/parsleyjs/dist/parsley.js'
+		];
 
-	// TEXTAREA AUTOSIZE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/autosize.js' ] = [
-		grunt.option('fcCwd') + '/bower/jquery-autosize/jquery.autosize.js',
-		grunt.option('fcCwd') + '/components/form-autosize/js/_autosize.js'
-	];
+		// INPUT AUTOCOMPLETE
+		oCore.files[jsDest + '/ui/autocomplete.js'] = [
+			fcCwd + '/bower/Autocompleter/jquery.autocompleter.js',
+			fcCwd + '/components/form-autocomplete/js/_autocomplete.js'
+		];
 
-	// TIP
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/tip.js' ] = [
-		grunt.option('fcCwd') + '/bower/tooltipster/js/jquery.tooltipster.js',
-		grunt.option('fcCwd') + '/components/tip/js/_tip.js'
-	];
+		// TEXTAREA AUTOSIZE
+		oCore.files[jsDest + '/ui/autosize.js'] = [
+			fcCwd + '/bower/jquery-autosize/jquery.autosize.js',
+			fcCwd + '/components/form-autosize/js/_autosize.js'
+		];
 
-	// MODAL
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/modal.js' ] = [
-		grunt.option('fcCwd') + '/bower/jquery-colorbox/jquery.colorbox.js',
-		grunt.option('fcCwd') + '/components/modal/js/_modal.js'
-	];
+		// TIP
+		oCore.files[jsDest + '/ui/tip.js'] = [
+			fcCwd + '/bower/tooltipster/js/jquery.tooltipster.js',
+			fcCwd + '/components/tip/js/_tip.js'
+		];
 
-	// SELECT WITH SEARCH
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/select-search.js' ] = [
-		grunt.option('fcCwd') + '/bower/bselect/js/bselect.js',
-		grunt.option('fcCwd') + '/components/form-select-search/js/_select-search.js'
-	];
+		// MODAL
+		oCore.files[jsDest + '/ui/modal.js'] = [
+			fcCwd + '/bower/jquery-colorbox/jquery.colorbox.js',
+			fcCwd + '/components/modal/js/_modal.js'
+		];
 
-	// TAG FIELD
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/tag-field.js' ] = [
-		grunt.option('fcCwd') + '/bower/magicsuggest/magicsuggest.js',
-		grunt.option('fcCwd') + '/components/form-tag-field/js/_tag-field.js'
-	];
+		// SELECT WITH SEARCH
+		oCore.files[jsDest + '/ui/select-search.js'] = [
+			fcCwd + '/bower/bselect/js/bselect.js',
+			fcCwd + '/components/form-select-search/js/_select-search.js'
+		];
 
-	// WYSIWYG
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/wysiwyg.js' ] = [
-		grunt.option('fcCwd') + '/bower/pen/src/pen.js',
-		grunt.option('fcCwd') + '/bower/pen/src/markdown.js',
-		grunt.option('fcCwd') + '/components/form-wysiwyg/js/_wysiwyg.js'
-	];
+		// TAG FIELD
+		oCore.files[jsDest + '/ui/tag-field.js'] = [
+			fcCwd + '/bower/magicsuggest/magicsuggest.js',
+			fcCwd + '/components/form-tag-field/js/_tag-field.js'
+		];
 
-	// CAROUSEL
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/carousel.js' ] = [
-		grunt.option('fcCwd') + '/bower/owl-carousel2/dist/owl.carousel.js',
-		grunt.option('fcCwd') + '/components/carousel/js/_carousel.js'
-	];
+		// WYSIWYG
+		oCore.files[jsDest + '/ui/wysiwyg.js'] = [
+			fcCwd + '/bower/pen/src/pen.js',
+			fcCwd + '/bower/pen/src/markdown.js',
+			fcCwd + '/components/form-wysiwyg/js/_wysiwyg.js'
+		];
 
-	// TRUNCATE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/truncate.js' ] = [
-		grunt.option('fcCwd') + '/bower/jquery.truncator.js/jquery.truncator.js',
-		grunt.option('fcCwd') + '/components/truncate/js/_truncate.js'
-	];
+		// CAROUSEL
+		oCore.files[jsDest + '/ui/carousel.js'] = [
+			fcCwd + '/bower/owl-carousel2/dist/owl.carousel.js',
+			fcCwd + '/components/carousel/js/_carousel.js'
+		];
 
-	// SORTABLE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/sortable.js' ] = [
-		grunt.option('fcCwd') + '/bower/jquery-sortable/source/js/jquery-sortable.js',
-		grunt.option('fcCwd') + '/components/sortable/js/_sortable.js'
-	];
+		// TRUNCATE
+		oCore.files[jsDest + '/ui/truncate.js'] = [
+			fcCwd + '/bower/jquery.truncator.js/jquery.truncator.js',
+			fcCwd + '/components/truncate/js/_truncate.js'
+		];
 
-	// TABLE DYNAMIC
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/table-dynamic.js' ] = [
-		grunt.option('fcCwd') + '/bower/dynatable/jquery.dynatable.js',
-		grunt.option('fcCwd') + '/components/table-dynamic/js/_table-dynamic.js'
-	];
+		// SORTABLE
+		oCore.files[jsDest + '/ui/sortable.js'] = [
+			fcCwd + '/bower/jquery-sortable/source/js/jquery-sortable.js',
+			fcCwd + '/components/sortable/js/_sortable.js'
+		];
 
-	// TABLE RESPONSIVE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/table-responsive.js' ] = [
-		grunt.option('fcCwd') + '/bower/stacktable/stacktable.js',
-		grunt.option('fcCwd') + '/components/table-responsive/js/_table-responsive.js'
-	];
+		// TABLE DYNAMIC
+		oCore.files[jsDest + '/ui/table-dynamic.js'] = [
+			fcCwd + '/bower/dynatable/jquery.dynatable.js',
+			fcCwd + '/components/table-dynamic/js/_table-dynamic.js'
+		];
 
-	// CHART LIB
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/chartLibs.js' ] = [
-		grunt.option('fcCwd') + '/bower/chartjs/Chart.js'
-	];
+		// TABLE RESPONSIVE
+		oCore.files[jsDest + '/ui/table-responsive.js'] = [
+			fcCwd + '/bower/stacktable/stacktable.js',
+			fcCwd + '/components/table-responsive/js/_table-responsive.js'
+		];
 
-	// IMAGE RESPONSIVE
-	oCore.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/ui/image-responsive.js' ] = [
-		grunt.option('fcCwd') + '/bower/jquery-unveil/jquery.unveil.js',
-		grunt.option('fcCwd') + '/components/image-responsive/js/_image-responsive.js'
-	];
+		// CHART LIB
+		oCore.files[jsDest + '/ui/chartLibs.js'] = [
+			fcCwd + '/bower/chartjs/Chart.js'
+		];
 
-	var oRoundTrip = {
-		options: {
-			preserveComments: false,
-			beautify: false
-		},
-		files: {}
-	};
+		// IMAGE RESPONSIVE
+		oCore.files[jsDest + '/ui/image-responsive.js'] = [
+			fcCwd + '/bower/jquery-unveil/jquery.unveil.js',
+			fcCwd + '/components/image-responsive/js/_image-responsive.js'
+		];
 
-	oRoundTrip.files[ grunt.option('appCwd') + '/' + oData.js.dest + '/roundtrip.js' ] = [
-		grunt.option('fcCwd') + '/bower/twig.js/twig.js',
-		grunt.option('fcCwd') + '/components/roundtrip/js/_roundtrip.js'
-	];
-
-	oConfig = {
-		core: oCore,
-		rountrip: oRoundTrip
-	}
-
-	for (var nKey = 0; nKey < oComponents.length; nKey++) {
-
-		oConfig[oComponents[nKey]] = {
-			files: [{
-				expand: true,
-				cwd: grunt.option('fcCwd') + '/components/'+ oComponents[nKey] + '/js/',
-				src: ['*.js','!_*.js'],
-				dest: grunt.option('appCwd') + '/' +  oData.js.dest + '/ui',
+		var oRoundTrip = {
+			options: {
 				preserveComments: false,
-				beautify: true
-			}]
+				beautify: false
+			},
+			files: {}
 		};
+
+		oRoundTrip.files[jsDest + '/roundtrip.js'] = [
+			fcCwd + '/bower/twig.js/twig.js',
+			fcCwd + '/components/roundtrip/js/_roundtrip.js'
+		];
+
+		oConfig = {
+			core: oCore,
+			rountrip: oRoundTrip
+		}
+
+		for (var nKey = 0; nKey < oComponents.length; nKey++) {
+
+			oConfig[oComponents[nKey]] = {
+				files: [{
+					expand: true,
+					cwd: fcCwd + '/components/' + oComponents[nKey] + '/js/',
+					src: ['*.js', '!_*.js'],
+					dest: jsDest + '/ui',
+					preserveComments: false,
+					beautify: true
+				}]
+			};
+		}
 	}
 
 	return oConfig;

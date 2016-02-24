@@ -31,8 +31,10 @@ var pkg, bbdd, data;
 
 module.exports = function(grunt) {
 
-    pkg = require(  grunt.option('fcCwd') + '/package.json' );
-    bbdd = require( grunt.option('fcCwd')  + '/_resources/bbdd/sections.json');
+    require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
+
+    pkg = require(  fcCwd+ '/package.json' );
+    bbdd = require( fcCwd  + '/_resources/bbdd/sections.json');
     data = mergeJSON( pkg, bbdd );
 
     return {
@@ -41,9 +43,9 @@ module.exports = function(grunt) {
                 {
                     data: data,
                     expand: true,
-                    cwd: grunt.option('appCwd') +'/twig/',
+                    cwd: fcCwd +'/twig/',
                     src: [ '**/*.html.twig', '!**/_*.html.twig'],
-                    dest: grunt.option('appCwd') +'/build/',
+                    dest: appCwd +'/build/',
                     ext: '.html'
                 }
             ]

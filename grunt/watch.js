@@ -1,34 +1,38 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json');
+	require(fcCwd + "/grunt/_data.js")(grunt);
+	require(fcCwd + "/grunt/_tools.js")(grunt);
 
-	if ( grunt.option('project') ) {
-		oData = oData[grunt.option('project')];
-	}
+	if (oData !== undefined) {
 
-	return {
-		js: {
-			files: [
-				grunt.option('appCwd') + '/'+ oData.js.cwd + '/*.js',
-				grunt.option('appCwd') + '/components/**/*.js'
-			],
-			tasks: ['js']
-		},
-		scss: {
-			files: [
-				grunt.option('appCwd') + '/components/**/*.scss',
-				grunt.option('appCwd') + '/'+ oData.scss.cwd + 'components/**/*.scss',
-				grunt.option('appCwd') + '/'+ oData.scss.cwd + '/**/*.scss'
-			],
-			tasks: ['css:compile']
-		},
-		html: {
-			files: [
-				grunt.option('appCwd') + '/components/**/*.html',
-				grunt.option('fcCwd') + '/twig/**/*.*',
-				grunt.option('fcCwd') + '/_resources/bbdd/sections.json'
-			],
-			tasks: ['html']
+		if (grunt.option('project')) {
+			oData = oData[grunt.option('project')];
 		}
-	};
+
+		return {
+			js: {
+				files: [
+					jsCwd +  '/*.js',
+					appCwd + '/components/**/*.js'
+				],
+				tasks: ['js']
+			},
+			scss: {
+				files: [
+					appCwd + '/components/**/*.scss',
+					appCwd + '/' + scssCwd + 'components/**/*.scss',
+					appCwd + '/' + scssCwd + '/**/*.scss'
+				],
+				tasks: ['css:compile']
+			},
+			html: {
+				files: [
+					appCwd + '/components/**/*.html',
+					fcCwd + '/twig/**/*.*',
+					fcCwd + '/_resources/bbdd/sections.json'
+				],
+				tasks: ['html']
+			}
+		};
+	}
 }

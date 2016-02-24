@@ -1,24 +1,25 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
-		scssSrc = '*.css';
+	require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
 
-	if ( grunt.option('project') ) {
-		oData = oData[grunt.option('project')];
+	var aBrowsers = oData !== null &&  oData.scss.browsers !== undefined ? oData.scss.browsers : ["last 1 version"],
+		sTarget = getRelativePath( scssDest,'appCwd');
+
+	if ( grunt.option('scssDest') === undefined ) {
+		sTarget += '/*.css';
+	} else if ( grunt.option('scssDest') !== undefined &&  grunt.option('scssDest') !== scssDest ) {
+		sTarget = grunt.option('scssDest');
 	}
-
-	var	aBrowsers =  oData.scss.browsers !== undefined ? oData.scss.browsers : ["last 1 version"],
-		scssDest = grunt.option('scssDest') !== undefined ? grunt.option('scssDest') : oData.scss.dest;
 
 	return {
 		options: {
 			processors: [
-				require(grunt.option('fcCwd') + '/node_modules/cssnext/dist/index')({ browsers: aBrowsers }),
-				require(grunt.option('fcCwd') + '/node_modules/precss/index')()
+				require(fcCwd+ '/node_modules/cssnext/dist/index')({browsers: aBrowsers}),
+				require(fcCwd+ '/node_modules/precss/index')()
 			]
 		},
 		dist: {
-			src: grunt.option('appCwd') + '/' + scssDest + '/' + scssSrc
+			src: sTarget
 		}
 	}
 }

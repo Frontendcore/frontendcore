@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
-	var oData = require(grunt.option('appCwd') + '/frontendcore.json'),
-		jsCwd = grunt.option('appCwd') +'/',
-		aFiles = [
+	require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
+
+	var aFiles = [
 			grunt.option('fcCwd') + 'Gruntfile.js',
 			grunt.option('fcCwd') + '/components/**/js/*.js',
 			'!' + grunt.option('fcCwd') + '/components/**/js/roundtrip.js',
@@ -18,21 +18,14 @@ module.exports = function(grunt) {
 		};
 
 
-	if ( grunt.option('project') ) {
-		oData = oData[grunt.option('project')];
+	if ( jsCwd !== '') {
+
+		aFiles.push(jsCwd + '/**/*.js');
+
+		oConfig['files'] = aFiles;
 	}
 
-	if ( oData.js !== undefined) {
 
-		if (oData.js.cwd !== undefined) {
-			jsCwd += oData.js.cwd + '/**/*.js';
-		}
-
-	}
-
-	aFiles.push(jsCwd);
-
-	oConfig['files'] = aFiles;
 
 	return oConfig;
 

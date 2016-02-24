@@ -1,7 +1,5 @@
 module.exports = function (grunt) {
 
-	var fc = require( grunt.option('appCwd') + '/frontendcore.json');
-
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
