@@ -1,9 +1,12 @@
 module.exports = function(grunt) {
 
 	require(fcCwd + "/grunt/_data.js")(grunt);
-	require(fcCwd + "/grunt/_tools.js")(grunt);
 
-	if (oData !== undefined) {
+	console.log( scssCwd + '/**/*.scss');
+
+
+
+	if (oData !== null) {
 
 		if (grunt.option('project')) {
 			oData = oData[grunt.option('project')];
@@ -20,8 +23,8 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					appCwd + '/components/**/*.scss',
-					appCwd + '/' + scssCwd + 'components/**/*.scss',
-					appCwd + '/' + scssCwd + '/**/*.scss'
+					scssCwd + 'components/**/*.scss',
+					scssCwd + '/**/*.scss'
 				],
 				tasks: ['css:compile']
 			},
