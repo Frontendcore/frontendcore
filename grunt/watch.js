@@ -2,10 +2,6 @@ module.exports = function(grunt) {
 
 	require(fcCwd + "/grunt/_data.js")(grunt);
 
-	console.log( scssCwd + '/**/*.scss');
-
-
-
 	if (oData !== null) {
 
 		if (grunt.option('project')) {

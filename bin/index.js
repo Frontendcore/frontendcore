@@ -1,7 +1,5 @@
 #! /usr/bin/env node
 
-require("../grunt/_tools.js")();
-
 var param = process.argv[2],
     scssCwd = process.argv[3],
     scssDest = process.argv[4],
@@ -15,12 +13,14 @@ for ( var key in process.argv ) {
     }
 }
 
-
 // or more concisely
 var sys = require('sys'),
     path = require('path'),
-    fs   = require('fs'),
-    aProjects = [],
+    fs   = require('fs');
+
+require(path.join( path.dirname(fs.realpathSync(__filename)) , "../grunt/_tools.js") )();
+
+var aProjects = [],
     aParams = [],
     spawn = require('child_process').spawn,
     sCurrentPath = process.cwd(),
