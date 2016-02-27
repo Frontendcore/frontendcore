@@ -24,22 +24,138 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Number Fields</h1>
-                                    <p>Just add the class .form to your form and take a break.</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Number Fields</h1>
+                                            <p>Just add the class .form to your form and take a break.</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <section id="demos">
+        
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-number-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <form class="form">
+	<fieldset>
+		<legend>Numbers fields</legend>
+		<ol>
+			<li>
+				<label for="tel-field">Telephone Field</label>
+				<input type="tel" id="tel-field" />
+			</li>
+			<li>
+				<label for="text-field22">Number Field</label>
+				<span>$</span>
+				<input type="number" id="text-field22" placeholder="0" min="0.15" />
+				<span>/ month</span>
+			</li>
+			<li>
+				<label for="text-field23">Number Field</label>
+				<span>$</span>
+				<input type="number" id="text-field23" placeholder="0" min="0.15" max="100" />
+				<span>/ click</span>
+				<span class="explain">min="0.15" max="100"</span>
+			</li>
+			<li>
+				<label for="date-field">Date Field</label>
+				<input type="date" id="date-field" />
+			</li>
+
+			<li>
+				<label for="datetime-local">datetime-local</label>
+				<input type="datetime-local" id="datetime-local" />
+			</li>
+			<li>
+				<label for="month">month</label>
+				<input type="month" id="month" />
+			</li>
+		</ol>
+	</fieldset>
+</form>                                            </div>
+        </section>
+                <section id="tab-number-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Numbers fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;tel-field&quot;&gt;Telephone Field&lt;/label&gt;
+				&lt;input type=&quot;tel&quot; id=&quot;tel-field&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;text-field22&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;text-field22&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; /&gt;
+				&lt;span&gt;/ month&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;text-field23&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;text-field23&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
+				&lt;span&gt;/ click&lt;/span&gt;
+				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;date-field&quot;&gt;Date Field&lt;/label&gt;
+				&lt;input type=&quot;date&quot; id=&quot;date-field&quot; /&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;datetime-local&quot;&gt;datetime-local&lt;/label&gt;
+				&lt;input type=&quot;datetime-local&quot; id=&quot;datetime-local&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;month&quot;&gt;month&lt;/label&gt;
+				&lt;input type=&quot;month&quot; id=&quot;month&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section id="appearance">
+                     <h2>Customize the appearance</h2>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code data-fc-modules="code">$object-forms-vars-default: (
+  /* Field */
+        field-font-family: $font-face-default,
+        field-font-size: $font-size-default,
+        field-font-weight: normal,
+        field-background: #FFF,
+        field-color: #000,
+        field-padding: $spacing/4 $spacing/2,
+        field-margin: 0 $spacing/2 $spacing 0,
+        field-border-radius: 1px,
+        field-border: 1px solid rgba($color-foreground, .3),
+        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
+        field-placeholder-color: rgba($color-foreground, .3),
+  /* Field focus */
+        field-focus-border: $color-info,
+  /* Field error */
+        field-error-border: $color-error,
+  /* Label */
+        label-color: rgba($color-foreground, .5)
+) !global !default;
+
+$object-forms-vars-custom: () !global !default;
+
+$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
+</code></pre>
+
+    </section>
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,125 +537,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <section id="demos">
-        
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-number-fields-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <form class="form">
-	<fieldset>
-		<legend>Numbers fields</legend>
-		<ol>
-			<li>
-				<label for="tel-field">Telephone Field</label>
-				<input type="tel" id="tel-field" />
-			</li>
-			<li>
-				<label for="text-field22">Number Field</label>
-				<span>$</span>
-				<input type="number" id="text-field22" placeholder="0" min="0.15" />
-				<span>/ month</span>
-			</li>
-			<li>
-				<label for="text-field23">Number Field</label>
-				<span>$</span>
-				<input type="number" id="text-field23" placeholder="0" min="0.15" max="100" />
-				<span>/ click</span>
-				<span class="explain">min="0.15" max="100"</span>
-			</li>
-			<li>
-				<label for="date-field">Date Field</label>
-				<input type="date" id="date-field" />
-			</li>
-
-			<li>
-				<label for="datetime-local">datetime-local</label>
-				<input type="datetime-local" id="datetime-local" />
-			</li>
-			<li>
-				<label for="month">month</label>
-				<input type="month" id="month" />
-			</li>
-		</ol>
-	</fieldset>
-</form>                                            </div>
-        </section>
-                <section id="tab-number-fields-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Numbers fields&lt;/legend&gt;
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;tel-field&quot;&gt;Telephone Field&lt;/label&gt;
-				&lt;input type=&quot;tel&quot; id=&quot;tel-field&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field22&quot;&gt;Number Field&lt;/label&gt;
-				&lt;span&gt;$&lt;/span&gt;
-				&lt;input type=&quot;number&quot; id=&quot;text-field22&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; /&gt;
-				&lt;span&gt;/ month&lt;/span&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;text-field23&quot;&gt;Number Field&lt;/label&gt;
-				&lt;span&gt;$&lt;/span&gt;
-				&lt;input type=&quot;number&quot; id=&quot;text-field23&quot; placeholder=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
-				&lt;span&gt;/ click&lt;/span&gt;
-				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;date-field&quot;&gt;Date Field&lt;/label&gt;
-				&lt;input type=&quot;date&quot; id=&quot;date-field&quot; /&gt;
-			&lt;/li&gt;
-
-			&lt;li&gt;
-				&lt;label for=&quot;datetime-local&quot;&gt;datetime-local&lt;/label&gt;
-				&lt;input type=&quot;datetime-local&quot; id=&quot;datetime-local&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;month&quot;&gt;month&lt;/label&gt;
-				&lt;input type=&quot;month&quot; id=&quot;month&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section id="appearance">
-                     <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-forms-vars-default: (
-  /* Field */
-        field-font-family: $font-face-default,
-        field-font-size: $font-size-default,
-        field-font-weight: normal,
-        field-background: #FFF,
-        field-color: #000,
-        field-padding: $spacing/4 $spacing/2,
-        field-margin: 0 $spacing/2 $spacing 0,
-        field-border-radius: 1px,
-        field-border: 1px solid rgba($color-foreground, .3),
-        field-box-shadow: "inset 0 2px 8px rgba(#{$color-foreground}, .2), 0 1px 1px rgba(#{$color-background}, .5)",
-        field-placeholder-color: rgba($color-foreground, .3),
-  /* Field focus */
-        field-focus-border: $color-info,
-  /* Field error */
-        field-error-border: $color-error,
-  /* Label */
-        label-color: rgba($color-foreground, .5)
-) !global !default;
-
-$object-forms-vars-custom: () !global !default;
-
-$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;
-</code></pre>
-
-    </section>
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -566,23 +563,23 @@ $object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-cus
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

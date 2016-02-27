@@ -24,22 +24,176 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Validation</h1>
-                                    <p>Just add the class .form to your form and take a break.</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Validation</h1>
+                                            <p>Just add the class .form to your form and take a break.</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-validation-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <form class="form" data-fc-modules="form-validation">
+	<fieldset>
+		<legend>Text fields</legend>
+		<div data-fc-modules="tabs">
+			<section id="tab-1" data-fc-name="Tab 1">
+				<div class="box-text">Tab 1 content</div>
+			</section>
+			<section id="tab-2" data-fc-name="Tab 2">
+				<ol>
+					<li>
+						<label for="text-field">Name</label>
+						<input name="name" type="text" id="text-field" required placeholder="E.g. John"/>
+					</li>
+				</ol>
+			</section>
+			<section id="tab-3" data-fc-name="Tab 3">
+				<ol>
+					<li>
+						<label for="url-field">URL Field</label>
+						<input name="url" type="url" id="url-field" required />
+					</li>
+				</ol>
+			</section>
+		</div>
+		<ol>
+
+			<li>
+				<label for="email-field">Email Field</label>
+				<input name="email" type="email" id="email-field" required placeholder="email" />
+			</li>
+			<li>
+				<label for="Password-field">Password Field</label>
+				<input name="password" type="password" id="Password-field" required />
+			</li>
+		</ol>
+		<button type="submit" class="button button-success">Send</button>
+	</fieldset>
+</form>                                            </div>
+        </section>
+                <section id="tab-validation-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot; data-fc-modules=&quot;form-validation&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Text fields&lt;/legend&gt;
+		&lt;div data-fc-modules=&quot;tabs&quot;&gt;
+			&lt;section id=&quot;tab-1&quot; data-fc-name=&quot;Tab 1&quot;&gt;
+				&lt;div class=&quot;box-text&quot;&gt;Tab 1 content&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;section id=&quot;tab-2&quot; data-fc-name=&quot;Tab 2&quot;&gt;
+				&lt;ol&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;text-field&quot;&gt;Name&lt;/label&gt;
+						&lt;input name=&quot;name&quot; type=&quot;text&quot; id=&quot;text-field&quot; required placeholder=&quot;E.g. John&quot;/&gt;
+					&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/section&gt;
+			&lt;section id=&quot;tab-3&quot; data-fc-name=&quot;Tab 3&quot;&gt;
+				&lt;ol&gt;
+					&lt;li&gt;
+						&lt;label for=&quot;url-field&quot;&gt;URL Field&lt;/label&gt;
+						&lt;input name=&quot;url&quot; type=&quot;url&quot; id=&quot;url-field&quot; required /&gt;
+					&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/section&gt;
+		&lt;/div&gt;
+		&lt;ol&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;email-field&quot;&gt;Email Field&lt;/label&gt;
+				&lt;input name=&quot;email&quot; type=&quot;email&quot; id=&quot;email-field&quot; required placeholder=&quot;email&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;Password-field&quot;&gt;Password Field&lt;/label&gt;
+				&lt;input name=&quot;password&quot; type=&quot;password&quot; id=&quot;Password-field&quot; required /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;button type=&quot;submit&quot; class=&quot;button button-success&quot;&gt;Send&lt;/button&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h2>Add the following attributes to any input to validate them:</h2>
+    <style>
+        h2.mb-m, hr {  display: none;}
+    </style>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">required</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validate that a required field has been filled with a non blank value.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="email"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid email address.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="number"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid integer.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type="digits"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">alidates that a value is only digits.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type="alphanum"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid alphanumeric string.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="url"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value is a valid url.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">minlength="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the length of a string is at least as long as the given limit.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">maxlength="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the length of a string is not larger than the given limit.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">min="6"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is greater than or equal to some minimum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">max="10"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is less than or equal to some maximum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">type="range"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a given number is between some minimum and maximum number.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">pattern="\d+"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a value matches a specific regular expression (regex).</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-mincheck="3"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a certain minimum number of checkboxes in a group are checked.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-maxcheck="3"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that a certain maximum number of checkboxes in a group are checked.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-equalto="#anotherfield"</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Validates that the value is identical to another field's value (useful for password confirmation check).</p>
+                            </dd>
+                    </dl>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,163 +575,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-validation-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <form class="form" data-fc-modules="form-validation">
-	<fieldset>
-		<legend>Text fields</legend>
-		<div data-fc-modules="tabs">
-			<section id="tab-1" data-fc-name="Tab 1">
-				<div class="box-text">Tab 1 content</div>
-			</section>
-			<section id="tab-2" data-fc-name="Tab 2">
-				<ol>
-					<li>
-						<label for="text-field">Name</label>
-						<input name="name" type="text" id="text-field" required placeholder="E.g. John"/>
-					</li>
-				</ol>
-			</section>
-			<section id="tab-3" data-fc-name="Tab 3">
-				<ol>
-					<li>
-						<label for="url-field">URL Field</label>
-						<input name="url" type="url" id="url-field" required />
-					</li>
-				</ol>
-			</section>
-		</div>
-		<ol>
-
-			<li>
-				<label for="email-field">Email Field</label>
-				<input name="email" type="email" id="email-field" required placeholder="email" />
-			</li>
-			<li>
-				<label for="Password-field">Password Field</label>
-				<input name="password" type="password" id="Password-field" required />
-			</li>
-		</ol>
-		<button type="submit" class="button button-success">Send</button>
-	</fieldset>
-</form>                                            </div>
-        </section>
-                <section id="tab-validation-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot; data-fc-modules=&quot;form-validation&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Text fields&lt;/legend&gt;
-		&lt;div data-fc-modules=&quot;tabs&quot;&gt;
-			&lt;section id=&quot;tab-1&quot; data-fc-name=&quot;Tab 1&quot;&gt;
-				&lt;div class=&quot;box-text&quot;&gt;Tab 1 content&lt;/div&gt;
-			&lt;/section&gt;
-			&lt;section id=&quot;tab-2&quot; data-fc-name=&quot;Tab 2&quot;&gt;
-				&lt;ol&gt;
-					&lt;li&gt;
-						&lt;label for=&quot;text-field&quot;&gt;Name&lt;/label&gt;
-						&lt;input name=&quot;name&quot; type=&quot;text&quot; id=&quot;text-field&quot; required placeholder=&quot;E.g. John&quot;/&gt;
-					&lt;/li&gt;
-				&lt;/ol&gt;
-			&lt;/section&gt;
-			&lt;section id=&quot;tab-3&quot; data-fc-name=&quot;Tab 3&quot;&gt;
-				&lt;ol&gt;
-					&lt;li&gt;
-						&lt;label for=&quot;url-field&quot;&gt;URL Field&lt;/label&gt;
-						&lt;input name=&quot;url&quot; type=&quot;url&quot; id=&quot;url-field&quot; required /&gt;
-					&lt;/li&gt;
-				&lt;/ol&gt;
-			&lt;/section&gt;
-		&lt;/div&gt;
-		&lt;ol&gt;
-
-			&lt;li&gt;
-				&lt;label for=&quot;email-field&quot;&gt;Email Field&lt;/label&gt;
-				&lt;input name=&quot;email&quot; type=&quot;email&quot; id=&quot;email-field&quot; required placeholder=&quot;email&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;Password-field&quot;&gt;Password Field&lt;/label&gt;
-				&lt;input name=&quot;password&quot; type=&quot;password&quot; id=&quot;Password-field&quot; required /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-		&lt;button type=&quot;submit&quot; class=&quot;button button-success&quot;&gt;Send&lt;/button&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    <h2>Add the following attributes to any input to validate them:</h2>
-    <style>
-        h2.mb-m, hr {  display: none;}
-    </style>
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">required</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validate that a required field has been filled with a non blank value.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">type="email"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a value is a valid email address.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">type="number"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a value is a valid integer.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-type="digits"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">alidates that a value is only digits.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-type="alphanum"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a value is a valid alphanumeric string.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">type="url"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a value is a valid url.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">minlength="6"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that the length of a string is at least as long as the given limit.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">maxlength="6"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that the length of a string is not larger than the given limit.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">min="6"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a given number is greater than or equal to some minimum number.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">max="10"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a given number is less than or equal to some maximum number.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">type="range"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a given number is between some minimum and maximum number.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">pattern="\d+"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a value matches a specific regular expression (regex).</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-mincheck="3"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a certain minimum number of checkboxes in a group are checked.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-maxcheck="3"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that a certain maximum number of checkboxes in a group are checked.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-equalto="#anotherfield"</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Validates that the value is identical to another field's value (useful for password confirmation check).</p>
-                            </dd>
-                    </dl>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -604,23 +601,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

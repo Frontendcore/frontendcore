@@ -24,22 +24,236 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Charts</h1>
-                                    <p>Think in & out the box</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Charts</h1>
+                                            <p>Think in & out the box</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <section class="box-lighten">
+        <h2>Doughnut charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-doughnut-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
+	<input name="done" type="hidden" value="10" />
+	<input name="backlog" type="hidden" value="30" />
+	<input name="Work in progress" type="hidden" value="40" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-doughnut-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
+	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
+	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
+	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Pie charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-pie-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="pie">
+	<input name="Costs" type="hidden" value="10" />
+	<input name="Indirect sales" type="hidden" value="30" />
+	<input name="Direct sales" type="hidden" value="40" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-pie-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;pie&quot;&gt;
+	&lt;input name=&quot;Costs&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
+	&lt;input name=&quot;Indirect sales&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
+	&lt;input name=&quot;Direct sales&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Line charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-line-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="line" data-fc-labels-x="[January,February,March,June,July]">
+	<!-- The value could be an array... -->
+	<input name="results last year" type="hidden" value="[60,90,30,70,40]" />
+	<!-- ... or a string separated by comma -->
+	<input name="results this year" type="hidden" value="80,50,60,40,80" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-line-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;line&quot; data-fc-labels-x=&quot;[January,February,March,June,July]&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;results last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;results this year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Bar charts</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-bar-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-labels-x="January,February,March,June,July">
+	<!-- The value could be an array... -->
+	<input name="Sales last year" type="hidden" value="[60,90,30,70,40]" />
+	<!-- ... or a string separated by comma -->
+	<input name="Sales last year" type="hidden" value="80,50,60,40,80" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-bar-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Doughnut charts no data</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-doughnut-no-data-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
+	<input name="done" type="hidden" value="0" />
+	<input name="backlog" type="hidden" value="0" />
+	<input name="Work in progress" type="hidden" value="0" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-doughnut-no-data-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
+	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Bar charts no data</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-chart-bar-no-data-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-text-no-data="Ops! No data here..." data-fc-labels-x="January,February,March,June,July">
+	<!-- The value could be an array... -->
+	<input name="Sales last year" type="hidden" value="[0,0,0,0,0]" />
+	<!-- ... or a string separated by comma -->
+	<input name="Sales last year" type="hidden" value="0,0,0,0,0" />
+</canvas>
+                                            </div>
+        </section>
+                <section id="tab-chart-bar-no-data-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-text-no-data=&quot;Ops! No data here...&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
+	&lt;!-- The value could be an array... --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[0,0,0,0,0]&quot; /&gt;
+	&lt;!-- ... or a string separated by comma --&gt;
+	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;0,0,0,0,0&quot; /&gt;
+&lt;/canvas&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <div class="grid">
+        <div class="col-1-2">
+            <h1>Canvas</h1>
+                    <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Type of stats (pie, bar, area or line)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: line</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">width</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max Width in pixels of the stats and the table</p>
+                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">height</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max Height in pixels of the stats and the table in px</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 300</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-labels-x</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the name of the labels for the X axis. The Pie chart and the doughnut chart does'nt have X Axis.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: []</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-colors</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the hex colors used for the charts.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: ['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc']</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text-no-data</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text shown when all values are zero.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: No data</p>
+                            </dd>
+                    </dl>
+
+        </div>
+        <div class="col-1-2">
+            <h1>Inputs</h1>
+            <p>You need to create an input hidden for each value (pie, doughnut) or group of values (line, bars)</p>
+                    <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">name</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">The attribute 'name' of each input will be used as label for the legend. If one is missing the legend will not be shown.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: unlabel</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">value</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Array or string separated by comma with the values of the chart.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
+                            </dd>
+                    </dl>
+
+        </div>
+    </div>
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,223 +635,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <section class="box-lighten">
-        <h2>Doughnut charts</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-doughnut-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
-	<input name="done" type="hidden" value="10" />
-	<input name="backlog" type="hidden" value="30" />
-	<input name="Work in progress" type="hidden" value="40" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-doughnut-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
-	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
-	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
-	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Pie charts</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-pie-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="pie">
-	<input name="Costs" type="hidden" value="10" />
-	<input name="Indirect sales" type="hidden" value="30" />
-	<input name="Direct sales" type="hidden" value="40" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-pie-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;pie&quot;&gt;
-	&lt;input name=&quot;Costs&quot; type=&quot;hidden&quot; value=&quot;10&quot; /&gt;
-	&lt;input name=&quot;Indirect sales&quot; type=&quot;hidden&quot; value=&quot;30&quot; /&gt;
-	&lt;input name=&quot;Direct sales&quot; type=&quot;hidden&quot; value=&quot;40&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Line charts</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-line-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="line" data-fc-labels-x="[January,February,March,June,July]">
-	<!-- The value could be an array... -->
-	<input name="results last year" type="hidden" value="[60,90,30,70,40]" />
-	<!-- ... or a string separated by comma -->
-	<input name="results this year" type="hidden" value="80,50,60,40,80" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-line-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;line&quot; data-fc-labels-x=&quot;[January,February,March,June,July]&quot;&gt;
-	&lt;!-- The value could be an array... --&gt;
-	&lt;input name=&quot;results last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
-	&lt;!-- ... or a string separated by comma --&gt;
-	&lt;input name=&quot;results this year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Bar charts</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-bar-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-labels-x="January,February,March,June,July">
-	<!-- The value could be an array... -->
-	<input name="Sales last year" type="hidden" value="[60,90,30,70,40]" />
-	<!-- ... or a string separated by comma -->
-	<input name="Sales last year" type="hidden" value="80,50,60,40,80" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-bar-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
-	&lt;!-- The value could be an array... --&gt;
-	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[60,90,30,70,40]&quot; /&gt;
-	&lt;!-- ... or a string separated by comma --&gt;
-	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;80,50,60,40,80&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Doughnut charts no data</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-doughnut-no-data-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="doughnut">
-	<input name="done" type="hidden" value="0" />
-	<input name="backlog" type="hidden" value="0" />
-	<input name="Work in progress" type="hidden" value="0" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-doughnut-no-data-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;doughnut&quot;&gt;
-	&lt;input name=&quot;done&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
-	&lt;input name=&quot;backlog&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
-	&lt;input name=&quot;Work in progress&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Bar charts no data</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-chart-bar-no-data-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <canvas height="250" width="1200" data-fc-modules="chart" data-fc-type="bar" data-fc-text-no-data="Ops! No data here..." data-fc-labels-x="January,February,March,June,July">
-	<!-- The value could be an array... -->
-	<input name="Sales last year" type="hidden" value="[0,0,0,0,0]" />
-	<!-- ... or a string separated by comma -->
-	<input name="Sales last year" type="hidden" value="0,0,0,0,0" />
-</canvas>
-                                            </div>
-        </section>
-                <section id="tab-chart-bar-no-data-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;canvas height=&quot;250&quot; width=&quot;1200&quot; data-fc-modules=&quot;chart&quot; data-fc-type=&quot;bar&quot; data-fc-text-no-data=&quot;Ops! No data here...&quot; data-fc-labels-x=&quot;January,February,March,June,July&quot;&gt;
-	&lt;!-- The value could be an array... --&gt;
-	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;[0,0,0,0,0]&quot; /&gt;
-	&lt;!-- ... or a string separated by comma --&gt;
-	&lt;input name=&quot;Sales last year&quot; type=&quot;hidden&quot; value=&quot;0,0,0,0,0&quot; /&gt;
-&lt;/canvas&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <div class="grid">
-        <div class="col-1-2">
-            <h1>Canvas</h1>
-                    <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Type of stats (pie, bar, area or line)</p>
-                                <p class="fz-xs c-secondary">DEFAULT: line</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">width</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Max Width in pixels of the stats and the table</p>
-                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">height</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Max Height in pixels of the stats and the table in px</p>
-                                <p class="fz-xs c-secondary">DEFAULT: 300</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-labels-x</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Array or string separated by comma with the name of the labels for the X axis. The Pie chart and the doughnut chart does'nt have X Axis.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: []</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-colors</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Array or string separated by comma with the hex colors used for the charts.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: ['96c47f','5b90bf','b55151','b48ead','d6b051','82b2af','d4d659','dcdcdc']</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-text-no-data</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Text shown when all values are zero.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: No data</p>
-                            </dd>
-                    </dl>
-
-        </div>
-        <div class="col-1-2">
-            <h1>Inputs</h1>
-            <p>You need to create an input hidden for each value (pie, doughnut) or group of values (line, bars)</p>
-                    <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">name</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">The attribute 'name' of each input will be used as label for the legend. If one is missing the legend will not be shown.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: unlabel</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">value</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Array or string separated by comma with the values of the chart.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: autowidth based on parent element</p>
-                            </dd>
-                    </dl>
-
-        </div>
-    </div>
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -664,23 +661,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

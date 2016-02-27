@@ -24,22 +24,103 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Tag Field</h1>
-                                    <p>Turn a checkbox into a switch</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Tag Field</h1>
+                                            <p>Turn a checkbox into a switch</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input name="tags_input" value="one,two,three,four,five,six,seven,eight,nine,ten,eleven"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" placeholder="add tags separated by comma" required="required" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-text-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_input&quot; value=&quot;one,two,three,four,five,six,seven,eight,nine,ten,eleven&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-selects-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <input name="tags_select"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" data-fc-mode="restrict" placeholder="add tags separated by comma" required="required" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-text-selects-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_select&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; data-fc-mode=&quot;restrict&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">value</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Tags separated by coma. Use it also to prefill the input with tags.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-values</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: left</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-max</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Max number of tags allowed.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: add a tag...</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-select</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If it's set to true show the dropdown select to view all the values defined in data-fc-values. </p>
+                                <p class="fz-xs c-secondary">DEFAULT: free</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-mode</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the mode of the tags entry (Restrict or free). Restrict only allow values defined in data-fc-values and allows any value. If you set the mode to Restrict, data-fc-select default value will be false.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: free</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text-no-suggestion</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text that will be displayed when there are no suggestions. Use {{ query }} to show the query.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: No result matching the term {{query}}</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">placeholder</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">No result matching the term {{query}}</p>
+                                <p class="fz-xs c-secondary">DEFAULT: Add a Tag</p>
+                            </dd>
+                    </dl>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,90 +502,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                <form class="form" method="get">
-                    <fieldset>
-                        <ol>
-                            <li>
-                                                                <input name="tags_input" value="one,two,three,four,five,six,seven,eight,nine,ten,eleven"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" placeholder="add tags separated by comma" required="required" />                                                            </li>
-                        </ol>
-                        <button type="submit" class="button">Send</button>
-                    </fieldset>
-                </form>
-                            </div>
-        </section>
-                <section id="tab-text-fields-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_input&quot; value=&quot;one,two,three,four,five,six,seven,eight,nine,ten,eleven&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-text-selects-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                <form class="form" method="get">
-                    <fieldset>
-                        <ol>
-                            <li>
-                                                                <input name="tags_select"  data-fc-modules="tag-field" data-fc-values="foo,baz,bar" data-fc-mode="restrict" placeholder="add tags separated by comma" required="required" />                                                            </li>
-                        </ol>
-                        <button type="submit" class="button">Send</button>
-                    </fieldset>
-                </form>
-                            </div>
-        </section>
-                <section id="tab-text-selects-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;input name=&quot;tags_select&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-values=&quot;foo,baz,bar&quot; data-fc-mode=&quot;restrict&quot; placeholder=&quot;add tags separated by comma&quot; required=&quot;required&quot; /&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">value</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Tags separated by coma. Use it also to prefill the input with tags.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-values</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">List separated by comma of the words and phrases to autocomplete.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: left</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-max</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Max number of tags allowed.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: add a tag...</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-select</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If it's set to true show the dropdown select to view all the values defined in data-fc-values. </p>
-                                <p class="fz-xs c-secondary">DEFAULT: free</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-mode</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Defines the mode of the tags entry (Restrict or free). Restrict only allow values defined in data-fc-values and allows any value. If you set the mode to Restrict, data-fc-select default value will be false.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: free</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-text-no-suggestion</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Text that will be displayed when there are no suggestions. Use {{ query }} to show the query.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: No result matching the term {{query}}</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">placeholder</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">No result matching the term {{query}}</p>
-                                <p class="fz-xs c-secondary">DEFAULT: Add a Tag</p>
-                            </dd>
-                    </dl>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -531,23 +528,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

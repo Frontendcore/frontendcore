@@ -24,22 +24,214 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Sortable lists</h1>
-                                    <p>Show your code propertly</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Sortable lists</h1>
+                                            <p>Show your code propertly</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <section class="box-lighten">
+        <h2>Nested Lists</h2>
+        <p>Drag & Drop nestable lists. This is very useful to order categories for example.</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-sortable-nested-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <ol id="item" class="js-sortable" data-fc-modules="sortable" data-fc-url="#" data-fc-type="nested" data-fc-output="json" data-fc-depth="2">
+	<li data-fc-id="0" data-fc-name="Item 1">
+		Item 1
+	</li>
+	<li data-fc-id="1" data-fc-name="Item 2">
+		Item 2
+	</li>
+	<li data-fc-id="2" data-fc-name="Item 3">
+		Item 3
+		<ol>
+			<li data-fc-id="3-0" data-fc-name="Item 3.1">Item 3.1</li>
+			<li data-fc-id="3-1" data-fc-name="Item 3.2">Item 3.2</li>
+			<li data-fc-id="3-2" data-fc-name="Item 3.3">Item 3.3</li>
+			<li data-fc-id="3-3" data-fc-name="Item 3.4">Item 3.4</li>
+			<li data-fc-id="3-4" data-fc-name="Item 3.5">Item 3.5</li>
+			<li data-fc-id="3-5" data-fc-name="Item 3.6">Item 3.6</li>
+		</ol>
+	</li>
+	<li data-fc-id="3" data-fc-name="Item 4">
+		Item 4
+	</li>
+	<li data-fc-id="4" data-fc-name="Item 5">
+		Item 5
+	</li>
+	<li data-fc-id="5" data-fc-name="Item 6">
+		Item 6
+	</li>
+</ol>                                            </div>
+        </section>
+                <section id="tab-sortable-nested-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ol id=&quot;item&quot; class=&quot;js-sortable&quot; data-fc-modules=&quot;sortable&quot; data-fc-url=&quot;#&quot; data-fc-type=&quot;nested&quot; data-fc-output=&quot;json&quot; data-fc-depth=&quot;2&quot;&gt;
+	&lt;li data-fc-id=&quot;0&quot; data-fc-name=&quot;Item 1&quot;&gt;
+		Item 1
+	&lt;/li&gt;
+	&lt;li data-fc-id=&quot;1&quot; data-fc-name=&quot;Item 2&quot;&gt;
+		Item 2
+	&lt;/li&gt;
+	&lt;li data-fc-id=&quot;2&quot; data-fc-name=&quot;Item 3&quot;&gt;
+		Item 3
+		&lt;ol&gt;
+			&lt;li data-fc-id=&quot;3-0&quot; data-fc-name=&quot;Item 3.1&quot;&gt;Item 3.1&lt;/li&gt;
+			&lt;li data-fc-id=&quot;3-1&quot; data-fc-name=&quot;Item 3.2&quot;&gt;Item 3.2&lt;/li&gt;
+			&lt;li data-fc-id=&quot;3-2&quot; data-fc-name=&quot;Item 3.3&quot;&gt;Item 3.3&lt;/li&gt;
+			&lt;li data-fc-id=&quot;3-3&quot; data-fc-name=&quot;Item 3.4&quot;&gt;Item 3.4&lt;/li&gt;
+			&lt;li data-fc-id=&quot;3-4&quot; data-fc-name=&quot;Item 3.5&quot;&gt;Item 3.5&lt;/li&gt;
+			&lt;li data-fc-id=&quot;3-5&quot; data-fc-name=&quot;Item 3.6&quot;&gt;Item 3.6&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+	&lt;li data-fc-id=&quot;3&quot; data-fc-name=&quot;Item 4&quot;&gt;
+		Item 4
+	&lt;/li&gt;
+	&lt;li data-fc-id=&quot;4&quot; data-fc-name=&quot;Item 5&quot;&gt;
+		Item 5
+	&lt;/li&gt;
+	&lt;li data-fc-id=&quot;5&quot; data-fc-name=&quot;Item 6&quot;&gt;
+		Item 6
+	&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Order to input</h2>
+         <p>Drag & Drop sortable lists to input field</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-sortable-input-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <ul class="list" data-fc-modules="sortable" data-fc-input="sortable-input">
+	<li id="sortable-1">Item 1</li>
+	<li id="sortable-2">item 2</li>
+	<li id="sortable-3">item 3</li>
+</ul>
+<form class="form">
+	<label>Order</label>
+	<input id="sortable-input" type="text" value="">
+</form>                                            </div>
+        </section>
+                <section id="tab-sortable-input-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ul class=&quot;list&quot; data-fc-modules=&quot;sortable&quot; data-fc-input=&quot;sortable-input&quot;&gt;
+	&lt;li id=&quot;sortable-1&quot;&gt;Item 1&lt;/li&gt;
+	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
+	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form class=&quot;form&quot;&gt;
+	&lt;label&gt;Order&lt;/label&gt;
+	&lt;input id=&quot;sortable-input&quot; type=&quot;text&quot; value=&quot;&quot;&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Order to Ajax call</h2>
+         <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-sortable-ajax-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <ul class="list" data-fc-modules="sortable" data-fc-url="#" data-fc-output="json">
+	<li>
+		Item 1
+		<ul class="list">
+			<li>
+				Item 1
+				<ul class="list">
+					<li>
+						Item 1
+					</li>
+					<li>item 2</li>
+					<li>item 3</li>
+				</ul>
+			</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</ul>
+	</li>
+	<li id="sortable-2">item 2</li>
+	<li id="sortable-3">item 3</li>
+</ul>
+                                            </div>
+        </section>
+                <section id="tab-sortable-ajax-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ul class=&quot;list&quot; data-fc-modules=&quot;sortable&quot; data-fc-url=&quot;#&quot; data-fc-output=&quot;json&quot;&gt;
+	&lt;li&gt;
+		Item 1
+		&lt;ul class=&quot;list&quot;&gt;
+			&lt;li&gt;
+				Item 1
+				&lt;ul class=&quot;list&quot;&gt;
+					&lt;li&gt;
+						Item 1
+					&lt;/li&gt;
+					&lt;li&gt;item 2&lt;/li&gt;
+					&lt;li&gt;item 3&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;item 2&lt;/li&gt;
+			&lt;li&gt;item 3&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
+	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-url</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Url of the ajax service to save changes. If it's not defined there is not ajax call.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-input</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Id of the Input that should get the order. If it's not defined no data will be send to any input.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: sortable</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-output</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Define how will be the output send, by a string separated by comma or a complex json.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: string</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If you define this as 'nested' will work with data-fc-depth levels of lists.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: default</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-handle</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Looks for just an element (using jquery selector) inside the items to be the handle.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-depth</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If you define the type as nested will set how many depth levels will accept</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 2</p>
+                            </dd>
+                    </dl>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,201 +613,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <section class="box-lighten">
-        <h2>Nested Lists</h2>
-        <p>Drag & Drop nestable lists. This is very useful to order categories for example.</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-sortable-nested-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <ol id="item" class="js-sortable" data-fc-modules="sortable" data-fc-url="#" data-fc-type="nested" data-fc-output="json" data-fc-depth="2">
-	<li data-fc-id="0" data-fc-name="Item 1">
-		Item 1
-	</li>
-	<li data-fc-id="1" data-fc-name="Item 2">
-		Item 2
-	</li>
-	<li data-fc-id="2" data-fc-name="Item 3">
-		Item 3
-		<ol>
-			<li data-fc-id="3-0" data-fc-name="Item 3.1">Item 3.1</li>
-			<li data-fc-id="3-1" data-fc-name="Item 3.2">Item 3.2</li>
-			<li data-fc-id="3-2" data-fc-name="Item 3.3">Item 3.3</li>
-			<li data-fc-id="3-3" data-fc-name="Item 3.4">Item 3.4</li>
-			<li data-fc-id="3-4" data-fc-name="Item 3.5">Item 3.5</li>
-			<li data-fc-id="3-5" data-fc-name="Item 3.6">Item 3.6</li>
-		</ol>
-	</li>
-	<li data-fc-id="3" data-fc-name="Item 4">
-		Item 4
-	</li>
-	<li data-fc-id="4" data-fc-name="Item 5">
-		Item 5
-	</li>
-	<li data-fc-id="5" data-fc-name="Item 6">
-		Item 6
-	</li>
-</ol>                                            </div>
-        </section>
-                <section id="tab-sortable-nested-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;ol id=&quot;item&quot; class=&quot;js-sortable&quot; data-fc-modules=&quot;sortable&quot; data-fc-url=&quot;#&quot; data-fc-type=&quot;nested&quot; data-fc-output=&quot;json&quot; data-fc-depth=&quot;2&quot;&gt;
-	&lt;li data-fc-id=&quot;0&quot; data-fc-name=&quot;Item 1&quot;&gt;
-		Item 1
-	&lt;/li&gt;
-	&lt;li data-fc-id=&quot;1&quot; data-fc-name=&quot;Item 2&quot;&gt;
-		Item 2
-	&lt;/li&gt;
-	&lt;li data-fc-id=&quot;2&quot; data-fc-name=&quot;Item 3&quot;&gt;
-		Item 3
-		&lt;ol&gt;
-			&lt;li data-fc-id=&quot;3-0&quot; data-fc-name=&quot;Item 3.1&quot;&gt;Item 3.1&lt;/li&gt;
-			&lt;li data-fc-id=&quot;3-1&quot; data-fc-name=&quot;Item 3.2&quot;&gt;Item 3.2&lt;/li&gt;
-			&lt;li data-fc-id=&quot;3-2&quot; data-fc-name=&quot;Item 3.3&quot;&gt;Item 3.3&lt;/li&gt;
-			&lt;li data-fc-id=&quot;3-3&quot; data-fc-name=&quot;Item 3.4&quot;&gt;Item 3.4&lt;/li&gt;
-			&lt;li data-fc-id=&quot;3-4&quot; data-fc-name=&quot;Item 3.5&quot;&gt;Item 3.5&lt;/li&gt;
-			&lt;li data-fc-id=&quot;3-5&quot; data-fc-name=&quot;Item 3.6&quot;&gt;Item 3.6&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/li&gt;
-	&lt;li data-fc-id=&quot;3&quot; data-fc-name=&quot;Item 4&quot;&gt;
-		Item 4
-	&lt;/li&gt;
-	&lt;li data-fc-id=&quot;4&quot; data-fc-name=&quot;Item 5&quot;&gt;
-		Item 5
-	&lt;/li&gt;
-	&lt;li data-fc-id=&quot;5&quot; data-fc-name=&quot;Item 6&quot;&gt;
-		Item 6
-	&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Order to input</h2>
-         <p>Drag & Drop sortable lists to input field</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-sortable-input-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <ul class="list" data-fc-modules="sortable" data-fc-input="sortable-input">
-	<li id="sortable-1">Item 1</li>
-	<li id="sortable-2">item 2</li>
-	<li id="sortable-3">item 3</li>
-</ul>
-<form class="form">
-	<label>Order</label>
-	<input id="sortable-input" type="text" value="">
-</form>                                            </div>
-        </section>
-                <section id="tab-sortable-input-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;ul class=&quot;list&quot; data-fc-modules=&quot;sortable&quot; data-fc-input=&quot;sortable-input&quot;&gt;
-	&lt;li id=&quot;sortable-1&quot;&gt;Item 1&lt;/li&gt;
-	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
-	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;form class=&quot;form&quot;&gt;
-	&lt;label&gt;Order&lt;/label&gt;
-	&lt;input id=&quot;sortable-input&quot; type=&quot;text&quot; value=&quot;&quot;&gt;
-&lt;/form&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Order to Ajax call</h2>
-         <p>Drag & Drop sortable lists with ajax callback to save changes.</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-sortable-ajax-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <ul class="list" data-fc-modules="sortable" data-fc-url="#" data-fc-output="json">
-	<li>
-		Item 1
-		<ul class="list">
-			<li>
-				Item 1
-				<ul class="list">
-					<li>
-						Item 1
-					</li>
-					<li>item 2</li>
-					<li>item 3</li>
-				</ul>
-			</li>
-			<li>item 2</li>
-			<li>item 3</li>
-		</ul>
-	</li>
-	<li id="sortable-2">item 2</li>
-	<li id="sortable-3">item 3</li>
-</ul>
-                                            </div>
-        </section>
-                <section id="tab-sortable-ajax-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;ul class=&quot;list&quot; data-fc-modules=&quot;sortable&quot; data-fc-url=&quot;#&quot; data-fc-output=&quot;json&quot;&gt;
-	&lt;li&gt;
-		Item 1
-		&lt;ul class=&quot;list&quot;&gt;
-			&lt;li&gt;
-				Item 1
-				&lt;ul class=&quot;list&quot;&gt;
-					&lt;li&gt;
-						Item 1
-					&lt;/li&gt;
-					&lt;li&gt;item 2&lt;/li&gt;
-					&lt;li&gt;item 3&lt;/li&gt;
-				&lt;/ul&gt;
-			&lt;/li&gt;
-			&lt;li&gt;item 2&lt;/li&gt;
-			&lt;li&gt;item 3&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li id=&quot;sortable-2&quot;&gt;item 2&lt;/li&gt;
-	&lt;li id=&quot;sortable-3&quot;&gt;item 3&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-fc-url</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Url of the ajax service to save changes. If it's not defined there is not ajax call.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-input</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Id of the Input that should get the order. If it's not defined no data will be send to any input.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: sortable</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-output</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Define how will be the output send, by a string separated by comma or a complex json.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: string</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If you define this as 'nested' will work with data-fc-depth levels of lists.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: default</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-handle</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Looks for just an element (using jquery selector) inside the items to be the handle.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-depth</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If you define the type as nested will set how many depth levels will accept</p>
-                                <p class="fz-xs c-secondary">DEFAULT: 2</p>
-                            </dd>
-                    </dl>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -642,23 +639,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

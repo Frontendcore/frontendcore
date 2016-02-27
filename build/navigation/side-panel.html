@@ -24,22 +24,208 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Side Panel / Menu</h1>
-                                    <p>The right page</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Side Panel / Menu</h1>
+                                            <p>The right page</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <p>Inside this panel you can add the code you want, you can use it to show some info, add a menu or an image gallery for example.</p>
+    <section class="box-lighten">
+        <h2>Side Panel on the left</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-side-panel-1-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="side-panel" href="#side-panel-left">Toggle panel left</a>
+
+<div id="side-panel-left" class="box _foreground">
+	<h1>Hey ya!</h1>
+	<p>Left do this!</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-side-panel-1-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; href=&quot;#side-panel-left&quot;&gt;Toggle panel left&lt;/a&gt;
+
+&lt;div id=&quot;side-panel-left&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;Left do this!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Side panel on the right</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-side-panel-2-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="side-panel" data-fc-position="right" href="#side-panel-right">Toggle panel right</a>
+
+<div id="side-panel-right" class="box _background">
+	<h1>Hi there!</h1>
+	<p>I'm on the right side.</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-side-panel-2-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; href=&quot;#side-panel-right&quot;&gt;Toggle panel right&lt;/a&gt;
+
+&lt;div id=&quot;side-panel-right&quot; class=&quot;box _background&quot;&gt;
+	&lt;h1&gt;Hi there!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Side panel tabbed</h2>
+        <p>If you include the link inside sidepanel it will be shown as a vertical tab. If you want to personalize the appearance just use the data-fc-class parameter.</p>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-side-panel-tab-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <div id="side-panel-tab-1" class="box _foreground">
+	<h1>Like a virgin!</h1>
+	<p>I'm on the right side.</p>
+</div>
+<a data-fc-modules="side-panel" data-fc-position="right" data-fc-tab-top="22%" data-fc-width="600" data-fc-tab="true" href="#side-panel-tab-1" class="button button-primary">Panel 1<i class="icon-arrow-right"></i> </a>
+
+<div id="side-panel-tab-2" class="box _foreground">
+	<h1>Like a virgin!</h1>
+	<p>I'm on the right side.</p>
+</div>
+<a data-fc-modules="side-panel" data-fc-position="right" data-fc-tab-top="35%" data-fc-tab="true" href="#side-panel-tab-2" class="button button-secondary">Panel 2 <i class="icon-arrow-right"></i> </a>                                            </div>
+        </section>
+                <section id="tab-side-panel-tab-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;div id=&quot;side-panel-tab-1&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Like a virgin!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; data-fc-tab-top=&quot;22%&quot; data-fc-width=&quot;600&quot; data-fc-tab=&quot;true&quot; href=&quot;#side-panel-tab-1&quot; class=&quot;button button-primary&quot;&gt;Panel 1&lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; &lt;/a&gt;
+
+&lt;div id=&quot;side-panel-tab-2&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Like a virgin!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
+&lt;/div&gt;
+&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; data-fc-tab-top=&quot;35%&quot; data-fc-tab=&quot;true&quot; href=&quot;#side-panel-tab-2&quot; class=&quot;button button-secondary&quot;&gt;Panel 2 &lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; &lt;/a&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <p>The side panel is also the easiest way for doing your menu responsive.</p>
+    <section class="box-lighten">
+        <h2>Side menu on the left</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-side-menu-1-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="side-panel" href="#side-menu-left" data-fc-clone="false" data-fc-width="200">Toggle menu left</a>
+
+<div id="side-menu-left" class="navigation _primary _vertical">
+	<ul>
+		<li><a href="#">List 1</a></li>
+		<li><a href="#">List 2</a></li>
+		<li><a href="#">List 3</a></li>
+	</ul>
+</div>                                            </div>
+        </section>
+                <section id="tab-side-menu-1-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; href=&quot;#side-menu-left&quot; data-fc-clone=&quot;false&quot; data-fc-width=&quot;200&quot;&gt;Toggle menu left&lt;/a&gt;
+
+&lt;div id=&quot;side-menu-left&quot; class=&quot;navigation _primary _vertical&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section class="box-lighten">
+        <h2>Side menu on the right</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-side-menu-2-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="side-panel" data-fc-position="right" href="#side-menu-right"  data-fc-width="200">Toggle menu right</a>
+
+<div id="side-menu-right" class="navigation _primary _vertical hidden">
+	<!-- Your content -->
+	<ul>
+		<li><a href="#">List 1</a></li>
+		<li><a href="#">List 2</a></li>
+		<li><a href="#">List 3</a></li>
+	</ul>
+</div>                                            </div>
+        </section>
+                <section id="tab-side-menu-2-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; href=&quot;#side-menu-right&quot;  data-fc-width=&quot;200&quot;&gt;Toggle menu right&lt;/a&gt;
+
+&lt;div id=&quot;side-menu-right&quot; class=&quot;navigation _primary _vertical hidden&quot;&gt;
+	&lt;!-- Your content --&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">href</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">The href of the link will be an anchor to the menu.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-position</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Define the left or right position for the panel.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: left</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-width</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Define the width for the panel.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: 15.6em</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-tab</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If it's set to true will move the open link to a side tab on the side you specified in position</p>
+                                <p class="fz-xs c-secondary">DEFAULT: false</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-tab</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If it's set to true will move the open link to a side tab on the side you specified in position</p>
+                                <p class="fz-xs c-secondary">DEFAULT: false</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-clone</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If you set this to true the content inside the panel should be a clone of the original. This is very useful to create sidemenus using the same menu of desktop, because the copy ignores the desktop, mobile and tablet classes.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: false</p>
+                            </dd>
+                    </dl>
+
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,195 +607,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <p>Inside this panel you can add the code you want, you can use it to show some info, add a menu or an image gallery for example.</p>
-    <section class="box-lighten">
-        <h2>Side Panel on the left</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-side-panel-1-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <a data-fc-modules="side-panel" href="#side-panel-left">Toggle panel left</a>
-
-<div id="side-panel-left" class="box _foreground">
-	<h1>Hey ya!</h1>
-	<p>Left do this!</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-side-panel-1-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; href=&quot;#side-panel-left&quot;&gt;Toggle panel left&lt;/a&gt;
-
-&lt;div id=&quot;side-panel-left&quot; class=&quot;box _foreground&quot;&gt;
-	&lt;h1&gt;Hey ya!&lt;/h1&gt;
-	&lt;p&gt;Left do this!&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Side panel on the right</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-side-panel-2-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <a data-fc-modules="side-panel" data-fc-position="right" href="#side-panel-right">Toggle panel right</a>
-
-<div id="side-panel-right" class="box _background">
-	<h1>Hi there!</h1>
-	<p>I'm on the right side.</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-side-panel-2-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; href=&quot;#side-panel-right&quot;&gt;Toggle panel right&lt;/a&gt;
-
-&lt;div id=&quot;side-panel-right&quot; class=&quot;box _background&quot;&gt;
-	&lt;h1&gt;Hi there!&lt;/h1&gt;
-	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Side panel tabbed</h2>
-        <p>If you include the link inside sidepanel it will be shown as a vertical tab. If you want to personalize the appearance just use the data-fc-class parameter.</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-side-panel-tab-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div id="side-panel-tab-1" class="box _foreground">
-	<h1>Like a virgin!</h1>
-	<p>I'm on the right side.</p>
-</div>
-<a data-fc-modules="side-panel" data-fc-position="right" data-fc-tab-top="22%" data-fc-width="600" data-fc-tab="true" href="#side-panel-tab-1" class="button button-primary">Panel 1<i class="icon-arrow-right"></i> </a>
-
-<div id="side-panel-tab-2" class="box _foreground">
-	<h1>Like a virgin!</h1>
-	<p>I'm on the right side.</p>
-</div>
-<a data-fc-modules="side-panel" data-fc-position="right" data-fc-tab-top="35%" data-fc-tab="true" href="#side-panel-tab-2" class="button button-secondary">Panel 2 <i class="icon-arrow-right"></i> </a>                                            </div>
-        </section>
-                <section id="tab-side-panel-tab-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div id=&quot;side-panel-tab-1&quot; class=&quot;box _foreground&quot;&gt;
-	&lt;h1&gt;Like a virgin!&lt;/h1&gt;
-	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
-&lt;/div&gt;
-&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; data-fc-tab-top=&quot;22%&quot; data-fc-width=&quot;600&quot; data-fc-tab=&quot;true&quot; href=&quot;#side-panel-tab-1&quot; class=&quot;button button-primary&quot;&gt;Panel 1&lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; &lt;/a&gt;
-
-&lt;div id=&quot;side-panel-tab-2&quot; class=&quot;box _foreground&quot;&gt;
-	&lt;h1&gt;Like a virgin!&lt;/h1&gt;
-	&lt;p&gt;I&#039;m on the right side.&lt;/p&gt;
-&lt;/div&gt;
-&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; data-fc-tab-top=&quot;35%&quot; data-fc-tab=&quot;true&quot; href=&quot;#side-panel-tab-2&quot; class=&quot;button button-secondary&quot;&gt;Panel 2 &lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; &lt;/a&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <p>The side panel is also the easiest way for doing your menu responsive.</p>
-    <section class="box-lighten">
-        <h2>Side menu on the left</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-side-menu-1-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <a data-fc-modules="side-panel" href="#side-menu-left" data-fc-clone="false" data-fc-width="200">Toggle menu left</a>
-
-<div id="side-menu-left" class="navigation _primary _vertical">
-	<ul>
-		<li><a href="#">List 1</a></li>
-		<li><a href="#">List 2</a></li>
-		<li><a href="#">List 3</a></li>
-	</ul>
-</div>                                            </div>
-        </section>
-                <section id="tab-side-menu-1-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; href=&quot;#side-menu-left&quot; data-fc-clone=&quot;false&quot; data-fc-width=&quot;200&quot;&gt;Toggle menu left&lt;/a&gt;
-
-&lt;div id=&quot;side-menu-left&quot; class=&quot;navigation _primary _vertical&quot;&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 1&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 2&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 3&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section class="box-lighten">
-        <h2>Side menu on the right</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-side-menu-2-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <a data-fc-modules="side-panel" data-fc-position="right" href="#side-menu-right"  data-fc-width="200">Toggle menu right</a>
-
-<div id="side-menu-right" class="navigation _primary _vertical hidden">
-	<!-- Your content -->
-	<ul>
-		<li><a href="#">List 1</a></li>
-		<li><a href="#">List 2</a></li>
-		<li><a href="#">List 3</a></li>
-	</ul>
-</div>                                            </div>
-        </section>
-                <section id="tab-side-menu-2-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;side-panel&quot; data-fc-position=&quot;right&quot; href=&quot;#side-menu-right&quot;  data-fc-width=&quot;200&quot;&gt;Toggle menu right&lt;/a&gt;
-
-&lt;div id=&quot;side-menu-right&quot; class=&quot;navigation _primary _vertical hidden&quot;&gt;
-	&lt;!-- Your content --&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 1&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 2&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List 3&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">href</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">The href of the link will be an anchor to the menu.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-position</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Define the left or right position for the panel.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: left</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-width</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Define the width for the panel.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: 15.6em</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-tab</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If it's set to true will move the open link to a side tab on the side you specified in position</p>
-                                <p class="fz-xs c-secondary">DEFAULT: false</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-tab</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If it's set to true will move the open link to a side tab on the side you specified in position</p>
-                                <p class="fz-xs c-secondary">DEFAULT: false</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-clone</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">If you set this to true the content inside the panel should be a clone of the original. This is very useful to create sidemenus using the same menu of desktop, because the copy ignores the desktop, mobile and tablet classes.</p>
-                                <p class="fz-xs c-secondary">DEFAULT: false</p>
-                            </dd>
-                    </dl>
-
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -636,23 +633,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

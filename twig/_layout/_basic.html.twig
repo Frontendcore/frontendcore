@@ -26,24 +26,24 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="fc-header-logo"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>{{ current_children }}</h1>
-                {% if current_subtitle %}
-                    <p>{{ current_subtitle }}</p>
-                {% endif %}
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">{{ current_children }}</h1>
+                    {% if current_subtitle %}
+                        <p>{{ current_subtitle }}</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                {% block main %}{% endblock main %}
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                     {% block navigation %}
@@ -74,9 +74,6 @@
                         </nav>
                     {% endblock navigation %}
                 </div>
-            </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                {% block main %}{% endblock main %}
             </div>
         </div>
     </div>

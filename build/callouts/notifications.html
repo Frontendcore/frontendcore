@@ -24,22 +24,108 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Notifications</h1>
-                                    <p>Visual colors, and visual messages.</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Notifications</h1>
+                                            <p>Visual colors, and visual messages.</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <p>The notifications component has a dependency with the <a href="messages.html">CSS object messages</a></p>
+    <section class="box-lighten">
+        <h2>Show notification on page load</h2>
+        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
+        <input type="hidden"  data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
+                    <pre><code data-fc-modules="code">&lt;input type=&quot;hidden&quot;  data-fc-modules=&quot;notification&quot; data-fc-event=&quot;load&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;This message is shown when this page is loaded&quot; /&gt;</code></pre>
+
+    </section>
+        <h2>Show notification on click</h2>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-notifications-click-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <!-- ok notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="success" data-fc-text="Congratulations!">Click me to show a success notification</a></p>
+
+<!--  ko notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="error" data-fc-autoclose="3" data-fc-text="Error!">Click me to show an error notification</a></p>
+
+<!--  warning notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="warning" data-fc-text="Caution!">Click me to show a warning notification</a></p>
+
+<!--  info notification -->
+<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="info" data-fc-text="Did you know?">Click me to show an info notification</a></p>
+                                            </div>
+        </section>
+                <section id="tab-notifications-click-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;!-- ok notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;success&quot; data-fc-text=&quot;Congratulations!&quot;&gt;Click me to show a success notification&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--  ko notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;error&quot; data-fc-autoclose=&quot;3&quot; data-fc-text=&quot;Error!&quot;&gt;Click me to show an error notification&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--  warning notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;warning&quot; data-fc-text=&quot;Caution!&quot;&gt;Click me to show a warning notification&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--  info notification --&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;Did you know?&quot;&gt;Click me to show an info notification&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+        <h2>Show notification in a module</h2>
+        <p>If you need to show a notification in a module the best way is to use the <a href="../architecture-js/mediator.html">module commnication (Mediator)</a>. Here you have an example of how to show a message when a module starts.</p>
+                    <pre><code data-fc-modules="code">
+// 1. Define your module and set &#039;notification&#039; as dependency
+FrontendCore.define(&#039;myModule&#039;, [&#039;notification&#039;], function () {
+	return {
+		onStart: function () {
+			//2 . Publish on mediator the notification
+			FrontendMediator.publish( &#039;notification&#039;, { type : &#039;success&#039;, message: &#039;Your message here&#039; } );
+		},
+		onStop: function () {
+			// 3.Set free some memory when module stops
+			FrontendMediator = null;
+		},
+		onDestroy: function () {
+			// 4. Delete oModal to avoid memory problems
+			delete this.mediator;
+		}
+	};
+});</code></pre>
+
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">data-fc-event</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines the content to load</p>
+                                <p class="fz-xs c-secondary">DEFAULT: click</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Type of the message (success, error, warning or info)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: ok</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-text</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Text to show in the message. If it's not defined the message will not be shown.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-autclose</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines how many seconds the message will be shown (1, 2, 3...). Also can disable autoclose (set it to false). By default is 5 seconds.</p>
+                            </dd>
+                    </dl>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,95 +507,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <p>The notifications component has a dependency with the <a href="messages.html">CSS object messages</a></p>
-    <section class="box-lighten">
-        <h2>Show notification on page load</h2>
-        <p>If you need to show a message when the page is loaded just add an input hidden somewhere in the DOM.</p>
-        <input type="hidden"  data-fc-modules="notification" data-fc-event="load" data-fc-type="info" data-fc-text="This message is shown when this page is loaded" />
-                    <pre><code data-fc-modules="code">&lt;input type=&quot;hidden&quot;  data-fc-modules=&quot;notification&quot; data-fc-event=&quot;load&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;This message is shown when this page is loaded&quot; /&gt;</code></pre>
-
-    </section>
-        <h2>Show notification on click</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-notifications-click-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <!-- ok notification -->
-<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="success" data-fc-text="Congratulations!">Click me to show a success notification</a></p>
-
-<!--  ko notification -->
-<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="error" data-fc-autoclose="3" data-fc-text="Error!">Click me to show an error notification</a></p>
-
-<!--  warning notification -->
-<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="warning" data-fc-text="Caution!">Click me to show a warning notification</a></p>
-
-<!--  info notification -->
-<p><a href="#" data-fc-modules="notification" data-fc-event="click" data-fc-type="info" data-fc-text="Did you know?">Click me to show an info notification</a></p>
-                                            </div>
-        </section>
-                <section id="tab-notifications-click-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;!-- ok notification --&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;success&quot; data-fc-text=&quot;Congratulations!&quot;&gt;Click me to show a success notification&lt;/a&gt;&lt;/p&gt;
-
-&lt;!--  ko notification --&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;error&quot; data-fc-autoclose=&quot;3&quot; data-fc-text=&quot;Error!&quot;&gt;Click me to show an error notification&lt;/a&gt;&lt;/p&gt;
-
-&lt;!--  warning notification --&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;warning&quot; data-fc-text=&quot;Caution!&quot;&gt;Click me to show a warning notification&lt;/a&gt;&lt;/p&gt;
-
-&lt;!--  info notification --&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; data-fc-modules=&quot;notification&quot; data-fc-event=&quot;click&quot; data-fc-type=&quot;info&quot; data-fc-text=&quot;Did you know?&quot;&gt;Click me to show an info notification&lt;/a&gt;&lt;/p&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-        <h2>Show notification in a module</h2>
-        <p>If you need to show a notification in a module the best way is to use the <a href="../architecture-js/mediator.html">module commnication (Mediator)</a>. Here you have an example of how to show a message when a module starts.</p>
-                    <pre><code data-fc-modules="code">
-// 1. Define your module and set &#039;notification&#039; as dependency
-FrontendCore.define(&#039;myModule&#039;, [&#039;notification&#039;], function () {
-	return {
-		onStart: function () {
-			//2 . Publish on mediator the notification
-			FrontendMediator.publish( &#039;notification&#039;, { type : &#039;success&#039;, message: &#039;Your message here&#039; } );
-		},
-		onStop: function () {
-			// 3.Set free some memory when module stops
-			FrontendMediator = null;
-		},
-		onDestroy: function () {
-			// 4. Delete oModal to avoid memory problems
-			delete this.mediator;
-		}
-	};
-});</code></pre>
-
-            <hr />
-        <h2 class="mb-m">Attributes</h2>
-        <dl class="list">
-                        <dt><h5 class="mb-n c-primary">data-fc-event</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Defines the content to load</p>
-                                <p class="fz-xs c-secondary">DEFAULT: click</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-type</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Type of the message (success, error, warning or info)</p>
-                                <p class="fz-xs c-secondary">DEFAULT: ok</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-text</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Text to show in the message. If it's not defined the message will not be shown.</p>
-                            </dd>
-                        <dt><h5 class="mb-n c-primary">data-fc-autclose</h5></dt>
-            <dd class="mb-l">
-                <p class="mb-s">Defines how many seconds the message will be shown (1, 2, 3...). Also can disable autoclose (set it to false). By default is 5 seconds.</p>
-                            </dd>
-                    </dl>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -536,23 +533,23 @@ FrontendCore.define(&#039;myModule&#039;, [&#039;notification&#039;], function (
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

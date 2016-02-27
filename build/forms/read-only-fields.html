@@ -24,22 +24,179 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Read Only Fields</h1>
-                                    <p>Just add the class .form to your form and take a break.</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Read Only Fields</h1>
+                                            <p>Just add the class .form to your form and take a break.</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-complex-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <form class="form mt-xl">
+	<fieldset>
+		<legend>Read Only Text fields</legend>
+		<ol>
+			<li>
+				<label for="readonly-text-field">Text Field 100%</label>
+				<input type="text" id="readonly-text-field" readonly="readOnly" value="Text field 100%"/>
+			</li>
+			<li>
+				<label for="readonly-text-field2">Text Field <em>label class="w-50"</em></label>
+				<input type="text" id="readonly-text-field2" readonly="readOnly" class="w-50" value="Text field 50% - w-50"/>
+			</li>
+
+			<li>
+				<label for="readonly-url-field">URL Field</label>
+				<input type="url" id="readonly-url-field" readonly="readOnly" value="http://website.com" />
+			</li>
+			<li>
+				<label for="readonly-email-field">Email Field</label>
+				<input type="email" id="readonly-email-field" readonly="readOnly" value="your.email@website.com" />
+			</li>
+			<li>
+				<label for="readonly-Password-field">Password Field</label>
+				<input type="password" id="readonly-Password-field" readonly="readOnly" value="secret" />
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Read Only Numbers fields</legend>
+		<ol>
+			<li>
+				<label for="readonly-tel-field">Telephone Field</label>
+				<input type="tel" id="readonly-tel-field" readonly="readOnly" value="999999999"/>
+			</li>
+			<li>
+				<label for="readonly-text-field22">Number Field</label>
+				<span>$</span>
+				<input type="number" id="readonly-text-field22" readonly="readOnly" value="0" min="0.15" />
+				<span>/ month</span>
+			</li>
+			<li>
+				<label for="readonly-text-field23">Number Field</label>
+				<span>$</span>
+				<input type="number" id="readonly-text-field23" readonly="readOnly" value="0" min="0.15" max="100" />
+				<span>/ click</span>
+				<span class="explain">min="0.15" max="100"</span>
+			</li>
+			<li>
+				<label for="readonly-date-field">Date Field</label>
+				<input type="date" id="readonly-date-field" readonly="readOnly"/>
+			</li>
+
+			<li>
+				<label for="readonly-datetime-local">datetime-local</label>
+				<input type="datetime-local" id="readonly-datetime-local" readonly="readOnly" />
+			</li>
+			<li>
+				<label for="readonly-month">month</label>
+				<input type="month" id="readonly-month" readonly="readOnly" />
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Read Only textarea</legend>
+		<ol>
+			<li>
+				<label for="readonly-text-area">Textarea</label>
+				<textarea id="readonly-text-area" readonly="readOnly">Some text</textarea>
+			</li>
+		</ol>
+	</fieldset>
+	<button type="submit" class="button-primary">Continue</button>
+</form>
+                                            </div>
+        </section>
+                <section id="tab-complex-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form mt-xl&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only Text fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field&quot;&gt;Text Field 100%&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field&quot; readonly=&quot;readOnly&quot; value=&quot;Text field 100%&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field2&quot;&gt;Text Field &lt;em&gt;label class=&quot;w-50&quot;&lt;/em&gt;&lt;/label&gt;
+				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field2&quot; readonly=&quot;readOnly&quot; class=&quot;w-50&quot; value=&quot;Text field 50% - w-50&quot;/&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-url-field&quot;&gt;URL Field&lt;/label&gt;
+				&lt;input type=&quot;url&quot; id=&quot;readonly-url-field&quot; readonly=&quot;readOnly&quot; value=&quot;http://website.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-email-field&quot;&gt;Email Field&lt;/label&gt;
+				&lt;input type=&quot;email&quot; id=&quot;readonly-email-field&quot; readonly=&quot;readOnly&quot; value=&quot;your.email@website.com&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-Password-field&quot;&gt;Password Field&lt;/label&gt;
+				&lt;input type=&quot;password&quot; id=&quot;readonly-Password-field&quot; readonly=&quot;readOnly&quot; value=&quot;secret&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only Numbers fields&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-tel-field&quot;&gt;Telephone Field&lt;/label&gt;
+				&lt;input type=&quot;tel&quot; id=&quot;readonly-tel-field&quot; readonly=&quot;readOnly&quot; value=&quot;999999999&quot;/&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field22&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field22&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; /&gt;
+				&lt;span&gt;/ month&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-field23&quot;&gt;Number Field&lt;/label&gt;
+				&lt;span&gt;$&lt;/span&gt;
+				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field23&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
+				&lt;span&gt;/ click&lt;/span&gt;
+				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-date-field&quot;&gt;Date Field&lt;/label&gt;
+				&lt;input type=&quot;date&quot; id=&quot;readonly-date-field&quot; readonly=&quot;readOnly&quot;/&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-datetime-local&quot;&gt;datetime-local&lt;/label&gt;
+				&lt;input type=&quot;datetime-local&quot; id=&quot;readonly-datetime-local&quot; readonly=&quot;readOnly&quot; /&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-month&quot;&gt;month&lt;/label&gt;
+				&lt;input type=&quot;month&quot; id=&quot;readonly-month&quot; readonly=&quot;readOnly&quot; /&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Read Only textarea&lt;/legend&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;readonly-text-area&quot;&gt;Textarea&lt;/label&gt;
+				&lt;textarea id=&quot;readonly-text-area&quot; readonly=&quot;readOnly&quot;&gt;Some text&lt;/textarea&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,166 +578,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-complex-fields-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <form class="form mt-xl">
-	<fieldset>
-		<legend>Read Only Text fields</legend>
-		<ol>
-			<li>
-				<label for="readonly-text-field">Text Field 100%</label>
-				<input type="text" id="readonly-text-field" readonly="readOnly" value="Text field 100%"/>
-			</li>
-			<li>
-				<label for="readonly-text-field2">Text Field <em>label class="w-50"</em></label>
-				<input type="text" id="readonly-text-field2" readonly="readOnly" class="w-50" value="Text field 50% - w-50"/>
-			</li>
-
-			<li>
-				<label for="readonly-url-field">URL Field</label>
-				<input type="url" id="readonly-url-field" readonly="readOnly" value="http://website.com" />
-			</li>
-			<li>
-				<label for="readonly-email-field">Email Field</label>
-				<input type="email" id="readonly-email-field" readonly="readOnly" value="your.email@website.com" />
-			</li>
-			<li>
-				<label for="readonly-Password-field">Password Field</label>
-				<input type="password" id="readonly-Password-field" readonly="readOnly" value="secret" />
-			</li>
-		</ol>
-	</fieldset>
-	<fieldset>
-		<legend>Read Only Numbers fields</legend>
-		<ol>
-			<li>
-				<label for="readonly-tel-field">Telephone Field</label>
-				<input type="tel" id="readonly-tel-field" readonly="readOnly" value="999999999"/>
-			</li>
-			<li>
-				<label for="readonly-text-field22">Number Field</label>
-				<span>$</span>
-				<input type="number" id="readonly-text-field22" readonly="readOnly" value="0" min="0.15" />
-				<span>/ month</span>
-			</li>
-			<li>
-				<label for="readonly-text-field23">Number Field</label>
-				<span>$</span>
-				<input type="number" id="readonly-text-field23" readonly="readOnly" value="0" min="0.15" max="100" />
-				<span>/ click</span>
-				<span class="explain">min="0.15" max="100"</span>
-			</li>
-			<li>
-				<label for="readonly-date-field">Date Field</label>
-				<input type="date" id="readonly-date-field" readonly="readOnly"/>
-			</li>
-
-			<li>
-				<label for="readonly-datetime-local">datetime-local</label>
-				<input type="datetime-local" id="readonly-datetime-local" readonly="readOnly" />
-			</li>
-			<li>
-				<label for="readonly-month">month</label>
-				<input type="month" id="readonly-month" readonly="readOnly" />
-			</li>
-		</ol>
-	</fieldset>
-	<fieldset>
-		<legend>Read Only textarea</legend>
-		<ol>
-			<li>
-				<label for="readonly-text-area">Textarea</label>
-				<textarea id="readonly-text-area" readonly="readOnly">Some text</textarea>
-			</li>
-		</ol>
-	</fieldset>
-	<button type="submit" class="button-primary">Continue</button>
-</form>
-                                            </div>
-        </section>
-                <section id="tab-complex-fields-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form mt-xl&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Read Only Text fields&lt;/legend&gt;
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-text-field&quot;&gt;Text Field 100%&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field&quot; readonly=&quot;readOnly&quot; value=&quot;Text field 100%&quot;/&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-text-field2&quot;&gt;Text Field &lt;em&gt;label class=&quot;w-50&quot;&lt;/em&gt;&lt;/label&gt;
-				&lt;input type=&quot;text&quot; id=&quot;readonly-text-field2&quot; readonly=&quot;readOnly&quot; class=&quot;w-50&quot; value=&quot;Text field 50% - w-50&quot;/&gt;
-			&lt;/li&gt;
-
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-url-field&quot;&gt;URL Field&lt;/label&gt;
-				&lt;input type=&quot;url&quot; id=&quot;readonly-url-field&quot; readonly=&quot;readOnly&quot; value=&quot;http://website.com&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-email-field&quot;&gt;Email Field&lt;/label&gt;
-				&lt;input type=&quot;email&quot; id=&quot;readonly-email-field&quot; readonly=&quot;readOnly&quot; value=&quot;your.email@website.com&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-Password-field&quot;&gt;Password Field&lt;/label&gt;
-				&lt;input type=&quot;password&quot; id=&quot;readonly-Password-field&quot; readonly=&quot;readOnly&quot; value=&quot;secret&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Read Only Numbers fields&lt;/legend&gt;
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-tel-field&quot;&gt;Telephone Field&lt;/label&gt;
-				&lt;input type=&quot;tel&quot; id=&quot;readonly-tel-field&quot; readonly=&quot;readOnly&quot; value=&quot;999999999&quot;/&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-text-field22&quot;&gt;Number Field&lt;/label&gt;
-				&lt;span&gt;$&lt;/span&gt;
-				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field22&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; /&gt;
-				&lt;span&gt;/ month&lt;/span&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-text-field23&quot;&gt;Number Field&lt;/label&gt;
-				&lt;span&gt;$&lt;/span&gt;
-				&lt;input type=&quot;number&quot; id=&quot;readonly-text-field23&quot; readonly=&quot;readOnly&quot; value=&quot;0&quot; min=&quot;0.15&quot; max=&quot;100&quot; /&gt;
-				&lt;span&gt;/ click&lt;/span&gt;
-				&lt;span class=&quot;explain&quot;&gt;min=&quot;0.15&quot; max=&quot;100&quot;&lt;/span&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-date-field&quot;&gt;Date Field&lt;/label&gt;
-				&lt;input type=&quot;date&quot; id=&quot;readonly-date-field&quot; readonly=&quot;readOnly&quot;/&gt;
-			&lt;/li&gt;
-
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-datetime-local&quot;&gt;datetime-local&lt;/label&gt;
-				&lt;input type=&quot;datetime-local&quot; id=&quot;readonly-datetime-local&quot; readonly=&quot;readOnly&quot; /&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-month&quot;&gt;month&lt;/label&gt;
-				&lt;input type=&quot;month&quot; id=&quot;readonly-month&quot; readonly=&quot;readOnly&quot; /&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Read Only textarea&lt;/legend&gt;
-		&lt;ol&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;readonly-text-area&quot;&gt;Textarea&lt;/label&gt;
-				&lt;textarea id=&quot;readonly-text-area&quot; readonly=&quot;readOnly&quot;&gt;Some text&lt;/textarea&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;button type=&quot;submit&quot; class=&quot;button-primary&quot;&gt;Continue&lt;/button&gt;
-&lt;/form&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -607,23 +604,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

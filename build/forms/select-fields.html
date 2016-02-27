@@ -24,22 +24,181 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Select Fields</h1>
-                                    <p>Make your right choice</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Select Fields</h1>
+                                            <p>Make your right choice</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-select-fields-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <form class="form">
+	<fieldset>
+		<legend>Select fields</legend>
+		<ol class="row">
+			<li class="col">
+				<label for="select-field">System Default Select Field</label>
+				<select id="select-field" class="w-100">
+					<option>option 1</option>
+					<option>option 2</option>
+				</select>
+			</li>
+			<li class="col">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
+			</li>
+		</ol>
+		<ol class="row">
+			<li class="col">
+				<label for="select-field">Custom Select Field (wrap on a div.select)</label>
+				<div class="select">
+					<select id="select-field-2" class="w-100">
+						<option>option 1</option>
+						<option>option 2</option>
+					</select>
+				</div>
+			</li>
+			<li class="col">
+				<label>Text Field</label>
+				<input type="text" placeholder="text field">
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Select multiple</legend>
+		<ul id="countries_selector" class="select-multiple">
+			<li>
+				<a title="Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos." href="#" class="icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip" data-ov-content-id="tooltip-by-site"></a>
+				<label for="available_countries">Available countries</label>
+				<select id="available_countries" name="available_countries" multiple="multiple">
+					<optgroup>
+						<option value="DE">Alemania</option>
+						<option value="AU">Australia</option>
+						<option value="AT">Austria</option>
+						<option value="BR">Brasil</option>
+						<option value="CA">Canadá</option>
+						<option value="CN">China</option>
+						<option value="ES">España</option>
+					</optgroup>
+					<optgroup>
+						<option value="US">Estados Unidos</option>
+						<option value="FR">Francia</option>
+						<option value="IN">India</option>
+						<option value="IT">Italia</option>
+						<option value="JP">Japón</option>
+						<option value="NL">Países Bajos</option>
+						<option value="PL">Polonia</option>
+						<option value="GB">Reino Unido</option>
+						<option value="RU">Rusia</option>
+						<option value="SE">Suecia</option>
+						<option value="CH">Suiza</option>
+					</optgroup>
+				</select>
+			</li>
+			<li class="select-multiple-buttons">
+				<button type="button" id="add_countries" class="button"> Add <i class="icon-caret-right"></i></button>
+				<button type="button" id="remove_countries" class="button"><i class="icon-caret-left"></i> Delete</button>
+			</li>
+			<li>
+				<label for="selected_countries">Selected countries</label>
+				<select id="selected_countries" name="selected_countries[]" multiple="multiple">
+				</select>
+			</li>
+		</ul>
+	</fieldset>
+</form>                                            </div>
+        </section>
+                <section id="tab-select-fields-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Select fields&lt;/legend&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;select-field&quot;&gt;System Default Select Field&lt;/label&gt;
+				&lt;select id=&quot;select-field&quot; class=&quot;w-100&quot;&gt;
+					&lt;option&gt;option 1&lt;/option&gt;
+					&lt;option&gt;option 2&lt;/option&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;Text Field&lt;/label&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;row&quot;&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label for=&quot;select-field&quot;&gt;Custom Select Field (wrap on a div.select)&lt;/label&gt;
+				&lt;div class=&quot;select&quot;&gt;
+					&lt;select id=&quot;select-field-2&quot; class=&quot;w-100&quot;&gt;
+						&lt;option&gt;option 1&lt;/option&gt;
+						&lt;option&gt;option 2&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;col&quot;&gt;
+				&lt;label&gt;Text Field&lt;/label&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Select multiple&lt;/legend&gt;
+		&lt;ul id=&quot;countries_selector&quot; class=&quot;select-multiple&quot;&gt;
+			&lt;li&gt;
+				&lt;a title=&quot;Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos.&quot; href=&quot;#&quot; class=&quot;icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip&quot; data-ov-content-id=&quot;tooltip-by-site&quot;&gt;&lt;/a&gt;
+				&lt;label for=&quot;available_countries&quot;&gt;Available countries&lt;/label&gt;
+				&lt;select id=&quot;available_countries&quot; name=&quot;available_countries&quot; multiple=&quot;multiple&quot;&gt;
+					&lt;optgroup&gt;
+						&lt;option value=&quot;DE&quot;&gt;Alemania&lt;/option&gt;
+						&lt;option value=&quot;AU&quot;&gt;Australia&lt;/option&gt;
+						&lt;option value=&quot;AT&quot;&gt;Austria&lt;/option&gt;
+						&lt;option value=&quot;BR&quot;&gt;Brasil&lt;/option&gt;
+						&lt;option value=&quot;CA&quot;&gt;Canadá&lt;/option&gt;
+						&lt;option value=&quot;CN&quot;&gt;China&lt;/option&gt;
+						&lt;option value=&quot;ES&quot;&gt;España&lt;/option&gt;
+					&lt;/optgroup&gt;
+					&lt;optgroup&gt;
+						&lt;option value=&quot;US&quot;&gt;Estados Unidos&lt;/option&gt;
+						&lt;option value=&quot;FR&quot;&gt;Francia&lt;/option&gt;
+						&lt;option value=&quot;IN&quot;&gt;India&lt;/option&gt;
+						&lt;option value=&quot;IT&quot;&gt;Italia&lt;/option&gt;
+						&lt;option value=&quot;JP&quot;&gt;Japón&lt;/option&gt;
+						&lt;option value=&quot;NL&quot;&gt;Países Bajos&lt;/option&gt;
+						&lt;option value=&quot;PL&quot;&gt;Polonia&lt;/option&gt;
+						&lt;option value=&quot;GB&quot;&gt;Reino Unido&lt;/option&gt;
+						&lt;option value=&quot;RU&quot;&gt;Rusia&lt;/option&gt;
+						&lt;option value=&quot;SE&quot;&gt;Suecia&lt;/option&gt;
+						&lt;option value=&quot;CH&quot;&gt;Suiza&lt;/option&gt;
+					&lt;/optgroup&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;select-multiple-buttons&quot;&gt;
+				&lt;button type=&quot;button&quot; id=&quot;add_countries&quot; class=&quot;button&quot;&gt; Add &lt;i class=&quot;icon-caret-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+				&lt;button type=&quot;button&quot; id=&quot;remove_countries&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;icon-caret-left&quot;&gt;&lt;/i&gt; Delete&lt;/button&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;selected_countries&quot;&gt;Selected countries&lt;/label&gt;
+				&lt;select id=&quot;selected_countries&quot; name=&quot;selected_countries[]&quot; multiple=&quot;multiple&quot;&gt;
+				&lt;/select&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,168 +580,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-select-fields-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <form class="form">
-	<fieldset>
-		<legend>Select fields</legend>
-		<ol class="row">
-			<li class="col">
-				<label for="select-field">System Default Select Field</label>
-				<select id="select-field" class="w-100">
-					<option>option 1</option>
-					<option>option 2</option>
-				</select>
-			</li>
-			<li class="col">
-				<label>Text Field</label>
-				<input type="text" placeholder="text field">
-			</li>
-		</ol>
-		<ol class="row">
-			<li class="col">
-				<label for="select-field">Custom Select Field (wrap on a div.select)</label>
-				<div class="select">
-					<select id="select-field-2" class="w-100">
-						<option>option 1</option>
-						<option>option 2</option>
-					</select>
-				</div>
-			</li>
-			<li class="col">
-				<label>Text Field</label>
-				<input type="text" placeholder="text field">
-			</li>
-		</ol>
-	</fieldset>
-	<fieldset>
-		<legend>Select multiple</legend>
-		<ul id="countries_selector" class="select-multiple">
-			<li>
-				<a title="Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos." href="#" class="icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip" data-ov-content-id="tooltip-by-site"></a>
-				<label for="available_countries">Available countries</label>
-				<select id="available_countries" name="available_countries" multiple="multiple">
-					<optgroup>
-						<option value="DE">Alemania</option>
-						<option value="AU">Australia</option>
-						<option value="AT">Austria</option>
-						<option value="BR">Brasil</option>
-						<option value="CA">Canadá</option>
-						<option value="CN">China</option>
-						<option value="ES">España</option>
-					</optgroup>
-					<optgroup>
-						<option value="US">Estados Unidos</option>
-						<option value="FR">Francia</option>
-						<option value="IN">India</option>
-						<option value="IT">Italia</option>
-						<option value="JP">Japón</option>
-						<option value="NL">Países Bajos</option>
-						<option value="PL">Polonia</option>
-						<option value="GB">Reino Unido</option>
-						<option value="RU">Rusia</option>
-						<option value="SE">Suecia</option>
-						<option value="CH">Suiza</option>
-					</optgroup>
-				</select>
-			</li>
-			<li class="select-multiple-buttons">
-				<button type="button" id="add_countries" class="button"> Add <i class="icon-caret-right"></i></button>
-				<button type="button" id="remove_countries" class="button"><i class="icon-caret-left"></i> Delete</button>
-			</li>
-			<li>
-				<label for="selected_countries">Selected countries</label>
-				<select id="selected_countries" name="selected_countries[]" multiple="multiple">
-				</select>
-			</li>
-		</ul>
-	</fieldset>
-</form>                                            </div>
-        </section>
-                <section id="tab-select-fields-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form class=&quot;form&quot;&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Select fields&lt;/legend&gt;
-		&lt;ol class=&quot;row&quot;&gt;
-			&lt;li class=&quot;col&quot;&gt;
-				&lt;label for=&quot;select-field&quot;&gt;System Default Select Field&lt;/label&gt;
-				&lt;select id=&quot;select-field&quot; class=&quot;w-100&quot;&gt;
-					&lt;option&gt;option 1&lt;/option&gt;
-					&lt;option&gt;option 2&lt;/option&gt;
-				&lt;/select&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;col&quot;&gt;
-				&lt;label&gt;Text Field&lt;/label&gt;
-				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-		&lt;ol class=&quot;row&quot;&gt;
-			&lt;li class=&quot;col&quot;&gt;
-				&lt;label for=&quot;select-field&quot;&gt;Custom Select Field (wrap on a div.select)&lt;/label&gt;
-				&lt;div class=&quot;select&quot;&gt;
-					&lt;select id=&quot;select-field-2&quot; class=&quot;w-100&quot;&gt;
-						&lt;option&gt;option 1&lt;/option&gt;
-						&lt;option&gt;option 2&lt;/option&gt;
-					&lt;/select&gt;
-				&lt;/div&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;col&quot;&gt;
-				&lt;label&gt;Text Field&lt;/label&gt;
-				&lt;input type=&quot;text&quot; placeholder=&quot;text field&quot;&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/fieldset&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Select multiple&lt;/legend&gt;
-		&lt;ul id=&quot;countries_selector&quot; class=&quot;select-multiple&quot;&gt;
-			&lt;li&gt;
-				&lt;a title=&quot;Puedes seleccionar varios elementos a la vez manteniendo pulsada la tecla Ctrl y haciendo clic sobre ellos.&quot; href=&quot;#&quot; class=&quot;icon-info-sign tooltip-icon fl-r c-primary ov_source ov_source_tooltip&quot; data-ov-content-id=&quot;tooltip-by-site&quot;&gt;&lt;/a&gt;
-				&lt;label for=&quot;available_countries&quot;&gt;Available countries&lt;/label&gt;
-				&lt;select id=&quot;available_countries&quot; name=&quot;available_countries&quot; multiple=&quot;multiple&quot;&gt;
-					&lt;optgroup&gt;
-						&lt;option value=&quot;DE&quot;&gt;Alemania&lt;/option&gt;
-						&lt;option value=&quot;AU&quot;&gt;Australia&lt;/option&gt;
-						&lt;option value=&quot;AT&quot;&gt;Austria&lt;/option&gt;
-						&lt;option value=&quot;BR&quot;&gt;Brasil&lt;/option&gt;
-						&lt;option value=&quot;CA&quot;&gt;Canadá&lt;/option&gt;
-						&lt;option value=&quot;CN&quot;&gt;China&lt;/option&gt;
-						&lt;option value=&quot;ES&quot;&gt;España&lt;/option&gt;
-					&lt;/optgroup&gt;
-					&lt;optgroup&gt;
-						&lt;option value=&quot;US&quot;&gt;Estados Unidos&lt;/option&gt;
-						&lt;option value=&quot;FR&quot;&gt;Francia&lt;/option&gt;
-						&lt;option value=&quot;IN&quot;&gt;India&lt;/option&gt;
-						&lt;option value=&quot;IT&quot;&gt;Italia&lt;/option&gt;
-						&lt;option value=&quot;JP&quot;&gt;Japón&lt;/option&gt;
-						&lt;option value=&quot;NL&quot;&gt;Países Bajos&lt;/option&gt;
-						&lt;option value=&quot;PL&quot;&gt;Polonia&lt;/option&gt;
-						&lt;option value=&quot;GB&quot;&gt;Reino Unido&lt;/option&gt;
-						&lt;option value=&quot;RU&quot;&gt;Rusia&lt;/option&gt;
-						&lt;option value=&quot;SE&quot;&gt;Suecia&lt;/option&gt;
-						&lt;option value=&quot;CH&quot;&gt;Suiza&lt;/option&gt;
-					&lt;/optgroup&gt;
-				&lt;/select&gt;
-			&lt;/li&gt;
-			&lt;li class=&quot;select-multiple-buttons&quot;&gt;
-				&lt;button type=&quot;button&quot; id=&quot;add_countries&quot; class=&quot;button&quot;&gt; Add &lt;i class=&quot;icon-caret-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-				&lt;button type=&quot;button&quot; id=&quot;remove_countries&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;icon-caret-left&quot;&gt;&lt;/i&gt; Delete&lt;/button&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;label for=&quot;selected_countries&quot;&gt;Selected countries&lt;/label&gt;
-				&lt;select id=&quot;selected_countries&quot; name=&quot;selected_countries[]&quot; multiple=&quot;multiple&quot;&gt;
-				&lt;/select&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -609,23 +606,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

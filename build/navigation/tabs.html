@@ -24,22 +24,319 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Tabs</h1>
-                                    <p>Show/hide content or hidden sections</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Tabs</h1>
+                                            <p>Show/hide content or hidden sections</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <section id="demos">
+        
+    <h2><span class="label _css fz-xl va-m">CSS</span> Static tabs</h2>
+    <p>Use this tabs for static tabs with links to new pages.</p>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <nav class="tabs">
+	<ul>
+		<li class="tabs-active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-tabs-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;tabs-active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+
+    <h2 class="mt-l"><span class="label _css fz-xl va-m">CSS</span> <span class="label _js fz-xl va-m">JS</span> Dynamic tabs</h2>
+    <p>Use this tabs to show hidden content in the DOM.</p>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-js-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <div data-fc-modules="tabs">
+	<section id="tab-1" data-fc-name="Tab 1">
+		<div class="box _background">Tab 1 content</div>
+	</section>
+	<section id="tab-2" data-fc-name="Tab 2">
+		<div class="box _background">Tab 2 content</div>
+	</section>
+	<section id="tab-3" data-fc-name="Tab 3">
+		<div class="box _background">Tab 3 content</div>
+	</section>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-js-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;div data-fc-modules=&quot;tabs&quot;&gt;
+	&lt;section id=&quot;tab-1&quot; data-fc-name=&quot;Tab 1&quot;&gt;
+		&lt;div class=&quot;box _background&quot;&gt;Tab 1 content&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;section id=&quot;tab-2&quot; data-fc-name=&quot;Tab 2&quot;&gt;
+		&lt;div class=&quot;box _background&quot;&gt;Tab 2 content&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;section id=&quot;tab-3&quot; data-fc-name=&quot;Tab 3&quot;&gt;
+		&lt;div class=&quot;box _background&quot;&gt;Tab 3 content&lt;/div&gt;
+	&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+
+    <h2 class="mt-l"><span class="label _css fz-xl va-m">CSS</span> Active Tab color</h2>
+    <p>By default the active tab is using color to match the .box-background but you can adjust it to match most common boxes</p>
+    <h3>Color box tab</h3>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-box-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <nav class="tabs _box">
+	<ul>
+		<li class="tabs-active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>
+<div class="box">
+	<p>Box content</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-box-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _box&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;tabs-active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;box&quot;&gt;
+	&lt;p&gt;Box content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h3>Color foreground tab</h3>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-foreground-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <nav class="tabs _foreground">
+	<ul>
+		<li class="tabs-active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>
+<div class="box _foreground">
+	<p>Box content</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-foreground-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _foreground&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;tabs-active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;box _foreground&quot;&gt;
+	&lt;p&gt;Box content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h3>Color primary tab</h3>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-primary-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <nav class="tabs _primary">
+	<ul>
+		<li class="tabs-active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>
+<div class="box _primary">
+	<p>Box content</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-primary-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;tabs-active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;box _primary&quot;&gt;
+	&lt;p&gt;Box content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    <h3>Color secondary tab</h3>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-tabs-secondary-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <nav class="tabs _secondary">
+	<ul>
+		<li class="tabs-active">
+			<a title="tab 1" href="#tab1">Tab 1</a>
+		</li>
+		<li>
+			<a title="tab 2" href="#tab2">Tab 2</a>
+		</li>
+		<li>
+			<a title="tab 3" href="#tab3">Tab 3</a>
+		</li>
+	</ul>
+</nav>
+<div class="box _secondary">
+	<p>Box content</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-tabs-secondary-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _secondary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;tabs-active&quot;&gt;
+			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;box _secondary&quot;&gt;
+	&lt;p&gt;Box content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+
+    </section>
+    <section id="appearance">
+                         <h2>Customize the appearance</h2>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code data-fc-modules="code">$object-tabs-vars-default: (
+
+	/* Tabs container */
+	background-color: transparent,
+	background-color-dark: rgba($color-foreground, .05),
+	background-style: gradient, // gradient or solid
+	background-gradient-percent: 80%,
+	border-radius: $default-border-radius,
+	font-family: $font-face-default,
+	font-weight: normal,
+	font-size: $font-size-default,
+
+	/* Tab default */
+	background-color-tab: rgba($color-foreground, .05),
+	color-tab: $color-foreground,
+	border-color-tab: transparent,
+	border-width-tab: 1px 1px 0 1px,
+	border-radius-tab: $default-border-radius $default-border-radius 0 0,
+
+	/* Tab hover */
+	background-color-hover-tab: rgba($color-link, .1),
+	color-hover-tab: $color-foreground,
+	border-color-hover-tab: transparent,
+
+	/* Tab active */
+	background-color-active-tab: $color-background,
+	color-active-tab: $color-foreground,
+	border-color-active-tab: $color-primary rgba($color-foreground, .1) transparent rgba($color-foreground, .1),
+	border-width-active-tab: 2px 1px 0 1px,
+	border-width-mobile-active-tab: 2px 0 0 0,
+	font-weight-active: bold,
+
+) !global !default;
+
+$object-tabs-vars-custom: () !global !default;
+
+$object-tabs-vars: map-merge($object-tabs-vars-default, $object-tabs-vars-custom) !global;
+</code></pre>
+
+     </section>
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,306 +718,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <section id="demos">
-        
-    <h2><span class="label _css fz-xl va-m">CSS</span> Static tabs</h2>
-    <p>Use this tabs for static tabs with links to new pages.</p>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <nav class="tabs">
-	<ul>
-		<li class="tabs-active">
-			<a title="tab 1" href="#tab1">Tab 1</a>
-		</li>
-		<li>
-			<a title="tab 2" href="#tab2">Tab 2</a>
-		</li>
-		<li>
-			<a title="tab 3" href="#tab3">Tab 3</a>
-		</li>
-	</ul>
-</nav>                                            </div>
-        </section>
-                <section id="tab-tabs-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;tabs-active&quot;&gt;
-			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-
-    <h2 class="mt-l"><span class="label _css fz-xl va-m">CSS</span> <span class="label _js fz-xl va-m">JS</span> Dynamic tabs</h2>
-    <p>Use this tabs to show hidden content in the DOM.</p>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-js-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <div data-fc-modules="tabs">
-	<section id="tab-1" data-fc-name="Tab 1">
-		<div class="box _background">Tab 1 content</div>
-	</section>
-	<section id="tab-2" data-fc-name="Tab 2">
-		<div class="box _background">Tab 2 content</div>
-	</section>
-	<section id="tab-3" data-fc-name="Tab 3">
-		<div class="box _background">Tab 3 content</div>
-	</section>
-</div>                                            </div>
-        </section>
-                <section id="tab-tabs-js-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;div data-fc-modules=&quot;tabs&quot;&gt;
-	&lt;section id=&quot;tab-1&quot; data-fc-name=&quot;Tab 1&quot;&gt;
-		&lt;div class=&quot;box _background&quot;&gt;Tab 1 content&lt;/div&gt;
-	&lt;/section&gt;
-	&lt;section id=&quot;tab-2&quot; data-fc-name=&quot;Tab 2&quot;&gt;
-		&lt;div class=&quot;box _background&quot;&gt;Tab 2 content&lt;/div&gt;
-	&lt;/section&gt;
-	&lt;section id=&quot;tab-3&quot; data-fc-name=&quot;Tab 3&quot;&gt;
-		&lt;div class=&quot;box _background&quot;&gt;Tab 3 content&lt;/div&gt;
-	&lt;/section&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-
-    <h2 class="mt-l"><span class="label _css fz-xl va-m">CSS</span> Active Tab color</h2>
-    <p>By default the active tab is using color to match the .box-background but you can adjust it to match most common boxes</p>
-    <h3>Color box tab</h3>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-box-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <nav class="tabs _box">
-	<ul>
-		<li class="tabs-active">
-			<a title="tab 1" href="#tab1">Tab 1</a>
-		</li>
-		<li>
-			<a title="tab 2" href="#tab2">Tab 2</a>
-		</li>
-		<li>
-			<a title="tab 3" href="#tab3">Tab 3</a>
-		</li>
-	</ul>
-</nav>
-<div class="box">
-	<p>Box content</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-tabs-box-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _box&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;tabs-active&quot;&gt;
-			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;div class=&quot;box&quot;&gt;
-	&lt;p&gt;Box content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    <h3>Color foreground tab</h3>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-foreground-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <nav class="tabs _foreground">
-	<ul>
-		<li class="tabs-active">
-			<a title="tab 1" href="#tab1">Tab 1</a>
-		</li>
-		<li>
-			<a title="tab 2" href="#tab2">Tab 2</a>
-		</li>
-		<li>
-			<a title="tab 3" href="#tab3">Tab 3</a>
-		</li>
-	</ul>
-</nav>
-<div class="box _foreground">
-	<p>Box content</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-tabs-foreground-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _foreground&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;tabs-active&quot;&gt;
-			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;div class=&quot;box _foreground&quot;&gt;
-	&lt;p&gt;Box content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    <h3>Color primary tab</h3>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-primary-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <nav class="tabs _primary">
-	<ul>
-		<li class="tabs-active">
-			<a title="tab 1" href="#tab1">Tab 1</a>
-		</li>
-		<li>
-			<a title="tab 2" href="#tab2">Tab 2</a>
-		</li>
-		<li>
-			<a title="tab 3" href="#tab3">Tab 3</a>
-		</li>
-	</ul>
-</nav>
-<div class="box _primary">
-	<p>Box content</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-tabs-primary-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _primary&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;tabs-active&quot;&gt;
-			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;div class=&quot;box _primary&quot;&gt;
-	&lt;p&gt;Box content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    <h3>Color secondary tab</h3>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-tabs-secondary-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <nav class="tabs _secondary">
-	<ul>
-		<li class="tabs-active">
-			<a title="tab 1" href="#tab1">Tab 1</a>
-		</li>
-		<li>
-			<a title="tab 2" href="#tab2">Tab 2</a>
-		</li>
-		<li>
-			<a title="tab 3" href="#tab3">Tab 3</a>
-		</li>
-	</ul>
-</nav>
-<div class="box _secondary">
-	<p>Box content</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-tabs-secondary-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;tabs _secondary&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;tabs-active&quot;&gt;
-			&lt;a title=&quot;tab 1&quot; href=&quot;#tab1&quot;&gt;Tab 1&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 2&quot; href=&quot;#tab2&quot;&gt;Tab 2&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a title=&quot;tab 3&quot; href=&quot;#tab3&quot;&gt;Tab 3&lt;/a&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;div class=&quot;box _secondary&quot;&gt;
-	&lt;p&gt;Box content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-
-    </section>
-    <section id="appearance">
-                         <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-tabs-vars-default: (
-
-	/* Tabs container */
-	background-color: transparent,
-	background-color-dark: rgba($color-foreground, .05),
-	background-style: gradient, // gradient or solid
-	background-gradient-percent: 80%,
-	border-radius: $default-border-radius,
-	font-family: $font-face-default,
-	font-weight: normal,
-	font-size: $font-size-default,
-
-	/* Tab default */
-	background-color-tab: rgba($color-foreground, .05),
-	color-tab: $color-foreground,
-	border-color-tab: transparent,
-	border-width-tab: 1px 1px 0 1px,
-	border-radius-tab: $default-border-radius $default-border-radius 0 0,
-
-	/* Tab hover */
-	background-color-hover-tab: rgba($color-link, .1),
-	color-hover-tab: $color-foreground,
-	border-color-hover-tab: transparent,
-
-	/* Tab active */
-	background-color-active-tab: $color-background,
-	color-active-tab: $color-foreground,
-	border-color-active-tab: $color-primary rgba($color-foreground, .1) transparent rgba($color-foreground, .1),
-	border-width-active-tab: 2px 1px 0 1px,
-	border-width-mobile-active-tab: 2px 0 0 0,
-	font-weight-active: bold,
-
-) !global !default;
-
-$object-tabs-vars-custom: () !global !default;
-
-$object-tabs-vars: map-merge($object-tabs-vars-default, $object-tabs-vars-custom) !global;
-</code></pre>
-
-     </section>
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -747,23 +744,23 @@ $object-tabs-vars: map-merge($object-tabs-vars-default, $object-tabs-vars-custom
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

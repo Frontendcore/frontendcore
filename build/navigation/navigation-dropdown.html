@@ -24,22 +24,292 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Navigation dropdown</h1>
-                                    <p>Dropdown on mouse over navigation</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Navigation dropdown</h1>
+                                            <p>Dropdown on mouse over navigation</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <section id="demos">
+            <h2>Navigation multiple levels, css only</h2>
+    <p>A basic navigation can handle up to 3 levels of links in this automatic css-only manner. Note: change of orientation on the breakpoint mobile to desktop, class _vertical maintains mobile style throughout. Any distribution or color class can be applied.</p>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-flex-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" style="min-height:300px">
+                                                <!-- PRIMARY -->
+<nav class="navigation _primary">
+	<ul>
+		<li class="active">
+			<a title="Menu item 1" href="#tab1">Menu item TEST</a>
+		</li>
+		<li><a title="Menu item 2" href="#tab2">Menu item 2</a>
+			<a href="#category-1-1" data-fc-class="swish" data-fc-modules="toggle" class="toggle">
+				<i class="icon-caret-down"></i>
+			</a>
+			<ul id="category-1-1">
+				<li><a title="Menu item 1" href="#tab1">Sub item 1</a></li>
+				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
+				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Aliquam eleifend velit consequat</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
+				<li><a title="Menu item 5" href="#tab1">Sub item 5</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam ut </a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam consequat</a></li>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 6" href="#tab1">Sub item 6</a></li>
+			</ul>
+
+		</li>
+		<li><a title="Menu item 3" href="#tab3">Menu item 3</a>
+			<ul>
+				<li><a title="Menu item 1" href="#tab1">Sub item 1</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
+				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
+					<ul>
+						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
+						<li><a title="Menu item" href="#tab1">Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat</a></li>
+					</ul>
+				</li>
+				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>                                            </div>
+        </section>
+                <section id="tab-navigation-flex-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;!-- PRIMARY --&gt;
+&lt;nav class=&quot;navigation _primary&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;active&quot;&gt;
+			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item TEST&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;
+			&lt;a href=&quot;#category-1-1&quot; data-fc-class=&quot;swish&quot; data-fc-modules=&quot;toggle&quot; class=&quot;toggle&quot;&gt;
+				&lt;i class=&quot;icon-caret-down&quot;&gt;&lt;/i&gt;
+			&lt;/a&gt;
+			&lt;ul id=&quot;category-1-1&quot;&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 5&quot; href=&quot;#tab1&quot;&gt;Sub item 5&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut &lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam consequat&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 6&quot; href=&quot;#tab1&quot;&gt;Sub item 6&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    
+    <h2> .navigation-vertical with dropdown</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-navigation-vertical-dropdown-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" style="min-height:200px">
+                                                <nav class="navigation _primary _vertical w-30" data-fc-modules="dropdown">
+    <ul>
+        <li>
+            <a title="Fruits" href="test.html">Hover (href is test.html)</a>
+            <ul>
+                <li>
+                    <a title="Oranges" href="test.html">Another level</a>
+                    <ul>
+                        <li>
+                            <a title="Menu item 1" href="test.html">Oranges OrangesOranges OrangesOranges</a>
+                            <ul>
+                                <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
+                                <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
+                                <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
+                            </ul>
+                        </li>
+                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
+                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a title="Apples" href="test.html">Yep, more level</a>
+                    <ul>
+                        <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
+                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
+                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
+                    </ul>
+                </li>
+                <li><a title="Bananas" href="#tab-vertical-3">Bananas</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Vegetables" href="#vegetables-vertical">Click (href is #vegetables) </a>
+            <ul id="vegetables-vertical">
+                <li>
+                    <a title="Menu item 1" href="#oranges-vertical">Oranges</a>
+                    <ul id="oranges-vertical">
+                        <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
+                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
+                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
+                    </ul>
+                </li>
+                <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
+                <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
+            </ul>
+        </li>
+        <li><a title="Menu item 3" href="#tab-vertical-3">Lettuce</a></li>
+    </ul>
+</nav>
+                                            </div>
+        </section>
+                <section id="tab-navigation-vertical-dropdown-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation _primary _vertical w-30&quot; data-fc-modules=&quot;dropdown&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a title=&quot;Fruits&quot; href=&quot;test.html&quot;&gt;Hover (href is test.html)&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;a title=&quot;Oranges&quot; href=&quot;test.html&quot;&gt;Another level&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;a title=&quot;Menu item 1&quot; href=&quot;test.html&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a title=&quot;Apples&quot; href=&quot;test.html&quot;&gt;Yep, more level&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a title=&quot;Bananas&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a title=&quot;Vegetables&quot; href=&quot;#vegetables-vertical&quot;&gt;Click (href is #vegetables) &lt;/a&gt;
+            &lt;ul id=&quot;vegetables-vertical&quot;&gt;
+                &lt;li&gt;
+                    &lt;a title=&quot;Menu item 1&quot; href=&quot;#oranges-vertical&quot;&gt;Oranges&lt;/a&gt;
+                    &lt;ul id=&quot;oranges-vertical&quot;&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Lettuce&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+    </section>
+    <section id="appearance">
+                         <h2>Customize the appearance</h2>
+        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
+        <pre><code data-fc-modules="code">$object-navigation-vars-default: (
+
+	/* First level */
+	background-color: $color-primary,
+	color: contrast-color($color-primary),
+	border-radius: $default-border-radius,
+	font-family: $font-face-default,
+	font-weight: normal,
+	font-weight-active: bold,
+	font-size: $font-size-default,
+	vertical-separator: true,
+	text-transform: capitalize,
+
+	/* Inner levels */
+	background-color-dark: $color-primary-dark,
+	background-color-light: $color-primary-light,
+	inner-font-family: $font-face-default,
+	inner-font-weight: normal,
+	inner-font-size: $font-size-s,
+	inner-text-transform: capitalize,
+
+) !global !default;
+
+$object-navigation-vars-custom: () !global !default;
+$object-navigation-vars: map-merge($object-navigation-vars-default, $object-navigation-vars-custom) !global;
+</code></pre>
+
+     </section>
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,279 +691,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <section id="demos">
-            <h2>Navigation multiple levels, css only</h2>
-    <p>A basic navigation can handle up to 3 levels of links in this automatic css-only manner. Note: change of orientation on the breakpoint mobile to desktop, class _vertical maintains mobile style throughout. Any distribution or color class can be applied.</p>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-navigation-flex-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" style="min-height:300px">
-                                                <!-- PRIMARY -->
-<nav class="navigation _primary">
-	<ul>
-		<li class="active">
-			<a title="Menu item 1" href="#tab1">Menu item TEST</a>
-		</li>
-		<li><a title="Menu item 2" href="#tab2">Menu item 2</a>
-			<a href="#category-1-1" data-fc-class="swish" data-fc-modules="toggle" class="toggle">
-				<i class="icon-caret-down"></i>
-			</a>
-			<ul id="category-1-1">
-				<li><a title="Menu item 1" href="#tab1">Sub item 1</a></li>
-				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
-				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
-					<ul>
-						<li><a title="Menu item" href="#tab1">Aliquam eleifend velit consequat</a></li>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
-					</ul>
-				</li>
-				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
-				<li><a title="Menu item 5" href="#tab1">Sub item 5</a>
-					<ul>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
-						<li><a title="Menu item" href="#tab1">Aliquam ut </a></li>
-						<li><a title="Menu item" href="#tab1">Aliquam consequat</a></li>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
-					</ul>
-				</li>
-				<li><a title="Menu item 6" href="#tab1">Sub item 6</a></li>
-			</ul>
-
-		</li>
-		<li><a title="Menu item 3" href="#tab3">Menu item 3</a>
-			<ul>
-				<li><a title="Menu item 1" href="#tab1">Sub item 1</a>
-					<ul>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Mauris non maximus lorem</a></li>
-					</ul>
-				</li>
-				<li><a title="Menu item 2" href="#tab1">Sub item 2</a></li>
-				<li><a title="Menu item 3" href="#tab1">Sub item 3</a>
-					<ul>
-						<li><a title="Menu item" href="#tab1">Praesent neque purus</a></li>
-						<li><a title="Menu item" href="#tab1">Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat</a></li>
-					</ul>
-				</li>
-				<li><a title="Menu item 4" href="#tab1">Sub item 4</a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>                                            </div>
-        </section>
-                <section id="tab-navigation-flex-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;!-- PRIMARY --&gt;
-&lt;nav class=&quot;navigation _primary&quot;&gt;
-	&lt;ul&gt;
-		&lt;li class=&quot;active&quot;&gt;
-			&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Menu item TEST&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab2&quot;&gt;Menu item 2&lt;/a&gt;
-			&lt;a href=&quot;#category-1-1&quot; data-fc-class=&quot;swish&quot; data-fc-modules=&quot;toggle&quot; class=&quot;toggle&quot;&gt;
-				&lt;i class=&quot;icon-caret-down&quot;&gt;&lt;/i&gt;
-			&lt;/a&gt;
-			&lt;ul id=&quot;category-1-1&quot;&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
-					&lt;ul&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
-					&lt;/ul&gt;
-				&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 5&quot; href=&quot;#tab1&quot;&gt;Sub item 5&lt;/a&gt;
-					&lt;ul&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut &lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam consequat&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
-					&lt;/ul&gt;
-				&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 6&quot; href=&quot;#tab1&quot;&gt;Sub item 6&lt;/a&gt;&lt;/li&gt;
-			&lt;/ul&gt;
-
-		&lt;/li&gt;
-		&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab3&quot;&gt;Menu item 3&lt;/a&gt;
-			&lt;ul&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab1&quot;&gt;Sub item 1&lt;/a&gt;
-					&lt;ul&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Mauris non maximus lorem&lt;/a&gt;&lt;/li&gt;
-					&lt;/ul&gt;
-				&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab1&quot;&gt;Sub item 2&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab1&quot;&gt;Sub item 3&lt;/a&gt;
-					&lt;ul&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Praesent neque purus&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a title=&quot;Menu item&quot; href=&quot;#tab1&quot;&gt;Aliquam ut odio eleifend, pharetra ex non, tincidunt elit. Fusce fringilla pulvinar leo dictum hendrerit. Aliquam laoreet libero ac dui feugiat, ac eleifend velit consequat&lt;/a&gt;&lt;/li&gt;
-					&lt;/ul&gt;
-				&lt;/li&gt;
-				&lt;li&gt;&lt;a title=&quot;Menu item 4&quot; href=&quot;#tab1&quot;&gt;Sub item 4&lt;/a&gt;&lt;/li&gt;
-			&lt;/ul&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    
-    <h2> .navigation-vertical with dropdown</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-navigation-vertical-dropdown-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" style="min-height:200px">
-                                                <nav class="navigation _primary _vertical w-30" data-fc-modules="dropdown">
-    <ul>
-        <li>
-            <a title="Fruits" href="test.html">Hover (href is test.html)</a>
-            <ul>
-                <li>
-                    <a title="Oranges" href="test.html">Another level</a>
-                    <ul>
-                        <li>
-                            <a title="Menu item 1" href="test.html">Oranges OrangesOranges OrangesOranges</a>
-                            <ul>
-                                <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
-                                <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
-                                <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
-                            </ul>
-                        </li>
-                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a title="Apples" href="test.html">Yep, more level</a>
-                    <ul>
-                        <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
-                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li><a title="Bananas" href="#tab-vertical-3">Bananas</a></li>
-            </ul>
-        </li>
-        <li>
-            <a title="Vegetables" href="#vegetables-vertical">Click (href is #vegetables) </a>
-            <ul id="vegetables-vertical">
-                <li>
-                    <a title="Menu item 1" href="#oranges-vertical">Oranges</a>
-                    <ul id="oranges-vertical">
-                        <li><a title="Menu item 1" href="#tab-vertical-1">Oranges OrangesOranges OrangesOranges</a></li>
-                        <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
-                        <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
-                    </ul>
-                </li>
-                <li><a title="Menu item 2" href="#tab-vertical-2">Apples</a></li>
-                <li><a title="Menu item 3" href="#tab-vertical-3">Bananas</a></li>
-            </ul>
-        </li>
-        <li><a title="Menu item 3" href="#tab-vertical-3">Lettuce</a></li>
-    </ul>
-</nav>
-                                            </div>
-        </section>
-                <section id="tab-navigation-vertical-dropdown-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;nav class=&quot;navigation _primary _vertical w-30&quot; data-fc-modules=&quot;dropdown&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;
-            &lt;a title=&quot;Fruits&quot; href=&quot;test.html&quot;&gt;Hover (href is test.html)&lt;/a&gt;
-            &lt;ul&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Oranges&quot; href=&quot;test.html&quot;&gt;Another level&lt;/a&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;
-                            &lt;a title=&quot;Menu item 1&quot; href=&quot;test.html&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;
-                            &lt;ul&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Apples&quot; href=&quot;test.html&quot;&gt;Yep, more level&lt;/a&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Bananas&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a title=&quot;Vegetables&quot; href=&quot;#vegetables-vertical&quot;&gt;Click (href is #vegetables) &lt;/a&gt;
-            &lt;ul id=&quot;vegetables-vertical&quot;&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Menu item 1&quot; href=&quot;#oranges-vertical&quot;&gt;Oranges&lt;/a&gt;
-                    &lt;ul id=&quot;oranges-vertical&quot;&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 1&quot; href=&quot;#tab-vertical-1&quot;&gt;Oranges OrangesOranges OrangesOranges&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Menu item 2&quot; href=&quot;#tab-vertical-2&quot;&gt;Apples&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Bananas&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;&lt;a title=&quot;Menu item 3&quot; href=&quot;#tab-vertical-3&quot;&gt;Lettuce&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-    </section>
-    <section id="appearance">
-                         <h2>Customize the appearance</h2>
-        <p>You can customize the appearance of this object by setting up the vars-custom map for this object. By default de values are the vars-default values.</p>
-        <pre><code data-fc-modules="code">$object-navigation-vars-default: (
-
-	/* First level */
-	background-color: $color-primary,
-	color: contrast-color($color-primary),
-	border-radius: $default-border-radius,
-	font-family: $font-face-default,
-	font-weight: normal,
-	font-weight-active: bold,
-	font-size: $font-size-default,
-	vertical-separator: true,
-	text-transform: capitalize,
-
-	/* Inner levels */
-	background-color-dark: $color-primary-dark,
-	background-color-light: $color-primary-light,
-	inner-font-family: $font-face-default,
-	inner-font-weight: normal,
-	inner-font-size: $font-size-s,
-	inner-text-transform: capitalize,
-
-) !global !default;
-
-$object-navigation-vars-custom: () !global !default;
-$object-navigation-vars: map-merge($object-navigation-vars-default, $object-navigation-vars-custom) !global;
-</code></pre>
-
-     </section>
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -720,23 +717,23 @@ $object-navigation-vars: map-merge($object-navigation-vars-default, $object-navi
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

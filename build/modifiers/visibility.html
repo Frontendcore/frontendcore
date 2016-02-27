@@ -24,22 +24,201 @@
                     <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
                     <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
                 </div>
-                <ul class="col">
-                    <li>
-                        <a href="#">Docs</a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h1>Visibility</h1>
-                                    <p>New super powers unleashed</p>
-                            </div>
+                <div class="box _empty pv-n mb-n">
+                    <h1 class="h2">Visibility</h1>
+                                            <p>New super powers unleashed</p>
+                                    </div>
+            </div>
         </div>
     </header>
     <div class="container _center _pad">
         <div class="row">
+            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                    <h2>Hide an element</h2>
+    <p>There are three classes available to hide an element, always depending on the case.<p/>
+    <dl class="list">
+        <dt class="c-primary">.d-n</dt>
+        <dd>Adds a "display:none !important" to the element, so it never will be visible.</dd>
+        <dt class="c-primary">.hidden</dt>
+        <dd>Adds a "display:none" to the element. Very useful to elements that javascript may force to show.</dd>
+        <dt class="c-primary">.out-of-viewport</dt>
+        <dd>Move the element outside of the viewport (it remains visible but out of the screen). This is very useful for example to hide charts or other elements that should be visible to a correct rendering.</dd>
+
+    </dl>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-hidden-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <p>No elements visible? Check the code tab!</p>
+
+<!-- D-N -->
+<div class="d-n">
+    <p>I'm only visible on desktop devices</p>
+</div>
+
+<!-- HIDDEN -->
+<div class="hidden">
+    <p>I'm only visible on desktop devices</p>
+</div>
+
+<!-- OUT OF VIEWPORT -->
+<div class="out-of-viewport">
+    <p>I'm only visible on desktop devices</p>
+</div>
+                                            </div>
+        </section>
+                <section id="tab-hidden-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;p&gt;No elements visible? Check the code tab!&lt;/p&gt;
+
+&lt;!-- D-N --&gt;
+&lt;div class=&quot;d-n&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- HIDDEN --&gt;
+&lt;div class=&quot;hidden&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- OUT OF VIEWPORT --&gt;
+&lt;div class=&quot;out-of-viewport&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>Show elements only on some devices</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-devices-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <!-- DESKTOP -->
+<div class="desktop">
+    <p>I'm only visible on desktop devices</p>
+</div>
+
+<!-- TABLET -->
+<div class="tablet">
+    <p>I'm only visible on tablet devices</p>
+</div>
+
+<!-- MOBILE -->
+<div class="mobile">
+    <p>I'm only visible on mobile devices</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-devices-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;!-- DESKTOP --&gt;
+&lt;div class=&quot;desktop&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- TABLET --&gt;
+&lt;div class=&quot;tablet&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on tablet devices&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- MOBILE --&gt;
+&lt;div class=&quot;mobile&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on mobile devices&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+    <h2>Show elements only on some screens</h2>
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-screens-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <!-- SCREEN XXXL -->
+<div class="screen-xxxl">
+    <p>I'm only visible on screens XXXL</p>
+</div>
+
+<!-- SCREEN XXL -->
+<div class="screen-xxl">
+    <p>I'm only visible on screens XXL</p>
+</div>
+
+<!-- SCREEN XL -->
+<div class="screen-xl">
+    <p>I'm only visible on screens XL</p>
+</div>
+
+<!-- SCREEN L -->
+<div class="screen-l">
+    <p>I'm only visible on screens L</p>
+</div>
+
+<!-- SCREEN M -->
+<div class="screen-m">
+    <p>I'm only visible on screens M</p>
+</div>
+
+<!-- SCREEN S -->
+<div class="screen-s">
+    <p>I'm only visible on screens S</p>
+</div>
+
+<!-- SCREEN XS -->
+<div class="screen-xs">
+    <p>I'm only visible on screens XS</p>
+</div>
+
+                                            </div>
+        </section>
+                <section id="tab-screens-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;!-- SCREEN XXXL --&gt;
+&lt;div class=&quot;screen-xxxl&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens XXXL&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN XXL --&gt;
+&lt;div class=&quot;screen-xxl&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens XXL&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN XL --&gt;
+&lt;div class=&quot;screen-xl&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens XL&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN L --&gt;
+&lt;div class=&quot;screen-l&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens L&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN M --&gt;
+&lt;div class=&quot;screen-m&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens M&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN S --&gt;
+&lt;div class=&quot;screen-s&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens S&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- SCREEN XS --&gt;
+&lt;div class=&quot;screen-xs&quot;&gt;
+    &lt;p&gt;I&#039;m only visible on screens XS&lt;/p&gt;
+&lt;/div&gt;
+
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+
+            </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
                 <div class="screen-xl screen-xxl screen-xxxl">
                                             <nav id="menu" class="navigation _primary _vertical">
@@ -421,188 +600,6 @@
                         </nav>
                                     </div>
             </div>
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <h2>Hide an element</h2>
-    <p>There are three classes available to hide an element, always depending on the case.<p/>
-    <dl class="list">
-        <dt class="c-primary">.d-n</dt>
-        <dd>Adds a "display:none !important" to the element, so it never will be visible.</dd>
-        <dt class="c-primary">.hidden</dt>
-        <dd>Adds a "display:none" to the element. Very useful to elements that javascript may force to show.</dd>
-        <dt class="c-primary">.out-of-viewport</dt>
-        <dd>Move the element outside of the viewport (it remains visible but out of the screen). This is very useful for example to hide charts or other elements that should be visible to a correct rendering.</dd>
-
-    </dl>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-hidden-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <p>No elements visible? Check the code tab!</p>
-
-<!-- D-N -->
-<div class="d-n">
-    <p>I'm only visible on desktop devices</p>
-</div>
-
-<!-- HIDDEN -->
-<div class="hidden">
-    <p>I'm only visible on desktop devices</p>
-</div>
-
-<!-- OUT OF VIEWPORT -->
-<div class="out-of-viewport">
-    <p>I'm only visible on desktop devices</p>
-</div>
-                                            </div>
-        </section>
-                <section id="tab-hidden-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;p&gt;No elements visible? Check the code tab!&lt;/p&gt;
-
-&lt;!-- D-N --&gt;
-&lt;div class=&quot;d-n&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- HIDDEN --&gt;
-&lt;div class=&quot;hidden&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- OUT OF VIEWPORT --&gt;
-&lt;div class=&quot;out-of-viewport&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-    <h2>Show elements only on some devices</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-devices-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <!-- DESKTOP -->
-<div class="desktop">
-    <p>I'm only visible on desktop devices</p>
-</div>
-
-<!-- TABLET -->
-<div class="tablet">
-    <p>I'm only visible on tablet devices</p>
-</div>
-
-<!-- MOBILE -->
-<div class="mobile">
-    <p>I'm only visible on mobile devices</p>
-</div>                                            </div>
-        </section>
-                <section id="tab-devices-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;!-- DESKTOP --&gt;
-&lt;div class=&quot;desktop&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on desktop devices&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- TABLET --&gt;
-&lt;div class=&quot;tablet&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on tablet devices&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- MOBILE --&gt;
-&lt;div class=&quot;mobile&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on mobile devices&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-    <h2>Show elements only on some screens</h2>
-                                <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-screens-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <!-- SCREEN XXXL -->
-<div class="screen-xxxl">
-    <p>I'm only visible on screens XXXL</p>
-</div>
-
-<!-- SCREEN XXL -->
-<div class="screen-xxl">
-    <p>I'm only visible on screens XXL</p>
-</div>
-
-<!-- SCREEN XL -->
-<div class="screen-xl">
-    <p>I'm only visible on screens XL</p>
-</div>
-
-<!-- SCREEN L -->
-<div class="screen-l">
-    <p>I'm only visible on screens L</p>
-</div>
-
-<!-- SCREEN M -->
-<div class="screen-m">
-    <p>I'm only visible on screens M</p>
-</div>
-
-<!-- SCREEN S -->
-<div class="screen-s">
-    <p>I'm only visible on screens S</p>
-</div>
-
-<!-- SCREEN XS -->
-<div class="screen-xs">
-    <p>I'm only visible on screens XS</p>
-</div>
-
-                                            </div>
-        </section>
-                <section id="tab-screens-2" data-fc-name="Code">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;!-- SCREEN XXXL --&gt;
-&lt;div class=&quot;screen-xxxl&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens XXXL&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN XXL --&gt;
-&lt;div class=&quot;screen-xxl&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens XXL&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN XL --&gt;
-&lt;div class=&quot;screen-xl&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens XL&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN L --&gt;
-&lt;div class=&quot;screen-l&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens L&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN M --&gt;
-&lt;div class=&quot;screen-m&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens M&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN S --&gt;
-&lt;div class=&quot;screen-s&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens S&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- SCREEN XS --&gt;
-&lt;div class=&quot;screen-xs&quot;&gt;
-    &lt;p&gt;I&#039;m only visible on screens XS&lt;/p&gt;
-&lt;/div&gt;
-
-</code></pre>
-            </div>
-        </section>
-                    </div>
-
-
-            </div>
         </div>
     </div>
     <footer class="fc-footer">
@@ -629,23 +626,23 @@
         sPathJsLibs : '..//static/js/libs/',
         sPathCss: '..//static/css/',
         bResponsiveImages: true,
-        sHash : '200-beta-5',
+        sHash : '200-beta-6',
         oCss: {
-            '..//static/css/main.css?v=200-beta-5' : 'all',
-            '..//static/css/icons.css?v=200-beta-5' : 'all',
+            '..//static/css/main.css?v=200-beta-6' : 'all',
+            '..//static/css/icons.css?v=200-beta-6' : 'all',
             'https://fonts.googleapis.com/css?family=Alegreya+Sans' : 'all',
             'https://fonts.googleapis.com/css?family=Source+Sans+Pro' : 'all',
-            '..//static/css/screen-xs.css?v=200-beta-5' : 'screen and (max-width:249px)',
-            '..//static/css/screen-s.css?v=200-beta-5' : 'screen and (min-width:249px) and (max-width:499px)',
-            '..//static/css/screen-m.css?v=200-beta-5' : 'screen and (min-width:500px) and (max-width:799px)',
-            '..//static/css/screen-l.css?v=200-beta-5' : 'screen and (min-width:799px) and (max-width:979px)',
-            '..//static/css/screen-xl.css?v=200-beta-5' : 'screen and (min-width:980px) and (max-width:1279px)',
-            '..//static/css/screen-xxl.css?v=200-beta-5' : 'screen and (min-width:1280px) and (max-width:1439px)',
-            '..//static/css/screen-xxxl.css?v=200-beta-5' : 'screen and (min-width:1440px)'
+            '..//static/css/screen-xs.css?v=200-beta-6' : 'screen and (max-width:249px)',
+            '..//static/css/screen-s.css?v=200-beta-6' : 'screen and (min-width:249px) and (max-width:499px)',
+            '..//static/css/screen-m.css?v=200-beta-6' : 'screen and (min-width:500px) and (max-width:799px)',
+            '..//static/css/screen-l.css?v=200-beta-6' : 'screen and (min-width:799px) and (max-width:979px)',
+            '..//static/css/screen-xl.css?v=200-beta-6' : 'screen and (min-width:980px) and (max-width:1279px)',
+            '..//static/css/screen-xxl.css?v=200-beta-6' : 'screen and (min-width:1280px) and (max-width:1439px)',
+            '..//static/css/screen-xxxl.css?v=200-beta-6' : 'screen and (min-width:1440px)'
         }
     }
 </script>
-<script async="async" src="..//static/js/frontendcore.js?v=200-beta-5"></script>
+<script async="async" src="..//static/js/frontendcore.js?v=200-beta-6"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
