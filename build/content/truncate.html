@@ -21,8 +21,17 @@
         <div class="fc-header-top">
             <div class="row">
                 <div class="col">
-                    <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-s"><i class="icon-bars mr-n"></i></a>
-                    <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
+                    <div class="desktop">
+                        <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
+                    </div>
+                    <div class="mobile tablet">
+                        <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-m mr-n"><i class="icon-bars mr-n"></i></a>
+                        <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m ml-s" alt="FRONTEND CORE" /></a>
+                    </div>
+                </div>
+                <div class="col ta-r">
+                    <gcse:search></gcse:search>
+                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
                 </div>
             </div>
         </div>
@@ -468,8 +477,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <gcse:search></gcse:search>
-                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
+
                 </div>
             </div>
         </div>
