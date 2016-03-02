@@ -9,6 +9,7 @@
 		overflow: hidden;
 		background: $color-box;
 		color: contrast-color($color-box);
+		position: relative;
 
 	}
 	&._lighten {
