@@ -22,7 +22,11 @@ module.exports = function( grunt ) {
         if ( oData.scss !== null ) {
 
             if ( oData.scss.cwd !== null ) {
-                sScssCwdData = getRelativePath(oData.scss.cwd, 'appCwd');
+                if ( Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+                    sScssCwdData = getRelativePath(oData.scss.cwd[0], 'appCwd');
+                } else {
+                    sScssCwdData = getRelativePath(oData.scss.cwd, 'appCwd');
+                }
             }
 
             if ( oData.scss.dest !== null ) {

@@ -4,12 +4,17 @@ var param = process.argv[2],
     scssCwd = process.argv[3],
     scssDest = process.argv[4],
     sCurrentProject = '',
+    bDebug = false,
     colors = require('colors');
 
 // set currentProject
 for ( var key in process.argv ) {
     if (process.argv[key].indexOf('--p=') !== -1 ) {
         sCurrentProject = process.argv[key].replace('--p=','');
+    }
+
+    if (process.argv[key].indexOf('--debug') !== -1 ) {
+        bDebug = true;
     }
 }
 
@@ -134,7 +139,10 @@ for ( var key in aProjects ) {
             console.log("       frontendcore css --p=Myproject".white);
             console.log("       frontendcore watch --p=Myproject".white);
 
-        break;
+            console.log(" --debug".blue);
+            console.log("  Activates verbose mode and show all the log".white);
+
+            break;
         case "init":
             console.log("INSTALL BOWER DEPENDENCIES");
 
@@ -161,6 +169,10 @@ for ( var key in aProjects ) {
 
             aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
 
+            if (bDebug) {
+                aParams.push('--verbose');
+            }
+
             if ( aProjects[key] !== '%default%' ) {
 
                 aParams.push('--project=' + aProjects[key]);
@@ -171,7 +183,11 @@ for ( var key in aProjects ) {
             break;
         default:
 
-            aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ]
+            aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
+
+            if (bDebug) {
+                aParams.push('--verbose');
+            }
 
             if ( aProjects[key] !== '%default%' ) {
                 aParams.push('--project=' + aProjects[key]);

@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 		var sScreen = screen !== undefined ? screen : 'main',
 			aPaths = [];
 
-		if (Object.prototype.toString.call(scssCwd) === '[object Array]') {
+		if ( Object.prototype.toString.call(grunt.option('scssCwd')) === '[object Array]') {
 			for (var nKey = 0; nKey < scssCwd.length; nKey++) {
 				aPaths.push(scssCwd[nKey]);
 			}
