@@ -9,6 +9,20 @@
 {% block main %}
 <div class="row">
     <section class="col-6">
+        <h2>Unordered default list</h2>
+        {{ demos.demo(
+            'ul',
+            PathComponents ~ 'typography/html/ul.html'
+        )}}
+    </section>
+    <section class="col-6">
+        <h2>ordered default list</h2>
+        {{ demos.demo(
+        'ol',
+        PathComponents ~ 'typography/html/ol.html'
+        )}}
+    </section>
+    <section class="col-6">
         <h2>Unordered list</h2>
         {{ demos.demo(
             'ul-list',

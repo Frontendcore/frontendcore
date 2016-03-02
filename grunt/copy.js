@@ -60,6 +60,20 @@ module.exports = function(grunt) {
 				}
 			]
 		};
+
+		oConfig['jsForms'] = {
+			files: [
+				// makes all src relative to cwd
+				{
+					expand: true,
+					cwd: fcCwd + '/bower/parsleyjs/src/i18n/',
+					src: ['**'],
+					dest: jsDest + '/ui/forms-locale/'
+				},
+			]
+		}
+
+
 	}
 
 	return oConfig;
