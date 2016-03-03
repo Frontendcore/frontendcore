@@ -82,14 +82,13 @@ module.exports = function(grunt) {
 		var sScreen = screen !== undefined ? screen : 'main',
 			aPaths = [];
 
-		if ( Object.prototype.toString.call(grunt.option('scssCwd')) === '[object Array]') {
-			for (var nKey = 0; nKey < scssCwd.length; nKey++) {
-				aPaths.push(scssCwd[nKey]);
+		if ( oData !== null && oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+			for (var nKey = 0; nKey < oData.scss.cwd.length; nKey++) {
+				aPaths.push(getRelativePath(oData.scss.cwd[nKey]));
 			}
 		} else {
 			aPaths.push(scssCwd);
 		}
-
 		var oFiles = {},
 			sKey = aPaths[0] + '/_components_' + sScreen + '.scss',
 			oComponents = oData !== null && oData.components !== undefined ? oData.components : oPkg.components;
@@ -121,6 +120,8 @@ module.exports = function(grunt) {
 		if (sDevice !== undefined) {
 			oFiles[sKey].push(fcCwd + '/components/**/*_' + sDevice + '*.scss');
 		}
+
+
 
 		return oFiles
 
