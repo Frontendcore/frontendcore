@@ -4,9 +4,17 @@ module.exports = function(grunt) {
 
 	if (oData !== null) {
 
-		if (grunt.option('project')) {
-			oData = oData[grunt.option('project')];
-		}
+		var oScssFiles = [
+			appCwd + '/components/**/*.scss',
+			scssCwd + '/components/**/*.scss',
+			scssCwd + '/**/*.scss'
+		];
+
+        if ( oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+            for (var nKey = 0; nKey < oData.scss.cwd.length; nKey++) {
+				oScssFiles.push(getRelativePath(oData.scss.cwd[nKey] + '/**/*.scss'));
+            }
+        }
 
 		return {
 			js: {
@@ -17,11 +25,7 @@ module.exports = function(grunt) {
 				tasks: ['js']
 			},
 			scss: {
-				files: [
-					appCwd + '/components/**/*.scss',
-					scssCwd + 'components/**/*.scss',
-					scssCwd + '/**/*.scss'
-				],
+				files: oScssFiles,
 				tasks: ['css:compile']
 			},
 			html: {

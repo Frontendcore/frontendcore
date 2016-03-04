@@ -14,9 +14,9 @@ module.exports = function( grunt ) {
 
 		// GET SRC PATH & FILE FOR ALL FILES
 
-		if ( Object.prototype.toString.call( scssCwd ) === '[object Array]' ) {
-			for ( var nKey = 0; nKey < scssCwd.length; nKey++ ) {
-				aPaths.push( getRelativePath(scssCwd[nKey]) );
+		if ( oData !== null && oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+			for (var nKey = 0; nKey < oData.scss.cwd.length; nKey++) {
+				aPaths.push(getRelativePath(oData.scss.cwd[nKey]));
 			}
 		} else {
 			aPaths.push( scssCwd );
