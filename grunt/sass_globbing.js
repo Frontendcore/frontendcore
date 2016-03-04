@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 		var sScreen = screen !== undefined ? screen : 'main',
 			aPaths = [];
 
-		if ( oData !== null && oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+		if (oData !== null && oData.scss !== undefined && oData.scss.cwd !== undefined && Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
 			for (var nKey = 0; nKey < oData.scss.cwd.length; nKey++) {
 				aPaths.push(getRelativePath(oData.scss.cwd[nKey]));
 			}
@@ -107,13 +107,16 @@ module.exports = function(grunt) {
 			oFiles[sKey].push(fcCwd + 'components/' + oComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
 
-		for (var nPath = 0; nPath < aPaths.length; nPath++) {
-			oFiles[sKey].push( aPaths[nPath] + '/**/*_vars*.scss');
-			oFiles[sKey].push( aPaths[nPath] + '/**/*_pattern*.scss');
-			oFiles[sKey].push( aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
-			oFiles[sKey].push( '!' + aPaths[nPath] + '/**/*_components_' + sScreen + '*.scss');
-			if (sDevice !== undefined) {
-				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
+		if (currentTasks.indexOf('css:one') === -1)
+		{
+			for (var nPath = 0; nPath < aPaths.length; nPath++) {
+				oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
+				oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
+				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
+				oFiles[sKey].push('!' + aPaths[nPath] + '/**/*_components_' + sScreen + '*.scss');
+				if (sDevice !== undefined) {
+					oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
+				}
 			}
 		}
 
@@ -121,11 +124,10 @@ module.exports = function(grunt) {
 			oFiles[sKey].push(fcCwd + '/components/**/*_' + sDevice + '*.scss');
 		}
 
-
-
 		return oFiles
 
 	}
+
 
 	return oConfig;
 }

@@ -56,6 +56,7 @@ module.exports = function( grunt ) {
     }
 
     this.oData = oData;
+    this.currentTasks = grunt.cli.tasks[0] !== undefined ? grunt.cli.tasks : [];
 
     this.fcCwd = grunt.option('fcCwd');
     this.appCwd = grunt.option('appCwd');
