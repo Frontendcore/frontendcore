@@ -2,8 +2,7 @@ module.exports = function(grunt) {
 
 	require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
 
-	var oPkg = require( fcCwd + '/package.json'),
-		sOneScreen = undefined,
+	var sOneScreen = undefined,
 		oConfig = {};
 
 	function getDeviceByScreen( sScreen) {
@@ -47,6 +46,9 @@ module.exports = function(grunt) {
 			main: {
 				files: getRoutes('main', getDeviceByScreen('main'))
 			},
+			secondary: {
+				files: getRoutes('secondary', getDeviceByScreen('secondary'))
+			},
 			screenXXXL: {
 				files: getRoutes('screen-xxxl', getDeviceByScreen('screen-xxxl'))
 			},
@@ -89,10 +91,15 @@ module.exports = function(grunt) {
 		} else {
 			aPaths.push(scssCwd);
 		}
+
 		var oFiles = {},
 			sKey = aPaths[0] + '/_components_' + sScreen + '.scss',
-			oComponents = oData !== null && oData.components !== undefined ? oData.components : oPkg.components;
+			oScssComponents = oComponentsMain;
 
+		if ( screen === 'secondary') {
+			oScssComponents = oComponentsSecondary;
+			sScreen = 'main';
+		}
 
 		oFiles[sKey] = [
 			fcCwd + 'components/essence/scss/_fc-' + sScreen + '_essence.scss',
@@ -100,11 +107,11 @@ module.exports = function(grunt) {
 
 		];
 
-		for (var sComponent in oComponents) {
-			oFiles[sKey].push(fcCwd + 'components/' + oComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
-			oFiles[sKey].push(fcCwd + 'components/' + oComponents[sComponent] + '/**/*_vars*.scss');
-			oFiles[sKey].push(fcCwd + 'components/' + oComponents[sComponent] + '/**/*_pattern*.scss');
-			oFiles[sKey].push(fcCwd + 'components/' + oComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
+		for (var sComponent in oScssComponents) {
+			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
+			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_vars*.scss');
+			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_pattern*.scss');
+			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
 
 		if (currentTasks.indexOf('css:one') === -1)

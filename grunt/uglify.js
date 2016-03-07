@@ -2,9 +2,7 @@ module.exports = function(grunt) {
 
 	require(fcCwd + "/grunt/_data.js")(grunt);
 
-	var oPkg = require(fcCwd + '/package.json'),
-		oComponents = oData !== null && oData.components !== undefined  ? oData.components : oPkg.components,
-		oConfig = {};
+	var oConfig = {};
 
 
 	var oCore = {

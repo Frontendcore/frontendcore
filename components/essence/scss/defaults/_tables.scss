@@ -1,0 +1,50 @@
+$object-tables-vars-default: (
+
+  /* TABLE */
+        table-border-width: 0,
+        table-border-color: transparent,
+        table-border-style: none,
+
+  /* THEAD TD & THEAD TH */
+        thead-cell-padding: map-get($defaults, spacing)/4 map-get($defaults, spacing)/2,
+        thead-cell-border-width: 0 0 1px 0,
+        thead-cell-border-color: map-get($colors, box ),
+        thead-cell-border-style: solid,
+        thead-cell-font-size: map-get($fonts, size-default),
+        thead-cell-font-family: map-get($fonts, face-default),
+        thead-cell-font-weight: normal,
+        thead-cell-background: transparent,
+        thead-cell-align: left,
+        thead-cell-vertical-align: middle,
+        thead-cell-color: map-get($colors, foreground ),
+
+  /* TBODY */
+        tbody-ouline: 2px solid map-get($colors, background ),
+        tbody-border-width: 1px,
+        tbody-border-color: map-get($colors, box )-light,
+        tbody-border-style: solid,
+        tbody-color: map-get($colors, foreground ),
+        tbody-background: map-get($colors, background ),
+
+  /* TBODY TR */
+        tr-odd-background: rgba(map-get($colors, box ), .5),
+        tr-hover-background: rgba(map-get($colors, primary ), .1),
+
+  /* TBODY TD */
+        tbody-cell-padding: map-get($defaults, spacing)/2 map-get($defaults, spacing)/2,
+        tbody-cell-border-width: 0 1px 1px 0,
+        tbody-cell-border-color: map-get($colors, box ),
+        tbody-cell-border-style: solid,
+        tbody-cell-font-size: map-get($fonts, size-default),
+        tbody-cell-font-family: map-get($fonts, face-default),
+        tbody-cell-font-weight: normal,
+        tbody-cell-background: transparent,
+        tbody-cell-align: left,
+        tbody-cell-vertical-align: middle,
+        tbody-cell-color: map-get($colors, foreground ),
+
+) !global !default;
+
+$object-tables-vars-custom: () !global !default;
+
+$object-tables-vars: map-merge($object-tables-vars-default, $object-tables-vars-custom) !global;

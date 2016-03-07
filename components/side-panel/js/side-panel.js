@@ -12,6 +12,8 @@
 				var aTargets = FrontendTools.getDataModules('side-panel'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'side-panel');
 
 				$(aTargets).each(function (nIndex) {

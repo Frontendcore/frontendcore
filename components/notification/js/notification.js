@@ -158,6 +158,8 @@
 					oTarget,
 					sEvent;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'notification' );
 
 				$(aTargets).each(function () {

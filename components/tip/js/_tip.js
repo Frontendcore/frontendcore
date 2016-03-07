@@ -18,6 +18,8 @@
 				var aTargets = FrontendTools.getDataModules('tip'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'tip' );
 
 				$(aTargets).each(function () {
@@ -76,14 +78,6 @@
 
 				}
 
-			},
-			onStop: function () {
-				this.sPathCss = null;
-				this.oDefault = null;
-			},
-			onDestroy: function () {
-				delete this.sPathCss;
-				delete this.oDefault;
 			}
 		};
 	});

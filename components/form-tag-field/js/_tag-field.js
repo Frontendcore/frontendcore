@@ -14,6 +14,8 @@
 				var aTarget = FrontendTools.getDataModules('tag-field'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'tag-field' );
 
 				self.autobind(aTarget);

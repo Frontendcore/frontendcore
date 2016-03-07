@@ -3,13 +3,12 @@
 
 		FrontendCore.define('table-responsive', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			onStart: function () {
 
 				var aTargets = FrontendTools.getDataModules('table-responsive'),
 					self = this;
 
-				FrontendTools.loadCSS(this.sPathCss);
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'table-responsive' );
 

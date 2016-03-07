@@ -11,6 +11,8 @@
 				var aTargets = FrontendTools.getDataModules('autocomplete'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'autocomplete');
 
 				$(aTargets).each(function () {

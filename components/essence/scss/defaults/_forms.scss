@@ -1,0 +1,24 @@
+$object-forms-vars-default: (
+  /* Field */
+        field-font-family: map_get($fonts, face-default),
+        field-font-size: map_get($fonts, face-default),
+        field-font-weight: normal,
+        field-background: #FFF,
+        field-color: #000,
+        field-padding: map-get($defaults, spacing)/4 map-get($defaults, spacing)/2,
+        field-margin: 0 map-get($defaults, spacing)/2 map-get($defaults, spacing) 0,
+        field-border-radius: 1px,
+        field-border: 1px solid rgba(map_get($colors, foreground), .3),
+        field-box-shadow: "inset 0 2px 8px rgba(#{map_get($colors, foreground)}, .2), 0 1px 1px rgba(#{map_get($colors, background)}, .5)",
+        field-placeholder-color: rgba(map_get($colors, foreground), .3),
+  /* Field focus */
+        field-focus-border: map_get($colors, info),
+  /* Field error */
+        field-error-border: map_get($colors, error),
+  /* Label */
+        label-color: rgba(map_get($colors, foreground), .5)
+) !global !default;
+
+$object-forms-vars-custom: () !global !default;
+
+$object-forms-vars: map-merge($object-forms-vars-default, $object-forms-vars-custom) !global;

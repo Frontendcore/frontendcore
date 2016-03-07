@@ -3,7 +3,6 @@
 
 	FrontendCore.define('wysiwyg', [], function () {
 		return {
-			sPathCss: oGlobalSettings.sPathCssUI + '?v=' + oGlobalSettings.sHash,
 			mediator :  FrontendMediator,
 			bResize : false,
 			_oConstants : {
@@ -28,7 +27,7 @@
 				var aTargets = FrontendTools.getDataModules('wysiwyg'),
 					self = this;
 
-				FrontendTools.loadCSS(this.sPathCss);
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'wysiwyg' );
 
@@ -330,12 +329,6 @@
 
 				FrontendTools.removeLoading(oTarget);
 
-			},
-			onStop: function () {
-				this.sPathCss = null;
-			},
-			onDestroy: function () {
-				delete this.sPathCss;
 			}
 		};
 	});

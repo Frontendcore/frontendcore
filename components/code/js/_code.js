@@ -8,6 +8,8 @@
 				var aTargets = FrontendTools.getDataModules('code'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'code');
 
 				hljs.configure({

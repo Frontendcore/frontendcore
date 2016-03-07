@@ -61,6 +61,8 @@
 				var aTargets = FrontendTools.getDataModules('table-dynamic'),
 					self = this;
 
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
+
 				FrontendTools.trackModule('JS_Libraries', 'call', 'table-dynamic' );
 
 				$(aTargets).each(function ( nIndex ) {
