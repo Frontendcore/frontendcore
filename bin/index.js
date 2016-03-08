@@ -10,10 +10,13 @@ var param = process.argv[2],
     bDebug = false,
     colors = require('colors'),
     sCurrentPath = process.cwd(),
+    bCustomFcJson = false,
+    settingsPath = sCurrentPath + '/frontendcore.json',
     sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../');
 
 // set currentProject
 for ( var key in process.argv ) {
+
     if (process.argv[key].indexOf('--p=') !== -1 ) {
         sCurrentProject = process.argv[key].replace('--p=','');
     }
@@ -29,6 +32,11 @@ for ( var key in process.argv ) {
     if (process.argv[key].indexOf('--appCwd') !== -1 ) {
         sCurrentPath = process.argv[key].replace('--appCwd=','');
     }
+
+    if (process.argv[key].indexOf('--fcJson') !== -1 ) {
+        settingsPath = process.argv[key].replace('--fcJson=','') + '/frontendcore.json';
+        bCustomFcJson = true;
+    }
 }
 
 require(path.join( path.dirname(fs.realpathSync(__filename)) , "../grunt/_tools.js") )();
@@ -36,7 +44,6 @@ require(path.join( path.dirname(fs.realpathSync(__filename)) , "../grunt/_tools.
 var aProjects = [],
     aParams = [],
     spawn = require('child_process').spawn,
-    settingsPath = sCurrentPath + '/frontendcore.json',
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
     exec = function( bin, params ) {
@@ -95,6 +102,14 @@ if ( param === 'css:one') {
 
     if (bDebug) {
         aParams.push('--verbose');
+    }
+
+    if ( sCurrentProject !== '') {
+        aParams.push('--project=' + sCurrentProject);
+    }
+
+    if (bCustomFcJson) {
+        aParams.push('--fcJson=' + settingsPath);
     }
 
     exec(sGruntPath, aParams );

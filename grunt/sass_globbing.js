@@ -110,16 +110,13 @@ module.exports = function(grunt) {
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
 
-		if (currentTasks.indexOf('css:one') === -1)
-		{
-			for (var nPath = 0; nPath < aPaths.length; nPath++) {
-				oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
-				oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
-				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
-				oFiles[sKey].push('!' + aPaths[nPath] + '/**/*_components_' + sScreen + '*.scss');
-				if (sDevice !== undefined) {
-					oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
-				}
+		for (var nPath = 0; nPath < aPaths.length; nPath++) {
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
+			oFiles[sKey].push('!' + aPaths[nPath] + '/**/*_components_' + sScreen + '*.scss');
+			if (sDevice !== undefined) {
+				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
 			}
 		}
 

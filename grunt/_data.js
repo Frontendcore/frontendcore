@@ -2,7 +2,7 @@ module.exports = function( grunt ) {
 
     require(grunt.option('fcCwd') + "/grunt/_tools.js")(grunt);
 
-    var settingsPath = grunt.option('appCwd') + '/frontendcore.json',
+    var settingsPath = grunt.option('fcJson') === undefined ? grunt.option('appCwd') + '/frontendcore.json' : grunt.option('fcJson') ,
         oPkg = require( grunt.option('fcCwd') + '/package.json'),
         sScssCwdData = '',
         sScssDestData = '',
@@ -13,6 +13,7 @@ module.exports = function( grunt ) {
         oData,
         oComponentsMain = [],
         oComponentsSecondary = [];
+
 
     if ( fileExists(settingsPath) ) {
 
