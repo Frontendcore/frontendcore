@@ -25,34 +25,42 @@ module.exports = function( grunt ) {
         oComponentsMain = oData !== null && oData.components !== undefined && oData.components.main !== undefined  ? oData.components.main : oPkg.components.main;
         oComponentsSecondary = oData !== null && oData.components !== undefined && oData.components.secondary !== undefined  ? oData.components.secondary : oPkg.components.secondary;
 
-        if ( oData.scss !== null ) {
+        console.log(oComponentsSecondary);
 
-            if ( oData.scss.cwd !== null ) {
-                if ( Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
-                    sScssCwdData = getRelativePath(oData.scss.cwd[0], 'appCwd');
-                } else {
-                    sScssCwdData = getRelativePath(oData.scss.cwd, 'appCwd');
+        if ( oData !== null ) {
+
+            if ( oData.scss !== undefined) {
+                if ( oData.scss.cwd !== undefined ) {
+                    if ( Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
+                        sScssCwdData = getRelativePath(oData.scss.cwd[0], 'appCwd');
+                    } else {
+                        sScssCwdData = getRelativePath(oData.scss.cwd, 'appCwd');
+                    }
+                }
+
+                if ( oData.scss.dest !== undefined ) {
+                    sScssDestData = getRelativePath(oData.scss.dest, 'appCwd');
                 }
             }
 
-            if ( oData.scss.dest !== null ) {
-                sScssDestData = getRelativePath(oData.scss.dest, 'appCwd');
+            if ( oData.js !== undefined) {
+                if (oData.js.cwd !== undefined) {
+                    sJsCwdData = getRelativePath(oData.js.cwd, 'appCwd');
+                }
+
+                if (oData.js.dest !== undefined) {
+                    sJsDestData = getRelativePath(oData.js.dest, 'appCwd');
+                }
             }
 
-            if ( oData.js.cwd !== null ) {
-                sJsCwdData = getRelativePath(oData.js.cwd, 'appCwd');
-            }
+            if ( oData.icons !== undefined) {
+                if (oData.icons.cwd !== undefined) {
+                    sIconsCwdData = getRelativePath(oData.icons.cwd, 'appCwd');
+                }
 
-            if ( oData.js.dest !== null ) {
-                sJsDestData = getRelativePath(oData.js.dest, 'appCwd');
-            }
-
-            if ( oData.icons.cwd !== null ) {
-                sIconsCwdData = getRelativePath(oData.icons.cwd, 'appCwd');
-            }
-
-            if ( oData.icons.dest !== null ) {
-                sIconsDestData = getRelativePath(oData.icons.dest, 'appCwd');
+                if (oData.icons.dest !== undefined) {
+                    sIconsDestData = getRelativePath(oData.icons.dest, 'appCwd');
+                }
             }
 
         }
@@ -107,7 +115,7 @@ module.exports = function( grunt ) {
 
     this.oComponentsMain = oComponentsMain;
     this.oComponentsSecondary = oComponentsSecondary;
-    this.oComponents = this.mergeJSON( this.oComponentsMain, this.oComponentsSecondary );
+    this.oComponents = oComponentsMain.concat(oComponentsSecondary);
 
 
 };

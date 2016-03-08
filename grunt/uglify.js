@@ -155,6 +155,8 @@ module.exports = function(grunt) {
 			rountrip: oRoundTrip
 		}
 
+		console.log(oComponents);
+
 		for (var nKey = 0; nKey < oComponents.length; nKey++) {
 
 			oConfig[oComponents[nKey]] = {

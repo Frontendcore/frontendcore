@@ -33,15 +33,7 @@ module.exports = function(grunt) {
 
 	}
 
-
-	if ( grunt.option('scssCwd') !== undefined  ) {
-
-		var aTemp = grunt.option('scssCwd').split('/');
-
-		sOneScreen = aTemp[aTemp.length - 1].replace('.scss','');
-	}
-
-	if (sOneScreen === undefined) {
+	if (currentTasks.indexOf('css:one') === -1) {
 		oConfig = {
 			main: {
 				files: getRoutes('main', getDeviceByScreen('main'))
@@ -72,6 +64,10 @@ module.exports = function(grunt) {
 			},
 		}
 	} else {
+
+		var aTemp = grunt.option('scssCwd').split('/');
+		sOneScreen = aTemp[aTemp.length - 1].replace('.scss','');
+
 		oConfig = {
 			one: {
 				files: getRoutes(sOneScreen, getDeviceByScreen(sOneScreen))

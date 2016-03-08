@@ -82,118 +82,122 @@ if ( oData !== null && !oData.hasOwnProperty('scss') &&  !oData.hasOwnProperty('
     aProjects.push('%default%');
 }
 
-for ( var key in aProjects ) {
 
-    switch (param) {
-        case "help":
+if ( param === 'css:one') {
 
-            var sVersion = " FRONTENDCORE v" + pkg.version;
+    aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath, '--scssCwd=' + scssCwd, '--scssDest=' + scssDest ];
 
-            console.log();
-            console.log("************************************************************".blue);
-            console.log( sVersion.blue );
-            console.log( " The All in one Frontend Framework".blue );
-            console.log("************************************************************".blue);
-            console.log();
-            console.log("You can execute the tasks typing '" + "frontendcore".blue + "' or '" + "_fc".blue + "' on the root path of your project (Where the frontendcore.json is).");
-            console.log("If you do so the default task will be executed, also you can specify the tasks and some other options: ");
-            console.log();
+    if (bDebug) {
+        aParams.push('--verbose');
+    }
 
-            console.log(" help".green);
-            console.log("   Shows this help".white);
+    exec(sGruntPath, aParams );
 
-            console.log(" init".green);
-            console.log("   Install all the bower dependencies for FrontendCore. It's just necessary the first time you install frontendcore or if you update it.".white);
+} else {
 
-            console.log(" css".green);
-            console.log("   Execute for all the scss files the css imports, preprocessors and processors. Run this for a full css task execution.".white);
+    for ( var key in aProjects ) {
 
-            console.log(" css:compile".green);
-            console.log("   Avoid the SASS import globbing task, just execute preprocessors and postprocessors.".white);
+        switch (param) {
+            case "help":
 
-            console.log(" css:one".green);
-            console.log("   Execute for just one file the css imports, preprocessors and processors. If you use this option you need to provide the CWD Path and dest path manually.".white);
-            console.log("   Example: frontendcore css:one /scss/main.scss /css/main.css".white);
+                var sVersion = " FRONTENDCORE v" + pkg.version;
 
-            console.log(" js".green);
-            console.log("   Execute the jshint on the js files of your project and also copy the js files to the path defined. All the definitions are in your frontendcore.json file.".white);
+                console.log();
+                console.log("************************************************************".blue);
+                console.log( sVersion.blue );
+                console.log( " The All in one Frontend Framework".blue );
+                console.log("************************************************************".blue);
+                console.log();
+                console.log("You can execute the tasks typing '" + "frontendcore".blue + "' or '" + "_fc".blue + "' on the root path of your project (Where the frontendcore.json is).");
+                console.log("If you do so the default task will be executed, also you can specify the tasks and some other options: ");
+                console.log();
 
-            console.log(" icons".green);
-            console.log("   Generate an icons.css file based on the svg icons on the folder you defined plus the icons integrated in frontendcore.".white);
+                console.log(" help".green);
+                console.log("   Shows this help".white);
 
-            console.log(" docs".green);
-            console.log("   Generate the documenation for frontendcore on your frontendcore build path.".white);
+                console.log(" init".green);
+                console.log("   Install all the bower dependencies for FrontendCore. It's just necessary the first time you install frontendcore or if you update it.".white);
 
-            console.log(" build".green);
-            console.log("   Executes all the tasks except init and watch.".white);
+                console.log(" css".green);
+                console.log("   Execute for all the scss files the css imports, preprocessors and processors. Run this for a full css task execution.".white);
 
-            console.log(" watch".green);
-            console.log("  Watch all the folders defined in the frontendcore.json and execute the tasks that affect them if there are changes.".white);
+                console.log(" css:compile".green);
+                console.log("   Avoid the SASS import globbing task, just execute preprocessors and postprocessors.".white);
 
-            console.log(" --p=MyProject".blue);
-            console.log("  In case you have several projects defined in the frontendcore.json you can specify wich one just take care for the task specified.".white);
-            console.log("  Myproject should be the name of your project in the frontendcore.json".white);
-            console.log("  This option should be allways the last parameter and can be combined with others.".white);
-            console.log("  Examples:".white);
-            console.log("       frontendcore --p=Myproject".white);
-            console.log("       frontendcore css --p=Myproject".white);
-            console.log("       frontendcore watch --p=Myproject".white);
+                console.log(" css:one".green);
+                console.log("   Execute for just one file the css imports, preprocessors and processors. If you use this option you need to provide the CWD Path and dest path manually.".white);
+                console.log("   Example: frontendcore css:one /scss/main.scss /css/main.css".white);
 
-            console.log(" --debug".blue);
-            console.log("  Activates verbose mode and show all the log".white);
+                console.log(" js".green);
+                console.log("   Execute the jshint on the js files of your project and also copy the js files to the path defined. All the definitions are in your frontendcore.json file.".white);
 
-            break;
-        case "init":
-            console.log("INSTALL BOWER DEPENDENCIES");
+                console.log(" icons".green);
+                console.log("   Generate an icons.css file based on the svg icons on the folder you defined plus the icons integrated in frontendcore.".white);
 
-            exec( "node_modules/bower/bin/bower", ["install"] );
+                console.log(" docs".green);
+                console.log("   Generate the documenation for frontendcore on your frontendcore build path.".white);
 
-        break;
-        case "css:one":
-            aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath, '--scssCwd=' + scssCwd, '--scssDest=' + scssDest ];
+                console.log(" build".green);
+                console.log("   Executes all the tasks except init and watch.".white);
 
-            if ( aProjects[key] !== '%default%' ) {
+                console.log(" watch".green);
+                console.log("  Watch all the folders defined in the frontendcore.json and execute the tasks that affect them if there are changes.".white);
 
-                aParams.push('--project=' + aProjects[key]);
-            }
+                console.log(" --p=MyProject".blue);
+                console.log("  In case you have several projects defined in the frontendcore.json you can specify wich one just take care for the task specified.".white);
+                console.log("  Myproject should be the name of your project in the frontendcore.json".white);
+                console.log("  This option should be allways the last parameter and can be combined with others.".white);
+                console.log("  Examples:".white);
+                console.log("       frontendcore --p=Myproject".white);
+                console.log("       frontendcore css --p=Myproject".white);
+                console.log("       frontendcore watch --p=Myproject".white);
 
-            exec(sGruntPath, aParams );
-        break;
-        case "watch":
-        case "css":
-        case "css:compile":
-        case "docs":
-        case "js":
-        case "build":
-        case "icons":
+                console.log(" --debug".blue);
+                console.log("  Activates verbose mode and show all the log".white);
 
-            aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
+                break;
+            case "init":
+                console.log("INSTALL BOWER DEPENDENCIES");
 
-            if (bDebug) {
-                aParams.push('--verbose');
-            }
+                exec( "node_modules/bower/bin/bower", ["install"] );
 
-            if ( aProjects[key] !== '%default%' ) {
+                break;
+            case "watch":
+            case "css":
+            case "css:compile":
+            case "docs":
+            case "js":
+            case "build":
+            case "icons":
 
-                aParams.push('--project=' + aProjects[key]);
-            }
+                aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
 
-            exec(sGruntPath, aParams );
+                if (bDebug) {
+                    aParams.push('--verbose');
+                }
 
-            break;
-        default:
+                if ( aProjects[key] !== '%default%' ) {
 
-            aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
+                    aParams.push('--project=' + aProjects[key]);
+                }
 
-            if (bDebug) {
-                aParams.push('--verbose');
-            }
+                exec(sGruntPath, aParams );
 
-            if ( aProjects[key] !== '%default%' ) {
-                aParams.push('--project=' + aProjects[key]);
-            }
+                break;
+            default:
 
-            exec(sGruntPath,aParams );
-            break;
+                aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
+
+                if (bDebug) {
+                    aParams.push('--verbose');
+                }
+
+                if ( aProjects[key] !== '%default%' ) {
+                    aParams.push('--project=' + aProjects[key]);
+                }
+
+                exec(sGruntPath,aParams );
+                break;
+        }
     }
 }

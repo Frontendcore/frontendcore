@@ -3,8 +3,8 @@
 		border-radius: map-get($object-buttons-vars, border-radius);
 		margin: map-get($object-buttons-vars, margin);
 		padding: map-get($object-buttons-vars, padding);
-		box-shadow: unquote(map-get($object-buttons-vars, box-shadow));
-		text-shadow: unquote(map-get($object-buttons-vars, text-shadow));
+		box-shadow: map-get($object-buttons-vars, box-shadow);
+		text-shadow: map-get($object-buttons-vars, text-shadow);
 		display: inline-block;
 		vertical-align: middle;
 		text-decoration: none;
