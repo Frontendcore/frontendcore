@@ -25,8 +25,6 @@ module.exports = function( grunt ) {
         oComponentsMain = oData !== null && oData.components !== undefined && oData.components.main !== undefined  ? oData.components.main : oPkg.components.main;
         oComponentsSecondary = oData !== null && oData.components !== undefined && oData.components.secondary !== undefined  ? oData.components.secondary : oPkg.components.secondary;
 
-        console.log(oComponentsSecondary);
-
         if ( oData !== null ) {
 
             if ( oData.scss !== undefined) {
