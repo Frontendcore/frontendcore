@@ -3,9 +3,14 @@
 var param = process.argv[2],
     scssCwd = process.argv[3],
     scssDest = process.argv[4],
+    sys = require('sys'),
+    path = require('path'),
+    fs   = require('fs'),
     sCurrentProject = '',
     bDebug = false,
-    colors = require('colors');
+    colors = require('colors'),
+    sCurrentPath = process.cwd(),
+    sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../');
 
 // set currentProject
 for ( var key in process.argv ) {
@@ -16,21 +21,22 @@ for ( var key in process.argv ) {
     if (process.argv[key].indexOf('--debug') !== -1 ) {
         bDebug = true;
     }
-}
 
-// or more concisely
-var sys = require('sys'),
-    path = require('path'),
-    fs   = require('fs');
+    if (process.argv[key].indexOf('--fcCwd') !== -1 ) {
+        sFrontendCorePath = process.argv[key].replace('--fcCwd=','');
+    }
+
+    if (process.argv[key].indexOf('--appCwd') !== -1 ) {
+        sCurrentPath = process.argv[key].replace('--appCwd=','');
+    }
+}
 
 require(path.join( path.dirname(fs.realpathSync(__filename)) , "../grunt/_tools.js") )();
 
 var aProjects = [],
     aParams = [],
     spawn = require('child_process').spawn,
-    sCurrentPath = process.cwd(),
     settingsPath = sCurrentPath + '/frontendcore.json',
-    sFrontendCorePath = path.join( path.dirname(fs.realpathSync(__filename)) , '../') ,
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
     exec = function( bin, params ) {
