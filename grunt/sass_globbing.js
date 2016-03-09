@@ -22,7 +22,10 @@ module.exports = function(grunt) {
 			case "screen-s":
 			case "screen-xs":
 				sDevice = 'mobile';
-				break;
+			break;
+			case "secondary":
+				sDevice = 'secondary';
+			break;
 			case "main":
 			default:
 				sDevice = undefined;
@@ -90,12 +93,7 @@ module.exports = function(grunt) {
 
 		var oFiles = {},
 			sKey = aPaths[0] + '/_components_' + sScreen + '.scss',
-			oScssComponents = oComponentsMain;
-
-		if ( screen === 'secondary') {
-			oScssComponents = oComponentsSecondary;
-			sScreen = 'main';
-		}
+			oScssComponents = oComponents;
 
 		oFiles[sKey] = [
 			fcCwd + 'components/essence/scss/_fc-' + sScreen + '_essence.scss',
@@ -125,10 +123,7 @@ module.exports = function(grunt) {
 		}
 
 		return oFiles
-
 	}
-
-
 	return oConfig;
 }
 

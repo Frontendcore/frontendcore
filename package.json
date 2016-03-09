@@ -22,8 +22,7 @@
     "framework",
     "frontend"
   ],
-  "components": {
-    "main": [
+  "components": [
       "essence",
       "animations",
       "grids",
@@ -50,9 +49,7 @@
       "image-responsive",
       "polyfiller",
       "visibility",
-      "switch"
-    ],
-    "secondary": [
+      "switch",
       "side-panel",
       "image-zoom",
       "chart",
@@ -72,8 +69,7 @@
       "notification",
       "tip",
       "modal"
-    ]
-  },
+  ],
   "dependencies": {
     "bower": "^1.3.7",
     "colors": "^1.1.2",

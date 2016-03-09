@@ -11,8 +11,7 @@ module.exports = function( grunt ) {
         sIconsCwdData = '',
         sIconsDestData = '',
         oData,
-        oComponentsMain = [],
-        oComponentsSecondary = [];
+        oComponents = [];
 
 
     if ( fileExists(settingsPath) ) {
@@ -23,8 +22,7 @@ module.exports = function( grunt ) {
             oData = oData[grunt.option('project')];
         }
 
-        oComponentsMain = oData !== null && oData.components !== undefined && oData.components.main !== undefined  ? oData.components.main : oPkg.components.main;
-        oComponentsSecondary = oData !== null && oData.components !== undefined && oData.components.secondary !== undefined  ? oData.components.secondary : oPkg.components.secondary;
+        oComponents = oData !== null && oData.components !== undefined && oData.components !== undefined  ? oData.components : oPkg.components;
 
         if ( oData !== null ) {
 
@@ -69,6 +67,7 @@ module.exports = function( grunt ) {
     }
 
     this.oData = oData;
+    this.oComponents = oComponents;
     this.currentTasks = grunt.cli.tasks[0] !== undefined ? grunt.cli.tasks : [];
 
     this.fcCwd = grunt.option('fcCwd');
@@ -112,9 +111,7 @@ module.exports = function( grunt ) {
         return mergedJSON;
     }
 
-    this.oComponentsMain = oComponentsMain;
-    this.oComponentsSecondary = oComponentsSecondary;
-    this.oComponents = oComponentsMain.concat(oComponentsSecondary);
+
 
 
 };
