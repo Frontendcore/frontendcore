@@ -95,7 +95,6 @@
 					background: rgba(contrast-color(map_get($colors, $color-name)), .08);
 				}
 			}
-			>ul > li > ul a{color: contrast-color($color-background);}
 			li.active {
 				a {
 					& {

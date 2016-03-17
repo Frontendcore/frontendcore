@@ -23,6 +23,7 @@
 		>ul > li{
 			&:hover{
 				>ul{
+					display: flex;
 					max-height: 100vh;
 					box-shadow: rgba(contrast-color(white), 0.2) 0 5px 13px;
 					background: $color-background;
@@ -35,11 +36,14 @@
 			left: 0;
 			width: 100%;
 			z-index: 10;
-			display: flex;
+			display: none;
 			max-height: 0;
 			li{
 				flex: 1 1 0;
 				text-align: left;
+			}
+			>li{
+				max-width: 25%;
 			}
 			a{
 				padding: $spacing/2 $spacing/2 $spacing/4 $spacing/2;
