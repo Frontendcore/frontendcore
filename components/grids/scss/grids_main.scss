@@ -66,8 +66,6 @@
 $grid-columns: 1 2 3 4 5 6 7 8 9 10 11 12;
 $grid-total: last($grid-columns);
 $gutter: (map_get($grid-default, gutters)) * 11 / 12;
-$gutter_12: (map_get($grid-default, gutters));
-$gutter_13: (map_get($grid-default, gutters)) * 12 / 13;
 
 .col {
   flex:1 1 0;
@@ -86,37 +84,33 @@ $gutter_13: (map_get($grid-default, gutters)) * 12 / 13;
   $compensation: $gutter * ($n/$grid-total);
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
-
-  /* columns distributed by default _between
-  columns' width is reduced by gutter + compensation for missing last gutter (when 12 columns, 11 gutters)
-  */
   .col-#{$n} {
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
   }
-  /*
-  with _start and _end
-  same amount of gutters as columns
-  column wider than 1 has gutters inside, always one number less than its own number (column of 5 eats 4 gutters)
-  */
   .row._start,
-  .row._end{
+  .row._end,
+  .row._center{
     .col-#{$n} {
-      flex: 0 0 ((100% - $gutter_12 * $grid-total) / $grid-total) * $n + ($gutter_12 * ($n - 1));
-      max-width: ((100% - $gutter_12 * $grid-total) / $grid-total) * $n + ($gutter_12 * ($n - 1));
+      flex: 0 0 $column - $gutter;
+      max-width: $column - $gutter;
     }
   }
   .row._start{
     .col-#{$n} {
-      margin-right: $gutter_12;
+      margin-right: $gutter;
     }
   }
   .row._end{
     .col-#{$n} {
-      margin-left: $gutter_12;
+      margin-left:$gutter;
     }
   }
-
+  .row._center{
+    .col-#{$n}:not(:first-of-type) {
+      margin-left:$gutter;
+    }
+  }
   .col-offset-#{$n} {
     margin-left: $offset;
   }
@@ -131,6 +125,8 @@ $gutter_13: (map_get($grid-default, gutters)) * 12 / 13;
     >.col-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
+      margin-left: 0;
+      margin-right: 0;
     }
     >.col-offset-#{$n} {
       margin-left: $column;

@@ -19,6 +19,30 @@ $gutter: map_get($grid-default, gutters);
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
   }
+  .row._start,
+  .row._end,
+  .row._center{
+    .col-s-#{$n} {
+      flex: 0 0 $column - $gutter;
+      max-width: $column - $gutter;
+    }
+  }
+  .row._start{
+    .col-s-#{$n} {
+      margin-right: $gutter;
+    }
+  }
+  .row._end{
+    .col-s-#{$n} {
+      margin-left:$gutter;
+    }
+  }
+  .row._center{
+    .col-s-#{$n}:not(:first-of-type) {
+      margin-left:$gutter/2;
+    }
+  }
+
   .col-s-offset-#{$n} {
     margin-left: $offset;
   }
@@ -31,6 +55,8 @@ $gutter: map_get($grid-default, gutters);
     >.col-s-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
+      margin-left: 0;
+      margin-right: 0;
     }
     >.col-s-offset-#{$n} {
       margin-left: $column;
