@@ -84,11 +84,32 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
   $compensation: $gutter * ($n/$grid-total);
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
-
-  /*columns' width is reduced by gutter + compensation for missing last gutter (when 12 columns, 11 gutters)*/
   .col-#{$n} {
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
+  }
+  .row._start,
+  .row._end,
+  .row._center{
+    .col-#{$n} {
+      flex: 0 0 $column - $gutter;
+      max-width: $column - $gutter;
+    }
+  }
+  .row._start{
+    .col-#{$n} {
+      margin-right: $gutter;
+    }
+  }
+  .row._end{
+    .col-#{$n} {
+      margin-left:$gutter;
+    }
+  }
+  .row._center{
+    .col-#{$n}:not(:first-of-type) {
+      margin-left:$gutter;
+    }
   }
   .col-offset-#{$n} {
     margin-left: $offset;
@@ -104,6 +125,8 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
     >.col-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
+      margin-left: 0;
+      margin-right: 0;
     }
     >.col-offset-#{$n} {
       margin-left: $column;
