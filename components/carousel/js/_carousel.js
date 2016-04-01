@@ -105,6 +105,10 @@
 					};
 				}
 
+				if (oTarget.getAttribute("data-fc-items-width") !== null){
+					oOptions.items = Math.floor(oTarget.clientWidth/oTarget.getAttribute("data-fc-items-width"));
+				}
+
 				$(oTarget).addClass(sClass);
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
