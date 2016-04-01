@@ -77,12 +77,20 @@
 					oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
 				}
 
+				if (oTarget.getAttribute("data-fc-center") !== null && oTarget.getAttribute("data-fc-center") === 'false') {
+					oOptions.center = false;
+				}
+
 				if (oTarget.getAttribute("data-fc-video-height") !== null) {
 					oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
 				}
 
 				if (oTarget.getAttribute("data-fc-video-width") !== null) {
 					oOptions.videoWidth = oTarget.getAttribute("data-fc-video-width");
+				}
+
+				if (oTarget.getAttribute("data-fc-items-width") !== null){
+					oOptions.items = Math.floor(oTarget.clientWidth/oTarget.getAttribute("data-fc-items-width"));
 				}
 
 				if (oTarget.getAttribute("data-fc-device-items") !== null) {

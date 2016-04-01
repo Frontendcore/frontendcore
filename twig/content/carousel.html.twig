@@ -56,7 +56,7 @@
         <p>When your carousel items have set width, e.g. 200px, but carousel-container itself is flexible e.g. fullwidth. This option calculates how many items best fit into the container.</p>
         {{ demos.demo(
         'carousel-autowidth',
-        PathComponents ~ 'carousel/html/carousel-autowidth.html'
+        PathComponents ~ 'carousel/html/carousel-auto.html'
         )}}
     </section>
     {{ demos.settings(
@@ -81,35 +81,40 @@
             "description" : "Enable fetching YouTube/Vimeo videos.",
             "default" : "true"
     },
-        "9" : {
+        "6" : {
             "name" :        "data-fc-video-width",
             "description" : "Width of the videos.",
             "default" : "100%"
     },
-        "10" : {
+        "7" : {
             "name" :        "data-fc-video-height",
             "description" : "Height of the videos.",
             "default" : "300"
     },
-        "6" : {
+        "8" : {
             "name" :        "data-fc-center",
             "description" : "Center item. Works well with even an odd number of items.",
             "default" : "true"
     },
-        "7" : {
+        "9" : {
             "name" :        "data-fc-autoplay",
             "description" : "Autoplay",
             "default" : "true"
     },
-        "8" : {
+        "10" : {
             "name" :        "data-fc-device-items",
             "description" : "The number of items you want to see on the screen separated by coma. First number is on mobile, second on tablet and third in desktop.",
             "default" : "1,1,1"
     },
-        "9" : {
+        "11" : {
         "name" :        "data-fc-controls",
         "description" : "Defines how to show the controls of the carousel. Posible values are: true, false, hover, inside",
         "default" : "true"
+    },
+        "12" : {
+        "name" :        "data-fc-items-width",
+        "description" : "Defines width (in px) for each item.",
+        "default" : "false"
     }
     }
     )}}
