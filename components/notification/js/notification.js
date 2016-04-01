@@ -184,7 +184,7 @@
 					}
 				});
 
-				FrontendMediator.subscribe( ['notification'], this.processResponse, this );
+				FrontendMediator.subscribe( ['notification'], processResponse );
 
 			}
 		};
