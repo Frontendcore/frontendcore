@@ -25,7 +25,7 @@
 				var aTargets = FrontendTools.getDataModules('carousel'),
 					self = this;
 
-				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'carousel');
 

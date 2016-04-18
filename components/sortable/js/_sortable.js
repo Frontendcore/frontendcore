@@ -163,7 +163,7 @@
 				var aTargets = document.querySelectorAll('[data-fc-modules="sortable"]'),
 					self = this;
 
-				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css');
+				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'sortable' );
 
