@@ -21,7 +21,7 @@ $object-tables-vars-default: (
   /* TBODY */
         tbody-ouline: 2px solid map-get($colors, background ),
         tbody-border-width: 1px,
-        tbody-border-color: map-get($colors, box )-light,
+        tbody-border-color: map-get($colors, box ),
         tbody-border-style: solid,
         tbody-color: map-get($colors, foreground ),
         tbody-background: map-get($colors, background ),
