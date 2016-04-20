@@ -71,7 +71,7 @@ transform: rotate(359deg);
 	font-weight:normal;
 	font-style:normal;
 	speak:none;
-	text-decoration:inherit;
+	text-decoration:none;
 	text-transform:none;
 	text-rendering:auto;
 	-webkit-font-smoothing:antialiased;
@@ -93,7 +93,7 @@ transform: rotate(359deg);
 a [class^="<%= classPrefix %>"],
 a [class*=" <%= classPrefix %>"] {
 	display:inline-block;
-	text-decoration:inherit;
+	text-decoration:none;
 }
 /* Makes the font 33% larger relative to the icon container */
 .<%= classPrefix %>large:before {
