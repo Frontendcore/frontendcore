@@ -4,7 +4,10 @@
 	FrontendCore.define('select-search', [], function () {
 		return {
 			oDefault: {
-				searchInput: true
+				disable_search_threshold: 10,
+				no_results_text: "Oops, nothing found!",
+				//max_selected_options: 1,
+				allow_single_deselect: false
 			},
 			onStart: function () {
 
@@ -19,9 +22,6 @@
 					self.autobind(this, nIndex);
 				});
 
-				$('a', '.bselect-option-list').on('click', function(e) {
-					e.preventDefault();
-				});
 			},
 			autobind: function (oTarget, nIndex) {
 
@@ -37,7 +37,7 @@
 
 				FrontendTools.removeLoading(oTarget);
 
-				$(oTarget).bselect(oSettings);
+				$(oTarget).chosen(oSettings);
 
 				oOptions = null;
 			},

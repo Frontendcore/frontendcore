@@ -48,7 +48,76 @@
         <div class="row">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
                                                 <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+                <section id="tab-select-search-single-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <select id="available_countries" name="available_countries" data-placeholder="Select an option..." required data-fc-modules="select-search">
+	<optgroup label="Near countries">
+		<option value="DE">Alemania</option>
+		<option value="AU">Australia</option>
+		<option value="AT">Austria</option>
+		<option value="BR">Brasil</option>
+		<option value="CA">Canadá</option>
+		<option value="CN">China</option>
+		<option value="ES">España</option>
+	</optgroup>
+	<optgroup label="Far away countries">
+		<option value="US">Estados Unidos</option>
+		<option value="FR">Francia</option>
+		<option value="IN">India</option>
+		<option value="IT">Italia</option>
+		<option value="JP">Japón</option>
+		<option value="NL">Países Bajos</option>
+		<option value="PL">Polonia</option>
+		<option value="GB">Reino Unido</option>
+		<option value="RU">Rusia</option>
+		<option value="SE">Suecia</option>
+		<option value="CH">Suiza</option>
+	</optgroup>
+</select>
+                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-select-search-single-2" data-fc-name="Code">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;select id=&quot;available_countries&quot; name=&quot;available_countries&quot; data-placeholder=&quot;Select an option...&quot; required data-fc-modules=&quot;select-search&quot;&gt;
+	&lt;optgroup label=&quot;Near countries&quot;&gt;
+		&lt;option value=&quot;DE&quot;&gt;Alemania&lt;/option&gt;
+		&lt;option value=&quot;AU&quot;&gt;Australia&lt;/option&gt;
+		&lt;option value=&quot;AT&quot;&gt;Austria&lt;/option&gt;
+		&lt;option value=&quot;BR&quot;&gt;Brasil&lt;/option&gt;
+		&lt;option value=&quot;CA&quot;&gt;Canadá&lt;/option&gt;
+		&lt;option value=&quot;CN&quot;&gt;China&lt;/option&gt;
+		&lt;option value=&quot;ES&quot;&gt;España&lt;/option&gt;
+	&lt;/optgroup&gt;
+	&lt;optgroup label=&quot;Far away countries&quot;&gt;
+		&lt;option value=&quot;US&quot;&gt;Estados Unidos&lt;/option&gt;
+		&lt;option value=&quot;FR&quot;&gt;Francia&lt;/option&gt;
+		&lt;option value=&quot;IN&quot;&gt;India&lt;/option&gt;
+		&lt;option value=&quot;IT&quot;&gt;Italia&lt;/option&gt;
+		&lt;option value=&quot;JP&quot;&gt;Japón&lt;/option&gt;
+		&lt;option value=&quot;NL&quot;&gt;Países Bajos&lt;/option&gt;
+		&lt;option value=&quot;PL&quot;&gt;Polonia&lt;/option&gt;
+		&lt;option value=&quot;GB&quot;&gt;Reino Unido&lt;/option&gt;
+		&lt;option value=&quot;RU&quot;&gt;Rusia&lt;/option&gt;
+		&lt;option value=&quot;SE&quot;&gt;Suecia&lt;/option&gt;
+		&lt;option value=&quot;CH&quot;&gt;Suiza&lt;/option&gt;
+	&lt;/optgroup&gt;
+&lt;/select&gt;
+</code></pre>
+            </div>
+        </section>
+                    </div>
+
+                                <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-select-search-multiple-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                 <form class="form" method="get">
                     <fieldset>
@@ -85,7 +154,7 @@
                 </form>
                             </div>
         </section>
-                <section id="tab-text-fields-2" data-fc-name="Code">
+                <section id="tab-select-search-multiple-2" data-fc-name="Code">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;select id=&quot;available_countries&quot; name=&quot;available_countries&quot; data-placeholder=&quot;Select an option...&quot; required multiple=&quot;multiple&quot; data-fc-modules=&quot;select-search&quot;&gt;
 	&lt;optgroup label=&quot;Near countries&quot;&gt;

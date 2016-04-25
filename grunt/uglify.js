@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
 		// SELECT WITH SEARCH
 		oCore.files[jsDest + '/ui/select-search.js'] = [
-			fcCwd + '/bower/bselect/js/bselect.js',
+			fcCwd + '/bower/chosen/chosen.jquery.js',
 			fcCwd + '/components/form-select-search/js/_select-search.js'
 		];
 

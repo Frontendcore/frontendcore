@@ -7,8 +7,13 @@
 
 {% block main %}
     {{ demos.demo(
-        'text-fields',
+        'select-search-single',
         PathComponents ~ 'form-select-search/html/select-search.html',
+        false,false,true
+    )}}
+    {{ demos.demo(
+        'select-search-multiple',
+        PathComponents ~ 'form-select-search/html/select-search-multiple.html',
         false,false,true
     )}}
 
