@@ -71,6 +71,7 @@
 		& > li {
 			list-style: none;
 			display: block;
+			overflow: visible;
 			padding: $spacing/2 0;
 		}
 	}
@@ -90,8 +91,6 @@
 	input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {
 		@extend %field;
 		width: 100%;
-		font-size: $font-size-default;
-
 		&._hidden {
 			padding: 0;
 			border: 0;
@@ -162,14 +161,17 @@
 		& {
 			position: relative;
 			background-color: $color-background;
-			border-style: solid;
-			border-width: 1px;
-			border-color: $color-box-dark;
-			padding: $spacing/4;
-			color: rgba(0, 0, 0, 0.75);
 			line-height: normal;
-			height: $spacing*1.48;
+			font-family: map-get($object-forms-vars, field-font-family);
+			font-size: map-get($object-forms-vars, field-font-size);
+			font-weight: map-get($object-forms-vars, field-font-weight);
+			padding: map-get($object-forms-vars, field-padding);
+			border: map-get($object-forms-vars, field-border);
+			background: map-get($object-forms-vars, field-background);
+			color: map-get($object-forms-vars, field-color);
 			border-radius: map-get($object-forms-vars, field-border-radius);
+			box-sizing: border-box;
+			box-shadow: map-get($object-forms-vars, field-box-shadow);
 		}
 	}
 	.select {
@@ -183,10 +185,11 @@
 		}
 		&:after {
 			content:"\25BE";
-			padding: $spacing/3.5 $spacing/2.5 $spacing/3 $spacing/4;
+			padding: 0 $spacing/2.5 0 $spacing/4;
 			position: absolute;
 			right: 0;
-			top: 0;
+			top: 50%;
+			margin-top: -$spacing/2;
 			z-index: 1;
 			text-align: center;
 			pointer-events: none;

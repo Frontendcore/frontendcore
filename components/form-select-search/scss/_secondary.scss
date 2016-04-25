@@ -84,6 +84,9 @@
 		vertical-align: middle;
 		white-space: nowrap;
 	}
+	.bselect-search-input {
+		width: 100% !important;
+	}
 	.bselect-search > .bselect-search-input,
 	.bselect-search > .bselect-search-icon {
 		display: inline-block;
@@ -111,6 +114,7 @@
 		right: $spacing/2;
 		top: $spacing/2;
 		height: $spacing;
+		z-index: 50;
 	}
 	.bselect-message {
 		display: none;
