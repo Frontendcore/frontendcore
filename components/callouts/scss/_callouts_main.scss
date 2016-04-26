@@ -12,6 +12,14 @@
     box-shadow: 0 0 2px rgba($color-foreground, .5);
     font-size: $font-size-default;
   }
+  &._icon {
+    text-align: center;
+    i {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: $spacing/2;
+    }
+  }
   @each $colorName, $colorValue in $colors-status {
     &._#{$colorName} {
       border-color: $colorValue;

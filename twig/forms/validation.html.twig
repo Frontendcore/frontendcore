@@ -10,7 +10,17 @@
         'validation',
         '../../components/form-validation/html/validation.html'
     )}}
-    <h2>Add the following attributes to any input to validate them:</h2>
+    <h2>Settings</h2>
+    {{ demos.settings(
+        {
+            "2" : {
+                "name" :        "data-fc-language",
+                "description" : "Defines the language of the error messages. By default gets the browser language but you can force it using this parameter. (en, es, it...)"
+            }
+        }
+    )}}
+
+    <h4>Add the following attributes to any input to validate them:</h4>
     <style>
         h2.mb-m, hr {  display: none;}
     </style>
@@ -30,7 +40,7 @@
     },
         "5" : {
         "name" :        'data-fc-type="digits"',
-        "description" : "alidates that a value is only digits.",
+        "description" : "Validates that a value is only digits.",
     },
         "6" : {
         "name" :        'data-fc-type="alphanum"',
