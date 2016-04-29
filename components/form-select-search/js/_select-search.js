@@ -7,7 +7,8 @@
 				disable_search_threshold: 10,
 				no_results_text: "Oops, nothing found!",
 				//max_selected_options: 1,
-				allow_single_deselect: false
+				allow_single_deselect: false,
+				width: '100%'
 			},
 			onStart: function () {
 
@@ -38,6 +39,7 @@
 				FrontendTools.removeLoading(oTarget);
 
 				$(oTarget).chosen(oSettings);
+
 
 				oOptions = null;
 			},
