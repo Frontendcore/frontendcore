@@ -1,4 +1,4 @@
-@function brightness($color) {
+@function _brightness($color) {
 	$sum: red($color) + green($color) + blue($color);
 	@return percentage($sum / (255*3));
 }

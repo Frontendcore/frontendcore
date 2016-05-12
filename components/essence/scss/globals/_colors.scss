@@ -174,7 +174,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-foreground-dark == auto {
-	@if (brightness( $color-foreground ) > 30%) {
+	@if (_brightness( $color-foreground ) > 30%) {
 		$color-foreground-dark: darken($color-foreground, 25%) !global;
 	} @else {
 		$color-foreground-dark: lighten($color-foreground, 25%) !global;
@@ -182,7 +182,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-primary-light == auto {
-	@if (brightness( $color-primary ) > 30%) {
+	@if (_brightness( $color-primary ) > 30%) {
 		$color-primary-light: lighten($color-primary, 15%) !global;
 	} @else {
 		$color-primary-light: darken($color-primary, 15%) !global;
@@ -190,7 +190,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-primary-dark == auto {
-	@if (brightness( $color-primary ) > 30%) {
+	@if (_brightness( $color-primary ) > 30%) {
 		$color-primary-dark: darken($color-primary, 15%) !global;
 	} @else {
 		$color-primary-dark: lighten($color-primary, 15%) !global;
@@ -198,7 +198,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-secondary-light == auto {
-	@if (brightness( $color-secondary ) > 30%) {
+	@if (_brightness( $color-secondary ) > 30%) {
 		$color-secondary-light: lighten($color-secondary, 10%) !global;
 	} @else {
 		$color-secondary-light: darken($color-secondary, 10%) !global;
@@ -206,7 +206,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-secondary-dark == auto {
-	@if (brightness( $color-secondary ) > 30%) {
+	@if (_brightness( $color-secondary ) > 30%) {
 		$color-secondary-dark: darken($color-secondary, 10%) !global;
 	} @else {
 		$color-secondary-dark: lighten($color-secondary, 10%) !global;
@@ -214,7 +214,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-box-light == auto {
-	@if (brightness( $color-box ) > 30%) {
+	@if (_brightness( $color-box ) > 30%) {
 		$color-box-light: lighten($color-box, 10%) !global;
 	} @else {
 		$color-box-light: darken($color-box, 15%) !global;
@@ -222,7 +222,7 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 }
 
 @if $color-box-dark == auto {
-	@if (brightness( $color-box ) > 30%) {
+	@if (_brightness( $color-box ) > 30%) {
 		$color-box-dark: darken($color-box, 15%) !global;
 	} @else {
 		$color-box-dark: lighten($color-box, 15%) !global;

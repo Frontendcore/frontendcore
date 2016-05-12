@@ -109,19 +109,20 @@ module.exports = function(grunt) {
 		}
 
 		for (var nPath = 0; nPath < aPaths.length; nPath++) {
-			oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
-			oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
-			oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
-			oFiles[sKey].push('!' + aPaths[nPath] + '/**/*_components_' + sScreen + '*.scss');
 			if (sDevice !== undefined) {
 				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
 			}
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
+			oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
+			oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + sScreen + '.scss');
 		}
 
 		if (sDevice !== undefined) {
-			oFiles[sKey].push(fcCwd + '/components/**/*_' + sDevice + '*.scss');
-		}
+			oFiles[sKey].push(fcCwd + 'components/**/*_' + sDevice + '*.scss');
 
+		}
+		
 		return oFiles
 	}
 	return oConfig;

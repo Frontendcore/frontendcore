@@ -42,7 +42,12 @@ module.exports = function( grunt ) {
 
             if ( oData.js !== undefined) {
                 if (oData.js.cwd !== undefined) {
-                    sJsCwdData = getRelativePath(oData.js.cwd, 'appCwd');
+
+                    if ( Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
+                        sJsCwdData = getRelativePath(oData.js.cwd[0], 'appCwd');
+                    } else {
+                        sJsCwdData = getRelativePath(oData.js.cwd, 'appCwd');
+                    }
                 }
 
                 if (oData.js.dest !== undefined) {
