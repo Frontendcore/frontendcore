@@ -5,7 +5,7 @@
     "browsers" : ["last 1 version"]
   },
   "js" : {
-    "cwd": "js",
+    "cwd": ["components/swipe/html/"],
     "dest": "build/static/js",
     "uglify": true,
     "jshint" : true

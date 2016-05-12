@@ -50,40 +50,40 @@
                     <p>Open modal windows for inline content, iframes, images and/or galleries.</p>
     <section class="box-lighten">
         <h2>Iframe</h2>
-                                    <div data-fc-modules="tabs" class="loading o-v">
+                                        <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-modal-iframe-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <a href="http://wikipedia.com"  data-fc-modules="modal">Iframe Link</a>                                            </div>
         </section>
-                <section id="tab-modal-iframe-2" data-fc-name="Code">
+                <section id="tab-modal-iframe-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;a href=&quot;http://wikipedia.com&quot;  data-fc-modules=&quot;modal&quot;&gt;Iframe Link&lt;/a&gt;</code></pre>
             </div>
         </section>
-                    </div>
+                            </div>
 
     </section>
     <section class="box-lighten">
         <h2>Images</h2>
         <h3>Single image</h3>
         <p>Link to the image or html and add the  data-fc-modules="modal"</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
+                                        <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-modal-image-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-fc-modules="modal">Image Link</a>
                                             </div>
         </section>
-                <section id="tab-modal-image-2" data-fc-name="Code">
+                <section id="tab-modal-image-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-fc-modules=&quot;modal&quot;&gt;Image Link&lt;/a&gt;
 </code></pre>
             </div>
         </section>
-                    </div>
+                            </div>
 
         <h3>Multiple images</h3>
         <p>Just use the class group-X to group you images</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
+                                        <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-modal-gallery-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg"  data-fc-modules="modal" class="group-1">Image Link 1</a></p>
@@ -92,7 +92,7 @@
 
 <p><a href="http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg"  data-fc-modules="modal" class="group-1">Image Link 3</a></p>                                            </div>
         </section>
-                <section id="tab-modal-gallery-2" data-fc-name="Code">
+                <section id="tab-modal-gallery-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee1.jpg&quot;  data-fc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 1&lt;/a&gt;&lt;/p&gt;
 
@@ -101,13 +101,13 @@
 &lt;p&gt;&lt;a href=&quot;http://www.jacklmoore.com/colorbox/content/ohoopee3.jpg&quot;  data-fc-modules=&quot;modal&quot; class=&quot;group-1&quot;&gt;Image Link 3&lt;/a&gt;&lt;/p&gt;</code></pre>
             </div>
         </section>
-                    </div>
+                            </div>
 
     </section>
     <section class="box-lighten">
         <h2>Inline content</h2>
         <p>To open a modal window from a inline content in the current page</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
+                                        <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-modal-inline-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <a href="#modal" data-fc-modules="modal">Inline Link</a>
@@ -117,7 +117,7 @@
     </div>
 </div>                                            </div>
         </section>
-                <section id="tab-modal-inline-2" data-fc-name="Code">
+                <section id="tab-modal-inline-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;a href=&quot;#modal&quot; data-fc-modules=&quot;modal&quot;&gt;Inline Link&lt;/a&gt;
 &lt;div class=&quot;hidden&quot;&gt;
@@ -127,23 +127,23 @@
 &lt;/div&gt;</code></pre>
             </div>
         </section>
-                    </div>
+                            </div>
 
     </section>
     <section class="box-lighten">
         <h2>Inline content of other page</h2>
         <p>To open a modal window from a inline content of something located in other page/url.</p>
-                                    <div data-fc-modules="tabs" class="loading o-v">
+                                        <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-modal-inline-url-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <a href="/index.html#features" data-fc-modules="modal">Inline Link</a>                                            </div>
         </section>
-                <section id="tab-modal-inline-url-2" data-fc-name="Code">
+                <section id="tab-modal-inline-url-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;a href=&quot;/index.html#features&quot; data-fc-modules=&quot;modal&quot;&gt;Inline Link&lt;/a&gt;</code></pre>
             </div>
         </section>
-                    </div>
+                            </div>
 
     </section>
             <hr />
@@ -281,6 +281,9 @@ FrontendCore.define(&#039;myModule&#039;, [&#039;modal&#039;], function () {
                                                         </li>
                                                                                                             <li >
                                                             <a href=".././architecture-js/roundtrip.html"><i class="icon-angle-right"></i> RoundTrip (Webapps) </a>
+                                                        </li>
+                                                                                                            <li >
+                                                            <a href=".././architecture-js/touch-swipe.html"><i class="icon-angle-right"></i> Touch Swipe </a>
                                                         </li>
                                                                                                     </ul>
                                             </div>

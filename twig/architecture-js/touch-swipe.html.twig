@@ -1,0 +1,1282 @@
+{% set current_children = "Touch Swipe" %}
+{% set current_subtitle = "Detects single and multiple finger swipes, pinches and falls back to mouse 'drags' on the desktop." %}
+{% set current_section = "Architecture JS" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+{% extends "../_layout/_basic.html.twig" %}
+{% block main %}
+    <section class="box _empty">
+        <p class="callout _info">Swipe on Frontendcore is solved by a wrapper. Please use always to the Frontencore Wrapper to avoid compatibilty issues in the future. For more information or advanced features check <a href="http://labs.rampinteractive.co.uk/touchSwipe/demos/index.html" target="_blank">TouchSwipe</a> by Matt Bryson (The wrapped library).</p>
+        <h3>How it works</h3>
+        <p>Swipe is not a component like the rest, because it's totally done to be called from one module insted with data-arguments. First of all you should include swipe in your module:</p>
+        <pre><code data-fc-modules="code">FrontendCore.define('my-module', [ 'swipe' ], function () {
+                ...
+});</code></pre>
+        <p class="mb-xl">Now you have available the swipe function throught the namespace FrontendTools. Let's see some demos.</p>
+        <h4>Basic Swipe</h4>
+        {{ demos.demo(
+            'basic-swipe',
+            PathComponents ~ 'swipe/html/basic-swipe.html',
+            false,
+            PathComponents ~ 'swipe/html/basic-swipe.js',
+            false,
+            false,
+            false,
+            false
+        )}}
+        <h4>Single Swipe</h4>
+        {{ demos.demo(
+            'single-swipe',
+            PathComponents ~ 'swipe/html/single-swipe.html',
+            false,
+            PathComponents ~ 'swipe/html/single-swipe.js',
+            false,
+            false,
+            false,
+            false
+        )}}
+        <h4>Any finger swipe</h4>
+        {{ demos.demo(
+            'any-finger-swipe',
+            PathComponents ~ 'swipe/html/any-finger-swipe.html',
+            false,
+            PathComponents ~ 'swipe/html/any-finger-swipe.js',
+            false,
+            false,
+            false,
+            false
+        )}}
+    <h3 class="mt-xl">Defaults</h3>
+    <table class="table" data-fc-modules="table-responsive">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Attributes</th>
+            <th>Default</th>
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="name"><code>fingers</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>1</code>
+            </td>
+            <td class="description last">The number of fingers to detect in a swipe. Any swipes that do not meet this
+                requirement will NOT trigger swipe handlers.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>threshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>75</code>
+            </td>
+            <td class="description last">The number of pixels that the user must move their finger by before it is
+                considered a swipe.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>cancelThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">The number of pixels that the user must move their finger back from the
+                original swipe direction to cancel the gesture.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>pinchThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>20</code>
+            </td>
+            <td class="description last">The number of pixels that the user must pinch their finger by before it is
+                considered a pinch.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>maxTimeThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">Time, in milliseconds, between touchStart and touchEnd must NOT exceed in order
+                to be considered a swipe.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>fingerReleaseThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>250</code>
+            </td>
+            <td class="description last">Time in milliseconds between releasing multiple fingers. If 2 fingers are down,
+                and are released one after the other, if they are within this threshold, it counts as a simultaneous
+                release.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>longTapThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>500</code>
+            </td>
+            <td class="description last">Time in milliseconds between tap and release for a long tap</td>
+        </tr>
+        <tr>
+            <td class="name"><code>doubleTapThreshold</code></td>
+            <td class="type">
+                <span class="param-type">int</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>200</code>
+            </td>
+            <td class="description last">Time in milliseconds between 2 taps to count as a double tap</td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipe</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler to catch all swipes. See <a href="#event:swipe">event:swipe</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipeLeft</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler that is triggered for "left" swipes. See <a href="#event:swipeLeft">event:swipeLeft</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipeRight</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler that is triggered for "right" swipes. See <a
+                        href="#event:swipeRight">event:swipeRight</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipeUp</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler that is triggered for "up" swipes. See <a
+                        href="#event:swipeUp">event:swipeUp</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipeDown</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler that is triggered for "down" swipes. See <a
+                        href="#event:swipeDown">event:swipeDown</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>swipeStatus</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered for every phase of the swipe. See <a
+                        href="#event:swipeStatus">event:swipeStatus</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>pinchIn</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered for pinch in events. See <a
+                        href="#event:pinchIn">event:pinchIn</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>pinchOut</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered for pinch out events. See <a
+                        href="#event:pinchOut">event:pinchOut</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>pinchStatus</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered for every phase of a pinch. See <a
+                        href="#event:pinchStatus">event:pinchStatus</a></td>
+        </tr>
+        <tr>
+            <td class="name"><code>tap</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered when a user just taps on the item, rather than swipes it.
+                If they do not move, tap is triggered, if they do move, it is not.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>doubleTap</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered when a user double taps on the item. The delay between taps
+                can be set with the doubleTapThreshold property.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>longTap</code></td>
+            <td class="type">
+                <span class="param-type">function</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>null</code>
+            </td>
+            <td class="description last">A handler triggered when a user long taps on the item. The delay between start
+                and end can be set with the longTapThreshold property.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>(function)</code></td>
+            <td class="type">
+            </td>
+            <td class="attributes">
+            </td>
+            <td class="default">
+            </td>
+            <td class="description last">[hold=null] A handler triggered when a user reaches longTapThreshold on the
+                item.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>triggerOnTouchEnd</code></td>
+            <td class="type">
+                <span class="param-type">boolean</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>true</code>
+            </td>
+            <td class="description last">If true, the swipe events are triggered when the touch end event is received
+                (user releases finger). If false, it will be triggered on reaching the threshold, and then cancel the
+                touch event automatically.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>triggerOnTouchLeave</code></td>
+            <td class="type">
+                <span class="param-type">boolean</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>false</code>
+            </td>
+            <td class="description last">If true, then when the user leaves the swipe object, the swipe will end and
+                trigger appropriate handlers.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>allowPageScroll</code></td>
+            <td class="type">
+                <span class="param-type">string</span>
+                |
+                <span class="param-type">undefined</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>'auto'</code>
+            </td>
+            <td class="description last">How the browser handles page scrolls when the user is swiping on a touchSwipe
+                object. <br><br>
+                <code>"auto"</code> : all undefined swipes will cause the page to scroll in that direction. <br>
+                <code>"none"</code> : the page will not scroll when user swipes. <br>
+                <code>"horizontal"</code> : will force page to scroll on horizontal swipes. <br>
+                <code>"vertical"</code> : will force page to scroll on vertical swipes. <br></td>
+        </tr>
+        <tr>
+            <td class="name"><code>fallbackToMouseEvents</code></td>
+            <td class="type">
+                <span class="param-type">boolean</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>true</code>
+            </td>
+            <td class="description last">If true mouse events are used when run on a non touch device, false will stop
+                swipes being triggered by mouse events on non tocuh devices.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>excludedElements</code></td>
+            <td class="type">
+                <span class="param-type">string</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>"button, input, select, textarea, a, .noSwipe"</code>
+            </td>
+            <td class="description last">A jquery selector that specifies child elements that do NOT trigger swipes. By
+                default this excludes all form, input, select, button, anchor and .noSwipe elements.
+            </td>
+        </tr>
+        <tr>
+            <td class="name"><code>preventDefaultEvents</code></td>
+            <td class="type">
+                <span class="param-type">boolean</span>
+            </td>
+            <td class="attributes">
+                &lt;optional&gt;<br>
+            </td>
+            <td class="default">
+                <code>true</code>
+            </td>
+            <td class="description last">by default default events are cancelled, so the page doesn't move. You can
+                dissable this so both native events fire as well as your handlers.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+        <h3 class="mt-xl">Events</h3>
+        <article class="box _background">
+            <h4 class="name" id="event:doubleTap">doubleTap</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A double tap handler triggered when a user double clicks or taps on an element.
+                You can set the time delay for a double tap with the $.fn.swipe.defaults#doubleTapThreshold property.
+                Note: If you set both <code>doubleTap</code> and <code>tap</code> handlers, the <code>tap</code> event will be delayed by the <code>doubleTapThreshold</code>
+                as the script needs to check if its a double tap.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table" data-fc-modules="table-responsive">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>target</code></td>
+                    <td class="type">
+                        <span class="param-type">DomObject</span>
+                    </td>
+                    <td class="description last">The element clicked on.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:hold">hold</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A hold tap handler triggered as soon as the longTapThreshold is reached
+                You can set the time delay for a long tap with the $.fn.swipe.defaults#longTapThreshold property.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table" data-fc-modules="table-responsive">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>target</code></td>
+                    <td class="type">
+                        <span class="param-type">DomObject</span>
+                    </td>
+                    <td class="description last">The element clicked on.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:longTap">longTap</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A long tap handler triggered once a tap has been release if the tap was longer than the longTapThreshold.
+                You can set the time delay for a long tap with the $.fn.swipe.defaults#longTapThreshold property.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table" data-fc-modules="table-responsive">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>target</code></td>
+                    <td class="type">
+                        <span class="param-type">DomObject</span>
+                    </td>
+                    <td class="description last">The element clicked on.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:pinchIn">pinchIn</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler triggered for pinch in events.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user pinched in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user pinched</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>zoom</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The zoom/scale level the user pinched too, 0-1.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:pinchOut">pinchOut</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler triggered for pinch out events.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user pinched in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user pinched</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>zoom</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The zoom/scale level the user pinched too, 0-1.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:pinchStatus">pinchStatus</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler triggered for all pinch events. This handler is constantly fired for the duration of the pinch. This is triggered regardless of thresholds.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user pinched in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user pinched</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>zoom</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The zoom/scale level the user pinched too, 0-1.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipe">swipe</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A catch all handler that is triggered for all swipe directions.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipeDown">swipeDown</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler that is triggered for "down" swipes.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used. </td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipeLeft">swipeLeft</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler that is triggered for "left" swipes.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used. </td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipeRight">swipeRight</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler that is triggered for "right" swipes.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipeStatus">swipeStatus</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler triggered for every phase of the swipe. This handler is constantly fired for the duration of the pinch.
+                This is triggered regardless of swipe thresholds.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>phase</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The phase of the swipe event.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in. This is null if the user has yet to move.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped. This is 0 if the user has yet to move.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:swipeUp">swipeUp</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A handler that is triggered for "up" swipes.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>direction</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The direction the user swiped in.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>distance</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The distance the user swiped</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>duration</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The duration of the swipe in milliseconds</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerCount</code></td>
+                    <td class="type">
+                        <span class="param-type">int</span>
+                    </td>
+                    <td class="description last">The number of fingers used.</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>fingerData</code></td>
+                    <td class="type">
+                        <span class="param-type">object</span>
+                    </td>
+                    <td class="description last">The coordinates of fingers in event</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>currentDirection</code></td>
+                    <td class="type">
+                        <span class="param-type">string</span>
+                    </td>
+                    <td class="description last">The current direction the user is swiping.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <article class="box _background">
+            <h4 class="name" id="event:tap">tap</h4>
+            <dl class="list">
+                <dt class="tag-default">Default Value:</dt>
+                <dd class="tag-default"><ul class="dummy">
+                        <li>null</li>
+                    </ul></dd>
+            </dl>
+            <div class="description mb-l">
+                A click / tap handler triggered when a user simply clicks or taps, rather than swipes on an element.
+            </div>
+            <h5>Parameters:</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="name"><code>event</code></td>
+                    <td class="type">
+                        <span class="param-type">EventObject</span>
+                    </td>
+                    <td class="description last">The original event object</td>
+                </tr>
+                <tr>
+                    <td class="name"><code>target</code></td>
+                    <td class="type">
+                        <span class="param-type">DomObject</span>
+                    </td>
+                    <td class="description last">The element clicked on.</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+{% endblock %}

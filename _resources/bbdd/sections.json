@@ -78,6 +78,10 @@
           "name" : "RoundTrip (Webapps)",
           "href" : "roundtrip.html",
           "done" : true
+        },
+        "swipe": {
+          "name": "Touch Swipe",
+          "href": "touch-swipe.html"
         }
       }
     },

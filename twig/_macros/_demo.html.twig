@@ -24,7 +24,8 @@
 
 #}
 
-{% macro demo(id, path, scss, test, form, minHeight, skin, code) %}
+{% macro demo(id, path, scss, js, form, minHeight, skin, code, test) %}
+    {% set js = js|default(false) %}
     {% set test = test|default(false) %}
     {% set code = code|default(true) %}
     {% set minHeight = minHeight|default(false) %}
@@ -54,16 +55,23 @@
             </div>
         </section>
         {% if code %}
-        <section id="tab-{{ id }}-2" data-fc-name="Code">
+        <section id="tab-{{ id }}-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">{% filter escape %}{%  include path %}{% endfilter %}</code></pre>
             </div>
         </section>
         {% endif %}
         {% if scss %}
-            <section id="tab-{{ id }}-3" data-fc-name="Scss">
-                <div class="box-background">
+            <section id="tab-{{ id }}-3" data-fc-name="SCSS">
+                <div class="box _background">
                 <pre><code data-fc-modules="code">{% filter escape %}{%  include scss %}{% endfilter %}</code></pre>
+                </div>
+            </section>
+        {% endif %}
+        {% if js %}
+            <section id="tab-{{ id }}-4" data-fc-name="JS">
+                <div class="box _background">
+                    <pre><code data-fc-modules="code">{% filter escape %}{%  include js %}{% endfilter %}</code></pre>
                 </div>
             </section>
         {% endif %}

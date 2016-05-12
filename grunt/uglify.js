@@ -137,6 +137,12 @@ module.exports = function(grunt) {
 			fcCwd + '/components/image-responsive/js/_image-responsive.js'
 		];
 
+		// SWIPE
+		oCore.files[jsDest + '/ui/swipe.js'] = [
+			fcCwd + '/bower/jquery-touchswipe/jquery.touchSwipe.js',
+			fcCwd + '/components/swipe/js/_swipe.js'
+		];
+
 		var oRoundTrip = {
 			options: {
 				preserveComments: false,

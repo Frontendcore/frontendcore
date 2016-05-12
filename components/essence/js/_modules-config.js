@@ -41,7 +41,8 @@ var oDefaultPaths = {
 		'image-responsive',
 		'image-zoom',
 		'image-edit',
-		'select-search'
+		'select-search',
+		'swipe'
 	];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {
