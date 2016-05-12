@@ -328,6 +328,6 @@
 	color: map-get($object-forms-vars, field-placeholder-color);
 }
 
-:-ms-input-placeholder {
-	color: map-get($object-forms-vars, field-placeholder-color);
+input:-ms-input-placeholder {
+	color: map-get($object-forms-vars, field-placeholder-color) !important;
 }
