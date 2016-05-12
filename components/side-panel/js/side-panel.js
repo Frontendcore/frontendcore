@@ -1,7 +1,7 @@
 ;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
 	'use strict';
 
-	FrontendCore.define('side-panel', [], function () {
+	FrontendCore.define('side-panel', ['swipe'], function () {
 		return {
 			oDefault: {
 				side: "left",
@@ -161,23 +161,36 @@
 
 						$('.side-black-panel').on('click', function(){
 
-							var oBlackPanel = this;
-							$(oPanel).addClass('slide-out-' + oSettings.side);
-							$(oBlackPanel).addClass('fade-out');
+							self.close(oPanel, oSettings);
+						});
 
-							$('body').css({
-								'overflow' : 'auto',
-								'height' : 'initial'
-							});
-
-							setTimeout( function(){
-								$(oBlackPanel).remove();
-							}, 700);
+						FrontendTools.swipe( ".side-panel-default", {
+							//Generic swipe handler for all directions
+							swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+								
+								if ( oSettings.side ===  direction) {
+									self.close(oPanel, oSettings);
+								}
+							}
 						});
 					}
 
 				});
 
+			},
+			close: function(oPanel, oSettings) {
+				var oBlackPanel = $('.side-black-panel');
+				$(oPanel).addClass('slide-out-' + oSettings.side);
+				$(oBlackPanel).addClass('fade-out');
+
+				$('body').css({
+					'overflow' : 'auto',
+					'height' : 'initial'
+				});
+
+				setTimeout( function(){
+					$(oBlackPanel).remove();
+				}, 700);
 			},
 			onStop: function () {
 				this.sPathCss = null;
