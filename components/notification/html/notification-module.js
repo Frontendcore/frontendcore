@@ -1,18 +1,12 @@
-
-// 1. Define your module and set 'notification' as dependency
-FrontendCore.define('myModule', ['notification'], function () {
+FrontendCore.define('myModule', [], function () {
 	return {
 		onStart: function () {
-			//2 . Publish on mediator the notification
-			FrontendMediator.publish( 'notification', { type : 'success', message: 'Your message here' } );
-		},
-		onStop: function () {
-			// 3.Set free some memory when module stops
-			FrontendMediator = null;
-		},
-		onDestroy: function () {
-			// 4. Delete oModal to avoid memory problems
-			delete this.mediator;
+
+			// 1. Require and start the 'notification' module
+			FrontendCore.requireAndStart( ['notification'], function(){
+				//2 . On callback use the mediator to publish the notification
+				FrontendMediator.publish( 'notification', { type : 'success', message: 'Your message here' } );
+			});
 		}
 	};
 });
