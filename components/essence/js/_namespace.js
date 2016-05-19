@@ -12,8 +12,8 @@ var FrontendTools = {},
 		require: function( sName ){
 			TinyCore.AMD.require(sName);
 		},
-		requireAndStart: function( sName ){
-			TinyCore.AMD.requireAndStart(sName);
+		requireAndStart: function( sName, fpCallback ){
+			TinyCore.AMD.requireAndStart(sName, fpCallback);
 		},
 		instantiate: TinyCore.Module.instantiate,
 		debug : function( bDebug ) {
