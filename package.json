@@ -63,6 +63,7 @@
       "form-select-search",
       "form-autosize",
       "form-tag-field",
+      "form-tel-field",
       "form-wysiwyg",
       "table-responsive",
       "table-dynamic",

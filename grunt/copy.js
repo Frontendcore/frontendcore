@@ -73,6 +73,15 @@ module.exports = function(grunt) {
 			]
 		}
 
+		oConfig['img'] = {
+			files: [{
+				cwd: fcCwd +'components/',
+				expand: true,
+				flatten: true,
+				src: ['**/img/*.*'],
+				dest: scssDest +'/img/'
+			}]
+		};
 
 	}
 

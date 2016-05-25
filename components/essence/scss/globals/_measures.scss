@@ -83,3 +83,5 @@ $default-text-shadow-blur: map-get($defaults, text-shadow-blur) !global;
 $default-text-shadow-spread: map-get($defaults, text-shadow-spread) !global;
 
 $default-rank-max: map-get($defaults, ranking-scale) !global;
+
+$url-images: map-get($defaults, url-images) !global;

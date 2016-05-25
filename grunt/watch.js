@@ -4,8 +4,6 @@ module.exports = function(grunt) {
 
 	if (oData !== null) {
 
-		console.log(jsCwd);
-
 		var oScssFiles = [
 				appCwd + '/components/**/*.scss',
 				scssCwd + '/components/**/*.scss',
@@ -13,7 +11,6 @@ module.exports = function(grunt) {
 			],
 			oJsFiles = [
 				jsCwd +  '/**/*.js',
-				appCwd + '/components/**/*.js',
 			];
 
         if ( oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
@@ -24,11 +21,20 @@ module.exports = function(grunt) {
 
 		if ( oData.js !== undefined && oData.js.cwd !== undefined &&  Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
 			for (var nKey = 0; nKey < oData.js.cwd.length; nKey++) {
-				oJsFiles.push(getRelativePath(oData.js.cwd[nKey] + '/**/*.js'));
+
+				var sPathTemp = getRelativePath(oData.js.cwd[nKey] + '**/*.js');
+
+				if ( sPathTemp !=  fcCwd + 'components/**/*.js') {
+					oJsFiles.push();
+				}
 			}
 		}
-
+		
 		return {
+			jsCore: {
+				files: fcCwd + 'components/**/*.js',
+				tasks: ['js']
+			},
 			js: {
 				files: oJsFiles,
 				tasks: ['js:compile']
@@ -39,7 +45,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [
-					appCwd + '/components/**/*.html',
+					fcCwd + '/components/**/*.html',
 					fcCwd + '/twig/**/*.*',
 					fcCwd + '/_resources/bbdd/sections.json'
 				],

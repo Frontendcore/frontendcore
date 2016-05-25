@@ -9,8 +9,8 @@ var FrontendTools = {},
 		domBoot: function( fFunction ){
 			TinyCore.AMD.domBoot( fFunction );
 		},
-		require: function( sName ){
-			TinyCore.AMD.require(sName);
+		require: function( sName, fpCallback ){
+			TinyCore.AMD.require(sName, fpCallback );
 		},
 		requireAndStart: function( sName, fpCallback ){
 			TinyCore.AMD.requireAndStart(sName, fpCallback);

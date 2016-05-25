@@ -17,6 +17,8 @@ var oDefaultPaths = {
 		'chart',
 		'chartLibs',
 		'tag-field',
+		'tel-field',
+		'tel-field-libs',
 		'modal',
 		'autocomplete',
 		'autosize',
