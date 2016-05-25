@@ -28,14 +28,30 @@
 					sCountryFilter = "",
 					initialCountry,
 					sPreferredCountries = 'us,gb',
-					sTextSuccess = 'Valid phone',
+					oInput = oTarget.cloneNode(true),
+					sInputId = 'input-tel-' + nIndex,
+					oRealInput = oTarget,
 					sTextError = 'Invalid phone';
 
 				// Add code to the phone on value
 				if (oTarget.getAttribute("data-fc-prefix") === 'true') {
-					oSettings.nationalMode = true;
-				}
 
+					// Remove name and data-fc-modules attributes to avoid errors
+					oInput.removeAttribute("data-fc-modules");
+					oInput.removeAttribute("name");
+					oInput.id = sInputId;
+
+					// remove oTarget required to avoid errors on form
+					oTarget.removeAttribute("required");
+
+					// Sets national mode
+					oSettings.nationalMode = true;
+
+					// Hide original input and sets as oTarget the new input
+					$(oTarget).addClass('d-n').after(oInput);
+					oTarget = document.getElementById(sInputId);
+
+				}
 
 				// Set list of countries
 				if (oTarget.getAttribute("data-fc-countries") !== null ) {
@@ -51,7 +67,6 @@
 
 				// Show local languages
 				if (oTarget.getAttribute("data-fc-local-language") === 'true') {
-
 					$.each(countryData, function(i, country) {
 						country.name = country.name.replace(/.+\((.+)\)/,"$1");
 					});
@@ -62,6 +77,13 @@
 
 				// Get initial country
 				initialCountry = $(oTarget).intlTelInput("getSelectedCountryData");
+
+				if (oTarget.getAttribute("data-fc-prefix") === 'true') {
+
+					$(oTarget).on("keyup change focus blur", function() {
+						$(oRealInput).val($(oTarget).intlTelInput("getNumber"));
+					});
+				}
 
 				// Get Error text
 				if (oTarget.getAttribute("data-fc-text-error") !== null) {

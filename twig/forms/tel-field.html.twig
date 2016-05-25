@@ -6,35 +6,49 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
-    <h2>Simple input</h2>
+    <h3>Simple input</h3>
     {{ demos.demo(
         'simple-field',
         PathComponents ~ 'form-tel-field/html/simple-input.html',
         false,false,true
     )}}
 
-    <h2>Required input (dynamic validation)</h2>
+    <h3>Required input (dynamic validation)</h3>
     {{ demos.demo(
         'required-field',
         PathComponents ~ 'form-tel-field/html/validate.html',
         false,false,true
     )}}
 
-    <h2>Totally sync fields</h2>
+    <h3>Specify preferred countries</h3>
+    {{ demos.demo(
+    'preferred-field',
+    PathComponents ~ 'form-tel-field/html/preferred-countries.html',
+    false,false,true
+    )}}
+
+    <h3>Add preffix to the input value</h3>
+    {{ demos.demo(
+    'preferred-field',
+    PathComponents ~ 'form-tel-field/html/prefix-input.html',
+    false,false,true
+    )}}
+
+    <h3>Totally sync fields</h3>
     {{ demos.demo(
         'sync-field',
         PathComponents ~ 'form-tel-field/html/country-sync.html',
         false,false,true
     )}}
 
-    <h2>Partial sync: Only tel field changes other fields</h2>
+    <h3>Partial sync: Only tel field changes other fields</h3>
     {{ demos.demo(
         'unsync-tel-field',
         PathComponents ~ 'form-tel-field/html/country-tel-sync.html',
         false,false,true
     )}}
 
-    <h2>Partial sync: Other fields changes tel field</h2>
+    <h3>Partial sync: Other fields changes tel field</h3>
     {{ demos.demo(
         'unsync-other-field',
         PathComponents ~ 'form-tel-field/html/country-other-sync.html',
