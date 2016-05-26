@@ -208,10 +208,22 @@
 	width: 100%;
 	height: auto !important;
 	height: 1%;
-	padding: map-get($object-forms-vars, field-padding);
-	border: map-get($object-forms-vars, field-border);
 	background-color: #fff;
 	cursor: text;
+	padding-left: $spacing/4;
+	border: map-get($object-forms-vars, field-border);
+	&:after {
+		content:"\25BE";
+		padding: 0 $spacing/2.5 0 $spacing/4;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		margin-top: -$spacing/2;
+		z-index: 1;
+		text-align: center;
+		pointer-events: none;
+		box-sizing: border-box;
+	}
 }
 .chosen-container-multi .chosen-choices li {
 	float: left;
@@ -228,11 +240,13 @@
 	border: 0 !important;
 	background: transparent !important;
 	box-shadow: none;
-	color: map-get($object-forms-vars, field-color);
+	color: map-get($object-forms-vars, field-placeholder-color);
 	font-size: 100%;
 	font-family: sans-serif;
 	line-height: normal;
 	border-radius: 0;
+	margin: map-get($object-forms-vars, field-padding);
+	padding-top: $spacing/8;
 	&:focus {
 		box-shadow: none !important;
 	}
@@ -242,6 +256,8 @@
 .chosen-container-multi .chosen-choices li.search-choice {
 	position: relative;
 	margin-right: $spacing/2;
+	margin-top: $spacing/4;
+	margin-bottom: $spacing/4;
 	@extend %tag;
 	&:hover {
 		background: $color-box;

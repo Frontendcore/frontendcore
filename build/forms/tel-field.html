@@ -184,7 +184,7 @@
                             </div>
 
 
-    <h3>Totally sync fields</h3>
+    <h3>Totally sync select fields</h3>
                                     <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-sync-field-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
@@ -234,6 +234,55 @@
     &lt;div class=&quot;select&quot;&gt;
       &lt;select id=&quot;code-country-sync&quot;&gt;&lt;/select&gt;
     &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+        </section>
+                            </div>
+
+
+    <h3>Totally sync input fields</h3>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-sync-field-input-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <ol>
+  <li>
+    <label>Telephone number</label>
+    <input id="phone" type="tel" data-fc-modules="tel-field" data-fc-country-field="#address-country-sync-input" data-fc-code-field="#code-country-sync-input">
+  </li>
+  <li>
+    <label>Country</label>
+    <input type="text" id="address-country-sync-input" />
+  </li>
+  <li>
+    <label>Code</label>
+    <input type="text" id="code-country-sync-input" />
+  </li>
+</ol>                                                            </li>
+                        </ol>
+                        <button type="submit" class="button">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-sync-field-input-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;label&gt;Telephone number&lt;/label&gt;
+    &lt;input id=&quot;phone&quot; type=&quot;tel&quot; data-fc-modules=&quot;tel-field&quot; data-fc-country-field=&quot;#address-country-sync-input&quot; data-fc-code-field=&quot;#code-country-sync-input&quot;&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;label&gt;Country&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;address-country-sync-input&quot; /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;label&gt;Code&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;code-country-sync-input&quot; /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</code></pre>
             </div>

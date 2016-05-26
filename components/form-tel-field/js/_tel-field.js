@@ -2,6 +2,103 @@
 	'use strict';
 
 	FrontendCore.define('tel-field', [], function () {
+		
+		function syncCountryFieldSelect(oTarget, $countryField, initialCountry, countryData) {
+
+			// populate the country dropdown
+			$.each(countryData, function(i, country) {
+				$countryField.append($("<option></option>").attr("value", country.iso2).text(country.name));
+			});
+
+			// set it's initial value
+			$countryField.val(initialCountry.iso2);
+
+			if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
+				// listen to the telephone input for changes
+				$(oTarget).on("countrychange", function(e, countryData) {
+					$countryField.val(countryData.iso2);
+				});
+			}
+
+			if ( oTarget.getAttribute("data-fc-sync-country") !== "false" ) {
+				// listen to the address dropdown for changes
+				$countryField.change(function () {
+					$(oTarget).intlTelInput("setCountry", $(this).val());
+				});
+			}
+		}
+
+		function syncCountryFieldInput(oTarget, $countryField, initialCountry ) {
+			
+			// set it's initial value
+			$countryField.val(initialCountry.iso2);
+
+			if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
+				// listen to the telephone input for changes
+				$(oTarget).on("countrychange", function(e, countryData) {
+					$countryField.val(countryData.iso2);
+				});
+			}
+
+			if ( oTarget.getAttribute("data-fc-sync-country") !== "false" ) {
+				// listen to the address dropdown for changes
+				$countryField.on('change keyup', function () {
+					$(oTarget).intlTelInput("setCountry", $(this).val());
+				});
+			}
+		}
+		
+		function syncCodeFieldSelect(oTarget, $codeField, initialCountry, countryData) {
+			
+			// populate the country dropdown
+			$.each(countryData, function(i, country) {
+				$codeField.append($("<option></option>").attr("data-fc-iso", country.iso2).attr("value", country.dialCode).text('+' + country.dialCode ));
+			});
+
+			$codeField.find('option').each( function(){
+				if ($(this).attr('data-fc-iso') == initialCountry.iso2) {
+					$(this).attr('selected','selected');
+				} else {
+					$(this).removeAttr('selected');
+				}
+			});
+
+			if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
+				// listen to the telephone input for changes
+				$(oTarget).on("countrychange", function (e, countryData) {
+					$codeField.find('option').each( function(){
+						if ($(this).attr('data-fc-iso') == countryData.iso2) {
+							$(this).attr('selected','selected');
+						} else {
+							$(this).removeAttr('selected');
+						}
+					});
+				});
+			}
+
+			if ( oTarget.getAttribute("data-fc-sync-code") !== "false" ) {
+				// listen to the address dropdown for changes
+				$codeField.change(function () {
+					$(oTarget).intlTelInput("setCountry", $(':selected', this).attr("data-fc-iso") );
+				});
+			}
+		}
+
+		function syncCodeFieldInput(oTarget, $codeField, initialCountry) {
+
+
+			$codeField.val(initialCountry.dialCode);
+
+
+			if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
+				// listen to the telephone input for changes
+				$(oTarget).on("countrychange", function (e, countryData) {
+
+					$codeField.val(countryData.dialCode);
+
+				});
+			}
+		}
 
 		return {
 			onStart: function () {
@@ -125,76 +222,32 @@
 					// on keyup / change flag: reset
 					$(oTarget).on("keyup change", reset);
 				}
-
-
+				
 				// Sync country field
 				if (oTarget.getAttribute("data-fc-country-field") !== null ) {
+					
+					var $countryField = $(oTarget.getAttribute("data-fc-country-field"));
 
-
-					var $countrySelect = $(oTarget.getAttribute("data-fc-country-field"));
-
-					// populate the country dropdown
-					$.each(countryData, function(i, country) {
-						$countrySelect.append($("<option></option>").attr("value", country.iso2).text(country.name));
-					});
-
-					// set it's initial value
-					$countrySelect.val(initialCountry.iso2);
-
-					if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
-						// listen to the telephone input for changes
-						$(oTarget).on("countrychange", function(e, countryData) {
-							$countrySelect.val(countryData.iso2);
-						});
-					}
-
-					if ( oTarget.getAttribute("data-fc-sync-country") !== "false" ) {
-						// listen to the address dropdown for changes
-						$countrySelect.change(function () {
-							$(oTarget).intlTelInput("setCountry", $(this).val());
-						});
+					if ( $countryField.prop("nodeName") === 'SELECT') {
+						syncCountryFieldSelect(oTarget, $countryField, initialCountry, countryData);
+					} else if ( $countryField.prop("nodeName") === 'INPUT' ) {
+						syncCountryFieldInput(oTarget, $countryField, initialCountry);
 					}
 				}
-
 
 				// Sync code field
 				if (oTarget.getAttribute("data-fc-code-field") !== null ) {
 
+					var $codeField = $(oTarget.getAttribute("data-fc-code-field"));
 
-					var $codeSelect = $(oTarget.getAttribute("data-fc-code-field"));
-
-					// populate the country dropdown
-					$.each(countryData, function(i, country) {
-						$codeSelect.append($("<option></option>").attr("data-fc-iso", country.iso2).attr("value", country.dialCode).text('+' + country.dialCode ));
-					});
-
-					$codeSelect.find('option').each( function(){
-						if ($(this).attr('data-fc-iso') == initialCountry.iso2) {
-							$(this).attr('selected','selected');
-						} else {
-							$(this).removeAttr('selected');
-						}
-					});
-
-					if ( oTarget.getAttribute("data-fc-sync-tel") !== "false" ) {
-						// listen to the telephone input for changes
-						$(oTarget).on("countrychange", function (e, countryData) {
-							$codeSelect.find('option').each( function(){
-								if ($(this).attr('data-fc-iso') == countryData.iso2) {
-									$(this).attr('selected','selected');
-								} else {
-									$(this).removeAttr('selected');
-								}
-							});
-						});
+					if ( $codeField.prop("nodeName") === 'SELECT') {
+						syncCodeFieldSelect(oTarget, $codeField, initialCountry, countryData);
+					} else if ( $codeField.prop("nodeName") === 'INPUT' ) {
+						syncCodeFieldInput(oTarget, $codeField, initialCountry);
 					}
 
-					if ( oTarget.getAttribute("data-fc-sync-code") !== "false" ) {
-						// listen to the address dropdown for changes
-						$codeSelect.change(function () {
-							$(oTarget).intlTelInput("setCountry", $(':selected', this).attr("data-fc-iso") );
-						});
-					}
+
+
 				}
 			}
 		};
