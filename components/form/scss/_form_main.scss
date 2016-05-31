@@ -23,6 +23,11 @@
 		text-align: left;
 		font-size: $font-size-default;
 		color: map-get($object-forms-vars, label-color);
+		margin-right: $spacing;
+		input[type='radio'], input[type='checkbox'] {
+			margin-right: $spacing/8;
+			display: inline-block;
+		}
 	}
 	details {
 		& {
@@ -44,7 +49,52 @@
 		color: $color-foreground-light;
 	}
 	input[type='radio'], input[type='checkbox'] {
-		margin-right: $spacing/8;
+		display: none;
+	}
+
+	input[type='checkbox'] + label, input[type='radio'] + label {
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			background: #FFF;
+			width: $spacing/1.5;
+			height: $spacing/1.5;
+			margin-right: $spacing/4;
+			border: 1px solid $color-foreground-light;
+			box-shadow: inset 0 0 2px rgba(0,0,0,.3);
+			text-align: center;
+		}
+	}
+
+	input[type='radio'] + label {
+		&:before {
+			border-radius: 50%;
+		}
+	}
+
+	input[type='checkbox']:checked + label, input[type='radio']:checked + label {
+		&:before {
+			color: $color-success;
+			border-color: $color-success;
+			background: rgba($color-success, .1);
+		}
+	}
+	input[type='checkbox']:checked + label {
+		&:before {
+			content: '\2713';
+			font-size: 2rem;
+			line-height: 60%;
+			text-indent: -.1em;
+		}
+	}
+	input[type='radio']:checked + label {
+		&:before {
+			content: '\25CF';
+			font-size: .95rem;
+			line-height: 100%;
+
+		}
 	}
 	[class*='msg-'] {
 		font-size: $font-size-default;
@@ -150,9 +200,6 @@
 	}
 	input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'] {
 		max-width: 300px;
-	}
-	input[type='radio'] {
-		display: inline-block;
 	}
 	input:disabled {
 		background-color: $color-box-light;
@@ -265,7 +312,8 @@
 				padding-bottom: 0;
 			}
 			.title {
-				display: block;
+				display: inline-block;
+				vertical-align: middle;
 				font: $font-size-l $font-face-title;
 			}
 		}

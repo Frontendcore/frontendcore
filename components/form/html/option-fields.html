@@ -9,32 +9,12 @@
 						<li>
 							<label for="browser_ff">
 								<input id="browser_ff" name="available_browsers[]" class="checkbox" type="checkbox" value="ff">
-								Firefox
+								First option (Input inside label)
 							</label>
 						</li>
 						<li>
-							<label for="browser_ie">
-								<input id="browser_ie" name="available_browsers[]" class="checkbox" type="checkbox" value="ie">
-								Internet explorer
-							</label>
-						</li>
-						<li>
-							<label for="browser_ch">
-								<input id="browser_ch" name="available_browsers[]" class="checkbox" type="checkbox" value="ch">
-								Chrome
-							</label>
-						</li>
-						<li>
-							<label for="browser_op">
-								<input id="browser_op" name="available_browsers[]" class="checkbox" type="checkbox" value="op">
-								Opera
-							</label>
-						</li>
-						<li>
-							<label for="browser_sa">
-								<input id="browser_sa" name="available_browsers[]" class="checkbox" type="checkbox" value="sa">
-								Safari
-							</label>
+							<input id="browser_ie" name="available_browsers[]" class="hidden" type="checkbox" value="ie">
+							<label for="browser_ie">Second option (Input before label)</label>
 						</li>
 					</ul>
 				</details>
@@ -44,13 +24,11 @@
 					<summary>Details: Radio buttons</summary>
 					<ul>
 						<li>
-							<label for="first-option"><input type="radio" id="first-option" name="radio" /> First option</label>
+							<label for="first-option"><input type="radio" id="first-option" name="radio" /> First option (native)</label>
 						</li>
 						<li>
-							<label for="second-option"><input type="radio" id="second-option" name="radio" /> Second option</label>
-						</li>
-						<li>
-							<label for="third-option"><input type="radio" id="third-option" name="radio" /> Third option</label>
+							<input type="radio" id="second-option" name="radio" />
+							<label for="second-option">Second option (Input before label)</label>
 						</li>
 					</ul>
 				</details>
@@ -58,15 +36,18 @@
 			<li>
 				<details open="">
 					<summary>Details: Horizontal</summary>
-					<ul class="list-horizontal">
+					<ul class="list _horizontal">
 						<li>
-							<label for="first-option1"><input type="radio" id="first-option1" name="radio" /> First option</label>
+							<input type="radio" id="first-option1" name="radio" />
+							<label for="first-option1">First option</label>
 						</li>
 						<li>
-							<label for="second-option1"><input type="radio" id="second-option1" name="radio" /> Second option</label>
+							<input type="radio" id="second-option1" name="radio" />
+							<label for="second-option1">Second option</label>
 						</li>
 						<li>
-							<label for="third-option1"><input type="radio" id="third-option1" name="radio" /> Third option</label>
+							<input type="radio" id="third-option1" name="radio" />
+							<label for="third-option1">Third option</label>
 						</li>
 					</ul>
 				</details>

@@ -130,6 +130,8 @@
 					oRealInput = oTarget,
 					sTextError = 'Invalid phone';
 
+				oSettings.formatOnInit = false;
+
 				// Add code to the phone on value
 				if (oTarget.getAttribute("data-fc-prefix") === 'true') {
 
@@ -172,8 +174,23 @@
 				// Init the plugin
 				$(oTarget).intlTelInput(oSettings);
 
-				// Get initial country
 				initialCountry = $(oTarget).intlTelInput("getSelectedCountryData");
+
+				if (oTarget.getAttribute("data-fc-code-field") !== null && oTarget.getAttribute("data-fc-initial-country") === null  ) {
+
+
+					var sCurrentValue = $(oTarget.getAttribute("data-fc-code-field")).val();
+
+					// populate the country dropdown
+					$.each(countryData, function(i, country) {
+						if ( country.dialCode ===  sCurrentValue ) {
+
+							$(oTarget).intlTelInput("setCountry", country.iso2);
+							initialCountry = country;
+						}
+					});
+
+				}
 
 				if (oTarget.getAttribute("data-fc-prefix") === 'true') {
 
