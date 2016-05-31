@@ -38,6 +38,15 @@
 
 				FrontendTools.removeLoading(oTarget);
 
+				if ( !FrontendTools.isMobile.any() ) {
+					$('option', oTarget).each(function () {
+
+						if (this.hasAttribute('hidden')) {
+							$(this).remove();
+						}
+					});
+				}
+
 				$(oTarget).chosen(oSettings);
 
 

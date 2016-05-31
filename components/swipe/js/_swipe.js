@@ -2,6 +2,12 @@
 	'use strict';
 
 	FrontendTools.swipe = function( oTarget, oOptions) {
+
+
+		if ( oOptions.allowPageScroll === undefined) {
+			oOptions.allowPageScroll = "vertical";
+		}
+
 		$(oTarget).swipe(
 			oOptions
 		);
