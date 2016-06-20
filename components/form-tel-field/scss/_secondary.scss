@@ -1,6 +1,7 @@
 .intl-tel-input {
   position: relative;
-  display: inline-block
+  display: inline-block;
+  width: 100%;
 }
 
 .intl-tel-input * {
@@ -22,7 +23,8 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-right: 36px;
-  margin-right: 0
+  margin-right: 0;
+  max-width: 100%;
 }
 
 .intl-tel-input .flag-container {

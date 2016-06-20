@@ -44,7 +44,8 @@ var oDefaultPaths = {
 		'image-zoom',
 		'image-edit',
 		'select-search',
-		'swipe'
+		'swipe',
+		'anchor-scroll'
 	];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {

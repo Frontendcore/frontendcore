@@ -1,0 +1,53 @@
+{% set current_children = "Anchor Scroll" %}
+{% set current_section = "Navigation" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <section class="box-lighten">
+        <h2>Default</h2>
+        <p>Point an element by Id</p>
+        {{ demos.demo(
+            'anchor-scroll',
+            PathComponents ~ 'anchor-scroll/html/default-scroll.html'
+        )}}
+    </section>
+
+    <section class="box-lighten">
+        <h1>Substract height of another element</h1>
+        <p>Point an element by Id and substract the height of another element. It's very useful when you have sticky headers.</p>
+        {{ demos.demo(
+            'substract-scroll',
+            PathComponents ~ 'anchor-scroll/html/substract-scroll.html'
+        )}}
+    </section>
+
+    <section class="box-lighten">
+        <h1>Adds height of another element</h1>
+        <p>Point an element by Id and adds the height of another element. It's very useful when you have sticky headers.</p>
+        {{ demos.demo(
+            'add-scroll',
+            PathComponents ~ 'anchor-scroll/html/add-scroll.html'
+        )}}
+    </section>
+
+    {{ demos.settings(
+    {
+        "href" : {
+        "name" :        "href",
+        "description" : "The href of the link will be the id of the element to point"
+    },
+        "data-fc-position" : {
+        "name" :        "data-fc-substract",
+        "description" : "Jquery selector of the element to substract height.",
+    },
+        "data-fc-width" : {
+        "name" :        "data-fc-add",
+        "description" : "Jquery selector of the element to add height.",
+    },
+    }
+    )}}
+
+{% endblock %}

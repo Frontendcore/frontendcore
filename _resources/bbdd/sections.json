@@ -201,6 +201,12 @@
           "js": true,
           "done" : true
         },
+        "anchorscroll": {
+          "name": "Anchor Scroll",
+          "href": "anchor-scroll.html",
+          "js": true,
+          "done" : true
+        },
         "Mobile menu": {
           "name": "Header Mobile",
           "href": "header-mobile.html"

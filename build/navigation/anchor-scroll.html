@@ -38,8 +38,8 @@
         <div class="row">
             <div class="col">
                 <div class="box _empty pv-n mb-n">
-                    <h1 class="h2">Labels</h1>
-                                            <p>Titles, paragraphs and more font styles</p>
+                    <h1 class="h2">Anchor Scroll</h1>
+                                            <p>New super powers unleashed</p>
                                     </div>
             </div>
         </div>
@@ -47,91 +47,150 @@
     <div class="container _center _pad">
         <div class="row">
             <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
-                    <h1><span class="label _css fz-xl va-m">CSS</span> Labels</h1>
-    <section class="box-lighten">
-        <h2>Default Labels</h2>
+                    <section class="box-lighten">
+        <h2>Default</h2>
+        <p>Point an element by Id</p>
                                         <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-labels-default-1" class="o-v" data-fc-name="Demo">
+                <section id="tab-anchor-scroll-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
-                                                <p>
-	<span class="label _background">Background Label</span>
+                                                <a data-fc-modules="anchor-scroll" href="#box-foreground">Anchor to box foreground</a>
 
-	<span class="label _foreground">Foreground Label</span>
+<div id="box-background" class="box _background">
+	<h1>Hey ya!</h1>
+	<p>I'm just here to give some scroll</p>
+</div>
 
-	<span class="label">Neutral Label</span>
-
-	<span class="label _success">Success Label</span>
-
-	<span class="label _error">Error Label</span>
-
-	<span class="label _warning">Warning Label</span>
-
-	<span class="label _info">Info Label</span>
-</p>
-                                            </div>
+<div id="box-foreground" class="box _foreground">
+	<h1>Hey ya!</h1>
+	<p>Come with papa!</p>
+</div>                                            </div>
         </section>
-                <section id="tab-labels-default-2" data-fc-name="HTML">
+                <section id="tab-anchor-scroll-2" data-fc-name="HTML">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;p&gt;
-	&lt;span class=&quot;label _background&quot;&gt;Background Label&lt;/span&gt;
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;anchor-scroll&quot; href=&quot;#box-foreground&quot;&gt;Anchor to box foreground&lt;/a&gt;
 
-	&lt;span class=&quot;label _foreground&quot;&gt;Foreground Label&lt;/span&gt;
+&lt;div id=&quot;box-background&quot; class=&quot;box _background&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m just here to give some scroll&lt;/p&gt;
+&lt;/div&gt;
 
-	&lt;span class=&quot;label&quot;&gt;Neutral Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _success&quot;&gt;Success Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _error&quot;&gt;Error Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _warning&quot;&gt;Warning Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _info&quot;&gt;Info Label&lt;/span&gt;
-&lt;/p&gt;
-</code></pre>
-            </div>
-        </section>
-                            </div>
-
-
-    </section>
-    <section class="box-lighten">
-        <h2>Labels with fz modifiers</h2>
-        <p>You can use the fz modifiers to change the size of the label</p>
-                                        <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-labels-fz-1" class="o-v" data-fc-name="Demo">
-            <div class="box _background o-v" >
-                                                <p>
-	<span class="label fz-xs">Neutral Label</span>
-
-	<span class="label _success fz-default">Success Label</span>
-
-	<span class="label _error fz-m">Error Label</span>
-
-	<span class="label _warning fz-l">Warning Label</span>
-
-	<span class="label _info fz-xl">Info Label</span>
-</p>
-                                            </div>
-        </section>
-                <section id="tab-labels-fz-2" data-fc-name="HTML">
-            <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;p&gt;
-	&lt;span class=&quot;label fz-xs&quot;&gt;Neutral Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _success fz-default&quot;&gt;Success Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _error fz-m&quot;&gt;Error Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _warning fz-l&quot;&gt;Warning Label&lt;/span&gt;
-
-	&lt;span class=&quot;label _info fz-xl&quot;&gt;Info Label&lt;/span&gt;
-&lt;/p&gt;
-</code></pre>
+&lt;div id=&quot;box-foreground&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;Come with papa!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
             </div>
         </section>
                             </div>
 
     </section>
+
+    <section class="box-lighten">
+        <h1>Substract height of another element</h1>
+        <p>Point an element by Id and substract the height of another element. It's very useful when you have sticky headers.</p>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-substract-scroll-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="anchor-scroll" data-fc-substract="#box-substract-primary" href="#box-substract-foreground">Anchor to box foreground</a>
+
+<div id="box-substract-background" class="box _background mb-n">
+	<h1>Hey ya!</h1>
+	<p>I'm just here to give some scroll</p>
+</div>
+
+<div id="box-substract-primary" class="box _primary mb-n">
+	<h1>Substract my height to the anchor</h1>
+</div>
+
+<div id="box-substract-foreground" class="box _foreground">
+	<h1>Hey ya!</h1>
+	<p>Come with papa!</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-substract-scroll-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;anchor-scroll&quot; data-fc-substract=&quot;#box-substract-primary&quot; href=&quot;#box-substract-foreground&quot;&gt;Anchor to box foreground&lt;/a&gt;
+
+&lt;div id=&quot;box-substract-background&quot; class=&quot;box _background mb-n&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m just here to give some scroll&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;box-substract-primary&quot; class=&quot;box _primary mb-n&quot;&gt;
+	&lt;h1&gt;Substract my height to the anchor&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;box-substract-foreground&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;Come with papa!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                            </div>
+
+    </section>
+
+    <section class="box-lighten">
+        <h1>Adds height of another element</h1>
+        <p>Point an element by Id and adds the height of another element. It's very useful when you have sticky headers.</p>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-add-scroll-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a data-fc-modules="anchor-scroll" data-fc-add="#box-add-primary" href="#box-add-foreground">Anchor to box foreground</a>
+
+<div id="box-add-background" class="box _background mb-n">
+	<h1>Hey ya!</h1>
+	<p>I'm just here to give some scroll</p>
+</div>
+
+<div id="box-add-primary" class="box _primary mb-n">
+	<h1>Adds my height to the anchor</h1>
+</div>
+
+<div id="box-add-foreground" class="box _foreground">
+	<h1>Hey ya!</h1>
+	<p>Come with papa!</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-add-scroll-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a data-fc-modules=&quot;anchor-scroll&quot; data-fc-add=&quot;#box-add-primary&quot; href=&quot;#box-add-foreground&quot;&gt;Anchor to box foreground&lt;/a&gt;
+
+&lt;div id=&quot;box-add-background&quot; class=&quot;box _background mb-n&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;I&#039;m just here to give some scroll&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;box-add-primary&quot; class=&quot;box _primary mb-n&quot;&gt;
+	&lt;h1&gt;Adds my height to the anchor&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;box-add-foreground&quot; class=&quot;box _foreground&quot;&gt;
+	&lt;h1&gt;Hey ya!&lt;/h1&gt;
+	&lt;p&gt;Come with papa!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                            </div>
+
+    </section>
+
+            <hr />
+        <h2 class="mb-m">Attributes</h2>
+        <dl class="list">
+                        <dt><h5 class="mb-n c-primary">href</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">The href of the link will be the id of the element to point</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-substract</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Jquery selector of the element to substract height.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-add</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Jquery selector of the element to add height.</p>
+                            </dd>
+                    </dl>
+
 
             </div>
             <div class="col-xl-3 col-xxl-3 col-xxxl-2">
@@ -243,7 +302,7 @@
                                             Typography
                                                                                             <i class="icon-angle-down fl-r"></i>
                                                                                     </a>
-                                                                                    <div id="typography" >
+                                                                                    <div id="typography"  class="hidden">
                                                 <ul>
                                                                                                             <li >
                                                             <a href=".././typography/base.html"><i class="icon-angle-right"></i> Titles & paragraphs </a>
@@ -251,7 +310,7 @@
                                                                                                             <li >
                                                             <a href=".././typography/lists.html"><i class="icon-angle-right"></i> Lists </a>
                                                         </li>
-                                                                                                            <li  class="active">
+                                                                                                            <li >
                                                             <a href=".././typography/labels.html"><i class="icon-angle-right"></i> Labels </a>
                                                         </li>
                                                                                                             <li >
@@ -265,7 +324,7 @@
                                             Navigation
                                                                                             <i class="icon-angle-down fl-r"></i>
                                                                                     </a>
-                                                                                    <div id="navigation"  class="hidden">
+                                                                                    <div id="navigation" >
                                                 <ul>
                                                                                                             <li >
                                                             <a href=".././navigation/navigation.html"><i class="icon-angle-right"></i> Navigation </a>
@@ -291,7 +350,7 @@
                                                                                                             <li >
                                                             <a href=".././navigation/side-panel.html"><i class="icon-angle-right"></i> Side Panel / Menu <span class="fl-r label _foreground">JS</span> </a>
                                                         </li>
-                                                                                                            <li >
+                                                                                                            <li  class="active">
                                                             <a href=".././navigation/anchor-scroll.html"><i class="icon-angle-right"></i> Anchor Scroll <span class="fl-r label _foreground">JS</span> </a>
                                                         </li>
                                                                                                             <li >

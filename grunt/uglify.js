@@ -143,6 +143,11 @@ module.exports = function(grunt) {
 			fcCwd + '/components/swipe/js/_swipe.js'
 		];
 
+		// ANCHOR SCROLL TO
+		oCore.files[jsDest + '/ui/anchor-scroll.js'] = [
+			fcCwd + '/components/anchor-scroll/js/anchor-scroll.js'
+		];
+
 		// INTERNATIONAL PHONE
 		oCore.files[jsDest + '/ui/tel-field-libs.js'] = [
 			fcCwd + '/bower/intl-tel-input/build/js/intlTelInput.js',
