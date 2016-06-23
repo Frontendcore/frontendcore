@@ -21,7 +21,7 @@
 		padding-bottom: $spacing/4;
 		cursor: pointer;
 		text-align: left;
-		font-size: $font-size-default;
+		font-size: map-get($object-forms-vars, label-font-size);
 		color: map-get($object-forms-vars, label-color);
 		margin-right: $spacing/2;
 		input[type='radio'], input[type='checkbox'] {
@@ -109,6 +109,7 @@
 	}
 	li {
 		display: block;
+		position: relative;
 	}
 	ul {
 		&.list-horizontal {
@@ -217,7 +218,10 @@
 			font-size: map-get($object-forms-vars, field-font-size);
 			font-weight: map-get($object-forms-vars, field-font-weight);
 			padding: map-get($object-forms-vars, field-padding);
-			border: map-get($object-forms-vars, field-border);
+			border-top: map-get($object-forms-vars, field-border-top);
+			border-right: map-get($object-forms-vars, field-border-right);
+			border-bottom: map-get($object-forms-vars, field-border-bottom);
+			border-left: map-get($object-forms-vars, field-border-left);
 			background: map-get($object-forms-vars, field-background);
 			color: map-get($object-forms-vars, field-color);
 			border-radius: map-get($object-forms-vars, field-border-radius);

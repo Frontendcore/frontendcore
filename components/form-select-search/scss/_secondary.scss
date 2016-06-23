@@ -19,7 +19,9 @@
 	left: -9999px;
 	z-index: 1010;
 	width: 100%;
-	border: map-get($object-forms-vars, field-border);
+	border-right: map-get($object-forms-vars, field-border-right);
+	border-bottom: map-get($object-forms-vars, field-border-bottom);
+	border-left: map-get($object-forms-vars, field-border-left);
 	border-top: 0;
 	background: #fff;
 	box-shadow: map-get($object-forms-vars, field-box-shadow);
@@ -51,7 +53,10 @@
 	display: block;
 	overflow: hidden;
 	padding: map-get($object-forms-vars, field-padding);
-	border: map-get($object-forms-vars, field-border);
+	border-top: map-get($object-forms-vars, field-border-top);
+	border-right: map-get($object-forms-vars, field-border-right);
+	border-bottom: map-get($object-forms-vars, field-border-bottom);
+	border-left: map-get($object-forms-vars, field-border-left);
 	border-radius: map-get($object-forms-vars, field-border-radius);
 	background-color: $color-background;
 	background-clip: padding-box;
@@ -126,7 +131,10 @@
 	width: 100%;
 	height: auto;
 	outline: 0;
-	border: map-get($object-forms-vars, field-border);
+	border-top: map-get($object-forms-vars, field-border-top);
+	border-right: map-get($object-forms-vars, field-border-right);
+	border-bottom: map-get($object-forms-vars, field-border-bottom);
+	border-left: map-get($object-forms-vars, field-border-left);
 	font-size: 1em;
 	font-family: sans-serif;
 	line-height: normal;
@@ -211,7 +219,10 @@
 	background-color: #fff;
 	cursor: text;
 	padding-left: $spacing/4;
-	border: map-get($object-forms-vars, field-border);
+	border-top: map-get($object-forms-vars, field-border-top);
+	border-right: map-get($object-forms-vars, field-border-right);
+	border-bottom: map-get($object-forms-vars, field-border-bottom);
+	border-left: map-get($object-forms-vars, field-border-left);
 	&:after {
 		content:"\25BE";
 		padding: 0 $spacing/2.5 0 $spacing/4;

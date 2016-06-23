@@ -8,14 +8,19 @@ $object-forms-vars-default: (
         field-padding: map-get($defaults, spacing)/4 map-get($defaults, spacing)/2,
         field-margin: 0 map-get($defaults, spacing)/2 map-get($defaults, spacing) 0,
         field-border-radius: 1px,
-        field-border: 1px solid rgba(map_get($colors, foreground), .3),
+        field-border-top: 2px solid rgba(map_get($colors, foreground), .3),
+        field-border-right: 1px solid rgba(map_get($colors, foreground), .15),
+        field-border-bottom: 1px solid rgba(map_get($colors, foreground), .15),
+        field-border-left: 2px solid rgba(map_get($colors, foreground), .3),
         field-box-shadow: "inset 0 2px 8px rgba(#{map_get($colors, foreground)}, .2), 0 1px 1px rgba(#{map_get($colors, background)}, .5)",
         field-placeholder-color: rgba(map_get($colors, foreground), .3),
-  /* Field focus */
         field-focus-border: map_get($colors, info),
-  /* Field error */
-        field-error-border: map_get($colors, error),
+        field-success-border: 4px solid map_get($colors, success),
+        field-success-background: #FFF,
+        field-error-border: 4px solid map_get($colors, error),
+        field-error-background: #FFF,
   /* Label */
+        label-font-size: .9rem,
         label-color: rgba(map_get($colors, foreground), .5)
 ) !global !default;
 

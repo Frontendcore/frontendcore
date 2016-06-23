@@ -81,6 +81,10 @@
 					oOptions.center = false;
 				}
 
+				if (oTarget.getAttribute("data-fc-autoplay") !== null && oTarget.getAttribute("data-fc-autoplay") === 'false') {
+					oOptions.autoplay = false;
+				}
+
 				if (oTarget.getAttribute("data-fc-video-height") !== null) {
 					oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
 				}
@@ -102,7 +106,7 @@
 							items: parseInt(aDeviceItems[0], 10),
 							nav: false
 						},
-						'480': {
+						'765': {
 							items: parseInt(aDeviceItems[1], 10),
 							nav: true
 						},

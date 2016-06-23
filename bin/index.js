@@ -47,6 +47,7 @@ var aProjects = [],
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
     exec = function( bin, params ) {
+
         var child = spawn( bin, params, {
             cwd: sFrontendCorePath,
             env: process.env
@@ -57,12 +58,12 @@ var aProjects = [],
 
         // Listen for any response from the child:
         child.stdout.on('data', function (data) {
-            console.log('' + data);
+            console.log(data.toString());
         });
 
         // Listen for any errors:
         child.stderr.on('data', function (data) {
-            console.log('' + data);
+            console.log(data.toString());
         });
 
     },

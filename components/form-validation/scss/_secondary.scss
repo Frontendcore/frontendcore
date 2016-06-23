@@ -8,8 +8,10 @@
 .form-error-message {
   & {
     color: $color-error;
-    font-size: $font-size-default;
     margin: 0;
+    position: absolute;
+    font-size: $font-size-xs;
+    margin-top: -$spacing/8;
   }
   li:first-of-type {
     padding-top: $spacing/4;

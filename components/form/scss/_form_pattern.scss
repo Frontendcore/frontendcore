@@ -10,7 +10,10 @@
 		font-size: map-get($object-forms-vars, field-font-size);
 		font-weight: map-get($object-forms-vars, field-font-weight);
 		padding: map-get($object-forms-vars, field-padding);
-		border: map-get($object-forms-vars, field-border);
+		border-top: map-get($object-forms-vars, field-border-top);
+		border-right: map-get($object-forms-vars, field-border-right);
+		border-bottom: map-get($object-forms-vars, field-border-bottom);
+		border-left: map-get($object-forms-vars, field-border-left);
 		background: map-get($object-forms-vars, field-background);
 		color: map-get($object-forms-vars, field-color);
 		border-radius: map-get($object-forms-vars, field-border-radius);
@@ -19,7 +22,11 @@
 	}
 	&.error {
 		background: map-get($object-forms-vars, field-error-background);
-		border: 1px solid map-get($object-forms-vars, field-error-border);
+		border-left: map-get($object-forms-vars, field-error-border);
+	}
+	&.success {
+		background: map-get($object-forms-vars, field-success-background);
+		border-left: map-get($object-forms-vars, field-success-border);
 	}
 	&:focus {
 		@extend %focus;

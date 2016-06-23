@@ -2,9 +2,9 @@ module.exports = function(grunt) {
 
 	require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
 
-
 	var jsCwd = appCwd + '/',
 		jsSrc = '**/*.js',
+		oJsSrc = [],
 		jsModulesFolder,
 		oConfig = {
 			Polyfills: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
 		if ( oData.js !== undefined) {
 
-			if (oData.js.cwd !== undefined) {
+			if (oData.js.cwd !== undefined && !Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
 				jsCwd += oData.js.cwd + '/';
 			}
 
@@ -47,19 +47,30 @@ module.exports = function(grunt) {
 			} else {
 				jsModulesFolder += 'modules/';
 			}
+
+			if ( Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
+				for (var nKey = 0; nKey < oData.js.cwd.length; nKey++) {
+					oJsSrc.push(oData.js.cwd[nKey] +'/'+ jsSrc);
+					oJsSrc.push('!' + oData.js.cwd[nKey] +'/_'+ jsSrc);
+				}
+			} else {
+				oJsSrc = [jsSrc];
+			}
+			
+			oConfig['js'] = {
+				files: [
+					{
+						cwd: jsCwd,
+						expand: true,
+						flatten: true,
+						src: oJsSrc,
+						dest:jsModulesFolder
+					}
+				]
+			};
+
 		}
 
-		oConfig['js'] = {
-			files: [
-				{
-					cwd: jsCwd,
-					expand: true,
-					flatten: true,
-					src: [jsSrc],
-					dest:jsModulesFolder
-				}
-			]
-		};
 
 		oConfig['jsForms'] = {
 			files: [

@@ -22,37 +22,13 @@
 			},
 			autobind: function (oTarget, nIndex) {
 
+				var self = this;
+
 				FrontendTools.removeLoading(oTarget);
 
 				$(oTarget).on('click', function(event) {
+					self.scrollTo(event, this);
 
-					var sHref = this.getAttribute('href'),
-						target = $(sHref),
-						sHeight = target.offset().top;
-
-					if ( oTarget.getAttribute('data-fc-substract') !== null) {
-						sHeight += -($(oTarget.getAttribute('data-fc-substract')).outerHeight());
-					}
-
-					if ( oTarget.getAttribute('data-fc-add') !== null) {
-						sHeight += +($(oTarget.getAttribute('data-fc-add')).outerHeight());
-					}
-
-					if( target.length ) {
-
-						event.preventDefault();
-
-						if(history.pushState) {
-							history.pushState(null, null, sHref);
-						}
-						else {
-							location.hash = sHref;
-						}
-
-						$(sElementToScroll).stop().animate({
-							scrollTop: sHeight
-						}, 500);
-					}
 				});
 
 				if ( window.location.hash === oTarget.getAttribute('href') ) {
@@ -60,6 +36,41 @@
 					setTimeout( function(){
 						$(oTarget).click();
 					}, 100);
+				}
+
+			},
+			scrollTo: function(event, oLink ) {
+
+				if ( oLink.nodeName !== 'A') {
+					oLink = $(oLink).parents('a')[0];
+				}
+
+				var sHref = '#' + oLink.href.split('#')[1],
+					$Target = $(sHref),
+					sHeight = $Target.offset().top;
+
+				if ( oLink.getAttribute('data-fc-substract') !== null) {
+					sHeight += -($(oLink.getAttribute('data-fc-substract')).outerHeight());
+				}
+
+				if ( oLink.getAttribute('data-fc-add') !== null) {
+					sHeight += +($(oLink.getAttribute('data-fc-add')).outerHeight());
+				}
+
+				if( $Target.length ) {
+					event.preventDefault();
+
+					if(window.history.pushState) {
+						window.history.pushState(null, null, sHref);
+					}
+					else {
+						window.location.hash = sHref;
+					}
+
+					$(sElementToScroll).stop().animate({
+						scrollTop: sHeight
+					}, 500);
+
 				}
 
 			}

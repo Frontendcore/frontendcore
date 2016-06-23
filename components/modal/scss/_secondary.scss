@@ -149,14 +149,13 @@
 		& {
 			position: absolute;
 			top: 50%;
-			margin-top: -$spacing;
-			width: $spacing*1.5;
-			height: $spacing*2;
+			margin-top: -$font-size-xxxl;
 			color: #FFF;
-			text-shadow: 0 0 $spacing/2 rgba(0,0,0,1);
+			text-shadow: 0 0 3px #000;
 			box-shadow: none;
 			text-indent: -9999px;
 			opacity: .5;
+			font-size: $font-size-xxxl*2;
 		}
 		&:after {
 			position: absolute;
@@ -165,28 +164,40 @@
 		&:hover {
 			opacity: 1;
 		}
+		&:focus {outline:none;}
+	}
+
+	#cboxContent {
+		#cboxPrevious, #cboxNext {
+			display: none !important;
+		}
+		&:hover {
+			#cboxPrevious, #cboxNext {
+				display: block !important;
+			}
+		}
 	}
 
 	#cboxPrevious {
 		@extend %cBoxGalleryButtons;
 		& {
-			left: 0;
+			left: -$font-size-xxxl/2;
 			border-radius: 0 $spacing*4 $spacing*4 0;
 		}
 		&:after {
-			left: $spacing/2;
-			content: '\25C0';
+			left: 0;
+			content: '\2329';
 		}
 	}
 	#cboxNext {
 		@extend %cBoxGalleryButtons;
 		& {
-			right: 0;
+			right: -$font-size-xxxl/2;
 			border-radius: 0 $spacing*4 $spacing*4 0;
 		}
 		&:after {
-			right: $spacing/2;
-			content: '\25B6';
+			right: 0;
+			content: '\232A';
 		}
 	}
 
