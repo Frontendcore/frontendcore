@@ -133,7 +133,6 @@ module.exports = function(grunt) {
 
 		// IMAGE RESPONSIVE
 		oCore.files[jsDest + '/ui/image-responsive.js'] = [
-			fcCwd + '/bower/jquery-unveil/jquery.unveil.js',
 			fcCwd + '/components/image-responsive/js/_image-responsive.js'
 		];
 

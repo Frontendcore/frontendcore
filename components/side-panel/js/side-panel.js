@@ -2,6 +2,9 @@
 	'use strict';
 
 	FrontendCore.define('side-panel', ['swipe'], function () {
+
+        var html = jQuery('html');
+
 		return {
 			oDefault: {
 				side: "left",
@@ -154,10 +157,27 @@
 
 					if ($('.side-black-panel')[0] === undefined) {
 
-						$('body').append('<div class="side-black-panel animated fade-in"></div>').css({
-							'overflow' : 'hidden',
-							'height' : '100%'
-						});
+                        // lock scroll position, but retain settings for later
+                        var scrollPosition = [
+                            self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+                            self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+                        ];
+
+                        html.data('scroll-position', scrollPosition);
+                        html.data('previous-overflow', html.css('overflow'));
+                        html.css('overflow', 'hidden');
+                        window.scrollTo(scrollPosition[0], scrollPosition[1]);
+
+
+						$('body')
+                            .addClass('_has-black-panel')
+                            .append('<div class="side-black-panel animated fade-in"></div>');
+                        /*
+							.css({
+								'overflow' : 'hidden',
+								'height' : '100%'
+							});
+                        */
 
 						$('.side-black-panel').on('click', function(){
 
@@ -183,12 +203,14 @@
 				$(oPanel).addClass('slide-out-' + oSettings.side);
 				$(oBlackPanel).addClass('fade-out');
 
-				$('body').css({
-					'overflow' : 'auto',
-					'height' : 'initial'
-				});
+                var scrollPosition = html.data('scroll-position');
+                html.css('overflow', html.data('previous-overflow'));
+                window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
-				setTimeout( function(){
+				$('body')
+                    .removeClass('_has-black-panel');
+
+                setTimeout( function(){
 					$(oBlackPanel).remove();
 				}, 700);
 			},

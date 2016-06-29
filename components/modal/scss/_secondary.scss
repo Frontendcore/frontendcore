@@ -72,9 +72,9 @@
 		outline: 0;
 	}
 	#cboxContent {
-		margin: $spacing;
+		margin: $spacing/8;
 		background: $color-foreground;
-		box-shadow: 0 0 $spacing/2 rgba(0,0,0,1);
+		box-shadow: 0 0 $spacing/8 rgba(0,0,0,1);
 
 	}
 	.cboxIframe {
@@ -169,11 +169,11 @@
 
 	#cboxContent {
 		#cboxPrevious, #cboxNext {
-			display: none !important;
+			display: none;
 		}
 		&:hover {
 			#cboxPrevious, #cboxNext {
-				display: block !important;
+				display: block;
 			}
 		}
 	}
@@ -204,8 +204,8 @@
 	#cboxClose {
 		& {
 			position: absolute;
-			top: $spacing/4;
-			right: $spacing/4;
+			top: $spacing/2;
+			right: $spacing/2;
 			display: block;
 			background: rgba(0,0,0,.5);
 			text-indent: -9999px;
@@ -213,6 +213,7 @@
 			width: $spacing;
 			height: $spacing;
 			opacity: .8;
+			z-index: 999999;
 		}
 		&:after {
 			color: #FFF;

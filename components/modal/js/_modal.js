@@ -73,7 +73,7 @@
 					sHref = oTarget.href,
 					aHrefHash = sHref.split('#'),
 					oSettings,
-					nModalMeasure = FrontendTools.isMobile.any() ? '100%' : '90%',
+					nModalMeasure = FrontendTools.isMobile.any() ? '100%' : '100%',
 					oOptions = {};
 
 					if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
@@ -156,7 +156,12 @@
 						oOptions.href = sHref;
 					}
 
-					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+					if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
+						oOptions.href += oTarget.getAttribute("data-fc-href-suffix");
+					}
+
+
+				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 					$(oTarget).colorbox(oSettings);
 

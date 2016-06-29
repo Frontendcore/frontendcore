@@ -5,7 +5,8 @@
 
 		var ua = window.navigator.userAgent,
 			msie = ua.indexOf("MSIE "),
-			sElementToScroll = msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) ? 'html' : 'body';
+			mozilla = ua.indexOf("Firefox"),
+			sElementToScroll = msie > 0 || mozilla > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) ? 'html' : 'body';
 
 		return {
 			onStart: function () {
@@ -27,6 +28,7 @@
 				FrontendTools.removeLoading(oTarget);
 
 				$(oTarget).on('click', function(event) {
+
 					self.scrollTo(event, this);
 
 				});
@@ -58,6 +60,7 @@
 				}
 
 				if( $Target.length ) {
+
 					event.preventDefault();
 
 					if(window.history.pushState) {
@@ -72,7 +75,6 @@
 					}, 500);
 
 				}
-
 			}
 		};
 	});

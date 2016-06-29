@@ -4,76 +4,12 @@
     "static": "/static/"
   },
   "sections": {
-    "GettingStarted": {
-      "name": "GettingStarted",
-      "icon": "table",
-      "href": "#getting-started",
-      "id": "getting-started",
-      "children": {
-        "GettingStarted": {
-          "name": "Getting started",
-          "href": "getting-started.html"
-        },
-        "Download": {
-          "name": "Download",
-          "href": "download.html"
-        },
-        "Installation": {
-          "name": "Installation",
-          "href": "installation.html"
-        },
-        "CSS": {
-          "name": "CSS",
-          "href": "css.html"
-        },
-        "Javascript": {
-          "name": "Javascript",
-          "href": "javascript.html"
-        }
-      }
-    },
-    "Architecture SCSS": {
-      "name": "Architecture CSS",
-      "icon": "table",
-      "href": "#architecture-css",
-      "id": "architecture-css",
-      "children": {
-        "Folder structure": {
-          "name": "Folder structure",
-          "href": "folder-structure.html"
-        },
-        "Media Queries": {
-          "name": "Media Queries",
-          "href": "media-queries.html"
-        },
-        "Animations": {
-          "name": "Animations",
-          "href": "animations.html"
-        },
-        "Sassdoc": {
-          "name": "Sassdoc",
-          "href": "sassdoc.html"
-        }
-      }
-    },
     "Architecture JS": {
       "name": "Architecture JS",
       "icon": "table",
       "href": "#architecture-js",
       "id": "architecture-js",
       "children": {
-        "getting-started": {
-          "name": "Getting Started",
-          "href": "getting-started.html"
-        },
-        "toolBox": {
-          "name": "Tools",
-          "href": "tools.html"
-        },
-        "Mediator": {
-          "name": "Module communication (Mediator)",
-          "href": "mediator.html"
-        },
         "RoundTrip" : {
           "name" : "RoundTrip (Webapps)",
           "href" : "roundtrip.html",
