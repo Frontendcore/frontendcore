@@ -1,0 +1,11 @@
+.layout-side {
+    height: 100%;
+    background: $color-primary;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    header {
+      padding: $spacing/2;
+      background: $color-background;
+    }
+}

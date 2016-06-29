@@ -1,44 +1,22 @@
-[![Build Status](http://www.frontendcore.com/static/img/frontendcore-black.png)](https://github.com/tonipinel/frontendcore)
+[![Build Status](http://www.frontendcore.com/static/img/logo-frontendcore.png)](https://github.com/tonipinel/frontendcore)
 
-> This is the workspace for FrontendCore. You don't need this for production. If you wan to contribute, fork this repository and pull request your changes.
+> The web is growing so fast and there is always new plugins, tendencies and even more devices making the full process more complex and slow. Frontend Core, a mix of technology that make us 500% productive and be prepared for the future.
 
+#Web components
+ Based on the atomic design concept, FrontendCore provides you patterns, objects & modifiers to create complex designs based on the markup.
+ 
+#Responsive interface
+ All the components are mobile first to make you site mobile from day 1 and is compatible with IE8+,FF,CH, SF with progressive enhancement technique
 
-## Setting up the environment
+#Scalable Javascript
+ Based on TinyCore and RequireJS, loads and execute AMD modules scanning the DOM, providing an incredible balance between easy of use and performance.
+ 
+#Easy User Interface
+ FrontendCore provides you User interface components based on data attributes providing your user a great User experience and fast development.
+ 
 
-### Create main folder
-
-Just create one folder called frontendcore in your computer and go inside it with your terminal
-
-### Clone the Workspace repository
-
-```bash
-git clone https://github.com/Frontendcore/frontendcore.git workspace
-```
-
-### Clone the Scss repository
-
-```bash
-git clone https://github.com/Frontendcore/scss.git scss
-```
-
-### Clone the JS repository
-
-```bash
-git clone https://github.com/Frontendcore/js.git js
-```
-
-### Clone the Site repository
-
-```bash
-git clone https://github.com/Frontendcore/site.git js
-```
-
-### Clone the Generator repository
-
-```bash
-git clone https://github.com/Frontendcore/generator.git js
-```
-
-### Start contribute!
-
-Now you have all what you need installed in your computer. Just forget all the repositories except the workspace. Here's where you have to work, and that's the one you need to fork. But the workspace compiles in all the other directories. To see your changes go to the site/build folder and start browsing the site.
+With the support of:
+* [Browserstack](browserstack.com): Browserstack provides the best multi-device testing platform to guarantee that Frontendcore works in all browsers and devices.
+* [Jet Brains](jetbrains.com): Jet Brains provides the best code edition tools such phpStorm to ensure the most agile development to Frontendcore.
+ 
+ 

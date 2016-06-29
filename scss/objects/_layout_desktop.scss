@@ -1,0 +1,33 @@
+body, html {
+  height: 100%;
+}
+.fc-header-top {
+  display: none !important;
+}
+.layout {
+  .__side {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 270px;
+    z-index: 50;
+    background: $color-primary;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    header {
+      padding: $spacing/2;
+      background: $color-background;
+    }
+  }
+  .__main {
+    position: fixed;
+    height: 100%;
+    padding-left: 270px;
+    width: 100%;
+    overflow: auto;
+    z-index: 25;
+    box-sizing: border-box;
+  }
+}

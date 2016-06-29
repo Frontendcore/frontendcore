@@ -17,36 +17,362 @@
     </style>
 </head>
 <body class="animated fade-in" data-fc-modules="polyfiller">
-    <header class="fc-header">
-        <div class="fc-header-top">
-            <div class="row">
-                <div class="col">
-                    <div class="desktop">
-                        <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-                    </div>
-                    <div class="mobile tablet">
-                        <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-m mr-n"><i class="icon-bars mr-n"></i></a>
-                        <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m ml-s" alt="FRONTEND CORE" /></a>
-                    </div>
-                </div>
-                <div class="col ta-r">
-                    <gcse:search></gcse:search>
-                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="box _empty pv-n mb-n">
-                    <h1 class="h2">Autocomplete</h1>
-                                            <p>Show your code propertly</p>
+    <div class="layout">
+        <aside id="menu" class="__side layout-side">
+            <header class="ta-c">
+                <a title="Frontend Core" href="../index.html"><img src="..//static/img/logo-frontendcore.png" width="200" class="va-m" alt="FRONTEND CORE" /></a>
+            </header>
+                            <nav class="navigation _primary _vertical">
+                    <ul>
+                                                    <li>
+                                <a href="#architecture-js" data-fc-modules="toggle">
+                                    Architecture JS
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="architecture-js"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././architecture-js/roundtrip.html" class="d-b"><i class="icon-angle-right"></i> RoundTrip (Webapps) </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././architecture-js/touch-swipe.html" class="d-b"><i class="icon-angle-right"></i> Touch Swipe </a>
+                                                </li>
+                                                                                    </ul>
                                     </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#structure" data-fc-modules="toggle">
+                                    Structure
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="structure"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-setup.html" class="d-b"><i class="icon-angle-right"></i> Grids setup </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-autoresponsive.html" class="d-b"><i class="icon-angle-right"></i> Autoresponsive grids </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-customresponsive.html" class="d-b"><i class="icon-angle-right"></i> Custom responsive grids </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-alignment.html" class="d-b"><i class="icon-angle-right"></i> Grids alignment </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-distribution.html" class="d-b"><i class="icon-angle-right"></i> Grids distribution </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././structure/grids-offset.html" class="d-b"><i class="icon-angle-right"></i> Grids offset </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#typography" data-fc-modules="toggle">
+                                    Typography
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="typography"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././typography/base.html" class="d-b"><i class="icon-angle-right"></i> Titles & paragraphs </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././typography/lists.html" class="d-b"><i class="icon-angle-right"></i> Lists </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././typography/labels.html" class="d-b"><i class="icon-angle-right"></i> Labels </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././typography/icons.html" class="d-b"><i class="icon-angle-right"></i> Icons </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#navigation" data-fc-modules="toggle">
+                                    Navigation
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="navigation"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././navigation/navigation.html" class="d-b"><i class="icon-angle-right"></i> Navigation </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/navigation-distribution.html" class="d-b"><i class="icon-angle-right"></i> Navigation distribution </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/navigation-alignment.html" class="d-b"><i class="icon-angle-right"></i> Navigation alignment </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/navigation-dropdown.html" class="d-b"><i class="icon-angle-right"></i> Navigation dropdown <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/pagination.html" class="d-b"><i class="icon-angle-right"></i> Pagination </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/tabs.html" class="d-b"><i class="icon-angle-right"></i> Tabs <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/tags.html" class="d-b"><i class="icon-angle-right"></i> Tags </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/side-panel.html" class="d-b"><i class="icon-angle-right"></i> Side Panel / Menu <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/anchor-scroll.html" class="d-b"><i class="icon-angle-right"></i> Anchor Scroll <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././navigation/header-mobile.html" class="d-b"><i class="icon-angle-right"></i> Header Mobile </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#media" data-fc-modules="toggle">
+                                    Media
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="media"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././media/image-thumb.html" class="d-b"><i class="icon-angle-right"></i> Thumbnail Images </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././media/image-circle.html" class="d-b"><i class="icon-angle-right"></i> Circle Images </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././media/image-polaroid.html" class="d-b"><i class="icon-angle-right"></i> Polaroid Images </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././media/image-zoom.html" class="d-b"><i class="icon-angle-right"></i> Zoom Images <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././media/image-responsive.html" class="d-b"><i class="icon-angle-right"></i> Responsive Images <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#content" data-fc-modules="toggle">
+                                    Content
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="content"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././content/boxes.html" class="d-b"><i class="icon-angle-right"></i> Boxes </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/balloons.html" class="d-b"><i class="icon-angle-right"></i> Balloons </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/ratings.html" class="d-b"><i class="icon-angle-right"></i> Ratings </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/parallax.html" class="d-b"><i class="icon-angle-right"></i> Parallax </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/charts.html" class="d-b"><i class="icon-angle-right"></i> Charts <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/carousel.html" class="d-b"><i class="icon-angle-right"></i> Carousel <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/truncate.html" class="d-b"><i class="icon-angle-right"></i> Truncate <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/toggle.html" class="d-b"><i class="icon-angle-right"></i> Toggle <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/sortable.html" class="d-b"><i class="icon-angle-right"></i> Sortable lists <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/code.html" class="d-b"><i class="icon-angle-right"></i> Code beautifier <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././content/cart.html" class="d-b"><i class="icon-angle-right"></i> Cart <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#buttons" data-fc-modules="toggle">
+                                    Buttons
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="buttons"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././buttons/buttons.html" class="d-b"><i class="icon-angle-right"></i> Buttons </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././buttons/button-group.html" class="d-b"><i class="icon-angle-right"></i> Buttons group </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#forms" data-fc-modules="toggle">
+                                    Forms
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="forms" >
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././forms/form-grids.html" class="d-b"><i class="icon-angle-right"></i> Form Grids </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/text-fields.html" class="d-b"><i class="icon-angle-right"></i> Text Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/number-fields.html" class="d-b"><i class="icon-angle-right"></i> Number Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/option-fields.html" class="d-b"><i class="icon-angle-right"></i> Option Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/switch.html" class="d-b"><i class="icon-angle-right"></i> Switch </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/select-fields.html" class="d-b"><i class="icon-angle-right"></i> Select Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/select-search.html" class="d-b"><i class="icon-angle-right"></i> Select with search <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/tag-field.html" class="d-b"><i class="icon-angle-right"></i> Tag Field <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/tel-field.html" class="d-b"><i class="icon-angle-right"></i> Tel Field <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/error-fields.html" class="d-b"><i class="icon-angle-right"></i> Error Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/read-only-fields.html" class="d-b"><i class="icon-angle-right"></i> Read Only Fields </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/validation.html" class="d-b"><i class="icon-angle-right"></i> Validation <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/search-form.html" class="d-b"><i class="icon-angle-right"></i> Search Form </a>
+                                                </li>
+                                                                                            <li  class="active">
+                                                    <a href=".././forms/autocomplete.html" class="d-b"><i class="icon-angle-right"></i> Autocomplete <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/autosize.html" class="d-b"><i class="icon-angle-right"></i> Autosize <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/wysiwyg.html" class="d-b"><i class="icon-angle-right"></i> Wysiwyg <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#tables" data-fc-modules="toggle">
+                                    Tables
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="tables"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././tables/static-table.html" class="d-b"><i class="icon-angle-right"></i> Static Table </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././tables/flex-table.html" class="d-b"><i class="icon-angle-right"></i> Flex Table </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././tables/dynamic-table.html" class="d-b"><i class="icon-angle-right"></i> Dynamic Table <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././tables/responsive-table.html" class="d-b"><i class="icon-angle-right"></i> Responsive Table <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#callouts" data-fc-modules="toggle">
+                                    Callouts & Prompts
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="callouts"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././callouts/Callouts.html" class="d-b"><i class="icon-angle-right"></i> Callouts </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././callouts/notifications.html" class="d-b"><i class="icon-angle-right"></i> Notifications <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././callouts/loading.html" class="d-b"><i class="icon-angle-right"></i> Loading <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././callouts/tips.html" class="d-b"><i class="icon-angle-right"></i> Tips <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././callouts/modals.html" class="d-b"><i class="icon-angle-right"></i> Modal windows <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li>
+                                <a href="#modifiers" data-fc-modules="toggle">
+                                    Modifiers
+                                                                            <i class="icon-angle-down fl-r"></i>
+                                                                    </a>
+                                                                    <div id="modifiers"  class="hidden">
+                                        <ul>
+                                                                                            <li >
+                                                    <a href=".././modifiers/colors.html" class="d-b"><i class="icon-angle-right"></i> Colors </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/fonts.html" class="d-b"><i class="icon-angle-right"></i> Font sizes </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/text.html" class="d-b"><i class="icon-angle-right"></i> Text align & decoration </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/margin-padding.html" class="d-b"><i class="icon-angle-right"></i> Margins & Paddings </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/measures.html" class="d-b"><i class="icon-angle-right"></i> Measures </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/borders.html" class="d-b"><i class="icon-angle-right"></i> Borders </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././modifiers/visibility.html" class="d-b"><i class="icon-angle-right"></i> Visiblity </a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                            </ul>
+                </nav>
+                        <div class="pa-m mt-m mb-xl">
+                <gcse:search></gcse:search>
+                <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
             </div>
-        </div>
-    </header>
-    <div class="container _center _pad">
-        <div class="row">
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+        </aside>
+        <div class="__main">
+            <header class="fc-header">
+                <div class="fc-header-top mobile tablet">
+                    <a data-fc-modules="side-panel" href="#menu" data-fc-clone="false" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-m mr-n"><i class="icon-bars mr-n"></i></a>
+                    <a title="Frontend Core" href="../index.html" class="fc-header-logo"><img src="..//static/img/logo-frontendcore.png" class="va-m ml-s" alt="FRONTEND CORE" /></a>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="box _empty pv-n mb-n">
+                            <h1 class="h2">Autocomplete</h1>
+                                                            <p>Show your code propertly</p>
+                                                    </div>
+                    </div>
+                </div>
+            </header>
+            <div class="box _empty">
                                                     <div data-fc-modules="tabs" class="loading o-v">
                 <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" style="min-height:300px">
@@ -79,356 +405,9 @@
                     </dl>
 
             </div>
-            <div class="col-xl-3 col-xxl-3 col-xxxl-2">
-                <div class="screen-xl screen-xxl screen-xxxl">
-                                            <nav id="menu" class="navigation _primary _vertical">
-                            <ul>
-                                                                    <li>
-                                        <a href="#architecture-js" data-fc-modules="toggle">
-                                            Architecture JS
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="architecture-js"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././architecture-js/roundtrip.html"><i class="icon-angle-right"></i> RoundTrip (Webapps) </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././architecture-js/touch-swipe.html"><i class="icon-angle-right"></i> Touch Swipe </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#structure" data-fc-modules="toggle">
-                                            Structure
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="structure"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-setup.html"><i class="icon-angle-right"></i> Grids setup </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-autoresponsive.html"><i class="icon-angle-right"></i> Autoresponsive grids </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-customresponsive.html"><i class="icon-angle-right"></i> Custom responsive grids </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-alignment.html"><i class="icon-angle-right"></i> Grids alignment </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-distribution.html"><i class="icon-angle-right"></i> Grids distribution </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././structure/grids-offset.html"><i class="icon-angle-right"></i> Grids offset </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#typography" data-fc-modules="toggle">
-                                            Typography
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="typography"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././typography/base.html"><i class="icon-angle-right"></i> Titles & paragraphs </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././typography/lists.html"><i class="icon-angle-right"></i> Lists </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././typography/labels.html"><i class="icon-angle-right"></i> Labels </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././typography/icons.html"><i class="icon-angle-right"></i> Icons </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#navigation" data-fc-modules="toggle">
-                                            Navigation
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="navigation"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././navigation/navigation.html"><i class="icon-angle-right"></i> Navigation </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/navigation-distribution.html"><i class="icon-angle-right"></i> Navigation distribution </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/navigation-alignment.html"><i class="icon-angle-right"></i> Navigation alignment </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/navigation-dropdown.html"><i class="icon-angle-right"></i> Navigation dropdown <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/pagination.html"><i class="icon-angle-right"></i> Pagination </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/tabs.html"><i class="icon-angle-right"></i> Tabs <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/tags.html"><i class="icon-angle-right"></i> Tags </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/side-panel.html"><i class="icon-angle-right"></i> Side Panel / Menu <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/anchor-scroll.html"><i class="icon-angle-right"></i> Anchor Scroll <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././navigation/header-mobile.html"><i class="icon-angle-right"></i> Header Mobile </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#media" data-fc-modules="toggle">
-                                            Media
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="media"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././media/image-thumb.html"><i class="icon-angle-right"></i> Thumbnail Images </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././media/image-circle.html"><i class="icon-angle-right"></i> Circle Images </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././media/image-polaroid.html"><i class="icon-angle-right"></i> Polaroid Images </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././media/image-zoom.html"><i class="icon-angle-right"></i> Zoom Images <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././media/image-responsive.html"><i class="icon-angle-right"></i> Responsive Images <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#content" data-fc-modules="toggle">
-                                            Content
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="content"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././content/boxes.html"><i class="icon-angle-right"></i> Boxes </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/balloons.html"><i class="icon-angle-right"></i> Balloons </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/ratings.html"><i class="icon-angle-right"></i> Ratings </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/parallax.html"><i class="icon-angle-right"></i> Parallax </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/charts.html"><i class="icon-angle-right"></i> Charts <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/carousel.html"><i class="icon-angle-right"></i> Carousel <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/truncate.html"><i class="icon-angle-right"></i> Truncate <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/toggle.html"><i class="icon-angle-right"></i> Toggle <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/sortable.html"><i class="icon-angle-right"></i> Sortable lists <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/code.html"><i class="icon-angle-right"></i> Code beautifier <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././content/cart.html"><i class="icon-angle-right"></i> Cart <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#buttons" data-fc-modules="toggle">
-                                            Buttons
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="buttons"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././buttons/buttons.html"><i class="icon-angle-right"></i> Buttons </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././buttons/button-group.html"><i class="icon-angle-right"></i> Buttons group </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#forms" data-fc-modules="toggle">
-                                            Forms
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="forms" >
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././forms/form-grids.html"><i class="icon-angle-right"></i> Form Grids </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/text-fields.html"><i class="icon-angle-right"></i> Text Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/number-fields.html"><i class="icon-angle-right"></i> Number Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/option-fields.html"><i class="icon-angle-right"></i> Option Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/switch.html"><i class="icon-angle-right"></i> Switch </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/select-fields.html"><i class="icon-angle-right"></i> Select Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/select-search.html"><i class="icon-angle-right"></i> Select with search <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/tag-field.html"><i class="icon-angle-right"></i> Tag Field <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/tel-field.html"><i class="icon-angle-right"></i> Tel Field <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/error-fields.html"><i class="icon-angle-right"></i> Error Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/read-only-fields.html"><i class="icon-angle-right"></i> Read Only Fields </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/validation.html"><i class="icon-angle-right"></i> Validation <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/search-form.html"><i class="icon-angle-right"></i> Search Form </a>
-                                                        </li>
-                                                                                                            <li  class="active">
-                                                            <a href=".././forms/autocomplete.html"><i class="icon-angle-right"></i> Autocomplete <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/autosize.html"><i class="icon-angle-right"></i> Autosize <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././forms/wysiwyg.html"><i class="icon-angle-right"></i> Wysiwyg <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#tables" data-fc-modules="toggle">
-                                            Tables
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="tables"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././tables/static-table.html"><i class="icon-angle-right"></i> Static Table </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././tables/flex-table.html"><i class="icon-angle-right"></i> Flex Table </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././tables/dynamic-table.html"><i class="icon-angle-right"></i> Dynamic Table <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././tables/responsive-table.html"><i class="icon-angle-right"></i> Responsive Table <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#callouts" data-fc-modules="toggle">
-                                            Callouts & Prompts
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="callouts"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././callouts/Callouts.html"><i class="icon-angle-right"></i> Callouts </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././callouts/notifications.html"><i class="icon-angle-right"></i> Notifications <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././callouts/loading.html"><i class="icon-angle-right"></i> Loading <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././callouts/tips.html"><i class="icon-angle-right"></i> Tips <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././callouts/modals.html"><i class="icon-angle-right"></i> Modal windows <span class="fl-r label _foreground">JS</span> </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                                    <li>
-                                        <a href="#modifiers" data-fc-modules="toggle">
-                                            Modifiers
-                                                                                            <i class="icon-angle-down fl-r"></i>
-                                                                                    </a>
-                                                                                    <div id="modifiers"  class="hidden">
-                                                <ul>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/colors.html"><i class="icon-angle-right"></i> Colors </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/fonts.html"><i class="icon-angle-right"></i> Font sizes </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/text.html"><i class="icon-angle-right"></i> Text align & decoration </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/margin-padding.html"><i class="icon-angle-right"></i> Margins & Paddings </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/measures.html"><i class="icon-angle-right"></i> Measures </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/borders.html"><i class="icon-angle-right"></i> Borders </a>
-                                                        </li>
-                                                                                                            <li >
-                                                            <a href=".././modifiers/visibility.html"><i class="icon-angle-right"></i> Visiblity </a>
-                                                        </li>
-                                                                                                    </ul>
-                                            </div>
-                                                                            </li>
-                                                            </ul>
-                        </nav>
-                                    </div>
-            </div>
         </div>
     </div>
-    <footer class="fc-footer">
-        <div class="container _center _pad">
-            <div class="row">
-                <div class="col">
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-
-                </div>
-            </div>
-        </div>
-    </footer>
 
 <script type="text/javascript" async="async">
     var oGlobalSettings = {

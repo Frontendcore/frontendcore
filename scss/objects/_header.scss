@@ -17,9 +17,21 @@
   }
 }
 
+._has-black-panel {
+  .fc-header-top {
+    top: -50px;
+  }
+}
+
 .fc-header-top {
+  transition: all .5s ease-in-out;
   display: block;
   background-color: $color-background;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 110;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
   ul {
     margin: 0;
     text-align: right;
@@ -40,9 +52,11 @@
 .fc-header-logo {
   & {
     display: inline-block;
+    position: absolute;
+    right: 0;
   }
   img {
-    max-width: 180px;
+    max-width: 170px;
     margin: 0 $spacing/2;
   }
 }

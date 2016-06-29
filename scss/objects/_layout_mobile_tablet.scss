@@ -1,0 +1,15 @@
+body, html {
+  height: 100%;
+}
+
+.fc-header {
+  padding-top: 50px;
+}
+.layout {
+  .__side {
+    display: none;
+  }
+  .__main {
+    box-sizing: border-box;
+  }
+}

@@ -19,87 +19,66 @@
 </head>
 <body class="animated fade-in" data-fc-modules="polyfiller">
 {% block fullmain %}
-    <header class="fc-header">
-        <div class="fc-header-top">
-            <div class="row">
-                <div class="col">
-                    <div class="desktop">
-                        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="fc-header-logo"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m" alt="FRONTEND CORE" /></a>
-                    </div>
-                    <div class="mobile tablet">
-                        <a data-fc-modules="side-panel" href="#menu" data-fc-clone="true" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-m mr-n"><i class="icon-bars mr-n"></i></a>
-                        <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="fc-header-logo"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m ml-s" alt="FRONTEND CORE" /></a>
-                    </div>
-                </div>
-                <div class="col ta-r">
-                    <gcse:search></gcse:search>
-                    <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
-                </div>
+    <div class="layout">
+        <aside id="menu" class="__side layout-side">
+            <header class="ta-c">
+                <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" width="200" class="va-m" alt="FRONTEND CORE" /></a>
+            </header>
+            {% block navigation %}
+                <nav class="navigation _primary _vertical">
+                    <ul>
+                        {% for section in sections %}
+                            <li>
+                                <a href="{{ section.href }}" data-fc-modules="toggle">
+                                    {{ section.name }}
+                                    {% if section.children|length > 0 %}
+                                        <i class="icon-angle-down fl-r"></i>
+                                    {% endif %}
+                                </a>
+                                {% if section.children|length > 0 %}
+                                    <div id="{{ section.id }}" {% if section.name != current_section %} class="hidden"{% endif %}>
+                                        <ul>
+                                            {% for subsection in section.children %}
+                                                <li {% if subsection.name == current_children %} class="active"{% endif %}>
+                                                    <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}" class="d-b"><i class="icon-angle-right"></i> {{ subsection.name }} {% if subsection.js %}<span class="fl-r label _foreground fz-xs">JS</span> {% endif %}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% endblock navigation %}
+            <div class="pa-m mt-m mb-xl">
+                <gcse:search></gcse:search>
+                <gcse:searchresults linkTarget=”_parent”></gcse:searchresults>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="box _empty pv-n mb-n">
-                    <h1 class="h2">{{ current_children }}</h1>
-                    {% if current_subtitle %}
-                        <p>{{ current_subtitle }}</p>
-                    {% endif %}
+        </aside>
+        <div class="__main">
+            <header class="fc-header">
+                <div class="fc-header-top mobile tablet">
+                    <a data-fc-modules="side-panel" href="#menu" data-fc-clone="false" data-fc-remove="false" data-fc-max-width="500px" class="button _small _hollow mt-s ml-m mr-n"><i class="icon-bars mr-n"></i></a>
+                    <a title="Frontend Core" href="{{ relative_path ~ urlbase }}index.html" class="fc-header-logo"><img src="{{ relative_path ~ url.static }}img/logo-frontendcore.png" class="va-m ml-s" alt="FRONTEND CORE" /></a>
                 </div>
-            </div>
-        </div>
-    </header>
-    <div class="container _center _pad">
-        <div class="row">
-            <div class="col-s-12 col-m-12 col-l-12 col-xl-9 col-xxl-9 col-xxxl-10">
+                <div class="row">
+                    <div class="col">
+                        <div class="box _empty pv-n mb-n">
+                            <h1 class="h2">{{ current_children }}</h1>
+                            {% if current_subtitle %}
+                                <p>{{ current_subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="box _empty">
                 {% block main %}{% endblock main %}
-            </div>
-            <div class="col-xl-3 col-xxl-3 col-xxxl-2">
-                <div class="screen-xl screen-xxl screen-xxxl">
-                    {% block navigation %}
-                        <nav id="menu" class="navigation _primary _vertical">
-                            <ul>
-                                {% for section in sections %}
-                                    <li>
-                                        <a href="{{ section.href }}" data-fc-modules="toggle">
-                                            {{ section.name }}
-                                            {% if section.children|length > 0 %}
-                                                <i class="icon-angle-down fl-r"></i>
-                                            {% endif %}
-                                        </a>
-                                        {% if section.children|length > 0 %}
-                                            <div id="{{ section.id }}" {% if section.name != current_section %} class="hidden"{% endif %}>
-                                                <ul>
-                                                    {% for subsection in section.children %}
-                                                        <li {% if subsection.name == current_children %} class="active"{% endif %}>
-                                                            <a href="{{ relative_path ~ url.base  ~ section.id ~ '/'~  subsection.href }}"><i class="icon-angle-right"></i> {{ subsection.name }} {% if subsection.js %}<span class="fl-r label _foreground">JS</span> {% endif %}</a>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </nav>
-                    {% endblock navigation %}
-                </div>
             </div>
         </div>
     </div>
-    <footer class="fc-footer">
-        <div class="container _center _pad">
-            <div class="row">
-                <div class="col">
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-
-                </div>
-            </div>
-        </div>
-    </footer>
 
 {% endblock fullmain %}
 <script type="text/javascript" async="async">
