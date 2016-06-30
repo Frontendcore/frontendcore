@@ -321,10 +321,9 @@
 
 				// Clean Paste
 
-				$('div[contenteditable]').bind("paste", function(e){
+				$('div[contenteditable]', oTarget.parentNode).bind("paste", function(e) {
+					document.execCommand("insertHTML", false, e.originalEvent.clipboardData.getData('text'));
 					e.preventDefault();
-					var text = e.originalEvent.clipboardData.getData('text');
-					document.execCommand("insertHTML", false, text);
 				});
 
 				FrontendTools.removeLoading(oTarget);
