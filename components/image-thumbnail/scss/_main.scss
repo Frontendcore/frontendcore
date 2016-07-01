@@ -14,6 +14,28 @@
 	img {
 		max-width: 100%;
 	}
+	&._video {
+		position: relative;
+		&:before {
+			text-align: center;
+			content: '\25B6';
+			position: absolute;
+			color: #FFF;
+			border: 2px solid #FFF;
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			width: 40px;
+			height: 40px;
+			margin-left: -20px;
+			margin-top: -20px;
+			padding-top: 20px;
+			box-sizing: border-box;
+			font-size: 20px;
+			background: rgba(0,0,0,.3);
+			padding-left: 3px;
+		}
+	}
 }
 
 .thumbnail-actions {
