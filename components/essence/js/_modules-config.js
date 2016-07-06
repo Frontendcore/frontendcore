@@ -16,6 +16,7 @@ var oDefaultPaths = {
 		'sortable',
 		'chart',
 		'chartLibs',
+		'range-field',
 		'tag-field',
 		'tel-field',
 		'tel-field-libs',

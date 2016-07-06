@@ -64,6 +64,7 @@
       "form-autosize",
       "form-tag-field",
       "form-tel-field",
+      "form-range-field",
       "form-wysiwyg",
       "table-responsive",
       "table-dynamic",

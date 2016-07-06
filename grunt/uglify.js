@@ -152,11 +152,7 @@ module.exports = function(grunt) {
 			fcCwd + '/bower/intl-tel-input/build/js/intlTelInput.js',
 			fcCwd + '/bower/intl-tel-input/build/js/utils.js',
 		];
-
-		oCore.files[jsDest + '/ui/tel-field.js'] = [
-			fcCwd + '/components/form-tel-field/js/_tel-field.js'
-		];
-
+		
 		var oRoundTrip = {
 			options: {
 				preserveComments: false,

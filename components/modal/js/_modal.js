@@ -2,6 +2,9 @@
 	'use strict';
 
 	FrontendCore.define('modal', [], function () {
+
+		var aTargets = FrontendTools.getDataModules('modal');
+
 		return {
 			oDefault: {
 				scrolling: true,
@@ -13,8 +16,7 @@
 			},
 			onStart: function () {
 
-				var aTargets = FrontendTools.getDataModules('modal'),
-					self = this;
+				var self = this;
 
 				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
@@ -103,7 +105,6 @@
 
 					}
 
-
 					if (oTarget.className.indexOf('group') != -1) {
 
 						aClasses = oTarget.className.split(' ');
@@ -136,6 +137,15 @@
 					if ( aHrefHash.length > 1 ) {
 						oOptions.inline = true;
 						oOptions.href = '#' + aHrefHash[1];
+
+						oOptions.onOpen = function() {
+							window.history.pushState({}, window.document.title, oOptions.href );
+						};
+
+						oOptions.onClosed = function() {
+							window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
+						};
+
 					} else {
 						if (!self.isImage(sHref)) {
 
@@ -163,7 +173,31 @@
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-					$(oTarget).colorbox(oSettings);
+				$(oTarget).colorbox(oSettings);
+
+				window.onpopstate = function(event)
+				{
+					$( aTargets ).each(function () {
+
+						var oTargetLink = this;
+
+						if ( window.location.hash === ('#' + oTargetLink.href.split('#')[1]) ) {
+							$.colorbox.close();
+							setTimeout( function(){
+								$(oTargetLink).click();
+							}, 400);
+
+							return false;
+
+						}
+					});
+
+				};
+
+				if ( window.location.hash === oSettings.href ) {
+					$.colorbox.close();
+					$(oTarget).click();
+				}
 
 			},
 			open: function (oOptions) {

@@ -1,0 +1,32 @@
+{% set current_children = "Range Field" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h3>Simple Range</h3>
+    {{ demos.demo(
+        'simple-range',
+        PathComponents ~ 'form-range-field/html/simple-range.html',
+        false,false,true
+    )}}
+
+    <h3>Display Range value</h3>
+    {{ demos.demo(
+        'display-range',
+        PathComponents ~ 'form-range-field/html/display-range.html',
+        false,false,true
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-target-input",
+            "description" : "Targets and input (jquery selector) to display the value of the range",
+            "default": "false"
+        }
+    }
+    )}}
+{% endblock %}

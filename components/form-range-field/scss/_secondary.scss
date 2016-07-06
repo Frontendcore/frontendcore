@@ -1,0 +1,25 @@
+input[data-fc-modules=range-field] {
+  -webkit-appearance: none !important;
+  height: 2px;
+  border-radius: $default-border-radius;
+  background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+  outline: none;
+  margin: $spacing 0;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: $color-background;
+    height:25px;
+    width:25px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+    border: 1px solid rgba(0,0,0,.2);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &::-webkit-slider-thumb:hover {
+    background: #EDEDED;
+  }
+}
