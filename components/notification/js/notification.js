@@ -89,10 +89,14 @@
 
 		if ( bAutoClose === true) {
 			oTimer = setTimeout( function() {
-				document.getElementById('notification').style.top = '-1000px';
+				closeNotification();
 			}, nSeconds );
 		}
 
+	}
+
+	function closeNotification() {
+		document.getElementById('notification').style.top = '-1000px';
 	}
 
 	function processResponse(oResponse) {
@@ -132,7 +136,12 @@
 		$('body').prepend(oContainer);
 
 		$('#notification-message').on('click', function() {
-			document.getElementById('notification').style.top = '-1000px';
+			closeNotification();
+		});
+
+		$('#notification-close').on('click', function(e) {
+			e.preventDefault();
+			closeNotification();
 		});
 
 		$('#notification').fadeIn('fast', function() {
