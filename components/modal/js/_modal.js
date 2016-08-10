@@ -94,10 +94,12 @@
 
 							$('#modal-preload').append(sHtml);
 
-							var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
+							if ( document.getElementById(aHrefHash[1]) !== null ) {
+								var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
 
-							$('#modal-inline').append( sHtmlTarget );
-							$('#modal-preload').html('');
+								$('#modal-inline').append( sHtmlTarget );
+								$('#modal-preload').html('');
+							}
 
 						});
 
@@ -168,6 +170,10 @@
 
 					if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
 						oOptions.href += oTarget.getAttribute("data-fc-href-suffix");
+					}
+
+					if (oTarget.getAttribute("data-fc-close") === 'false' ) {
+						oOptions.closeButton = false;
 					}
 
 

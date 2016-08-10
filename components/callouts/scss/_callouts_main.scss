@@ -1,7 +1,7 @@
 .callout {
   & {
     padding: $spacing/2 $spacing;
-    margin: 0 0 $spacing;
+    margin: 1px 1px $spacing 1px;
     color: $color-foreground;
     border-radius: $default-border-radius;
     overflow: hidden;

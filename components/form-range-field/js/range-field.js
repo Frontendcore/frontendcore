@@ -43,16 +43,24 @@
             onStart: function () {
 
                 var aTarget = FrontendTools.getDataModules('range-field'),
-                    self = this;
+                    $InputSync,
+                    oTarget;
 
                 FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
                 FrontendTools.trackModule('JS_Libraries', 'call', 'range-field' );
 
                 $(aTarget).each( function(){
+
+                    oTarget = this;
+                    $InputSync = null;
+
+                     if (oTarget.getAttribute('data-fc-target-input') !== null ) {
+                         $InputSync = $(oTarget.getAttribute('data-fc-target-input'));
+                    }
+
                     $(this).change(function () {
 
-                        var oTarget = this;
 
                         var val = ($(oTarget).val() - $(oTarget).attr('min')) / ($(oTarget).attr('max') - $(oTarget).attr('min'));
 
@@ -60,11 +68,26 @@
                             '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #0677ff), ' + 'color-stop(' + val + ', #C5C5C5)' + ')'
                         );
 
-                        if (oTarget.getAttribute('data-fc-target-input') !== null ) {
-                            $(oTarget.getAttribute('data-fc-target-input')).val($(oTarget).val());
+                        if ($InputSync !== null ) {
+                            $InputSync.val($(oTarget).val());
                         }
 
                     });
+
+                    if ($InputSync !== null ) {
+                        $InputSync.change( function() {
+                            oTarget.value = Math.round(this.value);
+                            $(oTarget).change();
+                        });
+
+                        $InputSync.bind('keyup', function() {
+                            setTimeout( function(){
+                                $InputSync.change();
+                            }, 100);
+                        });
+                    }
+
+                    $(this).change();
                 });
 
                 var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType;
