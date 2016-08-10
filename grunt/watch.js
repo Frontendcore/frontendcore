@@ -19,13 +19,14 @@ module.exports = function(grunt) {
             }
         }
 
-		if ( oData.js !== undefined && oData.js.cwd !== undefined &&  Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
-			for (var nKey = 0; nKey < oData.js.cwd.length; nKey++) {
+		if ( oData.js !== undefined && oData.js.cwd !== undefined && Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
 
-				var sPathTemp = getRelativePath(oData.js.cwd[nKey] + '**/*.js');
+			for (var nJsKey = 0; nJsKey < oData.js.cwd.length; nJsKey++) {
 
-				if ( sPathTemp !=  fcCwd + 'components/**/*.js') {
-					oJsFiles.push();
+				var sPathTemp = getRelativePath(oData.js.cwd[nJsKey] + '/**/*.js');
+
+				if ( sPathTemp !==  (fcCwd + 'components/**/*.js' ) ) {
+					oJsFiles.push(getRelativePath(oData.js.cwd[nJsKey] + '/**/*.js'));
 				}
 			}
 		}
