@@ -2,8 +2,8 @@
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
 	border-radius: $default-border-radius;
-	background: $color-warning;
-	color: contrast-color($color-warning);
+	background: #efefef;
+	color: contrast-color(#efefef);
 	max-width: 600px;
 }
 
@@ -14,7 +14,8 @@
 	line-height: 150%;
 	padding: $spacing/4 $spacing/2;
 	overflow: hidden;
-	box-shadow: 1px 1px 1px rgba($color-foreground, .4);
+	box-shadow: 0 0 4px rgba($color-foreground, .4);
+	border: 1px solid #FFF;
 }
 
 /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
@@ -56,7 +57,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 2;
 }
 .tooltipster-arrow span, .tooltipster-arrow-border {
 	display: block;

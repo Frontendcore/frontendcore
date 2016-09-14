@@ -31,7 +31,8 @@
 
 				var self = this,
 					oSettings,
-					oOptions = {};
+					oOptions = {},
+					oContent = oTarget.getAttribute("data-fc-content");
 
 				if ( oTarget.id === '') {
 					oTarget.id = FrontendTools.getSelector(oTarget);
@@ -51,8 +52,13 @@
 
 				}
 
-				if (oTarget.getAttribute("data-fc-content") !== null) {
-					oOptions.content = oTarget.getAttribute("data-fc-content");
+				if ( oContent !== null) {
+
+					if ( oContent.lastIndexOf('#', 0) === 0 ) {
+						oOptions.content = $(oContent);
+					} else {
+						oOptions.content = oContent;
+					}
 				}
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);

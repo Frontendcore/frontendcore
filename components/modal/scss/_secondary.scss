@@ -22,6 +22,7 @@
 	}
 	#cboxContent {
 		position: relative;
+
 	}
 	#cboxLoadedContent {
 		overflow: auto;
@@ -241,4 +242,12 @@
 	.cboxIE #cboxMiddleLeft,
 	.cboxIE #cboxMiddleRight {
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+	}
+
+	.disable-scroll {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
 	}

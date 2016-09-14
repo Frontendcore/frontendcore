@@ -59,7 +59,7 @@
                          $InputSync = $(oTarget.getAttribute('data-fc-target-input'));
                     }
 
-                    $(this).change(function () {
+                    $(oTarget).change(function () {
 
 
                         var val = ($(oTarget).val() - $(oTarget).attr('min')) / ($(oTarget).attr('max') - $(oTarget).attr('min'));
@@ -68,22 +68,31 @@
                             '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #0677ff), ' + 'color-stop(' + val + ', #C5C5C5)' + ')'
                         );
 
+
                         if ($InputSync !== null ) {
-                            $InputSync.val($(oTarget).val());
+
+                            if ( Math.round($InputSync.val()) !== Math.round(oTarget.value) ) {
+                                $InputSync.val(oTarget.value);
+                            }
                         }
 
                     });
 
                     if ($InputSync !== null ) {
                         $InputSync.change( function() {
-                            oTarget.value = Math.round(this.value);
+                            oTarget.value = this.value;
                             $(oTarget).change();
                         });
 
-                        $InputSync.bind('keyup', function() {
-                            setTimeout( function(){
-                                $InputSync.change();
-                            }, 100);
+                        $InputSync.keyup( function(e) {
+
+                            if ( e.keyCode !== 190 && (e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) )
+                            {
+
+                                setTimeout( function(){
+                                    $InputSync.change();
+                                }, 100);
+                            }
                         });
                     }
 
@@ -109,7 +118,13 @@
                     .on('touchstart MSPointerDown pointerdown', function(e){
                         if((_isPointerType = isPointerEventType(e, 'down')) &&
                             !isPrimaryTouch(e)) return;
+
+                        if (e.touches === undefined) {
+                            e.touches = e.originalEvent.touches;
+                        }
+
                         firstTouch = _isPointerType ? e : e.touches[0];
+
                         if (e.touches && e.touches.length === 1 && touch.x2) {
                             // Clear out touch movement data if we have it sticking around
                             // This can occur if touchcancel doesn't fire due to preventDefault, etc.
@@ -131,6 +146,11 @@
                     .on('touchmove MSPointerMove pointermove', function(e){
                         if((_isPointerType = isPointerEventType(e, 'move')) &&
                             !isPrimaryTouch(e)) return;
+
+                        if (e.touches === undefined) {
+                            e.touches = e.originalEvent.touches;
+                        }
+
                         firstTouch = _isPointerType ? e : e.touches[0];
                         cancelLongTap();
                         touch.x2 = firstTouch.pageX;

@@ -3,16 +3,29 @@
 
 	FrontendCore.define('modal', [], function () {
 
-		var aTargets = FrontendTools.getDataModules('modal');
+		var aTargets = FrontendTools.getDataModules('modal'),
+			nModalWidth = FrontendTools.isMobile.any() ? $(window).width() : '100%',
+			nModalHeight = FrontendTools.isMobile.any() ? $(window).height() : '100%';
 
 		return {
 			oDefault: {
+			    fixed: true,
 				scrolling: true,
 				maxWidth: '100%',
 				maxHeight: '100%',
 				onComplete: function() {
 					FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
-				}
+				},
+                onOpen: function() {
+                    var ycoord = $(window).scrollTop();
+                    $('#colorbox').data('ycoord',ycoord);
+                    ycoord = ycoord * -1;
+                    $('body').css('position','fixed').css('left','0px').css('right','0px').css('top',ycoord + 'px');
+                },
+                onClosed: function() {
+                    $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
+                    $(window).scrollTop($('#colorbox').data('ycoord'));
+                }
 			},
 			onStart: function () {
 
@@ -21,12 +34,6 @@
 				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'modal' );
-
-				$(document).bind('cbox_open', function() {
-					$('html').css({ overflow: 'hidden' });
-				}).bind('cbox_closed', function() {
-					$('html').css({ overflow: '' });
-				});
 
 				$( aTargets ).each(function () {
 					self.autobind(this);
@@ -75,111 +82,115 @@
 					sHref = oTarget.href,
 					aHrefHash = sHref.split('#'),
 					oSettings,
-					nModalMeasure = FrontendTools.isMobile.any() ? '100%' : '100%',
 					oOptions = {};
 
-					if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
+				if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
 
-						if ($('#modal-inline').length === 0) {
-							$('body').append('<div id="modal-inline" class="d-n"></div>');
+					if ($('#modal-inline').length === 0) {
+						$('body').append('<div id="modal-inline" class="d-n"></div>');
+					}
+					if ($('#modal-preload').length === 0) {
+						$('body').append('<div id="modal-preload" class="d-n"></div>');
+					}
+
+					$.get(aHrefHash[0], function(data) {
+
+						var sHtml = self.stripTag(data, 'meta');
+						sHtml = self.stripTag(sHtml, 'script');
+
+						$('#modal-preload').append(sHtml);
+
+						if ( document.getElementById(aHrefHash[1]) !== null ) {
+							var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
+
+							$('#modal-inline').append( sHtmlTarget );
+							$('#modal-preload').html('');
 						}
-						if ($('#modal-preload').length === 0) {
-							$('body').append('<div id="modal-preload" class="d-n"></div>');
-						}
 
-						$.get(aHrefHash[0], function(data) {
 
-							var sHtml = self.stripTag(data, 'meta');
-							sHtml = self.stripTag(sHtml, 'script');
 
-							$('#modal-preload').append(sHtml);
+					});
 
-							if ( document.getElementById(aHrefHash[1]) !== null ) {
-								var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
+					oTarget.href = '#' + aHrefHash[1];
 
-								$('#modal-inline').append( sHtmlTarget );
-								$('#modal-preload').html('');
-							}
+				}
 
-						});
+				if (oTarget.className.indexOf('group') != -1) {
 
-						oTarget.href = '#' + aHrefHash[1];
+					aClasses = oTarget.className.split(' ');
 
-					}
+					sRel = '';
 
-					if (oTarget.className.indexOf('group') != -1) {
-
-						aClasses = oTarget.className.split(' ');
-
-						sRel = '';
-
-						for (var nCounter = 0; nCounter < aClasses.length; nCounter++) {
-							if (aClasses[nCounter].indexOf('group') != -1) {
-								sRel = aClasses[nCounter];
-							}
+					for (var nCounter = 0; nCounter < aClasses.length; nCounter++) {
+						if (aClasses[nCounter].indexOf('group') != -1) {
+							sRel = aClasses[nCounter];
 						}
 					}
+				}
 
-					if (sRel) {
-						oOptions.rel = sRel;
-					}
+				if (sRel) {
+					oOptions.rel = sRel;
+				}
 
-					if (oTarget.getAttribute("data-fc-width") !== null ) {
-						oOptions.width = oTarget.getAttribute("data-fc-width");
-					} else if (oOptions.width === undefined) {
-						oOptions.width = false;
-					}
+				if (oTarget.getAttribute("data-fc-width") !== null ) {
+					oOptions.width = FrontendTools.isMobile.any() ? nModalWidth : oTarget.getAttribute("data-fc-width");
+				} else if (oOptions.width === undefined) {
+					oOptions.width = FrontendTools.isMobile.any() ? nModalWidth : false;
+				}
 
-					if (oTarget.getAttribute("data-fc-height") !== null ) {
-						oOptions.height = oTarget.getAttribute("data-fc-height");
-					} else if (oOptions.height === undefined) {
-						oOptions.height = false;
-					}
+				if (oTarget.getAttribute("data-fc-height") !== null ) {
+					oOptions.height =  FrontendTools.isMobile.any() ? nModalHeight : oTarget.getAttribute("data-fc-height");
+				} else if (oOptions.height === undefined) {
+					oOptions.height = FrontendTools.isMobile.any() ? nModalHeight : false;
+				}
 
-					if ( aHrefHash.length > 1 ) {
-						oOptions.inline = true;
-						oOptions.href = '#' + aHrefHash[1];
+				if ( aHrefHash.length > 1 ) {
+					oOptions.inline = true;
+					oOptions.href = '#' + aHrefHash[1];
 
-						oOptions.onOpen = function() {
-							window.history.pushState({}, window.document.title, oOptions.href );
-						};
+					oOptions.onOpen = function() {
+						window.history.pushState({}, window.document.title, oOptions.href );
+					};
 
-						oOptions.onClosed = function() {
-							window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
-						};
+					oOptions.onClosed = function() {
+						window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
+					};
 
+				} else {
+					if (!self.isImage(sHref)) {
+
+						oOptions.iframe = true;
+
+						if (oTarget.getAttribute("data-fc-width") === null) {
+							oOptions.width = nModalWidth;
+						}
+						if (oTarget.getAttribute("data-fc-height") === null) {
+							oOptions.height = nModalHeight;
+						}
 					} else {
-						if (!self.isImage(sHref)) {
-
-							oOptions.iframe = true;
-
-							if (oTarget.getAttribute("data-fc-width") === null) {
-								oOptions.width = nModalMeasure;
-							}
-							if (oTarget.getAttribute("data-fc-height") === null) {
-								oOptions.height = nModalMeasure;
-							}
-						} else {
-							oOptions.iframe = false;
-							oOptions.photo = true;
-						}
-
-						oOptions.inline = false;
-						oOptions.href = sHref;
+						oOptions.iframe = false;
+						oOptions.photo = true;
 					}
 
-					if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
-						oOptions.href += oTarget.getAttribute("data-fc-href-suffix");
-					}
+					oOptions.inline = false;
+					oOptions.href = sHref;
+				}
 
-					if (oTarget.getAttribute("data-fc-close") === 'false' ) {
-						oOptions.closeButton = false;
-					}
+				if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
+					oOptions.href += oTarget.getAttribute("data-fc-href-suffix");
+				}
+
+				if (oTarget.getAttribute("data-fc-close") === 'false' ) {
+					oOptions.closeButton = false;
+				}
 
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-				$(oTarget).colorbox(oSettings);
+
+				if ( oTarget.getAttribute("data-fc-mobile") !== 'false' || !FrontendTools.isMobile.any() ) {
+					$(oTarget).colorbox(oSettings);
+				}
 
 				window.onpopstate = function(event)
 				{
@@ -190,6 +201,7 @@
 						if ( window.location.hash === ('#' + oTargetLink.href.split('#')[1]) ) {
 							$.colorbox.close();
 							setTimeout( function(){
+
 								$(oTargetLink).click();
 							}, 400);
 
