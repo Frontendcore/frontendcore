@@ -17,6 +17,7 @@ var oDefaultPaths = {
 		'chart',
 		'chartLibs',
 		'range-field',
+		'password-meter',
 		'tag-field',
 		'tel-field',
 		'tel-field-libs',

@@ -57,6 +57,7 @@
     "jquery-sortable": "~0.9.13",
     "jquery-touchswipe": "^1.6.16",
     "intl-tel-input": "^8.5.2",
-    "lazysizes": "^2.0.0"
+    "lazysizes": "^2.0.0",
+    "strength-meter": "^1.1.3"
   }
 }

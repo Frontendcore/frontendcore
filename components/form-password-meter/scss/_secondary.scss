@@ -1,0 +1,105 @@
+/*!
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015
+ * @package yii2-password
+ * @version 1.1.3
+ *
+ * Password Strength Meter
+ * Modified and built for Yii Framework 2.0
+ * Author: Kartik Visweswaran
+ * Year: 2015
+ * For more Yii related demos visit http://demos.krajee.com
+ */
+.password-meter {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  .label {
+    padding: .5rem 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.password-meter-input {
+  position: relative;
+  overflow: hidden;
+  span {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: $spacing*1.5;
+    cursor: pointer;
+    &:after {
+      content: "\1F512";
+      position: absolute;
+      top: $spacing/4;
+      font-size: 1.6rem;
+      opacity: .5;
+    }
+    &.active {
+      &:after {
+        content: "\1F513";
+        opacity: 1;
+      }
+    }
+    &:hover {
+      &:after {
+        opacity: .8;
+      }
+    }
+  }
+  input[type='checkbox'] {
+    display: block !important;
+    z-index: 100;
+    position: absolute;
+    left: -50px;
+    height: $spacing;
+    width: $spacing;
+  }
+}
+
+.password-meter td {
+  vertical-align: middle;
+}
+
+.kv-meter-container {
+  width: 130px;
+}
+
+.kv-meter {
+  text-align: center;
+}
+
+.kv-disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.kv-scorebar-border {
+  display: none;
+}
+
+.kv-score {
+  font-weight: bold;
+  font-size: 75%;
+  position: absolute;
+  width: 98px;
+  z-index: 10;
+  border-radius: 2px;
+}
+
+.kv-score-0, .kv-score-1, .kv-score-5 {
+  color: #fff;
+}
+
+.kv-score-2, .kv-score-3, .kv-score-4 {
+  color: #333;
+}
+
+.kv-verdict {
+  width: 100%;
+}

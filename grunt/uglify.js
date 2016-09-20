@@ -153,6 +153,12 @@ module.exports = function(grunt) {
 			fcCwd + '/bower/intl-tel-input/build/js/utils.js',
 		];
 		
+		// INTERNATIONAL PHONE
+		oCore.files[jsDest + '/ui/password-meter.js'] = [
+			fcCwd + '/bower/strength-meter/js/strength-meter.js',
+			fcCwd + '/components/form-password-meter/js/_password-meter.js'
+		];
+
 		var oRoundTrip = {
 			options: {
 				preserveComments: false,

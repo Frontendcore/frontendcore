@@ -73,7 +73,12 @@
 				classHandler: function (ParsleyField) {},
 				// Return the `$element` where errors will be appended
 				// Could also be (and given directly from DOM) a valid selector like `'#div'`
-				errorsContainer: function (ParsleyField) {},
+				errorsContainer: function (el) {
+
+					return el.$element.closest("li");
+
+
+				},
 				// ul elem that would receive errors' list
 				errorsWrapper: '<ul class="form-error-message"></ul>',
 				// li elem that would receive error message
