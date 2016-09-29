@@ -53,6 +53,7 @@
 	}
 
 	input[type='checkbox'] + label, input[type='radio'] + label {
+		-webkit-appearance: none;
 		&:hover {
 			color: rgba($color-foreground, .9);
 		}
@@ -61,8 +62,8 @@
 			display: inline-block;
 			vertical-align: middle;
 			background: #FFF;
-			width: $spacing/1.5;
-			height: $spacing/1.5;
+			width: $font-size-default;
+			height: $font-size-default;
 			margin-right: $spacing/4;
 			border: 1px dotted $color-foreground-light;
 			text-align: center;
@@ -84,22 +85,21 @@
 			background: $color-success;
 			color: contrast-color($color-success);
 			text-shadow: 1px 1px 2px rgba(0,0,0,.1);
+			line-height: 100%;
+			vertical-align: middle;
+
 		}
 	}
 	input[type='checkbox']:checked + label {
 		&:before {
 			content: '\2713';
 			font-size: 1rem;
-			line-height: 100%;
 			text-indent: 0;
 		}
 	}
 	input[type='radio']:checked + label {
 		&:before {
 			content: '\25CF';
-			font-size: 1rem;
-			line-height: 90%;
-
 		}
 	}
 	[class*='msg-'] {
