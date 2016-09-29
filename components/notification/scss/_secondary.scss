@@ -23,12 +23,13 @@
 	}
 	.box {
 		position: relative;
+		margin-top: $spacing !important;
 		box-shadow: 0 0 10px rgba($color-foreground, .5);
-		border-radius: 0 0 $default-border-radius $default-border-radius;
+		border-radius: 3px;
 	}
 	.callout {
 		padding-right: $spacing*1.5;
-		border-radius: 0 0 $default-border-radius $default-border-radius;
+		border-radius: 3px;
 	}
 }
 

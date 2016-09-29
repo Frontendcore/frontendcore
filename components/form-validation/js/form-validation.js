@@ -1,4 +1,4 @@
-; (function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+; (function (window, document, oGlobalSettings, FrontendTools, FrontendCore,FrontendMediator, $) {
 	'use strict';
 
 	FrontendCore.define('form-validation', ['form-validation-libs'], function () {
@@ -43,6 +43,10 @@
 						alert( this.name + ': This field is hidden and required.' );
 					}
 				});
+			});
+
+			$.listen('parsley:form:success', function(e){
+				FrontendMediator.publish('form:success');
 			});
 		}
 
@@ -113,4 +117,4 @@
 		};
 	});
 
-})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $ );
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $ );

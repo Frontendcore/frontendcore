@@ -67,6 +67,7 @@
 			border: 1px dotted $color-foreground-light;
 			text-align: center;
 			border-radius: 2px;
+			box-sizing: border-box;
 		}
 	}
 
@@ -80,23 +81,24 @@
 		color: rgba($color-foreground, .9);
 		&:before {
 			font-weight: normal;
-			color: $color-success;
+			background: $color-success;
+			color: contrast-color($color-success);
 			text-shadow: 1px 1px 2px rgba(0,0,0,.1);
 		}
 	}
 	input[type='checkbox']:checked + label {
 		&:before {
 			content: '\2713';
-			font-size: 2.5rem;
-			line-height: 35%;
-			text-indent: -.2rem;
+			font-size: 1rem;
+			line-height: 100%;
+			text-indent: 0;
 		}
 	}
 	input[type='radio']:checked + label {
 		&:before {
 			content: '\25CF';
-			font-size: .95rem;
-			line-height: 100%;
+			font-size: 1rem;
+			line-height: 90%;
 
 		}
 	}

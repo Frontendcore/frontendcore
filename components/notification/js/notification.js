@@ -195,6 +195,10 @@
 
 				FrontendMediator.subscribe( ['notification'], processResponse );
 
+			},
+			open: function ( sType, sText ) {
+				showMessage(sType, sText);
+
 			}
 		};
 	});
