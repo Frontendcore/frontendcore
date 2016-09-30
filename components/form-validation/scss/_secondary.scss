@@ -12,11 +12,18 @@
     position: absolute;
     font-size: $font-size-xs;
     margin-top: -$spacing/8;
+    font-weight: normal;
   }
   li:first-of-type {
     padding-top: $spacing/4;
   }
   li {
     padding-bottom: $spacing/4;
+  }
+}
+
+label {
+  .form-error-message {
+    margin-top: 0;
   }
 }

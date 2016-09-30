@@ -3,6 +3,13 @@
 
 	FrontendCore.define('form-validation', ['form-validation-libs'], function () {
 
+		var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
+
+		function disableSubmitButton( oTarget) {
+			FrontendMediator.publish('form:success');
+			$('button[type="submit"]', oTarget).addClass('_disabled').prop('disabled','true');
+		}
+
 		function validateForm(oContext, oTarget, nIndex) {
 			if (oTarget.id === '') {
 				oTarget.id = 'form-validation-' + nIndex;
@@ -32,6 +39,47 @@
 
 			$(oTarget).parsley(oSettings);
 
+
+			if (isSafari) {
+				// By default, we won't submit the form.
+				var submitForm = false;
+
+				$(oTarget).on('submit', function(e) {
+					// If our variable is false, stop the default action.
+					// The first time 'submit' is triggered, we should prevent the default action
+					if (!submitForm) {
+						e.preventDefault();
+					}
+					var form = $(this);
+
+					form.parsley().validate();
+
+					// If the form is valid
+					if (form.parsley().isValid()) {
+						// Set the variable to true, so that when the 'submit' is triggered again, it doesn't
+						// prevent the default action
+						submitForm = true;
+						// do something here...
+						disableSubmitButton(oTarget);
+
+						setTimeout(function() {
+							// Trigger form submit
+							form.submit();
+						}, 100);
+
+					} else {
+						// There could be times when the form is valid and then becames invalid. In these cases,
+						// set the variable to false again.
+						submitForm = false;
+					}
+				});
+			} else {
+				$.listen('parsley:form:success', function(e){
+					disableSubmitButton(oTarget);
+				});
+			}
+
+
 			$.listen('parsley:form:error', function( ){
 				$('input.error:hidden', oTarget).each( function(){
 					var sId = $(this).closest('[style="display: none;"]').attr('id');
@@ -43,10 +91,6 @@
 						alert( this.name + ': This field is hidden and required.' );
 					}
 				});
-			});
-
-			$.listen('parsley:form:success', function(e){
-				FrontendMediator.publish('form:success');
 			});
 		}
 
@@ -74,14 +118,21 @@
 				successClass: 'success',
 				// Return the `$element` that will receive these above success or error classes
 				// Could also be (and given directly from DOM) a valid selector like `'#div'`
-				classHandler: function (ParsleyField) {},
+				classHandler: function (el) {
+					if ( el.$element[0].type === 'checkbox' ||  el.$element[0].type === 'radio') {
+						return el.$element.closest("ul");
+					} else {
+						return el.$element.closest("li");
+					}
+				},
 				// Return the `$element` where errors will be appended
 				// Could also be (and given directly from DOM) a valid selector like `'#div'`
 				errorsContainer: function (el) {
-
-					return el.$element.closest("li");
-
-
+					if ( el.$element[0].type === 'checkbox' ||  el.$element[0].type === 'radio') {
+						return el.$element.closest("ul").prev();
+					} else {
+						return el.$element.closest("li");
+					}
 				},
 				// ul elem that would receive errors' list
 				errorsWrapper: '<ul class="form-error-message"></ul>',

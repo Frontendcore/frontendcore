@@ -379,7 +379,13 @@
 		overflow: hidden;
 		height: 300px;
 	}
-
+	.error {
+		input[type='checkbox'] + label, input[type='radio'] + label {
+			&:before {
+				border-color: $color-error;
+			}
+		}
+	}
 }
 
 ::-webkit-input-placeholder {
