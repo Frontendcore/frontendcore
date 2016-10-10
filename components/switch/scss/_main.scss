@@ -16,6 +16,11 @@
     top: 9px;
     left: 10px;
     padding: 0;
+
+    &[type='checkbox']+label:before,
+    &[type='radio']+label:before{
+      display: none;
+    }
   }
   label {
     & {
