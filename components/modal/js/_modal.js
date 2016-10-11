@@ -184,6 +184,9 @@
 					oOptions.closeButton = false;
 				}
 
+				if ( oTarget.getAttribute("data-fc-class") !== null ) {
+					oOptions.className = oTarget.getAttribute("data-fc-class");
+				}
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 

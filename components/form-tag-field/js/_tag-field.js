@@ -45,7 +45,8 @@
 							"border" : "0px none",
 							"padding" : "0",
 							"margin": "0",
-							"position" : "absolute"
+							"color" : "transparent",
+							"position" : "absolute",
 						}).parent().css("position","relative");
 					}
 
@@ -92,6 +93,10 @@
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
 					FrontendTools.removeLoading(oRealTarget);
+
+					$(oTarget).on('clear', function () {
+						fSuggest[nTarget].clear();
+					});
 
 					fSuggest[nTarget] = $(oRealTarget).magicSuggest(oSettings);
 

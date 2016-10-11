@@ -76,6 +76,8 @@
 		margin: $spacing/8;
 		background: $color-foreground;
 		box-shadow: 0 0 $spacing/8 rgba(0,0,0,1);
+		overflow: hidden;
+		border-radius: $default-border-radius;
 
 	}
 	.cboxIframe {

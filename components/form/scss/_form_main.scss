@@ -129,7 +129,10 @@
 			list-style: none;
 			display: block;
 			overflow: visible;
-			padding: $spacing/2 0;
+			padding: $spacing/4 0;
+			&.error {
+				padding-bottom: $spacing;
+			}
 		}
 	}
 	.error-fields {
@@ -385,6 +388,9 @@
 				border-color: $color-error;
 			}
 		}
+	}
+	ul.error {
+		padding-top: $spacing;
 	}
 }
 
