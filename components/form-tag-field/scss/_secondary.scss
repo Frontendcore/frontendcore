@@ -3,6 +3,7 @@
 	padding: 0;
 	position: relative;
 	height: auto;
+	z-index: 1;
 }
 
 .ms-ctn-readonly {
@@ -46,7 +47,8 @@
 	.ms-sel-ctn input {
 		& {
 			display: inline-block;
-			padding: $spacing/8 0;
+			padding: 0;
+			margin: 0;
 			border: 0px none;
 			box-shadow: none;
 			max-width: 50%;

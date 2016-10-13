@@ -44,7 +44,7 @@
 							"width" : "100%",
 							"border" : "0px none",
 							"padding" : "0",
-							"margin": "0",
+							"margin": "-1px 0 0 0",
 							"color" : "transparent",
 							"position" : "absolute",
 						}).parent().css("position","relative");
@@ -80,14 +80,25 @@
 						oOptions.noSuggestionText = oTarget.getAttribute("data-fc-text-no-suggestion");
 					}
 
+					if (oTarget.getAttribute("data-fc-method") !== null ) {
+						oOptions.method = oTarget.getAttribute("data-fc-method");
+					}
+
 					if ( oTarget.getAttribute("data-fc-values") !== null) {
 
-						oOptions.data = [];
-						aValues = oTarget.getAttribute("data-fc-values").split(',');
+						var aTempValues = oTarget.getAttribute("data-fc-values").split(',');
 
-						for (var nKey in aValues) {
-							oOptions.data.push(aValues[nKey]);
+						if (aTempValues.length > 1){
+							oOptions.data = [];
+							aValues = aTempValues;
+
+							for (var nKey in aValues) {
+								oOptions.data.push(aValues[nKey]);
+							}
+						} else {
+							oOptions.data = oTarget.getAttribute("data-fc-values");
 						}
+
 					}
 
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
