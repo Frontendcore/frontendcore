@@ -39,6 +39,7 @@
 			font-weight: bold;
 			font-size: $font-size-default;
 			color: $color-link;
+			outline: 0;
 		}
 	}
 	em {
@@ -150,6 +151,9 @@
 	}
 	input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {
 		@extend %field;
+		&:focus {
+			@extend %focus;
+		}
 		width: 100%;
 		&._hidden {
 			padding: 0;
@@ -204,9 +208,12 @@
 	}
 
 	/* Override browser form filling */
-	input:-webkit-autofill {
-		background: black;
-		color: red;
+	input:-webkit-autofill,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active
+	{
+		background: map-get($object-forms-vars, field-background) !important;
+		-webkit-box-shadow: 0 0 0px 1000px white inset !important;
 	}
 	input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'] {
 		max-width: 300px;

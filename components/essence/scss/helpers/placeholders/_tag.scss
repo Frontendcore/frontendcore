@@ -1,9 +1,11 @@
 %tag {
   display: inline-block;
   padding: $spacing/8 $spacing/2 $spacing/8 $spacing/4;
-  background: $color-box;
+  background: rgba($color-box, .5);
   color: rgba($color-foreground, .8);
-  box-shadow: 1px 1px 0 rgba(0,0,0, .2);
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  box-shadow: 1px 1px 1px rgba(0,0,0, .2);
 
   &:before {
     color: $color-background;

@@ -1,5 +1,8 @@
 %focus {
-	box-shadow: inset 0 0 $spacing/8 map-get($object-forms-vars, field-focus-border) !important;
+	@if (map-get($object-forms-vars, field-focus-border-bottom) != false) {
+		border-bottom: map-get($object-forms-vars, field-focus-border-bottom);
+	}
+	box-shadow: inset 0 0  map-get($object-forms-vars, field-focus-box-shadow-size) map-get($object-forms-vars, field-focus-box-shadow-color) !important;
 	outline: none;
 }
 

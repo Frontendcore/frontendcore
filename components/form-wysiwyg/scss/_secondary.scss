@@ -3,8 +3,6 @@
 			@extend %field;
 			overflow: hidden;
 			position: relative;
-			padding-bottom: $spacing*2;
-			min-height: 100px;
 			transition: padding, .4s ease-in;
 		}
 		&:after {
@@ -19,7 +17,7 @@
 			text-align: center;
 			transition: opacity, .4s ease-in;
 			@include background-transparent($color-background, .7);
-			//@include transparent;
+			opacity: 0;
 		}
 		&:before {
 			content: attr(data-help);
@@ -32,8 +30,10 @@
 			position: absolute;
 			display: block;
 			transition: opacity, .4s ease-in;
+			opacity: 0;
 		}
 		&:focus {
+			padding-bottom: $spacing*2;
 			&:before, &:after {
 				opacity: 1;
 			}
