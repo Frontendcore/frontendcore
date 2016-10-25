@@ -1,0 +1,31 @@
+.number-field-button {
+  display: inline-block;
+  background: $color-secondary;
+  border-radius: 50%;
+  color: contrast-color($color-secondary);
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0px none;
+  text-align: center;
+  font-weight: bold;
+  line-height: 114%;
+  position: absolute;
+  top: $spacing;
+  &._dec {
+    left: 0;
+  }
+  &._inc {
+    right: 0;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $color-primary;
+  }
+}
+.number-field-wrapper {
+  padding: 0 $spacing;
+  display: block;
+  input {
+    text-align: center;
+  }
+}

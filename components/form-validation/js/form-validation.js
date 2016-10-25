@@ -5,9 +5,13 @@
 
 		var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
 
+		function obscureSubmitButton( oTarget) {
+			$('button[type="submit"]', oTarget).addClass('_disabled');
+		}
+
 		function disableSubmitButton( oTarget) {
 			FrontendMediator.publish('form:success');
-			$('button[type="submit"]', oTarget).addClass('_disabled').prop('disabled','true');
+			$('button[type="submit"]', oTarget).prop('disabled', true);
 		}
 
 		function validateForm(oContext, oTarget, nIndex) {
@@ -44,37 +48,43 @@
 				// By default, we won't submit the form.
 				var submitForm = false;
 
-				$(oTarget).on('submit', function(e) {
+				$(oTarget).bind('submit', function(e) {
 					// If our variable is false, stop the default action.
 					// The first time 'submit' is triggered, we should prevent the default action
 					if (!submitForm) {
+
 						e.preventDefault();
+
+						var form = $(this);
+
+						form.parsley().validate();
+
+						// If the form is valid
+						if (form.parsley().isValid()) {
+							// Set the variable to true, so that when the 'submit' is triggered again, it doesn't
+							// prevent the default action
+							submitForm = true;
+							// do something here...
+							obscureSubmitButton(oTarget);
+
+							setTimeout(function() {
+								// Trigger form submit
+								$('button[type="submit"]', oTarget).click();
+								disableSubmitButton(oTarget);
+							}, 100);
+
+						} else {
+							// There could be times when the form is valid and then becames invalid. In these cases,
+							// set the variable to false again.
+							submitForm = false;
+							e.preventDefault();
+						}
 					}
-					var form = $(this);
 
-					form.parsley().validate();
-
-					// If the form is valid
-					if (form.parsley().isValid()) {
-						// Set the variable to true, so that when the 'submit' is triggered again, it doesn't
-						// prevent the default action
-						submitForm = true;
-						// do something here...
-						disableSubmitButton(oTarget);
-
-						setTimeout(function() {
-							// Trigger form submit
-							form.submit();
-						}, 100);
-
-					} else {
-						// There could be times when the form is valid and then becames invalid. In these cases,
-						// set the variable to false again.
-						submitForm = false;
-					}
 				});
 			} else {
 				$.listen('parsley:form:success', function(e){
+					obscureSubmitButton(oTarget);
 					disableSubmitButton(oTarget);
 				});
 			}

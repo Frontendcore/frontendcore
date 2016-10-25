@@ -17,7 +17,7 @@
 	position: absolute;
 	top: 100%;
 	left: -9999px;
-	z-index: 1010;
+	z-index: 201;
 	width: 100%;
 	border-right: map-get($object-forms-vars, field-border-right);
 	border-bottom: map-get($object-forms-vars, field-border-bottom);
@@ -120,7 +120,7 @@
 }
 .chosen-container-single .chosen-search {
 	position: relative;
-	z-index: 1010;
+	z-index: 201;
 	margin: 0;
 	padding: 3px 4px;
 	white-space: nowrap;
