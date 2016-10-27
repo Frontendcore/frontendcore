@@ -59,7 +59,7 @@
                          $InputSync = $(oTarget.getAttribute('data-fc-target-input'));
                     }
 
-                    $(oTarget).change(function () {
+                    $(oTarget).on('change input', function () {
 
 
                         var val = ($(oTarget).val() - $(oTarget).attr('min')) / ($(oTarget).attr('max') - $(oTarget).attr('min'));
