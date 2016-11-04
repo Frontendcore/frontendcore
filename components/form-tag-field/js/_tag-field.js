@@ -109,6 +109,11 @@
 						fSuggest[nTarget].clear();
 					});
 
+					$(oTarget).on('setValue', function (event, data) {
+						fSuggest[nTarget].clear();
+						fSuggest[nTarget].setValue(data.values);
+					});
+
 					fSuggest[nTarget] = $(oRealTarget).magicSuggest(oSettings);
 
 					$(fSuggest[nTarget]).on('selectionchange', function(){
