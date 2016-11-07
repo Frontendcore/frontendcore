@@ -53,9 +53,6 @@ var aProjects = [],
             env: process.env
         });
 
-        // Send data to the child process via its stdin stream
-        child.stdin.write("Executing " + bin.yellow);
-
         // Listen for any response from the child:
         child.stdout.on('data', function (data) {
             console.log(data.toString());
