@@ -8,9 +8,9 @@
   border: 0px none;
   text-align: center;
   font-weight: bold;
-  line-height: 114%;
+  line-height: 120%;
   position: absolute;
-  top: $spacing;
+  top: $spacing/4;
   &._dec {
     left: 0;
   }
@@ -19,12 +19,12 @@
   }
   &:hover {
     text-decoration: none;
-    background-color: $color-primary;
   }
 }
 .number-field-wrapper {
   padding: 0 $spacing;
   display: block;
+  position: relative;
   input {
     text-align: center;
   }

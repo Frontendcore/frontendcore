@@ -104,7 +104,6 @@ module.exports = function(grunt) {
 
 		// TRUNCATE
 		oCore.files[jsDest + '/ui/truncate.js'] = [
-			fcCwd + '/bower/jquery.truncator.js/jquery.truncator.js',
 			fcCwd + '/components/truncate/js/_truncate.js'
 		];
 

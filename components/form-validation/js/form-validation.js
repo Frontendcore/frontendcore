@@ -44,7 +44,7 @@
 			$(oTarget).parsley(oSettings);
 
 
-			if (isSafari) {
+			if (isSafari && $('button[type="submit"]', oTarget) ) {
 				// By default, we won't submit the form.
 				var submitForm = false;
 

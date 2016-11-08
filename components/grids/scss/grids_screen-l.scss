@@ -72,3 +72,7 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 }
 
 @include flex-order(-l);
+
+._reverse-m {
+  flex-direction: column-reverse;
+}

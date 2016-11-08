@@ -19,20 +19,7 @@
 			images = this,
 			loaded;
 
-
 		this.one("unveil", function() {
-
-			var w = window,
-				d = document,
-				e = d.documentElement,
-				g = d.getElementsByTagName('body')[0],
-				x = w.innerWidth || e.clientWidth || g.clientWidth,
-				y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-			if ( x <= 767 && this.getAttribute("data-src-mobile") !== null ) {
-				attrib = "data-src-mobile";
-			}
-
 			var source = this.getAttribute(attrib);
 			source = source || this.getAttribute("data-src");
 			if (source) {
@@ -58,8 +45,7 @@
 			images = images.not(loaded);
 		}
 
-		$w.scroll(unveil);
-		$w.resize(unveil);
+		$w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
 
 		unveil();
 
@@ -79,9 +65,9 @@
 
 				$("img").unveil(200);
 
-				$( window ).resize(function() {
-					$("img").unveil(200);
-				});
+				setTimeout( function(){
+					$(window).trigger("lookup");
+				}, 100);
 
 				FrontendTools.trackEvent('JS_Libraries', 'call', 'image-responsive' );
 			},

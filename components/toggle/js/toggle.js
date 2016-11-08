@@ -113,6 +113,8 @@
 					$(document.getElementById(sHref.split('#')[1])).toggleClass(sClassName, 'bounce-out');
 				}
 
+				$(oThis).toggleClass('active');
+
 			},
 			slideToggle: function (oThis) {
 

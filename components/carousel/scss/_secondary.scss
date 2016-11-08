@@ -284,6 +284,8 @@
 		}
 	}
 	.owl-dots {
+		position: relative;
+		z-index: 1;
 		text-align: center;
 		padding-top: $spacing/2;
 	}
@@ -291,6 +293,11 @@
 		display: inline-block;
 		zoom: 1;
 		*display: inline;
+		&._image {
+			img {
+				display: none;
+			}
+		}
 		span {
 			width: 10px;
 			height: 10px;

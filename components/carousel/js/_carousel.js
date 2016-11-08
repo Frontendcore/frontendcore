@@ -128,13 +128,70 @@
 				if (oSettings.lazyLoad === true || oSettings.lazyLoad === 'true') {
 					$('img', oTarget).each(function () {
 						if (this.getAttribute('data-src') !== null || this.getAttribute('data-src-retina') !== null) {
-							$(this).addClass('owl-lazy animated fade-in');
+							$(this).addClass('owl-lazy');
 						}
 					});
 				}
 
 				if (oSettings !== undefined) {
-					$(oTarget).owlCarousel(oSettings);
+
+
+					var $oTarget = $(oTarget);
+
+					$oTarget.owlCarousel(oSettings);
+
+					FrontendMediator.publish( 'carousel:init');
+
+					$('.owl-dot', oTarget).on('mouseover', function() {
+						$(this).click();
+					});
+
+					if (oTarget.getAttribute("data-fc-gallery") !== null){
+
+						var aImages = {},
+							nKey = 0;
+
+						$('article', oTarget).each( function (nIndex) {
+
+							if ( !$(this).parent('.owl-item').hasClass('cloned')) {
+
+								var sType = 'image';
+
+								if ( this.getAttribute('data-fc-video') !== null) {
+									sType = 'video';
+								}
+
+								aImages[nKey] = {
+									'type' : sType,
+									'url' :  this.getAttribute('data-src')
+								};
+
+								nKey++;
+							}
+
+						});
+
+
+						// Build the thumbnails
+						$('.owl-dot', oTarget).each( function(nIndex){
+							var oImage = document.createElement('img');
+
+							oImage.src = aImages[nIndex].url;
+
+							if ( !$(this).hasClass('_image')) {
+								$(this).addClass('_image').append(oImage);
+							}
+
+
+							if ( aImages[nIndex].type === 'video') {
+								$(this).addClass('_video');
+							}
+
+						}).promise().done( function(){
+							FrontendMediator.publish( 'carousel:thumbnails');
+						} );
+					}
+
 				}
 
 			},

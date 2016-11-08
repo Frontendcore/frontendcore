@@ -13,6 +13,7 @@
     var _null_ = null,
         _true_ = true,
         _false_ = false,
+        aIds = [],
         oBBDD = {},
         oTemplates = {},
         oModules = {},
@@ -62,9 +63,15 @@
     };
 
 
-    function checkFinish() {
+    function checkFinish(callback) {
+
+        var fpCallback = callback === undefined ? function(){} : callback;
+
         if (aDataCache.length === Object.keys(oModules).length ){
             FrontendMediator.publish(['data:finish' ] );
+            setTimeout( function() {
+                fpCallback();
+            }, 100 );
         }
     }
 
@@ -82,7 +89,7 @@
 
     }
 
-    RoundTrip.Data = function( data ) {
+    RoundTrip.Data = function( data, callback ) {
 
         var typeOfData = typeof(data),
             item,
@@ -99,7 +106,7 @@
                 FrontendMediator.publish([ sChannel + item ], oChannels );
             }
 
-            checkFinish();
+            checkFinish(callback);
 
         } else if ( data === sRoundTripData ) {
 
@@ -116,7 +123,7 @@
 
             FrontendMediator.publish(aChannels, oChannels);
 
-            checkFinish();
+            checkFinish(callback);
 
         } else if ( data.indexOf('[') !== -1 ) {
 
@@ -137,7 +144,7 @@
 
                 FrontendMediator.publish( aChannels , oChannels );
 
-                checkFinish();
+                checkFinish(callback);
 
         } else {
 
@@ -154,7 +161,7 @@
 
                         oBBDD[sUrl] = oData;
 
-                        checkFinish();
+                        checkFinish(callback);
 
                     }
                 });
@@ -166,16 +173,20 @@
 
     RoundTrip.Template = function( oModule, sId , sHref, sData ) {
 
-        $.get( sHref , function( sTemplate ) {
+        if ( aIds.indexOf(sId) === -1 ) {
+            $.get( sHref , function( sTemplate ) {
 
-            oTemplates[sId] = twig({
-                id: sId,
-                data: sTemplate
+                oTemplates[sId] = twig({
+                    id: sId,
+                    data: sTemplate,
+                });
+
+                renderTemplate( sId, sData);
+
+                aIds.push(sId);
+
             });
-
-            renderTemplate( sId, sData);
-
-        });
+        }
 
     };
 
