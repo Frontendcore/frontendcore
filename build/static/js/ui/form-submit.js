@@ -1,0 +1,1 @@
+!function(a){FrontendCore.define("form-submit",[],function(){return{onStart:function(){var b=FrontendTools.getDataModules("form-submit");FrontendTools.trackModule("JS_Libraries","call","form-submit"),a(b).each(function(){a(this).on("click",function(b){b.preventDefault();var c="#"+this.href.split("#")[1];a(c).submit()})})}}})}(window.$);

@@ -257,6 +257,7 @@
 			-webkit-appearance: none;
 			-moz-appearance:    none;
 			appearance:         none;
+			padding-right: $spacing;
 			&::-ms-expand {
 				/* IE 8 */
 				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

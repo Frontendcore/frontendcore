@@ -100,6 +100,26 @@
 			}
 		}
 
+		function toggleValidClass(oTarget, sErrorId) {
+
+
+			var bValidated = $(oTarget).hasClass('error') || $(oTarget).hasClass('success') ? true : false,
+				bIsValid = $(oTarget).intlTelInput("isValidNumber");
+
+			if ( bValidated ) {
+				$(oTarget).removeClass("success").removeClass("error");
+				$('#' + sErrorId).addClass("hidden");
+			}
+
+			if (!bIsValid && bValidated ) {
+				$(oTarget).addClass("error").focus();
+				$('#' + sErrorId).removeClass("hidden");
+				return false;
+			} else if ( bIsValid ) {
+				$(oTarget).addClass("success");
+			}
+		}
+
 		return {
 			onStart: function () {
 
@@ -204,21 +224,17 @@
 					sTextError = oTarget.getAttribute("data-fc-text-error");
 				}
 
+
 				// Validate if required
-				if ($(oTarget).prop('required')) {
+				//if ($(oTarget).prop('required')) {
 
 					var sErrorId = 'tel-' + nIndex + '-error';
 
 					$(oTarget).parent('div').after('<ul id="'+ sErrorId +'" class="form-error-message hidden"><li class="parsley-required">'+ sTextError +'</li></ul>');
 
-					var reset = function() {
-						$(oTarget).removeClass("error");
-						$('#' + sErrorId).addClass("hidden");
-					};
-
 					// on blur: validate
 					$(oTarget).blur(function() {
-						reset();
+						toggleValidClass(oTarget, sErrorId);
 						if ($.trim($(oTarget).val())) {
 							if ($(oTarget).intlTelInput("isValidNumber")) {
 							} else {
@@ -229,16 +245,13 @@
 					});
 
 					$(oTarget).parents('form').on('submit',function () {
-						if (!$(oTarget).intlTelInput("isValidNumber")) {
-							$(oTarget).addClass("error").focus();
-							$('#' + sErrorId).removeClass("hidden");
-							return false;
-						}
+						toggleValidClass(oTarget, sErrorId);
 					});
 
-					// on keyup / change flag: reset
-					$(oTarget).on("keyup change", reset);
-				}
+					$(oTarget).on('change keyup', function () {
+						toggleValidClass(oTarget, sErrorId);
+					});
+				//}
 				
 				// Sync country field
 				if (oTarget.getAttribute("data-fc-country-field") !== null ) {
