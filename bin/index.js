@@ -8,6 +8,7 @@ var param = process.argv[2],
     fs   = require('fs'),
     sCurrentProject = '',
     bDebug = false,
+    multiThreaded = true,
     colors = require('colors'),
     sCurrentPath = process.cwd(),
     bCustomFcJson = false,
@@ -23,6 +24,10 @@ for ( var key in process.argv ) {
 
     if (process.argv[key].indexOf('--debug') !== -1 ) {
         bDebug = true;
+    }
+
+    if (process.argv[key].indexOf('--no-mt') !== -1 ) {
+        multiThreaded = false;
     }
 
     if (process.argv[key].indexOf('--fcCwd') !== -1 ) {
@@ -43,7 +48,7 @@ require(path.join( path.dirname(fs.realpathSync(__filename)) , "../grunt/_tools.
 
 var aProjects = [],
     aParams = [],
-    spawn = require('child_process').spawn,
+    spawn = multiThreaded ? require('child_process').spawn : require('child_process').spawnSync,
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
     exec = function( bin, params ) {
@@ -53,16 +58,23 @@ var aProjects = [],
             env: process.env
         });
 
-        // Listen for any response from the child:
-        child.stdout.on('data', function (data) {
-            console.log(data.toString());
-        });
+        if (multiThreaded) {
+            // Listen for any response from the child:
+            child.stdout.on('data', function (data) {
+                console.log(data.toString());
+            });
 
-        // Listen for any errors:
-        child.stderr.on('data', function (data) {
-            console.log(data.toString());
-        });
-
+            // Listen for any errors:
+            child.stderr.on('data', function (data) {
+                console.log(data.toString());
+            });
+        } else {
+            for (var i = 0; i < child.output.length; i++) {
+                if (child.output[i]) {
+                    console.log(child.output[i].toString());
+                }
+            }
+        }
     },
     pkg  = require( path.join( sFrontendCorePath , 'package.json') );
 
