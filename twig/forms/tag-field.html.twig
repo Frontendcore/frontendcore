@@ -16,6 +16,11 @@
         PathComponents ~ 'form-tag-field/html/tags-select.html',
         false,false,true
     )}}
+    {{ demos.demo(
+        'text-container',
+        PathComponents ~ 'form-tag-field/html/tags-container.html',
+        false,false,true
+    )}}
 
     {{ demos.settings(
     {
@@ -52,7 +57,11 @@
             "name" :        "placeholder",
             "description" : "No result matching the term {{query}}",
             "default" :     "Add a Tag"
-        }
+        },
+        "9" : {
+            "name" :        "data-fc-container",
+            "description" : "Defines a selector where tags are going to be rendered.",
+        },
     }
     )}}
 {% endblock %}
