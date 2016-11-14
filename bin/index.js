@@ -168,6 +168,9 @@ if ( param === 'css:one') {
                 console.log(" docs".green);
                 console.log("   Generate the documenation for frontendcore on your frontendcore build path.".white);
 
+                console.log(" server".green);
+                console.log("  Runs a local http server on /build, useful to serve built documentation.".white);
+
                 console.log(" build".green);
                 console.log("   Executes all the tasks except init and watch.".white);
 
