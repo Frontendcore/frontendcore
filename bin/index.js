@@ -215,6 +215,22 @@ if ( param === 'css:one') {
                 exec(sGruntPath, aParams );
 
                 break;
+            case "server":
+
+                ServeMe = require("serve-me");
+
+                var server = ServeMe({
+                    debug: true,
+                    directory: "./build",
+                });
+
+                const PORT = 8080;
+
+                server.start(PORT, function(){
+                    console.log("Server listening on http://localhost:%s", PORT);
+                });
+                break;
+
             default:
 
                 aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
