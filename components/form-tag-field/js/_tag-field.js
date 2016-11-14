@@ -16,7 +16,7 @@
 
 				FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
 
-				FrontendTools.trackModule('JS_Libraries', 'call', 'tag-field' );
+				FrontendTools.trackModule('JS_Libraries', 'call', 'tag-field');
 
 				self.autobind(aTarget);
 
@@ -48,6 +48,7 @@
 							"color" : "transparent",
 							"position" : "absolute",
 						}).parent().css("position","relative");
+
 					}
 
 					oOptions.name = oTarget.getAttribute("name") !== '' ? oTarget.getAttribute("name") + '_array' : "tags_array";
@@ -65,6 +66,10 @@
 
 					if (oTarget.getAttribute("data-fc-select") === 'true') {
 						oOptions.hideTrigger = false;
+					}
+
+					if (oTarget.getAttribute("data-fc-container") !== null) {
+						oOptions.selectionContainer = $(oTarget.getAttribute("data-fc-container"));
 					}
 
 					if (oTarget.value !== '' && oTarget.value !== undefined) {
