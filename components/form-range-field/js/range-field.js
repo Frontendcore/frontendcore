@@ -80,6 +80,7 @@
                             '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #0677ff), ' + 'color-stop(' + val + ', #C5C5C5)' + ')'
                         );
 
+                        FrontendMediator.publish('range:change', { value: sValue });
 
                         if ($InputSync !== null ) {
 

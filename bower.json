@@ -37,7 +37,6 @@
     "tinycorejs": "https://github.com/Frontendcore/tinycore.git#1.0.3",
     "dynatable": "~0.3.1",
     "pen": "~0.0.3",
-    "Sortable": "~1.0.1",
     "magicsuggest": "~2.1.4",
     "chartjs": "~1.0.1",
     "SyntaxHighlighter": "~3.0.83",
