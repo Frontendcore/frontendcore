@@ -168,6 +168,9 @@ if ( param === 'css:one') {
                 console.log(" docs".green);
                 console.log("   Generate the documenation for frontendcore on your frontendcore build path.".white);
 
+                console.log(" server".green);
+                console.log("  Runs a local http server on /build, useful to serve built documentation.".white);
+
                 console.log(" build".green);
                 console.log("   Executes all the tasks except init and watch.".white);
 
@@ -215,6 +218,22 @@ if ( param === 'css:one') {
                 exec(sGruntPath, aParams );
 
                 break;
+            case "server":
+
+                ServeMe = require("serve-me");
+
+                var server = ServeMe({
+                    debug: true,
+                    directory: "./build",
+                });
+
+                const PORT = 8080;
+
+                server.start(PORT, function(){
+                    console.log("Server listening on http://localhost:%s", PORT);
+                });
+                break;
+
             default:
 
                 aParams = [ '--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
