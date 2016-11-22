@@ -67,6 +67,7 @@
       "form-tel-field",
       "form-range-field",
       "form-number-field",
+      "form-editable",
       "form-password-meter",
       "form-wysiwyg",
       "table-responsive",
