@@ -71,7 +71,9 @@
 
 				oSettings = FrontendTools.mergeOptions( oDefault, oOptions);
 
-				$(oTarget).infinitescroll(oSettings);
+				$(oTarget).infinitescroll(oSettings, function(arrayOfNewElems){
+					FrontendMediator.publish('infinite:content', arrayOfNewElems);
+				});
 
 				FrontendMediator.subscribe('infinite:pause', function () {
 					$(oTarget).infinitescroll('pause');
