@@ -66,10 +66,13 @@
                     <div class="col">
                         <div class="box _empty pv-n mb-n">
                             <h1 class="h2">{{ current_children }}</h1>
-                            {% if current_subtitle %}
-                                <p>{{ current_subtitle }}</p>
-                            {% endif %}
                         </div>
+                        {% if current_subtitle %}
+                        <div class="box _darken pt-m pb-n mb-n">
+                            <p>{{ current_subtitle }}</p>
+                        </div>
+                        {% endif %}
+
                     </div>
                 </div>
             </header>

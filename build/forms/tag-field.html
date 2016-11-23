@@ -178,6 +178,9 @@
                                                     <a href=".././content/charts.html" class="d-b"><i class="icon-angle-right"></i> Charts <span class="fl-r label _foreground fz-xs">JS</span> </a>
                                                 </li>
                                                                                             <li >
+                                                    <a href=".././content/infinite.html" class="d-b"><i class="icon-angle-right"></i> Infinite Scroll <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
                                                     <a href=".././content/carousel.html" class="d-b"><i class="icon-angle-right"></i> Carousel <span class="fl-r label _foreground fz-xs">JS</span> </a>
                                                 </li>
                                                                                             <li >
@@ -241,6 +244,9 @@
                                                 </li>
                                                                                             <li >
                                                     <a href=".././forms/select-search.html" class="d-b"><i class="icon-angle-right"></i> Select with search <span class="fl-r label _foreground fz-xs">JS</span> </a>
+                                                </li>
+                                                                                            <li >
+                                                    <a href=".././forms/editable.html" class="d-b"><i class="icon-angle-right"></i> Editable Field <span class="fl-r label _foreground fz-xs">JS</span> </a>
                                                 </li>
                                                                                             <li  class="active">
                                                     <a href=".././forms/tag-field.html" class="d-b"><i class="icon-angle-right"></i> Tag Field <span class="fl-r label _foreground fz-xs">JS</span> </a>
@@ -373,8 +379,11 @@
                     <div class="col">
                         <div class="box _empty pv-n mb-n">
                             <h1 class="h2">Tag Field</h1>
-                                                            <p>Turn a checkbox into a switch</p>
-                                                    </div>
+                        </div>
+                                                <div class="box _darken pt-m pb-n mb-n">
+                            <p>Turn a checkbox into a switch</p>
+                        </div>
+                        
                     </div>
                 </div>
             </header>
@@ -421,6 +430,33 @@
         </section>
                             </div>
 
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-container-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <h4>Container:</h4>
+<div id="containerId"></div>
+<h4>Input:</h4>
+<input name="tags_container" value=""  data-fc-modules="tag-field" data-fc-container="#containerId" required="required" />                                                            </li>
+                        </ol>
+                        <button type="submit" class="button _primary mt-m">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-text-container-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;h4&gt;Container:&lt;/h4&gt;
+&lt;div id=&quot;containerId&quot;&gt;&lt;/div&gt;
+&lt;h4&gt;Input:&lt;/h4&gt;
+&lt;input name=&quot;tags_container&quot; value=&quot;&quot;  data-fc-modules=&quot;tag-field&quot; data-fc-container=&quot;#containerId&quot; required=&quot;required&quot; /&gt;</code></pre>
+            </div>
+        </section>
+                            </div>
+
 
             <hr />
         <h2 class="mb-m">Attributes</h2>
@@ -458,6 +494,10 @@
             <dd class="mb-l">
                 <p class="mb-s">No result matching the term {{query}}</p>
                                 <p class="fz-xs c-secondary">DEFAULT: Add a Tag</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-container</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Defines a selector where tags are going to be rendered.</p>
                             </dd>
                     </dl>
 

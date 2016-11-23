@@ -152,10 +152,15 @@ module.exports = function(grunt) {
 			fcCwd + '/bower/intl-tel-input/build/js/utils.js',
 		];
 		
-		// INTERNATIONAL PHONE
+		// PASSWORD METER
 		oCore.files[jsDest + '/ui/password-meter.js'] = [
 			fcCwd + '/bower/strength-meter/js/strength-meter.js',
 			fcCwd + '/components/form-password-meter/js/_password-meter.js'
+		];
+
+		// INFINITE SCROLL
+		oCore.files[jsDest + '/ui/infinite-libs.js'] = [
+			fcCwd + '/components/infinite/js/_infinite-scroll.js'
 		];
 
 		var oRoundTrip = {

@@ -213,6 +213,12 @@
           "js": true,
           "done" : true
         },
+        "Infinite": {
+          "name": "Infinite Scroll",
+          "href": "infinite.html",
+          "js": true,
+          "done": true
+        },
         "Carousel": {
           "name": "Carousel",
           "href": "carousel.html",

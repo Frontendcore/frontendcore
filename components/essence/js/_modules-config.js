@@ -35,6 +35,8 @@ var oDefaultPaths = {
 		'polyfiller',
 		'parallax',
 		'carousel',
+		'infinite',
+		'infinite-libs',
 		'table-dynamic',
 		'table-responsive',
 		'toggle',
