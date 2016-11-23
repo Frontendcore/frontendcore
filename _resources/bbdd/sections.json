@@ -310,6 +310,12 @@
           "js": true,
           "done" : true
         },
+        "Editable Field": {
+          "name": "Editable Field",
+          "href": "editable.html",
+          "js": true,
+          "done" : true
+        },
         "Tag Field": {
           "name": "Tag Field",
           "href": "tag-field.html",

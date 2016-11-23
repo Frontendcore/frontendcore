@@ -1,0 +1,37 @@
+{% set current_children = "Editable Field" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    <h3>Editable</h3>
+    {{ demos.demo(
+        'editable',
+        PathComponents ~ 'form-editable/html/editable.html',
+        false,false,true
+    )}}
+
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-mediator",
+            "description" : "[optional] Mediator event to publish new data when editable value is changed.",
+        },
+        "2" : {
+            "name" :        "data-fc-tag",
+            "description" : "Editable element tag, when field is set to editable state, original element is hidden an a new element tied to original is created using this tag.",
+            "default" :     "input"
+        },
+        "3" : {
+            "name" :        "data-fc-class",
+            "description" : "Class for the new editable element.",
+        },
+        "4" : {
+            "name" :        "data-fc-input-id",
+            "description" : "If specified, value changes will also be stored on element with indicated ID.",
+        },
+    }
+    )}}
+{% endblock %}
