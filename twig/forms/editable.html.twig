@@ -17,7 +17,7 @@
     {
         "1" : {
             "name" :        "data-fc-mediator",
-            "description" : "[optional] Mediator event to publish new data when editable value is changed.",
+            "description" : "Mediator event to publish new data when editable value is changed.",
         },
         "2" : {
             "name" :        "data-fc-tag",
@@ -32,6 +32,11 @@
             "name" :        "data-fc-input-id",
             "description" : "If specified, value changes will also be stored on element with indicated ID.",
         },
+        "5" : {
+            "name" :        "data-fc-edit-type",
+            "description" : "Manages click/focusout events to automate editable state. 'full' => 'click' + 'focusout'. 'click' => When element is clicked, editable state is triggered automatically & element gets focus. 'focusout' => When element lost focus, not editable state is triggered automatically.",
+            "default" :     "none"
+        }
     }
     )}}
 {% endblock %}
