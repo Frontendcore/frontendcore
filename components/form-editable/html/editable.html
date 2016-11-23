@@ -2,13 +2,11 @@
     <h4>value:</h4>
     <input id="valueId" />
     <br>
-    <div id='editable-div1' data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="valueId">
-        some div here...
+    <br>
+    <div id='editable-div1' data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="valueId" data-fc-edit-type="full">
+        some div here, click me...
     </div>
     <br>
-    <a onclick="$('#editable-div1').trigger('editable', {editable: true})">Editable=true</a>
-    <br>
-    <a onclick="$('#editable-div1').trigger('editable', {editable: false})">Editable=false</a>
     <br>
     <div id='editable-div2' data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="input" data-fc-class="any" data-fc-input-id="valueId">
         another div here...

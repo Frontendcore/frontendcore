@@ -3,7 +3,7 @@
 
 	FrontendCore.define('editable', [], function () {
 
-		//<div data-fc-modules="editable" data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="myinput"></div>
+		//<div data-fc-modules="editable" data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="myinput" data-fc-edit-type='full/click/focusout/none'></div>
 		var newElementIdPrefix = '_fc_editable_';
 
 		return {
@@ -20,6 +20,7 @@
 
 			},
 			autobind: function (oTarget, nIndex) {
+
 				$(oTarget).on('editable', function (event, data) {
 
 					if (data.editable === true) {
@@ -57,6 +58,16 @@
 
 						newElem.val($(oTarget).text().trim());
 
+
+						/*Prevent enter/submit when editable element is an input*/
+						if ( newElem.prop('tagName') == 'INPUT' ) {
+							$(oTarget).parent().on('keypress', newElem, function(event) {
+								if (event.keyCode == 13) {
+									event.preventDefault();
+								}
+							});
+						}
+
 						$(oTarget).parent().on('change', newElem, function() {
 							if (oTarget.getAttribute("data-fc-input-id") !== null) {
 								$('#' + oTarget.getAttribute("data-fc-input-id")).val(newElem.val());
@@ -66,6 +77,26 @@
 							}
 						});
 
+						$(oTarget).parent().on('focusout', newElem, function () {
+
+							var editType = oTarget.getAttribute("data-fc-edit-type");
+							if (editType === null)
+								return;
+
+							var isEditable = false;
+							if (oTarget.getAttribute("data-fc-editable-id") !== null) {
+								isEditable = true;
+							}
+
+							if (isEditable && (editType =='full' || editType =='focusout')) {
+								$(oTarget).trigger('editable', {editable: false});
+							}
+
+						});
+
+						if (data.focus === true) {
+							newElem.focus();
+						}
 					}
 					else {
 
@@ -90,6 +121,24 @@
 
 				});
 
+				$(oTarget).add($(oTarget).find('*')).on('click', function (event, data) {
+					event.preventDefault();
+					event.stopPropagation();
+
+					var editType = oTarget.getAttribute("data-fc-edit-type");
+					if (editType === null)
+						return;
+
+					var isEditable = false;
+					if (oTarget.getAttribute("data-fc-editable-id") !== null) {
+						isEditable = true;
+					}
+
+					if (!isEditable && (editType =='full' || editType =='click')) {
+						$(oTarget).trigger('editable', {editable: true, focus: true});
+					}
+
+				});
 
 			},
 		};
