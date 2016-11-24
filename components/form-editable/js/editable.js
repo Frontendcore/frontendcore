@@ -3,7 +3,7 @@
 
 	FrontendCore.define('editable', [], function () {
 
-		//<div data-fc-modules="editable" data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="myinput" data-fc-edit-type='full/click/focusout/none'></div>
+		//<div data-fc-modules="editable" data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="myinput" data-fc-edit-type='full/click/focusout/none' data-fc-enter-behaviour='block/stopedit/none'></div>
 		var newElementIdPrefix = '_fc_editable_';
 
 		return {
@@ -58,12 +58,14 @@
 
 						newElem.val($(oTarget).text().trim());
 
-
-						/*Prevent enter/submit when editable element is an input*/
-						if ( newElem.prop('tagName') == 'INPUT' ) {
+						var enterBehaviour = oTarget.getAttribute("data-fc-enter-behaviour");
+						if ( enterBehaviour === 'block' || enterBehaviour === 'stopedit' ) {
 							$(oTarget).parent().on('keypress', newElem, function(event) {
 								if (event.keyCode == 13) {
 									event.preventDefault();
+									if (enterBehaviour === 'stopedit') {
+										$(oTarget).trigger('editable', {editable: false});
+									}
 								}
 							});
 						}
