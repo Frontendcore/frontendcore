@@ -1,0 +1,11 @@
+<ol>
+    <li>
+        <div id="editable-div2" data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="input" data-fc-class="any">
+            Click the buttons bellow me to toggle editable.
+        </div>
+    </li>
+    <li>
+        <a onclick="$('#editable-div2').trigger('editable', {editable: true})" class="button _small _success">Editable=true</a>
+        <a onclick="$('#editable-div2').trigger('editable', {editable: false})" class="button _small _error">Editable=false</a>
+    </li>
+</ol>

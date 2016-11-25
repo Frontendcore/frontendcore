@@ -1,15 +1,22 @@
 {% set current_children = "Editable Field" %}
 {% set current_section = "Forms" %}
+{% set current_subtitle = "Converts html elements to editable fields and send the data to a target element or publish a notification on mediator." %}
 {% set relative_path = "../" %}
 {% import "../_macros/_demo.html.twig" as demos %}
 
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
-    <h3>Editable</h3>
+    <h3>Div editing a target input</h3>
     {{ demos.demo(
-        'editable',
-        PathComponents ~ 'form-editable/html/editable.html',
+        'editable-simple',
+        PathComponents ~ 'form-editable/html/editable-simple.html',
+        false,false,true
+    )}}
+    <h3>Link to convert a div to editable and send data using mediator</h3>
+    {{ demos.demo(
+        'editable-another',
+        PathComponents ~ 'form-editable/html/editable-another.html',
         false,false,true
     )}}
 
@@ -46,6 +53,11 @@
             "name" :        "data-fc-mobile",
             "description" : "Disables this component in any mobile or tablet device (touch devices)",
             "default" :     "true"
+        },
+        "8" : {
+            "name" :        "data-fc-placeholder",
+            "description" : "Placeholder text if the html element is empty",
+            "default" :     "Edit here"
         }
     }
     )}}

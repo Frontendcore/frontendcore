@@ -21,6 +21,8 @@
 			},
 			autobind: function (oTarget, nIndex) {
 
+				var sPlaceholder = oTarget.getAttribute('data-fc-placeholder') !== null ? oTarget.getAttribute('data-fc-placeholder') : 'edit here';
+
 				$(oTarget).on('editable', function (event, data) {
 
 					if (data.editable === true) {
@@ -56,7 +58,12 @@
 
 						$(oTarget).after(newElem);
 
-						newElem.val($(oTarget).text().trim());
+
+						if ( $(oTarget).text().trim() === sPlaceholder ) {
+							newElem.val('');
+						} else {
+							newElem.val($(oTarget).text().trim());
+						}
 
 						var enterBehaviour = oTarget.getAttribute("data-fc-enter-behaviour");
 						if ( enterBehaviour === 'block' || enterBehaviour === 'stopedit' ) {
@@ -112,6 +119,15 @@
 							}
 							if (oTarget.getAttribute("data-fc-mediator") !== null) {
 								FrontendMediator.publish(oTarget.getAttribute("data-fc-mediator"), { value: editableElem.val() });
+							}
+							if (oTarget.getAttribute("data-fc-disable-update") === null) {
+								if ( editableElem.val().trim() === '' ) {
+									$(oTarget).text(sPlaceholder);
+									$(oTarget).css('opacity','.5');
+								} else {
+									$(oTarget).css('opacity','1');
+									$(oTarget).text(editableElem.val());
+								}
 							}
 
 							editableElem.remove();

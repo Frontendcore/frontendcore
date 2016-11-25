@@ -381,41 +381,31 @@
                             <h1 class="h2">Editable Field</h1>
                         </div>
                                                 <div class="box _darken pt-m pb-n mb-n">
-                            <p>Infinite scroll has been called autopagerize, unpaginate, endless pages. But essentially it is pre-fetching content from a subsequent page and adding it directly to the user’s current page.</p>
+                            <p>Converts html elements to editable fields and send the data to a target element or publish a notification on mediator.</p>
                         </div>
                         
                     </div>
                 </div>
             </header>
             <div class="box _empty">
-                    <h3>Editable</h3>
+                    <h3>Div editing a target input</h3>
                                     <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-editable-1" class="o-v" data-fc-name="Demo">
+                <section id="tab-editable-simple-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                 <form class="form" method="get">
                     <fieldset>
                         <ol>
                             <li>
-                                                                <form>
-    <h4>value:</h4>
-    <input id="valueId" />
-    <br>
-    <div id='editable-div1' data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="textarea" data-fc-class="any" data-fc-input-id="valueId">
-        some div here...
-    </div>
-    <br>
-    <a onclick="$('#editable-div1').trigger('editable', {editable: true})">Editable=true</a>
-    <br>
-    <a onclick="$('#editable-div1').trigger('editable', {editable: false})">Editable=false</a>
-    <br>
-    <div id='editable-div2' data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="input" data-fc-class="any" data-fc-input-id="valueId">
-        another div here...
-    </div>
-    <br>
-    <a onclick="$('#editable-div2').trigger('editable', {editable: true})">Editable=true</a>
-    <br>
-    <a onclick="$('#editable-div2').trigger('editable', {editable: false})">Editable=false</a>
-</form>
+                                                                <ol>
+    <li>
+        <input id="valueId" value="Edit the other div to change my value" class="w-100" />
+    </li>
+    <li>
+        <div id="editable-div1" data-fc-modules="editable" data-fc-class="w-100" d data-fc-tag="input" data-fc-input-id="valueId" data-fc-edit-type="full" data-fc-enter-behaviour="stopedit">
+            Click me, edit me and I will update the input
+        </div>
+    </li>
+</ol>
 
                                                             </li>
                         </ol>
@@ -424,29 +414,63 @@
                 </form>
                             </div>
         </section>
-                <section id="tab-editable-2" data-fc-name="HTML">
+                <section id="tab-editable-simple-2" data-fc-name="HTML">
             <div class="box _background">
-                <pre><code data-fc-modules="code">&lt;form&gt;
-    &lt;h4&gt;value:&lt;/h4&gt;
-    &lt;input id=&quot;valueId&quot; /&gt;
-    &lt;br&gt;
-    &lt;div id=&#039;editable-div1&#039; data-fc-modules=&quot;editable&quot;  data-fc-mediator=&quot;channel:any&quot; data-fc-tag=&quot;textarea&quot; data-fc-class=&quot;any&quot; data-fc-input-id=&quot;valueId&quot;&gt;
-        some div here...
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;a onclick=&quot;$(&#039;#editable-div1&#039;).trigger(&#039;editable&#039;, {editable: true})&quot;&gt;Editable=true&lt;/a&gt;
-    &lt;br&gt;
-    &lt;a onclick=&quot;$(&#039;#editable-div1&#039;).trigger(&#039;editable&#039;, {editable: false})&quot;&gt;Editable=false&lt;/a&gt;
-    &lt;br&gt;
-    &lt;div id=&#039;editable-div2&#039; data-fc-modules=&quot;editable&quot;  data-fc-mediator=&quot;channel:any&quot; data-fc-tag=&quot;input&quot; data-fc-class=&quot;any&quot; data-fc-input-id=&quot;valueId&quot;&gt;
-        another div here...
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;a onclick=&quot;$(&#039;#editable-div2&#039;).trigger(&#039;editable&#039;, {editable: true})&quot;&gt;Editable=true&lt;/a&gt;
-    &lt;br&gt;
-    &lt;a onclick=&quot;$(&#039;#editable-div2&#039;).trigger(&#039;editable&#039;, {editable: false})&quot;&gt;Editable=false&lt;/a&gt;
-&lt;/form&gt;
+                <pre><code data-fc-modules="code">&lt;ol&gt;
+    &lt;li&gt;
+        &lt;input id=&quot;valueId&quot; value=&quot;Edit the other div to change my value&quot; class=&quot;w-100&quot; /&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;div id=&quot;editable-div1&quot; data-fc-modules=&quot;editable&quot; data-fc-class=&quot;w-100&quot; d data-fc-tag=&quot;input&quot; data-fc-input-id=&quot;valueId&quot; data-fc-edit-type=&quot;full&quot; data-fc-enter-behaviour=&quot;stopedit&quot;&gt;
+            Click me, edit me and I will update the input
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
 
+</code></pre>
+            </div>
+        </section>
+                            </div>
+
+    <h3>Link to convert a div to editable and send data using mediator</h3>
+                                    <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-editable-another-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                <form class="form" method="get">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                                                <ol>
+    <li>
+        <div id="editable-div2" data-fc-modules="editable"  data-fc-mediator="channel:any" data-fc-tag="input" data-fc-class="any">
+            Click the buttons bellow me to toggle editable.
+        </div>
+    </li>
+    <li>
+        <a onclick="$('#editable-div2').trigger('editable', {editable: true})" class="button _small _success">Editable=true</a>
+        <a onclick="$('#editable-div2').trigger('editable', {editable: false})" class="button _small _error">Editable=false</a>
+    </li>
+</ol>
+                                                            </li>
+                        </ol>
+                        <button type="submit" class="button _primary mt-m">Send</button>
+                    </fieldset>
+                </form>
+                            </div>
+        </section>
+                <section id="tab-editable-another-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;ol&gt;
+    &lt;li&gt;
+        &lt;div id=&quot;editable-div2&quot; data-fc-modules=&quot;editable&quot;  data-fc-mediator=&quot;channel:any&quot; data-fc-tag=&quot;input&quot; data-fc-class=&quot;any&quot;&gt;
+            Click the buttons bellow me to toggle editable.
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a onclick=&quot;$(&#039;#editable-div2&#039;).trigger(&#039;editable&#039;, {editable: true})&quot; class=&quot;button _small _success&quot;&gt;Editable=true&lt;/a&gt;
+        &lt;a onclick=&quot;$(&#039;#editable-div2&#039;).trigger(&#039;editable&#039;, {editable: false})&quot; class=&quot;button _small _error&quot;&gt;Editable=false&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
 </code></pre>
             </div>
         </section>
@@ -458,7 +482,7 @@
         <dl class="list">
                         <dt><h5 class="mb-n c-primary">data-fc-mediator</h5></dt>
             <dd class="mb-l">
-                <p class="mb-s">[optional] Mediator event to publish new data when editable value is changed.</p>
+                <p class="mb-s">Mediator event to publish new data when editable value is changed.</p>
                             </dd>
                         <dt><h5 class="mb-n c-primary">data-fc-tag</h5></dt>
             <dd class="mb-l">
@@ -472,6 +496,26 @@
                         <dt><h5 class="mb-n c-primary">data-fc-input-id</h5></dt>
             <dd class="mb-l">
                 <p class="mb-s">If specified, value changes will also be stored on element with indicated ID.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-edit-type</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Manages click/focusout events to automate editable state. 'full' => 'click' + 'focusout'. 'click' => When element is clicked, editable state is triggered automatically & element gets focus. 'focusout' => When element lost focus, not editable state is triggered automatically.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: none</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-enter-behaviour</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Allow to change enter key behaviour on editable element. 'block' => Ignore enter key, useful to avoid form submissions. 'stopedit' => Enter forces component no editable state.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: none</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-mobile</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Disables this component in any mobile or tablet device (touch devices)</p>
+                                <p class="fz-xs c-secondary">DEFAULT: true</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-placeholder</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Placeholder text if the html element is empty</p>
+                                <p class="fz-xs c-secondary">DEFAULT: Edit here</p>
                             </dd>
                     </dl>
 
