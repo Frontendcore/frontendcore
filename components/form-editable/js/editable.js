@@ -124,6 +124,11 @@
 				});
 
 				$(oTarget).add($(oTarget).find('*')).on('click', function (event, data) {
+
+					if ( FrontendTools.isMobile.any() && oTarget.getAttribute('data-fc-mobile') === 'false') {
+						return;
+					}
+
 					event.preventDefault();
 					event.stopPropagation();
 
