@@ -109,30 +109,39 @@
 					}
 					else {
 
-						if (oTarget.getAttribute("data-fc-editable-id") !== null) {
-
-							var editableElem = $('#' + oTarget.getAttribute("data-fc-editable-id"));
-
-							//update values also when is set to no editable state
-							if (oTarget.getAttribute("data-fc-input-id") !== null) {
-								$('#' + oTarget.getAttribute("data-fc-input-id")).val(editableElem.val());
-							}
-							if (oTarget.getAttribute("data-fc-mediator") !== null) {
-								FrontendMediator.publish(oTarget.getAttribute("data-fc-mediator"), { value: editableElem.val() });
-							}
-							if (oTarget.getAttribute("data-fc-disable-update") === null) {
-								if ( editableElem.val().trim() === '' ) {
-									$(oTarget).text(sPlaceholder);
-									$(oTarget).css('opacity','.5');
-								} else {
-									$(oTarget).css('opacity','1');
-									$(oTarget).text(editableElem.val());
-								}
-							}
-
-							editableElem.remove();
+						var currentValue = '';
+						var dataFcEditableId = oTarget.getAttribute("data-fc-editable-id");
+						if ( dataFcEditableId !== null) {
+							var elem = $('#' + dataFcEditableId);
+							currentValue = elem.val().trim();
+							elem.remove();
 							$(oTarget).removeAttr('data-fc-editable-id');
 							$(oTarget).show();
+
+							//update values also when is set to no editable state
+							var dataFcInputId = oTarget.getAttribute("data-fc-input-id");
+							if ( dataFcInputId !== null) {
+								$('#' + dataFcInputId).val(currentValue);
+							}
+
+							var dataFcMediator = oTarget.getAttribute("data-fc-mediator");
+							if (dataFcMediator !== null) {
+								FrontendMediator.publish(dataFcMediator, { value: currentValue });
+							}
+						}
+						else {
+							currentValue = $(oTarget).text().trim();
+						}
+
+						var dataFcDisableUpdate = oTarget.getAttribute("data-fc-disable-update");
+						if (dataFcDisableUpdate === null) {
+							if ( currentValue === '' ) {
+								$(oTarget).text(sPlaceholder);
+								$(oTarget).css('opacity','.5');
+							} else {
+								$(oTarget).css('opacity','1');
+								$(oTarget).text(currentValue);
+							}
 						}
 
 					}
@@ -163,6 +172,8 @@
 
 				});
 
+				//set initial state to not editable...
+				$(oTarget).trigger('editable', {editable: false});
 			},
 		};
 	});
