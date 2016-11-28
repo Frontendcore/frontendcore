@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 						expand: true,
 						flatten: false,
 						src: ['**/*.*'],
-						dest: fcCwd +'/build/static/js/shims'
+						dest: jsDest +'/shims'
 					}
 				]
 			},
