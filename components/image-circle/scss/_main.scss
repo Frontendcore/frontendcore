@@ -1,5 +1,6 @@
 img.image-circle {
 	@extend %images-circle;
+	outline: none;
 }
 
 a.image-circle {
@@ -12,5 +13,6 @@ a.image-circle {
 	}
 	img {
 		display: block;
+		outline: none;
 	}
 }
