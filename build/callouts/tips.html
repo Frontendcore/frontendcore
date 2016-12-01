@@ -437,12 +437,12 @@
     <section class="box-lighten">
         <h2>Tip on click with close on click</h2>
                                         <div data-fc-modules="tabs" class="loading o-v">
-                <section id="tab-text-fields-1" class="o-v" data-fc-name="Demo">
+                <section id="tab-click-close-fields-1" class="o-v" data-fc-name="Demo">
             <div class="box _background o-v" >
                                                 <a href="#" data-fc-modules="tip" data-fc-content="this is the content of the tip" data-fc-trigger="click" class="icon-info-circle"> Tip</a>
                                             </div>
         </section>
-                <section id="tab-text-fields-2" data-fc-name="HTML">
+                <section id="tab-click-close-fields-2" data-fc-name="HTML">
             <div class="box _background">
                 <pre><code data-fc-modules="code">&lt;a href=&quot;#&quot; data-fc-modules=&quot;tip&quot; data-fc-content=&quot;this is the content of the tip&quot; data-fc-trigger=&quot;click&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;
 </code></pre>
@@ -451,7 +451,23 @@
                             </div>
 
     </section>
+    <section class="box-lighten">
+        <h2>Interactive tip</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-text-data-fc-interactive-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#" data-fc-modules="tip"  data-fc-interactive="true" data-fc-content="<input type='text' placeholder='enter text here' />" class="icon-info-circle"> Tip</a>
+                                            </div>
+        </section>
+                <section id="tab-text-data-fc-interactive-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#&quot; data-fc-modules=&quot;tip&quot;  data-fc-interactive=&quot;true&quot; data-fc-content=&quot;&lt;input type=&#039;text&#039; placeholder=&#039;enter text here&#039; /&gt;&quot; class=&quot;icon-info-circle&quot;&gt; Tip&lt;/a&gt;
+</code></pre>
+            </div>
+        </section>
+                            </div>
 
+    </section>
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
@@ -468,6 +484,11 @@
             <dd class="mb-l">
                 <p class="mb-s">Set how tooltips should be activated and closed.</p>
                                 <p class="fz-xs c-secondary">DEFAULT: hover</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-interactive</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">If it's set to true allows user to interact the tip.</p>
+                                <p class="fz-xs c-secondary">DEFAULT: false</p>
                             </dd>
                     </dl>
 

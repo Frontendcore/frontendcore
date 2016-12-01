@@ -42,9 +42,15 @@
 					oOptions.position = oTarget.getAttribute("data-fc-position");
 				}
 
+				if (oTarget.getAttribute("data-fc-interactive") === 'true') {
+					oOptions.interactive = true;
+					if (oTarget.getAttribute("data-fc-trigger") !== 'click') {
+						oTarget.setAttribute("data-fc-trigger",'click');
+					}
+				}
+
 				if (oTarget.getAttribute("data-fc-trigger") === 'click') {
 					oOptions.trigger = 'click';
-					oOptions.hideOnClick = true;
 
 					$(oTarget).click(function (e) {
 						e.preventDefault();

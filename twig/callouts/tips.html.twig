@@ -23,11 +23,17 @@
     <section class="box-lighten">
         <h2>Tip on click with close on click</h2>
         {{ demos.demo(
-            'text-fields',
+            'click-close-fields',
             '../../components/tip/html/tip-click-close.html'
         )}}
     </section>
-
+    <section class="box-lighten">
+        <h2>Interactive tip</h2>
+        {{ demos.demo(
+            'text-data-fc-interactive',
+            '../../components/tip/html/tip-interactive.html'
+        )}}
+    </section>
     {{ demos.settings(
     {
         "1" : {
@@ -43,6 +49,11 @@
             "name" :        "data-fc-trigger",
             "description" : "Set how tooltips should be activated and closed.",
             "default" : "hover"
+        },
+        "4" : {
+            "name" :        "data-fc-interactive",
+            "description" : "If it's set to true allows user to interact the tip.",
+            "default" : "false"
         }
     }
     )}}
