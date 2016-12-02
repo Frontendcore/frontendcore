@@ -69,6 +69,18 @@
 					oOptions.bufferPx = parseInt(oTarget.getAttribute("data-fc-buffer-px"));
 				}
 
+				if (oTarget.getAttribute("data-fc-loading-speed") !== null) {
+					oOptions.loading = oDefault.loading;
+					oOptions.loading.speed = parseInt(oTarget.getAttribute("data-fc-loading-speed"));
+				}
+
+				if (oTarget.getAttribute("data-fc-loading-text") !== null) {
+					if ( oOptions.loading === undefined ) {
+						oOptions.loading = oDefault.loading;
+					}
+					oOptions.loading.msgText = oTarget.getAttribute("data-fc-loading-text");
+				}
+
 				oSettings = FrontendTools.mergeOptions( oDefault, oOptions);
 
 				$(oTarget).infinitescroll(oSettings, function(arrayOfNewElems){
