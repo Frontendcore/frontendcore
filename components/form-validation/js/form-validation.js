@@ -7,6 +7,12 @@
 
 		function obscureSubmitButton( oTarget) {
 			$('button[type="submit"]', oTarget).addClass('_disabled');
+
+			if (isSafari) {
+				setTimeout( function(){
+					$('button[type="submit"]', oTarget).removeClass('_disabled').prop('disabled', false);
+				}, 1000);
+			}
 		}
 
 		function disableSubmitButton( oTarget) {
