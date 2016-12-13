@@ -10,8 +10,10 @@
 		}
 
 		function disableSubmitButton( oTarget) {
-			FrontendMediator.publish('form:success');
-			$('button[type="submit"]', oTarget).prop('disabled', true);
+			if ( oTarget.getAttribute('data-fc-disable-submit') !== 'false') {
+				FrontendMediator.publish('form:success');
+				$('button[type="submit"]', oTarget).prop('disabled', true);
+			}
 		}
 
 		function validateForm(oContext, oTarget, nIndex) {

@@ -1,0 +1,25 @@
+%modalClose {
+  & {
+    position: absolute;
+    top: $spacing/2;
+    right: $spacing/2;
+    display: block;
+    background: rgba(0,0,0,.5);
+    text-indent: -9999px;
+    box-shadow: none;
+    width: $spacing;
+    height: $spacing;
+    opacity: .8;
+    z-index: 999999;
+  }
+  &:after {
+    color: #FFF;
+    position: absolute;
+    right: $spacing/4;
+    content: "\2715";
+    text-indent: 0;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}

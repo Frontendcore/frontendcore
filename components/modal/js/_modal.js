@@ -222,10 +222,49 @@
 
 			},
 			open: function (oOptions) {
-				var self = this,
+
+				if (oOptions.href !== undefined || oOptions.href !== '#') {
+
+					var self = this,
+					oSettings,
+					sHref = oOptions.href,
+					aHrefHash = sHref.split('#');
+
+
+					if ( aHrefHash.length > 1 ) {
+						oOptions.inline = true;
+						oOptions.href = '#' + aHrefHash[1];
+
+						oOptions.onOpen = function() {
+							window.history.pushState({}, window.document.title, oOptions.href );
+						};
+
+						oOptions.onClosed = function() {
+							window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
+						};
+
+					} else {
+						if (!self.isImage(sHref)) {
+
+							oOptions.iframe = true;
+
+							if (oOptions.width === null) {
+								oOptions.width = nModalWidth;
+							}
+							if ( oOptions.height === null) {
+								oOptions.height = nModalHeight;
+							}
+						} else {
+							oOptions.iframe = false;
+							oOptions.photo = true;
+						}
+
+						oOptions.inline = false;
+						oOptions.href = sHref;
+					}
+
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-				if (oSettings.sUrl !== undefined || oSettings.sUrl !== '#') {
 					$.colorbox(oSettings);
 				}
 			},
