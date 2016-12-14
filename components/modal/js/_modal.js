@@ -182,6 +182,7 @@
 
 				if (oTarget.getAttribute("data-fc-close") === 'false' ) {
 					oOptions.closeButton = false;
+					oOptions.overlayClose = false;
 				}
 
 				if ( oTarget.getAttribute("data-fc-class") !== null ) {
@@ -261,6 +262,11 @@
 
 						oOptions.inline = false;
 						oOptions.href = sHref;
+					}
+
+					if ( oOptions.close === false) {
+						oOptions.closeButton = false;
+						oOptions.overlayClose = false;
 					}
 
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
