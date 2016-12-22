@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+
+    define('jQuery', ['jquery'], function (jq) {
+        return window.jQuery;
+    });
+
 	FrontendCore.domBoot(function (aModulesData) {
 		for (var nKey = 0; nKey < aModulesData.length; nKey++) {
 			FrontendTools.trackModule('JS_Libraries', 'execute', aModulesData[nKey].name);

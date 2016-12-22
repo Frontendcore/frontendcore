@@ -1,17 +1,20 @@
-;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
+;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $) {
 	'use strict';
 
-	FrontendCore.define('tip', [], function () {
+	FrontendCore.define('tip', ['tipLibs'], function () {
 		return {
 			oDefault: {
 				contentAsHTML: true,
 				position: 'bottom',
+                repositionOnScroll: true,
 				functionReady: function(origin, continueTooltip) {
-					$('body').css("overflow-x", "");
+					//$('body').css('overflow','auto');
+					FrontendMediator.publish('tip:open');
 				},
 				functionAfter: function(origin, continueTooltip) {
-					$('body').css("overflow-x", "");
-				}
+                    //$('body').css('overflow','');
+                    FrontendMediator.publish('tip:close');
+                }
 			},
 			onStart: function () {
 
@@ -51,11 +54,12 @@
 
 				if (oTarget.getAttribute("data-fc-trigger") === 'click') {
 					oOptions.trigger = 'click';
+				}
 
-					$(oTarget).click(function (e) {
-						e.preventDefault();
-					});
-
+				if ( oOptions.trigger === 'click') {
+                    $(oTarget).click(function (e) {
+                        e.preventDefault();
+                    });
 				}
 
 				if ( oContent !== null) {
@@ -85,13 +89,10 @@
 					} else {
 						$(oTarget).tooltipster(oSettings);
 					}
-
-
-
 				}
 
 			}
 		};
 	});
 
-})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);
+})(window, document, oGlobalSettings, FrontendTools, FrontendCore, FrontendMediator, $);

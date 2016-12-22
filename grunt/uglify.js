@@ -67,8 +67,12 @@ module.exports = function(grunt) {
 
 		// TIP
 		oCore.files[jsDest + '/ui/tip.js'] = [
-			fcCwd + '/bower/tooltipster/js/jquery.tooltipster.js',
 			fcCwd + '/components/tip/js/_tip.js'
+		];
+
+		// TIP LIBS
+		oCore.files[jsDest + '/ui/tipLibs.js'] = [
+			fcCwd + '/bower/tooltipster/dist/js/tooltipster.bundle.min.js'
 		];
 
 		// MODAL

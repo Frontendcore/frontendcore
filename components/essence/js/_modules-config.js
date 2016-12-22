@@ -9,7 +9,8 @@ if (!oGlobalSettings.oPaths) oGlobalSettings.oPaths = {};
 
 var oDefaultPaths = {
 		libs: oGlobalSettings.sPathJs,
-		polyfillsLibs : oGlobalSettings.sPathJsCore + "shims/polyfiller"
+		polyfillsLibs : oGlobalSettings.sPathJsCore + "shims/polyfiller",
+		jquery: window.jQuery,
 	},
 	aModules = [
 		'code',
@@ -31,6 +32,7 @@ var oDefaultPaths = {
 		'wysiwyg',
 		'truncate',
 		'tip',
+		'tipLibs',
 		'cart',
 		'polyfiller',
 		'parallax',
@@ -75,3 +77,4 @@ FrontendCore.config( {
 		}
 	}
 });
+
