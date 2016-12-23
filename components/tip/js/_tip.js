@@ -2,6 +2,9 @@
 	'use strict';
 
 	FrontendCore.define('tip', ['tipLibs'], function () {
+
+		var bindedElements = [];
+
 		return {
 			oDefault: {
 				contentAsHTML: true,
@@ -16,7 +19,7 @@
                     FrontendMediator.publish('tip:close');
                 }
 			},
-			onStart: function () {
+			onStart: function ( ) {
 
 				var aTargets = FrontendTools.getDataModules('tip'),
 					self = this;
@@ -30,6 +33,30 @@
 				});
 
 			},
+            bind: function (oTarget, oCustomOptions) {
+
+			    var oSettings,
+                    oOptions = oOptions === undefined ? oCustomOptions : {};
+
+                oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+
+                $(oTarget).tooltipster(oSettings);
+            },
+            open: function (oTarget) {
+                $(oTarget).tooltipster('open');
+            },
+            close: function (oTarget) {
+
+			    if (oTarget === undefined) {
+                    var instances = $.tooltipster.instances();
+                    $.each(instances, function(i, instance){
+                        instance.close();
+                    });
+                } else {
+                    $(oTarget).tooltipster('close');
+                }
+
+            },
 			autobind: function (oTarget, sData) {
 
 				var self = this,
@@ -41,54 +68,60 @@
 					oTarget.id = FrontendTools.getSelector(oTarget);
 				}
 
-				if (oTarget.getAttribute("data-fc-position") !== null) {
-					oOptions.position = oTarget.getAttribute("data-fc-position");
-				}
+                if ( bindedElements.indexOf(oTarget.id ) ==-1 ) {
 
-				if (oTarget.getAttribute("data-fc-interactive") === 'true') {
-					oOptions.interactive = true;
-					if (oTarget.getAttribute("data-fc-trigger") !== 'click') {
-						oTarget.setAttribute("data-fc-trigger",'click');
-					}
-				}
+                    bindedElements.push(oTarget.id);
 
-				if (oTarget.getAttribute("data-fc-trigger") === 'click') {
-					oOptions.trigger = 'click';
-				}
 
-				if ( oOptions.trigger === 'click') {
-                    $(oTarget).click(function (e) {
-                        e.preventDefault();
-                    });
-				}
+                    if (oTarget.getAttribute("data-fc-position") !== null) {
+                        oOptions.position = oTarget.getAttribute("data-fc-position");
+                    }
 
-				if ( oContent !== null) {
+                    if (oTarget.getAttribute("data-fc-interactive") === 'true') {
+                        oOptions.interactive = true;
+                        if (oTarget.getAttribute("data-fc-trigger") !== 'click') {
+                            oTarget.setAttribute("data-fc-trigger",'click');
+                        }
+                    }
 
-					if ( oContent.lastIndexOf('#', 0) === 0 ) {
-						oOptions.content = $(oContent);
-					} else {
-						oOptions.content = oContent;
-					}
-				}
+                    if (oTarget.getAttribute("data-fc-trigger") === 'click') {
+                        oOptions.trigger = 'click';
+                    }
 
-				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+                    if ( oOptions.trigger === 'click') {
+                        $(oTarget).click(function (e) {
+                            e.preventDefault();
+                        });
+                    }
 
-				if ( oSettings.content !== undefined ){
+                    if ( oContent !== null) {
 
-					if ( window.RoundTrip !== undefined) {
+                        if ( oContent.lastIndexOf('#', 0) === 0 ) {
+                            oOptions.content = $(oContent);
+                        } else {
+                            oOptions.content = oContent;
+                        }
+                    }
 
-						oSettings.trigger = 'click';
+                    oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-						FrontendTools.bind( oTarget , 'mouseover', function(currentTarget, e) {
+                    if ( oSettings.content !== undefined ){
 
-							$(currentTarget.target)
-								.tooltipster(oSettings)
-								.click();
+                        if ( window.RoundTrip !== undefined) {
 
-						});
-					} else {
-						$(oTarget).tooltipster(oSettings);
-					}
+                            oSettings.trigger = 'click';
+
+                            FrontendTools.bind( oTarget , 'mouseover', function(currentTarget, e) {
+
+                                $(currentTarget.target)
+                                    .tooltipster(oSettings)
+                                    .click();
+
+                            });
+                        } else {
+                            $(oTarget).tooltipster(oSettings);
+                        }
+                    }
 				}
 
 			}
