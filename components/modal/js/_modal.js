@@ -240,9 +240,16 @@
 							window.history.pushState({}, window.document.title, oOptions.href );
 						};
 
-						oOptions.onClosed = function() {
+						var defaultOnClosed = function() {
 							window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
 						};
+
+						if (oOptions.onClosed) {
+							oOptions.onClosed = (function(onCloseCb) { return function() {defaultOnClosed(); onCloseCb();}; })(oOptions.onClosed);
+						}
+						else {
+							oOptions.onClosed = defaultOnClosed;
+						}
 
 					} else {
 						if (!self.isImage(sHref)) {
