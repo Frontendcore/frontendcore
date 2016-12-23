@@ -10,9 +10,24 @@
 				contentAsHTML: true,
 				position: 'bottom',
                 repositionOnScroll: true,
-				functionReady: function(origin, continueTooltip) {
-					//$('body').css('overflow','auto');
-					FrontendMediator.publish('tip:open');
+				functionReady: function(instance, helper) {
+
+				    var aInstances = instance._$origin,
+                        content;
+
+				    for ( var nKey = 0; nKey < aInstances.length; nKey++ ) {
+				        if ( aInstances[nKey].dataset.fcCache === 'false' ) {
+
+				            content = aInstances[nKey].dataset.fcContent;
+
+                            if ( content.lastIndexOf('#', 0) === 0 ) {
+                                content= $(content);
+                            }
+                            instance.content(content);
+                        }
+                    }
+
+					FrontendMediator.publish('tip:open', { oTarget:instance._$origin });
 				},
 				functionAfter: function(origin, continueTooltip) {
                     //$('body').css('overflow','');
@@ -68,9 +83,9 @@
 					oTarget.id = FrontendTools.getSelector(oTarget);
 				}
 
-                if ( bindedElements.indexOf(oTarget.id ) ==-1 ) {
+                if ( $.inArray(oTarget.id.toString(), bindedElements) === -1 ) {
 
-                    bindedElements.push(oTarget.id);
+                    bindedElements.push(oTarget.id.toString());
 
 
                     if (oTarget.getAttribute("data-fc-position") !== null) {
@@ -120,6 +135,8 @@
                             });
                         } else {
                             $(oTarget).tooltipster(oSettings);
+
+
                         }
                     }
 				}
