@@ -83,6 +83,7 @@
 					oTarget.id = FrontendTools.getSelector(oTarget);
 				}
 
+
                 if ( $.inArray(oTarget.id.toString(), bindedElements) === -1 ) {
 
                     bindedElements.push(oTarget.id.toString());
@@ -128,9 +129,12 @@
 
                             FrontendTools.bind( oTarget , 'mouseover', function(currentTarget, e) {
 
-                                $(currentTarget.target)
-                                    .tooltipster(oSettings)
-                                    .click();
+                                if ( !$(currentTarget.target).hasClass('binded') ) {
+                                    $(currentTarget.target)
+                                        .addClass('binded')
+                                        .tooltipster(oSettings)
+                                        .click();
+                                }
 
                             });
                         } else {
