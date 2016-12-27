@@ -14,15 +14,16 @@
 				maxWidth: '100%',
 				maxHeight: '100%',
 				onComplete: function() {
+					FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
+				},
+                onOpen: function() {
                     var ycoord = $(window).scrollTop();
                     $('#colorbox').data('ycoord',ycoord);
                     ycoord = ycoord * -1;
-                    $('body').css('position','fixed').css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
-
-                    FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
-				},
+                    $('body').css('position','fixed').css('left','0px').css('right','0px').css('top',ycoord + 'px');
+                },
                 onClosed: function() {
-                    $('body').css('position','').css('left','auto').css('right','auto').css('overflow','initial').css('top','auto');
+                    $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
                     $(window).scrollTop($('#colorbox').data('ycoord'));
                 }
 			},
@@ -282,12 +283,7 @@
 			},
 			close: function () {
 				$.colorbox.close();
-				this.onClosed();
 			},
-            onClosed: function () {
-                $('body').css('position','').css('left','auto').css('right','auto').css('overflow','initial').css('top','auto');
-                $(window).scrollTop($('#colorbox').data('ycoord'));
-            },
 			onStop: function () {
 				this.sPathCss = null;
 				this.oDefault = null;
