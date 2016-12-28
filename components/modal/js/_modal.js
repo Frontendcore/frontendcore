@@ -14,17 +14,21 @@
 				maxWidth: '100%',
 				maxHeight: '100%',
 				onComplete: function() {
-                    var ycoord = $(window).scrollTop(),
-						sPosition = FrontendTools.isMobile.any() ? 'absolute' : 'fixed';
-                    $('#colorbox').data('ycoord',ycoord);
-                    ycoord = ycoord * -1;
-                    $('body').css('position',sPosition).css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
+                    var ycoord = $(window).scrollTop();
+
+                    if ( FrontendTools.isMobile.any() ) {
+                        $('#colorbox').data('ycoord',ycoord);
+                        ycoord = ycoord * -1;
+                        $('body').css('position','absolute').css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
+					}
 
                     FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
 				},
                 onClosed: function() {
-                    $('body').css('position','').css('left','auto').css('right','auto').css('overflow','initial').css('top','auto');
-                    $(window).scrollTop($('#colorbox').data('ycoord'));
+                    if ( FrontendTools.isMobile.any() ) {
+                        $('body').css('position', '').css('left', 'auto').css('right', 'auto').css('overflow', 'initial').css('top', 'auto');
+                        $(window).scrollTop($('#colorbox').data('ycoord'));
+                    }
                 }
 			},
 			onStart: function () {
@@ -286,8 +290,10 @@
 				this.onClosed();
 			},
             onClosed: function () {
-                $('body').css('position','').css('left','auto').css('right','auto').css('overflow','initial').css('top','auto');
-                $(window).scrollTop($('#colorbox').data('ycoord'));
+                if ( FrontendTools.isMobile.any() ) {
+                    $('body').css('position', '').css('left', 'auto').css('right', 'auto').css('overflow', 'initial').css('top', 'auto');
+                    $(window).scrollTop($('#colorbox').data('ycoord'));
+                }
             },
 			onStop: function () {
 				this.sPathCss = null;
