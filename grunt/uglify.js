@@ -2,16 +2,40 @@ module.exports = function(grunt) {
 
 	require(fcCwd + "/grunt/_data.js")(grunt);
 
-	var oConfig = {};
+
+	var bBeauty = oData.js !== undefined && oData.js.uglify !== undefined  && oData.js.uglify === false ? true : false,
+		oConfig = {},
+		oCore = {
+			options: {
+				preserveComments: false,
+				beautify: bBeauty
+			},
+			files: {}
+		};
+
+	if ( typeof oData.js.pkg  === 'object') {
+
+        var customObject = oData.js.pkg,
+			customKeys= Object.keys(customObject);
 
 
-	var oCore = {
-		options: {
-			preserveComments: false,
-			beautify: false
-		},
-		files: {}
-	};
+        for ( var key in customKeys) {
+
+            var customFiles = [];
+
+            for ( var file in customObject[customKeys[key]]) {
+                customFiles.push( appCwd + '/' + customObject[customKeys[key]][file] )
+
+            }
+
+            oCore.files[ appCwd + '/' + customKeys[key] ] = customFiles;
+
+        }
+
+
+    }
+
+
 
 	if (oData !== undefined) {
 
@@ -170,7 +194,7 @@ module.exports = function(grunt) {
 		var oRoundTrip = {
 			options: {
 				preserveComments: false,
-				beautify: false
+				beautify: bBeauty
 			},
 			files: {}
 		};
@@ -194,7 +218,7 @@ module.exports = function(grunt) {
 					src: ['*.js', '!_*.js'],
 					dest: jsDest + '/ui',
 					preserveComments: false,
-					beautify: true
+					beautify: bBeauty
 				}]
 			};
 		}
