@@ -19,7 +19,7 @@
                     if ( FrontendTools.isMobile.any() ) {
                         $('#colorbox').data('ycoord',ycoord);
                         ycoord = ycoord * -1;
-                        $('body').css('position','absolute').css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
+                        $('body').css('position','fixed').css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
 					}
 
                     FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );

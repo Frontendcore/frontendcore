@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 
-var param = process.argv[2],
+var bBower = false,
+    bCustomBower = false,
+    param = process.argv[2],
     scssCwd = process.argv[3],
     scssDest = process.argv[4],
     sys = require('sys'),
@@ -51,10 +53,10 @@ var aProjects = [],
     spawn = multiThreaded ? require('child_process').spawn : require('child_process').spawnSync,
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
-    exec = function( bin, params ) {
+    exec = function( bin, params, sPath ) {
 
         var child = spawn( bin, params, {
-            cwd: sFrontendCorePath,
+            cwd: sPath === undefined ? sFrontendCorePath : sPath,
             env: process.env
         });
 
@@ -191,17 +193,33 @@ if ( param === 'css:one') {
 
                 break;
             case "init":
-                console.log("INSTALL BOWER DEPENDENCIES");
 
-                exec( "node_modules/bower/bin/bower", ["install"] );
+                if ( bBower === false) {
+                    console.log("INSTALL FC BOWER DEPENDENCIES");
+                    exec("node_modules/bower/bin/bower", ["install"]);
+                    bBower = true;
+                }
 
-                break;
+
+            break;
+            case "bower":
+
+                if ( bCustomBower === false) {
+
+                    console.log("INSTALL CUSTOM BOWER DEPENDENCIES ");
+                    exec( sFrontendCorePath + "node_modules/bower/bin/bower", ["install"], sCurrentPath );
+                    bCustomBower = true;
+                }
+
+            break;
+
             case "watch":
             case "css":
             case "css:compile":
             case "docs":
             case "js":
             case "build":
+            case "updateLibs":
             case "icons":
 
                 aParams = [ param ,'--appCwd=' + sCurrentPath, '--fcCwd=' + sFrontendCorePath ];
