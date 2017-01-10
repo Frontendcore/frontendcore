@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 		},
         oAngular = {
             options: {
+                mangle: false,
                 preserveComments: false,
                 beautify: bBeauty
             },
@@ -198,8 +199,9 @@ module.exports = function(grunt) {
 
 		var oRoundTrip = {
 			options: {
+				mangle: false,
 				preserveComments: false,
-				beautify: false
+				beautify: bBeauty
 			},
 			files: {}
 		};
