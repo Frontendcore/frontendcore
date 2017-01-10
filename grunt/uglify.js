@@ -199,7 +199,7 @@ module.exports = function(grunt) {
 		var oRoundTrip = {
 			options: {
 				preserveComments: false,
-				beautify: bBeauty
+				beautify: false
 			},
 			files: {}
 		};
