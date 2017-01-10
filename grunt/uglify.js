@@ -11,13 +11,19 @@ module.exports = function(grunt) {
 				beautify: bBeauty
 			},
 			files: {}
-		};
+		},
+        oAngular = {
+            options: {
+                preserveComments: false,
+                beautify: bBeauty
+            },
+            files: {}
+        };
 
 	if ( typeof oData.js.pkg  === 'object') {
 
         var customObject = oData.js.pkg,
 			customKeys= Object.keys(customObject);
-
 
         for ( var key in customKeys) {
 
@@ -28,7 +34,7 @@ module.exports = function(grunt) {
 
             }
 
-            oCore.files[ appCwd + '/' + customKeys[key] ] = customFiles;
+            oAngular.files[ appCwd + '/' + customKeys[key] ] = customFiles;
 
         }
 
@@ -205,7 +211,8 @@ module.exports = function(grunt) {
 
 		oConfig = {
 			core: oCore,
-			rountrip: oRoundTrip
+			rountrip: oRoundTrip,
+			angular: oAngular
 		}
 
 		for (var nKey = 0; nKey < oComponents.length; nKey++) {
@@ -214,7 +221,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: fcCwd + '/components/' + oComponents[nKey] + '/js/',
-					src: ['*.js', '!_*.js'],
+					src: ['*.js', '!_*.js','!*.ng.js'],
 					dest: jsDest + '/ui',
 					preserveComments: false,
 					beautify: bBeauty

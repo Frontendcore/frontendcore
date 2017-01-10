@@ -36,6 +36,10 @@ module.exports = function(grunt) {
 				files: fcCwd + 'components/**/*.js',
 				tasks: ['js']
 			},
+			Angular: {
+				files: fcCwd + 'components/**/*.ng.js',
+				tasks: ['js:angular']
+			},
 			js: {
 				files: oJsFiles,
 				tasks: ['js:compile']
