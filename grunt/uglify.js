@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 
 		// MODAL
 		oCore.files[jsDest + '/ui/modal.js'] = [
-			fcCwd + '/bower/jquery-colorbox/jquery.colorbox.js',
+			fcCwd + '/bower/lightcase/src/js/lightcase.js',
 			fcCwd + '/components/modal/js/_modal.js'
 		];
 

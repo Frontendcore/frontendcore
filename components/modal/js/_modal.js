@@ -1,35 +1,143 @@
-;(function (window, oGlobalSettings, FrontendTools, FrontendCore, $) {
+;(function (window, oGlobalSettings, FrontendTools, FrontendCore, $, lightcase) {
 	'use strict';
 
 	FrontendCore.define('modal', [], function () {
 
 		var aTargets = FrontendTools.getDataModules('modal'),
-			nModalWidth = FrontendTools.isMobile.any() ? $(window).width() : '100%',
-			nModalHeight = FrontendTools.isMobile.any() ? $(window).height() : '100%';
+            sIdModal = '#lightcase-case';
+		
+		function addSizeOption(oOptions,sAttribute, sSize) {
+
+			var aTypes = ['inline','ajax','iframe','flash','video'];
+
+
+			if (sAttribute === 'width' && sSize < $(window).width()) {
+			    oOptions.forceWidth = true;
+            }
+
+			if (sAttribute === 'height' && sSize < $(window).height()) {
+			    oOptions.forceHeight = true;
+            }
+
+
+			for (var key in aTypes) {
+
+
+                if (oOptions[aTypes[key]] === undefined) {
+                    oOptions[aTypes[key]] = {};
+                }
+
+                oOptions[aTypes[key]][sAttribute] = sSize;
+			}
+
+			return oOptions;
+        }
+
+        function addCallbackOption(sAttribute, sKey, fpCallback, oOptions) {
+
+            if (oOptions[sAttribute] === undefined) {
+                oOptions[sAttribute] = {};
+            }
+
+            oOptions[sAttribute][sKey] = fpCallback;
+
+			return oOptions;
+        }
+
+
+        function addOption(oOptions, sAttribute, sValue ) {
+
+
+            var disableCloseButton = function() {
+                $('.lightcase-icon-close').addClass( 'd-n' );
+            };
+
+			switch (sAttribute) {
+				case 'width':
+                    oOptions = addSizeOption(oOptions, 'width', sValue  );
+                    //oOptions.forceWidth = true;
+                    oOptions.maxWidth = sValue;
+				break;
+				case 'height':
+                    oOptions = addSizeOption(oOptions, 'height', sValue );
+                    //oOptions.forceHeight = true;
+                    oOptions.maxHeight = sValue;
+				break;
+                case 'closeButton':
+                    oOptions = addCallbackOption('onStart', 'addClass', disableCloseButton , oOptions);
+                break;
+				case 'close':
+                    oOptions.closeOnOverlayClick = false;
+                    oOptions = addCallbackOption('onStart', 'addClass', disableCloseButton, oOptions);
+                break;
+				case 'href-suffix':
+                    oOptions.href = sValue;
+				break;
+				case 'class':
+                    oOptions = addCallbackOption('onFinish', 'addClass', function() {
+                        $(sIdModal).addClass( sValue );
+                    }, oOptions);
+				break;
+			}
+
+			return oOptions;
+        }
+
+        function popHistory(oOptions, sHref) {
+
+			var aHrefHash = sHref.split('#');
+
+            if ( aHrefHash.length > 1 ) {
+
+                oOptions = addCallbackOption('onStart', 'openHash', function() {
+                    window.history.pushState({}, window.document.title, '#' + aHrefHash[1]);
+                }, oOptions);
+
+                oOptions = addCallbackOption('onClose', 'closeHash', function() {
+                    window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
+                }, oOptions);
+
+            }
+
+            return oOptions;
+        }
+
+        function DefaultCallbacks(oOptions, sIdModal) {
+            oOptions = addCallbackOption('onFinish', 'domBoot', function() {
+                FrontendCore.domBoot( $(sIdModal)[0] );
+            }, oOptions);
+
+            oOptions = addCallbackOption('onFinish', 'autoBindClose', function() {
+
+                $('*[data-fc-close-modal="true"]', $(sIdModal)[0]).on('click', function (e) {
+                    e.preventDefault();
+                    lightcase.close();
+                });
+
+            }, oOptions);
+
+            return oOptions;
+        }
 
 		return {
 			oDefault: {
-			    fixed: true,
-				scrolling: true,
-				maxWidth: '100%',
-				maxHeight: '100%',
-				onComplete: function() {
-                    var ycoord = $(window).scrollTop();
-
-                    if ( FrontendTools.isMobile.any() ) {
-                        $('#colorbox').data('ycoord',ycoord);
-                        ycoord = ycoord * -1;
-                        $('body').css('position','fixed').css('left','0px').css('right','0px').css('overflow','hidden').css('top',ycoord + 'px');
-					}
-
-                    FrontendCore.domBoot( document.getElementById('cboxLoadedContent') );
-				},
-                onClosed: function() {
-                    if ( FrontendTools.isMobile.any() ) {
-                        $('body').css('position', '').css('left', 'auto').css('right', 'auto').css('overflow', 'initial').css('top', 'auto');
-                        $(window).scrollTop($('#colorbox').data('ycoord'));
-                    }
-                }
+                liveResize: true,
+                fullScreenModeForMobile: true,
+                maxWidth: '100%',
+                maxHeight: '100%',
+                overlayOpacity: 0.9,
+                slideshow: false,
+                slideshowAutoStart: true,
+				timeout: 5000,
+				swipe: true,
+                useKeys: true,
+                navigateEndless: true,
+                closeOnOverlayClick: true,
+                showTitle: true,
+				showCaption: true,
+                showSequenceInfo: true,
+                attrPrefix: 'fc-',
+                attr: 'data-fc-rel'
 			},
 			onStart: function () {
 
@@ -61,169 +169,130 @@
 
 				return sResult;
 			},
-			isImage: function( sHref ) {
+			autobind: function( oTarget) {
 
-				sHref = sHref.toLowerCase();
-
-				if (
-					sHref.indexOf('.jpg') !== -1 ||
-					sHref.indexOf('.png') !== -1 ||
-					sHref.indexOf('.gif') !== -1 ||
-					sHref.indexOf('.bmp') !== -1 ||
-					sHref.indexOf('.jpeg') !== -1 ||
-					sHref.indexOf('.svg') !== -1
-				) {
-					return true;
-				} else {
-					return false;
-				}
-			},
-			autobind: function (oTarget) {
-
-				var sRel,
-					aClasses,
-					self = this,
-					sHref = oTarget.href,
-					aHrefHash = sHref.split('#'),
+				var self = this,
+                    aClasses,
 					oSettings,
-					oOptions = {};
+                    sHref = oTarget.href,
+                    aHrefHash = sHref.split('#'),
+                    oOptions = {};
 
-				if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
+				// RELATED IMAGES
+                if (oTarget.className.indexOf('group') != -1) {
 
-					if ($('#modal-inline').length === 0) {
-						$('body').append('<div id="modal-inline" class="d-n"></div>');
-					}
-					if ($('#modal-preload').length === 0) {
-						$('body').append('<div id="modal-preload" class="d-n"></div>');
-					}
+                    aClasses = oTarget.className.split(' ');
 
-					$.get(aHrefHash[0], function(data) {
+                    for (var nCounter = 0; nCounter < aClasses.length; nCounter++) {
+                        if (aClasses[nCounter].indexOf('group') != -1) {
+                            oTarget.setAttribute('data-fc-rel','modal:' + aClasses[nCounter] );
+                        }
+                    }
+                }
 
-						var sHtml = self.stripTag(data, 'meta');
-						sHtml = self.stripTag(sHtml, 'script');
+				// FORCE WIDTH
+                if (oTarget.getAttribute("data-fc-width") !== null ) {
+                    oOptions = addOption(oOptions, 'width', oTarget.getAttribute("data-fc-width"));
+                }
 
-						$('#modal-preload').append(sHtml);
+                // FORCE HEIGHT
+                if (oTarget.getAttribute("data-fc-height") !== null ) {
+                    oOptions = addOption(oOptions, 'height', oTarget.getAttribute("data-fc-height"));
+                }
 
-						if ( document.getElementById(aHrefHash[1]) !== null ) {
-							var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
+                // EXTERNAL CONTENT TO INLINE
 
-							$('#modal-inline').append( sHtmlTarget );
-							$('#modal-preload').html('');
-						}
+                if (aHrefHash[0].toString() !== window.location.toString() && aHrefHash.length > 1 ) {
 
+                    if ($('#modal-inline').length === 0) {
+                        $('body').append('<div id="modal-inline" class="d-n"></div>');
+                    }
+                    if ($('#modal-preload').length === 0) {
+                        $('body').append('<div id="modal-preload" class="d-n"></div>');
+                    }
 
+                    $.get(aHrefHash[0], function(data) {
 
-					});
+                        var sHtml = self.stripTag(data, 'meta');
+                        sHtml = self.stripTag(sHtml, 'script');
 
-					oTarget.href = '#' + aHrefHash[1];
+                        $('#modal-preload').append(sHtml);
 
-				}
+                        if ( document.getElementById(aHrefHash[1]) !== null ) {
+                            var sHtmlTarget = document.getElementById(aHrefHash[1]).outerHTML;
 
-				if (oTarget.className.indexOf('group') != -1) {
+                            $('#modal-inline').append( sHtmlTarget );
+                            $('#modal-preload').html('');
+                        }
 
-					aClasses = oTarget.className.split(' ');
+                    });
 
-					sRel = '';
+                    oTarget.href = '#' + aHrefHash[1];
 
-					for (var nCounter = 0; nCounter < aClasses.length; nCounter++) {
-						if (aClasses[nCounter].indexOf('group') != -1) {
-							sRel = aClasses[nCounter];
-						}
-					}
-				}
+                }
 
-				if (sRel) {
-					oOptions.rel = sRel;
-				}
+                // #HISTORY URI
+                oOptions = popHistory(oOptions, sHref);
 
-				if (oTarget.getAttribute("data-fc-width") !== null ) {
-					oOptions.width = FrontendTools.isMobile.any() ? nModalWidth : oTarget.getAttribute("data-fc-width");
-				} else if (oOptions.width === undefined) {
-					oOptions.width = FrontendTools.isMobile.any() ? nModalWidth : false;
-				}
+                // DISABLE ALL CLOSE CONTROLS
+                if (oTarget.getAttribute("data-fc-close") === 'false' ) {
+                    oOptions = addOption(oOptions, 'close');
+                }
 
-				if (oTarget.getAttribute("data-fc-height") !== null ) {
-					oOptions.height =  FrontendTools.isMobile.any() ? nModalHeight : oTarget.getAttribute("data-fc-height");
-				} else if (oOptions.height === undefined) {
-					oOptions.height = FrontendTools.isMobile.any() ? nModalHeight : false;
-				}
+                // HIDE CLOSE BUTTON
+                if (oTarget.getAttribute("data-fc-close-button") === 'false' ) {
+                    oOptions = addOption(oOptions, 'closeButton');
+                }
 
-				if ( aHrefHash.length > 1 ) {
-					oOptions.inline = true;
-					oOptions.href = '#' + aHrefHash[1];
+                // HREF SUFFIX
+                if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
+                    oOptions = addOption(oOptions, 'href-suffix', oTarget.href + oTarget.getAttribute("data-fc-href-suffix"));
+                }
 
-					oOptions.onOpen = function() {
-						window.history.pushState({}, window.document.title, oOptions.href );
-					};
+                // ADD CLASS
+                if ( oTarget.getAttribute("data-fc-class") !== null ) {
+                    oOptions = addOption(oOptions, 'class', oTarget.getAttribute("data-fc-class"));
+                }
 
-					oOptions.onClosed = function() {
-						window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
-					};
-
-				} else {
-					if (!self.isImage(sHref)) {
-
-						oOptions.iframe = true;
-
-						if (oTarget.getAttribute("data-fc-width") === null) {
-							oOptions.width = nModalWidth;
-						}
-						if (oTarget.getAttribute("data-fc-height") === null) {
-							oOptions.height = nModalHeight;
-						}
-					} else {
-						oOptions.iframe = false;
-						oOptions.photo = true;
-					}
-
-					oOptions.inline = false;
-					oOptions.href = sHref;
-				}
-
-				if (oTarget.getAttribute("data-fc-href-suffix") !== null ) {
-					oOptions.href += oTarget.getAttribute("data-fc-href-suffix");
-				}
-
-				if (oTarget.getAttribute("data-fc-close") === 'false' ) {
-					oOptions.closeButton = false;
-					oOptions.overlayClose = false;
-				}
-
-				if ( oTarget.getAttribute("data-fc-class") !== null ) {
-					oOptions.className = oTarget.getAttribute("data-fc-class");
-				}
+                oOptions = DefaultCallbacks(oOptions, sIdModal);
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
+                // OPEN IF NOT MOBILE AND MOBILE DISABLED
 
-				if ( oTarget.getAttribute("data-fc-mobile") !== 'false' || !FrontendTools.isMobile.any() ) {
-					$(oTarget).colorbox(oSettings);
-				}
+                if ( oTarget.getAttribute("data-fc-mobile") === 'false' && FrontendTools.isMobile.any() ) {
+                } else {
+                    $(oTarget).lightcase(oSettings);
+                }
 
-				window.onpopstate = function(event)
-				{
-					$( aTargets ).each(function () {
 
-						var oTargetLink = this;
+                // OPEN MODAL ON POP STATE
+                window.onpopstate = function(event)
+                {
+                    $( aTargets ).each(function () {
 
-						if ( window.location.hash === ('#' + oTargetLink.href.split('#')[1]) ) {
-							$.colorbox.close();
-							setTimeout( function(){
+                        var oTargetLink = this;
 
-								$(oTargetLink).click();
-							}, 400);
+                        if ( window.location.hash === ('#' + oTargetLink.href.split('#')[1]) ) {
+                            self.close();
+                            setTimeout( function(){
+                                $(oTargetLink).click();
+                            }, 400);
 
-							return false;
+                            return false;
 
-						}
-					});
+                        }
+                    });
 
-				};
+                };
 
-				if ( window.location.hash === oSettings.href ) {
-					$.colorbox.close();
-					$(oTarget).click();
-				}
+                if ( aHrefHash.length > 1 ) {
+                    // OPEN MODAL ON PAGE
+                    if ( window.location.hash === '#' + aHrefHash[1] ) {
+                        self.close();
+                        $(oTarget).click();
+                    }
+                }
 
 			},
 			open: function (oOptions) {
@@ -232,69 +301,78 @@
 
 					var self = this,
 					oSettings,
-					sHref = oOptions.href,
-					aHrefHash = sHref.split('#');
+					sHref = oOptions.href;
 
 
-					if ( aHrefHash.length > 1 ) {
-						oOptions.inline = true;
-						oOptions.href = '#' + aHrefHash[1];
+					if (oOptions.onOpen !== undefined) {
+                        oOptions = addCallbackOption('onInit', 'onOpenManual', oOptions.onOpen, oOptions);
+                    }
+					if (oOptions.onLoad !== undefined) {
+                        oOptions = addCallbackOption('onStart', 'onLoadManual', oOptions.onLoad, oOptions);
+                    }
+					if (oOptions.onComplete !== undefined) {
+                        oOptions = addCallbackOption('onFinish', 'onCompleteManual', oOptions.onComplete, oOptions);
+                    }
+					if (oOptions.onCleanup !== undefined) {
+                        oOptions = addCallbackOption('onCleanup', 'onCleanupManual', oOptions.onCleanup, oOptions);
+                    }
+					if (oOptions.onClosed !== undefined) {
+                        oOptions = addCallbackOption('onClose', 'onClosedManual', oOptions.onClosed, oOptions);
+                    }
 
-						oOptions.onOpen = function() {
-							window.history.pushState({}, window.document.title, oOptions.href );
-						};
+                    // FORCE WIDTH
+                    if ( oOptions.width !== undefined ) {
+                        oOptions = addOption(oOptions, 'width', oOptions.width );
+                    }
 
-						var defaultOnClosed = function() {
-							window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
-						};
+                    // FORCE HEIGHT
+                    if ( oOptions.height !== undefined ) {
+                        oOptions = addOption(oOptions, 'height', oOptions.height );
+                    }
 
-						if (oOptions.onClosed) {
-							oOptions.onClosed = (function(onCloseCb) { return function() {defaultOnClosed(); onCloseCb();}; })(oOptions.onClosed);
-						}
-						else {
-							oOptions.onClosed = defaultOnClosed;
-						}
+                    // #HISTORY URI
+                    oOptions = popHistory(oOptions, sHref);
 
-					} else {
-						if (!self.isImage(sHref)) {
+                    // DISABLE ALL CLOSE CONTROLS
+                    if (oOptions.close === false ) {
+                        oOptions = addOption(oOptions, 'close');
+                    }
+                    // HIDE CLOSE CONTROLS
+                    if (oOptions.closeButton === false ) {
+                        oOptions = addOption(oOptions, 'closeButton');
+                    }
 
-							oOptions.iframe = true;
+                    // HREF SUFFIX
+                    if ( oOptions.hrefSuffix !== undefined ) {
+                        oOptions = addOption(oOptions, 'href-suffix', oOptions.href + oOptions.hrefSuffix );
+                    }
 
-							if (oOptions.width === null) {
-								oOptions.width = nModalWidth;
-							}
-							if ( oOptions.height === null) {
-								oOptions.height = nModalHeight;
-							}
-						} else {
-							oOptions.iframe = false;
-							oOptions.photo = true;
-						}
+                    // ADD CLASS
+                    if ( oOptions.class !== undefined ) {
+                        oOptions = addOption(oOptions, 'class', oOptions.class );
+                    }
 
-						oOptions.inline = false;
-						oOptions.href = sHref;
-					}
+                    oOptions = DefaultCallbacks(oOptions, sIdModal);
 
-					if ( oOptions.close === false) {
-						oOptions.closeButton = false;
-						oOptions.overlayClose = false;
-					}
+                    oOptions = addCallbackOption('onFinish', 'autoBindClose', function() {
+
+                        $('*[data-fc-close-modal="true"]', $(sIdModal)[0]).on('click', function (e) {
+                            e.preventDefault();
+                            lightcase.close();
+                        });
+
+                    }, oOptions);
+
 
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-					$.colorbox(oSettings);
+                    lightcase.start(oSettings);
+
 				}
 			},
 			close: function () {
-				$.colorbox.close();
-				this.onClosed();
+                lightcase.close();
 			},
-            onClosed: function () {
-                if ( FrontendTools.isMobile.any() ) {
-                    $('body').css('position', '').css('left', 'auto').css('right', 'auto').css('overflow', 'initial').css('top', 'auto');
-                    $(window).scrollTop($('#colorbox').data('ycoord'));
-                }
-            },
 			onStop: function () {
 				this.sPathCss = null;
 				this.oDefault = null;
@@ -306,4 +384,4 @@
 		};
 	});
 
-})(window, oGlobalSettings, FrontendTools, FrontendCore, $);
+})(window, oGlobalSettings, FrontendTools, FrontendCore, $, lightcase);

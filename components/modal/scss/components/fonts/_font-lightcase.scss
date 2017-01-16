@@ -1,0 +1,30 @@
+
+[class*='lightcase-icon-']:before {
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  height: .9em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 100%;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* Codes */
+.lightcase-icon-play:before { content: '\25B6'; }
+.lightcase-icon-pause:before { content: '\23F8'; }
+.lightcase-icon-close:before { content: '\2715'; }
+.lightcase-icon-prev:before { content: '\3008'; }
+.lightcase-icon-next:before { content: '\3009'; }
+.lightcase-icon-spin:before { content: '\25CC'; }

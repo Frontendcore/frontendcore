@@ -58,5 +58,8 @@
     "intl-tel-input": "^8.5.2",
     "lazysizes": "^2.0.0",
     "strength-meter": "^1.1.3"
+  },
+  "devDependencies": {
+    "lightcase": "^2.3.6"
   }
 }
