@@ -22,14 +22,14 @@
   }
 }
 
-input[type="number"][data-fc-modules="number-field"] {
+.form input[type="number"][data-fc-modules="number-field"], input[type="number"][data-fc-modules="number-field"]  {
   padding-right: $spacing/4;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
+    display: none !important;
     -webkit-appearance: none !important;
-    margin: 0;
     -moz-appearance:textfield !important;
-    position: inherit !important;
+    margin: 0;
   }
 }
 
