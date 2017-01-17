@@ -1,7 +1,5 @@
 #lightcase-content {
 
-
-
   // Not type: error
   #lightcase-case:not([data-lc-type=error]) & {
     @media screen and (min-width: #{map-get($lightcase-settings, 'breakpoint')}) {

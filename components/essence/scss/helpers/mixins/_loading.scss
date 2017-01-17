@@ -1,0 +1,43 @@
+@mixin loading($color-dark: rgba(0,0,0,.3), $color-light: rgba(255,255,255,.3), $big-width: 50px, $small-width: 0, $border-type: dotted) {
+  &:after, &:before {
+    content:" " !important;
+    border-radius: 50% !important;
+    border-width: 3px !important;
+    border-style: $border-type !important;
+    font-size: 1rem  !important;
+    display: block  !important;
+    text-align: center  !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    font-style: normal !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    line-height: 100% !important;
+    left: 50%;
+    top: 50%;
+  }
+  &:before {
+    border-color: $color-dark $color-light $color-dark $color-light !important;
+    width: $big-width!important;
+    height: $big-width!important;
+    margin-left: -($big-width/2) !important;
+    margin-top: -($big-width/2) !important;
+    animation: spin 2s infinite linear !important;
+  }
+  @if ( $small-width != 0) {
+    &:after {
+      border-color: $color-light $color-dark $color-light $color-dark  !important;
+      width: $small-width !important;
+      height: $small-width !important;
+      margin-left: -($small-width/2)!important;
+      margin-top: -($small-width/2) !important;
+      animation: spin-reverse 2s infinite linear !important;
+    }
+  } @else {
+    &:after {
+      display: none !important;
+    }
+  }
+
+}

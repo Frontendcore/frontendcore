@@ -1,4 +1,14 @@
 // Styles and overrides for all elements out of the lightcase scope
+.lightcase-fullScreenMode {
+  height: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  body {
+    height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
 .lightcase-open {
 
   body {
@@ -10,7 +20,7 @@
     }
 
     @media screen and (max-width: #{map-get($lightcase-settings, 'breakpoint')-1}) {
-      padding: 55px 0 70px 0;
+      padding: $spacing 0 $spacing 0;
 
       & > *:not([id*='lightcase-']) {
         position: fixed !important;

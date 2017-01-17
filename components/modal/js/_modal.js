@@ -176,7 +176,8 @@
 					oSettings,
                     sHref = oTarget.href,
                     aHrefHash = sHref.split('#'),
-                    oOptions = {};
+                    oOptions = {},
+                    nMobileHeight = $(window).height() - 80;
 
 				// RELATED IMAGES
                 if (oTarget.className.indexOf('group') != -1) {
@@ -191,13 +192,13 @@
                 }
 
 				// FORCE WIDTH
-                if (oTarget.getAttribute("data-fc-width") !== null ) {
+                if (oTarget.getAttribute("data-fc-width") !== null && !FrontendTools.isMobile.any() ) {
                     oOptions = addOption(oOptions, 'width', oTarget.getAttribute("data-fc-width"));
                 }
 
                 // FORCE HEIGHT
-                if (oTarget.getAttribute("data-fc-height") !== null ) {
-                    oOptions = addOption(oOptions, 'height', oTarget.getAttribute("data-fc-height"));
+                if (oTarget.getAttribute("data-fc-height") !== null || FrontendTools.isMobile.any()  ) {
+                    oOptions = addOption(oOptions, 'height', FrontendTools.isMobile.any() ? nMobileHeight : oTarget.getAttribute("data-fc-height") );
                 }
 
                 // EXTERNAL CONTENT TO INLINE
