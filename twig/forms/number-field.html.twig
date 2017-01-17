@@ -1,0 +1,15 @@
+{% set current_children = "Number Field" %}
+{% set current_section = "Forms" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+{% block main %}
+    {{ demos.demo(
+        'custom-number-field',
+        PathComponents ~ 'form-number-field/html/simple.html',
+        false,false,true
+    )}}
+{% endblock %}
+

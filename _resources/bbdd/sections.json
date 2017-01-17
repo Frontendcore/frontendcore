@@ -290,6 +290,12 @@
           "href": "text-fields.html",
           "done" : true
         },
+        "Number Field": {
+          "name": "Number Field",
+          "href": "number-field.html",
+          "js": true,
+          "done" : true
+        },
         "Number Fields": {
           "name": "Number Fields",
           "href": "number-fields.html",
