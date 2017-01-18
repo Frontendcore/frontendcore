@@ -1,4 +1,4 @@
-@mixin loading($color-dark: rgba(0,0,0,.3), $color-light: rgba(255,255,255,.3), $big-width: 50px, $small-width: 0, $border-type: dotted) {
+@mixin loading($color-base: #000, $big-width: 50px, $small-width: 0, $border-type: solid) {
   &:after, &:before {
     content:" " !important;
     border-radius: 50% !important;
@@ -18,7 +18,7 @@
     top: 50%;
   }
   &:before {
-    border-color: $color-dark $color-light $color-dark $color-light !important;
+    border-color: rgba($color-base,.3) rgba($color-base,.26) rgba($color-base,.22) rgba($color-base,.18) !important;
     width: $big-width!important;
     height: $big-width!important;
     margin-left: -($big-width/2) !important;
@@ -27,7 +27,7 @@
   }
   @if ( $small-width != 0) {
     &:after {
-      border-color: $color-light $color-dark $color-light $color-dark  !important;
+      border-color: rgba($color-base,.18) rgba($color-base,.22) rgba($color-base,.26) rgba($color-base,.3) !important;
       width: $small-width !important;
       height: $small-width !important;
       margin-left: -($small-width/2)!important;

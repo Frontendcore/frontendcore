@@ -198,7 +198,8 @@
 
                 // FORCE HEIGHT
                 if (oTarget.getAttribute("data-fc-height") !== null || FrontendTools.isMobile.any()  ) {
-                    oOptions = addOption(oOptions, 'height', FrontendTools.isMobile.any() ? nMobileHeight : oTarget.getAttribute("data-fc-height") );
+                    oOptions = addOption(oOptions, 'height', FrontendTools.isMobile.any()  ? nMobileHeight : oTarget.getAttribute("data-fc-height") );
+
                 }
 
                 // EXTERNAL CONTENT TO INLINE
