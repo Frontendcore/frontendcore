@@ -1,5 +1,5 @@
 #lightcase-loading {
-  @include loading(#FFF, transparent);
+  @include loading(#FFF);
   position: fixed;
   z-index: 2001;
   top: 50%;

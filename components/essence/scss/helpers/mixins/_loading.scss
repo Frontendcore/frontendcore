@@ -18,7 +18,7 @@
     top: 50%;
   }
   &:before {
-    border-color: rgba($color-base,.3) rgba($color-base,.26) rgba($color-base,.22) rgba($color-base,.18) !important;
+    border-color: rgba($color-base,.5) rgba($color-base,.46) rgba($color-base,.43) rgba($color-base,.4) !important;
     width: $big-width!important;
     height: $big-width!important;
     margin-left: -($big-width/2) !important;
@@ -27,7 +27,7 @@
   }
   @if ( $small-width != 0) {
     &:after {
-      border-color: rgba($color-base,.18) rgba($color-base,.22) rgba($color-base,.26) rgba($color-base,.3) !important;
+      border-color: rgba($color-base,.4) rgba($color-base,.43) rgba($color-base,.46) rgba($color-base,.5) !important;
       width: $small-width !important;
       height: $small-width !important;
       margin-left: -($small-width/2)!important;
