@@ -2,18 +2,27 @@
 	& {
 		padding: 0;
 		margin: 0;
-		display: initial;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		margin-bottom: $spacing;
 	}
 	.button {
 		& {
-			margin-right: 1px;
-			border-radius: 0;
+			flex:1 1 auto;
+			margin: 0;
+			border-radius: 0 !important;
+		}
+		&._hollow {
+			&:not(:last-child) {
+				border-right-color: transparent;
+			}
 		}
 		&:first-child {
-			border-radius: $default-border-radius 0 0 $default-border-radius;
+			border-radius: $default-border-radius 0 0 $default-border-radius !important;
 		}
 		&:last-child {
-			border-radius: 0 $default-border-radius $default-border-radius 0;
+			border-radius: 0 $default-border-radius $default-border-radius 0 !important;
 		}
 	}
 

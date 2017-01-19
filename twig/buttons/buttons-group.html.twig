@@ -7,8 +7,14 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
+    <h2>Link buttons group</h2>
     {{ demos.demo(
-        'buttons',
-        '../../components/buttons/html/buttons-group.html'
+        'buttons-a',
+        '../../components/buttons/html/buttons-group-a.html'
+    )}}
+    <h2>Button buttons group</h2>
+    {{ demos.demo(
+        'buttons-button',
+        '../../components/buttons/html/buttons-group-button.html'
     )}}
 {% endblock %}
