@@ -5,8 +5,25 @@
 
 		var aTargets = FrontendTools.getDataModules('modal'),
             sIdModal = '#lightcase-case';
-		
-		function addSizeOption(oOptions,sAttribute, sSize) {
+
+        var currentScroll=0;
+        function lockscroll(){
+            $(window).scrollTop(currentScroll);
+        }
+
+
+        function disable_scroll() {
+            //currentScroll=$(window).scrollTop();
+            //$(window).bind('scroll',lockscroll);
+        }
+
+        function enable_scroll() {
+            //currentScroll=$(window).scrollTop();
+           //$(window).unbind('scroll');
+        }
+
+
+        function addSizeOption(oOptions,sAttribute, sSize) {
 
 			var aTypes = ['inline','ajax','iframe','flash','video'];
 
@@ -103,6 +120,47 @@
         }
 
         function DefaultCallbacks(oOptions, sIdModal) {
+
+            if (oOptions.onlyScrollOn !== undefined && oOptions.bBodyBinded !== true) {
+
+                oOptions.bBodylocked = true;
+
+                oOptions = addCallbackOption('onFinish', 'onlyScrollOn', function() {
+
+                    $('body').bind('mousewheel', function(e) {
+                        if(oOptions.bBodylocked) {
+                            var $div = $(oOptions.onlyScrollOn);
+
+                            $div.scrollTop($div.scrollTop() - e.originalEvent.wheelDelta);
+
+                            return false;
+                        }
+                    });
+                    oOptions.bBodyBinded = true;
+
+                }, oOptions);
+
+                oOptions = addCallbackOption('onClose', 'disableOnlyScrollOn', function() {
+                    oOptions.bBodylocked = false;
+                }, oOptions);
+            }
+
+            oOptions = addCallbackOption('onFinish', 'checkOverlay', function() {
+
+                var $overlay = $('#lightcase-overlay');
+
+                if (  $overlay.css('opacity') === 0) {
+                   setTimeout( function () {
+                       $overlay.css({
+                           opacity: 0.9,
+                           display: 'block'
+                       });
+                   }, 500);
+
+                }
+            }, oOptions);
+
+
             oOptions = addCallbackOption('onFinish', 'domBoot', function() {
                 FrontendCore.domBoot( $(sIdModal)[0] );
             }, oOptions);
@@ -123,8 +181,8 @@
 			oDefault: {
                 liveResize: true,
                 fullScreenModeForMobile: true,
-                maxWidth: '100%',
-                maxHeight: '100%',
+                maxWidth:  $(window).width() < 700 ? '100%': '90%',
+                maxHeight: $(window).width() < 700 ? '100%': '90%',
                 overlayOpacity: 0.9,
                 slideshow: false,
                 slideshowAutoStart: true,
@@ -355,15 +413,6 @@
                     }
 
                     oOptions = DefaultCallbacks(oOptions, sIdModal);
-
-                    oOptions = addCallbackOption('onFinish', 'autoBindClose', function() {
-
-                        $('*[data-fc-close-modal="true"]', $(sIdModal)[0]).on('click', function (e) {
-                            e.preventDefault();
-                            lightcase.close();
-                        });
-
-                    }, oOptions);
 
 
 					oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);

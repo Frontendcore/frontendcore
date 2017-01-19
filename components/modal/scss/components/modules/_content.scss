@@ -56,7 +56,7 @@
         // Set auto height to each element except iframes, because of that
         // those cannot have a natural/native height and it must be especially defined.
         & > *:not(iframe) {
-          height: auto !important;
+          height: auto;
           max-height: none !important;
         }
       }
@@ -108,7 +108,9 @@
 
   // Content - Extend with further selectors and colors in case you have
   // elements like <ul>, <li>, <span> or other as part of content within lightcase.
-  h1, h2, h3, h4, h5, h6, p {
+  & > h1, & > h2, & > h3, & > h4, & > h5, & > h6, & > p {
+    text-shadow: #{map-get($lightcase-settings, 'text-shadow')};
+
     @media screen and (max-width: #{map-get($lightcase-settings, 'breakpoint')-1}) {
       color: #{map-get($lightcase-settings, 'text-color-viewport-small')};
     }
