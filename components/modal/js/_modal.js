@@ -128,7 +128,8 @@
                 oOptions = addCallbackOption('onFinish', 'onlyScrollOn', function() {
 
                     $('body').bind('mousewheel', function(e) {
-                        if(oOptions.bBodylocked && $(sIdModal).css('opacity') !== 0 ) {
+
+                        if(oOptions.bBodylocked && $(sIdModal).css('opacity') !== '0' ) {
                             var $div = $(oOptions.onlyScrollOn);
 
                             $div.scrollTop($div.scrollTop() - e.originalEvent.wheelDelta);
