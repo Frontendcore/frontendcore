@@ -128,7 +128,7 @@
                 oOptions = addCallbackOption('onFinish', 'onlyScrollOn', function() {
 
                     $('body').bind('mousewheel', function(e) {
-                        if(oOptions.bBodylocked) {
+                        if(oOptions.bBodylocked && $(sIdModal).css('opacity') !== 0 ) {
                             var $div = $(oOptions.onlyScrollOn);
 
                             $div.scrollTop($div.scrollTop() - e.originalEvent.wheelDelta);
@@ -235,7 +235,7 @@
                     sHref = oTarget.href,
                     aHrefHash = sHref.split('#'),
                     oOptions = {},
-                    nMobileHeight = $(window).height() - 80;
+                    nMobileHeight = document.documentElement.clientHeight - 100;
 
 				// RELATED IMAGES
                 if (oTarget.className.indexOf('group') != -1) {
