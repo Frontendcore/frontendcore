@@ -18,7 +18,9 @@ var FrontendTools = {},
 		instantiate: TinyCore.Module.instantiate,
 		debug : function( bDebug ) {
 			TinyCore.debugMode = bDebug;
-		}
+		},
+		//Frontend core angular module definition
+		ngModule:null
 	},
 	FrontendMediator = TinyCore.Toolbox.request( 'mediator' );
 

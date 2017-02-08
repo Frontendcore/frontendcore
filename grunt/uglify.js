@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 		oCore = {
 			options: {
 				preserveComments: false,
-				beautify: bBeauty
+				beautify: bBeauty,
+				mangle: true
 			},
 			files: {}
 		},
@@ -38,11 +39,7 @@ module.exports = function(grunt) {
             oAngular.files[ appCwd + '/' + customKeys[key] ] = customFiles;
 
         }
-
-
     }
-
-
 
 	if (oData !== undefined) {
 
@@ -225,6 +222,20 @@ module.exports = function(grunt) {
 					cwd: fcCwd + '/components/' + oComponents[nKey] + '/js/',
 					src: ['*.js', '!_*.js','!*.ng.js'],
 					dest: jsDest + '/ui',
+					preserveComments: false,
+					beautify: bBeauty
+				}]
+			};
+		}
+
+		//generate Ng files
+		for (var nKeyNg = 0; nKeyNg < oComponents.length; nKeyNg++) {
+			oConfig[oComponents[nKeyNg]+'-ng'] = {
+				files: [{
+					expand: true,
+					cwd: fcCwd + '/components/' + oComponents[nKeyNg] + '/ng/',
+					src: ['*.ng.js'],
+					dest: jsDest + '/ng',
 					preserveComments: false,
 					beautify: bBeauty
 				}]
