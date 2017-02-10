@@ -1,0 +1,16 @@
+.button {
+  &._small-mobile {
+    @extend %button_small;
+  }
+  &._large-mobile {
+    @extend %button_large;
+  }
+  &._icon {
+    &._large-mobile {
+      @extend %button_icon_large;
+    }
+    &._small-mobile {
+      @extend %button_icon_small;
+    }
+  }
+}

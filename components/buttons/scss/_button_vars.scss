@@ -23,6 +23,17 @@ $object-buttons-vars-default: (
 	large-font-size: $font-size-l,
 	large-padding: $spacing/4 $spacing,
 
+	/* Button Icons */
+	icon-default-font-size: $font-size-m,
+	icon-default-width: $font-size-m + (($spacing/3)*2),
+	icon-default-height: $font-size-m + (($spacing/3)*2),
+	icon-large-font-size: $font-size-l,
+	icon-large-width: $font-size-l + (($spacing/4)*2),
+	icon-large-height: $font-size-l + (($spacing/4)*2),
+	icon-small-font-size: $font-size-s,
+	icon-small-width: $font-size-s + (($spacing/6)*2),
+	icon-small-height: $font-size-s + (($spacing/6)*2),
+
 	/* Default button */
 	default-background: $color-foreground-light,
 	default-color: $color-background,

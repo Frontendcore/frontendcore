@@ -1,19 +1,15 @@
 .box {
 	& {
 		box-sizing: border-box;
-		@if $default-border-radius > 0 {
-			border-radius: $default-border-radius;
-		}
-		margin-bottom: $spacing;
-		padding: $spacing;
+		border-radius: map_get($object-boxes-vars, border-radius);
+		margin-bottom: map_get($object-boxes-vars, mobile-margin-bottom);
+		padding: map_get($object-boxes-vars, mobile-padding);
+		border: map_get($object-boxes-vars, border);
 		overflow: hidden;
 		background: $color-box;
 		color: contrast-color($color-box);
 		position: relative;
 
-	}
-	&._lighten {
-		background: $color-background;
 	}
 	&._background {
 		& {
@@ -26,6 +22,9 @@
 		&._background {
 			border: 1px solid $color-box;
 		}
+		&._hollow {
+			border-color: $color-background;
+		}
 	}
 
 	&._empty {
@@ -35,36 +34,51 @@
 	&._foreground {
 		background: $color-foreground;
 		color: contrast-color($color-foreground);
+		&._hollow {
+			border-color: $color-foreground;
+		}
 	}
 
 	&._success {
 		background: $color-success;
 		color: contrast-color(darken($color-success, 10%));
+		&._hollow {
+			border-color: $color-success;
+		}
 	}
 
 	&._error {
 		background: $color-error;
 		color: contrast-color($color-error, $color-foreground, $color-background);
+		&._hollow {
+			border-color: $color-error;
+		}
 	}
 
 	&._info {
 		background: $color-info;
 		color: contrast-color($color-info, $color-foreground, $color-background);
+		&._hollow {
+			border-color: $color-info;
+		}
 	}
 
 	&._warning {
 		background: $color-warning;
 		color: contrast-color($color-warning, $color-foreground, $color-background);
+		&._hollow {
+			border-color: $color-warning;
+		}
 	}
 
 	&._darken {
-		@include background-transparent($color-foreground, .3);
+		@include background-transparent($color-foreground, map_get($object-boxes-vars, darken-modifier));
 		color: $color-background;
 		box--shadow: none;
 	}
 
 	&._lighten {
-		@include background-transparent($color-background, .3);
+		@include background-transparent($color-background,map_get($object-boxes-vars, lighten-modifier));
 		color: $color-foreground;
 		box--shadow: none;
 	}
@@ -77,10 +91,34 @@
 		a {
 			color: contrast-color($color-primary, $color-foreground, $color-background);
 		}
+		&._hollow {
+			border-color: $color-primary;
+			color: $color-foreground;
+			a {
+				color: $color-link;
+			}
+		}
 	}
 
 	&._secondary {
-		background: $color-secondary;
-		color: $color-background;
+		& {
+			background: $color-secondary;
+			color: contrast-color($color-secondary, $color-foreground, $color-background);
+		}
+		a {
+			color: contrast-color($color-secondary, $color-foreground, $color-background);
+		}
+		&._hollow {
+			border-color: $color-secondary;
+			color: $color-foreground;
+			a {
+				color: $color-link;
+			}
+		}
 	}
+	&._hollow {
+		border: map_get($object-boxes-vars, border-hollow);
+		background: transparent;
+	}
+
 }

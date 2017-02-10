@@ -3,6 +3,8 @@
 @import "../components/essence/scss/fc-screen-xs_essence";
 @import "../components/essence/scss/frontendcore";
 @import "../components/grids/scss/grids_screen-s_screen-xs";
+@import "../components/boxes/scss/boxes_vars";
+@import "../components/typography/scss/fonts_vars";
 @import "../components/form/scss/form_pattern";
 @import "../components/buttons/scss/button_vars";
 @import "../components/buttons/scss/buttons_pattern";
@@ -15,6 +17,6 @@
 @import "../components/image-polaroid/scss/pattern";
 @import "../components/visibility/scss/screen-xs";
 @import "objects/layout_mobile_tablet";
-@import "../components/boxes/scss/boxes_mobile";
+@import "../components/buttons/scss/buttons_mobile";
 @import "../components/table/scss/mobile";
 @import "../components/tabs/scss/tabs_mobile_tablet";

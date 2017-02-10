@@ -1,0 +1,4 @@
+.box {
+  margin-bottom: map_get($object-boxes-vars, tablet-margin-bottom);
+  padding: map_get($object-boxes-vars, tablet-padding);
+}

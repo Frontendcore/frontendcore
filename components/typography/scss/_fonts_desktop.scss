@@ -1,23 +1,16 @@
-h1, .h1 {
-  font-size: $font-size-xxxl;
+@for $h from 1 through 6 {
+  h#{$h}, .h#{$h} {
+    @if map-get($object-fonts-vars, h#{$h}-font-size-desktop) != initial {
+      font-size: map-get($object-fonts-vars, h#{$h}-font-size-desktop);
+    } @elseif map-get($fonts, size-ratio-default) != map-get($fonts, size-ratio-desktop) {
+      font-size: map-get($object-fonts-vars, h#{$h}-font-size);
+    }
+  }
 }
 
-h2, .h2 {
-  font-size: $font-size-xxl;
+@if map-get($fonts, size-ratio-default) != map-get($fonts, size-ratio-desktop) {
+  small, .small {
+    font-size: map-get($object-fonts-vars, small-font-size );
+  }
 }
 
-h3, .h3 {
-  font-size: $font-size-xl;
-}
-
-h4, .h4 {
-  font-size: $font-size-l;
-}
-
-h5, .h5 {
-  font-size: $font-size-m;
-}
-
-h6, .h6 {
-  font-size: $font-size-default;
-}

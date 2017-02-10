@@ -1,0 +1,18 @@
+$object-boxes-vars-default: (
+  border-radius: $default-border-radius,
+  mobile-margin-bottom: $spacing/2,
+  mobile-padding: $spacing/2,
+  tablet-margin-bottom: $spacing,
+  tablet-padding: $spacing,
+  desktop-margin-bottom: $spacing,
+  desktop-padding: $spacing,
+  darken-modifier: .3,
+  lighten-modifier: .3,
+  border: 0px none,
+  border-hollow: 1px solid $color-box,
+
+) !global !default;
+
+$object-boxes-vars-custom: () !global !default;
+
+$object-boxes-vars: map-merge($object-boxes-vars-default, $object-boxes-vars-custom) !global;

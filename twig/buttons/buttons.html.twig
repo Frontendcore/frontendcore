@@ -7,27 +7,30 @@
 
 {% extends "../_layout/_object.html.twig" %}
 
+
 {% block object_demo %}
     <h2>Default buttons</h2>
     {{ demos.demo(
         'buttons',
         '../../components/buttons/html/buttons.html'
     )}}
-
      <hr />
-        <h2>Small buttons</h2>
-        {{ demos.demo(
-            'button-slim',
-            '../../components/buttons/html/buttons-slim.html'
-        )}}
-    </section>
+    <h2>Small buttons</h2>
+    {{ demos.demo(
+        'button-slim',
+        '../../components/buttons/html/buttons-slim.html'
+    )}}
     <hr />
-        <h2>Large buttons</h2>
-        {{ demos.demo(
-            'button-fat',
-            '../../components/buttons/html/buttons-fat.html'
-        )}}
-    </section>
+    <h2>Large buttons</h2>
+    {{ demos.demo(
+        'button-fat',
+        '../../components/buttons/html/buttons-fat.html'
+    )}}
+    <h2>Icon with hover buttons</h2>
+    {{ demos.demo(
+        'button-icon',
+        '../../components/buttons/html/buttons-icons.html'
+    )}}
 {% endblock object_demo %}
 
 

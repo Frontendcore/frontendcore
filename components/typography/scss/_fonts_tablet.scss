@@ -1,0 +1,7 @@
+@for $h from 1 through 6 {
+  @if map-get($object-fonts-vars, h#{$h}-font-size-tablet) != initial {
+    h#{$h}, .h#{$h} {
+      font-size: map-get($object-fonts-vars, h#{$h}-font-size-tablet );
+    }
+  }
+}

@@ -16,36 +16,10 @@
 	}
 
 	&._small {
-		& {
-			padding: $spacing/4 $spacing/2;
-			font-family: map-get($object-buttons-vars, small-font-family);
-			font-weight: map-get($object-buttons-vars, small-font-weight);
-			font-size: map-get($object-buttons-vars, small-font-size);
-		}
-		[class^='icon-'] {
-			margin-right: $spacing/8;
-		}
+		@extend %button_small;
 	}
 	&._large {
-		& {
-			padding: $spacing/2 $spacing*1.5;
-			font-family: map-get($object-buttons-vars, large-font-family);
-			font-weight: map-get($object-buttons-vars, large-font-weight);
-			font-size: map-get($object-buttons-vars, large-font-size);
-		}
-		[class^='icon-'] {
-			margin-right: $spacing/2;
-		}
-	}
-	&._large {
-		padding: $spacing/4 $spacing;
-		font-size: $font-size-xl;
-	}
-
-	&._small {
-		padding: map-get($object-buttons-vars, small-padding);
-		font-size: $font-size-s;
-
+		@extend %button_large;
 	}
 	&._primary {
 		background: map-get($object-buttons-vars, primary-background);
@@ -104,7 +78,15 @@
 		opacity: .2;
 		cursor: default;
 	}
-
+	&._icon {
+		@extend %button_icon;
+		&._large {
+			@extend %button_icon_large;
+		}
+		&._small {
+			@extend %button_icon_small;
+		}
+	}
 }
 
 input[type='button'],

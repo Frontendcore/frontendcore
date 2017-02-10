@@ -1,4 +1,8 @@
 .box {
-  margin-bottom: $spacing;
-  padding: $spacing/2;
+  &._mobile-none {
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0px !important;
+    margin: 0 !important;
+  }
 }

@@ -1,0 +1,16 @@
+.button {
+  &._small-desktop {
+    @extend %button_small;
+  }
+  &._large-desktop {
+    @extend %button_large;
+  }
+  &._icon {
+    &._large-desktop {
+      @extend %button_icon_large;
+    }
+    &._small-desktop {
+      @extend %button_icon_small;
+    }
+  }
+}

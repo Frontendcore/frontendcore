@@ -65,8 +65,8 @@ transform: rotate(359deg);
 [class*=" <%= classPrefix %>"]<% } %><% if (addLigatures) { %>,
 .ligature-icons<% } %> {
 	font-family:"<%= fontBaseName %>";
-	display:inline-block;
-	vertical-align:middle;
+	display:inline;
+	vertical-align: text-bottom;
 	line-height:1;
 	font-weight:normal;
 	font-style:normal;
@@ -76,6 +76,15 @@ transform: rotate(359deg);
 	text-rendering:auto;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
+}<% } %>
+<% if (baseStyles) { %>
+/* Bootstrap Overrides */
+i[class^="<%= classPrefix %>"]:before,
+i[class*=" <%= classPrefix %>"]:before<% if (ie7) {%>,
+i[class^="<%= classPrefix %>"],
+i[class*=" <%= classPrefix %>"]<% } %><% if (addLigatures) { %>,
+.ligature-icons<% } %> {
+	vertical-align: middle;
 }<% } %>
 <% if (iconsStyles && stylesheet === 'less') { %>
 /* Mixins */
@@ -94,6 +103,8 @@ a [class^="<%= classPrefix %>"],
 a [class*=" <%= classPrefix %>"] {
 	display:inline-block;
 	text-decoration:inherit;
+	vertical-align:baseline;
+
 }
 /* Makes the font 33% larger relative to the icon container */
 .<%= classPrefix %>large:before {

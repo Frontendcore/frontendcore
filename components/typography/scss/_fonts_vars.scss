@@ -1,0 +1,105 @@
+$object-fonts-vars-default: (
+
+  /* H1 */
+  h1-color: $color-foreground,
+  h1-font-family: $font-face-title,
+  h1-font-size: $font-size-xxxl,
+  h1-font-size-tablet: initial,
+  h1-font-size-desktop: initial,
+  h1-font-style: normal,
+  h1-font-weight: map-get($fonts, weight-title),
+  h1-line-height: map-get($fonts, line-height-title),
+  h1-letter-spacing: initial,
+  h1-word-spacing: initial,
+  h1-padding: 0,
+  h1-margin: 0 0 $spacing/2 0,
+
+  /* h2 */
+  h2-color: $color-foreground,
+  h2-font-family: $font-face-title,
+  h2-font-size: $font-size-xxl,
+  h2-font-size-tablet: initial,
+  h2-font-size-desktop: initial,
+  h2-font-style: normal,
+  h2-font-weight: map-get($fonts, weight-title),
+  h2-line-height: map-get($fonts, line-height-title),
+  h2-letter-spacing: initial,
+  h2-word-spacing: initial,
+  h2-padding: 0,
+  h2-margin: 0 0 $spacing/2 0,
+
+  /* h3 */
+  h3-color: $color-foreground,
+  h3-font-family: $font-face-title,
+  h3-font-size: $font-size-xl,
+  h3-font-size-tablet: initial,
+  h3-font-size-desktop: initial,
+  h3-font-style: normal,
+  h3-font-weight: map-get($fonts, weight-title),
+  h3-line-height: map-get($fonts, line-height-title),
+  h3-letter-spacing: initial,
+  h3-word-spacing: initial,
+  h3-padding: 0,
+  h3-margin: 0 0 $spacing/2 0,
+
+  /* h4 */
+  h4-color: $color-foreground,
+  h4-font-family: $font-face-title,
+  h4-font-size: $font-size-l,
+  h4-font-size-tablet: initial,
+  h4-font-size-desktop: initial,
+  h4-font-style: normal,
+  h4-font-weight: map-get($fonts, weight-title),
+  h4-line-height: map-get($fonts, line-height-title),
+  h4-letter-spacing: initial,
+  h4-word-spacing: initial,
+  h4-padding: 0,
+  h4-margin: 0 0 $spacing/2 0,
+
+  /* h5 */
+  h5-color: $color-foreground,
+  h5-font-family: $font-face-title,
+  h5-font-size: $font-size-m,
+  h5-font-size-tablet: initial,
+  h5-font-size-desktop: initial,
+  h5-font-style: normal,
+  h5-font-weight: map-get($fonts, weight-title),
+  h5-line-height: map-get($fonts, line-height-title),
+  h5-letter-spacing: initial,
+  h5-word-spacing: initial,
+  h5-padding: 0,
+  h5-margin: 0 0 $spacing/2 0,
+        
+  /* h6 */
+  h6-color: $color-foreground,
+  h6-font-family: $font-face-title,
+  h6-font-size: $font-size-default,
+  h6-font-size-tablet: initial,
+  h6-font-size-desktop: initial,
+  h6-font-style: normal,
+  h6-font-weight: map-get($fonts, weight-title),
+  h6-line-height: map-get($fonts, line-height-title),
+  h6-letter-spacing: initial,
+  h6-word-spacing: initial,
+  h6-padding: 0,
+  h6-margin: 0 0 $spacing/2 0,
+
+  /* Small */
+  small-color: $color-foreground-light,
+  small-font-family: $font-face-default,
+  small-font-size: $font-size-s,
+  small-font-size-tablet: initial,
+  small-font-size-desktop: initial,
+  small-font-style: normal,
+  small-font-weight: map-get($fonts, weight-title),
+  small-line-height: map-get($fonts, line-height-title),
+  small-letter-spacing: initial,
+  small-word-spacing: initial,
+  small-padding: 0,
+  small-margin: 0 0 $spacing/2 0,
+
+) !global !default;
+
+$object-fonts-vars-custom: () !global !default;
+
+$object-fonts-vars: map-merge($object-fonts-vars-default, $object-fonts-vars-custom) !global;

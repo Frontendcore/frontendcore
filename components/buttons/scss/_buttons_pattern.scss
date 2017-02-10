@@ -19,9 +19,10 @@
 		background: map-get($object-buttons-vars, default-background);
 		color: map-get($object-buttons-vars, default-color);
 		border-color: map-get($object-buttons-vars, default-background);
+		line-height: 100%;
 	}
 	&:hover {
-		opacity: .9;
+		filter: brightness(105%) contrast(115%);
 		text-decoration: none;
 	}
 	&:active {
@@ -30,5 +31,107 @@
 	}
 	[class^='icon-'] {
 		margin-right: $spacing/4;
+	}
+}
+
+%button_small {
+	& {
+		padding: map-get($object-buttons-vars, small-padding);
+		font-family: map-get($object-buttons-vars, small-font-family);
+		font-weight: map-get($object-buttons-vars, small-font-weight);
+		font-size: map-get($object-buttons-vars, small-font-size);
+	}
+	[class^='icon-'] {
+		margin-right: $spacing/8;
+	}
+}
+
+%button_large {
+	& {
+		padding: map-get($object-buttons-vars, large-padding);
+		font-family: map-get($object-buttons-vars, large-font-family);
+		font-weight: map-get($object-buttons-vars, large-font-weight);
+		font-size: map-get($object-buttons-vars, large-font-size);
+	}
+	[class^='icon-'] {
+		margin-right: $spacing/2;
+	}
+}
+
+%button_icon {
+	position: relative;
+	border-radius: map-get($object-buttons-vars, border-radius);
+	width: map-get($object-buttons-vars, icon-default-width);
+	height: map-get($object-buttons-vars, icon-default-height);
+	box-sizing: border-box;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	i {
+		font-size: map-get($object-buttons-vars, icon-default-font-size);
+		margin-top: (-(map-get($object-buttons-vars, icon-default-font-size)/2));
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+		margin-right: 0 !important;
+	}
+	span {
+		opacity: 0;
+		display: block;
+		position: absolute;
+		white-space: nowrap;
+		background: transparent;
+		color: $color-foreground;
+		font-size: $font-size-xs;
+		font-weight: normal;
+		top: map-get($object-buttons-vars, icon-default-font-size) + $spacing/2;
+		margin: map-get($object-buttons-vars, padding);
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+		margin-left: -100% !important;
+		margin-right: 0 !important;
+		width:0;
+		height: 0;
+		transition: opacity .1s ease-in;
+		text-align: center;
+		overflow: hidden;
+		text-shadow: 1px 1px $color-background;
+		box-sizing: border-box;
+	}
+	&:hover {
+		span {
+			opacity: 1;
+			width:300%;
+			height: inherit;
+		}
+	}
+}
+
+%button_icon_small {
+	padding: map-get($object-buttons-vars, small-padding);
+	width: map-get($object-buttons-vars, icon-small-width);
+	height: map-get($object-buttons-vars, icon-small-height);
+	i {
+		font-size: map-get($object-buttons-vars, icon-small-font-size);
+		margin-top: (-(map-get($object-buttons-vars, icon-small-font-size)/2));
+	}
+	span {
+		margin: map-get($object-buttons-vars, small-padding);
+		top: map-get($object-buttons-vars, icon-small-font-size) + $spacing/3;
+	}
+}
+
+%button_icon_large {
+	padding: map-get($object-buttons-vars, large-padding);
+	width: map-get($object-buttons-vars, icon-large-width);
+	height: map-get($object-buttons-vars, icon-large-height);
+	i {
+		font-size: map-get($object-buttons-vars, icon-large-font-size);
+		margin-top: (-(map-get($object-buttons-vars, icon-large-font-size)/2));
+	}
+	span {
+		margin: map-get($object-buttons-vars, large-padding);
+		top: map-get($object-buttons-vars, icon-large-font-size) + $spacing/2;
 	}
 }

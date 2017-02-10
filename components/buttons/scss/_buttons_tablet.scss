@@ -1,0 +1,16 @@
+.button {
+  &._small-tablet {
+    @extend %button_small;
+  }
+  &._large-tablet {
+    @extend %button_large;
+  }
+  &._icon {
+    &._large-tablet {
+      @extend %button_icon_large;
+    }
+    &._small-tablet {
+      @extend %button_icon_small;
+    }
+  }
+}

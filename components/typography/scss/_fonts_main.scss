@@ -17,7 +17,6 @@ html {
 /* @endgroup FONT-SIZES */
 
 /* @group FONT-SPACINGS */
-h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
 fieldset,
 p,
@@ -27,39 +26,34 @@ hr {
   margin: 0 0 1em;
 }
 
-h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
-  margin: 0;
-  line-height: map-get($fonts, line-height-title);
-  font-family: $font-face-title;
-  margin-bottom: $spacing/2;
-}
-
 p {
   line-height: map-get($fonts, line-height-default);
 }
 
-h1, .h1 {
-  font-size: $font-size-xxxl;
+@for $h from 1 through 6 {
+  h#{$h}, .h#{$h} {
+    color: map-get($object-fonts-vars, h#{$h}-color );
+    font-size: map-get($object-fonts-vars, h#{$h}-font-size );
+    font-style: map-get($object-fonts-vars, h#{$h}-font-style );
+    font-weight: map-get($object-fonts-vars, h#{$h}-font-weight );
+    line-height: map-get($object-fonts-vars, h#{$h}-line-height );
+    letter-spacing: map-get($object-fonts-vars, h#{$h}-letter-spacing );
+    word-spacing: map-get($object-fonts-vars, h#{$h}-word-spacing );
+    margin: map-get($object-fonts-vars, h#{$h}-margin );
+    padding: map-get($object-fonts-vars, h#{$h}-padding );
+  }
 }
 
-h2, .h2 {
-  font-size: $font-size-xxl;
-}
-
-h3, .h3 {
-  font-size: $font-size-xl;
-}
-
-h4, .h4 {
-  font-size: $font-size-l;
-}
-
-h5, .h5 {
-  font-size: $font-size-m;
-}
-
-h6, .h6 {
-  font-size: $font-size-default;
+small, .small {
+  color: map-get($object-fonts-vars, small-color );
+  font-size: map-get($object-fonts-vars, small-font-size );
+  font-style: map-get($object-fonts-vars, small-font-style );
+  font-weight: map-get($object-fonts-vars, small-font-weight );
+  line-height: map-get($object-fonts-vars, small-line-height );
+  letter-spacing: map-get($object-fonts-vars, small-letter-spacing );
+  word-spacing: map-get($object-fonts-vars, small-word-spacing );
+  margin: map-get($object-fonts-vars, small-margin );
+  padding: map-get($object-fonts-vars, small-padding );
 }
 
 blockquote {
@@ -73,6 +67,7 @@ cite {
   font-size: $font-size-s;
   color: $color-foreground-light;
 }
+
 
 hr {
   max-width: 100%;
