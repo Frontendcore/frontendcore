@@ -14,11 +14,11 @@
 		font-weight: map-get($object-buttons-vars, font-weight);
 		font-family: map-get($object-buttons-vars, font-family);
 		font-size: map-get($object-buttons-vars, font-size);
-		border-width: 1px;
-		border-style: solid;
+		border-width: map-get($object-buttons-vars, border-width);
+		border-style: map-get($object-buttons-vars, border-style);
+		border-color: map-get($object-buttons-vars, default-background);
 		background: map-get($object-buttons-vars, default-background);
 		color: map-get($object-buttons-vars, default-color);
-		border-color: map-get($object-buttons-vars, default-background);
 		line-height: 100%;
 	}
 	&:hover {
@@ -67,14 +67,22 @@
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 	i {
-		font-size: map-get($object-buttons-vars, icon-default-font-size);
-		margin-top: (-(map-get($object-buttons-vars, icon-default-font-size)/2));
-		position: absolute;
-		left: 0;
-		top: 50%;
-		width: 100%;
-		text-align: center;
+		display: block;
 		margin-right: 0 !important;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: map-get($object-buttons-vars, border-width);
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			font-size: map-get($object-buttons-vars, icon-default-font-size);
+			height: map-get($object-buttons-vars, icon-default-font-size);
+			margin-top: (-(map-get($object-buttons-vars, icon-default-font-size)/2));
+		}
 	}
 	span {
 		opacity: 0;
@@ -103,7 +111,8 @@
 		span {
 			opacity: 1;
 			width:300%;
-			height: inherit;
+			height: 1px;
+			overflow: visible;
 		}
 	}
 }
@@ -112,8 +121,9 @@
 	padding: map-get($object-buttons-vars, small-padding);
 	width: map-get($object-buttons-vars, icon-small-width);
 	height: map-get($object-buttons-vars, icon-small-height);
-	i {
+	i:before {
 		font-size: map-get($object-buttons-vars, icon-small-font-size);
+		height: map-get($object-buttons-vars, icon-small-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-small-font-size)/2));
 	}
 	span {
@@ -126,8 +136,9 @@
 	padding: map-get($object-buttons-vars, large-padding);
 	width: map-get($object-buttons-vars, icon-large-width);
 	height: map-get($object-buttons-vars, icon-large-height);
-	i {
+	i:before {
 		font-size: map-get($object-buttons-vars, icon-large-font-size);
+		height: map-get($object-buttons-vars, icon-large-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-large-font-size)/2));
 	}
 	span {
