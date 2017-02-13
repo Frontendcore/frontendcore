@@ -5,6 +5,7 @@
 @import "../components/grids/scss/grids_screen-xxl";
 @import "../components/boxes/scss/boxes_vars";
 @import "../components/typography/scss/fonts_vars";
+@import "../components/typography/scss/fonts_pattern";
 @import "../components/form/scss/form_pattern";
 @import "../components/buttons/scss/button_vars";
 @import "../components/buttons/scss/buttons_pattern";
@@ -15,7 +16,6 @@
 @import "../components/image-circle/scss/pattern";
 @import "../components/image-polaroid/scss/pattern";
 @import "../components/visibility/scss/screen-xxl";
-@import "objects/layout_desktop";
 @import "../components/boxes/scss/boxes_desktop";
 @import "../components/buttons/scss/buttons_desktop";
 @import "../components/carousel/scss/desktop";
@@ -25,3 +25,4 @@
 @import "../components/table-flex/scss/tablet_desktop";
 @import "../components/tabs/scss/tabs_desktop";
 @import "../components/typography/scss/fonts_desktop";
+@import "objects/layout_desktop";

@@ -1,0 +1,13 @@
+@for $h from 1 through 6 {
+  %h#{$h} {
+    color: map-get($object-fonts-vars, h#{$h}-color );
+    font-size: map-get($object-fonts-vars, h#{$h}-font-size );
+    font-style: map-get($object-fonts-vars, h#{$h}-font-style );
+    font-weight: map-get($object-fonts-vars, h#{$h}-font-weight );
+    line-height: map-get($object-fonts-vars, h#{$h}-line-height );
+    letter-spacing: map-get($object-fonts-vars, h#{$h}-letter-spacing );
+    word-spacing: map-get($object-fonts-vars, h#{$h}-word-spacing );
+    margin: map-get($object-fonts-vars, h#{$h}-margin );
+    padding: map-get($object-fonts-vars, h#{$h}-padding );
+  }
+}

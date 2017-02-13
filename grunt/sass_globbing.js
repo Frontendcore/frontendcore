@@ -107,6 +107,10 @@ module.exports = function(grunt) {
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_pattern*.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
+        if (sDevice !== undefined) {
+            oFiles[sKey].push(fcCwd + 'components/**/*_' + sDevice + '*.scss');
+
+        }
 
 		for (var nPath = 0; nPath < aPaths.length; nPath++) {
 			if (sDevice !== undefined) {
@@ -118,10 +122,7 @@ module.exports = function(grunt) {
 			oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + sScreen + '.scss');
 		}
 
-		if (sDevice !== undefined) {
-			oFiles[sKey].push(fcCwd + 'components/**/*_' + sDevice + '*.scss');
 
-		}
 		
 		return oFiles
 	}
