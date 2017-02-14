@@ -1,7 +1,9 @@
 ;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
 	'use strict';
 
+
 	FrontendCore.define('carousel', [], function () {
+		
 		return {
 			oDefault: {
 				baseClass: 'carousel',
@@ -18,7 +20,7 @@
 				center: true,
 				autoplay: true,
 				autoplayTimeout: 5000,
-				autoplayHoverPause: true
+                autoplayHoverPause: true,
 			},
 			onStart: function () {
 
@@ -89,6 +91,10 @@
 					oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
 				}
 
+				if (oTarget.getAttribute("data-fc-stage-padding") !== null) {
+					oOptions.stagePadding = oTarget.getAttribute("data-fc-stage-padding");
+				}
+
 				if (oTarget.getAttribute("data-fc-video-width") !== null) {
 					oOptions.videoWidth = oTarget.getAttribute("data-fc-video-width");
 				}
@@ -122,6 +128,27 @@
 				}
 
 				$(oTarget).addClass(sClass);
+
+
+				var nDistance = 0;
+
+				oTarget.addEventListener('touchmove', function(e) {
+
+					if ( nDistance === 0) {
+                        nDistance = e.pageX;
+					}
+
+					if ( (nDistance - e.pageX) > 5 || (nDistance - e.pageX) < -5  ) {
+                        e.preventDefault();
+					}
+
+					setTimeout( function () {
+						nDistance = 0;
+                    }, 100);
+
+
+                }, false);
+
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 

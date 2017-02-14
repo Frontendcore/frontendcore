@@ -41,7 +41,7 @@
     "chartjs": "~1.0.1",
     "SyntaxHighlighter": "~3.0.83",
     "darkroomjs": "*",
-    "owl-carousel2": "~2.0.0-beta.3",
+    "owl-carousel2": "~2.2.*",
     "stacktable": "~1.0.0",
     "tooltipster": "~4.0.0",
     "webshim": "~1.15.7",
@@ -54,7 +54,7 @@
     "modular-scale": "~2.1.1",
     "highlightjs": "~9.0.0",
     "jquery-sortable": "~0.9.13",
-    "jquery-touchswipe": "^1.6.16",
+    "jquery-touchswipe": "^1.6.18",
     "intl-tel-input": "^8.5.2",
     "lazysizes": "^2.0.0",
     "strength-meter": "^1.1.3"
