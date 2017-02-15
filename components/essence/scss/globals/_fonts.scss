@@ -2,19 +2,19 @@
 /// Default font weight, used in the body.
 /// @group fonts
 ///
-$font-weight-default: unquote(map-get($fonts, weight-default)) !global;
+$font-weight-default: map-get($fonts, weight-default) !global;
 
 ///
 /// Titles font weight, used in the body.
 /// @group fonts
 ///
-$font-weight-title: unquote(map-get($fonts, weight-title)) !global;
+$font-weight-title: map-get($fonts, weight-title) !global;
 
 ///
 /// Logo font weight, used in the body.
 /// @group fonts
 ///
-$font-weight-logo: unquote(map-get($fonts, weight-logo)) !global;
+$font-weight-logo: map-get($fonts, weight-logo) !global;
 
 ///
 /// Default font face, used in the body.

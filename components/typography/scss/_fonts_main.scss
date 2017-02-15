@@ -3,6 +3,9 @@ html {
   font-size: ms(0, map_get($fonts, size-base));
   font-weight: $font-weight-default;
   text-rendering: optimizelegibility;
+  * {
+    line-height: 100%;
+  }
 }
 
 /* @group FONT-FAMILIES */

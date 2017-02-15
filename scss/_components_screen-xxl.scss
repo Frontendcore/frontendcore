@@ -2,6 +2,7 @@
 
 @import "../components/essence/scss/fc-screen-xxl_essence";
 @import "../components/essence/scss/frontendcore";
+@import "../components/grids/scss/grids_vars";
 @import "../components/grids/scss/grids_screen-xxl";
 @import "../components/boxes/scss/boxes_vars";
 @import "../components/typography/scss/fonts_vars";
@@ -21,6 +22,7 @@
 @import "../components/carousel/scss/desktop";
 @import "../components/form-number-field/scss/desktop";
 @import "../components/form-search/scss/desktop";
+@import "../components/grids/scss/grids_mobile_tablet_desktop";
 @import "../components/navigation/scss/navigation_desktop";
 @import "../components/table-flex/scss/tablet_desktop";
 @import "../components/tabs/scss/tabs_desktop";

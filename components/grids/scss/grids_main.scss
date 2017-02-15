@@ -1,8 +1,11 @@
 /* Uncomment and set these variables to customize the grid. */
-
 .container {
   & {
-    max-width: map_get($grid, container-width);
+    @if map_get($grid, container-width-type) == 'fixed' {
+      width: map_get($grid, container-width);
+    } @else {
+      max-width: map_get($grid, container-width);
+    }
     overflow: hidden;
     margin: 0 auto;
   }
@@ -63,10 +66,6 @@
   padding: 0;
 }
 
-$grid-columns: 1 2 3 4 5 6 7 8 9 10 11 12;
-$grid-total: last($grid-columns);
-$gutter: (map_get($grid-default, gutters)) * 11 / 12;
-
 .col {
   flex:1 1 0;
   max-width: 100%;
@@ -80,8 +79,15 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 
 @each $number in $grid-columns {
   $n: index($grid-columns, $number);
-  $column: 100%/$grid-total * $n;
+
+  $column: $grid-width/$n;
+
+  @if (is-percentage($grid-width)) {
+    $column: $grid-width/$grid-total * $n;
+  }
+
   $compensation: $gutter * ($n/$grid-total);
+
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
   .col-#{$n} {

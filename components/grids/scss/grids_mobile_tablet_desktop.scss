@@ -1,0 +1,18 @@
+@if (  map_get($grid, #{$scr}-container-width) != false) {
+
+  .container {
+    & {
+      @if map_get($grid, #{$scr}-container-width-type) == 'fixed'  {
+        width: map_get($grid, #{$scr}-container-width);
+        max-width: inherit;
+      } @else if map_get($grid, #{$scr}-container-width-type) == 'max' {
+        width: inherit;
+        max-width: map_get($grid, #{$scr}-container-width);
+      }
+    }
+    &._pad {
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+}

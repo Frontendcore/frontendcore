@@ -2,6 +2,7 @@
 
 @import "../components/essence/scss/fc-screen-l_essence";
 @import "../components/essence/scss/frontendcore";
+@import "../components/grids/scss/grids_vars";
 @import "../components/grids/scss/grids_screen-l";
 @import "../components/boxes/scss/boxes_vars";
 @import "../components/typography/scss/fonts_vars";
@@ -18,6 +19,7 @@
 @import "../components/visibility/scss/screen-l";
 @import "../components/boxes/scss/boxes_tablet";
 @import "../components/buttons/scss/buttons_tablet";
+@import "../components/grids/scss/grids_mobile_tablet_desktop";
 @import "../components/table-flex/scss/tablet_desktop";
 @import "../components/tabs/scss/tabs_mobile_tablet";
 @import "../components/typography/scss/fonts_tablet";

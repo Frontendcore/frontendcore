@@ -1,6 +1,16 @@
-$grid-columns: 1 2 3 4 5 6 7 8 9 10 11 12;
-$grid-total: last($grid-columns);
-$gutter: (map_get($grid-default, gutters)) * 11 / 12;
+.container {
+  & {
+    @if map_get($grid, xxxl-container-width-type) == 'fixed' {
+      width: map_get($grid, xxxl-container-width);
+    } @else if map_get($grid, xxxl-container-width-type) == 'max' {
+      max-width: map_get($grid, xxxl-container-width);
+    }
+  }
+  &._pad {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+}
 
 .col {
   &:last-child:not(.col-last-xl),
@@ -12,7 +22,7 @@ $gutter: (map_get($grid-default, gutters)) * 11 / 12;
 
 @each $number in $grid-columns {
   $n: index($grid-columns, $number);
-  $column: 100%/$grid-total * $n;
+  $column: $grid-width/$grid-total * $n;
   $compensation: $gutter * ($n/$grid-total);
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;

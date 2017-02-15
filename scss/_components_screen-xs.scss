@@ -2,7 +2,8 @@
 
 @import "../components/essence/scss/fc-screen-xs_essence";
 @import "../components/essence/scss/frontendcore";
-@import "../components/grids/scss/grids_screen-s_screen-xs";
+@import "../components/grids/scss/grids_vars";
+@import "../components/grids/scss/grids_screen-xs";
 @import "../components/boxes/scss/boxes_vars";
 @import "../components/typography/scss/fonts_vars";
 @import "../components/typography/scss/fonts_pattern";
@@ -19,6 +20,7 @@
 @import "../components/visibility/scss/screen-xs";
 @import "../components/boxes/scss/boxes_mobile";
 @import "../components/buttons/scss/buttons_mobile";
+@import "../components/grids/scss/grids_mobile_tablet_desktop";
 @import "../components/table/scss/mobile";
 @import "../components/tabs/scss/tabs_mobile_tablet";
 @import "objects/layout_mobile_tablet";

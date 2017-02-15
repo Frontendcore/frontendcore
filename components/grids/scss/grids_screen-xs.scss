@@ -1,9 +1,21 @@
-.col {
-  &:last-child:not(.col-last-xl),
-  &.col-last-xl,
-  &._ungap{
-    margin-right: 0;
+.container {
+  & {
+    @if map_get($grid, xs-container-width-type) == 'fixed' {
+      width: map_get($grid, xs-container-width);
+    } @else if map_get($grid, xs-container-width-type) == 'max' {
+      max-width: map_get($grid, xs-container-width);
+    }
   }
+  &._pad {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+}
+
+.col {
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin-right: 0;
 }
 
 @each $number in $grid-columns {
@@ -13,57 +25,61 @@
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
 
-  .col-xl-#{$n} {
+  .col-s-#{$n} {
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
   }
   .row._start,
   .row._end,
   .row._center{
-    .col-xl-#{$n} {
+    .col-s-#{$n} {
       flex: 0 0 $column - $gutter;
       max-width: $column - $gutter;
     }
   }
   .row._start{
-    .col-xl-#{$n} {
+    .col-s-#{$n} {
       margin-right: $gutter;
     }
   }
   .row._end{
-    .col-xl-#{$n} {
+    .col-s-#{$n} {
       margin-left:$gutter;
     }
   }
   .row._center{
-    .col-xl-#{$n}:not(:first-of-type) {
-      margin-left:$gutter;
+    .col-s-#{$n}:not(:first-of-type) {
+      margin-left:$gutter/2;
     }
   }
-  .col-xl-offset-#{$n} {
+
+  .col-s-offset-#{$n} {
     margin-left: $offset;
   }
 
-  .col.col-xl-offset-#{$n} {
+  .col.col-s-offset-#{$n} {
     margin-left: $column + $compensation;
   }
 
   .row._ungap{
-    >.col-xl-#{$n} {
+    >.col-s-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
       margin-left: 0;
       margin-right: 0;
     }
-    >.col-xl-offset-#{$n} {
+    >.col-s-offset-#{$n} {
       margin-left: $column;
     }
   }
-
 }
 
 .row {
-  @include flex-distribution("",-xl);
+  @include flex-distribution("",-s);
 }
 
-@include flex-order(-xl);
+@include flex-order(-s);
+
+._reverse-s, ._reverse-xs {
+  flex-direction: column-reverse;
+}

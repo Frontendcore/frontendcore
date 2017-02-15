@@ -3,7 +3,7 @@
 
 
 	FrontendCore.define('carousel', [], function () {
-		
+
 		return {
 			oDefault: {
 				baseClass: 'carousel',
