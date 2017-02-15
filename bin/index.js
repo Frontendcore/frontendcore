@@ -53,6 +53,7 @@ var aProjects = [],
     spawn = multiThreaded ? require('child_process').spawn : require('child_process').spawnSync,
     sGruntPath = sFrontendCorePath + '/node_modules/grunt-cli/bin/grunt',
     oData = null,
+    regexp = /(\r\n|\n|\r)/gm,
     exec = function( bin, params, sPath ) {
 
         var child = spawn( bin, params, {
@@ -63,17 +64,17 @@ var aProjects = [],
         if (multiThreaded) {
             // Listen for any response from the child:
             child.stdout.on('data', function (data) {
-                console.log(data.toString());
+                console.log(data.toString().replace(regexp, ''));
             });
 
             // Listen for any errors:
             child.stderr.on('data', function (data) {
-                console.log(data.toString());
+                console.log(data.toString().replace(regexp, ''));
             });
         } else {
             for (var i = 0; i < child.output.length; i++) {
                 if (child.output[i]) {
-                    console.log(child.output[i].toString());
+                    console.log(child.output[i].toString().replace(regexp, ''));
                 }
             }
         }
