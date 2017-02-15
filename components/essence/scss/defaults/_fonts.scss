@@ -1,9 +1,9 @@
 $fonts-custom: () !default;
 
 $fonts-default: (
-		face-default: '"Source Sans Pro", sans-serif',
-		face-logo: '"Amatic","Arial Narrow", Tahoma, sans-serif',
-		face-title: '"Alegreya Sans", sans-serif',
+		face-default: ("Source Sans Pro", sans-serif),
+		face-logo: ("Amatic","Arial Narrow", Tahoma, sans-serif),
+		face-title: ("Alegreya Sans", sans-serif),
 		weight-default: normal,
 		weight-title: bold,
 		weight-logo: bold,

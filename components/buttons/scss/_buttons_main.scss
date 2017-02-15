@@ -1,13 +1,6 @@
 .button {
- 	& {
-		 @extend %button;
-		 font-weight: map-get($object-buttons-vars, font-weight);
-		 font-family: map-get($object-buttons-vars, font-family);
-		 font-size: map-get($object-buttons-vars, font-size);
-		 background: map-get($object-buttons-vars, default-background);
-		 color: map-get($object-buttons-vars, default-color);
-		 border-color: map-get($object-buttons-vars, default-background);
- 	}
+	@extend %button;
+
 	&._hollow {
 		&:hover {
 			color: $color-foreground !important;

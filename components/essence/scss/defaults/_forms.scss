@@ -1,6 +1,6 @@
 $object-forms-vars-default: (
   /* Field */
-        field-font-family: unquote(map_get($fonts, face-default)),
+        field-font-family: map_get($fonts, face-default),
         field-font-size: map_get($fonts, size-default),
         field-font-weight: normal,
         field-background: #FFF,

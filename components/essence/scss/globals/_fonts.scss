@@ -20,19 +20,19 @@ $font-weight-logo: map-get($fonts, weight-logo) !global;
 /// Default font face, used in the body.
 /// @group fonts
 ///
-$font-face-default: unquote(map-get($fonts, face-default)) !global;
+$font-face-default: map-get($fonts, face-default) !global;
 
 ///
 /// Font face used for titles
 /// @group fonts
 ///
-$font-face-title: unquote(map-get($fonts, face-title)) !global;
+$font-face-title: map-get($fonts, face-title) !global;
 
 ///
 /// Font face used for logo
 /// @group fonts
 ///
-$font-face-logo: unquote(map-get($fonts, face-logo)) !global;
+$font-face-logo: map-get($fonts, face-logo) !global;
 
 $px-to-em-proportion: strip-unit(map-get($fonts, size-base)) !global;
 
