@@ -11,6 +11,11 @@ module.exports = function(grunt) {
 			],
 			oJsFiles = [
 				jsCwd +  '/**/*.js',
+				'!' + jsCwd +  '/**/*.ng.js',
+			],
+			oNgFiles = [
+                fcCwd + 'components/**/*.ng.js',
+				jsCwd +  '/**/*.ng.js',
 			];
 
         if ( oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
@@ -37,7 +42,7 @@ module.exports = function(grunt) {
 				tasks: ['js']
 			},
 			Angular: {
-				files: fcCwd + 'components/**/*.ng.js',
+				files: oNgFiles,
 				tasks: ['js:angular']
 			},
 			js: {

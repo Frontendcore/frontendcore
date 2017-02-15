@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 			},
 			files: {}
 		},
-        oAngular = {
+        oCustom = {
             options: {
                 mangle: false,
                 preserveComments: false,
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
             }
 
-            oAngular.files[ appCwd + '/' + customKeys[key] ] = customFiles;
+            oCustom.files[ appCwd + '/' + customKeys[key] ] = customFiles;
 
         }
     }
@@ -211,9 +211,10 @@ module.exports = function(grunt) {
 		oConfig = {
 			core: oCore,
 			rountrip: oRoundTrip,
-			angular: oAngular
+			custom: oCustom
 		}
 
+		// DEFAULT FC MODULES
 		for (var nKey = 0; nKey < oComponents.length; nKey++) {
 
 			oConfig[oComponents[nKey]] = {
@@ -228,7 +229,7 @@ module.exports = function(grunt) {
 			};
 		}
 
-		//generate Ng files
+		// ANGULAR FC MODULES
 		for (var nKeyNg = 0; nKeyNg < oComponents.length; nKeyNg++) {
 			oConfig[oComponents[nKeyNg]+'-ng'] = {
 				files: [{
