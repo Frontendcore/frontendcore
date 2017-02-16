@@ -189,11 +189,27 @@ module.exports = function(grunt) {
 			fcCwd + '/components/roundtrip/js/_roundtrip.js'
 		];
 
-		oConfig = {
-			core: oCore,
-			rountrip: oRoundTrip,
-			custom: oCustom
-		}
+        // CREATE CUSTOM PACKAGES
+        if ( typeof oData.js.pkg  === 'object') {
+
+            var customObject = oData.js.pkg,
+                customKeys= Object.keys(customObject);
+
+            for ( var key in customKeys) {
+
+                var customFiles = [];
+
+                for ( var file in customObject[customKeys[key]]) {
+                    customFiles.push( appCwd + '/' + customObject[customKeys[key]][file] )
+
+                }
+
+                oCustom.files[ appCwd + '/' + customKeys[key] ] = customFiles;
+
+            }
+        }
+
+		oConfig = {};
 
 		// DEFAULT FC MODULES
 		for (var nKey = 0; nKey < oComponents.length; nKey++) {
@@ -224,25 +240,9 @@ module.exports = function(grunt) {
 			};
 		}
 
-		// CREATE CUSTOM PACKAGES
-        if ( typeof oData.js.pkg  === 'object') {
-
-            var customObject = oData.js.pkg,
-                customKeys= Object.keys(customObject);
-
-            for ( var key in customKeys) {
-
-                var customFiles = [];
-
-                for ( var file in customObject[customKeys[key]]) {
-                    customFiles.push( appCwd + '/' + customObject[customKeys[key]][file] )
-
-                }
-
-                oCustom.files[ appCwd + '/' + customKeys[key] ] = customFiles;
-
-            }
-        }
+		oConfig.core = oCore;
+		oConfig.rountrip = oRoundTrip;
+		oConfig.custom = oCustom;
 	}
 
 	return oConfig;
