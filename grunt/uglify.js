@@ -22,25 +22,6 @@ module.exports = function(grunt) {
             files: {}
         };
 
-	if ( typeof oData.js.pkg  === 'object') {
-
-        var customObject = oData.js.pkg,
-			customKeys= Object.keys(customObject);
-
-        for ( var key in customKeys) {
-
-            var customFiles = [];
-
-            for ( var file in customObject[customKeys[key]]) {
-                customFiles.push( appCwd + '/' + customObject[customKeys[key]][file] )
-
-            }
-
-            oCustom.files[ appCwd + '/' + customKeys[key] ] = customFiles;
-
-        }
-    }
-
 	if (oData !== undefined) {
 
 		// FRONTENDCORE.JS
@@ -242,6 +223,26 @@ module.exports = function(grunt) {
 				}]
 			};
 		}
+
+		// CREATE CUSTOM PACKAGES
+        if ( typeof oData.js.pkg  === 'object') {
+
+            var customObject = oData.js.pkg,
+                customKeys= Object.keys(customObject);
+
+            for ( var key in customKeys) {
+
+                var customFiles = [];
+
+                for ( var file in customObject[customKeys[key]]) {
+                    customFiles.push( appCwd + '/' + customObject[customKeys[key]][file] )
+
+                }
+
+                oCustom.files[ appCwd + '/' + customKeys[key] ] = customFiles;
+
+            }
+        }
 	}
 
 	return oConfig;
