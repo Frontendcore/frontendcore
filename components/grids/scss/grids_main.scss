@@ -5,6 +5,9 @@
       width: map_get($grid, container-width);
     } @else {
       max-width: map_get($grid, container-width);
+      @if (map_get($grid, container-min-width) != false and  map_get($grid, container-min-width) != null){
+        min-width: map_get($grid, container-min-width);
+      }
     }
     overflow: hidden;
     margin: 0 auto;

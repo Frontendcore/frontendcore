@@ -26,4 +26,4 @@ $grid-width: 100% !global;
 
 $grid-columns: 1 2 3 4 5 6 7 8 9 10 11 12 !global;
 $grid-total: last($grid-columns) !global;
-$gutter: ($device-gutter * 11) / 12 !global;;
+$gutter: ($device-gutter * 11) / 12 !global;

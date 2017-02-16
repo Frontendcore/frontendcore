@@ -5,47 +5,62 @@ $grid-default: (
 		/* DEFAULT CONFIG */
 		container-width-type: 'max',
 		container-width: 100%,
+		container-min-width:false,
 		gutters: 2%,
 		distribution: between,
 
 		/* XS custom values*/
 		xs-container-width: false,
+		xs-container-min-width: false,
+		xs-container-max-width: false,
 		xs-container-width-type: false,
 		xs-gutters: false,
 		xs-distribution: false,
 
 		/* s custom values*/
 		s-container-width: false,
+		s-container-min-width: false,
+		s-container-max-width: false,
 		s-container-width-type: false,
 		s-gutters: false,
 		s-distribution: false,
 
 		/* m custom values*/
 		m-container-width: false,
+		m-container-min-width: false,
+		m-container-max-width: false,
 		m-container-width-type: false,
 		m-gutters: false,
 		m-distribution: false,
 
 		/* l custom values*/
 		l-container-width: false,
+		l-container-min-width: false,
+		l-container-max-width: false,
 		l-container-width-type: false,
 		l-gutters: false,
 		l-distribution: false,
 
 		/* xl custom values*/
 		xl-container-width: false,
+		xl-container-min-width: false,
+		xl-container-max-width: false,
 		xl-container-width-type: false,
 		xl-gutters: false,
 		xl-distribution: false,
 
 		/* xxl custom values*/
 		xxl-container-width: false,
+		xxl-container-min-width: false,
+		xxl-container-max-width: false,
 		xxl-container-width-type: false,
 		xxl-gutters: false,
 		xxl-distribution: false,
 
 		/* xxxl custom values*/
 		xxxl-container-width: false,
+		xxxl-container-min-width: false,
+		xxxl-container-max-width: false,
 		xxxl-container-width-type: false,
 		xxxl-gutters: false,
 		xxxl-distribution: false,

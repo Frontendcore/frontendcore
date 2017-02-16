@@ -1,0 +1,21 @@
+@mixin  ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+}
+
+@mixin ellipsis-multi($font-size-ellipsis: $font-size-default, $line-height-ellipsis: $base-line-height, $lines-to-show-ellipsis: 1 ) {
+  /* Set this variables, Trick for multiline ellipsis */
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  height: $font-size-ellipsis*$line-height-ellipsis*$lines-to-show-ellipsis; /* Fallback for non-webkit */
+  font-size: $font-size-ellipsis;
+  line-height: $line-height-ellipsis;
+  -webkit-line-clamp: $lines-to-show-ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
