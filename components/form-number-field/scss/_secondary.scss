@@ -24,6 +24,7 @@
 
 .form input[type="number"][data-fc-modules="number-field"], input[type="number"][data-fc-modules="number-field"]  {
   padding-right: $spacing/4;
+  -moz-appearance:textfield;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     display: none !important;

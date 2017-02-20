@@ -1,240 +1,144 @@
-/* jshint ignore:start */
-;(function($){
+;(function (window, document, oGlobalSettings, FrontendMediator, FrontendTools, FrontendCore, $) {
+    'use strict';
 
-    var touch = {},
-        touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
-        longTapDelay = 750, gesture;
 
-    function swipeDirection(x1, x2, y1, y2) {
-        return Math.abs(x1 - x2) >=
-        Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
-    }
 
-    function longTap() {
-        longTapTimeout = null
-        if (touch.last) {
-            touch.el.trigger('longTap')
-            touch = {}
+    FrontendCore.define('range-field', ['range-field-libs'], function () {
+
+
+        var nGlobalIndex = 1000,
+            sId = 'fc-range-';
+
+
+
+        function init(oTarget, oOptions, oCustomOptions, nIndex) {
+            if (nIndex === undefined) {
+                nIndex = nGlobalIndex;
+                nGlobalIndex++;
+            }
+
+            FrontendCore.require(['range-field-libs'], function (noUiSlider) {
+
+                $.when(
+                    $(oTarget)
+                        .hide()
+                        .after('<div id="'+ sId + nIndex + '"></div>')
+                ).then(
+                    function () {
+
+                        var oSlider = document.getElementById( sId + nIndex );
+
+                        if (oCustomOptions.pips !== undefined) {
+                            oOptions.pips = oCustomOptions.pips;
+                        }
+
+                        noUiSlider.create( oSlider , oOptions );
+
+                        oSlider.noUiSlider.on('update', function( values, handle ) {
+                            $(oTarget).val(parseFloat(values[handle]));
+                        });
+
+                        if (oCustomOptions.inputSync !== undefined) {
+
+                            var $InputSync = $(oCustomOptions.inputSync);
+
+                            oSlider.noUiSlider.on('update', function( values, handle ) {
+                                $InputSync.val(parseFloat(values[handle]));
+                            });
+
+                            $InputSync.on('change input', function() {
+                                oSlider.noUiSlider.set( this.value );
+                            });
+                        }
+                    }
+                );
+
+            });
+
+
         }
-    }
 
-    function cancelLongTap() {
-        if (longTapTimeout) clearTimeout(longTapTimeout)
-        longTapTimeout = null
-    }
-
-    function cancelAll() {
-        if (touchTimeout) clearTimeout(touchTimeout)
-        if (tapTimeout) clearTimeout(tapTimeout)
-        if (swipeTimeout) clearTimeout(swipeTimeout)
-        if (longTapTimeout) clearTimeout(longTapTimeout)
-        touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
-        touch = {}
-    }
-
-    function isPrimaryTouch(event){
-        return (event.pointerType == 'touch' ||
-            event.pointerType == event.MSPOINTER_TYPE_TOUCH)
-            && event.isPrimary
-    }
-
-    function isPointerEventType(e, type){
-        return (e.type == 'pointer'+type ||
-        e.type.toLowerCase() == 'mspointer'+type)
-    }
-
-    function extractTouchesFromEvent(e) {
-        return (e.touches || e.originalEvent.touches)
-    }
-
-    FrontendCore.define('range-field', [], function () {
         return {
+            oDefault: {
+                start: 5,
+                step: 1,
+                behaviour: 'snap',
+                connect: [true, false],
+                range: {
+                    'min': 0,
+                    'max': 10
+                }
+            },
             onStart: function () {
 
-                var aTarget = FrontendTools.getDataModules('range-field'),
-                    $InputSync,
-                    oTarget;
+                var aTargets = FrontendTools.getDataModules('range-field'),
+                    self = this;
 
-                FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
+                FrontendTools.trackModule('JS_Libraries', 'call', 'range-field');
 
-                FrontendTools.trackModule('JS_Libraries', 'call', 'range-field' );
-
-                $(aTarget).each( function(){
-
-                    oTarget = this;
-                    $InputSync = null;
-
-                     if (oTarget.getAttribute('data-fc-target-input') !== null ) {
-                         $InputSync = $(oTarget.getAttribute('data-fc-target-input'));
-                    }
-
-                    $(oTarget).on('change input', function () {
-
-
-                        var $this = $(this),
-                            sValue = this.value,
-                            val = ($this.val() - $this.attr('min')) / ($this.attr('max') - $this.attr('min'));
-
-
-                        $this.css('background-image',
-                            '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #0677ff), ' + 'color-stop(' + val + ', #C5C5C5)' + ')'
-                        );
-
-                        FrontendMediator.publish('range:change', { value: sValue });
-
-                        if ($InputSync !== null ) {
-
-                            if ( Math.round($InputSync.val()) !== Math.round(sValue) ) {
-                                $InputSync.val(sValue);
-                            }
-                        }
-
-                    });
-
-                    if ($InputSync !== null ) {
-                        $InputSync.on('change input', function() {
-                            oTarget.value = this.value;
-                            $(oTarget).change();
-                        });
-
-                        $InputSync.keyup( function(e) {
-
-                            if ( e.keyCode !== 190 && (e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) )
-                            {
-
-                                setTimeout( function(){
-                                    $InputSync.change();
-                                }, 100);
-                            }
-                        });
-                    }
-
-                    $(this).change();
+                $(aTargets).each( function(nIndex){
+                    self.autobind(this, nIndex);
                 });
 
-                var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
+            },
+            bind: function (oTarget, oOptions, nIndex) {
 
-                if ('MSGesture' in window) {
-                    gesture = new MSGesture()
-                    gesture.target = document.body
+                var self = this,
+                    oCustomOptions = {},
+                    oSettings;
+
+                oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
+
+                init(oTarget, oSettings, oCustomOptions, nIndex);
+
+            },
+            autobind: function (oTarget, nIndex) {
+
+
+                var self = this,
+                    oOptions = {},
+                    oCustomOptions = {},
+                    oSettings;
+
+
+                if (oTarget.getAttribute('data-fc-target-input') !== null ) {
+                    oCustomOptions.inputSync =  oTarget.getAttribute('data-fc-target-input');
                 }
 
-                $(document)
-                    .bind('MSGestureEnd', function(e){
-                        var swipeDirectionFromVelocity =
-                            e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
-                        if (swipeDirectionFromVelocity) {
-                            touch.el.trigger('swipe')
-                            touch.el.trigger('swipe'+ swipeDirectionFromVelocity)
-                        }
-                    })
-                    .on('touchstart MSPointerDown pointerdown', function(e){
-                        if((_isPointerType = isPointerEventType(e, 'down')) &&
-                            !isPrimaryTouch(e)) return
+                if (oTarget.getAttribute("min") !== null || oTarget.getAttribute("max") !== null  ) {
+                    oOptions.range = {};
+                }
 
-                        var touchList = extractTouchesFromEvent(e)
+                // MIN
+                if (oTarget.getAttribute("min") !== null ) {
+                    oOptions.range.min = parseInt(oTarget.getAttribute("min"));
+                }
 
-                        firstTouch = _isPointerType ? e : touchList[0]
-                        if (touchList && touchList.length === 1 && touch.x2) {
-                            // Clear out touch movement data if we have it sticking around
-                            // This can occur if touchcancel doesn't fire due to preventDefault, etc.
-                            touch.x2 = undefined
-                            touch.y2 = undefined
-                        }
-                        now = Date.now()
-                        delta = now - (touch.last || now)
-                        touch.el = $('tagName' in firstTouch.target ?
-                            firstTouch.target : firstTouch.target.parentNode)
-                        touchTimeout && clearTimeout(touchTimeout)
-                        touch.x1 = firstTouch.pageX
-                        touch.y1 = firstTouch.pageY
-                        if (delta > 0 && delta <= 250) touch.isDoubleTap = true
-                        touch.last = now
-                        longTapTimeout = setTimeout(longTap, longTapDelay)
-                        // adds the current touch contact for IE gesture recognition
-                        if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
-                    })
-                    .on('touchmove MSPointerMove pointermove', function(e){
-                        if((_isPointerType = isPointerEventType(e, 'move')) &&
-                            !isPrimaryTouch(e)) return
+                // MAX
+                if (oTarget.getAttribute("max") !== null ) {
+                    oOptions.range.max = parseInt(oTarget.getAttribute("max"));
+                }
 
-                        var touchList = extractTouchesFromEvent(e)
+                // START
+                if (oTarget.getAttribute("value") !== null ) {
+                    oOptions.start = parseInt(oTarget.getAttribute("value"));
+                }
 
-                        firstTouch = _isPointerType ? e : touchList[0]
-                        cancelLongTap()
-                        touch.x2 = firstTouch.pageX
-                        touch.y2 = firstTouch.pageY
+                if (oTarget.getAttribute('data-fc-pips') !== null ) {
+                    oCustomOptions.pips = {
+                        mode: 'positions',
+                        values: [0,50,100],
+                        density: 4
+                    };
+                }
 
-                        deltaX += Math.abs(touch.x1 - touch.x2)
-                        deltaY += Math.abs(touch.y1 - touch.y2)
-                    })
-                    .on('touchend MSPointerUp pointerup', function(e){
-                        if((_isPointerType = isPointerEventType(e, 'up')) &&
-                            !isPrimaryTouch(e)) return
-                        cancelLongTap()
+                oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
 
-                        // swipe
-                        if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
-                            (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
+                init(oTarget, oSettings, oCustomOptions, nIndex);
 
-                            swipeTimeout = setTimeout(function() {
-                                touch.el.trigger('swipe')
-                                touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
-                                touch = {}
-                            }, 0)
-
-                        // normal tap
-                        else if ('last' in touch)
-                        // don't fire tap when delta position changed by more than 30 pixels,
-                        // for instance when moving to a point and back to origin
-                            if (deltaX < 30 && deltaY < 30) {
-                                // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
-                                // ('tap' fires before 'scroll')
-                                tapTimeout = setTimeout(function() {
-
-                                    // trigger universal 'tap' with the option to cancelTouch()
-                                    // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
-                                    var event = $.Event('tap')
-                                    event.cancelTouch = cancelAll
-                                    touch.el.trigger(event)
-
-                                    // trigger double tap immediately
-                                    if (touch.isDoubleTap) {
-                                        if (touch.el) touch.el.trigger('doubleTap')
-                                        touch = {}
-                                    }
-
-                                    // trigger single tap after 250ms of inactivity
-                                    else {
-                                        touchTimeout = setTimeout(function(){
-                                            touchTimeout = null
-                                            if (touch.el) touch.el.trigger('singleTap')
-                                            touch = {}
-                                        }, 250)
-                                    }
-                                }, 0)
-                            } else {
-                                touch = {}
-                            }
-                        deltaX = deltaY = 0
-
-                    })
-                    // when the browser window loses focus,
-                    // for example when a modal dialog is shown,
-                    // cancel all ongoing events
-                    .on('touchcancel MSPointerCancel pointercancel', cancelAll)
-
-                // scrolling the window indicates intention of the user
-                // to scroll, not tap or swipe, so cancel all ongoing events
-                $(window).on('scroll', cancelAll);
             }
         };
     });
 
 
-    ;['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
-        'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function(eventName){
-        $.fn[eventName] = function(callback){ return this.on(eventName, callback) }
-    })
-})(window.$);
-/* jshint ignore:end */
+})(window, document, oGlobalSettings, FrontendMediator, FrontendTools, FrontendCore, $);

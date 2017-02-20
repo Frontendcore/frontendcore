@@ -170,6 +170,11 @@ module.exports = function(grunt) {
 			fcCwd + '/components/form-password-meter/js/_password-meter.js'
 		];
 
+		// RANGE FIELD
+		oCore.files[jsDest + '/ui/range-field-libs.js'] = [
+			fcCwd + '/bower/nouislider/distribute/nouislider.js',
+		];
+
 		// INFINITE SCROLL
 		oCore.files[jsDest + '/ui/infinite-libs.js'] = [
 			fcCwd + '/components/infinite/js/_infinite-scroll.js'
