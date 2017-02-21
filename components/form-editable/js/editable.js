@@ -114,7 +114,11 @@
 						if ( dataFcEditableId !== null) {
 							var elem = $('#' + dataFcEditableId);
 							currentValue = elem.val().trim();
-							elem.remove();
+							try{
+                                elem.remove();
+                            }catch(err) {
+
+							}
 							$(oTarget).removeAttr('data-fc-editable-id');
 							$(oTarget).show();
 
