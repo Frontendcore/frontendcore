@@ -44,7 +44,7 @@
     "owl-carousel2": "~2.2.*",
     "stacktable": "~1.0.0",
     "tooltipster": "~4.0.0",
-    "webshim": "~1.15.7",
+    "webshim": "~1.16.0",
     "parsleyjs": "~2.0.7",
     "object-fit-polyfill": "~0.1.0",
     "twig.js": "~0.8.4",
