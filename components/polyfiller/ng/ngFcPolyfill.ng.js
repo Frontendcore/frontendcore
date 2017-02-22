@@ -3,12 +3,12 @@
 
     FrontendCore.ngModule = FrontendCore.ngModule || angular.module('frontendcore', []);
 
-    FrontendCore.ngModule.directive('ngFcTip', ['$document', function($document) {
+    FrontendCore.ngModule.directive('ngFcPolyfiller', ['$document', function($document) {
         return {
             link: function(scope, element, attrs) {
-                FrontendCore.require(["tip"],function (){
-                    var oTip =  FrontendCore.instantiate('tip');
-                    oTip.autobind(element[0]);
+                FrontendCore.require(['polyfiller'],function (){
+                    var oPolyfiller =  FrontendCore.instantiate('polyfiller');
+                    oPolyfiller.onStart();
                 });
             }
         }
