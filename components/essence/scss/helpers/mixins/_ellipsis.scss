@@ -1,9 +1,9 @@
-@mixin  ellipsis() {
+@mixin  ellipsis( $display: inline-block) {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 100%;
-  display: inline-block;
+  display: $display;
 }
 
 @mixin ellipsis-multi($font-size-ellipsis: $font-size-default, $line-height-ellipsis: $base-line-height, $lines-to-show-ellipsis: 1 ) {

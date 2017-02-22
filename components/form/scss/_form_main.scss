@@ -22,6 +22,7 @@
 		cursor: pointer;
 		text-align: left;
 		font-size: map-get($object-forms-vars, label-font-size);
+		font-weight: map-get($object-forms-vars, label-font-weight);
 		color: map-get($object-forms-vars, label-color);
 		margin-right: $spacing/2;
 		input[type='radio'], input[type='checkbox'] {
@@ -48,6 +49,16 @@
 		font-style: normal;
 		font-size: $font-size-default;
 		color: $color-foreground-light;
+	}
+	li.error {
+		input, select, textarea {
+			@extend %error;
+		}
+	}
+	li.success {
+		input, select, textarea {
+			@extend %success;
+		}
 	}
 	input[type='radio'], input[type='checkbox'] {
 		display: none;
@@ -131,8 +142,11 @@
 			display: block;
 			overflow: visible;
 			padding: $spacing/4 0;
-			&.error {
-				padding-bottom: $spacing;
+			margin: map-get($object-forms-vars, field-margin);
+			@if map-get($object-forms-vars, field-margin) == 0 {
+				&.error {
+					padding-bottom: $spacing;
+				}
 			}
 		}
 	}
@@ -146,7 +160,7 @@
 			}
 		}
 		input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {
-			@extend %field-error;
+			@extend %error;
 		}
 	}
 	input[type='text'], input[type='search'], input[type='url'], input[type='password'], input[type='email'], input[type='number'], input[type='tel'], input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'], select, textarea {

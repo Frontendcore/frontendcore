@@ -20,10 +20,14 @@
 		background: map-get($object-buttons-vars, default-background);
 		color: map-get($object-buttons-vars, default-color);
 		line-height: 100%;
+		outline: none;
 	}
 	&:hover {
 		filter: brightness(105%) contrast(115%);
 		text-decoration: none;
+		i {
+			text-decoration: none !important;
+		}
 	}
 	&:active {
 		opacity: .8;

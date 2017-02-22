@@ -1,9 +1,54 @@
 %focus {
+	@if (map-get($object-forms-vars, field-focus-border-top) != false) {
+		border-top: map-get($object-forms-vars, field-focus-border-top);
+	}
+	@if (map-get($object-forms-vars, field-focus-border-right) != false) {
+		border-right: map-get($object-forms-vars, field-focus-border-right);
+	}
 	@if (map-get($object-forms-vars, field-focus-border-bottom) != false) {
 		border-bottom: map-get($object-forms-vars, field-focus-border-bottom);
 	}
+	@if (map-get($object-forms-vars, field-focus-border-left) != false) {
+		border-left: map-get($object-forms-vars, field-focus-border-left);
+	}
 	box-shadow: inset 0 0  map-get($object-forms-vars, field-focus-box-shadow-size) map-get($object-forms-vars, field-focus-box-shadow-color) !important;
 	outline: none;
+}
+
+%error {
+	@if (map-get($object-forms-vars, field-error-border-top) != false) {
+		border-top: map-get($object-forms-vars, field-error-border-top);
+	}
+	@if (map-get($object-forms-vars, field-error-border-right) != false) {
+		border-right: map-get($object-forms-vars, field-error-border-right);
+	}
+	@if (map-get($object-forms-vars, field-error-border-bottom) != false) {
+		border-bottom: map-get($object-forms-vars, field-error-border-bottom);
+	}
+	@if (map-get($object-forms-vars, field-error-border-left) != false) {
+		border-left: map-get($object-forms-vars, field-error-border-left);
+	}
+	@if (map-get($object-forms-vars, field-error-background) != false) {
+		background: map-get($object-forms-vars, field-error-background);
+	}
+}
+
+%success {
+	@if (map-get($object-forms-vars, field-success-border-top) != false) {
+		border-top: map-get($object-forms-vars, field-success-border-top);
+	}
+	@if (map-get($object-forms-vars, field-success-border-right) != false) {
+		border-right: map-get($object-forms-vars, field-success-border-right);
+	}
+	@if (map-get($object-forms-vars, field-success-border-bottom) != false) {
+		border-bottom: map-get($object-forms-vars, field-success-border-bottom);
+	}
+	@if (map-get($object-forms-vars, field-success-border-left) != false) {
+		border-left: map-get($object-forms-vars, field-success-border-left);
+	}
+	@if (map-get($object-forms-vars, field-success-background) != false) {
+		background: map-get($object-forms-vars, field-success-background);
+	}
 }
 
 %field {
@@ -24,19 +69,12 @@
 		box-shadow: map-get($object-forms-vars, field-box-shadow);
 	}
 	&.error {
-		background: map-get($object-forms-vars, field-error-background);
-		border-left: map-get($object-forms-vars, field-error-border);
+		@extend %error;
 	}
 	&.success {
-		background: map-get($object-forms-vars, field-success-background);
-		border-left: map-get($object-forms-vars, field-success-border);
+		@extend %success;
 	}
 	&:focus {
 		@extend %focus;
 	}
-
-}
-
-%field-error {
-	box-shadow: inset 0 0 $spacing/8 map-get($object-forms-vars, field-error-border);
 }
