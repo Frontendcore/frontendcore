@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcPolyfiller",["$document",function(a){return{link:function(a,c,d){b.require(["polyfiller"],function(){var a=b.instantiate("polyfiller");a.onStart()})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);

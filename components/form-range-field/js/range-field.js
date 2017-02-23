@@ -35,7 +35,7 @@
                         noUiSlider.create( oSlider , oOptions );
 
                         oSlider.noUiSlider.on('update', function( values, handle ) {
-                            $(oTarget).val(parseFloat(values[handle]));
+                            $(oTarget).val(parseFloat(values[handle])).trigger('input');
                         });
 
                         if (oCustomOptions.inputSync !== undefined) {
