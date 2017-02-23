@@ -4,4 +4,7 @@
       font-size: map-get($object-fonts-vars, h#{$h}-font-size-tablet );
     }
   }
+  .h#{$h}-tablet {
+    @extend %h#{$h}
+  }
 }

@@ -13,4 +13,8 @@
       @extend %button_icon_small;
     }
   }
+  &._icon-desktop {
+    @extend %button_icon;
+  }
+
 }

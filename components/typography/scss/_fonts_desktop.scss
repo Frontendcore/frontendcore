@@ -6,6 +6,9 @@
       font-size: map-get($object-fonts-vars, h#{$h}-font-size);
     }
   }
+  .h#{$h}-desktop {
+    @extend %h#{$h}
+  }
 }
 
 @if map-get($fonts, size-ratio-default) != map-get($fonts, size-ratio-desktop) {

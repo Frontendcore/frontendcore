@@ -1,0 +1,6 @@
+@for $h from 1 through 6 {
+  .h#{$h}-mobile {
+    @extend %h#{$h}
+  }
+}
+

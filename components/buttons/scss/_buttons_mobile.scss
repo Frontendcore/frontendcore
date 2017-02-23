@@ -13,4 +13,7 @@
       @extend %button_icon_small;
     }
   }
+  &._icon-mobile {
+    @extend %button_icon;
+  }
 }
