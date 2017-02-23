@@ -142,7 +142,9 @@
 			display: block;
 			overflow: visible;
 			padding: $spacing/4 0;
-			margin: map-get($object-forms-vars, field-margin);
+			@if map-get($object-forms-vars, field-margin) != false {
+				margin: map-get($object-forms-vars, field-margin);
+			}
 			@if map-get($object-forms-vars, field-margin) == 0 {
 				&.error {
 					padding-bottom: $spacing;
