@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 	var aPaths = [],
 		sPathDest = '/',
 		bHtmlDemo = true,
-		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.css.tpl',
+		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.tpl.css',
 		sPathDemoTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.html',
 		sDestHtml = '';
 

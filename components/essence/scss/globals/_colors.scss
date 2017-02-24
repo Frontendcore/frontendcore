@@ -1,10 +1,4 @@
 ///
-/// Array with all the standard names of the colors
-/// @group colors
-///
-$color-names: 'primary','secondary','foreground','background', 'box','success','error','info','warning' !global;
-
-///
 /// Color used for foreground elements, such as text.
 /// TIP: color-foreground can be used as background in a box with color-background for the text to create elements in negative
 /// @group colors
@@ -33,6 +27,20 @@ $color-foreground-dark: map-get($colors, foreground-dark) !global;
 /// @group colors
 ///
 $color-background: map-get($colors, background) !global;
+
+///
+/// Color used for background elements, for  as box-text.
+/// TIP: color-background can be used as color for the text in a box with color-foreground as background to create elements in negative.
+/// @group colors
+///
+$color-background-dark: map-get($colors, background-dark) !global;
+
+///
+/// Color used for background elements, for  as box-text.
+/// TIP: color-background can be used as color for the text in a box with color-foreground as background to create elements in negative.
+/// @group colors
+///
+$color-background-light: map-get($colors, background-light) !global;
 
 ///
 /// Color used for the html body element background.
@@ -228,3 +236,27 @@ $color-box-invert: map-get($colors, megacontrast) !global;
 		$color-box-dark: lighten($color-box, 15%) !global;
 	}
 }
+
+@if $color-background-light == auto {
+	@if (_brightness( $color-background ) > 30%) {
+		$color-background-light: lighten($color-background, 10%) !global;
+	} @else {
+		$color-background-light: darken($color-background, 15%) !global;
+	}
+}
+
+@if $color-background-dark == auto {
+	@if (_brightness( $color-background ) > 30%) {
+		$color-background-dark: darken($color-background, 15%) !global;
+	} @else {
+		$color-background-dark: lighten($color-background, 15%) !global;
+	}
+}
+
+
+///
+/// Array with all the standard names of the colors
+/// @group colors
+///
+$color-names: foreground foreground-light foreground-dark background background-light background-dark body primary primary-light primary-dark secondary secondary-light secondary-dark link box box-light box-dark info success error warning !global;
+$color-vars: $color-foreground $color-foreground-light $color-foreground-dark $color-background $color-background-light $color-background-dark $color-body $color-primary $color-primary-light $color-primary-dark $color-secondary $color-secondary-light $color-secondary-dark $color-link $color-box $color-box-light $color-box-dark $color-info $color-success $color-error $color-warning !global;

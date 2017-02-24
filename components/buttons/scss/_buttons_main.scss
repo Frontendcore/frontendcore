@@ -14,25 +14,51 @@
 	&._large {
 		@extend %button_large;
 	}
+
+
 	&._primary {
 		background: map-get($object-buttons-vars, primary-background);
 		color: map-get($object-buttons-vars, primary-color);
 		border-color: map-get($object-buttons-vars, primary-background);
+		.couple-icon {
+			[class*="icon-"]:last-child:after {
+				color:map-get($object-buttons-vars, primary-background);
+				-webkit-text-stroke-color: map-get($object-buttons-vars, primary-background);
+			}
+		}
 	}
 	&._secondary {
 		background: map-get($object-buttons-vars, secondary-background);
 		color: map-get($object-buttons-vars, secondary-color);
 		border-color: map-get($object-buttons-vars, secondary-background);
+		.couple-icon {
+			[class*="icon-"]:last-child:after {
+				color:map-get($object-buttons-vars, secondary-background);
+				-webkit-text-stroke-color: map-get($object-buttons-vars, secondary-background);
+			}
+		}
 	}
 	&._success {
 		background: map-get($object-buttons-vars, success-background);
 		color: map-get($object-buttons-vars, success-color);
 		border-color: map-get($object-buttons-vars, success-background);
+		.couple-icon {
+			[class*="icon-"]:last-child:after {
+				color:map-get($object-buttons-vars, success-background);
+				-webkit-text-stroke-color: map-get($object-buttons-vars, success-background);
+			}
+		}
 	}
 	&._error {
 		background: map-get($object-buttons-vars, error-background);
 		color: map-get($object-buttons-vars, error-color);
 		border-color: map-get($object-buttons-vars, error-background);
+		.couple-icon {
+			[class*="icon-"]:last-child:after {
+				color:map-get($object-buttons-vars, error-background);
+				-webkit-text-stroke-color: map-get($object-buttons-vars, error-background);
+			}
+		}
 	}
 	&._hollow {
 		& {

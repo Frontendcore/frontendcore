@@ -49,9 +49,11 @@
 	}
 	@each $color in $color-names {
 
+		$i: index($color-names, $color);
+
 		&._#{$color} > nav li.tabs-active > a, &._#{$color} > ul li.tabs-active > a {
-			background-color: map-get($colors, $color) !important;
-			color: contrast-color(map-get($colors, $color)) !important;
+			background-color: nth($color-vars, $i) !important;
+			color: contrast-color(nth($color-vars, $i)) !important;
 		}
 	}
 

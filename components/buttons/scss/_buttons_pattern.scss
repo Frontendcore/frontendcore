@@ -36,6 +36,13 @@
 	[class^='icon-'] {
 		margin-right: $spacing/4;
 	}
+	.couple-icon {
+		[class*="icon-"]:last-child:after {
+			color:map-get($object-buttons-vars, default-background);
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: map-get($object-buttons-vars, default-background);
+		}
+	}
 }
 
 %button_small {
@@ -70,7 +77,7 @@
 	box-sizing: border-box;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	i {
+	[class*="icon-"]:first-child, .couple-icon {
 		display: block;
 		margin-right: 0 !important;
 		height: 100%;
@@ -86,6 +93,15 @@
 			font-size: map-get($object-buttons-vars, icon-default-font-size);
 			height: map-get($object-buttons-vars, icon-default-font-size);
 			margin-top: (-(map-get($object-buttons-vars, icon-default-font-size)/2));
+		}
+	}
+	.couple-icon {
+		[class*="icon-"]:last-child {
+			top: 50%;
+			left: 50%;
+			bottom: inherit;
+			right: inherit;
+			margin: map-get($object-buttons-vars, icon-default-font-size)/8 0 0 map-get($object-buttons-vars, icon-default-font-size)/8;
 		}
 	}
 	span {
@@ -125,7 +141,7 @@
 	padding: map-get($object-buttons-vars, small-padding);
 	width: map-get($object-buttons-vars, icon-small-width);
 	height: map-get($object-buttons-vars, icon-small-height);
-	i:before {
+	[class*="icon-"]:first-child:before, .couple-icon:before {
 		font-size: map-get($object-buttons-vars, icon-small-font-size);
 		height: map-get($object-buttons-vars, icon-small-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-small-font-size)/2));
@@ -134,13 +150,19 @@
 		margin: map-get($object-buttons-vars, small-padding);
 		top: map-get($object-buttons-vars, icon-small-font-size) + $spacing/3;
 	}
+	.couple-icon {
+		[class*="icon-"]:last-child {
+			margin: map-get($object-buttons-vars, icon-small-font-size)/8 0 0 map-get($object-buttons-vars, icon-small-font-size)/8;
+
+		}
+	}
 }
 
 %button_icon_large {
 	padding: map-get($object-buttons-vars, large-padding);
 	width: map-get($object-buttons-vars, icon-large-width);
 	height: map-get($object-buttons-vars, icon-large-height);
-	i:before {
+	[class*="icon-"]:first-child:before, .couple-icon:before {
 		font-size: map-get($object-buttons-vars, icon-large-font-size);
 		height: map-get($object-buttons-vars, icon-large-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-large-font-size)/2));
@@ -148,5 +170,11 @@
 	span {
 		margin: map-get($object-buttons-vars, large-padding);
 		top: map-get($object-buttons-vars, icon-large-font-size) + $spacing/2;
+	}
+	.couple-icon {
+		[class*="icon-"]:last-child {
+			margin: map-get($object-buttons-vars, icon-large-font-size)/8 0 0 map-get($object-buttons-vars, icon-large-font-size)/8;
+
+		}
 	}
 }

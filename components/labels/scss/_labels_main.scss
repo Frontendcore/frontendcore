@@ -12,10 +12,12 @@
 		background: $color-box;
 		color: rgba(contrast-color($color-box), .8);
 	}
-	@each $color-name in $color-names {
-		&._#{$color-name} {
-			background: map_get($colors, $color-name);
-			color: rgba(contrast-color(darken(map_get($colors, $color-name), 10%)), .8);
+	@each $color in $color-names {
+		$i: index($color-names, $color);
+
+		&._#{$color} {
+			background: nth($color-vars, $i);
+			color: rgba(contrast-color(darken(nth($color-vars, $i), 10%)), .8);
 		}
 	}
 }

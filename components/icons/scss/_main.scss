@@ -1,0 +1,19 @@
+.couple-icon {
+
+
+  @each $c in $color-names {
+    $i: index($color-names, $c);
+
+    &._#{$c} {
+      [class*='icon-'] {
+        color: contrast-color(nth($color-vars, $i));
+
+      }
+      [class*='icon-']:last-child {
+        color: nth($color-vars, $i) !important;
+        -webkit-text-stroke-color: nth($color-vars, $i);
+      }
+    }
+  }
+
+}
