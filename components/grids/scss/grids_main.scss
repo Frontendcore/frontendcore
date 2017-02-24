@@ -83,11 +83,11 @@
 @each $number in $grid-columns {
   $n: index($grid-columns, $number);
 
-  $column: $grid-width/$n;
+//  $column: $grid-width/$n;
 
-  @if (is-percentage($grid-width)) {
+//  @if (is-percentage($grid-width)) {
     $column: $grid-width/$grid-total * $n;
-  }
+//  }
 
   $compensation: $gutter * ($n/$grid-total);
 
