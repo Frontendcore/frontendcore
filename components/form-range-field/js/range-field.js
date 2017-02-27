@@ -124,6 +124,26 @@
                     oOptions.start = parseInt(oTarget.getAttribute("value"));
                 }
 
+                // TOOLTIPS
+                if (oTarget.getAttribute("data-fc-tooltip") !== null ) {
+                    oOptions.tooltips = true;
+                }
+
+
+                // TOOLTIPS
+                if (oTarget.getAttribute("data-fc-suffix") !== null ) {
+                    oOptions.format = {
+                        to: function ( value ) {
+                            return  (Math.round(value)  + oTarget.getAttribute("data-fc-suffix"));
+                        },
+                        from: function ( value ) {
+                            return value.replace(oTarget.getAttribute("data-fc-suffix"), '');
+                        }
+                    };
+                }
+
+
+
                 if (oTarget.getAttribute('data-fc-pips') !== null ) {
                     oCustomOptions.pips = {
                         mode: 'positions',

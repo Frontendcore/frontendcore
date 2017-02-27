@@ -55,7 +55,8 @@ var oDefaultPaths = {
 		'image-edit',
 		'select-search',
 		'swipe',
-		'anchor-scroll'
+		'anchor-scroll',
+		'draggable',
 	];
 
 for (var nKey = 0; nKey < aModules.length; nKey++) {

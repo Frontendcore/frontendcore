@@ -1,0 +1,25 @@
+{% set current_children = "Draggable" %}
+{% set current_section = "Content" %}
+{% set relative_path = "../" %}
+{% import "../_macros/_demo.html.twig" as demos %}
+
+{% extends "../_layout/_basic.html.twig" %}
+
+
+{% block main %}
+    <section class="box-lighten">
+        <h2>Simple draggable</h2>
+        {{ demos.demo(
+            'draggable-simple',
+            PathComponents ~ 'draggable/html/draggable-simple.html'
+        )}}
+    </section>
+    {{ demos.settings(
+    {
+        "1" : {
+            "name" :        "data-fc-handle",
+            "description" : "your dragging handle. If not defined, then the whole body of the selected element will be draggable",
+        },
+    }
+    )}}
+{% endblock %}

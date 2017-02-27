@@ -75,7 +75,8 @@
     "table-dynamic",
     "notification",
     "tip",
-    "modal"
+    "modal",
+    "draggable"
   ],
   "dependencies": {
     "bower": "^1.3.7",

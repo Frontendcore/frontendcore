@@ -243,6 +243,12 @@
           "js": true,
           "done": true
         },
+        "Draggable": {
+          "name": "Draggable",
+          "href": "draggable.html",
+          "js": true,
+          "done": true
+        },
         "Code": {
           "name": "Code beautifier",
           "href": "code.html",

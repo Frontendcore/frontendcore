@@ -180,6 +180,11 @@ module.exports = function(grunt) {
 			fcCwd + '/components/infinite/js/_infinite-scroll.js'
 		];
 
+		// DRAGGABLE
+		oCore.files[jsDest + '/ui/draggable.js'] = [
+            fcCwd + '/components/draggable/js/_draggable.js'
+		];
+
 		var oRoundTrip = {
 			options: {
 				mangle: false,
