@@ -41,8 +41,11 @@
                 if ( sId !== null && sId !== undefined && sId !== '') {
                     $('[href="#' + sId + '"]').each( function () {
 
-                        if ( this.getAttribute('data-fc-self-toggle') !== null ) {
+                        if ( this.getAttribute('data-fc-self-toggle') === 'slide' ) {
                             $(this).slideToggle('fast');
+                        } else if ( this.getAttribute('data-fc-self-toggle') !== null) {
+                            $(this).toggle('fast');
+
                         }
                     });
                 }

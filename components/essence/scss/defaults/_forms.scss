@@ -34,6 +34,7 @@ $object-forms-vars-default: (
     label-font-size: .9rem,
     label-color: rgba(map_get($colors, foreground), .5),
     label-weight: normal,
+    label-padding: 0 0 map-get($defaults, spacing)/4 0,
 ) !global !default;
 
 $object-forms-vars-custom: () !global !default;

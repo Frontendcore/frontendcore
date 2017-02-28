@@ -18,7 +18,7 @@
 	}
 	label {
 		display: block;
-		padding-bottom: $spacing/4;
+		padding: map-get($object-forms-vars, label-padding);
 		cursor: pointer;
 		text-align: left;
 		font-size: map-get($object-forms-vars, label-font-size);

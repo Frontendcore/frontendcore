@@ -1,4 +1,10 @@
 .box {
   margin-bottom: map_get($object-boxes-vars, desktop-margin-bottom);
   padding: map_get($object-boxes-vars, desktop-padding);
+  &._desktop-none {
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0px !important;
+    margin: 0 !important;
+  }
 }
