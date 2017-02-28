@@ -30,7 +30,13 @@
             PathComponents ~ 'toggle/html/toggle-animation-attention.html'
         )}}
     </section>
-
+    <section class="box-lighten">
+        <h2>Toggle Slide with self hidden</h2>
+        {{ demos.demo(
+        'toggle-slide-self',
+        PathComponents ~ 'toggle/html/toggle-slide-self.html'
+        )}}
+    </section>
     {{ demos.settings(
     {
         "1" : {
@@ -44,6 +50,10 @@
         "3" : {
             "name" :        "data-fc-animation",
             "description" : "Sets the animation type to the target element. Possible values (with -in, -out, -up, -down, -right or -left): 'flash', 'bounce', 'shake', 'tada', 'pulse', 'rubberband', 'fade', 'swing', 'tada', 'wobble', 'flip', 'rotate', 'slide', 'hinge', 'roll'",
+        },
+        "3" : {
+            "name" :        "data-fc-self-toggle",
+            "description" : "If it's defined will toggle the current element on click",
         }
     }
     )}}

@@ -514,7 +514,31 @@
                             </div>
 
     </section>
+    <section class="box-lighten">
+        <h2>Toggle Slide with self hidden</h2>
+                                        <div data-fc-modules="tabs" class="loading o-v">
+                <section id="tab-toggle-slide-self-1" class="o-v" data-fc-name="Demo">
+            <div class="box _background o-v" >
+                                                <a href="#toggle-slide-self" data-fc-modules="toggle" data-fc-self-toggle="true" class="button">Click to slide Toggle</a>
 
+<div id="toggle-slide-self" class="box hidden">
+    <a href="#toggle-slide-self" data-fc-modules="toggle" class="button">Click to close</a>
+    <p>Hello World!</p>
+</div>                                            </div>
+        </section>
+                <section id="tab-toggle-slide-self-2" data-fc-name="HTML">
+            <div class="box _background">
+                <pre><code data-fc-modules="code">&lt;a href=&quot;#toggle-slide-self&quot; data-fc-modules=&quot;toggle&quot; data-fc-self-toggle=&quot;true&quot; class=&quot;button&quot;&gt;Click to slide Toggle&lt;/a&gt;
+
+&lt;div id=&quot;toggle-slide-self&quot; class=&quot;box hidden&quot;&gt;
+    &lt;a href=&quot;#toggle-slide-self&quot; data-fc-modules=&quot;toggle&quot; class=&quot;button&quot;&gt;Click to close&lt;/a&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+                            </div>
+
+    </section>
             <hr />
         <h2 class="mb-m">Attributes</h2>
         <dl class="list">
@@ -525,6 +549,10 @@
                         <dt><h5 class="mb-n c-primary">data-fc-class</h5></dt>
             <dd class="mb-l">
                 <p class="mb-s">Sets the classname to toggle.</p>
+                            </dd>
+                        <dt><h5 class="mb-n c-primary">data-fc-animation</h5></dt>
+            <dd class="mb-l">
+                <p class="mb-s">Sets the animation type to the target element. Possible values (with -in, -out, -up, -down, -right or -left): 'flash', 'bounce', 'shake', 'tada', 'pulse', 'rubberband', 'fade', 'swing', 'tada', 'wobble', 'flip', 'rotate', 'slide', 'hinge', 'roll'</p>
                             </dd>
                         <dt><h5 class="mb-n c-primary">data-fc-animation</h5></dt>
             <dd class="mb-l">

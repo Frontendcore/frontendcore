@@ -269,6 +269,13 @@
 		& {
 			position: relative;
 		}
+		&._auto {
+			display: inline-block;
+			select {
+				width: initial;
+				padding-right: $spacing*1.5;
+			}
+		}
 		select {
 			-webkit-appearance: none;
 			-moz-appearance:    none;

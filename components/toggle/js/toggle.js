@@ -37,6 +37,16 @@
 				FrontendTools.trackModule('JS_Libraries', 'call', 'toggle');
 
 			},
+			toggle: function (sId) {
+                if ( sId !== null && sId !== undefined && sId !== '') {
+                    $('[href="#' + sId + '"]').each( function () {
+
+                        if ( this.getAttribute('data-fc-self-toggle') !== null ) {
+                            $(this).slideToggle('fast');
+                        }
+                    });
+                }
+			},
 			getOpositeAnimation: function (sClass) {
 
 				var sClassOposite = sClass || '',
@@ -86,10 +96,12 @@
 					sHref = oThis.href,
 					sClassName = oThis.getAttribute('data-fc-animation') || '',
 					$Target = null,
-					sTargetClassName;
+					sTargetClassName,
+                    sId;
 
 				if (sHref.indexOf('#') !== -1) {
-					$Target = $(document.getElementById(sHref.split('#')[1]));
+				    sId = sHref.split('#')[1];
+					$Target = $(document.getElementById( sId ));
 				}
 
 				sTargetClassName = $Target.attr('class');
@@ -102,27 +114,37 @@
 
 				$(oThis).attr('data-fc-animation', sClassOposite);
 
+                self.toggle(sId);
+
 			},
 			toggleClass: function (oThis) {
 
 				var self = this,
 					sHref = oThis.href,
-					sClassName = oThis.getAttribute('data-fc-class') || '';
+					sClassName = oThis.getAttribute('data-fc-class') || '',
+                    sId;
 
 				if (sHref.indexOf('#') !== -1) {
-					$(document.getElementById(sHref.split('#')[1])).toggleClass(sClassName, 'bounce-out');
+                    sId = sHref.split('#')[1];
+					$(document.getElementById(sId)).toggleClass(sClassName, 'bounce-out');
 				}
 
 				$(oThis).toggleClass('active');
 
+                self.toggle(sId);
+
 			},
 			slideToggle: function (oThis) {
 
-				var sHref = oThis.href;
+				var self = this,
+					sHref = oThis.href,
+					sId,
+					oTarget;
 
 				if (sHref.indexOf('#') !== -1) {
 
-					var oTarget = document.getElementById(sHref.split('#')[1]);
+					sId = sHref.split('#')[1];
+					oTarget = document.getElementById(sId);
 
 					if ($(oTarget).is(':visible')) {
 
@@ -142,8 +164,10 @@
 						}, 1);
 
 						$(oTarget).slideDown();
-
 					}
+
+					self.toggle(sId);
+
 
 				}
 
