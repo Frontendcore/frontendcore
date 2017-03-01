@@ -1,8 +1,8 @@
 .tooltipster-sidetip {
   .tooltipster-box {
-    background: $color-box;
-    box-shadow: 0 0 $spacing/2 rgba($color-foreground, .4);
-    border-radius: $default-border-radius;
+    background: map_get($object-tip-vars, background);
+    box-shadow: map_get($object-tip-vars, box-shadow);
+    border-radius: map_get($object-tip-vars, border-radius);
     border: 1px solid rgba($color-background, .5);
   }
   &.tooltipster-bottom .tooltipster-box {
@@ -18,9 +18,10 @@
     margin-bottom: 8px;
   }
   .tooltipster-content {
-    color: contrast-color($color-box);
+    color: map_get($object-tip-vars, color);
+    font-size:  map_get($object-tip-vars, font-size);
     line-height: 110%;
-    padding: 6px 14px;
+    padding: map_get($object-tip-vars, padding);
   }
   .tooltipster-arrow {
     overflow: hidden;
@@ -61,22 +62,22 @@
     border: 9px solid transparent;
   }
   &.tooltipster-bottom .tooltipster-arrow-background {
-    border-bottom-color: $color-box;
+    border-bottom-color: map_get($object-tip-vars, background);
     left: 0;
     top: 1px;
   }
   &.tooltipster-left .tooltipster-arrow-background {
-    border-left-color: $color-box;
+    border-left-color: map_get($object-tip-vars, background);
     left: -1px;
     top: 0;
   }
   &.tooltipster-right .tooltipster-arrow-background {
-    border-right-color: $color-box;
+    border-right-color: map_get($object-tip-vars, background);
     left: 1px;
     top: 0;
   }
   &.tooltipster-top .tooltipster-arrow-background {
-    border-top-color: $color-box;
+    border-top-color: map_get($object-tip-vars, background);
     left: 0;
     top: -1px;
   }
@@ -86,16 +87,16 @@
     top: 0;
   }
   &.tooltipster-bottom .tooltipster-arrow-border {
-    border-bottom-color: darken($color-box, 10%);
+    border-bottom-color: darken(map_get($object-tip-vars, background), 10%);
   }
   &.tooltipster-left .tooltipster-arrow-border {
-    border-left-color: darken($color-box, 10%);
+    border-left-color: darken(map_get($object-tip-vars, background), 10%);
   }
   &.tooltipster-right .tooltipster-arrow-border {
-    border-right-color: darken($color-box, 10%);
+    border-right-color: darken(map_get($object-tip-vars, background), 10%);
   }
   &.tooltipster-top .tooltipster-arrow-border {
-    border-top-color: darken($color-box, 10%);
+    border-top-color: darken(map_get($object-tip-vars, background), 10%);
   }
   .tooltipster-arrow-uncropped {
     position: relative;

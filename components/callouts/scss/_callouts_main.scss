@@ -1,16 +1,16 @@
 .callout {
   & {
-    padding: $spacing/2 $spacing;
-    margin: 1px 1px $spacing 1px;
-    color: $color-foreground;
-    border-radius: $default-border-radius;
+    padding: map_get($object-callouts-vars, padding);
+    margin: map_get($object-callouts-vars, margin);
+    color: map_get($object-callouts-vars, color);
+    border-radius: map_get($object-callouts-vars, border-radius);
     overflow: hidden;
-    border-style: solid;
-    border-width: 0 0 0 $spacing/4;
-    background: $color-background;
+    border-style: map_get($object-callouts-vars, border-style);
+    border-width: map_get($object-callouts-vars, border-width);
+    background: map_get($object-callouts-vars, background);
     position: relative;
-    box-shadow: 0 0 2px rgba($color-foreground, .5);
-    font-size: $font-size-default;
+    box-shadow: map_get($object-callouts-vars, box-shadow);
+    font-size: map_get($object-callouts-vars, font-size);
   }
   &._icon {
     text-align: center;

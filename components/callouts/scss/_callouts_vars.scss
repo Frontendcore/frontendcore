@@ -1,0 +1,15 @@
+$object-callouts-vars-default: (
+  padding: $spacing/2 $spacing,
+  margin: 1px 1px $spacing 1px,
+  color: $color-foreground,
+  border-radius: $default-border-radius,
+  border-style: solid,
+  border-width: 0 0 0 $spacing/4,
+  background: $color-background,
+  box-shadow: 0 0 2px rgba($color-foreground, .5),
+  font-size: $font-size-default
+) !global !default;
+
+$object-callouts-vars-custom: () !global !default;
+
+$object-callouts-vars: map-merge($object-callouts-vars-default, $object-callouts-vars-custom) !global;

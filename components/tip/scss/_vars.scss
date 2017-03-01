@@ -1,0 +1,12 @@
+$object-tip-vars-default: (
+    padding: 6px 14px,
+    color: contrast-color($color-box),
+    background: $color-box,
+    border-radius: $default-border-radius,
+    box-shadow: 0 0 ($spacing/2) (rgba($color-foreground, .4)),
+    font-size: $font-size-default
+) !global !default;
+
+$object-tip-vars-custom: () !global !default;
+
+$object-tip-vars: map-merge($object-tip-vars-default, $object-tip-vars-custom) !global;

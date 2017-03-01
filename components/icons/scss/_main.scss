@@ -5,7 +5,7 @@
     $i: index($color-names, $c);
 
     &._#{$c} {
-      [class*='icon-'] {
+      [class*='icon-']:before {
         color: contrast-color(nth($color-vars, $i));
 
       }
