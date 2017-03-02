@@ -142,8 +142,15 @@
 			display: block;
 			overflow: visible;
 			padding: $spacing/4 0;
-			@if map-get($object-forms-vars, field-margin) != false {
+			&:not(.col) {
+				@if map-get($object-forms-vars, field-margin) != false {
+					margin: map-get($object-forms-vars, field-margin);
+				}
+			}
+			&[class*='col'] {
 				margin: map-get($object-forms-vars, field-margin);
+				margin-right: 0;
+				padding: map-get($object-forms-vars, field-padding-col);
 			}
 			@if map-get($object-forms-vars, field-margin) == 0 {
 				&.error {

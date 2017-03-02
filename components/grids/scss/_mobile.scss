@@ -1,0 +1,16 @@
+.form {
+  ol {
+    li.col,
+    li.col.col-last-#{$scr},
+    li.col._ungap{
+      padding-right: 0;
+    }
+    li[class*='col-']:last-child:not(.col-last-#{$scr}),
+    li[class*='col-'].col-last-#{$scr},
+    li.col-#{$scr}-12,
+    li[class*='col-']._ungap,
+    li[class*='col-']._ungap-#{$scr}{
+      padding-right: 0;
+    }
+  }
+}

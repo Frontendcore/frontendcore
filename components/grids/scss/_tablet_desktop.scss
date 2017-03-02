@@ -1,6 +1,16 @@
+.form {
+  ol {
+    li[class*='col']:last-child:not(.col-last-#{$scr}),
+    li[class*='col'].col-last-#{$scr},
+    li[class*='col']._ungap{
+      padding-right: 0;
+    }
+  }
+}
+
 .col {
-  &:last-child:not(.col-last-xl),
-  &.col-last-xl,
+  &:last-child:not(.col-last-#{$scr}),
+  &.col-last-#{$scr},
   &._ungap{
     margin-right: 0;
   }
@@ -13,49 +23,49 @@
   $reduced-column: ($column * (1 - ($gutter / $column))) + $compensation;
   $offset: $column + $compensation + $gutter;
 
-  .col-xl-#{$n} {
+  .col-#{$scr}-#{$n} {
     flex: 0 0 $reduced-column;
     max-width: $reduced-column;
   }
   .row._start,
   .row._end,
   .row._center{
-    .col-xl-#{$n} {
+    .col-#{$scr}-#{$n} {
       flex: 0 0 $column - $gutter;
       max-width: $column - $gutter;
     }
   }
   .row._start{
-    .col-xl-#{$n} {
+    .col-#{$scr}-#{$n} {
       margin-right: $gutter;
     }
   }
   .row._end{
-    .col-xl-#{$n} {
+    .col-#{$scr}-#{$n} {
       margin-left:$gutter;
     }
   }
   .row._center{
-    .col-xl-#{$n}:not(:first-of-type) {
+    .col-#{$scr}-#{$n}:not(:first-of-type) {
       margin-left:$gutter;
     }
   }
-  .col-xl-offset-#{$n} {
+  .col-#{$scr}-offset-#{$n} {
     margin-left: $offset;
   }
 
-  .col.col-xl-offset-#{$n} {
+  .col.col-#{$scr}-offset-#{$n} {
     margin-left: $column + $compensation;
   }
 
-  .row._ungap{
-    >.col-xl-#{$n} {
+  .row._ungap, .form .row{
+    >.col-#{$scr}-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
       margin-left: 0;
       margin-right: 0;
     }
-    >.col-xl-offset-#{$n} {
+    >.col-#{$scr}-offset-#{$n} {
       margin-left: $column;
     }
   }
@@ -63,7 +73,7 @@
 }
 
 .row {
-  @include flex-distribution("",-xl);
+  @include flex-distribution("",-#{$scr});
 }
 
-@include flex-order(-xl);
+@include flex-order(-#{$scr});

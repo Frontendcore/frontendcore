@@ -66,11 +66,12 @@
 	white-space: nowrap;
 	&:after {
 		content:"\25BE";
-		padding: 0 $spacing/2.5 0 $spacing/4;
+		padding: 0 $spacing/2 0 $spacing/4;
 		position: absolute;
 		right: 0;
 		top: 50%;
-		margin-top: -$spacing/2;
+		font-size: $font-size-default;
+		margin-top: -(($font-size-default/2) * 1.1 );
 		z-index: 1;
 		text-align: center;
 		pointer-events: none;
@@ -81,11 +82,12 @@
 	color: map-get($object-forms-vars, field-color);
 }
 .chosen-container-single .chosen-single span {
-	display: block;
+	display: inline-block;
 	overflow: hidden;
 	margin-right: 26px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	line-height: 1.1;
 }
 .chosen-container-single .chosen-single-with-deselect span {
 	margin-right: 38px;
@@ -225,11 +227,12 @@
 	border-left: map-get($object-forms-vars, field-border-left);
 	&:after {
 		content:"\25BE";
-		padding: 0 $spacing/2.5 0 $spacing/4;
+		padding: 0 $spacing/2 0 $spacing/4;
 		position: absolute;
 		right: 0;
 		top: 50%;
-		margin-top: -$spacing/2;
+		font-size: $font-size-default;
+		margin-top: -(($font-size-default/2) * 1.1 );
 		z-index: 1;
 		text-align: center;
 		pointer-events: none;

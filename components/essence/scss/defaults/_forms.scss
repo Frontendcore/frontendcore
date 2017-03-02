@@ -6,6 +6,7 @@ $object-forms-vars-default: (
     field-background: #FFF,
     field-color: #000,
     field-padding: map-get($defaults, spacing)/4 map-get($defaults, spacing)/2,
+    field-padding-col: 0 map_get($defaults, spacing)/2 0 0,
     field-margin: false,
     field-border-radius: 1px,
     field-border-top: 2px solid rgba(map_get($colors, foreground), .3),

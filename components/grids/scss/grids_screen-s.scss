@@ -1,4 +1,3 @@
-
 .col {
   flex: 1 1 100%;
   max-width: 100%;
@@ -48,7 +47,7 @@
     margin-left: $column + $compensation;
   }
 
-  .row._ungap{
+  .row._ungap, .form .row{
     >.col-s-#{$n} {
       flex: 0 0 $column;
       max-width: $column;
