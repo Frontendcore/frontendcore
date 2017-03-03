@@ -83,7 +83,7 @@
 		height: 100%;
 		width: 100%;
 		position: absolute;
-		top: map-get($object-buttons-vars, border-width);
+		top: 0;
 		&:before {
 			position: absolute;
 			left: 0;
