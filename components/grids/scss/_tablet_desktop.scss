@@ -4,6 +4,7 @@
     li[class*='col'].col-last-#{$scr},
     li[class*='col']._ungap{
       padding-right: 0;
+      margin-left: 0;
     }
   }
 }
