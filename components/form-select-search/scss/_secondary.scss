@@ -82,12 +82,12 @@
 	color: map-get($object-forms-vars, field-color);
 }
 .chosen-container-single .chosen-single span {
-	display: inline-block;
+	display: inline;
 	overflow: hidden;
 	margin-right: 26px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	line-height: 1.1;
+	line-height: map-get($object-forms-vars, field-line-height);
 }
 .chosen-container-single .chosen-single-with-deselect span {
 	margin-right: 38px;
@@ -139,7 +139,7 @@
 	border-left: map-get($object-forms-vars, field-border-left);
 	font-size: 1em;
 	font-family: sans-serif;
-	line-height: normal;
+	line-height: map-get($object-forms-vars, field-line-height);;
 	border-radius: 0;
 }
 .chosen-container-single .chosen-drop {
@@ -225,6 +225,7 @@
 	border-right: map-get($object-forms-vars, field-border-right);
 	border-bottom: map-get($object-forms-vars, field-border-bottom);
 	border-left: map-get($object-forms-vars, field-border-left);
+	border-radius: map-get($object-forms-vars, field-border-radius);
 	&:after {
 		content:"\25BE";
 		padding: 0 $spacing/2 0 $spacing/4;
@@ -237,6 +238,7 @@
 		text-align: center;
 		pointer-events: none;
 		box-sizing: border-box;
+		color: $color-secondary;
 	}
 }
 .chosen-container-multi .chosen-choices li {
@@ -257,7 +259,7 @@
 	color: map-get($object-forms-vars, field-placeholder-color);
 	font-size: 100%;
 	font-family: sans-serif;
-	line-height: normal;
+	line-height: map-get($object-forms-vars, field-line-height);;
 	border-radius: 0;
 	margin: map-get($object-forms-vars, field-padding);
 	padding-top: $spacing/8;
