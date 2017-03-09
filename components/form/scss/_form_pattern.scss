@@ -67,6 +67,7 @@
 		border-radius: map-get($object-forms-vars, field-border-radius);
 		box-sizing: border-box;
 		box-shadow: map-get($object-forms-vars, field-box-shadow);
+		line-height:map-get($object-forms-vars, field-line-height);
 	}
 	&.error {
 		@extend %error;

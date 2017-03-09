@@ -280,14 +280,14 @@
 			display: inline-block;
 			select {
 				width: initial;
-				padding-right: $spacing*1.5;
+				padding-right: $spacing*1.75;
 			}
 		}
 		select {
 			-webkit-appearance: none;
 			-moz-appearance:    none;
 			appearance:         none;
-			padding-right: $spacing;
+			padding-right: $spacing*1.25;
 			&::-ms-expand {
 				/* IE 8 */
 				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

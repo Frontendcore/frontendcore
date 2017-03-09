@@ -25,8 +25,6 @@ module.exports = function(grunt) {
 		oConfig['files'] = aFiles;
 	}
 
-
-
 	return oConfig;
 
 }
