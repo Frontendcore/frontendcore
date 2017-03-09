@@ -17,15 +17,20 @@ module.exports = function(grunt) {
 			}
 		};
 
+	if ( Object.prototype.toString.call(oData.js.cwd) === '[object Array]') {
 
-	if ( jsCwd !== '') {
+		for (var i = 0; i < oData.js.cwd.length; i++) {
+			aFiles.push(oData.js.cwd[i] + '/**/*.js');
+			oConfig['files'] = aFiles;
+		}
+
+	}
+	else if ( jsCwd !== '') {
 
 		aFiles.push(jsCwd + '/**/*.js');
 
 		oConfig['files'] = aFiles;
 	}
-
-
 
 	return oConfig;
 
