@@ -340,9 +340,9 @@
 }
 .search-choice-close {
 	display: inline-block;
-	background: $color-primary;
+	background: $color-secondary;
 	color: contrast-color($color-primary);
-	padding: 0 $spacing/4;
+	padding: $spacing/8;
 	float: right;
 	cursor: pointer;
 	margin: 0 0 0 $spacing/4;
@@ -351,13 +351,17 @@
 	right: -$spacing/2;
 	border-radius: 50%;
 	text-align: center;
+	font-size: $font-size-s;
+	width: $spacing/4 + $font-size-s;
+	height: $spacing/4 + $font-size-s;
+	box-sizing: border-box;
 	box-shadow: 1px 1px 1px rgba(0,0,0, .1);
+	line-height: 1.1;
 	&:after {
 		content: "\00D7";
 	}
 	&:hover {
-		background: $color-link;
-		contrast-color: $color-link;
+		filter: brightness(105%) contrast(115%);
 		text-decoration: none;
 	}
 }

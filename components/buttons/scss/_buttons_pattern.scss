@@ -19,7 +19,7 @@
 		border-color: map-get($object-buttons-vars, default-background);
 		background: map-get($object-buttons-vars, default-background);
 		color: map-get($object-buttons-vars, default-color);
-		line-height: 100%;
+		line-height: map-get($object-buttons-vars, line-height);
 		outline: none;
 	}
 	&:hover {
@@ -51,6 +51,7 @@
 		font-family: map-get($object-buttons-vars, small-font-family);
 		font-weight: map-get($object-buttons-vars, small-font-weight);
 		font-size: map-get($object-buttons-vars, small-font-size);
+		line-height: map-get($object-buttons-vars, small-line-height);
 	}
 	[class^='icon-'] {
 		margin-right: $spacing/8;
@@ -63,6 +64,7 @@
 		font-family: map-get($object-buttons-vars, large-font-family);
 		font-weight: map-get($object-buttons-vars, large-font-weight);
 		font-size: map-get($object-buttons-vars, large-font-size);
+		line-height: map-get($object-buttons-vars, large-line-height);
 	}
 	[class^='icon-'] {
 		margin-right: $spacing/2;
@@ -74,6 +76,7 @@
 	border-radius: map-get($object-buttons-vars, border-radius);
 	width: map-get($object-buttons-vars, icon-default-width);
 	height: map-get($object-buttons-vars, icon-default-height);
+	line-height: map-get($object-buttons-vars, icon-default-line-height);
 	box-sizing: border-box;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
@@ -145,6 +148,7 @@
 		font-size: map-get($object-buttons-vars, icon-small-font-size);
 		height: map-get($object-buttons-vars, icon-small-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-small-font-size)/2));
+		line-height: map-get($object-buttons-vars, icon-small-line-height);
 	}
 	span {
 		margin: map-get($object-buttons-vars, small-padding);
@@ -166,6 +170,7 @@
 		font-size: map-get($object-buttons-vars, icon-large-font-size);
 		height: map-get($object-buttons-vars, icon-large-font-size);
 		margin-top: (-(map-get($object-buttons-vars, icon-large-font-size)/2));
+		line-height: map-get($object-buttons-vars, icon-large-line-height);
 	}
 	span {
 		margin: map-get($object-buttons-vars, large-padding);
