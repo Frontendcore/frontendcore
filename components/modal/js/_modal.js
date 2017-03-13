@@ -315,6 +315,12 @@
                     oOptions = addOption(oOptions, 'class', oTarget.getAttribute("data-fc-class"));
                 }
 
+                if ( oTarget.getAttribute("data-only-scroll-on") !== null ) {
+                    oOptions = addOption(oOptions, 'onlyScrollOn', oTarget.getAttribute("data-only-scroll-on"));
+
+
+                }
+
                 oOptions = DefaultCallbacks(oOptions, sIdModal);
 
 				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
