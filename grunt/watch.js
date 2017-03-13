@@ -10,12 +10,11 @@ module.exports = function(grunt) {
 				scssCwd + '/**/*.scss'
 			],
 			oJsFiles = [
-				jsCwd +  '/**/*.js',
-				'!' + jsCwd +  '/**/*.ng.js',
+				jsCwd +  '**/js/*.js'
 			],
 			oNgFiles = [
-                fcCwd + 'components/**/*.ng.js',
-				jsCwd +  '/**/*.ng.js',
+                fcCwd + 'components/**/ng/*.js',
+				jsCwd +  '**/ng/*.js'
 			];
 
         if ( oData.scss !== undefined && oData.scss.cwd !== undefined &&  Object.prototype.toString.call(oData.scss.cwd) === '[object Array]') {
@@ -28,10 +27,15 @@ module.exports = function(grunt) {
 
 			for (var nJsKey = 0; nJsKey < oData.js.cwd.length; nJsKey++) {
 
-				var sPathTemp = getRelativePath(oData.js.cwd[nJsKey] + '/**/*.js');
+				var sPathTemp = getRelativePath(oData.js.cwd[nJsKey] + '/**/js/*.js'),
+                    sPathNgTemp = getRelativePath(oData.js.cwd[nJsKey] + '/**/ng/*.js');
 
 				if ( sPathTemp !==  (fcCwd + 'components/**/*.js' ) ) {
-					oJsFiles.push(getRelativePath(oData.js.cwd[nJsKey] + '/**/*.js'));
+					oJsFiles.push(getRelativePath(oData.js.cwd[nJsKey] + '/**/js/*.js'));
+				}
+
+				if ( sPathNgTemp !==  (fcCwd + 'components/**/ng/*.js' ) ) {
+                    oNgFiles.push(getRelativePath(oData.js.cwd[nJsKey] + '/**/ng/*.js'));
 				}
 			}
 		}
@@ -41,14 +45,14 @@ module.exports = function(grunt) {
 				files: fcCwd + 'components/**/*.js',
 				tasks: ['js']
 			},
-			Angular: {
-				files: oNgFiles,
-				tasks: ['js:angular']
-			},
 			js: {
 				files: oJsFiles,
 				tasks: ['js:compile']
 			},
+            Angular: {
+                files: oNgFiles,
+                tasks: ['js:angular']
+            },
 			scss: {
 				files: oScssFiles,
 				tasks: ['css:compile']

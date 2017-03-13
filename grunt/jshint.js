@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			grunt.option('fcCwd') + 'components/**/js/*.js',
 			'!' + grunt.option('fcCwd') + 'components/**/js/roundtrip.js',
 			'!' + grunt.option('fcCwd') + 'components/**/libs/**/*.js',
-			'!' + grunt.option('fcCwd') + 'components/**/dist/**/*.js',
+			'!' + grunt.option('fcCwd') + 'components/**/dist/**/*.js'
 		],
 		oConfig = {
 			all : {

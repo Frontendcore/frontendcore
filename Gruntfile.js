@@ -23,10 +23,10 @@ module.exports = function (grunt) {
 	grunt.initConfig(oConfig);
 
 	grunt.registerTask('html', ['twigRender','notify:html']);
-	grunt.registerTask('js', ['jshint','copy:js','copy:jsForms','uglify','notify:js']);
+	grunt.registerTask('js', ['js:hint','copy:js','copy:jsForms','uglify','notify:js']);
 	grunt.registerTask('js:hint', ['jshint']);
-	grunt.registerTask('js:angular', ['jshint','uglify:custom','notify:js']);
-	grunt.registerTask('js:compile', ['jshint','copy:js','notify:js']);
+	grunt.registerTask('js:angular', ['js:hint','uglify:custom','notify:js']);
+	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js']);
 	grunt.registerTask('css', ['sass_globbing','css:compile','copy:img']);
 	grunt.registerTask('css:import', ['sass_globbing']);
 	grunt.registerTask('css:one', ['sass_globbing','css:compile']);
