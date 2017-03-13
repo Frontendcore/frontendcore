@@ -21,8 +21,11 @@ module.exports = function(grunt) {
 
 		for (var i = 0; i < oData.js.cwd.length; i++) {
 			aFiles.push(oData.js.cwd[i] + '/**/*.js');
-			oConfig['files'] = aFiles;
 		}
+
+        oConfig['files'] = {
+			src:  aFiles
+        };
 
 	}
 	else if ( jsCwd !== '') {
