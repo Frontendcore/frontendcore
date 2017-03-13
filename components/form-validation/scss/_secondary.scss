@@ -1,6 +1,5 @@
 .form-error-over {
   .form-error-message {
-    position: absolute;
     right: $spacing/2;
     margin-top: -$spacing*1.4;
   }
@@ -9,7 +8,6 @@
   & {
     color: $color-error;
     margin: 0;
-    position: absolute;
     font-size: $font-size-xs;
     margin-top: -$spacing/8;
     font-weight: normal;

@@ -8,6 +8,7 @@ $object-forms-vars-default: (
     field-padding: map-get($defaults, spacing)/4 map-get($defaults, spacing)/2,
     field-padding-col: 0 map_get($defaults, spacing)/2 0 0,
     field-margin: false,
+    field-line-height: 1.4,
     field-border-radius: 1px,
     field-border-top: 2px solid rgba(map_get($colors, foreground), .3),
     field-border-right: 1px solid rgba(map_get($colors, foreground), .15),

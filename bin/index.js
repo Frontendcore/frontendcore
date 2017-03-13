@@ -214,6 +214,7 @@ if ( param === 'css:one') {
 
             break;
 
+            case "jshint":
             case "watch":
             case "css":
             case "css:compile":

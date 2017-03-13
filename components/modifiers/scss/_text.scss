@@ -53,3 +53,16 @@ b = bottom
 .td-n {
 	text-decoration: none !important;
 }
+
+
+@for $h from 0 through 9 {
+	.lh-0#{$h} {
+		line-height: ($h * 10 / 100) !important;
+	}
+}
+
+@for $h from 10 through 20 {
+	.lh-#{$h} {
+		line-height: ($h * 10 / 100) !important;
+	}
+}
