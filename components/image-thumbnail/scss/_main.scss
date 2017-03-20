@@ -18,23 +18,21 @@
 	&._video {
 		position: relative;
 		&:before {
+			font-family: "icons";
 			text-align: center;
-			content: '\25B6';
+			content: '\f2db';
 			position: absolute;
 			color: #FFF;
-			border: 2px solid #FFF;
-			border-radius: 50%;
 			top: 50%;
 			left: 50%;
-			width: 40px;
-			height: 40px;
-			margin-left: -20px;
-			margin-top: -20px;
-			padding-top: 20px;
+			width: 60px;
+			height: 60px;
+			margin-left: -30px;
+			margin-top: -30px;
 			box-sizing: border-box;
-			font-size: 20px;
-			background: rgba(0,0,0,.3);
-			padding-left: 3px;
+			font-size: 60px;
+			line-height: 1;
+			text-shadow: 0 0 $spacing/6 rgba(0,0,0,.5);
 		}
 	}
 }
