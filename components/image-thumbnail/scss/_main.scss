@@ -18,9 +18,8 @@
 	&._video {
 		position: relative;
 		&:before {
-			font-family: "icons";
+			@extend %icon-play-circle-o;
 			text-align: center;
-			content: '\f2db';
 			position: absolute;
 			color: #FFF;
 			top: 50%;

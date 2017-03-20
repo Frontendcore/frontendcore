@@ -35,9 +35,9 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('docs', ['html']);
 
-	grunt.registerTask('default', ['copy:Polyfills','css','js','icons','notify:all']);
+	grunt.registerTask('default', ['copy:Polyfills','icons','css','js','notify:all']);
 
-	grunt.registerTask('build', ['clean','copy:Polyfills','copy:static','css','js','icons','html','notify:all']);
+	grunt.registerTask('build', ['clean','copy:Polyfills','copy:static','icons','css','js','html','notify:all']);
 	grunt.registerTask('rebuild:js', ['uglify','notify:all']);
 
 	grunt.event.on('watch', function (action, filepath) {

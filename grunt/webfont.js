@@ -4,12 +4,15 @@ module.exports = function(grunt) {
 
 	var aPaths = [],
 		sPathDest = '/',
+        sPathDestScss = grunt.option('fcCwd') + '/components/icons/scss/',
 		bHtmlDemo = true,
 		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.tpl.css',
+		sPathTemplatePlaceholder = grunt.option('fcCwd') + '/components/icons/template/icons-placeholders.tpl.scss',
 		sPathDemoTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.html',
 		sDestHtml = '';
 
-	if (oData !== null ) {
+
+    if (oData !== null ) {
 
 		if (oData.icons !== undefined) {
 			if (oData.icons.cwd !== undefined) {
@@ -24,6 +27,10 @@ module.exports = function(grunt) {
 				sPathDest = grunt.option('appCwd') + '/' + oData.icons.dest;
 			}
 
+			if (oData.icons.destScss !== undefined) {
+                sPathDestScss = grunt.option('appCwd') + '/' + oData.icons.destScss;
+			}
+
 			if (oData.icons.destHtml !== undefined) {
 				sDestHtml = grunt.option('appCwd') + '/' + oData.icons.destHtml;
 			} else {
@@ -34,6 +41,27 @@ module.exports = function(grunt) {
 		}
 
 		return {
+            placeHolders: {
+                src: aPaths,
+                dest: sPathDestScss,
+                options: {
+                    fontHeight: 1792,
+                    stylesheet: 'scss',
+                    destHtml: sDestHtml,
+                    htmlDemo: false,
+                    engine: 'node',
+                    styles: 'icon',
+                    syntax: 'bootstrap',
+                    embed: true,
+                    types: 'woff',
+                    template: sPathTemplatePlaceholder,
+                    templateOptions: {
+                        baseClass: 'icon',
+                        classPrefix: 'icon-',
+                        mixinPrefix: 'icon-'
+                    }
+                }
+            },
 			myIcons: {
 				src: aPaths,
 				dest: sPathDest,

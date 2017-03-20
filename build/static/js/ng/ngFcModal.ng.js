@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcModal",["$document",function(a){return{link:function(a,c,d){b.require(["modal"],function(){var a=b.instantiate("modal");a.autobind(c[0])})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);

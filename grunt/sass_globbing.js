@@ -105,6 +105,7 @@ module.exports = function(grunt) {
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_vars*.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_pattern*.scss');
+			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_icons.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
         if (sDevice !== undefined) {

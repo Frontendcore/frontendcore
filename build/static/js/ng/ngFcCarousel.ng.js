@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcCarousel",["$document",function(a){return{link:function(a,c,d){b.require(["carousel"],function(){var a=b.instantiate("carousel");a.autobind(c[0])})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);
