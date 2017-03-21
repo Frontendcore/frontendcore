@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
 	var aPaths = [],
 		sPathDest = '/',
+		nFontheight = 1792,
         sPathDestScss = grunt.option('fcCwd') + '/components/icons/scss/',
 		bHtmlDemo = true,
 		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.tpl.css',
@@ -31,6 +32,10 @@ module.exports = function(grunt) {
                 sPathDestScss = grunt.option('appCwd') + '/' + oData.icons.destScss;
 			}
 
+			if (oData.icons.height !== undefined) {
+                nFontheight = oData.icons.height;
+			}
+
 			if (oData.icons.destHtml !== undefined) {
 				sDestHtml = grunt.option('appCwd') + '/' + oData.icons.destHtml;
 			} else {
@@ -45,7 +50,7 @@ module.exports = function(grunt) {
                 src: aPaths,
                 dest: sPathDestScss,
                 options: {
-                    fontHeight: 1792,
+                    fontHeight: nFontheight,
                     stylesheet: 'scss',
                     destHtml: sDestHtml,
                     htmlDemo: false,
@@ -66,7 +71,7 @@ module.exports = function(grunt) {
 				src: aPaths,
 				dest: sPathDest,
 				options: {
-					fontHeight: 1792,
+					fontHeight: nFontheight,
 					stylesheet: 'css',
 					destHtml: sDestHtml,
 					htmlDemo: bHtmlDemo,
