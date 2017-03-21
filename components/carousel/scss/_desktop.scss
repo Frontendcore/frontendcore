@@ -12,13 +12,7 @@
 	}
 	.owl-item {
 		.thumbnail._video:before, .image-thumbnail._video:before {
-			width: 100px;
-			height: 100px;
-			margin-top: -45px;
-			margin-left: -50px;
-			font-size: 40px;
-			padding-top: 50px;
-			padding-left: 5px;
+			zoom: 1.5;
 		}
 	}
 	.owl-dots .owl-dot {
@@ -47,25 +41,20 @@
 		&._video {
 			position: relative;
 			&:after {
+				@extend %icon-play-circle-o;
 				text-align: center;
-				content: '\25B6';
 				position: absolute;
 				color: #FFF;
-				border: 2px solid #FFF;
-				border-radius: 50%;
 				top: 50%;
 				left: 50%;
-				width: 40px;
-				height: 40px;
-				margin-left: -20px;
-				margin-top: -20px;
-				padding-top: 10px;
+				width: 30px;
+				height: 30px;
+				margin-left: -15px;
+				margin-top: -15px;
 				box-sizing: border-box;
-				font-size: 20px;
-				background: #000000;
-				background: rgba(0,0,0,0.3);
-				padding-left: 3px;
-				line-height: 100%;
+				font-size: 30px;
+				line-height: 1;
+				text-shadow: 0 0 $spacing/6 rgba(0,0,0,.5);
 			}
 		}
 	}

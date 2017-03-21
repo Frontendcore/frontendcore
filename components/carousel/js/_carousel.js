@@ -169,9 +169,11 @@
 
 					FrontendMediator.publish( 'carousel:init');
 
-					$('.owl-dot', oTarget).on('mouseover', function() {
-						$(this).click();
-					});
+					if ( oTarget.getAttribute("data-fc-over-click") !== 'false' ) {
+                        $('.owl-dot', oTarget).on('mouseover', function() {
+                            $(this).click();
+                        });
+					}
 
 					if (oTarget.getAttribute("data-fc-gallery") !== null){
 
