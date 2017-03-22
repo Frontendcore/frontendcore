@@ -42,7 +42,7 @@
 		opacity: .5;
 	}
 	&:after {
-		content: "\2715";
+		@extend %icon-times;
 	}
 	&:hover {
 		cursor: pointer;

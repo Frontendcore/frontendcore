@@ -22,9 +22,9 @@
 }
 
 /* Codes */
-.lightcase-icon-play:before { content: '\25B6'; }
-.lightcase-icon-pause:before { content: '\23F8'; }
-.lightcase-icon-close:before { content: '\2715'; }
-.lightcase-icon-prev:before { content: '\3008'; }
-.lightcase-icon-next:before { content: '\3009'; }
-.lightcase-icon-spin:before { content: '\25CC'; }
+.lightcase-icon-play:before { @extend %icon-play !optional;}
+.lightcase-icon-pause:before { @extend %icon-pause !optional;}
+.lightcase-icon-close:before { @extend %icon-times;  }
+.lightcase-icon-prev:before { @extend %icon-chevron-left; }
+.lightcase-icon-next:before { @extend %icon-chevron-right; }
+.lightcase-icon-spin:before { @extend %icon-circle-o-notch !optional;}

@@ -189,7 +189,7 @@
 		border-radius: 50%;
 		text-align: center;
 		&:before {
-			content: '\25B6';
+			@extend %icon-play-circle-o;
 			font-size: 44px;
 			font-weight: normal;
 			color: #fff;
@@ -262,7 +262,7 @@
 			padding: 0 $spacing 0 0;
 			left: -10px;
 			&:before {
-				content: '\2329';
+				@extend %icon-chevron-left;
 			}
 		}
 		.owl-next {
@@ -270,8 +270,7 @@
 			right: -10px;
 			padding: 0 0 0 $spacing;
 			&:before {
-				content: '\232A';
-
+				@extend %icon-chevron-right;
 			}
 		}
 	}

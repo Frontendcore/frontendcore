@@ -97,15 +97,20 @@ module.exports = function(grunt) {
 
 		oFiles[sKey] = [
 			fcCwd + 'components/essence/scss/_fc-' + sScreen + '_essence.scss',
-			fcCwd + 'components/essence/scss/_frontendcore.scss'
-
+			fcCwd + 'components/essence/scss/_frontendcore.scss',
 		];
+
+
+        if ( oData !== null && oData.icons.destScss !== undefined) {
+            oFiles[sKey].push( appCwd + '/' + oData.icons.destScss + '/_icons.scss');
+		} else {
+            oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons.scss');
+        }
 
 		for (var sComponent in oScssComponents) {
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_vars*.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_pattern*.scss');
-			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_icons.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
 		}
         if (sDevice !== undefined) {

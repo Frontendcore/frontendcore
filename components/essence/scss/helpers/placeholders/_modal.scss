@@ -16,8 +16,9 @@
     color: #FFF;
     position: absolute;
     right: $spacing/4;
-    content: "\2715";
     text-indent: 0;
+    @extend %icon-times;
+
   }
   &:hover {
     opacity: 1;
