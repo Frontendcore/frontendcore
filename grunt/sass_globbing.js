@@ -102,9 +102,9 @@ module.exports = function(grunt) {
 
 
         if ( oData !== null && oData.icons.destScss !== undefined) {
-            oFiles[sKey].push( appCwd + '/' + oData.icons.destScss + '/_icons.scss');
+            oFiles[sKey].push( appCwd + '/' + oData.icons.destScss + '/_icons-placeholders.scss');
 		} else {
-            oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons.scss');
+            oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons-placeholders.scss');
         }
 
 		for (var sComponent in oScssComponents) {

@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 		nFontheight = 1792,
         sPathDestScss = grunt.option('fcCwd') + '/components/icons/scss/',
 		bHtmlDemo = true,
-		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.tpl.css',
-		sPathTemplatePlaceholder = grunt.option('fcCwd') + '/components/icons/template/icons-placeholders.tpl.scss',
+		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.css',
+		sPathTemplatePlaceholder = grunt.option('fcCwd') + '/components/icons/template/_icons-placeholders.scss',
 		sPathDemoTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.html',
 		sDestHtml = '';
 
@@ -25,11 +25,11 @@ module.exports = function(grunt) {
 			}
 
 			if (oData.icons.dest !== false) {
-				sPathDest = grunt.option('appCwd') + '/' + oData.icons.dest;
+				sPathDest = appCwd + '/' + oData.icons.dest;
 			}
 
 			if (oData.icons.destScss !== undefined) {
-                sPathDestScss = grunt.option('appCwd') + '/' + oData.icons.destScss;
+                sPathDestScss = appCwd + '/' + oData.icons.destScss;
 			}
 
 			if (oData.icons.height !== undefined) {
@@ -45,34 +45,23 @@ module.exports = function(grunt) {
 
 		}
 
+		console.log(sPathDest);
+
 		return {
-            placeHolders: {
-                src: aPaths,
-                dest: sPathDestScss,
-                options: {
-                    fontHeight: nFontheight,
-                    stylesheet: 'scss',
-                    destHtml: sDestHtml,
-                    htmlDemo: false,
-                    engine: 'node',
-                    styles: 'icon',
-                    syntax: 'bootstrap',
-                    embed: true,
-                    types: 'woff',
-                    template: sPathTemplatePlaceholder,
-                    templateOptions: {
-                        baseClass: 'icon',
-                        classPrefix: 'icon-',
-                        mixinPrefix: 'icon-'
-                    }
-                }
-            },
 			myIcons: {
 				src: aPaths,
 				dest: sPathDest,
 				options: {
+                    customOutputs: [{
+                        template: sPathTemplate,
+                        dest: sPathDest,
+                        stylesheet: 'css'
+                    }, {
+                        template: sPathTemplatePlaceholder,
+                        dest: sPathDestScss,
+                        stylesheet: 'scss'
+                    }],
 					fontHeight: nFontheight,
-					stylesheet: 'css',
 					destHtml: sDestHtml,
 					htmlDemo: bHtmlDemo,
 					engine: 'node',
@@ -80,7 +69,6 @@ module.exports = function(grunt) {
 					syntax: 'bootstrap',
 					embed: true,
 					types: 'woff',
-					template: sPathTemplate,
 					htmlDemoTemplate: sPathDemoTemplate,
 					templateOptions: {
 						baseClass: 'icon',

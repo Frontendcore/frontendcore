@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('js:hint', ['jshint']);
 	grunt.registerTask('js:angular', ['js:hint','uglify:custom','notify:js']);
 	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js']);
-	grunt.registerTask('css', ['webfont:placeHolders','sass_globbing','css:compile','copy:img']);
+	grunt.registerTask('css', ['icons','sass_globbing','css:compile','copy:img']);
 	grunt.registerTask('css:import', ['sass_globbing']);
 	grunt.registerTask('css:one', ['sass_globbing','css:compile']);
 	grunt.registerTask('css:compile', ['sass','postcss','notify:css']);
