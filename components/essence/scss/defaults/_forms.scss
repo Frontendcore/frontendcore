@@ -32,6 +32,7 @@ $object-forms-vars-default: (
     field-success-border-bottom: false,
     field-success-border-left: 4px solid map_get($colors, success),
     field-success-background: #FFF,
+    field-checkbox-background: map_get($colors, success),
 /* Label */
     label-font-size: .9rem,
     label-color: rgba(map_get($colors, foreground), .5),
