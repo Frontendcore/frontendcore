@@ -255,22 +255,7 @@
 	}
 	select {
 		& {
-			position: relative;
-			background-color: $color-background;
-			line-height: normal;
-			font-family: map-get($object-forms-vars, field-font-family);
-			font-size: map-get($object-forms-vars, field-font-size);
-			font-weight: map-get($object-forms-vars, field-font-weight);
-			padding: map-get($object-forms-vars, field-padding);
-			border-top: map-get($object-forms-vars, field-border-top);
-			border-right: map-get($object-forms-vars, field-border-right);
-			border-bottom: map-get($object-forms-vars, field-border-bottom);
-			border-left: map-get($object-forms-vars, field-border-left);
-			background: map-get($object-forms-vars, field-background);
-			color: map-get($object-forms-vars, field-color);
-			border-radius: map-get($object-forms-vars, field-border-radius);
-			box-sizing: border-box;
-			box-shadow: map-get($object-forms-vars, field-box-shadow);
+			@extend %field;
 		}
 	}
 	.select {
