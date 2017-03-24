@@ -49,7 +49,7 @@
 		}
 		
 		function syncCodeFieldSelect(oTarget, $codeField, initialCountry, countryData) {
-			
+
 			// populate the country dropdown
 			$.each(countryData, function(i, country) {
 				$codeField.append($("<option></option>").attr("data-fc-iso", country.iso2).attr("value", country.dialCode).text('+' + country.dialCode ));
@@ -86,7 +86,6 @@
 
 		function syncCodeFieldInput(oTarget, $codeField, initialCountry) {
 
-
 			$codeField.val(initialCountry.dialCode);
 
 
@@ -102,21 +101,30 @@
 
 		function toggleValidClass(oTarget, sErrorId) {
 
-
-			var bValidated = $(oTarget).hasClass('error') || $(oTarget).hasClass('success') ? true : false,
+     		var bIsValid = true;
+			$(oTarget).removeClass("success").removeClass("error");
+			if ($(oTarget).val() !== '') {
 				bIsValid = $(oTarget).intlTelInput("isValidNumber");
-
-			if ( bValidated ) {
-				$(oTarget).removeClass("success").removeClass("error");
+				if (!bIsValid) {
+					$(oTarget).addClass("error");
+					$('#' + sErrorId).removeClass("hidden");
+				} else {
+					$(oTarget).addClass("success");
+					$('#' + sErrorId).addClass("hidden");
+				}
+			}
+			else {
 				$('#' + sErrorId).addClass("hidden");
+				if (oTarget.getAttribute("required") !== null ) {
+					$(oTarget).addClass("error");
+				}
 			}
 
-			if (!bIsValid && bValidated ) {
-				$(oTarget).addClass("error").focus();
-				$('#' + sErrorId).removeClass("hidden");
-				return false;
-			} else if ( bIsValid ) {
-				$(oTarget).addClass("success");
+			//if valid telephone field is present let's populate it.
+			if (oTarget.getAttribute("data-fc-valid-field") !== null ) {
+				var $codeField = $(oTarget.getAttribute("data-fc-valid-field"));
+				var $value = bIsValid ? '1' : '0';
+				$codeField.val($value);
 			}
 		}
 
@@ -225,6 +233,7 @@
 				}
 
 
+
 				// Validate if required
 				//if ($(oTarget).prop('required')) {
 
@@ -232,16 +241,14 @@
 
 					$(oTarget).parent('div').after('<ul id="'+ sErrorId +'" class="form-error-message hidden"><li class="parsley-required">'+ sTextError +'</li></ul>');
 
+					if ($(oTarget).val() !== ''){
+						//initial check of telephone field
+						toggleValidClass(oTarget, sErrorId);
+					}
+
 					// on blur: validate
 					$(oTarget).blur(function() {
 						toggleValidClass(oTarget, sErrorId);
-						if ($.trim($(oTarget).val())) {
-							if ($(oTarget).intlTelInput("isValidNumber")) {
-							} else {
-								$(oTarget).addClass("error");
-								$('#' + sErrorId).removeClass("hidden");
-							}
-						}
 					});
 
 					$(oTarget).parents('form').on('submit',function () {
