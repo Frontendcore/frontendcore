@@ -182,10 +182,9 @@
                 });
 
                 renderTemplate( sId, sData);
-
-                aIds.push(sId);
-
             });
+
+            aIds.push(sId);
         }
 
     };
