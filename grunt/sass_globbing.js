@@ -37,34 +37,13 @@ module.exports = function(grunt) {
 	}
 
 	if (currentTasks.indexOf('css:one') === -1) {
-		oConfig = {
-			main: {
-				files: getRoutes('main', getDeviceByScreen('main'))
-			},
-			secondary: {
-				files: getRoutes('secondary', getDeviceByScreen('secondary'))
-			},
-			screenXXXL: {
-				files: getRoutes('screen-xxxl', getDeviceByScreen('screen-xxxl'))
-			},
-			screenXXL: {
-				files: getRoutes('screen-xxl', getDeviceByScreen('screen-xxl'))
-			},
-			screenXL: {
-				files: getRoutes('screen-xl', getDeviceByScreen('screen-xl'))
-			},
-			screenL: {
-				files: getRoutes('screen-l', getDeviceByScreen('screen-l'))
-			},
-			screenM: {
-				files: getRoutes('screen-m', getDeviceByScreen('screen-m'))
-			},
-			screenS: {
-				files: getRoutes('screen-s', getDeviceByScreen('screen-s'))
-			},
-			screenXS: {
-				files: getRoutes('screen-xs', getDeviceByScreen('screen-s'))
-			},
+
+		oConfig = {};
+
+		for (var scssPackage in oScssPackages) {
+			oConfig[scssPackage.replace('-','')] = {
+                files: getRoutes(oScssPackages[scssPackage], getDeviceByScreen(scssPackage), scssPackage)
+			}
 		}
 	} else {
 
@@ -78,7 +57,7 @@ module.exports = function(grunt) {
 		}
 	}
 
-	function getRoutes(screen, sDevice) {
+	function getRoutes(screen, sDevice, arrayKey) {
 
 		var sScreen = screen !== undefined ? screen : 'main',
 			aPaths = [];
@@ -91,45 +70,90 @@ module.exports = function(grunt) {
 			aPaths.push(scssCwd);
 		}
 
+
+
 		var oFiles = {},
-			sKey = aPaths[0] + '/_components_' + sScreen + '.scss',
+			sKey,
 			oScssComponents = oComponents;
 
-		oFiles[sKey] = [
-			fcCwd + 'components/essence/scss/_fc-' + sScreen + '_essence.scss',
-			fcCwd + 'components/essence/scss/_frontendcore.scss',
-		];
+		// Create key and add the default scss
+
+        if (Object.prototype.toString.call(screen) === '[object Array]') {
+            sKey = aPaths[0] + '/_components_' + arrayKey + '.scss';
+            oFiles[sKey] = [];
+            for (var screenItem in screen) {
+                oFiles[sKey].push( fcCwd + 'components/essence/scss/_fc-' + screen[screenItem] + '_essence.scss');
+            }
+        } else {
+            sKey = aPaths[0] + '/_components_' + sScreen + '.scss';
+            oFiles[sKey] = [];
+            oFiles[sKey].push( fcCwd + 'components/essence/scss/_fc-' + sScreen + '_essence.scss');
+		}
 
 
-        if ( oData !== null && oData.icons.destScss !== undefined) {
-            oFiles[sKey].push( appCwd + '/' + oData.icons.destScss + '/_icons-placeholders.scss');
+
+        oFiles[sKey].push(fcCwd + 'components/essence/scss/_frontendcore.scss');
+
+
+		if (oData !== null && oData.icons.destScss !== undefined) {
+			oFiles[sKey].push(appCwd + '/' + oData.icons.destScss + '/_icons-placeholders.scss');
 		} else {
-            oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons-placeholders.scss');
-        }
+			oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons-placeholders.scss');
+		}
+
+		// FC SCREEN COMPONENTS
 
 		for (var sComponent in oScssComponents) {
-			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
+            if (Object.prototype.toString.call(screen) === '[object Array]') {
+                for (var screenItem in screen) {
+                    oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + screen[screenItem] + '_essence.scss');
+                }
+            } else {
+				oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/_fc-' + sScreen + '_essence.scss');
+            }
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_vars*.scss');
 			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_pattern*.scss');
-			oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
+
+            if (Object.prototype.toString.call(screen) === '[object Array]') {
+                for (var screenItem in screen) {
+                    oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + screen[screenItem] + '*.scss');
+                }
+            } else {
+                oFiles[sKey].push(fcCwd + 'components/' + oScssComponents[sComponent] + '/**/*_' + sScreen + '*.scss');
+
+            }
 		}
-        if (sDevice !== undefined) {
-            oFiles[sKey].push(fcCwd + 'components/**/*_' + sDevice + '*.scss');
 
-        }
+		// FC DEVICE COMPONENTS
 
+		if (sDevice !== undefined) {
+			oFiles[sKey].push(fcCwd + 'components/**/*_' + sDevice + '*.scss');
+
+		}
+
+		// CUSTOM COMPONENTS (DEVICE & SCREEN)
 		for (var nPath = 0; nPath < aPaths.length; nPath++) {
 			oFiles[sKey].push(aPaths[nPath] + '/**/*_vars*.scss');
 			oFiles[sKey].push(aPaths[nPath] + '/**/*_pattern*.scss');
-            if (sDevice !== undefined) {
-                oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
+
+			if (sDevice !== undefined && (oData !== null && oData.scss !== undefined && oData.scss.defaultDeviceGroup !== false)) {
+				oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sDevice + '*.scss');
+			}
+
+            if (Object.prototype.toString.call(screen) === '[object Array]') {
+                for (var screenItem in screen) {
+                    oFiles[sKey].push(aPaths[nPath] + '/**/*_' + screen[screenItem] + '*.scss');
+                    oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + screen[screenItem] + '.scss');
+                }
+            } else {
+                oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
+                oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + sScreen + '.scss');
+
             }
-			oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
-			oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + sScreen + '.scss');
+
+
 		}
 
-
-		
 		return oFiles
 	}
 	return oConfig;

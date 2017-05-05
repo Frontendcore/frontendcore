@@ -2,7 +2,18 @@
   "scss" : {
     "cwd": "scss",
     "dest": "build/static/css",
-    "browsers" : ["last 1 version"]
+    "browsers" : ["last 1 version"],
+    "packages": {
+      "main": "main",
+      "screen-xxxl": "screen-xxxl",
+      "screen-xxl": "screen-xxl",
+      "screen-xl": "screen-xl",
+      "screen-l": "screen-l",
+      "screen-m": "screen-m",
+      "screen-s": "screen-s",
+      "screen-xs": "screen-xs",
+      "secondary": "secondary"
+    }
   },
   "js" : {
     "cwd": ["components/swipe/html/"],

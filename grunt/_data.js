@@ -3,6 +3,7 @@ module.exports = function( grunt ) {
     require(grunt.option('fcCwd') + "/grunt/_tools.js")(grunt);
 
     var settingsPath = grunt.option('fcJson') === undefined ? grunt.option('appCwd') + '/frontendcore.json' : grunt.option('fcJson') ,
+        oDataDefaults = require( grunt.option('fcCwd') + '/frontendcore.json'),
         oPkg = require( grunt.option('fcCwd') + '/package.json'),
         sScssCwdData = '',
         sScssDestData = '',
@@ -11,6 +12,7 @@ module.exports = function( grunt ) {
         sIconsCwdData = '',
         sIconsDestData = '',
         oData,
+        oScssPackages = oDataDefaults.scss.packages,
         oComponents = [];
 
 
@@ -37,6 +39,10 @@ module.exports = function( grunt ) {
 
                 if ( oData.scss.dest !== undefined ) {
                     sScssDestData = getRelativePath(oData.scss.dest, 'appCwd');
+                }
+
+                if ( oData.scss.packages !== undefined ) {
+                    oScssPackages = oData.scss.packages;
                 }
             }
 
@@ -83,6 +89,7 @@ module.exports = function( grunt ) {
     this.scssCwdFile = grunt.option('scssCwd') !== undefined && grunt.option('scssCwd').indexOf('.scss') ? getFileName(grunt.option('scssCwd') ) : '*.scss' ;
     this.scssDest = grunt.option('scssDest') !== undefined ? getFilePath(grunt.option('scssDest')) : sScssDestData;
     this.scssDestFile = grunt.option('scssDest') !== undefined && grunt.option('scssDest').indexOf('.css') ? getFileName(grunt.option('scssDest')) : getFileName(scssCwdFile.replace('.scss','.css'));
+    this.oScssPackages = oScssPackages;
 
     this.jsDest = grunt.option('jsDest') !== undefined ? getFilePath(grunt.option('jsDest')) : sJsDestData;
     this.jsCwd = grunt.option('jsCwd') !== undefined ? getFilePath(grunt.option('jsCwd')) : sJsCwdData;
