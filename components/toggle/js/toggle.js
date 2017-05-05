@@ -30,6 +30,28 @@
 						} else {
 							self.slideToggle(oThis);
 						}
+
+                        if (oThis.getAttribute("data-fc-scroll") !== null) {
+
+                            if (
+								(oThis.getAttribute("data-fc-scroll").indexOf('mobile') && FrontendTools.isMobile.any()) ||
+								(oThis.getAttribute("data-fc-scroll").indexOf('desktop') && !FrontendTools.isMobile.any()) ||
+								(oThis.getAttribute("data-fc-scroll") === 'true')
+                            ) {
+                                FrontendCore.require(['anchor-scroll'], function () {
+                                    var oAnchor = FrontendCore.instantiate('anchor-scroll');
+                                    var oLink = oThis.cloneNode(true);
+
+                                    if (oLink.getAttribute("data-fc-scroll-to") !== null) {
+                                    	oLink.href = oLink.getAttribute("data-fc-scroll-to");
+									}
+
+                                    oAnchor.scrollTo( event, oLink);
+                                });
+                            }
+
+                        }
+
 					});
 
 				});
