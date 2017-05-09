@@ -143,17 +143,14 @@ module.exports = function(grunt) {
             if (Object.prototype.toString.call(screen) === '[object Array]') {
                 for (var screenItem in screen) {
                     oFiles[sKey].push(aPaths[nPath] + '/**/*_' + screen[screenItem] + '*.scss');
-                    oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + screen[screenItem] + '.scss');
+                    oFiles[sKey].push('!' + aPaths[nPath] + '/**/*_components_' + screen[screenItem] + '*.scss');
                 }
             } else {
                 oFiles[sKey].push(aPaths[nPath] + '/**/*_' + sScreen + '*.scss');
                 oFiles[sKey].push('!' + aPaths[nPath] + '/**/_components_' + sScreen + '.scss');
 
             }
-
-
 		}
-
 		return oFiles
 	}
 	return oConfig;
