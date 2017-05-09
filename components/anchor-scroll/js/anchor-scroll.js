@@ -59,6 +59,10 @@
 					sHeight += +($(oLink.getAttribute('data-fc-add')).outerHeight());
 				}
 
+				if ( oLink.getAttribute('data-fc-scroller') !== null) {
+                    sElementToScroll = oLink.getAttribute('data-fc-scroller');
+				}
+
 				if( $Target.length ) {
 
 					event.preventDefault();
