@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 			options: {
 				preserveComments: false,
 				beautify: bBeauty,
-				mangle: true
+				mangle: false
 			},
 			files: {}
 		},

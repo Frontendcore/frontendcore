@@ -38,6 +38,10 @@
                             $(oTarget).val(parseFloat(values[handle])).trigger('input');
                         });
 
+                        FrontendMediator.subscribe('rangeInput:' + sId + nIndex, function (oResponse) {
+                            oSlider.noUiSlider.set(oResponse.data.value);
+                        });
+
                         if (oCustomOptions.inputSync !== undefined) {
 
                             var $InputSync = $(oCustomOptions.inputSync);
@@ -141,7 +145,6 @@
                         }
                     };
                 }
-
 
 
                 if (oTarget.getAttribute('data-fc-pips') !== null ) {
