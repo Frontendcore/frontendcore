@@ -107,7 +107,8 @@
                 var self = this,
                     oOptions = {},
                     oCustomOptions = {},
-                    oSettings;
+                    oSettings,
+                    pipsValues;
 
                 if (oTarget.getAttribute('data-fc-step') !== null ) {
                     oOptions.step =  Number(oTarget.getAttribute('data-fc-step'));
@@ -155,9 +156,16 @@
                 }
 
                 if (oTarget.getAttribute('data-fc-pips') !== null ) {
+
+                    if ( oTarget.getAttribute('data-fc-pips-values') !== null ) {
+                        pipsValues =  oTarget.getAttribute('data-fc-pips-values').split(",");
+                    } else {
+                        pipsValues = [0,50,100];
+                    }
+
                     oCustomOptions.pips = {
                         mode: 'positions',
-                        values: [0,50,100],
+                        values: pipsValues,
                         density: 4
                     };
                 }
