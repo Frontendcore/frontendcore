@@ -115,13 +115,14 @@
 	FrontendCore.define('truncate', [], function () {
 
 	function bindElements(truncated) {
-        $('.js-truncate-more').on('click', function (e) {
+
+        $('.js-truncate-more', truncated.$element).on('click', function (e) {
             e.preventDefault();
             truncated.expand();
             bindElements(truncated);
         });
 
-        $('.js-truncate-less').on('click', function (e) {
+        $('.js-truncate-less', truncated.$element).on('click', function (e) {
             e.preventDefault();
             truncated.collapse();
             bindElements(truncated);
@@ -129,6 +130,7 @@
     }
 
 	return {
+		oTruncates: [],
 		oDefault: {
 			max_length: 100,
 			more: '(+)',
@@ -148,14 +150,14 @@
 
 			var self = this;
 
-			$( aTargets ).each(function () {
+			$( aTargets ).each(function (nIndex) {
 
 				var oTarget = this,
 					oSettings,
 					oOptions = {};
 
 
-				if (this.getAttribute("data-fc-lines") !== null) {
+				if (oTarget.getAttribute("data-fc-lines") !== null) {
 
 
 					var oCustomSettings = {
@@ -166,7 +168,7 @@
 					oOptions.lines = Number(oTarget.getAttribute("data-fc-lines")) + 1;
 
                     if (oTarget.getAttribute("data-fc-more") !== null) {
-                        oOptions.showMore = '<a href="#" class="js-truncate-more">(+)</a>' + oTarget.getAttribute("data-fc-more") + '</a>';
+                        oOptions.showMore = '<a href="#" class="js-truncate-more">' + oTarget.getAttribute("data-fc-more") + '</a>';
                     }
 
                     if (oTarget.getAttribute("data-fc-less") === 'false' ) {
@@ -175,12 +177,11 @@
                         oOptions.showLess = '<a href="#" class="js-truncate-less">' + oTarget.getAttribute("data-fc-less") + '</a>';
                     }
 
-
                     oSettings = FrontendTools.mergeOptions(oCustomSettings, oOptions);
 
-                    var truncated = new Truncate(oTarget , oSettings);
+                    self.oTruncates[nIndex] = new Truncate(oTarget , oSettings);
 
-                    bindElements(truncated);
+                    bindElements(self.oTruncates[nIndex]);
 
                 } else {
                     if (oTarget.getAttribute("data-fc-max") !== null) {
