@@ -62,6 +62,11 @@
 
         }
 
+        function round(value, precision) {
+            var multiplier = Math.pow(10, precision || 0);
+            return Math.round(value * multiplier) / multiplier;
+        }
+
         return {
             oDefault: {
                 start: 5,
@@ -104,6 +109,9 @@
                     oCustomOptions = {},
                     oSettings;
 
+                if (oTarget.getAttribute('data-fc-step') !== null ) {
+                    oOptions.step =  Number(oTarget.getAttribute('data-fc-step'));
+                }
 
                 if (oTarget.getAttribute('data-fc-target-input') !== null ) {
                     oCustomOptions.inputSync =  oTarget.getAttribute('data-fc-target-input');
@@ -138,14 +146,13 @@
                 if (oTarget.getAttribute("data-fc-suffix") !== null ) {
                     oOptions.format = {
                         to: function ( value ) {
-                            return  (Math.round(value)  + oTarget.getAttribute("data-fc-suffix"));
+                            return  ( round(value, 1)  + oTarget.getAttribute("data-fc-suffix"));
                         },
                         from: function ( value ) {
                             return value.replace(oTarget.getAttribute("data-fc-suffix"), '');
                         }
                     };
                 }
-
 
                 if (oTarget.getAttribute('data-fc-pips') !== null ) {
                     oCustomOptions.pips = {
