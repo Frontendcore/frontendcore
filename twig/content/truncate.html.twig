@@ -6,9 +6,17 @@
 {% extends "../_layout/_basic.html.twig" %}
 
 {% block main %}
+
+    <h3>Truncate characters</h3>
     {{ demos.demo(
         'text-fields',
         PathComponents ~ 'truncate/html/truncate.html'
+    )}}
+
+    <h3>Truncate lines</h3>
+    {{ demos.demo(
+        'text-linex',
+        PathComponents ~ 'truncate/html/truncate-lines.html'
     )}}
 
     {{ demos.settings(

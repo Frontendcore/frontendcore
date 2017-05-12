@@ -7,9 +7,9 @@
 
 	var trailing_whitespace = true;
 
-	$.fn.truncate = function(options) {
+	$.fn.truncateCH = function(options) {
 
-		var opts = $.extend({}, $.fn.truncate.defaults, options);
+		var opts = $.extend({}, $.fn.truncateCH.defaults, options);
 
 		$(this).each(function() {
 
@@ -40,7 +40,7 @@
 
 	// Note that the " (…more)" bit counts towards the max length – so a max
 	// length of 10 would truncate "1234567890" to "12 (…more)".
-	$.fn.truncate.defaults = {
+	$.fn.truncateCH.defaults = {
 		max_length: 100,
 		more: '…more',
 		less: 'less',
@@ -113,6 +113,21 @@
 	'use strict';
 
 	FrontendCore.define('truncate', [], function () {
+
+	function bindElements(truncated) {
+        $('.js-truncate-more').on('click', function (e) {
+            e.preventDefault();
+            truncated.expand();
+            bindElements(truncated);
+        });
+
+        $('.js-truncate-less').on('click', function (e) {
+            e.preventDefault();
+            truncated.collapse();
+            bindElements(truncated);
+        });
+    }
+
 	return {
 		oDefault: {
 			max_length: 100,
@@ -135,35 +150,67 @@
 
 			$( aTargets ).each(function () {
 
-				var oSettings,
+				var oTarget = this,
+					oSettings,
 					oOptions = {};
 
-				if (this.getAttribute("data-fc-max") !== null) {
-					oOptions.max_length = this.getAttribute("data-fc-max");
+
+				if (this.getAttribute("data-fc-lines") !== null) {
+
+
+					var oCustomSettings = {
+                        showMore: '<a href="#" class="js-truncate-more">(+)</a>',
+                        showLess: '<a href="#" class="js-truncate-less">(-)</a>'
+                    };
+
+					oOptions.lines = Number(oTarget.getAttribute("data-fc-lines")) + 1;
+
+                    if (oTarget.getAttribute("data-fc-more") !== null) {
+                        oOptions.showMore = '<a href="#" class="js-truncate-more">(+)</a>' + oTarget.getAttribute("data-fc-more") + '</a>';
+                    }
+
+                    if (oTarget.getAttribute("data-fc-less") === 'false' ) {
+                        oOptions.showLess = "";
+                    } else if (oTarget.getAttribute("data-fc-less") !== null ) {
+                        oOptions.showLess = '<a href="#" class="js-truncate-less">' + oTarget.getAttribute("data-fc-less") + '</a>';
+                    }
+
+
+                    oSettings = FrontendTools.mergeOptions(oCustomSettings, oOptions);
+
+                    var truncated = new Truncate(oTarget , oSettings);
+
+                    bindElements(truncated);
+
+                } else {
+                    if (oTarget.getAttribute("data-fc-max") !== null) {
+                        oOptions.max_length = oTarget.getAttribute("data-fc-max");
+                    }
+
+                    if (oTarget.getAttribute("data-fc-more") !== null) {
+                        oOptions.more = oTarget.getAttribute("data-fc-more");
+                    }
+
+                    if (oTarget.getAttribute("data-fc-less") === 'false') {
+                        var css = document.createElement("style");
+                        css.type = "text/css";
+                        css.innerHTML = ".truncator-less { display: none; }";
+                        document.body.appendChild(css);
+                    } else if (this.getAttribute("data-fc-less") !== null) {
+                        oOptions.less = oTarget.getAttribute("data-fc-less");
+                    }
+
+
+
+                    $(oTarget).truncateCH(oSettings);
 				}
 
-				if (this.getAttribute("data-fc-more") !== null) {
-					oOptions.more = this.getAttribute("data-fc-more");
-				}
-
-				if (this.getAttribute("data-fc-less") === 'false') {
-					var css = document.createElement("style");
-					css.type = "text/css";
-					css.innerHTML = ".truncator-less { display: none; }";
-					document.body.appendChild(css);
-				} else if (this.getAttribute("data-fc-less") !== null) {
-					oOptions.less = this.getAttribute("data-fc-less");
-				}
-
-				oSettings = FrontendTools.mergeOptions(self.oDefault, oOptions);
-
-				FrontendTools.removeLoading(this);
-
-				$(this).truncate(oSettings);
+                FrontendTools.removeLoading(this);
 
 
 
-			});
+
+            });
 		}
 	};
 });
