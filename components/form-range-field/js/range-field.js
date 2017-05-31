@@ -9,8 +9,6 @@
         var nGlobalIndex = 1000,
             sId = 'fc-range-';
 
-
-
         function init(oTarget, oOptions, oCustomOptions, nIndex) {
             if (nIndex === undefined) {
                 nIndex = nGlobalIndex;
@@ -102,8 +100,6 @@
 
             },
             autobind: function (oTarget, nIndex) {
-
-
                 var self = this,
                     oOptions = {},
                     oCustomOptions = {},
@@ -142,6 +138,10 @@
                     oOptions.tooltips = true;
                 }
 
+                // INITIAL INDEX
+                if ((nIndex === undefined) && (oTarget.getAttribute("data-fc-index") !== null )) {
+                    nIndex = parseInt(oTarget.getAttribute("data-fc-index"));
+                }
 
                 // TOOLTIPS
                 if (oTarget.getAttribute("data-fc-suffix") !== null ) {
