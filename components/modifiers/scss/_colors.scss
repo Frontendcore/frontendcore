@@ -28,7 +28,7 @@ bg-primary
 bg-ok
 */
 
-$colors-list: 'foreground', 'background', 'foreground-light', 'primary', 'secondary', 'box', 'error', 'success', 'info', 'warning';
+$colors-list: 'foreground', 'background', 'foreground-light', 'primary', 'secondary', 'box', 'error', 'success', 'info', 'warning','link';
 
 
 @each $color in $colors-list {

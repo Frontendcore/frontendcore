@@ -184,7 +184,7 @@
                 fullScreenModeForMobile: true,
                 maxWidth:  $(window).width() < 700 ? '100%': '90%',
                 maxHeight: $(window).width() < 700 ? '100%': '90%',
-                overlayOpacity: 0.9,
+                overlayOpacity: 0.8,
                 slideshow: false,
                 slideshowAutoStart: true,
 				timeout: 5000,
