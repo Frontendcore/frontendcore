@@ -33,16 +33,17 @@
     height: 100%;
     width: $spacing*1.5;
     cursor: pointer;
+    z-index: 2;
     &:after {
-      content: "\1F512";
+      @extend %icon-eye !optional;
       position: absolute;
-      top: $spacing/4;
-      font-size: 1.6rem;
-      opacity: .5;
+      top: $spacing/3;
+      font-size: 1.2rem;
+      opacity: .9;
     }
     &.active {
       &:after {
-        content: "\1F513";
+        @extend %icon-eye-slash !optional;
         opacity: 1;
       }
     }
@@ -67,8 +68,11 @@
 }
 
 .kv-meter-container {
-  width: 130px;
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
+
 
 .kv-meter {
   text-align: center;
@@ -102,4 +106,34 @@
 
 .kv-verdict {
   width: 100%;
+  div {
+    text-align: left;
+    line-height: map-get($object-forms-vars, field-line-height);
+    padding: map-get($object-forms-vars, field-padding);
+    padding-right: $spacing*2;
+    width: 134px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    font-size: $font-size-s;
+  }
+  ._0 {
+    color: $color-foreground;
+  }
+  ._1 {
+    color: $color-error;
+  }
+  ._2 {
+    color: $color-warning;
+  }
+  ._3 {
+    color: $color-info;
+  }
+  ._4 {
+    color: $color-success;
+  }
+  ._5 {
+    color: $color-success;
+  }
 }

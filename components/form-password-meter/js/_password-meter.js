@@ -12,12 +12,12 @@
                 meterTemplate: '<div class="kv-scorebar-border">{scorebar}{score}</div>{verdict}',
                 mainTemplate: '<table class="password-meter"><tr><td>{input}</td><td class="kv-meter-container">{meter}</td></tr></table>',
                 verdictClasses: {
-                    0: 'label',
-                    1: 'label _error',
-                    2: 'label _warning',
-                    3: 'label _info',
-                    4: 'label _success',
-                    5: 'label _success',
+                    0: '_0',
+                    1: '_1',
+                    2: '_2',
+                    3: '_3',
+                    4: '_4',
+                    5: '_5',
                 },
             },
             onStart: function () {
