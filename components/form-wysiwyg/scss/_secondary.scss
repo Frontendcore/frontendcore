@@ -166,20 +166,20 @@
 		}
 		li {
 			& {
-				list-style: disc inside !important;
-				padding-left: $spacing !important;
+				display: list-item;
+				list-style: disc outside !important;
+				margin-left: $spacing*1.6 !important;
 			}
 		}
 	}
 	ol {
 		& {
-			list-style: decimal inside !important;
 			margin-left: 0 !important;
 		}
 		li {
 			& {
 				list-style: decimal inside !important;
-				display: inline !important;
+				display: list-item !important;
 				padding-left: $spacing !important;
 			}
 		}
