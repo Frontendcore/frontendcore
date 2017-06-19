@@ -31,6 +31,7 @@ var oDefaultPaths = {
 		'graph',
 		'stats',
 		'wysiwyg',
+		'wysiwyg-libs',
 		'truncate',
 		'tip',
 		'tipLibs',

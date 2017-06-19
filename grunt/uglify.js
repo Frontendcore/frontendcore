@@ -102,9 +102,12 @@ module.exports = function(grunt) {
 		];
 
 		// WYSIWYG
+		oCore.files[jsDest + '/ui/wysiwyg-libs.js'] = [
+			fcCwd + '/bower/medium-editor/dist/js/medium-editor.js',
+		];
+
+		// WYSIWYG
 		oCore.files[jsDest + '/ui/wysiwyg.js'] = [
-			fcCwd + '/bower/pen/src/pen.js',
-			fcCwd + '/bower/pen/src/markdown.js',
 			fcCwd + '/components/form-wysiwyg/js/_wysiwyg.js'
 		];
 
