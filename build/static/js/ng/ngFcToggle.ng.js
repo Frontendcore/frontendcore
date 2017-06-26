@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcToggle",["$document",function(a){return{link:function(a,c,d){b.require(["toggle"],function(){var a=b.instantiate("toggle");a.autobind(c[0])})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);

@@ -14,51 +14,52 @@
 				var aTargets = FrontendTools.getDataModules('toggle'),
 					self = this;
 
-				$(aTargets).each(function () {
-
-					var oThis = this;
-
-
-					FrontendTools.bind( oThis, 'click',function (event) {
-
-						event.preventDefault();
-
-						if (oThis.getAttribute("data-fc-class") !== null) {
-							self.toggleClass(oThis);
-						} else if (oThis.getAttribute("data-fc-animation") !== null) {
-							self.toggleAnimation(oThis);
-						} else {
-							self.slideToggle(oThis);
-						}
-
-                        if (oThis.getAttribute("data-fc-scroll") !== null) {
-
-                            if (
-								(oThis.getAttribute("data-fc-scroll").indexOf('mobile') && FrontendTools.isMobile.any()) ||
-								(oThis.getAttribute("data-fc-scroll").indexOf('desktop') && !FrontendTools.isMobile.any()) ||
-								(oThis.getAttribute("data-fc-scroll") === 'true')
-                            ) {
-                                FrontendCore.require(['anchor-scroll'], function () {
-                                    var oAnchor = FrontendCore.instantiate('anchor-scroll');
-                                    var oLink = oThis.cloneNode(true);
-
-                                    if (oLink.getAttribute("data-fc-scroll-to") !== null) {
-                                    	oLink.href = oLink.getAttribute("data-fc-scroll-to");
-									}
-
-                                    oAnchor.scrollTo( event, oLink);
-                                });
-                            }
-
-                        }
-
-					});
-
+				$(aTargets).each(function (nIndex) {
+					self.autobind(this, nIndex);
 				});
 
 				FrontendTools.trackModule('JS_Libraries', 'call', 'toggle');
 
 			},
+			autobind: function (oTarget, nIndex) {
+
+				 var self = this;
+
+                FrontendTools.bind( oTarget, 'click',function (event) {
+
+                    event.preventDefault();
+
+                    if (oTarget.getAttribute("data-fc-class") !== null) {
+                        self.toggleClass(oTarget);
+                    } else if (oTarget.getAttribute("data-fc-animation") !== null) {
+                        self.toggleAnimation(oTarget);
+                    } else {
+                        self.slideToggle(oTarget);
+                    }
+
+                    if (oTarget.getAttribute("data-fc-scroll") !== null) {
+
+                        if (
+                            (oTarget.getAttribute("data-fc-scroll").indexOf('mobile') && FrontendTools.isMobile.any()) ||
+                            (oTarget.getAttribute("data-fc-scroll").indexOf('desktop') && !FrontendTools.isMobile.any()) ||
+                            (oTarget.getAttribute("data-fc-scroll") === 'true')
+                        ) {
+                            FrontendCore.require(['anchor-scroll'], function () {
+                                var oAnchor = FrontendCore.instantiate('anchor-scroll');
+                                var oLink = oTarget.cloneNode(true);
+
+                                if (oLink.getAttribute("data-fc-scroll-to") !== null) {
+                                    oLink.href = oLink.getAttribute("data-fc-scroll-to");
+                                }
+
+                                oAnchor.scrollTo( event, oLink);
+                            });
+                        }
+
+                    }
+
+                });
+            },
 			toggle: function (sId) {
                 if ( sId !== null && sId !== undefined && sId !== '') {
                     $('[href="#' + sId + '"]').each( function () {
