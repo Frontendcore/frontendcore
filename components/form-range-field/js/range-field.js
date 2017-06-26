@@ -34,6 +34,9 @@
 
                         oSlider.noUiSlider.on('update', function( values, handle ) {
                             $(oTarget).val(parseFloat(values[handle])).trigger('input');
+                            if ( oTarget.getAttribute('data-fc-publish') !== -1) {
+                                FrontendMediator.publish (oTarget.getAttribute('data-fc-publish'));
+                            }
                         });
 
                         FrontendMediator.subscribe('rangeInput:' + sId + nIndex, function (oResponse) {

@@ -69,6 +69,9 @@
                             $(this).toggle('fast');
 
                         }
+                        if ( this.getAttribute('data-fc-publish') !== -1) {
+                        	FrontendMediator.publish (this.getAttribute('data-fc-publish'));
+						}
                     });
                 }
 			},
