@@ -7,8 +7,8 @@
         return {
             link: function(scope, element, attrs) {
                 FrontendCore.require(["toggle"],function (){
-                    var oTip =  FrontendCore.instantiate('toggle');
-                    oTip.autobind(element[0]);
+                    var oToggle =  FrontendCore.instantiate('toggle');
+                    oToggle.autobind(element[0]);
                 });
             }
         }
