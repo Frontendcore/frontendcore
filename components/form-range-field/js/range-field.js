@@ -24,7 +24,9 @@
                 ).then(
                     function () {
 
-                        var oSlider = document.getElementById( sId + nIndex );
+                        var oSlider = document.getElementById( sId + nIndex ),
+                            bFirstTime = true,
+                            bDone = false;
 
                         if (oCustomOptions.pips !== undefined) {
                             oOptions.pips = oCustomOptions.pips;
@@ -34,10 +36,32 @@
 
                         oSlider.noUiSlider.on('update', function( values, handle ) {
                             $(oTarget).val(parseFloat(values[handle])).trigger('input');
-                            if ( oTarget.getAttribute('data-fc-publish') !== -1) {
-                                FrontendMediator.publish (oTarget.getAttribute('data-fc-publish'));
-                            }
                         });
+
+
+                        if ( oTarget.getAttribute('data-fc-publish') !== -1) {
+
+                            $(oTarget).on('input', function(){
+
+                                console.log(bFirstTime);
+
+                            var nValue = oTarget.value;
+
+                                if (!bFirstTime && !bDone) {
+                                    setTimeout( function(){
+                                        if (nValue === oTarget.value) {
+                                            FrontendMediator.publish (oTarget.getAttribute('data-fc-publish'));
+                                        }
+                                    }, 3000);
+                                } else {
+                                    bFirstTime = false;
+                                }
+
+
+                        });
+
+                        }
+
 
                         FrontendMediator.subscribe('rangeInput:' + sId + nIndex, function (oResponse) {
                             oSlider.noUiSlider.set(oResponse.data.value);
