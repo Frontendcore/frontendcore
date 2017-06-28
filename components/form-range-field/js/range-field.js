@@ -43,19 +43,12 @@
 
                             $(oTarget).on('input', function(){
 
-                                console.log(bFirstTime);
-
-                            var nValue = oTarget.value;
-
-                                if (!bFirstTime && !bDone) {
-                                    setTimeout( function(){
-                                        if (nValue === oTarget.value) {
-                                            FrontendMediator.publish (oTarget.getAttribute('data-fc-publish'));
-                                        }
-                                    }, 3000);
-                                } else {
-                                    bFirstTime = false;
-                                }
+                            if (!bFirstTime && !bDone) {
+                                    FrontendMediator.publish (oTarget.getAttribute('data-fc-publish'));
+                                    bDone = true;
+                            } else {
+                                bFirstTime = false;
+                            }
 
 
                         });
