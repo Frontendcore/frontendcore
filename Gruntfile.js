@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('js', ['js:hint','copy:js','copy:jsForms','uglify','notify:js']);
 	grunt.registerTask('js:hint', ['jshint']);
 	grunt.registerTask('js:angular', ['js:hint','uglify:custom','notify:js']);
-	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js'])
+	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js']);
 
 
 	var aCssTasks = [];
