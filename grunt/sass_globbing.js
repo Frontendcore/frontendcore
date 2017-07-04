@@ -95,7 +95,7 @@ module.exports = function(grunt) {
         oFiles[sKey].push(fcCwd + 'components/essence/scss/_frontendcore.scss');
 
 
-		if (oData !== null && oData.icons.destScss !== undefined) {
+		if (oData !== null && oData.icons !== undefined && oData.icons.destScss !== undefined) {
 			oFiles[sKey].push(appCwd + '/' + oData.icons.destScss + '/_icons-placeholders.scss');
 		} else {
 			oFiles[sKey].push(fcCwd + 'components/icons/scss/_icons-placeholders.scss');

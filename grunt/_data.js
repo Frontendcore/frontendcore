@@ -94,8 +94,11 @@ module.exports = function( grunt ) {
     this.jsDest = grunt.option('jsDest') !== undefined ? getFilePath(grunt.option('jsDest')) : sJsDestData;
     this.jsCwd = grunt.option('jsCwd') !== undefined ? getFilePath(grunt.option('jsCwd')) : sJsCwdData;
 
-    this.iconsDest = grunt.option('iconsDest') !== undefined ? getFilePath(grunt.option('iconsDest')) : sIconsDestData;
-    this.iconsCwd = grunt.option('iconsCwd') !== undefined ? getFilePath(grunt.option('iconsCwd')) : sIconsCwdData;
+    if ( oData.icons !== undefined) {
+        this.iconsDest = grunt.option('iconsDest') !== undefined ? getFilePath(grunt.option('iconsDest')) : sIconsDestData;
+        this.iconsCwd = grunt.option('iconsCwd') !== undefined ? getFilePath(grunt.option('iconsCwd')) : sIconsCwdData;
+    }
+
 
     this.mergeJSON = function(source1,source2){
         /*

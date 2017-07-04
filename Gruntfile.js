@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+    require(grunt.option('fcCwd') + "/grunt/_data.js")(grunt);
+
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -26,9 +28,22 @@ module.exports = function (grunt) {
 	grunt.registerTask('js', ['js:hint','copy:js','copy:jsForms','uglify','notify:js']);
 	grunt.registerTask('js:hint', ['jshint']);
 	grunt.registerTask('js:angular', ['js:hint','uglify:custom','notify:js']);
-	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js']);
-	grunt.registerTask('css', ['icons','sass_globbing','css:compile','copy:img']);
-	grunt.registerTask('css:import', ['sass_globbing']);
+	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js'])
+
+
+	var aCssTasks = [];
+
+	if ( oData.icons !== undefined ) {
+        aCssTasks.push('icons');
+	}
+    aCssTasks.push('sass_globbing');
+    aCssTasks.push('css:compile');
+    aCssTasks.push('copy:img');
+
+    grunt.registerTask('css', aCssTasks );
+
+
+    grunt.registerTask('css:import', ['sass_globbing']);
 	grunt.registerTask('css:one', ['sass_globbing','css:compile']);
 	grunt.registerTask('css:compile', ['sass','postcss','notify:css']);
 	grunt.registerTask('icons', ['webfont','notify:icons']);
