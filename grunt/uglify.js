@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
 	if (oData.js !== undefined) {
 
-        var bBeauty = oData.js !== undefined && oData.js.uglify !== undefined && oData.js.uglify === false ? true : false,
+        var bBeauty = (oData.js !== undefined && oData.js.uglify !== undefined && oData.js.uglify === false ) ? true : false,
             oConfig = {},
             oCore = {
                 options: {
@@ -255,9 +255,32 @@ module.exports = function(grunt) {
                 };
             }
 
+
+            var jsModulesFolder =  grunt.option('appCwd') +'/'+ oData.js.dest +'/';
+
+            if (  oData.js.modulesFolder !== undefined ) {
+                jsModulesFolder += oData.js.modulesFolder + '/';
+            } else {
+                jsModulesFolder += 'modules/';
+            }
+
+            // USER MODULES
+            var oUserModules = {
+                files: [{
+                    expand: true,
+                    cwd: jsModulesFolder,
+                    src: ['*.js'],
+                    dest: jsModulesFolder,
+                    beautify: bBeauty
+
+                }]
+            };
+
+
             oConfig.core = oCore;
             oConfig.rountrip = oRoundTrip;
             oConfig.custom = oCustom;
+            oConfig.userModules = oUserModules;
         }
 
         return oConfig;
