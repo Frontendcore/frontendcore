@@ -49,8 +49,11 @@ module.exports = function (grunt) {
 	grunt.registerTask('icons', ['webfont','notify:icons']);
 
 	grunt.registerTask('docs', ['html']);
-
-	grunt.registerTask('default', ['copy:Polyfills','icons','css','js','notify:all']);
+	if ( oData.js !== undefined ) {
+        grunt.registerTask('default', ['copy:Polyfills','icons','css','js','notify:all']);
+	} else {
+        grunt.registerTask('default', ['icons','css','notify:all']);
+	}
 
 	grunt.registerTask('build', ['clean','copy:Polyfills','copy:static','icons','css','js','html','notify:all']);
 	grunt.registerTask('rebuild:js', ['uglify','notify:all']);
