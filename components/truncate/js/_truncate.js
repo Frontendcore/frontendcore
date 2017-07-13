@@ -172,7 +172,7 @@
 
             nCurrentHeight += $(target).height();
 
-            if ( nCurrentHeight > nHeight) {
+            if ( nCurrentHeight > nHeight && $(target).height() > (nHeight - nOffsetTop)) {
                 $(target).addClass('fc-truncate-apply').height( nHeight - nOffsetTop );
             }
 
@@ -182,24 +182,28 @@
     function truncateByLines(oTarget, nIndex) {
 
         var sId = "fc-truncate-"+ nIndex,
-            aTags = ['p','h1','h2','h3','h4','h5','h6','div'];
+            aTags = ['p','h1','h2','h3','h4','h5','h6','div','li'];
 
-        FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
-        $(oTarget).wrap('<div id="'+ sId + '" class="fc-truncate _closed" data-fc-height="'+ $(oTarget).height() +'"></div>');
+        if ( $(oTarget).height() > nHeight ) {
 
-        $('#' + sId).append('<a href="#" class="fc-truncate-link">' + oTarget.getAttribute("data-fc-more") + '</a>');
+            FrontendTools.loadCSS( oGlobalSettings.sPathCss + 'secondary.css?v=' + oGlobalSettings.sHash );
+            $(oTarget).wrap('<div id="'+ sId + '" class="fc-truncate _closed" data-fc-height="'+ $(oTarget).height() +'"></div>');
 
-        for (var tag in aTags) {
-            nCurrentHeight = 0;
-            $( aTags[tag] , '#' + sId).each( checkTag );
-        }
+            $('#' + sId).append('<a href="#" class="fc-truncate-link">' + oTarget.getAttribute("data-fc-more") + '</a>');
 
-        $('.fc-truncate').on('click', function (e) {
-            if ( e.target.className.indexOf('fc-truncate-link') !== -1 &&  $(this).hasClass('_closed') ) {
-                e.preventDefault();
-                $(this).removeClass('_closed').addClass('_opened');
+            for (var tag in aTags) {
+                nCurrentHeight = 0;
+                $( aTags[tag] , '#' + sId).each( checkTag );
             }
-        });
+
+            $('.fc-truncate').on('click', function (e) {
+                if ( e.target.className.indexOf('fc-truncate-link') !== -1 &&  $(this).hasClass('_closed') ) {
+                    e.preventDefault();
+                    $(this).removeClass('_closed').addClass('_opened');
+                }
+            });
+		}
+
     }
 
 	return {
@@ -232,11 +236,10 @@
 
                 if (oTarget.getAttribute("data-fc-lines") !== null) {
 
-                    nHeight = heightByLines(oTarget, oTarget.getAttribute("data-fc-lines")) + 30;
+                    nHeight = heightByLines(oTarget, oTarget.getAttribute("data-fc-lines"));
 
                     if ( $(oTarget).height() > nHeight) {
                         truncateByLines(oTarget, nIndex);
-
                     } else {
                         setTimeout( function () {
                             truncateByLines(oTarget, nIndex);
