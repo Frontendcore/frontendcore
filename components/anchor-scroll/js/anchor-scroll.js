@@ -67,8 +67,8 @@
 
 					event.preventDefault();
 
-					if(window.history.pushState) {
-						window.history.pushState(null, null, sHref);
+					if(window.history.replaceState) {
+						window.history.replaceState(null, null, sHref);
 					}
 					else {
 						window.location.hash = sHref;

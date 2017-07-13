@@ -107,11 +107,11 @@
             if ( aHrefHash.length > 1 ) {
 
                 oOptions = addCallbackOption('onStart', 'openHash', function() {
-                    window.history.pushState({}, window.document.title, '#' + aHrefHash[1]);
+                    window.history.replaceState({}, window.document.title, '#' + aHrefHash[1]);
                 }, oOptions);
 
                 oOptions = addCallbackOption('onClose', 'closeHash', function() {
-                    window.history.pushState("", window.document.title, window.location.pathname + window.location.search);
+                    window.history.replaceState("", window.document.title, window.location.pathname + window.location.search);
                 }, oOptions);
 
             }
