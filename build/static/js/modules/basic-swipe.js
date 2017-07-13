@@ -1,18 +1,1 @@
-;(function (window, document, oGlobalSettings, FrontendTools, FrontendCore, $) {
-	'use strict';
-
-	FrontendCore.define('basic-swipe', ['swipe'], function () {
-		return {
-			onStart: function () {
-
-				FrontendTools.swipe( "#basic-swipe", {
-					//Generic swipe handler for all directions
-					swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-						$(this).text("You swiped " + direction);
-					}
-				});
-			}
-		};
-	});
-
-})(window, document, oGlobalSettings, FrontendTools, FrontendCore, $);
+!function(a,b,c,d,e,f){"use strict";e.define("basic-swipe",["swipe"],function(){return{onStart:function(){d.swipe("#basic-swipe",{swipe:function(a,b,c,d,e,g){f(this).text("You swiped "+b)}})}}})}(window,document,oGlobalSettings,FrontendTools,FrontendCore,$);
