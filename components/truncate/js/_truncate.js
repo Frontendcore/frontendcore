@@ -215,66 +215,56 @@
 		},
 		onStart: function () {
 
-			var aTarget = FrontendTools.getDataModules('truncate'),
-                self = this;
+			var aTargets = FrontendTools.getDataModules('truncate'),
+				self = this;
 
-			FrontendTools.trackModule('JS_Libraries', 'call', 'truncate' );
+			FrontendTools.trackModule('JS_Libraries', 'call', 'truncate');
 
-			self.autobind(aTarget);
-
+			$(aTargets).each(function (nIndex) {
+			    var oTarget = this;
+				self.autobind(oTarget,nIndex);
+			});
 		},
-		autobind: function (aTargets) {
+		autobind: function (oTarget,nIndex) {
 
-			var self = this;
+			var self = this,
+				oSettings,
+				oOptions = {};
 
-			$( aTargets ).each(function (nIndex) {
+			if (oTarget.getAttribute("data-fc-lines") !== null) {
 
-                var oTarget = this,
-                    oSettings,
-                    oOptions = {};
+				nHeight = heightByLines(oTarget, oTarget.getAttribute("data-fc-lines"));
 
-
-                if (oTarget.getAttribute("data-fc-lines") !== null) {
-
-                    nHeight = heightByLines(oTarget, oTarget.getAttribute("data-fc-lines"));
-
-                    if ( $(oTarget).height() > nHeight) {
-                        truncateByLines(oTarget, nIndex);
-                    } else {
-                        setTimeout( function () {
-                            truncateByLines(oTarget, nIndex);
-                        }, 2000);
-                    }
-
-                } else {
-                    if (oTarget.getAttribute("data-fc-max") !== null) {
-                        oOptions.max_length = oTarget.getAttribute("data-fc-max");
-                    }
-
-                    if (oTarget.getAttribute("data-fc-more") !== null) {
-                        oOptions.more = oTarget.getAttribute("data-fc-more");
-                    }
-
-                    if (oTarget.getAttribute("data-fc-less") === 'false') {
-                        var css = document.createElement("style");
-                        css.type = "text/css";
-                        css.innerHTML = ".truncator-less { display: none; }";
-                        document.body.appendChild(css);
-                    } else if (this.getAttribute("data-fc-less") !== null) {
-                        oOptions.less = oTarget.getAttribute("data-fc-less");
-                    }
-
-
-
-                    $(oTarget).truncateCH(oSettings);
+				if ( $(oTarget).height() > nHeight) {
+					truncateByLines(oTarget, nIndex);
+				} else {
+					setTimeout( function () {
+						truncateByLines(oTarget, nIndex);
+					}, 2000);
 				}
 
-                FrontendTools.removeLoading(this);
+			} else {
+				if (oTarget.getAttribute("data-fc-max") !== null) {
+					oOptions.max_length = oTarget.getAttribute("data-fc-max");
+				}
 
+				if (oTarget.getAttribute("data-fc-more") !== null) {
+					oOptions.more = oTarget.getAttribute("data-fc-more");
+				}
 
+				if (oTarget.getAttribute("data-fc-less") === 'false') {
+					var css = document.createElement("style");
+					css.type = "text/css";
+					css.innerHTML = ".truncator-less { display: none; }";
+					document.body.appendChild(css);
+				} else if (oTarget.getAttribute("data-fc-less") !== null) {
+					oOptions.less = oTarget.getAttribute("data-fc-less");
+				}
 
+				$(oTarget).truncateCH(oSettings);
+			}
 
-            });
+			FrontendTools.removeLoading(oTarget);
 		}
 	};
 });
