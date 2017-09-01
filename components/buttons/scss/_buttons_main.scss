@@ -1,12 +1,6 @@
 .button {
 	@extend %button;
 
-	&._hollow {
-		&:hover {
-			color: $color-foreground !important;
-			border-color: $color-foreground !important;
-		}
-	}
 
 	&._small {
 		@extend %button_small;
@@ -61,22 +55,41 @@
 		}
 	}
 	&._hollow {
-		& {
-			background: transparent;
-			text-shadow: none;
-			color: map-get($object-buttons-vars, default-background);
-		}
+		background: transparent  !important;
+		text-shadow: none  !important;
+		color: map-get($object-buttons-vars, default-background);
 		&._primary {
+			border-color: map-get($object-buttons-vars, primary-background);
 			color: map-get($object-buttons-vars, primary-background);
 		}
 		&._secondary {
+			border-color: map-get($object-buttons-vars, secondary-background);
 			color: map-get($object-buttons-vars, secondary-background);
 		}
 		&._success {
+			border-color: map-get($object-buttons-vars, success-background);
 			color: map-get($object-buttons-vars, success-background);
 		}
 		&._error {
-			color: map-get($object-buttons-vars, error-background);
+			border-color: map-get($object-buttons-vars, error-background);
+		}
+		&:hover {
+			&._primary {
+				border-color: map-get($object-buttons-vars, primary-background);
+				color: map-get($object-buttons-vars, primary-background);
+			}
+			&._secondary {
+				border-color: map-get($object-buttons-vars, secondary-background);
+				color: map-get($object-buttons-vars, secondary-background);
+			}
+			&._success {
+				border-color: map-get($object-buttons-vars, success-background);
+				color: map-get($object-buttons-vars, success-background);
+			}
+			&._error {
+				border-color: map-get($object-buttons-vars, error-background);
+				color: map-get($object-buttons-vars, error-background);
+			}
 		}
 	}
 
@@ -107,6 +120,7 @@
 		}
 	}
 }
+
 
 input[type='button'],
 input[type='reset'],

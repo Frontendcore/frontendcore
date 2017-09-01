@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcTruncate",["$document",function(a){return{link:function(a,c,d){b.require(["truncate"],function(){var a=b.instantiate("truncate");a.autobind(c[0],Date.now())})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);
