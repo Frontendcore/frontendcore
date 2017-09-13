@@ -23,7 +23,7 @@
 		outline: none;
 	}
 	&:hover {
-		filter: brightness(105%) contrast(115%);
+		filter: map-get($object-buttons-vars, hover-filter);
 		text-decoration: none;
 		i {
 			text-decoration: none !important;

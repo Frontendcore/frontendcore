@@ -85,6 +85,12 @@
 
 				if (oTarget.getAttribute("data-fc-autoplay") !== null && oTarget.getAttribute("data-fc-autoplay") === 'false') {
 					oOptions.autoplay = false;
+				} else {
+                    oOptions.autoplay = true;
+				}
+
+				if (oTarget.getAttribute("data-fc-autoplay-seconds") !== null) {
+					oOptions.autoplayTimeout = Math.round(oTarget.getAttribute("data-fc-autoplay-seconds")) * 1000;
 				}
 
 				if (oTarget.getAttribute("data-fc-video-height") !== null) {

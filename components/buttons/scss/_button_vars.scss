@@ -46,6 +46,7 @@ $object-buttons-vars-default: (
 	default-color: $color-background,
 	default-background-active: rgba($color-foreground, .25),
 	default-color-active: $color-background,
+	hover-filter: brightness(105%) contrast(115%),
 
 	/* Button primary */
 	primary-background: $color-primary,
