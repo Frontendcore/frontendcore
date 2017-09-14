@@ -93,6 +93,10 @@
 					oOptions.autoplayTimeout = Math.round(oTarget.getAttribute("data-fc-autoplay-seconds")) * 1000;
 				}
 
+                if (oTarget.getAttribute("data-fc-margin") !== null) {
+                    oOptions.margin = Math.round(oTarget.getAttribute("data-fc-margin"));
+                }
+
 				if (oTarget.getAttribute("data-fc-video-height") !== null) {
 					oOptions.videoHeight = oTarget.getAttribute("data-fc-video-height");
 				}
