@@ -3,12 +3,12 @@
 
     FrontendCore.ngModule = FrontendCore.ngModule || angular.module('frontendcore', []);
 
-    FrontendCore.ngModule.directive('ngFcCarousel', ['$document', function($document) {
+    FrontendCore.ngModule.directive('ngFcAutoSize', ['$document', function($document) {
         return {
             link: function(scope, element, attrs) {
-                FrontendCore.require(['carousel'],function (){
-                    var oModule =  FrontendCore.instantiate('carousel');
-                    oModule.autobind(element[0]);
+                FrontendCore.require(['autosize'],function (){
+                    var oModule =  FrontendCore.instantiate('autosize');
+                    oModule.bind(element[0]);
                 });
             }
         }
