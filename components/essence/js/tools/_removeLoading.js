@@ -10,8 +10,12 @@ FrontendTools.removeLoading = function ( oTarget, sClass, callback ) {
 		oLoading = oTarget.parentNode;
 	}
 
-	$(oLoading).removeClass('loading');
-	$(oLoading).addClass('animated fade-in');
+	if (oLoading.className.indexOf('_loading') === -1 ) {
+        $(oLoading).removeClass('loading');
+        $(oLoading).addClass('animated fade-in');
+	} else {
+        $(oLoading).removeClass('_loading');
+    }
 
 	if (sClass !== '' & oTarget.className.indexOf(sClass) === -1 ) {
 		$(oTarget).addClass(sClass);
