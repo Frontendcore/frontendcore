@@ -3,12 +3,12 @@
 
     FrontendCore.ngModule = FrontendCore.ngModule || angular.module('frontendcore', []);
 
-    FrontendCore.ngModule.directive('ngFcCarousel', ['$document', function($document) {
+    FrontendCore.ngModule.directive('ngFcTelField', ['$document', function($document) {
         return {
             link: function(scope, element, attrs) {
-                FrontendCore.require(['carousel'],function (){
-                    var oModule =  FrontendCore.instantiate('carousel');
-                    oModule.autobind(element[0]);
+                FrontendCore.require(['tel-field','tel-field-libs'],function (){
+                    var oModule =  FrontendCore.instantiate('tel-field');
+                    oModule.autobind(element[0],Date.now());
                 });
             }
         }
