@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcTelField",["$document",function(a){return{link:function(a,c,d){b.require(["tel-field","tel-field-libs"],function(){var a=b.instantiate("tel-field");a.autobind(c[0],Date.now())})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);

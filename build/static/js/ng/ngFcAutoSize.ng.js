@@ -1,0 +1,1 @@
+!function(a,b,c,d){"use strict";b.ngModule=b.ngModule||a.module("frontendcore",[]),b.ngModule.directive("ngFcAutoSize",["$document",function(a){return{link:function(a,c,d){b.require(["autosize"],function(){var a=b.instantiate("autosize");a.bind(c[0])})}}}])}(angular,FrontendCore,FrontendMediator,FrontendTools);
