@@ -8,6 +8,8 @@ module.exports = function(grunt) {
         sPathDestScss = grunt.option('fcCwd') + '/components/icons/scss/',
 		bHtmlDemo = true,
 		sPathTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.css',
+		sPathTemplateIconsOnly = grunt.option('fcCwd') + '/components/icons/template/icons-only.css',
+		sPathTemplateWithoutPlaceholder = grunt.option('fcCwd') + '/components/icons/template/_icons-without-placeholders.scss',
 		sPathTemplatePlaceholder = grunt.option('fcCwd') + '/components/icons/template/_icons-placeholders.scss',
 		sPathDemoTemplate = grunt.option('fcCwd') + '/components/icons/template/icons.html',
 		sDestHtml = '';
@@ -58,6 +60,14 @@ module.exports = function(grunt) {
                         stylesheet: 'css'
                     }, {
                         template: sPathTemplatePlaceholder,
+                        dest: sPathDest,
+                        stylesheet: 'css'
+                    }, {
+                        template: sPathTemplateIconsOnly,
+                        dest: sPathDestScss,
+                        stylesheet: 'scss'
+                    }, {
+                        template: sPathTemplateWithoutPlaceholder,
                         dest: sPathDestScss,
                         stylesheet: 'scss'
                     }],
