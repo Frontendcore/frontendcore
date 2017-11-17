@@ -293,7 +293,9 @@
                 }
 
                 // #HISTORY URI
-                oOptions = popHistory(oOptions, sHref);
+                if (oTarget.getAttribute("data-fc-history") === null || ( oTarget.getAttribute("data-fc-history") !== null && oTarget.getAttribute("data-fc-history") !== 'false' )  ) {
+                    oOptions = popHistory(oOptions, sHref);
+                }
 
                 // DISABLE ALL CLOSE CONTROLS
                 if (oTarget.getAttribute("data-fc-close") === 'false' ) {
@@ -397,8 +399,11 @@
                         oOptions = addOption(oOptions, 'height', oOptions.height );
                     }
 
-                    // #HISTORY URI
-                    oOptions = popHistory(oOptions, sHref);
+                    if ( oOptions.history !== false || oOptions.history === undefined ) {
+                        // #HISTORY URI
+                        oOptions = popHistory(oOptions, sHref);
+                    }
+
 
                     // DISABLE ALL CLOSE CONTROLS
                     if (oOptions.close === false ) {
