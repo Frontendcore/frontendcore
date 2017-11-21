@@ -72,7 +72,7 @@
 		&:before {
 			content: '';
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: top;
 			background: #FFF;
 			width: $font-size-default;
 			height: $font-size-default;
@@ -99,7 +99,7 @@
 			border-color: map-get($object-forms-vars, field-checkbox-background);
 			text-shadow: 1px 1px 2px rgba(0,0,0,.1);
 			line-height: 100%;
-			vertical-align: middle;
+			vertical-align: top;
 		}
 	}
 	input[type='checkbox']:checked + label {

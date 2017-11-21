@@ -195,10 +195,6 @@
           "href": "boxes.html",
           "done" : true
         },
-        "Comments": {
-          "name": "Balloons",
-          "href": "balloons.html"
-        },
         "Ratings": {
           "name": "Ratings",
           "href": "ratings.html"
