@@ -210,6 +210,7 @@
 
 						});
 
+						$('.owl-dots', oTarget).wrap('<div class="owl-dots-scroller"></div>');
 
 						// Build the thumbnails
 						$('.owl-dot', oTarget).each( function(nIndex){

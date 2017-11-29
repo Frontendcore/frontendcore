@@ -288,6 +288,15 @@
 		text-align: center;
 		padding-top: $spacing/2;
 	}
+	.owl-dots-scroller {
+		display: block;
+		overflow-x: scroll;
+		.owl-dots {
+			width: fit-content;
+			white-space: nowrap;
+			margin: 0 auto;
+		}
+	}
 	.owl-dots .owl-dot {
 		display: inline-block;
 		zoom: 1;
