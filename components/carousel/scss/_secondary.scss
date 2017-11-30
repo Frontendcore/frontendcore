@@ -291,12 +291,12 @@
 	}
 	.owl-dots-scroller {
 		display: block;
-		overflow-x: scroll;
+		overflow-x: auto;
+		overflow-y: hidden;
 		.owl-dots {
 			width: fit-content;
 			white-space: nowrap;
 			margin: 0 auto;
-
 		}
 	}
 	.owl-dots .owl-dot {

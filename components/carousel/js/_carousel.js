@@ -185,7 +185,7 @@
                         });
 					}
 
-					if (oTarget.getAttribute("data-fc-gallery") !== null){
+					if (oTarget.getAttribute("data-fc-gallery") === 'true'){
 
 						var aImages = {},
 							nKey = 0;
