@@ -36,7 +36,10 @@ module.exports = function (grunt) {
 	if ( oData.icons !== undefined ) {
         aCssTasks.push('icons');
 	}
-    aCssTasks.push('sass_globbing');
+	if ( oData.scss.globbing === undefined || oData.scss.globbing !== false ) {
+        aCssTasks.push('sass_globbing');
+	}
+
     aCssTasks.push('css:compile');
     aCssTasks.push('copy:img');
 
