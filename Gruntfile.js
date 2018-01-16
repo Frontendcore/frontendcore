@@ -26,6 +26,19 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('html', ['twigRender','notify:html']);
 	grunt.registerTask('js', ['js:hint','copy:js','copy:jsForms','uglify','notify:js']);
+
+    var ajsTasks = [];
+
+    if (oData.js !== undefined && oData.js.jshint !== false ) {
+        ajsTasks.push('js:hint');
+    }
+
+    ajsTasks.push('copy:js');
+    ajsTasks.push('copy:jsForms');
+    ajsTasks.push('uglify');
+    ajsTasks.push('notify:js');
+
+	grunt.registerTask('js', ajsTasks );
 	grunt.registerTask('js:hint', ['jshint']);
 	grunt.registerTask('js:angular', ['js:hint','uglify:custom','notify:js']);
 	grunt.registerTask('js:compile', ['js:hint','copy:js','notify:js']);
