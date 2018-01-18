@@ -91,7 +91,7 @@
     "grunt-newer": "^1.1.1",
     "grunt-notify": "^0.4.3",
     "grunt-postcss": "^0.8.0",
-    "grunt-sass": "1.0.0",
+    "grunt-sass": "^2.0.0",
     "grunt-sass-globbing": "^1.4.0",
     "grunt-twig-render": "^1.7.2",
     "grunt-webfont": "^1.0.2",
