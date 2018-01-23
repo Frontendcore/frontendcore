@@ -48,7 +48,7 @@
     "object-fit-polyfill": "~0.1.0",
     "twig.js": "~0.8.4",
     "jquery.inview": "jquery.inview.zuk#*",
-    "chosen": "^1.5.1",
+    "chosen": "1.6.2",
     "normalize-css": "normalize.css#~3.0.3",
     "modular-scale": "~2.1.1",
     "highlightjs": "~9.0.0",
@@ -56,7 +56,7 @@
     "jquery-touchswipe": "^1.6.18",
     "intl-tel-input": "^8.5.2",
     "lazysizes": "^2.0.0",
-    "strength-meter": "^1.1.3",
+    "strength-meter": "1.1.3",
     "nouislider": "^9.2.0",
     "truncate": "^1.1.2",
     "medium-editor": "^5.23.0"
