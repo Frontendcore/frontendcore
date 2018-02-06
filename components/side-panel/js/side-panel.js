@@ -179,7 +179,7 @@
 							});
                         */
 
-						$('.side-black-panel').on('click', function(){
+						$('.side-black-panel, .close-side-panel').on('click', function(){
 
 							self.close(oPanel, oSettings);
 						});
