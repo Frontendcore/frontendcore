@@ -42,7 +42,7 @@
                     setTimeout( function(){
                         $('.password-meter-input span').on( 'click', function() {
                             $(this).toggleClass('active');
-                            $(this).next().click();
+                            $(this).prev().attr('type', $(this).hasClass('active') ? 'text' : 'password');
                         });
                     },1000);
 
