@@ -53,7 +53,7 @@
                     textHtml = self._oConstants.TextHtml,
                     aValues,
                     editor,
-                    bMode;
+                    bMode = 'visual';
 
 
                 // Get the format options to show the buttons on the toolbox

@@ -52,9 +52,6 @@
 
 		}
 
-
-
-
 		function updateTabs(target, selector) {
 
 			var $tabs = $('a.update-tabs', target),
@@ -95,10 +92,7 @@
 
 				FrontendTools.bind( 'a.update-tabs', 'click', function(event) {
 
-
 					event.preventDefault();
-
-					FrontendMediator.publish('close:wysiwyg');
 
 					var href = '#' + event.target.href.split('#')[1],
 						target = $( event.target).parents('[data-fc-modules=tabs]')[0];
